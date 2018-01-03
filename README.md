@@ -40,7 +40,7 @@ Oracle is a unified framework for normalization of buildings metadata. Different
 3. Workflow usage scenario:
     1. Each part is initiated with the raw data for a target building in the format described in [Data Format](#data_format).
     1. In each iteration, each part runs algorithm sequentially.
-    2. In each part, it receieves raw
+    2. In each part, it receieves the result from the previous part and samples from an expert if necessary.
 
 ## Benchmark
 
