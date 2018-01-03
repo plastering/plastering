@@ -1,0 +1,3 @@
+[submodule "Oracle/frameworks/zodiac"]
+	path = Oracle/frameworks/zodiac
+	url = https://github.com/jbkoh/zodiac.git
