@@ -38,7 +38,7 @@ Oracle is a unified framework for normalization of buildings metadata. Different
 1. Each framework aligned to the interface (``./Oracle/frameworks/framework_interface.py``) can be a part (i.e., Block) of a workflow to Brickify a building.
 2. Workflow/Block interface is defined under **TODO**.
 3. Workflow usage scenario:
-    1. Each part is initiated with the raw data for a target building in the format described in [Data Format](data_format).
+    1. Each part is initiated with the raw data for a target building in the format described in [Data Format](#data_format).
     1. In each iteration, each part runs algorithm sequentially.
     2. In each part, it receieves raw
 
