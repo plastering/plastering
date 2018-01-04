@@ -9,6 +9,7 @@ Oracle is a unified framework for normalization of buildings metadata. Different
 ### Raw Metadata
 1. Every BMS point is associated with a unique source identifier (srcid).
 2. All BMS metadata is in the form of a table. A BMS point corresponds to a row with metadata possibly in multiple columns. Example:
+
     | SourceIdentifier | VendorGivenName | BACNetName      | BACNetUnit |
     |------------------|-----------------|-----------------|------------|
     | 123-456          | RM-101.ZNT      | VAV101 ZoneTemp | 64         |
