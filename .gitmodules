@@ -1,3 +1,7 @@
 [submodule "Oracle/frameworks/zodiac"]
 	path = Oracle/frameworks/zodiac
-	url = https://github.com/jbkoh/zodiac.git
+	url = git@github.com:jbkoh/zodiac.git
+	branch = master
+[submodule "oracle/frameworks/scrabble"]
+	path = oracle/frameworks/scrabble
+	url = git@github.com:jbkoh/scrabble.git
