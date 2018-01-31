@@ -9,7 +9,6 @@ import numpy as np
 
 from jasonhelper import argparser
 
-
 # Helper functions
 
 adder = lambda x, y: x + y
@@ -46,7 +45,10 @@ for srcid, char_label_pairs in char_label_dict.items():
     row = df.loc[srcid]
     sentence = reduce(adder, [normalize_phrase(row[col_name]) + '\n' 
                               for col_name in used_col_names], '')
-    assert ''.join([pair[0] for pair in char_label_pairs]) == sentence
+    try:
+        assert ''.join([pair[0] for pair in char_label_pairs]) == sentence
+    except:
+        pdb.set_trace()
     sent_it = iter(char_label_pairs)
     pairs = deepcopy(char_label_pairs)
     col_parse_dict = defaultdict(list)
