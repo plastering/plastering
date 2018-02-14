@@ -1,0 +1,2 @@
+from zodiac import *
+main()
