@@ -45,8 +45,42 @@ Oracle is a unified framework for normalization of buildings metadata. Different
        ```
 
 ## Framework Interface
-1. Each framework should be instantiated to [the common interface](https://github.com/jbkoh/oracle/blob/master/Oracle/frameworks/framework_interface.py).
+1. Each framework should be instantiated as [the common interface](https://github.com/jbkoh/oracle/blob/master/Oracle/frameworks/framework_interface.py).
 
+### Common Procedure
+1. Prepare the data in MongoDB. Example: ``data_init.py``
+2. The number of seed samples are given and a framework is initialized with the number as well as the other configurations, which depend on the framework as different framework may require different initial inputs.  
+    ```python
+    conf = {
+            'source_buildings': ['ebu3b'],
+            'source_samples_list': [5],
+            'logger_postfix': 'test1',
+            'seed_num': 5}
+    target_building = 'ap_m'
+    scrabble = ScrabbleInterface(target_building, conf)
+    ```
+3. Start learning the entire building's metadata with the instance.  
+    ```python
+    scrabble.learn_auto() # This function name may change in the near future.
+    ```
+    Each step inside ``learn_auto()`` looks like this:
+    1. Pick most informative samples in the target building.  
+        ```python
+        # this code is different from acutal Scrabble code as it internally contains all the process.
+        new_srcids = self.scrabble.select_informative_samples(10)
+        ``` 
+    2. Update the model  
+        ```python
+        self.update_model(new_srcids)
+        ```
+    3. Infer with the update model
+        ```python
+        pred = self.scrabble.predict(self.target_srcids)
+        ```
+    4. Store the current model's performance. 
+        ```python
+        self.evaluate()
+        ```
 
 ## Workflow
 1. Each framework aligned to the interface (``./Oracle/frameworks/framework_interface.py``) can be a part, called *Block*, of a workflow to Brickify a building.

@@ -1,6 +1,5 @@
 import json
 import pdb
-from collections import defaultdict
 from functools import reduce
 from copy import deepcopy
 
@@ -51,9 +50,10 @@ for srcid, char_label_pairs in char_label_dict.items():
         pdb.set_trace()
     sent_it = iter(char_label_pairs)
     pairs = deepcopy(char_label_pairs)
-    col_parse_dict = defaultdict(list)
+    col_parse_dict = dict()
     for col_name in used_col_names:
         phrase = normalize_phrase(row[col_name])
+        col_parse_dict[col_name] = list()
         for _ in phrase:
             char_label_pair = char_label_pairs.pop(0)
             col_parse_dict[col_name].append(char_label_pair)
