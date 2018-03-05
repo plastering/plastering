@@ -125,6 +125,7 @@ class FrameworkInterface(object):
         plot_name = '{0}_points_{1}.pdf'.format(self.framework_name, self.exp_id)
         plotter.save_fig(fig, plot_name)
 
+    # ESSENTIAL
     def learn_auto(self, iter_num=1):
         """Learn from the scratch to the end.
 
@@ -153,6 +154,7 @@ class FrameworkInterface(object):
         """
         pass
 
+    # ESSENTIAL
     def update_model(self, srcids):
         """Update model with given newly added srcids.
 
@@ -171,6 +173,7 @@ class FrameworkInterface(object):
         """
         pass
     
+    # ESSENTIAL
     def select_informative_samples(self, sample_num):
         """Select the most informative N samples from the unlabeled data.
 
@@ -186,5 +189,12 @@ class FrameworkInterface(object):
 
         Byproducts:
             None
+        """
+        pass
+
+    # ESSENTIAL
+    def predict(self, target_srcids):
+        # TODO
+        """
         """
         pass
