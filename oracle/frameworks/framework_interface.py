@@ -21,9 +21,21 @@ def exec_measurement(func):
     
 
 class FrameworkInterface(object):
-    """docstring for FrameworkInterface"""
+    """
+    # input parameters
+    - target_building (str): name of the target building. this can be arbitrary later
+    - source_buildings (list(str)): list of buildings already known.
+    - exp_id: just for logging
+    - conf: dictionary of other configuration parameters.
+    """
 
-    def __init__(self, conf, exp_id, framework_name):
+    def __init__(self, 
+                 target_building, 
+                 source_buildings=[],
+                 exp_id=0, 
+                 framework_name=None, 
+                 conf={}, 
+                 ):
         super(FrameworkInterface, self).__init__()
         self.exp_id = exp_id
         self.framework_name = framework_name
@@ -83,10 +95,6 @@ class FrameworkInterface(object):
             point.tagsts = tagsets 
             point.save()
     
-    # Update models
-    def update_model(self):
-        pass
-
     def evaluate_points(self):
         curr_log = {
             'learned_srcids': self.learned_srcids
@@ -117,3 +125,66 @@ class FrameworkInterface(object):
         plot_name = '{0}_points_{1}.pdf'.format(self.framework_name, self.exp_id)
         plotter.save_fig(fig, plot_name)
 
+    def learn_auto(self, iter_num=1):
+        """Learn from the scratch to the end.
+
+        This executes the learning mechanism from the ground truth.
+        It iterates for the given amount of the number.
+        Basic procedure is iterating this:
+            ```python
+            f = Framework()
+            while not final_condition:
+                new_srcids = f.select_informative_samples(10)
+                f.update_model(new_srcids)
+                self.pred['tagsets'] = XXX
+                f.evaluate()
+                final_condition = f.get_final_condition()
+            ```
+
+        Args:
+            iter_num (int): total iteration number.
+
+        Returns:
+            None
+            
+        Byproduct:
+            
+            
+        """
+        pass
+
+    def update_model(self, srcids):
+        """Update model with given newly added srcids.
+
+        This update the model based on the newly added srcids.
+        Relevant data for the srcids are given from the ground truth data.
+        We can later add an interactive function for users to manually add them
+
+        Args:
+            srcids (list(str)): The model will be updated based on the given
+                                srcids.
+        Returns:
+            None
+
+        Byproduct:
+            The model will be updated, which can be used for predictions.
+        """
+        pass
+    
+    def select_informative_samples(self, sample_num):
+        """Select the most informative N samples from the unlabeled data.
+
+        This function is mainly used by active function frameworks to select
+        the most informative samples to ask to the domain experts.
+        The chosen samples are again fed back to the model updating mechanisms.
+
+        Args:
+            sample_num (int): The number of samples to be chosen
+
+        Returns:
+            new_srcids (list(str)): The list of srcids.
+
+        Byproducts:
+            None
+        """
+        pass
