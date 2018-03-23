@@ -1,10 +1,11 @@
 from oracle.frameworks.zodiac_interface import ZodiacInterface
 from oracle.db import *
 
-building = 'ap_m'
+target_building = 'ap_m'
 
-labeled_list = LabeledMetadata.objects(building=building)
+# Select labeled srcids (Not all the data are labeled yet.)
+labeled_list = LabeledMetadata.objects(building=target_building)
 target_srcids = [labeled['srcid'] for labeled in labeled_list]
 
-zodiac = ZodiacInterface(building, target_srcids)
+zodiac = ZodiacInterface(target_building, target_srcids)
 zodiac.learn_auto()
