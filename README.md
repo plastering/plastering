@@ -96,4 +96,13 @@ Oracle is a unified framework for normalization of buildings metadata. Different
 
 
 # Examples
-**TODO**
+
+1. Init data 
+    ```bash
+    python init_daya.py -b ap_m
+    ```
+
+2. Test with Zodiac
+    ```bash
+    python test_zodiac.py
+    ```
