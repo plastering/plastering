@@ -6,6 +6,7 @@ import numpy as np
 
 #from Oracle.db import OracleDatabase
 from oracle.db import *
+from oracle.common import *
 from jasonhelper import argparser
 
 argparser.add_argument('-b', type=str, dest='building', required=True)
@@ -46,6 +47,7 @@ for srcid, tagsets in true_tagsets.items():
     point = LabeledMetadata.objects(srcid=srcid, building=building)\
                            .upsert_one(srcid=srcid, building=building)
     point.tagsets = tagsets
+    point.point_tagset = sel_point_tagset(tagsets)
     point.save()
 
 print('Finished adding tagsets')

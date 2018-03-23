@@ -13,6 +13,7 @@ class LabeledMetadata(Document):
     building = StringField(required=True)
     fullparsing = DictField()
     tagsets = ListField(StringField())
+    point_tagset = StringField()
 
 
 from pymongo import MongoClient
