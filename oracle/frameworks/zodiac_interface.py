@@ -75,13 +75,12 @@ class ZodiacInterface(FrameworkInterface):
             self.evaluate()
     
     def update_model(self, srcids):
+        super(ZodiacInterface, self).update_model(srcids)
         self.training_srcids = self.training_srcids.union(set(srcids))
         new_samples = list()
         for srcid in srcids:
             labeled = LabeledMetadata.objects(srcid=srcid)
             if not labeled:
-                pdb.set_trace()
-                # TODO: add function to receive receive the sample
                 raise Exception('Labels do not exist for {0}'.format(srcid))
             labeled = labeled[0]
             point_tagset = labeled.point_tagset
