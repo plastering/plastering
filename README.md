@@ -99,7 +99,7 @@ Oracle is a unified framework for normalization of buildings metadata. Different
 
 1. Initialize data 
     ```bash
-    python init_data.py -b ap_m
+    python data_init.py -b ap_m
     ```
 
 2. Test with Zodiac
