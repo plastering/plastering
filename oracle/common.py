@@ -1,5 +1,5 @@
 
-POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
+POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter', 'status']
 # May use point_tagset_list later.
 def is_point_tagset(tagset):
     if tagset in ['unknown', 'none']:
