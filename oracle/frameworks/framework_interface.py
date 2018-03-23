@@ -50,53 +50,8 @@ class FrameworkInterface(object):
             'point': dict(),
             }
         self.target_srcids = target_srcids
-        self.history = [] # logging and vis purpose
-        self.required_label_types = ['point', 'fullparsing']
-
-    # Interface functions 
-
-    def learn(self, input_data):
-        pass
-
-    def active_learn(self, labeled_data):
-        pass
-
-    def infer(self):
-        pass
-
-    def result_summary(self):
-        pass
-
-    # helper functions
-    def serialize_graph(self, g, filename='test.ttl'):
-        if g:
-            g.serialize(filename, format='turtle')
-        else:
-            print('no ground truth graph defined')
-
-    def serialize_inferred_graph(self):
-        self.serialize_graph(self.infer_g, 'infer.ttl')
-
-    def serialize_true_graph(self):
-        self.serialize_graph(self.true_g, 'true.ttl')
-
-    # Update samples
-
-    def register_fullparsing_samples(self, fullparsings, building=None):
-        # fullparsings: {srcid: fullparsing}
-        for srcid, fullparsing in fullparsings.items():
-            point = LabeledMetadata.objects(srcid=srcid, building=building)\
-                        .upsert_one(srcid=srcid, building=building)
-            point.fullparsing = fullparsing
-            point.save()
-
-    def register_tagsets_samples(self, tagsets_dict, buliding=None):
-        for srcid ,tagsets in tagsets_dict.items():
-            point = LabeledMetadata.objects(srcid=srcid, building=building)\
-                        .upsert_one(srcid=srcid, building=building)
-            point.tagsts = tagsets 
-            point.save()
-    
+        self.history = [] # logging and visualization purpose
+        self.required_label_types = ['point', 'fullparsing'] # Future purpose
     def evaluate_points(self):
         curr_log = {
             'training_srcids': self.training_srcids
@@ -173,6 +128,8 @@ class FrameworkInterface(object):
         Byproduct:
             The model will be updated, which can be used for predictions.
         """
+
+        # Get examples from the user if labels do not exist
         for srcid in srcids:
             labeled = LabeledMetadata.objects(srcid=srcid)
             if not labeled:
