@@ -5,7 +5,7 @@ import rdflib # May use faster rdf db instead.
 import arrow
 
 from ..db import *
-from ..brick_parser import pointTagsetList
+from ..brick_parser import pointTagsetList as point_tagsets
 from ..common import *
 from .. import plotter
 #from ..brick_parser import g as brick_g 
@@ -31,25 +31,27 @@ class FrameworkInterface(object):
 
     def __init__(self, 
                  target_building, 
+                 target_srcids,
                  source_buildings=[],
                  exp_id=0, 
                  framework_name=None, 
-                 conf={}, 
+                 config={}, 
                  ):
         super(FrameworkInterface, self).__init__()
-        self.exp_id = exp_id
-        self.framework_name = framework_name
-        self.conf = conf
-        self.infer_g = rdflib.Graph()
-        self.used_srcids = set()
-        #self.brick_g = brick_g
-        self.point_tagsets = pointTagsetList
-        self.pred = {
+        self.exp_id = exp_id # an identifier for logging/debugging
+        self.framework_name = framework_name # e.g., Scarbble
+        self.config = config # future usage
+        #self.infer_g = rdflib.Graph() # future usage
+        self.training_srcids = set() # already known srcids
+        self.all_point_tagsets = point_tagsets # all the possible point tagsets 
+                                               # defined in Brick.
+        self.pred = {  # predicted results
             'tagsets': dict(),
             'point': dict(),
             }
-        self.target_srcids = []
-        self.history = []
+        self.target_srcids = target_srcids
+        self.history = [] # logging and vis purpose
+        self.required_label_types = ['point', 'fullparsing']
 
     # Interface functions 
 
@@ -97,7 +99,7 @@ class FrameworkInterface(object):
     
     def evaluate_points(self):
         curr_log = {
-            'learned_srcids': self.learned_srcids
+            'training_srcids': self.training_srcids
         }
         score = 0
         for srcid, pred_tagsets in self.pred['tagsets'].items():
@@ -171,7 +173,12 @@ class FrameworkInterface(object):
         Byproduct:
             The model will be updated, which can be used for predictions.
         """
-        pass
+        for srcid in srcids:
+            labeled = LabeledMetadata.objects(srcid=srcid)
+            if not labeled:
+                # TODO: Add function to receive it from actual user.
+                pass
+            
     
     # ESSENTIAL
     def select_informative_samples(self, sample_num):
