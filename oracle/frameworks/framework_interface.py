@@ -45,12 +45,11 @@ class FrameworkInterface(object):
                  target_srcids,
                  source_buildings=[],
                  source_sample_num_list=[],
-                 framework_name=None,
+                 framework_name='dummy_framework',
                  config={},
                  ):
         super(FrameworkInterface, self).__init__()
         self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
-        self.framework_name = framework_name # e.g., Scarbble
         self.source_buildings = source_buildings
         self.config = config # future usage
         self.training_srcids = set() # already known srcids
@@ -67,6 +66,7 @@ class FrameworkInterface(object):
         self.target_srcids = target_srcids
         self.history = [] # logging and visualization purpose
         self.required_label_types = ['point', 'fullparsing'] # Future purpose
+        self.__name__ = framework_name
 
     def evaluate_points(self):
         curr_log = {
