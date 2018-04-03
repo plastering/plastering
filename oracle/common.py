@@ -9,9 +9,10 @@ def is_point_tagset(tagset):
         return True
     else:
         return False
-    
+
 def sel_point_tagset(tagsets):
     for tagset in tagsets:
         if is_point_tagset(tagset):
             return tagset
     return None
+
