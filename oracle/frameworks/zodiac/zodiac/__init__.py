@@ -777,6 +777,12 @@ class Zodiac(object):
                       for srcid in target_srcids]
         pred = self.model.predict(target_bow)
         return pred
+    
+    def predict_proba(self, target_srcids):
+        target_bow = [self.bow_array[self.srcids.index(srcid)] 
+                      for srcid in target_srcids]
+        proba = self.model.predict_proba(target_bow)
+        return proba
 
 
 def main():

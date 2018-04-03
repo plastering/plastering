@@ -1,4 +1,4 @@
-import os 
+import os
 import sys
 import importlib.util
 import pdb
@@ -14,26 +14,54 @@ from scrabble import Scrabble # This may imply incompatible imports.
 
 class ScrabbleInterface(FrameworkInterface):
     """docstring for ScrabbleInterface"""
-    def __init__(self, target_building, exp_id='none', conf={
-            'source_buildings': ['ebu3b'],
-            'source_samples_list': [5],
-            'logger_postfix': 'temp',
-            'seed_num': 5}):
-        super(ScrabbleInterface, self).__init__(conf, exp_id, 'scrabble')
-        self.target_building = target_building
-        self.source_buildings = conf['source_buildings']
-        self.sample_num_list = conf['source_samples_list']
-        self.seed_num = conf['seed_num']
+    def __init__(self,
+                 target_building,
+                 target_srcids,
+                 source_buildings,
+                 config=None
+                 ):
+        super(ScrabbleInterface, self).__init__(
+            target_building=target_building,
+            target_srcids=target_srcids,
+            source_buildings=source_buildings,
+            config=config,
+            framework_name='scrabble')
+
+        if not config:
+            config = {}
+
+        # Prepare config for Scrabble object
+        if 'sample_num_list' in config:
+            sample_num_list = config['sample_num_list']
+        else:
+            sample_num_list = [0] * (len(source_buildings) + 1) # +1 for target
+        """
+            for building in self.source_buildings:
+                sample_cnt = 0
+                labeled_list = LabeledMetadata.objects(building=target_building)
+                for labeled in labeled_list:
+                    if labeled.fullparsing:
+                        sample_cnt += 1
+                sample_num_list.append(sample_cnt)
+        if 'seed_num' not in config:
+            seed_num = 10
+        else:
+            seed_num = config['seed_num']
+        """
+
         if self.target_building not in self.source_buildings:
             self.source_buildings = self.source_buildings + [self.target_building]
-            self.sample_num_list = self.sample_num_list + [self.seed_num]
-        conf['use_cluster_flag'] = True
-        conf['use_brick_flag'] = True
-        conf['negative_flag'] = True
-        self.logger_postfix = conf['logger_postfix']
+        if len(self.source_buildings) > len(sample_num_list):
+            sample_num_list.append(0)
+        if 'use_cluster_flag' not in config:
+            config['use_cluster_flag'] = True
+        if 'use_brick_flag' not in config:
+            config['use_brick_flag'] = True
+        if 'negative_flag' not in config:
+            config['negative_flag'] = True
 
-        column_names = ['VendorGivenName', 
-                         'BACnetName', 
+        column_names = ['VendorGivenName',
+                         'BACnetName',
                          'BACnetDescription']
 
         self.building_sentence_dict = dict()
@@ -81,14 +109,16 @@ class ScrabbleInterface(FrameworkInterface):
                            len(self.building_sentence_dict[building][srcid])
 
         self.scrabble = Scrabble(
-                            self.source_buildings,
-                            self.target_building,
-                            self.sample_num_list,
-                            self.building_sentence_dict,
-                            self.building_label_dict,
-                            self.building_tagsets_dict,
-                            conf)
-    @exec_measurement
+            target_building=self.target_building,
+            target_srcids=self.target_srcids,
+            building_label_dict=self.building_label_dict,
+            building_sentence_dict=self.building_sentence_dict,
+            building_tagsets_dict=self.building_tagsets_dict,
+            source_buildings=self.source_buildings,
+            source_sample_num_list=sample_num_list,
+            conf=config,
+            learning_srcids=[])
+
     def learn_auto(self, iter_num=1):
         params = (self.source_buildings,
                   self.sample_num_list,
@@ -110,21 +140,17 @@ class ScrabbleInterface(FrameworkInterface):
                                             self.sample_num_list),
                      'model_uuid': None}
         step_datas = [step_data]
-        step_datas.append(self.scrabble.char2tagset_onestep(step_data, 
+        step_datas.append(self.scrabble.char2tagset_onestep(step_data,
                                                             **params))
-        pdb.set_trace()
-                                          
-    
-    @exec_measurement
-    def learn_auto2(self, iter_num=1):
-        num_sensors_in_gray = 10000
-        while num_sensors_in_gray > 0:
-            new_srcids = self.zodiac.select_informative_samples_only(10)
-            self.update_model(new_srcids)
-            num_sensors_in_gray = self.zodiac.get_num_sensors_in_gray()
-            pred_point_tagsets = self.zodiac.predict(self.target_srcids)
-            for i, srcid in enumerate(self.target_srcids):
-                self.pred['tagsets'][srcid] = set([pred_point_tagsets[i]])
-            print(num_sensors_in_gray)
-            self.evaluate()
-        pdb.set_trace()
+
+    def update_model(self, srcids):
+        self.scrabble.update_model(srcids)
+
+    def predict(self, target_srcids=None):
+        return self.scrabble.predict(target_srcids)
+
+    def predict_proba(self, target_srcids=None):
+        return self.scrabble.predict_proba(target_srcids)
+
+    def select_informative_samples(self, sample_num=10):
+        return self.scrabble.select_informative_samples_only(sample_num)

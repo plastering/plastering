@@ -2,7 +2,9 @@
 	path = Oracle/frameworks/zodiac
 	url = git@github.com:jbkoh/zodiac.git
 	branch = master
+[submodule "Brick"]
+	path = Brick
+	url = https://github.com/BuildSysUniformMetadata/Brick.git
 [submodule "oracle/frameworks/scrabble"]
 	path = oracle/frameworks/scrabble
 	url = git@github.com:jbkoh/scrabble.git
-	branch = modularized
