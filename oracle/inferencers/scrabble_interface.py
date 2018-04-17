@@ -3,7 +3,7 @@ import sys
 import importlib.util
 import pdb
 
-from .framework_interface import FrameworkInterface, exec_measurement
+from . import Inferencer
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/scrabble')
 from ..db import *
 
@@ -12,7 +12,7 @@ POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 from scrabble import Scrabble # This may imply incompatible imports.
 
 
-class ScrabbleInterface(FrameworkInterface):
+class ScrabbleInterface(Inferencer):
     """docstring for ScrabbleInterface"""
     def __init__(self,
                  target_building,

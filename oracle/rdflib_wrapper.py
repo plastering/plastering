@@ -1,5 +1,5 @@
 import rdflib
-from rdflib import Graph, RDF, RDFS, OWL
+from rdflib import Graph, RDF, RDFS, OWL, URIRef
 
 import pdb
 
@@ -33,4 +33,7 @@ def get_instance_tuples(g):
     """ % (BASE) # Query selecting any instances with name space BASE.
     res = g.query(qstr)
     return {row[0].split('#')[-1]: row[1].split('#')[-1] for row in res}
-    
+
+def insert_point(g, name, tagset):
+    triple = (URIRef(name), RDF.type, URIRef(BRICK + tasget))
+    g.add(triple)

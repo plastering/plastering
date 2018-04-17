@@ -1,8 +1,7 @@
 import pdb
 import random
 
-from ..frameworks.framework_interface import PUBLIC_METHODS
-from ..frameworks.framework_interface import FrameworkInterface
+from ..inferencers import *
 from ..error import *
 
 # Note:
@@ -11,7 +10,7 @@ from ..error import *
 
 class Node():
     """
-    Framework Node:
+    Inferencer Node:
       It consists of a framework instance and the next nodes.
       Currently it can only construct tree-shaped graph.
     """
@@ -64,7 +63,7 @@ class Workflow(object):
 
         # Instantiate dummy head node with the first configuration.
         base_config = list(f_graph_configs.values())[0][0]
-        dummy_f = FrameworkInterface(**base_config)
+        dummy_f = Inferencer(**base_config)
         self.f_head = Node(dummy_f, None)
 
         # Instantiate the entire graph by recursive function call, init_node.
