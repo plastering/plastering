@@ -3,7 +3,7 @@ import sys
 import importlib.util
 import pdb
 
-from .framework_interface import FrameworkInterface, exec_measurement
+from . import Inferencer
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/zodiac')
 from ..db import *
 from ..common import *
@@ -13,7 +13,7 @@ POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 
 from zodiac import Zodiac # This may imply incompatible imports.
 
-class ZodiacInterface(FrameworkInterface):
+class ZodiacInterface(Inferencer):
 
     def __init__(self,
                  target_building,
