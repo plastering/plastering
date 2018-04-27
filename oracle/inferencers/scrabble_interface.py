@@ -5,7 +5,7 @@ import pdb
 
 from . import Inferencer
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/scrabble')
-from ..db import *
+from ..metadata_interface import *
 
 POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 

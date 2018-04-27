@@ -6,7 +6,7 @@ import rdflib # May use faster rdf db instead.
 import arrow
 from rdflib import *
 
-from ..db import *
+from ..metadata_interface import *
 from ..brick_parser import pointTagsetList as point_tagsets
 from ..common import *
 from .. import plotter
@@ -88,6 +88,20 @@ class Inferencer(object):
         plot_name = '{0}_points_{1}.pdf'.format(self.framework_name, self.exp_id)
         plotter.save_fig(fig, plot_name)
 
+    def _answer_example_pointonly(self, srcid):
+        point_tagset = input('Its point tagset: ')
+        insert_groundtruth(srcid, point_tagset=point_tagset)
+
+    def _answer_example_fullparsing(self, srcid):
+        pass #TODO
+
+    def ask_example(self, srcid):
+        print_rawmetadata(srcid)
+        if 'point' in self.required_label_types:
+            self._ask_example_pointonly(srcid)
+        if 'fullparsing' in self.required_label_types:
+            self._ask_example_fullparsing(srcid)
+
     # ESSENTIAL
     def learn_auto(self, iter_num=1):
         """Learn from the scratch to the end.
@@ -141,6 +155,7 @@ class Inferencer(object):
         for srcid in srcids:
             labeled = LabeledMetadata.objects(srcid=srcid)
             if not labeled:
+                self.ask_example(srcid)
                 # TODO: Add function to receive it from actual user.
                 pass
 
