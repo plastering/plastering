@@ -22,16 +22,6 @@ PUBLIC_METHODS = ['learn_auto',
                   'update_model'
                   ]
 
-def exec_measurement(func):
-    def wrapped(*args, **kwargs):
-        begin_time = arrow.get()
-        res = func(*args, **kwargs)
-        end_time = arrow.get()
-        print('Execution Time: {0}'.format(end_time - begin_time))
-        return res
-    return wrapped
-
-
 class Inferencer(object):
     """
     # input parameters
