@@ -32,7 +32,7 @@ def exec_measurement(func):
     return wrapped
 
 
-class FrameworkInterface(object):
+class Inferencer(object):
     """
     # input parameters
     - target_building (str): name of the target building. this can be arbitrary later
@@ -48,7 +48,7 @@ class FrameworkInterface(object):
                  framework_name='dummy_framework',
                  config={},
                  ):
-        super(FrameworkInterface, self).__init__()
+        super(Inferencer, self).__init__()
         self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
         self.source_buildings = source_buildings
         self.config = config # future usage
@@ -78,7 +78,7 @@ class FrameworkInterface(object):
             true_point = sel_point_tagset(true_tagsets)
             pred_point = sel_point_tagset(pred_tagsets)
             if true_point == pred_point:
-                score +=1
+                score += 1
         curr_log['accuracy'] = score / len(self.pred['point'])
         return curr_log
 
