@@ -13,7 +13,7 @@ from .. import plotter
 from .. import *
 from ..error import *
 from ..rdflib_wrapper import *
-#from ..brick_parser import g as brick_g 
+#from ..brick_parser import g as brick_g
 
 PUBLIC_METHODS = ['learn_auto',
                   'predict_proba',
@@ -36,6 +36,7 @@ class Inferencer(object):
                  source_buildings=[],
                  source_sample_num_list=[],
                  framework_name='dummy_framework',
+                 ui=None # TODO: This needs to be implemented
                  config={},
                  ):
         super(Inferencer, self).__init__()
@@ -55,7 +56,8 @@ class Inferencer(object):
         self.target_building = target_building
         self.target_srcids = target_srcids
         self.history = [] # logging and visualization purpose
-        self.required_label_types = ['point', 'fullparsing'] # Future purpose
+        self.required_label_types = ['point_tagset', 'fullparsing'] # Future purpose
+        self.ui = ui
         self.__name__ = framework_name
 
     def evaluate_points(self):
@@ -88,19 +90,12 @@ class Inferencer(object):
         plot_name = '{0}_points_{1}.pdf'.format(self.framework_name, self.exp_id)
         plotter.save_fig(fig, plot_name)
 
-    def _answer_example_pointonly(self, srcid):
+    def _ask_example_pointonly(self, srcid):
         point_tagset = input('Its point tagset: ')
         insert_groundtruth(srcid, point_tagset=point_tagset)
 
-    def _answer_example_fullparsing(self, srcid):
-        pass #TODO
-
     def ask_example(self, srcid):
-        print_rawmetadata(srcid)
-        if 'point' in self.required_label_types:
-            self._ask_example_pointonly(srcid)
-        if 'fullparsing' in self.required_label_types:
-            self._ask_example_fullparsing(srcid)
+        self.ui.ask_example(srcid, self.required_label_types)
 
     # ESSENTIAL
     def learn_auto(self, iter_num=1):
@@ -156,8 +151,6 @@ class Inferencer(object):
             labeled = LabeledMetadata.objects(srcid=srcid)
             if not labeled:
                 self.ask_example(srcid)
-                # TODO: Add function to receive it from actual user.
-                pass
 
     # ESSENTIAL
     def select_informative_samples(self, sample_num):

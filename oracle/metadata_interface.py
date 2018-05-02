@@ -1,4 +1,6 @@
 from mongoengine import *
+import pprint
+import pandas as pd
 pp = pprint.PrettyPrinter(indent=2)
 
 connect('oracle')
@@ -22,9 +24,13 @@ class LabeledMetadata(Document):
 # Helper functions
 
 def print_rawmetadata(srcid):
-    obj = RawMetadata.objects(srcid=srcid)
-    assert obj
-    print(obj) # Or more fancier printing e.g., using pandas
+    objs = RawMetadata.objects(srcid=srcid)
+    assert objs
+    metadata = objs[0].metadata
+    df = pd.DataFrame(index=metadata.keys(),
+                      columns=[srcid],
+                      data=list(metadata.values()))
+    print(df)
 
 def insert_groundtruth(srcid, fullparsing=None,
                     tagsets=None, point_tagset=None):
