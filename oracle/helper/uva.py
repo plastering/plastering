@@ -4,7 +4,7 @@ from ..metadata_interface import *
 
 def load_uva_building(building='uva_cse',
                       filename='./groundtruth/uva_cse_point_map.csv'):
-    df = pd.read_csv('./groundtruth/uva_cse_point_map.csv')
+    df = pd.read_csv(filename)
     for i, row in df.iterrows():
         srcid = row['original label']
         tagset = row['tagset']
