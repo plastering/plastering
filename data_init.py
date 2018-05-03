@@ -8,7 +8,7 @@ import numpy as np
 #from Oracle.db import OracleDatabase
 from oracle.metadata_interface import *
 from oracle.common import *
-from oracle.helpers.load_uva import load_uva_building
+from oracle.helper import load_uva_building
 from jasonhelper import argparser
 
 argparser.add_argument('-b', type=str, dest='building', required=True)
