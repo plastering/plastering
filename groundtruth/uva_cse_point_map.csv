@@ -1,0 +1,575 @@
+original label,tagset,ahu,hvac_zone,floor,room,unit,parsed tagset
+Effective RA CO2dac1AV004,Return Air CO2 Sensor,,1,,,4,Effective_RA_CO_dac_AV
+Effective RA CO2dac2AV004,Return Air CO2 Sensor,,2,,,4,Effective_RA_CO_dac_AV
+Effective RA CO2dac3AV004,Return Air CO2 Sensor,,3,,,4,Effective_RA_CO_dac_AV
+RMI516 Space CO2 Concentration Zone 2,CO2 Sensor,,2,,516,,RMI_Space_CO_Concentration_Zone
+Return Air CO2 Sensordac1UIP36,Return Air CO2 Sensor,,,1,,36,Return_Air_CO_Sensordac_UIP
+Return Air CO2 Sensordac2UIP36,Return Air CO2 Sensor,,,2,,36,Return_Air_CO_Sensordac_UIP
+Return Air CO2 Sensordac3UIP36,Return Air CO2 Sensor,,,3,,36,Return_Air_CO_Sensordac_UIP
+Return Air CO2scc2UIP17,Return Air CO2 Sensor,,2,2,,17,Return_Air_CO_scc_UIP
+Space  CO2 RMI206,CO2 Sensor,,,,206,,Space_CO_RMI
+Space CO2 Concentration Local,CO2 Sensor,,,,,,Space_CO_Concentration_Local
+Space CO2 Concentration RMI050,CO2 Sensor,,,,50,,Space_CO_Concentration_RMI
+Space CO2 Concentration Zone 2 RMI230,CO2 Sensor,,2,,230,,Space_CO_Concentration_Zone_RMI
+Space CO2 Room 513,CO2 Sensor,,,,513,,Space_CO_Room
+Space CO2 level RM242,CO2 Sensor,,,,242,,Space_CO_level_RM
+rmi514 Space CO2 Concentration,CO2 Sensor,,,,514,,rmi_Space_CO_Concentration
+CB Flow Meter RMI308,Discharge Air Flow,,,,308,,CB_Flow_Meter_RMI
+Discharge Air Flow,Discharge Air Flow,,,,,,Discharge_Air_Flow
+Nominal Air Flow Status,Discharge Air Flow,,,,,,Nominal_Air_Flow_Status
+Return Air CFM,Return Air Flow Sensor,,,,,,Return_Air_CFM
+Return Airflow CFM,Return Air Flow Sensor,,,,,,Return_Airflow_CFM
+Return Airflow,Return Air Flow Sensor,,,,,,Return_Airflow
+ventOptVavAirflowGross1st Floor Chilled Beam VAS2,Discharge Air Flow Sensor,,2,1,,,vent_Opt_Vav_Airflow_Gross_st_Floor_Chilled_Beam_VAS
+ventOptVavAirflowGross1st Foor Perimeter Devices VAS1,Discharge Air Flow Sensor,,1,1,,,vent_Opt_Vav_Airflow_Gross_st_Foor_Perimeter_Devices_VAS
+ventOptVavAirflowGross2nd Floor Chilled Beam Source VAS2,Discharge Air Flow Sensor,,2,2,,,vent_Opt_Vav_Airflow_Gross_nd_Floor_Chilled_Beam_Source_VAS
+ventOptVavAirflowGross2nd Floor Perimeter Devices VAS1,Discharge Air Flow Sensor,,1,2,,,vent_Opt_Vav_Airflow_Gross_nd_Floor_Perimeter_Devices_VAS
+ventOptVavAirflowGross5th Floor Chilled Beam VAS1,Discharge Air Flow Sensor,,1,5,,,vent_Opt_Vav_Airflow_Gross_th_Floor_Chilled_Beam_VAS
+ventOptVavAirflowGross5th Floor Perimeter Devices VAS2,Discharge Air Flow Sensor,,2,5,,,vent_Opt_Vav_Airflow_Gross_th_Floor_Perimeter_Devices_VAS
+ventOptVavAirflowGrossBasement Perimeter Devices2,Discharge Air Flow Sensor,,2,,,,vent_Opt_Vav_Airflow_Gross_Basement_Perimeter_Devices
+ventOptVavAirflowGrossChilled Beam Source VAS3,Discharge Air Flow Sensor,,3,,,,vent_Opt_Vav_Airflow_Gross_Chilled_Beam_Source_VAS
+1st Floor Avg Space Humidity,Humidity Sensor,,,1,,,st_Floor_Avg_Space_Humidity
+2nd Floor Avg Space Humidity,Humidity Sensor,,,2,,,nd_Floor_Avg_Space_Humidity
+5th Floor Avg Space Humidity,Humidity Sensor,,,5,,,th_Floor_Avg_Space_Humidity
+Corridor Humidity BAS,Humidity Sensor,,,,,,Corridor_Humidity_BAS
+DA Humiditydac4UIP17,Discharge Air Humidity Sensor,,4,,,17,DA_Humiditydac_UIP
+Discharge Air Humiditydac1UIP09,Discharge Air Humidity Sensor,,1,,,9,Discharge_Air_Humiditydac_UIP
+Discharge Air Humiditydac2UIP09,Discharge Air Humidity Sensor,,2,,,9,Discharge_Air_Humiditydac_UIP
+Discharge Air Humiditydac3UIP09,Discharge Air Humidity Sensor,,3,,,9,Discharge_Air_Humiditydac_UIP
+East Space Humidityscc2UIP19,Humidity Sensor,,2,,,19,East_Space_Humidityscc_UIP
+Enter CDQ Regen Humidityscc2UIP24,Humidity Sensor,,2,,,24,Enter_CDQ_Regen_Humidityscc_UIP
+Exhaust Air Humiditydac4UIP21,Exhaust Air Humidity Sensor,,4,,,21,Exhaust_Air_Humiditydac_UIP
+Humidity 1,Humidity Sensor,,1,,,,Humidity
+Humidity Corr NESHS,Humidity Sensor,,,,,,Humidity_Corr_NESHS
+Humidity Zone 1 RMI207,Humidity Sensor,,1,,207,,Humidity_Zone_RMI
+Humidity Zone 1 RMI212,Humidity Sensor,,1,,212,,Humidity_Zone_RMI
+Lab Humidity RM I228,Humidity Sensor,,,,228,,Lab_Humidity_RM_I
+Outdoor Air Humiditypgm1UIP03,Outside Air Humidity,,1,,,3,Outdoor_Air_Humiditypgm_UIP
+RMIC160 Space Relative Humidity Local,Room Humidity Sensor,,,,160,,RMIC_Space_Relative_Humidity_Local
+Return Air Humiditydac1UIP27,Return Air Humidity Sensor,,1,,,27,Return_Air_Humiditydac_UIP
+Return Air Humiditydac2UIP27,Return Air Humidity Sensor,,2,,,27,Return_Air_Humiditydac_UIP
+Return Air Humiditydac3UIP21,Return Air Humidity Sensor,,3,,,21,Return_Air_Humiditydac_UIP
+Return Air Humidityscc2UIP14,Return Air Humidity Sensor,,2,,,14,Return_Air_Humidityscc_UIP
+Space Humidity Active,Humidity Sensor,,,,,,Space_Humidity_Active
+Space Humidity Activedac1,Humidity Sensor,,1,,,,Space_Humidity_Activedac
+Space Humidity Activedac2,Humidity Sensor,,2,,,,Space_Humidity_Activedac
+Space Humidity Activedac3,Humidity Sensor,,3,,,,Space_Humidity_Activedac
+Space Humidity Activedac4,Humidity Sensor,,4,,,,Space_Humidity_Activedac
+Space Humidity Activescc2AV019,Humidity Sensor,,2,,,19,Space_Humidity_Activescc_AV
+Space Humidity BAS,Humidity Sensor,,,,,,Space_Humidity_BAS
+Space Humidity RMI206,Room Humidity Sensor,,,,206,,Space_Humidity_RMI
+Space Humidity RMI326,Room Humidity Sensor,,,,326,,Space_Humidity_RMI
+Space Humidity RMIC259,Room Humidity Sensor,,,,259,,Space_Humidity_RMIC
+Space Humidity,Humidity Sensor,,,,,,Space_Humidity
+Space Relative Humidity Corr NW,Humidity Sensor,,,,,,Space_Relative_Humidity_Corr_NW
+Space Relative Humidity Local,Humidity Sensor,,,,,,Space_Relative_Humidity_Local
+Space Relative Humidity RMI226,Room Humidity Sensor,,,,226,,Space_Relative_Humidity_RMI
+Space Relative Humidity RMI305,Room Humidity Sensor,,,,305,,Space_Relative_Humidity_RMI
+Space Relative Humidity RMI306,Room Humidity Sensor,,,,306,,Space_Relative_Humidity_RMI
+Space Relative Humidity RMI308,Room Humidity Sensor,,,,308,,Space_Relative_Humidity_RMI
+West Space Humidityscc2UIP20,Humidity Sensor,,2,,,20,West_Space_Humidityscc_UIP
+Zone Humidity 2 CORRNWSHS,Humidity Sensor,,2,,,,Zone_Humidity_COR_RNW_SHS
+Zone Humidity 2 Corr NESHS,Humidity Sensor,,2,,,,Zone_Humidity_Corr_NESHS
+Zone Humidity Corr SESHS,Humidity Sensor,,,,,,Zone_Humidity_Corr_SESHS
+Zone Humidity Corr SWSHS,Humidity Sensor,,,,,,Zone_Humidity_Corr_SWSHS
+outdoorAirHumidityA1st Floor Area1,Outside Air Humidity,,1,1,,,outdoor_Air_HumidityA_st_Floor_Area
+outdoorAirHumidityA2nd Floor Area1,Outside Air Humidity,,1,2,,,outdoor_Air_HumidityA_nd_Floor_Area
+outdoorAirHumidityA5th Floor Area1,Outside Air Humidity,,1,5,,,outdoor_Air_HumidityA_th_Floor_Area
+outdoorAirHumidityAAuditorium Area4,Outside Air Humidity,,4,1,,,outdoor_Air_HumidityA_Auditorium_Area
+outdoorAirHumidityABasement Area2,Outside Air Humidity,,2,0,,,outdoor_Air_HumidityA_Basement_Area
+spaceHumidityA1st Floor Area1,Humidity Sensor,,1,1,,,space_HumidityA_st_Floor_Area
+spaceHumidityA2nd Floor Area1,Humidity Sensor,,1,2,,,space_HumidityA_nd_Floor_Area
+spaceHumidityA5th Floor Area1,Humidity Sensor,,1,5,,,space_HumidityA_th_Floor_Area
+spaceHumidityAAuditorium Area4,Humidity Sensor,,4,1,,,space_HumidityA_Auditorium_Area
+spaceHumidityABasement Area2,Humidity Sensor,,2,0,,,space_HumidityA_Basement_Area
+occupancyA1st Floor Area1,Occupancy Sensor,,1,1,,,occupancyA_st_Floor_Area
+occupancyA2nd Floor Area1,Occupancy Sensor,,1,2,,,occupancyA_nd_Floor_Area
+occupancyA5th Floor Area1,Occupancy Sensor,,1,5,,,occupancyA_th_Floor_Area
+occupancyAAuditorium Area4,Occupancy Sensor,,4,1,,,occupancyA_Auditorium_Area
+occupancyABasement Area2,Occupancy Sensor,,2,0,,,occupancyA_Basement_Area
+occupancyStatus1st Floor Chilled Beam VAS2,Occupancy Sensor,,2,1,,,occupancy_Status_st_Floor_Chilled_Beam_VAS
+occupancyStatus1st Foor Perimeter Devices VAS1,Occupancy Sensor,,1,1,,,occupancy_Status_st_Foor_Perimeter_Devices_VAS
+occupancyStatus2nd Floor Chilled Beam Source VAS2,Occupancy Sensor,,2,2,,,occupancy_Status_nd_Floor_Chilled_Beam_Source_VAS
+occupancyStatus2nd Floor Perimeter Devices VAS1,Occupancy Sensor,,1,2,,,occupancy_Status_nd_Floor_Perimeter_Devices_VAS
+occupancyStatus5th Floor Chilled Beam VAS1,Occupancy Sensor,,1,5,,,occupancy_Status_th_Floor_Chilled_Beam_VAS
+occupancyStatus5th Floor Perimeter Devices VAS2,Occupancy Sensor,,2,5,,,occupancy_Status_th_Floor_Perimeter_Devices_VAS
+occupancyStatusA1st Floor Area1,Occupancy Sensor,,1,1,,,occupancy_StatusA_st_Floor_Area
+occupancyStatusA2nd Floor Area1,Occupancy Sensor,,1,2,,,occupancy_StatusA_nd_Floor_Area
+occupancyStatusA3rd Floor Area1,Occupancy Sensor,,1,3,,,occupancy_StatusA_rd_Floor_Area
+occupancyStatusA5th Floor Area1,Occupancy Sensor,,1,5,,,occupancy_StatusA_th_Floor_Area
+occupancyStatusAAuditorium Area4,Occupancy Sensor,,4,1,,,occupancy_StatusA_Auditorium_Area
+occupancyStatusABasement Area2,Occupancy Sensor,,2,0,,,occupancy_StatusA_Basement_Area
+occupancyStatusARoom 305 Area2,Occupancy Sensor,,2,,305,,occupancy_StatusA_Room_Area
+occupancyStatusARoom 306 Area3,Occupancy Sensor,,3,,306,,occupancy_StatusA_Room_Area
+occupancyStatusARoom 322 Area4,Occupancy Sensor,,4,,322,,occupancy_StatusA_Room_Area
+occupancyStatusARoom 324 Area5,Occupancy Sensor,,5,,324,,occupancy_StatusA_Room_Area
+occupancyStatusBasement Perimeter Devices2,Occupancy Sensor,,2,,,,occupancy_Status_Basement_Perimeter_Devices
+occupancyStatusChilled Beam Source VAS3,Occupancy Sensor,,3,,,,occupancy_Status_Chilled_Beam_Source_VAS
+occupancyStatusV3rd Floor CB VAS2,Occupancy Sensor,,2,3,,,occupancy_StatusV_rd_Floor_CB_VAS
+occupancyStatusV3rd Floor Perimiter VAS3,Occupancy Sensor,,3,3,,,occupancy_StatusV_rd_Floor_Perimiter_VAS
+East Space Temperaturescc2UIP33,Zone Temperature Sensor,,2,33,,,East_Space_Temperaturescc_UIP
+RM511A Zone Temp 3,Room Temperature Sensor,,3,,511,,RM_A_Zone_Temp
+RMI 524 Zone Temp 4,Room Temperature Sensor,,4,,524,,RMI_Zone_Temp
+RMI1071 Space Temperature Local,Room Temperature Sensor,,,,1071,,RMI_Space_Temperature_Local
+RMI1072 Space Temperature Local,Room Temperature Sensor,,,,1072,,RMI_Space_Temperature_Local
+RMI108 Space Temperature Local,Room Temperature Sensor,,,,108,,RMI_Space_Temperature_Local
+RMI1091 Space Temperature Local,Room Temperature Sensor,,,,1091,,RMI_Space_Temperature_Local
+RMI1092 Space Temperature Local,Room Temperature Sensor,,,,1092,,RMI_Space_Temperature_Local
+RMI501 Space Temperature Perimeter,Room Temperature Sensor,,,,501,,RMI_Space_Temperature_Perimeter
+RMI501 Zone Temp 5,Room Temperature Sensor,,5,,501,,RMI_Zone_Temp
+RMI502 Space Temperature Perimeter,Room Temperature Sensor,,,,502,,RMI_Space_Temperature_Perimeter
+RMI502 Zone Temp 4,Room Temperature Sensor,,4,,502,,RMI_Zone_Temp
+RMI503 Space Temperature Perimeter,Room Temperature Sensor,,,,503,,RMI_Space_Temperature_Perimeter
+RMI503 Zone Temp 3,Room Temperature Sensor,,3,,503,,RMI_Zone_Temp
+RMI504 Zone Temp 2,Room Temperature Sensor,,2,,504,,RMI_Zone_Temp
+RMI505 Space Temperature Perimeter,Room Temperature Sensor,,,,505,,RMI_Space_Temperature_Perimeter
+RMI506 Space Temperature Perimeter,Room Temperature Sensor,,,,506,,RMI_Space_Temperature_Perimeter
+RMI506 Zone Temp 7,Room Temperature Sensor,,7,,506,,RMI_Zone_Temp
+RMI507 Space Temperature Perimeter,Room Temperature Sensor,,,,507,,RMI_Space_Temperature_Perimeter
+RMI507 Zone Temp 6,Room Temperature Sensor,,6,,507,,RMI_Zone_Temp
+RMI508 Space Temperature Perimeter,Room Temperature Sensor,,,,508,,RMI_Space_Temperature_Perimeter
+RMI508 Zone Temp 5,Room Temperature Sensor,,5,,508,,RMI_Zone_Temp
+RMI509 Space Temperature Perimeter,Room Temperature Sensor,,,,509,,RMI_Space_Temperature_Perimeter
+RMI509 Zone Temp 4,Room Temperature Sensor,,4,,509,,RMI_Zone_Temp
+RMI511A Space Temperature Perimeter,Room Temperature Sensor,,,,511,,RMI_A_Space_Temperature_Perimeter
+RMI511B Space Temperature Perimeter,Room Temperature Sensor,,,,511,,RMI_B_Space_Temperature_Perimeter
+RMI511B Zone Temp 2,Room Temperature Sensor,,2,,511,,RMI_B_Zone_Temp
+RMI512 Space Temperature Perimeter,Room Temperature Sensor,,,,512,,RMI_Space_Temperature_Perimeter
+RMI513 Zone Temp 2,Room Temperature Sensor,,2,,513,,RMI_Zone_Temp
+RMI521 Zone Temp 2,Room Temperature Sensor,,2,,521,,RMI_Zone_Temp
+RMI522 Zone Temp 3,Room Temperature Sensor,,3,,522,,RMI_Zone_Temp
+RMI526 Zone Temp 5,Room Temperature Sensor,,5,,526,,RMI_Zone_Temp
+RMI527 Zone Temp 8,Room Temperature Sensor,,8,,527,,RMI_Zone_Temp
+RMI528 Zone Temp 6,Room Temperature Sensor,,6,,528,,RMI_Zone_Temp
+RMI530 Space Temperature,Room Temperature Sensor,,,,530,,RMI_Space_Temperature
+RMI534 Space Temperature Perimeter,Room Temperature Sensor,,,,534,,RMI_Space_Temperature_Perimeter
+RMI536 Space Temperature Perimeter,Room Temperature Sensor,,,,536,,RMI_Space_Temperature_Perimeter
+RMI536 Zone Temp 2,Room Temperature Sensor,,2,,536,,RMI_Zone_Temp
+RMI542 Zone Temp 2,Room Temperature Sensor,,2,,542,,RMI_Zone_Temp
+RMI552 Zone Temp 3,Room Temperature Sensor,,3,,552,,RMI_Zone_Temp
+RMI561 Zone Temp 3,Room Temperature Sensor,,3,,561,,RMI_Zone_Temp
+RMIC552 Zone Temp 3,Room Temperature Sensor,,3,,552,,RMIC_Zone_Temp
+RMIC552 Zone Temp 7,Room Temperature Sensor,,7,,552,,RMIC_Zone_Temp
+RMIC557 Zone Temp 6,Room Temperature Sensor,,6,,557,,RMIC_Zone_Temp
+RMIC557 Zone Temp 8,Room Temperature Sensor,,8,,557,,RMIC_Zone_Temp
+RmI504 Space Temperature Perimeter,Room Temperature Sensor,,,,504,,RmI_Space_Temperature_Perimeter
+RmI521 Space Temperature,Room Temperature Sensor,,,,521,,RmI_Space_Temperature
+RmI522 Space Temperature,Room Temperature Sensor,,,,522,,RmI_Space_Temperature
+RmI524 Space Temperature,Room Temperature Sensor,,,,524,,RmI_Space_Temperature
+RmI526 Space Temperature,Room Temperature Sensor,,,,526,,RmI_Space_Temperature
+RmI528 Space Temperature,Room Temperature Sensor,,,,528,,RmI_Space_Temperature
+RmI532 Space Temperature,Room Temperature Sensor,,,,532,,RmI_Space_Temperature
+RmI532 Zone Temp 2,Room Temperature Sensor,,2,,532,,RmI_Zone_Temp
+TEMP1 Perm Temp Rm 230,Room Temperature Sensor,,1,,230,,TEMP_Perm_Temp_Rm
+TEMP1 Space Temperature Perm Rm I228,Room Temperature Sensor,,1,,228,,TEMP_Space_Temperature_Perm_Rm_I
+TEMP1 Space Temperature RM 212,Room Temperature Sensor,,1,,212,,TEMP_Space_Temperature_RM
+TEMP1 Space Temperature RM I322,Room Temperature Sensor,,1,,322,,TEMP_Space_Temperature_RM_I
+TEMP1 Space Temperature RME220,Room Temperature Sensor,,1,,220,,TEMP_Space_Temperature_RME
+TEMP1 Space Temperature RMI013,Room Temperature Sensor,,1,,13,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI020,Room Temperature Sensor,,1,,20,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI102,Room Temperature Sensor,,1,,102,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI103,Room Temperature Sensor,,1,,103,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI106,Room Temperature Sensor,,1,,106,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI203,Room Temperature Sensor,,1,,203,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI204,Room Temperature Sensor,,1,,204,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI208,Room Temperature Sensor,,1,,208,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMI308,Room Temperature Sensor,,1,,308,,TEMP_Space_Temperature_RMI
+TEMP1 Space Temperature RMIC058,Room Temperature Sensor,,1,,58,,TEMP_Space_Temperature_RMIC
+TEMP1 Space Temperature RMIC150A,Room Temperature Sensor,,1,,150,,TEMP_Space_Temperature_RMIC_A
+TEMP1 Space Temperature RMIC259,Room Temperature Sensor,,1,,259,,TEMP_Space_Temperature_RMIC
+TEMP1 Space Temperature RMIC276,Room Temperature Sensor,,1,,276,,TEMP_Space_Temperature_RMIC
+TEMP1 Space Temperature RmI011,Room Temperature Sensor,,1,,11,,TEMP_Space_Temperature_RmI
+TEMP1 Space TemperatureRMI050,Room Temperature Sensor,,1,,50,,TEMP_Space_Temperature_RMI
+TEMP2 Perm Temperature Rm 232,Room Temperature Sensor,,2,,232,,TEMP_Perm_Temperature_Rm
+TEMP2 Space Temperature Perm RM I226,Room Temperature Sensor,,2,,226,,TEMP_Space_Temperature_Perm_RM_I
+TEMP2 Space Temperature RM 211,Room Temperature Sensor,,2,,211,,TEMP_Space_Temperature_RM
+TEMP2 Space Temperature RME222,Room Temperature Sensor,,2,,222,,TEMP_Space_Temperature_RME
+TEMP2 Space Temperature RMI015,Room Temperature Sensor,,2,,15,,TEMP_Space_Temperature_RMI
+TEMP2 Space Temperature RMI024,Room Temperature Sensor,,2,,24,,TEMP_Space_Temperature_RMI
+TEMP2 Space Temperature RMI101,Room Temperature Sensor,,2,,101,,TEMP_Space_Temperature_RMI
+TEMP2 Space Temperature RMI105,Room Temperature Sensor,,2,,105,,TEMP_Space_Temperature_RMI
+TEMP2 Space Temperature RMI202,Room Temperature Sensor,,2,,202,,TEMP_Space_Temperature_RMI
+TEMP2 Space Temperature RMI207,Room Temperature Sensor,,2,,207,,TEMP_Space_Temperature_RMI
+TEMP2 Space Temperature RmI007,Room Temperature Sensor,,2,,7,,TEMP_Space_Temperature_RmI
+TEMP3 Space Temperature Perm RM I224,Room Temperature Sensor,,3,,224,,TEMP_Space_Temperature_Perm_RM_I
+TEMP3 Space Temperature RM 210,Room Temperature Sensor,,3,,210,,TEMP_Space_Temperature_RM
+TEMP3 Space Temperature RMI017,Room Temperature Sensor,,3,,17,,TEMP_Space_Temperature_RMI
+TEMP3 Space Temperature RMI104,Room Temperature Sensor,,3,,104,,TEMP_Space_Temperature_RMI
+TEMP3 Space Temperature RMI201,Room Temperature Sensor,,3,,201,,TEMP_Space_Temperature_RMI
+TEMP3 Space Temperature RMI206,Room Temperature Sensor,,3,,206,,TEMP_Space_Temperature_RMI
+TEMP3 Space Temperature RmI007A,Room Temperature Sensor,,3,,7,,TEMP_Space_Temperature_RmI_A
+TEMP4 Space Temperature RM 209,Room Temperature Sensor,,4,,209,,TEMP_Space_Temperature_RM
+TEMP4 Space Temperature RMI019,Room Temperature Sensor,,4,,19,,TEMP_Space_Temperature_RMI
+TEMP4 Space Temperature RMI205,Room Temperature Sensor,,4,,205,,TEMP_Space_Temperature_RMI
+West Space Temperaturescc2UIP34,Zone Temperature Sensor,,2,,,34,West_Space_Temperaturescc_UIP
+Zone 2 Temp Corr 252,Room Temperature Sensor,,2,,252,,Zone_Temp_Corr
+Zone 2 Temp RMCorr,Zone Temperature Sensor,,2,,,,Zone_Temp_RMCorr
+Zone Temp 2 RM 242,Room Temperature Sensor,,2,,242,,Zone_Temp_RM
+Zone Temp 2 RM I232,Room Temperature Sensor,,2,,232,,Zone_Temp_RM_I
+Zone Temp 2 RME222,Room Temperature Sensor,,2,,222,,Zone_Temp_RME
+Zone Temp 2 RMI007,Room Temperature Sensor,,2,,7,,Zone_Temp_RMI
+Zone Temp 2 RMI015,Room Temperature Sensor,,2,,15,,Zone_Temp_RMI
+Zone Temp 2 RMI024,Room Temperature Sensor,,2,,24,,Zone_Temp_RMI
+Zone Temp 2 RMI032,Room Temperature Sensor,,2,,32,,Zone_Temp_RMI
+Zone Temp 2 RMI108,Room Temperature Sensor,,2,,108,,Zone_Temp_RMI
+Zone Temp 2 RMI122,Room Temperature Sensor,,2,,122,,Zone_Temp_RMI
+Zone Temp 2 RMI209,Room Temperature Sensor,,2,,209,,Zone_Temp_RMI
+Zone Temp 2 RmI204,Room Temperature Sensor,,2,,204,,Zone_Temp_RmI
+Zone Temp 3 RM I205,Room Temperature Sensor,,3,,205,,Zone_Temp_RM_I
+Zone Temp 3 RM210,Room Temperature Sensor,,3,,210,,Zone_Temp_RM
+Zone Temp 3 RMI007A,Room Temperature Sensor,,3,,7,,Zone_Temp_RMI_A
+Zone Temp 3 RMI017,Room Temperature Sensor,,3,,17,,Zone_Temp_RMI
+Zone Temp 3 RMI032A,Room Temperature Sensor,,3,,32,,Zone_Temp_RMI_A
+Zone Temp 3 RMI052,Room Temperature Sensor,,3,,52,,Zone_Temp_RMI
+Zone Temp 3 RMI103,Room Temperature Sensor,,3,,103,,Zone_Temp_RMI
+Zone Temp 3 RMI107,Room Temperature Sensor,,3,,107,,Zone_Temp_RMI
+Zone Temp 3 RMI128,Room Temperature Sensor,,3,,128,,Zone_Temp_RMI
+Zone Temp 3 Rm I224,Room Temperature Sensor,,3,,224,,Zone_Temp_Rm_I
+Zone Temp 4  RM211,Room Temperature Sensor,,4,,211,,Zone_Temp_RM
+Zone Temp 4 RM C252,Room Temperature Sensor,,4,,252,,Zone_Temp_RM_C
+Zone Temp 4 RM I203,Room Temperature Sensor,,4,,203,,Zone_Temp_RM_I
+Zone Temp 4 RMI011,Room Temperature Sensor,,4,,11,,Zone_Temp_RMI
+Zone Temp 4 RMI019,Room Temperature Sensor,,4,,19,,Zone_Temp_RMI
+Zone Temp 4 RMI032B,Room Temperature Sensor,,4,,32,,Zone_Temp_RMI_B
+Zone Temp 4 RMI102,Room Temperature Sensor,,4,,102,,Zone_Temp_RMI
+Zone Temp 4 RMI106,Room Temperature Sensor,,4,,106,,Zone_Temp_RMI
+Zone Temp 4 RMIC154 Corr,Room Temperature Sensor,,4,,154,,Zone_Temp_RMIC_Corr
+Zone Temp 5 Local RMI208,Room Temperature Sensor,,5,,208,,Zone_Temp_Local_RMI
+Zone Temp 5 RM I202,Room Temperature Sensor,,5,,202,,Zone_Temp_RM_I
+Zone Temp 5 RMI101,Room Temperature Sensor,,5,,101,,Zone_Temp_RMI
+Zone Temp 5 RMIC054,Room Temperature Sensor,,5,,54,,Zone_Temp_RMIC
+Zone Temp 5 RMIC057,Room Temperature Sensor,,5,,57,,Zone_Temp_RMIC
+Zone Temp 5 RMIC059,Room Temperature Sensor,,5,,59,,Zone_Temp_RMIC
+Zone Temp 5 RMIC154A,Room Temperature Sensor,,5,,154,,Zone_Temp_RMIC_A
+Zone Temp 5 RMIC156E,Room Temperature Sensor,,5,,156,,Zone_Temp_RMIC_E
+Zone Temp 6 RM I201,Room Temperature Sensor,,6,,201,,Zone_Temp_RM_I
+Zone Temp 6 RMI054,Room Temperature Sensor,,6,,54,,Zone_Temp_RMI
+Zone Temp 6 RMI212,Room Temperature Sensor,,6,,212,,Zone_Temp_RMI
+Zone Temp 6 RMIC156,Room Temperature Sensor,,6,,156,,Zone_Temp_RMIC
+Zone Temp RMI104,Room Temperature Sensor,,,,104,,Zone_Temp_RMI
+averageSpaceTemperatureA1st Floor Area1,Average Zone Temperature Sensor,,1,1,,,average_Space_TemperatureA_st_Floor_Area
+averageSpaceTemperatureA2nd Floor Area1,Average Zone Temperature Sensor,,1,2,,,average_Space_TemperatureA_nd_Floor_Area
+averageSpaceTemperatureA3rd Floor Area1,Average Zone Temperature Sensor,,1,3,,,average_Space_TemperatureA_rd_Floor_Area
+averageSpaceTemperatureA5th Floor Area1,Average Zone Temperature Sensor,,1,5,,,average_Space_TemperatureA_th_Floor_Area
+averageSpaceTemperatureAAuditorium Area4,Average Zone Temperature Sensor,,4,4,,,average_Space_TemperatureA_Auditorium_Area
+averageSpaceTemperatureABasement Area2,Average Zone Temperature Sensor,,2,2,,,average_Space_TemperatureA_Basement_Area
+averageSpaceTemperatureARoom 305 Area2,Average Zone Temperature Sensor,,2,,305,,average_Space_TemperatureA_Room_Area
+averageSpaceTemperatureARoom 306 Area3,Average Zone Temperature Sensor,,3,,306,,average_Space_TemperatureA_Room_Area
+averageSpaceTemperatureARoom 322 Area4,Average Zone Temperature Sensor,,4,,322,,average_Space_TemperatureA_Room_Area
+averageSpaceTemperatureARoom 324 Area5,Average Zone Temperature Sensor,,5,,324,,average_Space_TemperatureA_Room_Area
+spaceSensorA1st Floor Area1,Zone Temperature Sensor,,1,1,,,space_SensorA_st_Floor_Area
+spaceSensorA2nd Floor Area1,Zone Temperature Sensor,,1,2,,,space_SensorA_nd_Floor_Area
+spaceSensorA3rd Floor Area1,Zone Temperature Sensor,,1,3,,,space_SensorA_rd_Floor_Area
+spaceSensorA5th Floor Area1,Zone Temperature Sensor,,1,5,,,space_SensorA_th_Floor_Area
+spaceSensorAAuditorium Area4,Zone Temperature Sensor,,4,,,,space_SensorA_Auditorium_Area
+spaceSensorABasement Area2,Zone Temperature Sensor,,2,,,,space_SensorA_Basement_Area
+spaceSensorARoom 306 Area3,Zone Temperature Sensor,,3,,306,,space_SensorA_Room_Area
+spaceSensorARoom 322 Area4,Zone Temperature Sensor,,4,,322,,space_SensorA_Room_Area
+spaceSensorARoom 324 Area5,Zone Temperature Sensor,,5,,324,,space_SensorA_Room_Area
+ductPressOptStatusV1st Floor Chilled Beam VAS2,Supply Air Duct Pressure Status,,2,1,,,duct_Press_Opt_StatusV_st_Floor_Chilled_Beam_VAS
+ductPressOptStatusV1st Foor Perimeter Devices VAS1,Supply Air Duct Pressure Status,,1,1,,,duct_Press_Opt_StatusV_st_Foor_Perimeter_Devices_VAS
+ductPressOptStatusV2nd Floor Chilled Beam Source VAS2,Supply Air Duct Pressure Status,,2,2,,,duct_Press_Opt_StatusV_nd_Floor_Chilled_Beam_Source_VAS
+ductPressOptStatusV2nd Floor Perimeter Devices VAS1,Supply Air Duct Pressure Status,,1,2,,,duct_Press_Opt_StatusV_nd_Floor_Perimeter_Devices_VAS
+ductPressOptStatusV5th Floor Chilled Beam VAS1,Supply Air Duct Pressure Status,,1,5,,,duct_Press_Opt_StatusV_th_Floor_Chilled_Beam_VAS
+ductPressOptStatusV5th Floor Perimeter Devices VAS2,Supply Air Duct Pressure Status,,2,5,,,duct_Press_Opt_StatusV_th_Floor_Perimeter_Devices_VAS
+ductPressOptStatusVBasement Perimeter Devices2,Supply Air Duct Pressure Status,,2,0,,,duct_Press_Opt_StatusV_Basement_Perimeter_Devices
+ductPressOptStatusVChilled Beam Source VAS3,Supply Air Duct Pressure Status,,3,,,,duct_Press_Opt_StatusV_Chilled_Beam_Source_VAS
+economizerStatusA1st Floor Area1,Economizer Mode Status,,1,1,,,economizer_StatusA_st_Floor_Area
+economizerStatusA2nd Floor Area1,Economizer Mode Status,,1,2,,,economizer_StatusA_nd_Floor_Area
+economizerStatusA5th Floor Area1,Economizer Mode Status,,1,5,,,economizer_StatusA_th_Floor_Area
+economizerStatusAAuditorium Area4,Economizer Mode Status,,4,1,,,economizer_StatusA_Auditorium_Area
+economizerStatusABasement Area2,Economizer Mode Status,,2,0,,,economizer_StatusA_Basement_Area
+heatCoolModeStatusA1st Floor Area1,Heating On Off Status,,1,1,,,heat_Cool_Mode_StatusA_st_Floor_Area
+heatCoolModeStatusA2nd Floor Area1,Heating On Off Status,,1,2,,,heat_Cool_Mode_StatusA_nd_Floor_Area
+heatCoolModeStatusA3rd Floor Area1,Heating On Off Status,,1,3,,,heat_Cool_Mode_StatusA_rd_Floor_Area
+heatCoolModeStatusA5th Floor Area1,Heating On Off Status,,1,5,,,heat_Cool_Mode_StatusA_th_Floor_Area
+heatCoolModeStatusAAuditorium Area4,Heating On Off Status,,4,1,,,heat_Cool_Mode_StatusA_Auditorium_Area
+heatCoolModeStatusABasement Area2,Heating On Off Status,,2,0,,,heat_Cool_Mode_StatusA_Basement_Area
+heatCoolModeStatusARoom 305 Area2,Heating On Off Status,,2,,305,,heat_Cool_Mode_StatusA_Room_Area
+heatCoolModeStatusARoom 306 Area3,Heating On Off Status,,3,,306,,heat_Cool_Mode_StatusA_Room_Area
+heatCoolModeStatusARoom 322 Area4,Heating On Off Status,,4,,322,,heat_Cool_Mode_StatusA_Room_Area
+heatCoolModeStatusARoom 324 Area5,Heating On Off Status,,5,,324,,heat_Cool_Mode_StatusA_Room_Area
+operatingMode1st Floor Chilled Beam VAS2,VAV Box Operating Mode ,,2,1,,,operating_Mode_st_Floor_Chilled_Beam_VAS
+operatingMode1st Foor Perimeter Devices VAS1,VAV Box Operating Mode ,,1,1,,,operating_Mode_st_Foor_Perimeter_Devices_VAS
+operatingMode2nd Floor Chilled Beam Source VAS2,VAV Box Operating Mode ,,2,2,,,operating_Mode_nd_Floor_Chilled_Beam_Source_VAS
+operatingMode2nd Floor Perimeter Devices VAS1,VAV Box Operating Mode ,,1,2,,,operating_Mode_nd_Floor_Perimeter_Devices_VAS
+operatingMode5th Floor Chilled Beam VAS1,VAV Box Operating Mode ,,1,5,,,operating_Mode_th_Floor_Chilled_Beam_VAS
+operatingMode5th Floor Perimeter Devices VAS2,VAV Box Operating Mode ,,2,5,,,operating_Mode_th_Floor_Perimeter_Devices_VAS
+operatingModeA1st Floor Area1,VAV Box Operating Mode ,,1,1,,,operating_ModeA_st_Floor_Area
+operatingModeA2nd Floor Area1,VAV Box Operating Mode ,,1,2,,,operating_ModeA_nd_Floor_Area
+operatingModeA3rd Floor Area1,VAV Box Operating Mode ,,1,3,,,operating_ModeA_rd_Floor_Area
+operatingModeA5th Floor Area1,VAV Box Operating Mode ,,1,5,,,operating_ModeA_th_Floor_Area
+operatingModeAAuditorium Area4,VAV Box Operating Mode ,,4,1,,,operating_ModeA_Auditorium_Area
+operatingModeABasement Area2,VAV Box Operating Mode ,,2,0,,,operating_ModeA_Basement_Area
+operatingModeARoom 305 Area2,VAV Box Operating Mode ,,2,,305,,operating_ModeA_Room_Area
+operatingModeARoom 306 Area3,VAV Box Operating Mode ,,3,,306,,operating_ModeA_Room_Area
+operatingModeARoom 322 Area4,VAV Box Operating Mode ,,4,,322,,operating_ModeA_Room_Area
+operatingModeARoom 324 Area5,VAV Box Operating Mode ,,5,,324,,operating_ModeA_Room_Area
+operatingModeBasement Perimeter Devices2,VAV Box Operating Mode ,,2,0,,,operating_Mode_Basement_Perimeter_Devices
+operatingModeChilled Beam Source VAS3,VAV Box Operating Mode ,,3,,,,operating_Mode_Chilled_Beam_Source_VAS
+operatingModeV3rd Floor CB VAS2,VAV Box Operating Mode ,,2,3,,,operating_ModeV_rd_Floor_CB_VAS
+operatingModeV3rd Floor Perimiter VAS3,VAV Box Operating Mode ,,3,3,,,operating_ModeV_rd_Floor_Perimiter_VAS
+systemMode1st Floor Chilled Beam VAS2,System Mode,,2,1,,,system_Mode_st_Floor_Chilled_Beam_VAS
+systemMode1st Foor Perimeter Devices VAS1,System Mode,,1,1,,,system_Mode_st_Foor_Perimeter_Devices_VAS
+systemMode2nd Floor Chilled Beam Source VAS2,System Mode,,2,2,,,system_Mode_nd_Floor_Chilled_Beam_Source_VAS
+systemMode2nd Floor Perimeter Devices VAS1,System Mode,,1,2,,,system_Mode_nd_Floor_Perimeter_Devices_VAS
+systemMode5th Floor Chilled Beam VAS1,System Mode,,1,5,,,system_Mode_th_Floor_Chilled_Beam_VAS
+systemMode5th Floor Perimeter Devices VAS2,System Mode,,2,5,,,system_Mode_th_Floor_Perimeter_Devices_VAS
+systemModeBasement Perimeter Devices2,System Mode,,2,0,,,system_Mode_Basement_Perimeter_Devices
+systemModeChilled Beam Source VAS3,System Mode,,3,,,,system_Mode_Chilled_Beam_Source_VAS
+ventOptStatusV1st Floor Chilled Beam VAS2,Vent Operating Mode,,2,1,,,vent_Opt_StatusV_st_Floor_Chilled_Beam_VAS
+ventOptStatusV1st Foor Perimeter Devices VAS1,Vent Operating Mode,,1,1,,,vent_Opt_StatusV_st_Foor_Perimeter_Devices_VAS
+ventOptStatusV2nd Floor Chilled Beam Source VAS2,Vent Operating Mode,,2,2,,,vent_Opt_StatusV_nd_Floor_Chilled_Beam_Source_VAS
+ventOptStatusV2nd Floor Perimeter Devices VAS1,Vent Operating Mode,,1,2,,,vent_Opt_StatusV_nd_Floor_Perimeter_Devices_VAS
+ventOptStatusV5th Floor Chilled Beam VAS1,Vent Operating Mode,,1,5,,,vent_Opt_StatusV_th_Floor_Chilled_Beam_VAS
+ventOptStatusV5th Floor Perimeter Devices VAS2,Vent Operating Mode,,2,5,,,vent_Opt_StatusV_th_Floor_Perimeter_Devices_VAS
+ventOptStatusVBasement Perimeter Devices2,Vent Operating Mode,,2,0,,,vent_Opt_StatusV_Basement_Perimeter_Devices
+ventOptStatusVChilled Beam Source VAS3,Vent Operating Mode,,3,,,,vent_Opt_StatusV_Chilled_Beam_Source_VAS
+Active Cool DAT Stptscc2AV003,Discharge Air Temperature Cooling Setpoint,,2,,,3,Active_Cool_DAT_Stptscc_AV
+Active Heat DAT Stptscc2AV005,Discharge Air Temperature Heating Setpoint,,2,,,5,Active_Heat_DAT_Stptscc_AV
+Cooling Stpt Activescc2AV006,Discharge Air Temperature Cooling Setpoint,,2,,,6,Cooling_Stpt_Activescc_AV
+Cooling Stpt Localdac3AV008,Discharge Air Temperature Cooling Setpoint,,3,,,8,Cooling_Stpt_Localdac_AV
+Freeze Protect Low Limitpgm1AV013,Freeze Protect Low Limit,,1,,,13,Freeze_Protect_Low_Limitpgm_AV
+Heating Stpt Activescc2AV007,Discharge Air Temperature Heating Setpoint,,2,,,7,Heating_Stpt_Activescc_AV
+High Static Cutout Limitscc2AV022,High Static Pressure Cutout Limit,,2,,,22,High_Static_Cutout_Limitscc_AV
+LT Chiller CHW SP OPR,Chilled Water Supply Temperature Sensor,,,,,,LT_Chiller_CHW_SP_OPR
+Max CoolMin Ht DAT Stptscc2TrAV03,Discharge Air Temperature Cooling Setpoint,,2,,,3,Max_Cool_Min_Ht_DAT_Stptscc_TrAV
+OA CO Damper Close Limit,Outside Air Damper Close Limit Setpoint,,,,,,OA_CO_Damper_Close_Limit
+Occupied Offsetscc2,Unknown,,2,,,,Occupied_Offsetscc
+Occupied Standby Offsetscc2,Unknown,,2,,,,Occupied_Standby_Offsetscc
+RMI527 Zone Temp 8 Stpt,Zone Temperature Setpoint,,8,,527,,RMI_Zone_Temp_Stpt
+Return CO2 Diffdac1TrAV04,Return Air CO2 Sensor,,1,,,4,Return_CO_Diffdac_TrAV
+Return CO2 Diffdac2TrAV04,Return Air CO2 Sensor,,2,,,4,Return_CO_Diffdac_TrAV
+Return CO2 Diffdac3TrAV04,Return Air CO2 Sensor,,3,,,4,Return_CO_Diffdac_TrAV
+Space CO2 Concentration BASscc2,CO2 Sensor,,2,,,,Space_CO_Concentration_BASscc
+Space CO2 Limit,CO2 Sensor,,,,,,Space_CO_Limit
+Space CO2 Low Limit,CO2 Sensor,,,,,,Space_CO_Low_Limit
+Space Humidity High Limit,High Humidity Alarm Setpoint,,,,,,Space_Humidity_High_Limit
+Space Humidity Low Limit,Low Humidity Alarm Setpoint,,,,,,Space_Humidity_Low_Limit
+Space Stpt Activescc2AV017,Unknown,,2,,,17,Space_Stpt_Activescc_AV
+Thumbwheel Set point Hi Limit,Thumbwheel Temperature High Limit Setpoint ,,,,,,Thumbwheel_Set_point_Hi_Limit
+Thumbwheel Set point Lo Limit,Thumbwheel Temperature Low Limit Setpoint ,,,,,,Thumbwheel_Set_point_Lo_Limit
+Ventilation Ratio Limit BAS,Ventilation Air Flow Ratio Limit Setpoint,,,,,,Ventilation_Ratio_Limit_BAS
+deltaTemperatureA1st Floor Area1,Unknown,,1,1,,,delta_TemperatureA_st_Floor_Area
+deltaTemperatureA2nd Floor Area1,Unknown,,1,2,,,delta_TemperatureA_nd_Floor_Area
+deltaTemperatureA5th Floor Area1,Unknown,,1,5,,,delta_TemperatureA_th_Floor_Area
+deltaTemperatureAAuditorium Area4,Unknown,,4,1,,,delta_TemperatureA_Auditorium_Area
+deltaTemperatureABasement Area2,Unknown,,2,0,,,delta_TemperatureA_Basement_Area
+diagCalculationA1st Floor Area1,Unknown,,1,1,,,diag_CalculationA_st_Floor_Area
+diagCalculationA2nd Floor Area1,Unknown,,1,2,,,diag_CalculationA_nd_Floor_Area
+diagCalculationA5th Floor Area1,Unknown,,1,5,,,diag_CalculationA_th_Floor_Area
+diagCalculationABasement Area2,Unknown,,2,0,,,diag_CalculationA_Basement_Area
+diagVasSourceTempFailureVBasement Perimeter Devices2,Unknown,,2,,,,diag_Vas_Source_Temp_FailureV_Basement_Perimeter_Devices
+diagVasSourceTempFailureVChilled Beam Source VAS3,Unknown,,3,,,,diag_Vas_Source_Temp_FailureV_Chilled_Beam_Source_VAS
+diagVasSystemFailureV2nd Floor Chilled Beam Source VAS2,Unknown,,2,2,,,diag_Vas_System_FailureV_nd_Floor_Chilled_Beam_Source_VAS
+diagVasSystemFailureV2nd Floor Perimeter Devices VAS1,Unknown,,1,2,,,diag_Vas_System_FailureV_nd_Floor_Perimeter_Devices_VAS
+diagVasSystemFailureVBasement Perimeter Devices2,Unknown,,2,0,,,diag_Vas_System_FailureV_Basement_Perimeter_Devices
+diagVasSystemFailureVChilled Beam Source VAS3,Unknown,,3,,,,diag_Vas_System_FailureV_Chilled_Beam_Source_VAS
+diagVasUnableToDriveMaxV2nd Floor Chilled Beam Source VAS2,Unknown,,1,2,,,diag_Vas_Unable_To_Drive_MaxV_nd_Floor_Chilled_Beam_Source_VAS
+diagVasUnableToDriveMaxV2nd Floor Perimeter Devices VAS1,Unknown,,2,2,,,diag_Vas_Unable_To_Drive_MaxV_nd_Floor_Perimeter_Devices_VAS
+diagVasUnableToDriveMaxVBasement Perimeter Devices2,Unknown,,2,0,,,diag_Vas_Unable_To_Drive_MaxV_Basement_Perimeter_Devices
+diagVasUnableToDriveMaxVChilled Beam Source VAS3,Unknown,,3,0,,,diag_Vas_Unable_To_Drive_MaxV_Chilled_Beam_Source_VAS
+diagnosticAlarmPresentA1st Floor Area1,Unknown,,1,1,,,diagnostic_Alarm_PresentA_st_Floor_Area
+diagnosticAlarmPresentA2nd Floor Area1,Unknown,,1,2,,,diagnostic_Alarm_PresentA_nd_Floor_Area
+diagnosticAlarmPresentA5th Floor Area1,Unknown,,1,5,,,diagnostic_Alarm_PresentA_th_Floor_Area
+ductPressOptMaxPos1st Floor Chilled Beam VAS2,Supply Air Duct Max Position Setpoint,,2,1,,,duct_Press_Opt_Max_Pos_st_Floor_Chilled_Beam_VAS
+ductPressOptMaxPos1st Foor Perimeter Devices VAS1,Supply Air Duct Max Position Setpoint,,1,1,,,duct_Press_Opt_Max_Pos_st_Foor_Perimeter_Devices_VAS
+ductPressOptMaxPos2nd Floor Chilled Beam Source VAS2,Supply Air Duct Max Position Setpoint,,2,2,,,duct_Press_Opt_Max_Pos_nd_Floor_Chilled_Beam_Source_VAS
+ductPressOptMaxPos2nd Floor Perimeter Devices VAS1,Supply Air Duct Max Position Setpoint,,1,2,,,duct_Press_Opt_Max_Pos_nd_Floor_Perimeter_Devices_VAS
+ductPressOptMaxPos5th Floor Chilled Beam VAS1,Supply Air Duct Max Position Setpoint,,1,5,,,duct_Press_Opt_Max_Pos_th_Floor_Chilled_Beam_VAS
+ductPressOptMaxPos5th Floor Perimeter Devices VAS2,Supply Air Duct Max Position Setpoint,,2,5,,,duct_Press_Opt_Max_Pos_th_Floor_Perimeter_Devices_VAS
+ductPressOptMaxPosBasement Perimeter Devices2,Supply Air Duct Max Position Setpoint,,2,0,,,duct_Press_Opt_Max_Pos_Basement_Perimeter_Devices
+ductPressOptMaxPosChilled Beam Source VAS3,Supply Air Duct Max Position Setpoint,,3,,,,duct_Press_Opt_Max_Pos_Chilled_Beam_Source_VAS
+economizerDisableDifferentialDryBulbA1st Floor Area1,Economizer Disable Differential Temperature,,1,1,,,economizer_Disable_Differential_Dry_BulbA_st_Floor_Area
+economizerDisableDifferentialDryBulbA2nd Floor Area1,Economizer Disable Differential Temperature,,1,5,,,economizer_Disable_Differential_Dry_BulbA_nd_Floor_Area
+economizerDisableDifferentialDryBulbA5th Floor Area1,Economizer Disable Differential Temperature,,1,5,,,economizer_Disable_Differential_Dry_BulbA_th_Floor_Area
+economizerDisableDifferentialDryBulbAAuditorium Area4,Economizer Disable Differential Temperature,,4,1,,,economizer_Disable_Differential_Dry_BulbA_Auditorium_Area
+economizerDisableDifferentialDryBulbABasement Area2,Economizer Disable Differential Temperature,,2,0,,,economizer_Disable_Differential_Dry_BulbA_Basement_Area
+economizerDisableDifferentialEnthalpyA1st Floor Area1,Economizer Disable Differential Enthalpy,,1,1,,,economizer_Disable_Differential_EnthalpyA_st_Floor_Area
+economizerDisableDifferentialEnthalpyA2nd Floor Area1,Economizer Disable Differential Enthalpy,,1,2,,,economizer_Disable_Differential_EnthalpyA_nd_Floor_Area
+economizerDisableDifferentialEnthalpyA5th Floor Area1,Economizer Disable Differential Enthalpy,,1,5,,,economizer_Disable_Differential_EnthalpyA_th_Floor_Area
+economizerDisableDifferentialEnthalpyAAuditorium Area4,Economizer Disable Differential Enthalpy,,4,1,,,economizer_Disable_Differential_EnthalpyA_Auditorium_Area
+economizerDisableDifferentialEnthalpyABasement Area2,Economizer Disable Differential Enthalpy,,2,0,,,economizer_Disable_Differential_EnthalpyA_Basement_Area
+economizerDisableFixedDewPointA1st Floor Area1,Economizer Disable Fixed Dew Point,,1,1,,,economizer_Disable_Fixed_Dew_PointA_st_Floor_Area
+economizerDisableFixedDewPointA2nd Floor Area1,Economizer Disable Fixed Dew Point,,1,2,,,economizer_Disable_Fixed_Dew_PointA_nd_Floor_Area
+economizerDisableFixedDewPointA5th Floor Area1,Economizer Disable Fixed Dew Point,,1,5,,,economizer_Disable_Fixed_Dew_PointA_th_Floor_Area
+economizerDisableFixedDewPointAAuditorium Area4,Economizer Disable Fixed Dew Point,,4,1,,,economizer_Disable_Fixed_Dew_PointA_Auditorium_Area
+economizerDisableFixedDewPointABasement Area2,Economizer Disable Fixed Dew Point,,2,0,,,economizer_Disable_Fixed_Dew_PointA_Basement_Area
+economizerDisableFixedDryBulbA1st Floor Area1,Economizer Disable Fixed Temperature,,1,1,,,economizer_Disable_Fixed_Dry_BulbA_st_Floor_Area
+economizerDisableFixedDryBulbA2nd Floor Area1,Economizer Disable Fixed Temperature,,1,2,,,economizer_Disable_Fixed_Dry_BulbA_nd_Floor_Area
+economizerDisableFixedDryBulbA5th Floor Area1,Economizer Disable Fixed Temperature,,1,5,,,economizer_Disable_Fixed_Dry_BulbA_th_Floor_Area
+economizerDisableFixedDryBulbAAuditorium Area4,Economizer Disable Fixed Temperature,,4,1,,,economizer_Disable_Fixed_Dry_BulbA_Auditorium_Area
+economizerDisableFixedDryBulbABasement Area2,Economizer Disable Fixed Temperature,,2,0,,,economizer_Disable_Fixed_Dry_BulbA_Basement_Area
+economizerDisableFixedEnthalpyA1st Floor Area1,Economizer Disable Fixed Enthalpy,,1,1,,,economizer_Disable_Fixed_EnthalpyA_st_Floor_Area
+economizerDisableFixedEnthalpyA2nd Floor Area1,Economizer Disable Fixed Enthalpy,,1,2,,,economizer_Disable_Fixed_EnthalpyA_nd_Floor_Area
+economizerDisableFixedEnthalpyA5th Floor Area1,Economizer Disable Fixed Enthalpy,,1,5,,,economizer_Disable_Fixed_EnthalpyA_th_Floor_Area
+economizerDisableFixedEnthalpyAAuditorium Area4,Economizer Disable Fixed Enthalpy,,4,1,,,economizer_Disable_Fixed_EnthalpyA_Auditorium_Area
+economizerDisableFixedEnthalpyABasement Area2,Economizer Disable Fixed Enthalpy,,2,0,,,economizer_Disable_Fixed_EnthalpyA_Basement_Area
+economizerEnableDifferentialDryBulbA1st Floor Area1,Economizer Enable Differential Temperature,,1,1,,,economizer_Enable_Differential_Dry_BulbA_st_Floor_Area
+economizerEnableDifferentialDryBulbA2nd Floor Area1,Economizer Enable Differential Temperature,,1,2,,,economizer_Enable_Differential_Dry_BulbA_nd_Floor_Area
+economizerEnableDifferentialDryBulbA5th Floor Area1,Economizer Enable Differential Temperature,,1,5,,,economizer_Enable_Differential_Dry_BulbA_th_Floor_Area
+economizerEnableDifferentialDryBulbAAuditorium Area4,Economizer Enable Differential Temperature,,4,1,,,economizer_Enable_Differential_Dry_BulbA_Auditorium_Area
+economizerEnableDifferentialDryBulbABasement Area2,Economizer Enable Differential Temperature,,2,0,,,economizer_Enable_Differential_Dry_BulbA_Basement_Area
+economizerEnableDifferentialEnthalpyA1st Floor Area1,Economizer Enable Differential Enthalpy,,1,1,,,economizer_Enable_Differential_EnthalpyA_st_Floor_Area
+economizerEnableDifferentialEnthalpyA2nd Floor Area1,Economizer Enable Differential Enthalpy,,1,2,,,economizer_Enable_Differential_EnthalpyA_nd_Floor_Area
+economizerEnableDifferentialEnthalpyA5th Floor Area1,Economizer Enable Differential Enthalpy,,1,5,,,economizer_Enable_Differential_EnthalpyA_th_Floor_Area
+economizerEnableDifferentialEnthalpyAAuditorium Area4,Economizer Enable Differential Enthalpy,,4,1,,,economizer_Enable_Differential_EnthalpyA_Auditorium_Area
+economizerEnableDifferentialEnthalpyABasement Area2,Economizer Enable Differential Enthalpy,,2,0,,,economizer_Enable_Differential_EnthalpyA_Basement_Area
+economizerEnableFixedDewPointA1st Floor Area1,Economizer Enable Fixed Dew Point,,1,1,,,economizer_Enable_Fixed_Dew_PointA_st_Floor_Area
+economizerEnableFixedDewPointA2nd Floor Area1,Economizer Enable Fixed Dew Point,,1,2,,,economizer_Enable_Fixed_Dew_PointA_nd_Floor_Area
+economizerEnableFixedDewPointA5th Floor Area1,Economizer Enable Fixed Dew Point,,1,5,,,economizer_Enable_Fixed_Dew_PointA_th_Floor_Area
+economizerEnableFixedDewPointAAuditorium Area4,Economizer Enable Fixed Dew Point,,4,1,,,economizer_Enable_Fixed_Dew_PointA_Auditorium_Area
+economizerEnableFixedDewPointABasement Area2,Economizer Enable Fixed Dew Point,,2,0,,,economizer_Enable_Fixed_Dew_PointA_Basement_Area
+economizerEnableFixedDryBulbA1st Floor Area1,Economizer Enable Fixed Temperature,,1,1,,,economizer_Enable_Fixed_Dry_BulbA_st_Floor_Area
+economizerEnableFixedDryBulbA2nd Floor Area1,Economizer Enable Fixed Temperature,,1,2,,,economizer_Enable_Fixed_Dry_BulbA_nd_Floor_Area
+economizerEnableFixedDryBulbA5th Floor Area1,Economizer Enable Fixed Temperature,,1,5,,,economizer_Enable_Fixed_Dry_BulbA_th_Floor_Area
+economizerEnableFixedDryBulbAAuditorium Area4,Economizer Enable Fixed Temperature,,4,1,,,economizer_Enable_Fixed_Dry_BulbA_Auditorium_Area
+economizerEnableFixedDryBulbABasement Area2,Economizer Enable Fixed Temperature,,2,0,,,economizer_Enable_Fixed_Dry_BulbA_Basement_Area
+economizerEnableFixedEnthalpyA1st Floor Area1,Economizer Enable Fixed Enthalpy,,1,1,,,economizer_Enable_Fixed_EnthalpyA_st_Floor_Area
+economizerEnableFixedEnthalpyA2nd Floor Area1,Economizer Enable Fixed Enthalpy,,1,2,,,economizer_Enable_Fixed_EnthalpyA_nd_Floor_Area
+economizerEnableFixedEnthalpyA5th Floor Area1,Economizer Enable Fixed Enthalpy,,1,5,,,economizer_Enable_Fixed_EnthalpyA_th_Floor_Area
+economizerEnableFixedEnthalpyAAuditorium Area4,Economizer Enable Fixed Enthalpy,,4,1,,,economizer_Enable_Fixed_EnthalpyA_Auditorium_Area
+economizerEnableFixedEnthalpyABasement Area2,Economizer Enable Fixed Enthalpy,,2,0,,,economizer_Enable_Fixed_EnthalpyA_Basement_Area
+occupiedDifferenceA1st Floor Area1,Unknown,,1,1,,,occupied_DifferenceA_st_Floor_Area
+occupiedDifferenceA2nd Floor Area1,Unknown,,1,2,,,occupied_DifferenceA_nd_Floor_Area
+occupiedDifferenceA5th Floor Area1,Unknown,,1,5,,,occupied_DifferenceA_th_Floor_Area
+occupiedDifferenceAAuditorium Area4,Unknown,,4,1,,,occupied_DifferenceA_Auditorium_Area
+occupiedDifferenceABasement Area2,Unknown,,2,0,,,occupied_DifferenceA_Basement_Area
+occupiedOffsetA1st Floor Area1,Unknown,,1,1,,,occupied_OffsetA_st_Floor_Area
+occupiedOffsetA2nd Floor Area1,Unknown,,1,2,,,occupied_OffsetA_nd_Floor_Area
+occupiedOffsetA5th Floor Area1,Unknown,,1,5,,,occupied_OffsetA_th_Floor_Area
+occupiedOffsetABasement Area2,Unknown,,2,0,,,occupied_OffsetA_Basement_Area
+standbyOffsetA1st Floor Area1,Unknown,,1,1,,,standby_OffsetA_st_Floor_Area
+standbyOffsetA2nd Floor Area1,Unknown,,1,2,,,standby_OffsetA_nd_Floor_Area
+standbyOffsetA5th Floor Area1,Unknown,,1,5,,,standby_OffsetA_th_Floor_Area
+standbyOffsetAAuditorium Area4,Unknown,,4,1,,,standby_OffsetA_Auditorium_Area
+standbyOffsetABasement Area2,Unknown,,2,0,,,standby_OffsetA_Basement_Area
+unoccupiedDifferenceA1st Floor Area1,Unknown,,1,1,,,unoccupied_DifferenceA_st_Floor_Area
+unoccupiedDifferenceA2nd Floor Area1,Unknown,,1,2,,,unoccupied_DifferenceA_nd_Floor_Area
+unoccupiedDifferenceA5th Floor Area1,Unknown,,1,5,,,unoccupied_DifferenceA_th_Floor_Area
+unoccupiedDifferenceAAuditorium Area4,Unknown,,4,1,,,unoccupied_DifferenceA_Auditorium_Area
+unoccupiedDifferenceABasement Area2,Unknown,,2,0,,,unoccupied_DifferenceA_Basement_Area
+ventRatioLimitAhuV1st Floor Chilled Beam VAS2,Ventilation Ratio Limit,,2,1,,,vent_Ratio_Limit_AhuV_st_Floor_Chilled_Beam_VAS
+ventRatioLimitAhuV1st Foor Perimeter Devices VAS1,Ventilation Ratio Limit,,1,1,,,vent_Ratio_Limit_AhuV_st_Foor_Perimeter_Devices_VAS
+ventRatioLimitAhuV2nd Floor Chilled Beam Source VAS2,Ventilation Ratio Limit,,2,2,,,vent_Ratio_Limit_AhuV_nd_Floor_Chilled_Beam_Source_VAS
+ventRatioLimitAhuV2nd Floor Perimeter Devices VAS1,Ventilation Ratio Limit,,1,2,,,vent_Ratio_Limit_AhuV_nd_Floor_Perimeter_Devices_VAS
+ventRatioLimitAhuV5th Floor Chilled Beam VAS1,Ventilation Ratio Limit,,1,5,,,vent_Ratio_Limit_AhuV_th_Floor_Chilled_Beam_VAS
+ventRatioLimitAhuV5th Floor Perimeter Devices VAS2,Ventilation Ratio Limit,,2,5,,,vent_Ratio_Limit_AhuV_th_Floor_Perimeter_Devices_VAS
+ventRatioLimitAhuVBasement Perimeter Devices2,Ventilation Ratio Limit,,2,0,,,vent_Ratio_Limit_AhuV_Basement_Perimeter_Devices
+ventRatioLimitAhuVChilled Beam Source VAS3,Ventilation Ratio Limit,,3,,,,vent_Ratio_Limit_AhuV_Chilled_Beam_Source_VAS
+ventRatioLimitVavV1st Floor Chilled Beam VAS2,Ventilation Ratio Limit,,2,1,,,vent_Ratio_Limit_VavV_st_Floor_Chilled_Beam_VAS
+ventRatioLimitVavV1st Foor Perimeter Devices VAS1,Ventilation Ratio Limit,,1,1,,,vent_Ratio_Limit_VavV_st_Foor_Perimeter_Devices_VAS
+ventRatioLimitVavV2nd Floor Chilled Beam Source VAS2,Ventilation Ratio Limit,,2,2,,,vent_Ratio_Limit_VavV_nd_Floor_Chilled_Beam_Source_VAS
+ventRatioLimitVavV2nd Floor Perimeter Devices VAS1,Ventilation Ratio Limit,,1,2,,,vent_Ratio_Limit_VavV_nd_Floor_Perimeter_Devices_VAS
+ventRatioLimitVavV5th Floor Chilled Beam VAS1,Ventilation Ratio Limit,,1,5,,,vent_Ratio_Limit_VavV_th_Floor_Chilled_Beam_VAS
+ventRatioLimitVavV5th Floor Perimeter Devices VAS2,Ventilation Ratio Limit,,2,5,,,vent_Ratio_Limit_VavV_th_Floor_Perimeter_Devices_VAS
+ventRatioLimitVavVBasement Perimeter Devices2,Ventilation Ratio Limit,,2,0,,,vent_Ratio_Limit_VavV_Basement_Perimeter_Devices
+ventRatioLimitVavVChilled Beam Source VAS3,Ventilation Ratio Limit,,3,,,,vent_Ratio_Limit_VavV_Chilled_Beam_Source_VAS
+2 Mag CHW Return Temp,Chilled Water Return Temperature,,2,,,,Mag_CHW_Return_Temp
+2 Mag CHW Supply Temp,Chilled Water Discharge Temperature,,2,,,,Mag_CHW_Supply_Temp
+2 Mag HW Return Temp,Hot Water Return Temperature,,2,,,,Mag_HW_Return_Temp
+2 Mag HW Supply Temp,Hot Water Supply Temperature,,2,,,,Mag_HW_Supply_Temp
+2nd Floor CHW Return Temp,Chilled Water Return Temperature,,,2,,,nd_Floor_CHW_Return_Temp
+2nd Floor CHW Supply Temp,Chilled Water Discharge Temperature,,,2,,,nd_Floor_CHW_Supply_Temp
+2nd Floor HW Return Temp,Hot Water Supply Temperature,,,2,,,nd_Floor_HW_Return_Temp
+2nd Floor HW Supply Temp,Chilled Water Discharge Temperature,,,2,,,nd_Floor_HW_Supply_Temp
+AHU 3 Supply Fan Temp,Discharge Air Temperature Sensor,3,,,,,AHU_Supply_Fan_Temp
+AHU1 PreHeat Coil Temp,PreHeat Coil Leaving Air Temperature Sensor,1,,,,,AHU_Pre_Heat_Coil_Temp
+AHU2 PreHeat Coil Temp,PreHeat Coil Leaving Air Temperature Sensor,2,,,,,AHU_Pre_Heat_Coil_Temp
+AHU3 CHW Return Temppgm2UIP09,Chilled Water Return Temperature,3,2,,,9,AHU_CHW_Return_Temppgm_UIP
+AHU3 HW Supply Temppgm2UIP11,Hot Water Supply Temperature,3,2,,,11,AHU_HW_Supply_Temppgm_UIP
+CB CHW Return Temp,Chilled Water Return Temperature,,,,,,CB_CHW_Return_Temp
+CB CHW Supply Temp,Chilled Water Discharge Temperature,,,,,,CB_CHW_Supply_Temp
+CB Return Temp RMI308,Chilled Water Return Temperature,,,,308,,CB_Return_Temp_RMI
+CB Supply Temp RMI308,Chilled Water Discharge Temperature,,,,308,,CB_Supply_Temp_RMI
+CB Supply Temp,Chilled Water Discharge Temperature,,,,,,CB_Supply_Temp
+CB228 CHW Return Temp,Chilled Water Return Temperature,,,,228,,CB_CHW_Return_Temp
+CB228 CHW Supply Temp,Chilled Water Discharge Temperature,,,,228,,CB_CHW_Supply_Temp
+CHW Coil Entering Tempscc2UIP06,Chilled Water Discharge Temperature,,2,,,6,CHW_Coil_Entering_Tempscc_UIP
+CHW Main Return Temp T4,Chilled Water Return Temperature,,4,,,,CHW_Main_Return_Temp_T
+CHW Main Supply Temp T3,Chilled Water Discharge Temperature,,3,,,,CHW_Main_Supply_Temp_T
+CHW Return Mag Temp,Chilled Water Return Temperature,,,,,,CHW_Return_Mag_Temp
+CHW Supply Mag Temp,Chilled Water Discharge Temperature,,,,,,CHW_Supply_Mag_Temp
+CHW System Return Temppgm2UIP20,Chilled Water Return Temperature,,2,,,20,CHW_System_Return_Temppgm_UIP
+CHW System Supply Temppgm2UIP19,Chilled Water Discharge Temperature,,2,,,19,CHW_System_Supply_Temppgm_UIP
+CHWCoilLeavingAirTempscc2UIP01,Chilled Water Discharge Temperature,,2,,,1,CHW_Coil_Leaving_Air_Tempscc_UIP
+Chilled Water Return Temperature,Chilled Water Return Temperature,,,,,,Chilled_Water_Return_Temperature
+Chilled Water Supply Temperature,Chilled Water Discharge Temperature,,,,,,Chilled_Water_Supply_Temperature
+ChilledBeamCHWReturnTemppgm2UIP14,Chilled Water Return Temperature,,2,,,14,Chilled_Beam_CHW_Return_Temppgm_UIP
+ChilledBeamCHWSupplyTemppgm2UIP13,Chilled Water Discharge Temperature,,2,,,13,Chilled_Beam_CHW_Supply_Temppgm_UIP
+Cooling Coil DA Tempdac1UIP26,Cooling Coil Discharge Air Temperature Sensor,,1,,,26,Cooling_Coil_DA_Tempdac_UIP
+Cooling Coil DA Tempdac2UIP26,Cooling Coil Discharge Air Temperature Sensor,,2,,,26,Cooling_Coil_DA_Tempdac_UIP
+CoolingEnteringWaterTempdac2UIP16,Ice Tank Entering Water Temperature Sensor,,2,,,16,Cooling_Entering_Water_Tempdac_UIP
+CoolingEnterngWaterTempdac3UIP16,Ice Tank Entering Water Temperature Sensor,,3,,,16,Cooling_Enterng_Water_Tempdac_UIP
+CoolingLeavingWaterTempdac1UIP16,Ice Tank Leaving Water Temperature Sensor,,1,,,16,Cooling_Leaving_Water_Tempdac_UIP
+Discharge Air Tempdac1UIP06,Discharge Air Temperature Sensor,,1,,,6,Discharge_Air_Tempdac_UIP
+Discharge Air Tempdac2UIP06,Discharge Air Temperature Sensor,,2,,,6,Discharge_Air_Tempdac_UIP
+Discharge Air Tempdac3UIP06,Discharge Air Temperature Sensor,,3,,,6,Discharge_Air_Tempdac_UIP
+Discharge Air Temperature,Discharge Air Temperature Sensor,,,,,,Discharge_Air_Temperature
+Discharge Air Temperaturedac1,Discharge Air Temperature Sensor,,1,,,,Discharge_Air_Temperaturedac
+Discharge Air Temperaturedac2,Discharge Air Temperature Sensor,,2,,,,Discharge_Air_Temperaturedac
+Discharge Air Temperaturedac3,Discharge Air Temperature Sensor,,3,,,,Discharge_Air_Temperaturedac
+Discharge Air Temperaturedac4,Discharge Air Temperature Sensor,,4,,,,Discharge_Air_Temperaturedac
+Discharge Air Temperaturescc2,Discharge Air Temperature Sensor,,2,,,,Discharge_Air_Temperaturescc
+Discharge Air Temperaturewshp1,Discharge Air Temperature Sensor,,1,,,,Discharge_Air_Temperaturewshp
+Discharge Air Temperaturewshp2,Discharge Air Temperature Sensor,,2,,,,Discharge_Air_Temperaturewshp
+ER PHRH Water Temppgm2UIP03,Unknown,,2,,,3,ER_PHRH_Water_Temppgm_UIP
+EX Air Temp From ERWdac4UIP01,Unknown,,4,,,1,EX_Air_Temp_From_ERWdac_UIP
+Enter CDQ Regen Tempscc2UIP23,Unknown,,2,,,23,Enter_CDQ_Regen_Tempscc_UIP
+Enter CDQ Supply Tempscc2UIP25,Unknown,,2,,,25,Enter_CDQ_Supply_Tempscc_UIP
+Entering Water Temperaturewshp1,Ice Tank Entering Water Temperature Sensor,,1,,,,Entering_Water_Temperaturewshp
+Entering Water Temperaturewshp2,Ice Tank Entering Water Temperature Sensor,,2,,,,Entering_Water_Temperaturewshp
+Exhaust Air Tempdac4UIP22,Exhaust Air Temperature Sensor,,4,,,22,Exhaust_Air_Tempdac_UIP
+FCU CHW Return Temppgm2UIP16,Chilled Water Return Temperature,,2,,,16,FCU_CHW_Return_Temppgm_UIP
+FP VAV Hot Water Return Temp,Hot Water Return Temperature,,,,,,FP_VAV_Hot_Water_Return_Temp
+FP VAV Hot Water Supply Temp,Hot Water Supply Temperature,,,,,,FP_VAV_Hot_Water_Supply_Temp
+FPVAV Hot Water Return Temp,Hot Water Return Temperature,,,,,,FP_VAV_Hot_Water_Return_Temp
+FPVAV Hot Water Supply Temp,Hot Water Supply Temperature,,,,,,FP_VAV_Hot_Water_Supply_Temp
+Glycol Enterng WaterTempdac3UIP17,Unknown,,3,,,17,Glycol_Enterng_Water_Tempdac_UIP
+HW Coil Entering Tempscc2UIP36,Hot Water Coil Entering Temperature,,2,,,36,HW_Coil_Entering_Tempscc_UIP
+HW Main Return Temp T2,Hot Water Return Temperature,,2,,,,HW_Main_Return_Temp_T
+HW Main Supply Temp T1,Hot Water Supply Temperature,,1,,,,HW_Main_Supply_Temp_T
+HW Return Mag Temp1,Hot Water Return Temperature,,1,,,,HW_Return_Mag_Temp
+HW Return Temp RM I324,Hot Water Return Temperature,,,,324,,HW_Return_Temp_RM_I
+HW Return Temperature Local,Hot Water Return Temperature,,,,,,HW_Return_Temperature_Local
+HW Return Temppgm1UIP02,Hot Water Return Temperature,,1,,,2,HW_Return_Temppgm_UIP
+HW Supply Mag Temp1,Hot Water Supply Temperature,,1,,,,HW_Supply_Mag_Temp
+HW Supply Temp RM I324,Hot Water Supply Temperature,,,,,324,HW_Supply_Temp_RM_I
+HW Supply Temperature Local,Hot Water Supply Temperature,,,,,,HW_Supply_Temperature_Local
+HW Supply Temppgm1UIP01,Hot Water Supply Temperature,,1,,,1,HW_Supply_Temppgm_UIP
+HW VAV Return Temp,Hot Water Return Temperature,,,,,,HW_VAV_Return_Temp
+HW VAV Supply Temp,Hot Water Supply Temperature,,,,,,HW_VAV_Supply_Temp
+HWS Temp,Hot Water Supply Temperature,,,,,,HWS_Temp
+Hot Water ReturnTemperature,Hot Water Return Temperature,,,,,,Hot_Water_Return_Temperature
+Hot Water Supply Temperature,Hot Water Supply Temperature,,,,,,Hot_Water_Supply_Temperature
+Leave CDQ Regen Tempscc2UIP29,Unknown,,2,,,29,Leave_CDQ_Regen_Tempscc_UIP
+Leave CDQ Supply Tempscc2UIP27,Unknown,,2,,,27,Leave_CDQ_Supply_Tempscc_UIP
+Leaving Water Temperaturewshp1,Ice Tank Leaving Water Temperature Sensor,,1,,,,Leaving_Water_Temperaturewshp
+Leaving Water Temperaturewshp2,Ice Tank Leaving Water Temperature Sensor,,2,,,,Leaving_Water_Temperaturewshp
+Medium Temp HW Returnpgm1UIP24,Hot Water Return Temperature,,1,,,24,Medium_Temp_HW_Returnpgm_UIP
+Medium Temp HW Supplypgm1UIP23,Hot Water Supply Temperature,,1,,,23,Medium_Temp_HW_Supplypgm_UIP
+Mixed Air Tempdac1UIP03,Mixed Air Temperature Sensor,,1,,,3,Mixed_Air_Tempdac_UIP
+Mixed Air Tempdac2UIP03,Mixed Air Temperature Sensor,,2,,,3,Mixed_Air_Tempdac_UIP
+Mixed Air Tempdac3UIP03,Mixed Air Temperature Sensor,,3,,,3,Mixed_Air_Tempdac_UIP
+Mixed Air Temperature Localscc2,Mixed Air Temperature Sensor,,2,,,,Mixed_Air_Temperature_Localscc
+Mixed Air Tempscc2UIP03,Mixed Air Temperature Sensor,,2,,,3,Mixed_Air_Tempscc_UIP
+PreheatCoilLeave AirTempscc2UIP02,PreHeat Coil Leaving Air Temperature Sensor,,2,,,2,Preheat_Coil_Leave_Air_Tempscc_UIP
+PreheatLeavingWaterTempdac3UIP15,PreHeat Coil Leaving Water Temperature Sensor,,3,,,15,Preheat_Leaving_Water_Tempdac_UIP
+Pump CHW Supply Temppgm2UIP15,Chilled Water Discharge Temperature,,2,,,15,Pump_CHW_Supply_Temppgm_UIP
+Return Air Tempdac1UIP28,Return Air Temperature Sensor,,1,,,28,Return_Air_Tempdac_UIP
+Return Air Tempdac2UIP28,Return Air Temperature Sensor,,2,,,28,Return_Air_Tempdac_UIP
+Return Air Tempdac3UIP22,Return Air Temperature Sensor,,3,,,22,Return_Air_Tempdac_UIP
+Return Air Tempscc2UIP15,Return Air Temperature Sensor,,2,,,15,Return_Air_Tempscc_UIP
+Temp 2 BAS,Unknown,,2,,,,Temp_BAS
+Temp 3 BAS,Unknown,,3,,,,Temp_BAS
+VAV 211 HW Return Temp,Hot Water Return Temperature,,,,,211,VAV_HW_Return_Temp
+VAV 211 HW Supply Temp,Hot Water Supply Temperature,,,,,211,VAV_HW_Supply_Temp
+VAV 26 HW Return Temp,Hot Water Return Temperature,,,,,26,VAV_HW_Return_Temp
+VAV 26 HW Supply Temp,Hot Water Supply Temperature,,,,,26,VAV_HW_Supply_Temp
+VAV HW Return Temp,Hot Water Return Temperature,,,,,,VAV_HW_Return_Temp
+VAV HW Supply Temp,Hot Water Supply Temperature,,,,,,VAV_HW_Supply_Temp
+WTS1 Chiller CHWS Temp,Chilled Water Discharge Temperature,,1,,,,WTS_Chiller_CHWS_Temp
+WTS1 Chiller CHWS Temppgm3UIP07,Chilled Water Discharge Temperature,,1,,,7,WTS_Chiller_CHWS_Temppgm_UIP
+WTS2 Ice Tank Entering Temp,Ice Tank Entering Water Temperature Sensor,,2,,,,WTS_Ice_Tank_Entering_Temp
+WTS3 Ice Tank Leaving Temp,Ice Tank Leaving Water Temperature Sensor,,3,,,,WTS_Ice_Tank_Leaving_Temp
+WTS4 AHU3 Entering GLY Temp,Unknown,3,4,,,,WTS_AHU_Entering_GLY_Temp
