@@ -1,0 +1,3172 @@
+SODA4R731__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:731:v,temp setpoint off:ASO:c
+SODA2S14___SMK
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,smoke alarm:SMK:c
+SODA1S11___MAT
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,mixed air temp:MAT:c
+SODA3R723__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:723:v,temp setpoint off:ASO:c
+SODA3R327__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:327:v,pid loop gain:AGN:c
+SODH1P02___FLT
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:02:v,fault sensor:FLT:c
+SODA3R798__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:798:v,room temp:ART:c
+SODA1R405B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405B:v,room temp setpoint:ARS:c
+SODA3R683_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:683:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R405B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405B:v,room temp:ART:c
+SODA3R311__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:311:v,pid loop gain:AGN:c
+SODH1______L_L
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,lead/lag sensor:L_L:c
+SODC1SP03__FLT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,fault sensor:FLT:c
+SODA4R645_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:645:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R288__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:288:v,pid loop gain:AGN:c
+SODA3R419__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:419:v,pid loop gain:AGN:c
+SODA3C611__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:611:v,temp setpoint off:ASO:c
+SODA1R562A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:562A:v,temp setpoint off:ASO:c
+SODA4S1832_STA
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v
+SODA1R534__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:534:v,room temp setpoint:ARS:c
+SODA1R534__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:534:v,room temp:ART:c
+SODA_CH1_CHWRT
+site:SODA:c,chiller:CH:c,chiller-id:1:v,chilled water return temp:CHWRT:c
+SODA3R465_4ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_4:v,room temp setpoint:ARS:c
+SODA2____EVENT
+site:SOD:c,ahu:A:c,ahu-id:2:v,event sensor:EVENT:c
+SODA3R329__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:329:v,room temp setpoint:ARS:c
+SODA3R465_4ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_4:v,room temp:ART:c
+SODA4R367__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:367:v,temp setpoint off:ASO:c
+SODA1R465_6VP2
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465_6:v,discharge air pressure sensor:VP:c
+SODA1R465_6VP1
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465_6:v,discharge air pressure sensor:VP:c
+SODA3R579__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:579:v,room temp:ART:c
+SODA1R516__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:516:v,discharge air pressure sensor:VAV:c
+SODA4R365__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:365:v,temp setpoint off:ASO:c
+SODA3R579__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:579:v,room temp setpoint:ARS:c
+SODA3R719__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:719:v,pid loop gain:AGN:c
+SODA1R416__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:416:v,temp setpoint off:ASO:c
+SODA3R798__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:798:v,room temp setpoint:ARS:c
+SODA1R330A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330A:v,pid loop gain:AGN:c
+SODA1R184__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:184:v,pid loop gain:AGN:c
+SODA1R438__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:438:v,pid loop gain:AGN:c
+SODA4R573__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:573:v,room temp setpoint:ARS:c
+SODA3E17___S_S
+site:SOD:c,ahu:A:c,ahu-id:3:v,exhaust fan:E:c,exhaust fan-id:17:v,start stop sensor:S_S:c
+SODA4R573__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:573:v,room temp:ART:c
+SODA1R652__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:652:v,discharge air pressure sensor:VAV:c
+SODA1R288__TMR
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:288:v,timer variable:TMR:c
+SODC1C2____TMR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,timer variable:TMR:c
+SODCP1_____ALM
+site:SOD:c,condensor pump:CP:c,condensor pump-id:1:v,alarm variable:ALM:c
+SODC1S_____RWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,return water temp:RWT:c
+SODA1S11___SAS
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,supply air temp setpoint:SAS:c
+SODA1S11___SAT
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,supply air temp:SAT:c
+SODA4S18___CVP
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,chilled water valve pressure:CVP:c
+SODC1S_____TON
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,cooling capacity:TON:c
+SODA4R543__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:543:v,temp setpoint off:ASO:c
+SODA2__LOW_RAT
+site:SOD:c,ahu:A:c,ahu-id:2:v,low return air temp alarm:LOW_RAT:c
+SODA1R784__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:784:v,pid loop gain:AGN:c
+SODC1SP04__FLT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,fault sensor:FLT:c
+SODA4R779__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:779:v,room temp:ART:c
+SODA4R779__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:779:v,room temp setpoint:ARS:c
+SODA3R331_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:331:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R678__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:678:v,temp setpoint off:ASO:c
+SODA4R465C_ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465C:v,temp setpoint off:ASO:c
+SODC1SP04__STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,status sensor:STA:c
+SODA2S14___FLT
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,fault sensor:FLT:c
+SODA1R430__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430:v,room temp setpoint:ARS:c
+SODC1P_2ND_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,pump:P:c,start stop sensor:S_S:c
+SODA1R430__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430:v,room temp:ART:c
+SODA3R385_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:385:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R635__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:635:v,temp setpoint off:ASO:c
+SODA3C511__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:511:v,room temp:ART:c
+SODA4E19DP_STA
+site:SOD:c,ahu:A:c,ahu-id:4:v,exhaust fan:E:c,exhaust fan-id:19:v,differential pressure status sensor:DP_STA:c
+SODA3R629_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:629:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R566__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:566:v,pid loop gain:AGN:c
+SODA3____CURTL
+site:SOD:c,ahu:A:c,ahu-id:3:v,curtailment override variable:CURTL:c
+SODC3P10___FLT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,fault sensor:FLT:c
+SODC1C2P06_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,pump:P:c,pump-id:06:v,start stop sensor:S_S:c
+SODA1R316__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:316:v,discharge air pressure sensor:VAV:c
+SODC1S_____DPR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,differential pressure reading:DPR:c
+SODC1S_____DPS
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,differential pressure setpoint:DPS:c
+SODA1ALL_33ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room temp setpoint:ARS:c
+SODA4R535__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:535:v,room temp setpoint:ARS:c
+SODA4R535__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:535:v,room temp:ART:c
+SODA1C300B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300B:v,discharge air pressure sensor:VAV:c
+SODA1R376A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:376A:v,temp setpoint off:ASO:c
+SODA1R582__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:582:v,temp setpoint off:ASO:c
+SODA4R543__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:543:v,room temp setpoint:ARS:c
+SODA1R277__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:277:v,room temp:ART:c
+SODA1R271__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:271:v,temp setpoint off:ASO:c
+SOD34BLD_RESET
+site:SOD:c,building wide sensor:BLD:c,reset variable:RESET:c
+SODA1R277__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:277:v,room temp setpoint:ARS:c
+SODA3R385__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:385:v,pid loop gain:AGN:c
+SODA1R280__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:280:v,discharge air pressure sensor:VAV:c
+SODA4R349__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:349:v,pid loop gain:AGN:c
+SODA1R684__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:684:v,discharge air pressure sensor:VAV:c
+SODA3R721_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:721:v,vav reheat discharge air pressure sensor:RVAV:c
+SODS03AR179ART
+site:SOD:c,supply fan:S:c,supply fan-id:03A:v,room:R:c,room-id:179:v,room temp:ART:c
+SODS03AR179ARS
+site:SOD:c,supply fan:S:c,supply fan-id:03A:v,room:R:c,room-id:179:v,room temp setpoint:ARS:c
+SODA4R533_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:533:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R687__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:687:v,room temp:ART:c
+SODA1S11_I__VR
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,pid loop I variable:I__VR:c
+SODA3R687__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:687:v,room temp setpoint:ARS:c
+SOD31MAX_X_CVP
+site:SOD:c,chilled water valve pressure:CVP:c
+SOD__BLD_HPSTM
+site:SOD:c,building wide sensor:BLD:c,hpsteam sensor:HPSTM:c
+SODA1R420__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420:v,temp setpoint off:ASO:c
+SODC3A33___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:33:v,status sensor:STA:c
+SODA3C711__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:711:v,room temp setpoint:ARS:c
+SODA4R671__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:671:v,temp setpoint off:ASO:c
+SODA3C711__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:711:v,room temp:ART:c
+SODA4S18____VR
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,internal building variable:VR:c
+SODA1S11___CFM
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,air volume:CFM:c
+SODA1R444__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:444:v,pid loop gain:AGN:c
+SODA4R337_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R323__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:323:v,room temp:ART:c
+SODA3R323__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:323:v,room temp setpoint:ARS:c
+SODA4R349_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:349:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R625__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:625:v,pid loop gain:AGN:c
+SODC1C2____VLV
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,valve position:VLV:c
+SODA1R465_6AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465_6:v,pid loop gain:AGN:c
+SODA1R442__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:442:v,room temp setpoint:ARS:c
+SODA1R465B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465B:v,pid loop gain:AGN:c
+SODA1R434__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:434:v,pid loop gain:AGN:c
+SODA4R365__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:365:v,room temp:ART:c
+SODA4R447__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:447:v,temp setpoint off:ASO:c
+SODA4R365__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:365:v,room temp setpoint:ARS:c
+SODA1R410A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410A:v,pid loop gain:AGN:c
+SODA4R341__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:341:v,pid loop gain:AGN:c
+SODA1R542__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:542:v,pid loop gain:AGN:c
+SODA3R723__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:723:v,room temp setpoint:ARS:c
+SOD31BLD_2_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA3R723__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:723:v,room temp:ART:c
+SODA4R465_3ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465_3:v,temp setpoint off:ASO:c
+SODA4R441__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:441:v,pid loop gain:AGN:c
+SODA3S1632_STA
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v
+SODA4R731__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:731:v,room temp setpoint:ARS:c
+SODH1X_____RWT
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,return water temp:RWT:c
+SODA3R695__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:695:v,pid loop gain:AGN:c
+SODA4R731__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:731:v,room temp:ART:c
+SODA3R583__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:583:v,pid loop gain:AGN:c
+SODE01B____S_S
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:01B:v,start stop sensor:S_S:c
+SODA3R685__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:685:v,pid loop gain:AGN:c
+SODA3R621_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:621:v,vav reheat discharge air pressure sensor:RVAV:c
+SOD34BLD_2_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA3R465_7VP2
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_7:v,discharge air pressure sensor:VP:c
+SODA3R465_7VP1
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_7:v,discharge air pressure sensor:VP:c
+SODC3A40___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:40:v,status sensor:STA:c
+SODC2______L_L
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,lead/lag sensor:L_L:c
+SODA1R442__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:442:v,temp setpoint off:ASO:c
+SODA1R438__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:438:v,room temp setpoint:ARS:c
+SODA4R675__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:675:v,room temp setpoint:ARS:c
+SODA4R675__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:675:v,room temp:ART:c
+SODA1R438__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:438:v,room temp:ART:c
+SODA1R498__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:498:v,room temp:ART:c
+SODA3R725_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:725:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R498__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:498:v,room temp setpoint:ARS:c
+SODA1R430__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430:v,temp setpoint off:ASO:c
+SODA1R284__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:284:v,temp setpoint off:ASO:c
+SODA3C711_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:711:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R465C_ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465C:v,room temp:ART:c
+SODA4R465C_ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465C:v,room temp setpoint:ARS:c
+SOD32NET___STA
+site:SOD:c,status sensor:STA:c
+SODA3E17DP_STA
+site:SOD:c,ahu:A:c,ahu-id:3:v,exhaust fan:E:c,exhaust fan-id:17:v,differential pressure status sensor:DP_STA:c
+SODC3A38___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:38:v,alarm variable:ALM:c
+SODC1SP04_FAIL
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,failure flag:FAIL:c
+SODC3P09DP_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,differential pressure status sensor:DP_STA:c
+SODA3R329__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:329:v,room temp:ART:c
+SODA3R579__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:579:v,temp setpoint off:ASO:c
+SODA4R345__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:345:v,room temp:ART:c
+SODA3R785_N_TM
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,night start time sensor:N_TM:c
+SODA4R345__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:345:v,room temp setpoint:ARS:c
+SODA3R798__VAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:798:v,discharge air pressure sensor:VAV:c
+SODA4R567__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:567:v,room temp setpoint:ARS:c
+SODA4R567__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:567:v,room temp:ART:c
+SODA3R795__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:795:v,pid loop gain:AGN:c
+SODA3R517_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:517:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R775__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:775:v,pid loop gain:AGN:c
+SODA1R352__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:352:v,discharge air pressure sensor:VAV:c
+SODA1R190A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190A:v,temp setpoint off:ASO:c
+SODA1E13_F_CFM
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:13:v,filtered air volume:F_CFM:c
+SODA1R271__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:271:v,room temp setpoint:ARS:c
+SODA1R271__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:271:v,room temp:ART:c
+SODFC01B___S_S
+site:SOD:c,fan control unit:FC:c,fan control unit-id:01B:v,start stop sensor:S_S:c
+SODA1R376A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:376A:v,room temp:ART:c
+SODA1R376A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:376A:v,room temp setpoint:ARS:c
+SODA4R551__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:551:v,pid loop gain:AGN:c
+SODH1P01___SPR
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:01:v,fan speed reset:SPR:c
+SODC1C3_4_CMP3
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3_4:v,compressor:CMP:c,compressor-id:3:v
+SODC1C3_4_CMP1
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3:v,compressor:CMP:c,compressor-id:1:v
+SODC1C3_4_CMP4
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3:v,compressor:CMP:c,compressor-id:4:v
+SODA1R342__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:342:v,room temp:ART:c
+SODA1R342__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:342:v,room temp setpoint:ARS:c
+SODA1R320__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:320:v,discharge air pressure sensor:VAV:c
+SODA4R445__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:445:v,pid loop gain:AGN:c
+SODA4R465C_RVP
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465C:v,reheat valve position:RVP:c
+SODA1R283E_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:283E:v,discharge air pressure sensor:VAV:c
+SODA1R420__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420:v,room temp:ART:c
+SODA1R277__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:277:v,pid loop gain:AGN:c
+SODA3R315__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:315:v,pid loop gain:AGN:c
+SODA1ALL_32ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room temp setpoint:ARS:c
+SODA4R580_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:580:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4S18SASA_M
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,supply air setpoint flag:SASA_M:c
+SODA1R682__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:682:v,temp setpoint off:ASO:c
+SODA1R784__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:784:v,temp setpoint off:ASO:c
+SODA1R582__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:582:v,discharge air pressure sensor:VAV:c
+SODA3R321__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:321:v,temp setpoint off:ASO:c
+SODA1R784__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:784:v,room temp:ART:c
+SODA1S11____VR
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,internal building variable:VR:c
+SOD34MAX___CVP
+site:SOD:c,chilled water valve pressure:CVP:c
+SODA3R383__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:383:v,room temp setpoint:ARS:c
+SODA1F2_VAV_MX
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:2:v,max discharge air pressure sensor:VAV_MX:c
+SODA3R413__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:413:v,pid loop gain:AGN:c
+SODA1F2_VAV_MN
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:2:v,min discharge air pressure sensor:VAV_MN:c
+SODA3R315_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:315:v,vav reheat discharge air pressure sensor:RVAV:c
+SOD33BLD_RESET
+site:SOD:c,building wide sensor:BLD:c,reset variable:RESET:c
+SODA1R280__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:280:v,pid loop gain:AGN:c
+SODA1R330B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330B:v,pid loop gain:AGN:c
+SODA3R323__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:323:v,pid loop gain:AGN:c
+SOD34BLD_1_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA4R465_3ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465_3:v,room temp:ART:c
+SODA4R465_3ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465_3:v,room temp setpoint:ARS:c
+SODA5S20___S_S
+site:SOD:c,ahu:A:c,ahu-id:5:v,supply fan:S:c,supply fan-id:20:v,start stop sensor:S_S:c
+SODA3R689__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:689:v,pid loop gain:AGN:c
+SOD31NET___STA
+site:SOD:c,status sensor:STA:c
+SODA1R342__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:342:v,discharge air pressure sensor:VAV:c
+SODC3P10DP_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,differential pressure status sensor:DP_STA:c
+SODA3R698__VAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:698:v,discharge air pressure sensor:VAV:c
+SODA1R290__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:290:v,room temp setpoint:ARS:c
+SODA1R290__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:290:v,room temp:ART:c
+SODA1R444__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:444:v,discharge air pressure sensor:VAV:c
+SODA4R343__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:343:v,pid loop gain:AGN:c
+SODA1R434_RVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:434:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R445_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:445:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1____OCCPY
+site:SOD:c,ahu:A:c,ahu-id:1:v,occupancy sensor:OCCPY:c
+SODA1R514__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:514:v,temp setpoint off:ASO:c
+SODA3R687__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:687:v,temp setpoint off:ASO:c
+SODA1S1134_STA
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v
+SODA1R340__TMR
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:340:v,timer variable:TMR:c
+SODA3R685__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:685:v,room temp setpoint:ARS:c
+SODA1R190B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190B:v,room temp:ART:c
+SODA1R190B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190B:v,room temp setpoint:ARS:c
+SODA3R685__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:685:v,room temp:ART:c
+SODA1R364__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:364:v,discharge air pressure sensor:VAV:c
+SODA4R345__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:345:v,temp setpoint off:ASO:c
+SODA3R517__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:517:v,pid loop gain:AGN:c
+SODA4S18___CFM
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,air volume:CFM:c
+SODA1C700D_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700D:v,room temp:ART:c
+SODA1R184__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:184:v,temp setpoint off:ASO:c
+SODA3R623__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:623:v,pid loop gain:AGN:c
+SODC1P__F_FLOW
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1P:v,filtered flow sensor:F_FLOW:c
+SODA1R398__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:398:v,room temp setpoint:ARS:c
+SODA4R447__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:447:v,room temp setpoint:ARS:c
+SODC2______A_M
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,alarm variable:A_M:c
+SODA4R447__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:447:v,room temp:ART:c
+SODA3R319__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:319:v,room temp:ART:c
+SODA4R741_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:741:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA2S14___HVP
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,hot water valve position:HVP:c
+SODA3R319__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:319:v,room temp setpoint:ARS:c
+SODA4R445__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:445:v,temp setpoint off:ASO:c
+SODA1R342__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:342:v,temp setpoint off:ASO:c
+SODA1R726__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:726:v,discharge air pressure sensor:VAV:c
+SOD32NET___TMR
+site:SOD:c,timer variable:TMR:c
+SODA1R410B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410B:v,room temp:ART:c
+SODA1R410B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410B:v,room temp setpoint:ARS:c
+SODA1S11_WFSTP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,west filtered static pressure sensor:WFSTP:c
+SODC2______SWS
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,supply water setpoint:SWS:c
+SODC2______SWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,supply water temp:SWT:c
+SODA1R442__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:442:v,room temp:ART:c
+SODC1C2_____KW
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,power meter:KW:c
+SODA1R438__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:438:v,temp setpoint off:ASO:c
+SODA4R675__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:675:v,temp setpoint off:ASO:c
+SODA1R320__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:320:v,room temp setpoint:ARS:c
+SODA1R320__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:320:v,room temp:ART:c
+SODA4R580__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:580:v,pid loop gain:AGN:c
+SODC2T2____VLV
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:2:v,valve position:VLV:c
+SODA3R529__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:529:v,temp setpoint off:ASO:c
+SODA1R734__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:734:v,temp setpoint off:ASO:c
+SODA1R380__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:380:v,pid loop gain:AGN:c
+SODA1E13___S_S
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:13:v,start stop sensor:S_S:c
+SODA1R284__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:284:v,room temp setpoint:ARS:c
+SODA4R531__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:531:v,temp setpoint off:ASO:c
+SODA1R284__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:284:v,room temp:ART:c
+SODA4R367__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:367:v,pid loop gain:AGN:c
+SODA1R498__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:498:v,temp setpoint off:ASO:c
+SODA3R789__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:789:v,temp setpoint off:ASO:c
+SODA1S11___CVP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,chilled water valve pressure:CVP:c
+SODA3R321__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:321:v,room temp:ART:c
+SODA3R321__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:321:v,room temp setpoint:ARS:c
+SODH1P01DP_STA
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:01:v,differential pressure status sensor:DP_STA:c
+SODA3R621__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:621:v,room temp:ART:c
+SODA3R621__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:621:v,room temp setpoint:ARS:c
+SODA4R643__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:643:v,pid loop gain:AGN:c
+SODA4R333_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:333:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R795__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:795:v,room temp:ART:c
+SODA1R530__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:530:v,discharge air pressure sensor:VAV:c
+SODA3R795__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:795:v,room temp setpoint:ARS:c
+SODA4S16_P__VR
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:16:v,pid loop P variable:P__VR:c
+SODA3R411_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:411:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R606__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:606:v,discharge air pressure sensor:VAV:c
+SODA4R567__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:567:v,temp setpoint off:ASO:c
+SODA4R739__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:739:v,temp setpoint off:ASO:c
+SODA3ALL_32ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room temp setpoint:ARS:c
+SODA1R776__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:776:v,pid loop gain:AGN:c
+SODA1R420A_TMR
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420A:v,timer variable:TMR:c
+SODA1R430__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430:v,discharge air pressure sensor:VAV:c
+SODA1R678__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:678:v,discharge air pressure sensor:VAV:c
+SODA1R190A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190A:v,room temp:ART:c
+SODS01R183_ARS
+site:SOD:c,supply fan:S:c,supply fan-id:01:v,room:R:c,room-id:183:v,room temp setpoint:ARS:c
+SODS01R183_ART
+site:SOD:c,supply fan:S:c,supply fan-id:01:v,room:R:c,room-id:183:v,room temp:ART:c
+SODA1R190A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190A:v,room temp setpoint:ARS:c
+SODA4R645__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:645:v,room temp setpoint:ARS:c
+SODC3P10___SPD
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,fan speed:SPD:c
+SODC1C3_4__SWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3_4:v,supply water temp:SWT:c
+SODA1__LOW_RAT
+site:SOD:c,ahu:A:c,ahu-id:1:v,low return air temp alarm:LOW_RAT:c
+SODA1R290__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:290:v,temp setpoint off:ASO:c
+SODC3P10___SPR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,fan speed reset:SPR:c
+SODA1R420__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420:v,pid loop gain:AGN:c
+SODA1S11SASA_M
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,supply air setpoint flag:SASA_M:c
+SODA1R514__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:514:v,room temp:ART:c
+SODA1R514__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:514:v,room temp setpoint:ARS:c
+SODC3A31___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:31:v,status sensor:STA:c
+SODA4R637__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:637:v,room temp setpoint:ARS:c
+SODA3R385__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:385:v,temp setpoint off:ASO:c
+SODA4R637__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:637:v,room temp:ART:c
+SODA3R695_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:695:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R689_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:689:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R682__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:682:v,room temp setpoint:ARS:c
+SODA1R682__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:682:v,room temp:ART:c
+SODC3P_____A_M
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,alarm variable:A_M:c
+SODA2______S_S
+site:SOD:c,ahu:A:c,ahu-id:2:v,start stop sensor:S_S:c
+SODA3R727__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:727:v,temp setpoint off:ASO:c
+SODA4R379__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:379:v,pid loop gain:AGN:c
+SODA1F3_VAV_AV
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:3:v,avg discharge air pressure sensor:VAV_AV:c
+SODA3R381__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:381:v,pid loop gain:AGN:c
+SODA3R319__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:319:v,temp setpoint off:ASO:c
+SODC1SP____A_M
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,alarm variable:A_M:c
+SODA5S20___CVP
+site:SOD:c,ahu:A:c,ahu-id:5:v,supply fan:S:c,supply fan-id:20:v,chilled water valve pressure:CVP:c
+SOD31NET___TMR
+site:SOD:c,timer variable:TMR:c
+SODA3R783_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:783:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R516__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:516:v,temp setpoint off:ASO:c
+SODA3C611_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:611:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R781__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:781:v,pid loop gain:AGN:c
+SODA1R444__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:444:v,temp setpoint off:ASO:c
+SOD__BLD_1_KWD
+site:SOD:c,building wide sensor:BLD:c,power demand:KWD:c
+SOD__BLD_1_KWH
+site:SOD:c,building wide sensor:BLD:c,power meter:KWH:c
+SODA3R513_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:513:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R665__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:665:v,temp setpoint off:ASO:c
+SODA_CHWS__ALM
+site:SOD:c,alarm variable:ALM:c
+SODA3ALL_33NSB
+site:SOD:c,ahu:A:c,ahu-id:3:v
+SODA4R567_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:567:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC3L32___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,status sensor:STA:c
+SODH1P02___SPR
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:02:v,fan speed reset:SPR:c
+SODA1R734__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:734:v,room temp setpoint:ARS:c
+SODA1R283E_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:283E:v,pid loop gain:AGN:c
+SODA3R529__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:529:v,room temp setpoint:ARS:c
+SODA3R529__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:529:v,room temp:ART:c
+SODA3R729_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:729:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4ALL_32ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room temp setpoint:ARS:c
+SODA1R682__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:682:v,discharge air pressure sensor:VAV:c
+SODC3A33___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:33:v,alarm variable:ALM:c
+SODA1R352__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:352:v,pid loop gain:AGN:c
+SODA1R524__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:524:v,room temp:ART:c
+SODA1R524__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:524:v,room temp setpoint:ARS:c
+SODA4R531__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:531:v,room temp:ART:c
+SODA4C751_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:751:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R383_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:383:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R531__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:531:v,room temp setpoint:ARS:c
+SODA1ALL_31ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room temp setpoint:ARS:c
+SODA1R190B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190B:v,temp setpoint off:ASO:c
+SODA3R325__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:325:v,temp setpoint off:ASO:c
+SODA3R685__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:685:v,temp setpoint off:ASO:c
+SODA4R339__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:339:v,temp setpoint off:ASO:c
+SODA1E13DP_STA
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:13:v,differential pressure status sensor:DP_STA:c
+SODA3R313__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:313:v,pid loop gain:AGN:c
+SODA4E19___S_S
+site:SOD:c,ahu:A:c,ahu-id:4:v,exhaust fan:E:c,exhaust fan-id:19:v,start stop sensor:S_S:c
+SODA1C700D_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700D:v,temp setpoint off:ASO:c
+SODA4R373__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:373:v,pid loop gain:AGN:c
+SODA4R577_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:577:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R352__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:352:v,room temp setpoint:ARS:c
+SODA3R623__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:623:v,room temp setpoint:ARS:c
+SODA1ALL_31NSB
+site:SOD:c,ahu:A:c,ahu-id:1:v
+SODA3R623__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:623:v,room temp:ART:c
+SODA1R500A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:500A:v,discharge air pressure sensor:VAV:c
+SODC1SP____L_L
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,lead/lag sensor:L_L:c
+SODA3R527_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:527:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R739__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:739:v,room temp:ART:c
+SOD__BLD_PRALM
+site:SOD:c,building wide sensor:BLD:c,alarm variable:ALM:c
+SODA1S11_P__VR
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,pid loop P variable:P__VR:c
+SODA2S14___MAT
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,mixed air temp:MAT:c
+SODA2S14___DMP
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,mixed air damper:DMP:c
+SODA3R627_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:627:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3C511__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:511:v,temp setpoint off:ASO:c
+SODC2T1__H_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:1:v,start stop sensor:S_S:c
+SODA1S11___STP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,static pressure sensor:STP:c
+SODA3S16___STS
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,static pressure setpoint:STS:c
+SODA1R676__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:676:v,discharge air pressure sensor:VAV:c
+SODC3P09___FLT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,fault sensor:FLT:c
+SODA3R417_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:417:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R287__ALM
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:287:v,alarm variable:ALM:c
+SODA1R405A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405A:v,discharge air pressure sensor:VAV:c
+SODA4R445__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:445:v,room temp setpoint:ARS:c
+SOD__BLD_STMON
+site:SOD:c,building wide sensor:BLD:c,steam on/off indicator:STMON:c
+SODA4R445__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:445:v,room temp:ART:c
+SODA1R442__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:442:v,pid loop gain:AGN:c
+SODA3R595_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:595:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R280__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:280:v,temp setpoint off:ASO:c
+SODA4R771_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:771:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C180__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:180:v,pid loop gain:AGN:c
+SODA3R385__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:385:v,room temp setpoint:ARS:c
+SODA3R385__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:385:v,room temp:ART:c
+SODA4R637__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:637:v,temp setpoint off:ASO:c
+SODA4R375__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:375:v,temp setpoint off:ASO:c
+SODA3R789__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:789:v,pid loop gain:AGN:c
+SODA3R5831RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:5831:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R333__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:333:v,temp setpoint off:ASO:c
+SODA3R321__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:321:v,pid loop gain:AGN:c
+SODC3P10__FAIL
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,failure flag:FAIL:c
+SODA3R727__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:727:v,room temp:ART:c
+SODA4ALL_33NSB
+site:SOD:c,ahu:A:c,ahu-id:4:v
+SODA3R727__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:727:v,room temp setpoint:ARS:c
+SODA1R187A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187A:v,temp setpoint off:ASO:c
+SODA4C300TRVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:300T:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R337A_AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337A:v,pid loop gain:AGN:c
+SODA1R410B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410B:v,pid loop gain:AGN:c
+SODA4R449_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:449:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C400B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400B:v,room temp:ART:c
+SODA3R795__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:795:v,temp setpoint off:ASO:c
+SODA4R665__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:665:v,room temp setpoint:ARS:c
+SODA3R319_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:319:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R665__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:665:v,room temp:ART:c
+SODA3R785__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:785:v,room temp:ART:c
+SODA2S14___SAS
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,supply air temp setpoint:SAS:c
+SODA2S14___SAT
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,supply air temp:SAT:c
+SODA3R785__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:785:v,room temp setpoint:ARS:c
+SODA1R444__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:444:v,room temp setpoint:ARS:c
+SODA4R645__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:645:v,temp setpoint off:ASO:c
+SODA1R444__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:444:v,room temp:ART:c
+SODA4R337__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337:v,pid loop gain:AGN:c
+SODA4R681B_ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:681B:v,room temp setpoint:ARS:c
+SODA4R681B_ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:681B:v,room temp:ART:c
+SOD34NET___TMR
+site:SOD:c,timer variable:TMR:c
+SODA4R677__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:677:v,room temp:ART:c
+SODA3____EVENT
+site:SOD:c,ahu:A:c,ahu-id:3:v,event sensor:EVENT:c
+SODA3C411__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:411:v,pid loop gain:AGN:c
+SODA4R537__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:537:v,pid loop gain:AGN:c
+SODA1______S_S
+site:SOD:c,ahu:A:c,ahu-id:1:v,start stop sensor:S_S:c
+SODA4R731_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:731:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1S11___DMP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,mixed air damper:DMP:c
+SODC3A36___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:36:v,status sensor:STA:c
+SODA3R787__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:787:v,temp setpoint off:ASO:c
+SODA4R449__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:449:v,temp setpoint off:ASO:c
+SODA3R783__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:783:v,room temp:ART:c
+SODA3R393__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:393:v,room temp setpoint:ARS:c
+SODA1R364__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:364:v,pid loop gain:AGN:c
+SODC3P09__FAIL
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,failure flag:FAIL:c
+SODA3R393__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:393:v,room temp:ART:c
+SODA3R615_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:615:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA2____CURTL
+site:SOD:c,ahu:A:c,ahu-id:2:v,curtailment override variable:CURTL:c
+SODA4R533__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:533:v,temp setpoint off:ASO:c
+SODC1C3___LOAD
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3:v,max load sensor:LOAD:c
+SODA4R339__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:339:v,room temp setpoint:ARS:c
+SODA3R325__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:325:v,room temp setpoint:ARS:c
+SODA3R325__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:325:v,room temp:ART:c
+SODA3R623__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:623:v,temp setpoint off:ASO:c
+SODC1P_____A_M
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,pump:P:c,alarm variable:A_M:c
+SODA1R552__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:552:v,temp setpoint off:ASO:c
+SODA3R465K_ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465K:v,room temp:ART:c
+SODA3R313_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:313:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R777__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:777:v,pid loop gain:AGN:c
+SODA4R771__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:771:v,pid loop gain:AGN:c
+SODA1R398__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:398:v,discharge air pressure sensor:VAV:c
+SODA1R510__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:510:v,discharge air pressure sensor:VAV:c
+SODC1C2____S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,start stop sensor:S_S:c
+SODA1R516__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:516:v,room temp:ART:c
+SODA3R523__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:523:v,temp setpoint off:ASO:c
+SODA1R516__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:516:v,room temp setpoint:ARS:c
+SODA1R275__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:275:v,discharge air pressure sensor:VAV:c
+SODA4R752__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:752:v,room temp:ART:c
+SODA_CH2_CHWRT
+site:SODA:c,chiller:CH:c,chiller-id:2:v,chilled water return temp:CHWRT:c
+SODC3A37___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:37:v,status sensor:STA:c
+SODA4R752__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:752:v,room temp setpoint:ARS:c
+SODC1C2____FLT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,fault sensor:FLT:c
+SODA3_SMK_ALM1
+site:SOD:c,ahu:A:c,ahu-id:3:v,smoke alarm:SMK_ALM:c
+SODA3_SMK_ALM3
+site:SOD:c,ahu:A:c,ahu-id:3:v,smoke alarm:SMK_ALM:c
+SODA3_SMK_ALM2
+site:SOD:c,ahu:A:c,ahu-id:3:v,smoke alarm:SMK_ALM:c
+SODA5R800A_ARS
+site:SOD:c,ahu:A:c,ahu-id:5:v,room:R:c,room-id:800A:v,room temp setpoint:ARS:c
+SODC3A41___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:41:v,alarm variable:ALM:c
+SODA4R580__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:580:v,temp setpoint off:ASO:c
+SODA5R800A_ART
+site:SOD:c,ahu:A:c,ahu-id:5:v,room:R:c,room-id:800A:v,room temp:ART:c
+SODA1R734__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:734:v,pid loop gain:AGN:c
+SODA1R598__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:598:v,temp setpoint off:ASO:c
+SODA3R721__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:721:v,pid loop gain:AGN:c
+SODA4R365__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:365:v,pid loop gain:AGN:c
+SODA4S1831_STA
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v
+SODA4R633__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:633:v,room temp setpoint:ARS:c
+SODC1SP04__SPR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,fan speed reset:SPR:c
+SODS02R181_ARS
+site:SOD:c,supply fan:S:c,supply fan-id:02:v,room:R:c,room-id:181:v,room temp setpoint:ARS:c
+SODA4S18___MAT
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,mixed air temp:MAT:c
+SODS02R181_ART
+site:SOD:c,supply fan:S:c,supply fan-id:02:v,room:R:c,room-id:181:v,room temp:ART:c
+SODC1P_____L_L
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,pump:P:c,lead/lag sensor:L_L:c
+SODA1R524__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:524:v,temp setpoint off:ASO:c
+SODC1SP04__SPD
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,fan speed:SPD:c
+SODA4R465H_ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465H:v,room temp:ART:c
+SODA1R726__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:726:v,pid loop gain:AGN:c
+SODA4R465H_ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465H:v,room temp setpoint:ARS:c
+SODA3R725__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:725:v,temp setpoint off:ASO:c
+SODA1R376A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:376A:v,discharge air pressure sensor:VAV:c
+SODA3R311__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:311:v,room temp:ART:c
+SODA3R311__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:311:v,room temp setpoint:ARS:c
+SOD33NET___STA
+site:SOD:c,status sensor:STA:c
+SODA1R440__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:440:v,temp setpoint off:ASO:c
+SODA4R531__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:531:v,pid loop gain:AGN:c
+SODC2T1__L_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:1:v,start stop sensor:S_S:c
+SODA3R389__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:389:v,temp setpoint off:ASO:c
+SODA3R5871RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:5871:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R347__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:347:v,room temp setpoint:ARS:c
+SODA4R347__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:347:v,room temp:ART:c
+SODA1R342__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:342:v,pid loop gain:AGN:c
+SODA4R563__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:563:v,pid loop gain:AGN:c
+SODA3C511__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:511:v,room temp setpoint:ARS:c
+SODA1R340__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:340:v,room temp setpoint:ARS:c
+SODA1R340__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:340:v,room temp:ART:c
+SODA2E15DP_STA
+site:SOD:c,ahu:A:c,ahu-id:2:v,exhaust fan:E:c,exhaust fan-id:15:v,differential pressure status sensor:DP_STA:c
+SODA1C300B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300B:v,room temp setpoint:ARS:c
+SODA3R683__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:683:v,room temp:ART:c
+SODE05_____STA
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:05:v,status sensor:STA:c
+SODA4R449__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:449:v,room temp:ART:c
+SOD31BLD_RESET
+site:SOD:c,building wide sensor:BLD:c,reset variable:RESET:c
+SODA3R311_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:311:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R415_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:415:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R449__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:449:v,room temp setpoint:ARS:c
+SODA3R787__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:787:v,room temp:ART:c
+SODA3R787__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:787:v,room temp setpoint:ARS:c
+SODA4R543__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:543:v,room temp:ART:c
+SODA3R627__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:627:v,room temp:ART:c
+SODA4R375__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:375:v,room temp:ART:c
+SODA4R375__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:375:v,room temp setpoint:ARS:c
+SODA3R627__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:627:v,room temp setpoint:ARS:c
+SODA1R465D_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465D:v,discharge air pressure sensor:VAV:c
+SODA3R515__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:515:v,room temp:ART:c
+SODA3R515__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:515:v,room temp setpoint:ARS:c
+SODE04_____STA
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:04:v,status sensor:STA:c
+SODA4R543_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:543:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC1_ETC__RWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,return water temp:RWT:c
+SODC1C2____KWH
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,power meter:KWH:c
+SODA4R333__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:333:v,room temp:ART:c
+SODA3R465_5RVP
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_5:v,reheat valve position:RVP:c
+SODA4R333__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:333:v,room temp setpoint:ARS:c
+SODC3A34___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:34:v,status sensor:STA:c
+SODA3R329__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:329:v,pid loop gain:AGN:c
+SODA3R595__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:595:v,room temp:ART:c
+SODA3R595__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:595:v,room temp setpoint:ARS:c
+SODA3R785__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:785:v,pid loop gain:AGN:c
+SODA3R523__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:523:v,room temp setpoint:ARS:c
+SODA3R523__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:523:v,room temp:ART:c
+SODA1C300__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300:v,pid loop gain:AGN:c
+SODA4R733__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:733:v,room temp setpoint:ARS:c
+SODA3R727__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:727:v,pid loop gain:AGN:c
+SODA4R733__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:733:v,room temp:ART:c
+SODA4R645__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:645:v,room temp:ART:c
+SODA3R383__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:383:v,room temp:ART:c
+SODA4R379__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:379:v,temp setpoint off:ASO:c
+SODA4R677__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:677:v,temp setpoint off:ASO:c
+SODA1R405A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405A:v,room temp setpoint:ARS:c
+SODA1R405A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405A:v,room temp:ART:c
+SODA3______OAT
+site:SOD:c,ahu:A:c,ahu-id:3:v,outside air temp:OAT:c
+SODA3R383__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:383:v,temp setpoint off:ASO:c
+SODA4R681B_ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:681B:v,temp setpoint off:ASO:c
+SODA3R415__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:415:v,temp setpoint off:ASO:c
+SODA4R633__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:633:v,temp setpoint off:ASO:c
+SODA1R598__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:598:v,room temp setpoint:ARS:c
+SODA1ALL_34ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room temp setpoint:ARS:c
+SODA1R564__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:564:v,room temp setpoint:ARS:c
+SODA1R564__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:564:v,room temp:ART:c
+SODA1C300B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300B:v,pid loop gain:AGN:c
+SODA1R598__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:598:v,room temp:ART:c
+SODA4R735_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:735:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1____EVENT
+site:SOD:c,ahu:A:c,ahu-id:1:v,event sensor:EVENT:c
+SODA3R421__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:421:v,pid loop gain:AGN:c
+SOD31BLD_1_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA4R633_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:633:v,vav reheat discharge air pressure sensor:RVAV:c
+SODS03AR179S_S
+site:SOD:c,supply fan:S:c,supply fan-id:03A:v,room:R:c,room-id:179:v,start stop sensor:S_S:c
+SODA4R651_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:651:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R533__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:533:v,room temp:ART:c
+SODA4R533__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:533:v,room temp setpoint:ARS:c
+SODA2S14____VR
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,internal building variable:VR:c
+SODA1S11STPALM
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,static pressure alarm:STPALM:c
+SODA3R393__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:393:v,temp setpoint off:ASO:c
+SODA1R552__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:552:v,room temp:ART:c
+SODA3R465K_ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465K:v,temp setpoint off:ASO:c
+SODA1R405B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405B:v,discharge air pressure sensor:VAV:c
+SODA4R443_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:443:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R552__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:552:v,room temp setpoint:ARS:c
+SODA4R5511RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:5511:v,vav reheat discharge air pressure sensor:RVAV:c
+SODS02R181_S_S
+site:SOD:c,supply fan:S:c,supply fan-id:02:v,room:R:c,room-id:181:v,start stop sensor:S_S:c
+SODA1R784__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:784:v,discharge air pressure sensor:VAV:c
+SODA3R465K_VAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465K:v,discharge air pressure sensor:VAV:c
+SODA3R389__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:389:v,room temp:ART:c
+SODA3R389__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:389:v,room temp setpoint:ARS:c
+SODA1R384__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:384:v,room temp setpoint:ARS:c
+SODA1R384__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:384:v,room temp:ART:c
+SODA4337A_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room-id:337A:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3S16____VR
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,internal building variable:VR:c
+SODA1C500B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500B:v,room temp setpoint:ARS:c
+SODA3R783__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:783:v,pid loop gain:AGN:c
+SODA1R340__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:340:v,temp setpoint off:ASO:c
+SODA1R530__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:530:v,temp setpoint off:ASO:c
+SODA1R287__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:287:v,room temp:ART:c
+SODA4R347__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:347:v,temp setpoint off:ASO:c
+SODA4R639_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:639:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C500B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500B:v,room temp:ART:c
+SODA4R373__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:373:v,temp setpoint off:ASO:c
+SODA_CH2_CHWST
+site:SODA:c,chiller:CH:c,chiller-id:2:v,chilled water supply temp:CHWST:c
+SODA2E15___RAT
+site:SOD:c,ahu:A:c,ahu-id:2:v,exhaust fan:E:c,exhaust fan-id:15:v,return air temp:RAT:c
+SODA1C600A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600A:v,room temp setpoint:ARS:c
+SODA1C600A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600A:v,room temp:ART:c
+SODA1R287__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:287:v,room temp setpoint:ARS:c
+SODA4R752__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:752:v,temp setpoint off:ASO:c
+SODA4S18___STP
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,static pressure sensor:STP:c
+SODA4S18___STS
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,static pressure setpoint:STS:c
+SODA3R579_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:579:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC3A32___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:32:v,status sensor:STA:c
+SODA4R580__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:580:v,room temp setpoint:ARS:c
+SODA4R580__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:580:v,room temp:ART:c
+SODA1C700B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700B:v,pid loop gain:AGN:c
+SODC1C3_4CDSWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3_4:v,condensor water supply water temp:CDSWT:c
+SODA3R515__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:515:v,temp setpoint off:ASO:c
+SODA3C511__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:511:v,pid loop gain:AGN:c
+SOD__BLD_2_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA1R734__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:734:v,room temp:ART:c
+SODA1E12_F_CFM
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:12:v,filtered air volume:F_CFM:c
+SODA3R419__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:419:v,temp setpoint off:ASO:c
+SODA3R627__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:627:v,temp setpoint off:ASO:c
+SODA1R420__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420:v,discharge air pressure sensor:VAV:c
+SODA1R542__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:542:v,room temp:ART:c
+SODA1R542__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:542:v,room temp setpoint:ARS:c
+SODA1S11_F_CFM
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,filtered air volume:F_CFM:c
+SODA4R369_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:369:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R329_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:329:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R725__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:725:v,room temp:ART:c
+SODA3R725__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:725:v,room temp setpoint:ARS:c
+SODA4R465H_ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465H:v,temp setpoint off:ASO:c
+SODA1R440__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:440:v,room temp:ART:c
+SODA1R440__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:440:v,room temp setpoint:ARS:c
+SODA1E12___CFM
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:12:v,air volume:CFM:c
+SODA3R311__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:311:v,temp setpoint off:ASO:c
+SODA4S18___S_S
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,start stop sensor:S_S:c
+SODA4R333__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:333:v,pid loop gain:AGN:c
+SODA1R320__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:320:v,temp setpoint off:ASO:c
+SODA4R379__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:379:v,room temp setpoint:ARS:c
+SODA1R275__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:275:v,temp setpoint off:ASO:c
+SODA4R379__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:379:v,room temp:ART:c
+SODA1R514__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:514:v,discharge air pressure sensor:VAV:c
+SODA4R465_3VP2
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465_3:v,discharge air pressure sensor:VP:c
+SODA4R465_3VP3
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465_3:v,discharge air pressure sensor:VP:c
+SODA4R465_3VP1
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465_3:v,discharge air pressure sensor:VP:c
+SODA1C700C_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700C:v,pid loop gain:AGN:c
+SODA3R695__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:695:v,room temp:ART:c
+SODA1R275__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:275:v,pid loop gain:AGN:c
+SODA1R405A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405A:v,temp setpoint off:ASO:c
+SODA1R452__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:452:v,room temp:ART:c
+SOD31MAX___CVP
+site:SOD:c,chilled water valve pressure:CVP:c
+SODA1R290__ALM
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:290:v,alarm variable:ALM:c
+SOD31MAX___CVS
+site:SOD:c
+SODA3R785_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:785:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4C751__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:751:v,pid loop gain:AGN:c
+SODA1R508__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:508:v,room temp setpoint:ARS:c
+SODA4R563_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:563:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R629__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:629:v,pid loop gain:AGN:c
+SODC3P10___AMP
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,current reading:AMP:c
+SODA3R327__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:327:v,temp setpoint off:ASO:c
+SODA1R190A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190A:v,discharge air pressure sensor:VAV:c
+SODA3S16___H_C
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,damper economize flag:H_C:c
+SODA4R375__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:375:v,pid loop gain:AGN:c
+SODA1R410A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410A:v,discharge air pressure sensor:VAV:c
+SODA4____EVENT
+site:SOD:c,ahu:A:c,ahu-id:4:v,event sensor:EVENT:c
+SODA2S14___CVP
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,chilled water valve pressure:CVP:c
+SODA4R465E_ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465E:v,temp setpoint off:ASO:c
+SODA4R373_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:373:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R465C_AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465C:v,pid loop gain:AGN:c
+SODA4R671_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:671:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4S18___H_C
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,damper economize flag:H_C:c
+SODA3R681A_AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:681A:v,pid loop gain:AGN:c
+SODA3R595__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:595:v,temp setpoint off:ASO:c
+SODA1R187__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187:v,pid loop gain:AGN:c
+SODA4S18STPALM
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,static pressure alarm:STPALM:c
+SODA1R562A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:562A:v,room temp setpoint:ARS:c
+SODA1R562A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:562A:v,room temp:ART:c
+SODC3______S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,start stop sensor:S_S:c
+SODA1R676__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:676:v,room temp:ART:c
+SODA3__LOW_RAT
+site:SOD:c,ahu:A:c,ahu-id:3:v,low return air temp alarm:LOW_RAT:c
+SODA1R676__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:676:v,room temp setpoint:ARS:c
+SODA1R416__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:416:v,pid loop gain:AGN:c
+SODA1C500A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500A:v,temp setpoint off:ASO:c
+SODH1X_____A_M
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,alarm variable:A_M:c
+SODA1R552__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:552:v,pid loop gain:AGN:c
+SODA3S1633_STA
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v
+SODA1R287__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:287:v,temp setpoint off:ASO:c
+SODA1C600A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600A:v,temp setpoint off:ASO:c
+SODA1C500B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500B:v,temp setpoint off:ASO:c
+SODA1R582__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:582:v,pid loop gain:AGN:c
+SOD__BLD_2_KWH
+site:SOD:c,building wide sensor:BLD:c,power meter:KWH:c
+SODA1C400B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400B:v,temp setpoint off:ASO:c
+SODA1R530__ALM
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:530:v,alarm variable:ALM:c
+SOD__BLD_2_KWD
+site:SOD:c,building wide sensor:BLD:c,power demand:KWD:c
+SODH1P01___AMP
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:01:v,current reading:AMP:c
+SODC3A31___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:31:v,alarm variable:ALM:c
+SODA2S14SASA_M
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,supply air setpoint flag:SASA_M:c
+SODA3R383__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:383:v,pid loop gain:AGN:c
+SODA3R529_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:529:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R288__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:288:v,discharge air pressure sensor:VAV:c
+SODA1R564__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:564:v,temp setpoint off:ASO:c
+SODA3S16_I__VR
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,pid loop I variable:I__VR:c
+SODA3R415__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:415:v,room temp:ART:c
+SODA3R415__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:415:v,room temp setpoint:ARS:c
+SODA4R545_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:545:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC3A36___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:36:v,alarm variable:ALM:c
+SODA4R533__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:533:v,pid loop gain:AGN:c
+SODA3R719_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:719:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R447_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:447:v,vav reheat discharge air pressure sensor:RVAV:c
+SODH1______S_S
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,start stop sensor:S_S:c
+SODA1C700B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700B:v,room temp:ART:c
+SODA1C700B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700B:v,room temp setpoint:ARS:c
+SODA2R306__ART
+site:SOD:c,ahu:A:c,ahu-id:2:v,room:R:c,room-id:306:v,room temp:ART:c
+SODA2R306__ARS
+site:SOD:c,ahu:A:c,ahu-id:2:v,room:R:c,room-id:306:v,room temp setpoint:ARS:c
+SOD__BLD___ORH
+site:SOD:c,building wide sensor:BLD:c,outside relative humidity:ORH:c
+SODA1C700C_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700C:v,temp setpoint off:ASO:c
+SODA3R583_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:583:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R389__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:389:v,pid loop gain:AGN:c
+SODC2T2__L_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:2:v,start stop sensor:S_S:c
+SODC1C3P12_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3:v,pump:P:c,pump-id:12:v,status sensor:STA:c
+SODA4R343_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:343:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4____CURTL
+site:SOD:c,ahu:A:c,ahu-id:4:v,curtailment override variable:CURTL:c
+SODA4R639__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:639:v,room temp setpoint:ARS:c
+SODA4R639__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:639:v,room temp:ART:c
+SODA1R190B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190B:v,discharge air pressure sensor:VAV:c
+SODA1R384__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:384:v,temp setpoint off:ASO:c
+SODA3R421__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:421:v,room temp setpoint:ARS:c
+SODA1R430A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430A:v,room temp setpoint:ARS:c
+SODA1R430A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430A:v,room temp:ART:c
+SODA3R421__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:421:v,room temp:ART:c
+SODA1R530__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:530:v,room temp:ART:c
+SODH1P01___S_S
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:01:v,start stop sensor:S_S:c
+SODA1R530__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:530:v,room temp setpoint:ARS:c
+SODA4S18___SAS
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,supply air temp setpoint:SAS:c
+SODA4S18___SAT
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,supply air temp:SAT:c
+SODA3R327__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:327:v,room temp setpoint:ARS:c
+SODA3R327__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:327:v,room temp:ART:c
+SODA1R508__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:508:v,temp setpoint off:ASO:c
+SODA1R440__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:440:v,pid loop gain:AGN:c
+SODA3ALL_31NSB
+site:SOD:c,ahu:A:c,ahu-id:3:v
+SODA1R187__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187:v,discharge air pressure sensor:VAV:c
+SODC1S_____SWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,supply water temp:SWT:c
+SODA3R695__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:695:v,temp setpoint off:ASO:c
+SODA3R583__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:583:v,temp setpoint off:ASO:c
+SODA3R729__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:729:v,pid loop gain:AGN:c
+SODA4R773__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:773:v,temp setpoint off:ASO:c
+SODA1R288__ALM
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:288:v,alarm variable:ALM:c
+SODA1R600A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:600A:v,discharge air pressure sensor:VAV:c
+SODA4R771__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:771:v,room temp:ART:c
+SODA3R331__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:331:v,room temp:ART:c
+SODA3R331__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:331:v,room temp setpoint:ARS:c
+SODA4_LOW_RAT2
+site:SOD:c,ahu:A:c,ahu-id:4:v,low return air temp alarm:LOW_RAT:c
+SODA4_LOW_RAT3
+site:SOD:c,ahu:A:c,ahu-id:4:v,low return air temp alarm:LOW_RAT:c
+SODC2T1__H_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:1:v,status sensor:STA:c
+SODA3R419__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:419:v,room temp setpoint:ARS:c
+SODA3R419__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:419:v,room temp:ART:c
+SODA1S11___S_S
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,start stop sensor:S_S:c
+SODA4R752__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:752:v,pid loop gain:AGN:c
+SODA3S16___SAS
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,supply air temp setpoint:SAS:c
+SODA3S16___SAT
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,supply air temp:SAT:c
+SODE03_____S_S
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:03:v,start stop sensor:S_S:c
+SODC1SP03__SPR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,fan speed reset:SPR:c
+SODA4R737__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:737:v,temp setpoint off:ASO:c
+SODA3R725__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:725:v,pid loop gain:AGN:c
+SODA3R595__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:595:v,pid loop gain:AGN:c
+SODA1C600B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600B:v,temp setpoint off:ASO:c
+SODA1R542__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:542:v,temp setpoint off:ASO:c
+SODA4R739__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:739:v,room temp setpoint:ARS:c
+SODA2S14_P__VR
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,pid loop P variable:P__VR:c
+SODA4R563__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:563:v,room temp:ART:c
+SODA4R563__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:563:v,room temp setpoint:ARS:c
+SODA1C400A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400A:v,room temp:ART:c
+SODE05_____S_S
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:05:v,start stop sensor:S_S:c
+SODA1C400A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400A:v,room temp setpoint:ARS:c
+SODA1C500A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500A:v,room temp:ART:c
+SODA1C500A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500A:v,room temp setpoint:ARS:c
+SODA1R582_2VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:582_2:v,discharge air pressure sensor:VAV:c
+SODFC01A___CVP
+site:SOD:c,fan control unit:FC:c,fan control unit-id:01A:v,chilled water valve pressure:CVP:c
+SODC2T2__L_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:2:v,leaving status sensor:L_STA:c
+SODA1R684__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:684:v,temp setpoint off:ASO:c
+SODA1R287__TMR
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:287:v,timer variable:TMR:c
+SODA4R377__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:377:v,temp setpoint off:ASO:c
+SODA1R676__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:676:v,temp setpoint off:ASO:c
+SODA3R789__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:789:v,room temp setpoint:ARS:c
+SODFC01A___S_S
+site:SOD:c,fan control unit:FC:c,fan control unit-id:01A:v,start stop sensor:S_S:c
+SODA3R789__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:789:v,room temp:ART:c
+SODC1______S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,start stop sensor:S_S:c
+SODA1C700ARVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700A:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC3_______VP
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,bypass valve:VP:c
+SOD33NET___TMR
+site:SOD:c,timer variable:TMR:c
+SODA3R727_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:727:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R629__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:629:v,room temp:ART:c
+SODA3R629__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:629:v,room temp setpoint:ARS:c
+SODA4C751__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:751:v,room temp:ART:c
+SODA1R326__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:326:v,room temp setpoint:ARS:c
+SODA1R326__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:326:v,room temp:ART:c
+SODA4C751__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:751:v,room temp setpoint:ARS:c
+SODA4R551__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:551:v,temp setpoint off:ASO:c
+SODA4R739_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:739:v,vav reheat discharge air pressure sensor:RVAV:c
+SODH1X_____SWS
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,supply water setpoint:SWS:c
+SODH1X_____SWT
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,supply water temp:SWT:c
+SODA3R798__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:798:v,pid loop gain:AGN:c
+SODA1R380__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:380:v,room temp:ART:c
+SODA1R380__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:380:v,room temp setpoint:ARS:c
+SODA4R465E_ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465E:v,room temp:ART:c
+SODA4R465E_ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465E:v,room temp setpoint:ARS:c
+SODA1C700A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700A:v,temp setpoint off:ASO:c
+SODA1R277__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:277:v,discharge air pressure sensor:VAV:c
+SODA3R321_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:321:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1S11___HVP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,hot water valve position:HVP:c
+SODC2_______VP
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,bypass valve:VP:c
+SODA3____OCCPY
+site:SOD:c,ahu:A:c,ahu-id:3:v,occupancy sensor:OCCPY:c
+SODA3R421_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:421:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R421__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:421:v,temp setpoint off:ASO:c
+SODA1R430A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430A:v,temp setpoint off:ASO:c
+SODA4R639__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:639:v,temp setpoint off:ASO:c
+SODA3R413__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:413:v,temp setpoint off:ASO:c
+SODA3S16___SPR
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,fan speed reset:SPR:c
+SODA1R284__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:284:v,discharge air pressure sensor:VAV:c
+SODA1S11___H_C
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,damper economize flag:H_C:c
+SODA3S16___SPD
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,fan speed:SPD:c
+SODA3S16___STP
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,static pressure sensor:STP:c
+SODA3R465K_AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465K:v,pid loop gain:AGN:c
+SODA1S11_E_STP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,east static pressure sensor:E_STP:c
+SODA1S11_E_STS
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,entering static pressure setpoint:E_STS:c
+SODA1S11DP_STA
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,differential pressure status sensor:DP_STA:c
+SODA4R775__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:775:v,temp setpoint off:ASO:c
+SODA1R190A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190A:v,pid loop gain:AGN:c
+SODA3R395_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:395:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R415__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:415:v,pid loop gain:AGN:c
+SODA4R633__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:633:v,pid loop gain:AGN:c
+SODA4R631__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:631:v,room temp setpoint:ARS:c
+SODA4R631__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:631:v,room temp:ART:c
+SODA1R634__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:634:v,pid loop gain:AGN:c
+SODA1C400B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400B:v,room temp setpoint:ARS:c
+SODC1C2P06_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,pump:P:c,pump-id:06:v,status sensor:STA:c
+SODA1R340__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:340:v,pid loop gain:AGN:c
+SODA1R420A_ALM
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420A:v,alarm variable:ALM:c
+SODA1R514__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:514:v,pid loop gain:AGN:c
+SODA4R737__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:737:v,room temp:ART:c
+SODC1S____FLOW
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,flow rate sensor:FLOW:c
+SODA4R737__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:737:v,room temp setpoint:ARS:c
+SODC3A39___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:39:v,alarm variable:ALM:c
+SODA4R545__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:545:v,temp setpoint off:ASO:c
+SODA3______S_S
+site:SOD:c,ahu:A:c,ahu-id:3:v,start stop sensor:S_S:c
+SODA1R310__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:310:v,pid loop gain:AGN:c
+SODA1R316__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:316:v,temp setpoint off:ASO:c
+SODA1C700CRVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700C:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C700B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700B:v,temp setpoint off:ASO:c
+SODA4R577__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:577:v,temp setpoint off:ASO:c
+SODA1R336__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:336:v,pid loop gain:AGN:c
+SODA3R785_D_TM
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,day start time sensor:D_TM:c
+SODH1______A_M
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,alarm variable:A_M:c
+SODA4R752__VAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:752:v,discharge air pressure sensor:VAV:c
+SODA3R465_7AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_7:v,pid loop gain:AGN:c
+SODC2T1__L_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:1:v,leaving status sensor:L_STA:c
+SODA1R534__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:534:v,temp setpoint off:ASO:c
+SOD__BLD_1_OAT
+site:SOD:c,building wide sensor:BLD:c,power meter-id:1:v,outside air temp:OAT:c
+SODA4C751__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:751:v,temp setpoint off:ASO:c
+SODA3R417__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:417:v,temp setpoint off:ASO:c
+SODA1R326__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:326:v,temp setpoint off:ASO:c
+SODA3R629__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:629:v,temp setpoint off:ASO:c
+SODA1R566__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:566:v,room temp:ART:c
+SODA1R566__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:566:v,room temp setpoint:ARS:c
+SODA1R252__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:252:v,pid loop gain:AGN:c
+SODA3R695__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:695:v,room temp setpoint:ARS:c
+SODA3R583__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:583:v,room temp setpoint:ARS:c
+SODA3R583__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:583:v,room temp:ART:c
+SOD__BLD_CURTL
+site:SOD:c,building wide sensor:BLD:c,curtailment override variable:CURTL:c
+SODA3R795_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:795:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R535__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:535:v,pid loop gain:AGN:c
+SODA3R331__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:331:v,temp setpoint off:ASO:c
+SODA1F5_VAV_AV
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:5:v,avg discharge air pressure sensor:VAV_AV:c
+SODA4S1833_STA
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v
+SODE04_____S_S
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:04:v,start stop sensor:S_S:c
+SODA4R773__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:773:v,room temp:ART:c
+SODA4R773__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:773:v,room temp setpoint:ARS:c
+SODA3S16_P__VR
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,pid loop P variable:P__VR:c
+SODA4R675__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:675:v,pid loop gain:AGN:c
+SODA1C700A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700A:v,room temp:ART:c
+SODA1C700A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700A:v,room temp setpoint:ARS:c
+SODA1R405A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405A:v,pid loop gain:AGN:c
+SODA1R283E_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:283E:v,room temp:ART:c
+SODA3S16SASA_M
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,supply air setpoint flag:SASA_M:c
+SODA1R380__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:380:v,temp setpoint off:ASO:c
+SODA4R347_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:347:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R283E_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:283E:v,room temp setpoint:ARS:c
+SODA3C611__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:611:v,pid loop gain:AGN:c
+SODA4R465H_RVP
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465H:v,reheat valve position:RVP:c
+SODA1R187__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187:v,temp setpoint off:ASO:c
+SODA1C400A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400A:v,temp setpoint off:ASO:c
+SODA4ALL_31NSB
+site:SOD:c,ahu:A:c,ahu-id:4:v
+SODA1C600B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600B:v,pid loop gain:AGN:c
+SODA3R313__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:313:v,room temp setpoint:ARS:c
+SODA4R563__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:563:v,temp setpoint off:ASO:c
+SODA3R313__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:313:v,room temp:ART:c
+SODA4__LOW_RAT
+site:SOD:c,ahu:A:c,ahu-id:4:v,low return air temp alarm:LOW_RAT:c
+SODA3R625__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:625:v,room temp setpoint:ARS:c
+SODA3R625__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:625:v,room temp:ART:c
+SODA4R377__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:377:v,room temp:ART:c
+SODA4R665_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:665:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R684__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:684:v,room temp:ART:c
+SODA1R684__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:684:v,room temp setpoint:ARS:c
+SODA1R508__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:508:v,room temp:ART:c
+SODA4R377__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:377:v,room temp setpoint:ARS:c
+SODA3R785__ADS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,daytime setpoint:ADS:c
+SODA4R775__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:775:v,room temp setpoint:ARS:c
+SODA1R438_RVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:438:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R775__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:775:v,room temp:ART:c
+SODA3R681ARVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:681A:v,vav reheat discharge air pressure sensor:RVAV:c
+SODS01R183_S_S
+site:SOD:c,supply fan:S:c,supply fan-id:01:v,room:R:c,room-id:183:v,start stop sensor:S_S:c
+SODA1R776__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:776:v,temp setpoint off:ASO:c
+SODA1R330A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330A:v,temp setpoint off:ASO:c
+SODA1E12___RAT
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:12:v,return air temp:RAT:c
+SODA4R631__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:631:v,temp setpoint off:ASO:c
+SODE02_____S_S
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:02:v,start stop sensor:S_S:c
+SODA1R434__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:434:v,room temp:ART:c
+SODA1R434__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:434:v,room temp setpoint:ARS:c
+SODA4R731__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:731:v,pid loop gain:AGN:c
+SODA4R551__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:551:v,room temp setpoint:ARS:c
+SODA4R551__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:551:v,room temp:ART:c
+SODA3R723__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:723:v,pid loop gain:AGN:c
+SODA3R625_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:625:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R465E_AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465E:v,pid loop gain:AGN:c
+SODA3R393_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:393:v,vav reheat discharge air pressure sensor:RVAV:c
+SODH1P02___S_S
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:02:v,start stop sensor:S_S:c
+SODA1R252__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:252:v,discharge air pressure sensor:VAV:c
+SODA1S1133_STA
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v
+SODC1SP03__AMP
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,current reading:AMP:c
+SODA4R577__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:577:v,room temp:ART:c
+SODA4R577__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:577:v,room temp setpoint:ARS:c
+SODA1R634__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:634:v,room temp:ART:c
+SODH1P02___TMR
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:02:v,timer variable:TMR:c
+SODA1R316__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:316:v,room temp setpoint:ARS:c
+SODA4R735__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:735:v,temp setpoint off:ASO:c
+SODA4C300T_AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:300T:v,pid loop gain:AGN:c
+SODC2______S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,start stop sensor:S_S:c
+SODA1C400C_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400C:v,room temp setpoint:ARS:c
+SODA1C400C_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400C:v,room temp:ART:c
+SODA4R567__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:567:v,pid loop gain:AGN:c
+SODA4ALL_34ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room temp setpoint:ARS:c
+SODA1R384__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:384:v,pid loop gain:AGN:c
+SODA4R741__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:741:v,pid loop gain:AGN:c
+SODA4R765_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:765:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC1C2P08_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,pump:P:c,pump-id:08:v,status sensor:STA:c
+SODA2____OCCPY
+site:SOD:c,ahu:A:c,ahu-id:2:v,occupancy sensor:OCCPY:c
+SODA1R498__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:498:v,discharge air pressure sensor:VAV:c
+SODA1R287__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:287:v,pid loop gain:AGN:c
+SODA1C600A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600A:v,pid loop gain:AGN:c
+SODA3R413__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:413:v,room temp setpoint:ARS:c
+SODC3P09___S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,start stop sensor:S_S:c
+SODA4R733_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:733:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R413__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:413:v,room temp:ART:c
+SODFC01B___CVP
+site:SOD:c,fan control unit:FC:c,fan control unit-id:01B:v,chilled water valve pressure:CVP:c
+SODA3S16___SMK
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,smoke alarm:SMK:c
+SODA1E12DP_STA
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:12:v,differential pressure status sensor:DP_STA:c
+SODA1R530__TMR
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:530:v,timer variable:TMR:c
+SOD__BLD_1SKWH
+site:SOD:c,building wide sensor:BLD:c,energy meter:KWH:c
+SODA4R635__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:635:v,pid loop gain:AGN:c
+SODA4S18___SMK
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,smoke alarm:SMK:c
+SODA1R336__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:336:v,discharge air pressure sensor:VAV:c
+SODA3R621__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:621:v,pid loop gain:AGN:c
+SODA3S16DP_STA
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,differential pressure status sensor:DP_STA:c
+SODH1P02___AMP
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:02:v,current reading:AMP:c
+SODA3R781__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:781:v,temp setpoint off:ASO:c
+SODA4R339__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:339:v,pid loop gain:AGN:c
+SODA1R410B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410B:v,discharge air pressure sensor:VAV:c
+SODA3R313__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:313:v,temp setpoint off:ASO:c
+SODA1R330B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330B:v,room temp:ART:c
+SODA1R330B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330B:v,room temp setpoint:ARS:c
+SODA1C700D_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700D:v,pid loop gain:AGN:c
+SODA3_LOW_RAT1
+site:SOD:c,ahu:A:c,ahu-id:3:v,low return air temp alarm:LOW_RAT:c
+SODA3_LOW_RAT3
+site:SOD:c,ahu:A:c,ahu-id:3:v,low return air temp alarm:LOW_RAT:c
+SODA3_LOW_RAT2
+site:SOD:c,ahu:A:c,ahu-id:3:v,low return air temp alarm:LOW_RAT:c
+SODA4R441_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:441:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R606__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:606:v,temp setpoint off:ASO:c
+SODA3R687_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:687:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R365_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:365:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R737__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:737:v,pid loop gain:AGN:c
+SODA3R465_4VP3
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_4:v,discharge air pressure sensor:VP:c
+SODA3R465_4VP1
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_4:v,discharge air pressure sensor:VP:c
+SODA3R621__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:621:v,temp setpoint off:ASO:c
+SODA4R673__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:673:v,pid loop gain:AGN:c
+SODA1R364__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:364:v,room temp setpoint:ARS:c
+SODA1R566__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:566:v,temp setpoint off:ASO:c
+SODA4R651__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:651:v,room temp setpoint:ARS:c
+SODA1R364__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:364:v,room temp:ART:c
+SODA1R508__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:508:v,pid loop gain:AGN:c
+SODA3R417__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:417:v,room temp:ART:c
+SODA3R417__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:417:v,room temp setpoint:ARS:c
+SODA1R398__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:398:v,pid loop gain:AGN:c
+SODA1R516__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:516:v,pid loop gain:AGN:c
+SODA1R190B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:190B:v,pid loop gain:AGN:c
+SODA3E17___SPR
+site:SOD:c,ahu:A:c,ahu-id:3:v,exhaust fan:E:c,exhaust fan-id:17:v,fan speed reset:SPR:c
+SODA3R685_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:685:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC3A41___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:41:v,status sensor:STA:c
+SODA1R684__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:684:v,pid loop gain:AGN:c
+SODC1C3P11_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3:v,pump:P:c,pump-id:11:v,status sensor:STA:c
+SODA4R377__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:377:v,pid loop gain:AGN:c
+SODA1R290__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:290:v,discharge air pressure sensor:VAV:c
+SODA1F4_VAV_AV
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:4:v,avg discharge air pressure sensor:VAV_AV:c
+SODC3P10___TMR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,timer variable:TMR:c
+SODA4R465E_RVP
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465E:v,reheat valve position:RVP:c
+SODA1R369__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:369:v,pid loop gain:AGN:c
+SODA1C700A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700A:v,pid loop gain:AGN:c
+SODA3R689__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:689:v,room temp:ART:c
+SODA1C180__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:180:v,temp setpoint off:ASO:c
+SODA3R689__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:689:v,room temp setpoint:ARS:c
+SODA3R625__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:625:v,temp setpoint off:ASO:c
+SODA1R316__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:316:v,room temp:ART:c
+SODA1R283E_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:283E:v,temp setpoint off:ASO:c
+SODA4ALL_33ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room temp setpoint:ARS:c
+SODH1P01___TMR
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:01:v,timer variable:TMR:c
+SODA1C700C_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700C:v,room temp setpoint:ARS:c
+SODA1R634__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:634:v,room temp setpoint:ARS:c
+SODA1C700C_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700C:v,room temp:ART:c
+SODA1R442__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:442:v,discharge air pressure sensor:VAV:c
+SODA1R562A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:562A:v,pid loop gain:AGN:c
+SODA1R187__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187:v,room temp setpoint:ARS:c
+SODA1R510__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:510:v,pid loop gain:AGN:c
+SODA1R187__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187:v,room temp:ART:c
+SODC1SP04__S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,start stop sensor:S_S:c
+SODA1_SLCT_PID
+site:SOD:c,ahu:A:c,ahu-id:1:v,pid loop variable:PID:c
+SODA4R545__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:545:v,room temp:ART:c
+SODA4R545__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:545:v,room temp setpoint:ARS:c
+SODA1F1_VAV_AV
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:1:v,avg discharge air pressure sensor:VAV_AV:c
+SOD__BLD_2SKWH
+site:SOD:c,building wide sensor:BLD:c,energy meter:KWH:c
+SODA4S18___DMP
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,mixed air damper:DMP:c
+SODA3R517__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:517:v,room temp setpoint:ARS:c
+SODA3R517__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:517:v,room temp:ART:c
+SODA1E13___SPR
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:13:v,fan speed reset:SPR:c
+SODA1R776__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:776:v,room temp setpoint:ARS:c
+SODA1R776__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:776:v,room temp:ART:c
+SODA1R465_6ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465_6:v,temp setpoint off:ASO:c
+SODH1P02DP_STA
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:02:v,differential pressure status sensor:DP_STA:c
+SODA4S18___SPR
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,fan speed reset:SPR:c
+SODS03BR179S_S
+site:SOD:c,supply fan:S:c,supply fan-id:03B:v,room:R:c,room-id:179:v,start stop sensor:S_S:c
+SODA3E17___CFM
+site:SOD:c,ahu:A:c,ahu-id:3:v,exhaust fan:E:c,exhaust fan-id:17:v,air volume:CFM:c
+SODA1R726__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:726:v,room temp:ART:c
+SODA1R465B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465B:v,temp setpoint off:ASO:c
+SODA1R434__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:434:v,temp setpoint off:ASO:c
+SODA1R726__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:726:v,room temp setpoint:ARS:c
+SODA1____CURTL
+site:SOD:c,ahu:A:c,ahu-id:1:v,curtailment override variable:CURTL:c
+SODA4E19___RAT
+site:SOD:c,ahu:A:c,ahu-id:4:v,exhaust fan:E:c,exhaust fan-id:19:v,return air temp:RAT:c
+SODA1R330A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330A:v,room temp:ART:c
+SODA4S18_I__VR
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,pid loop I variable:I__VR:c
+SODA1R330A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330A:v,room temp setpoint:ARS:c
+SODA3R419_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:419:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R537__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:537:v,temp setpoint off:ASO:c
+SODH1______DPS
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,differential pressure setpoint:DPS:c
+SODH1______DPR
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,differential pressure reading:DPR:c
+SODA1ALL_32NSB
+site:SOD:c,ahu:A:c,ahu-id:1:v
+SOD__BLD___HPS
+site:SOD:c,building wide sensor:BLD:c,hps:HPS:c
+SODC3______DPR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,differential pressure reading:DPR:c
+SODC3______DPS
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,differential pressure setpoint:DPS:c
+SODC3A32___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:32:v,alarm variable:ALM:c
+SODA3R781__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:781:v,room temp setpoint:ARS:c
+SODA3R781__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:781:v,room temp:ART:c
+SODA1R316__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:316:v,pid loop gain:AGN:c
+SODA4R577__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:577:v,pid loop gain:AGN:c
+SODA4R449__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:449:v,pid loop gain:AGN:c
+SODA3R381_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:381:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R339_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:339:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC1P_____TON
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1P:v,cooling capacity:TON:c
+SODA4R369__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:369:v,room temp setpoint:ARS:c
+SODA4R735__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:735:v,room temp:ART:c
+SODA4R735__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:735:v,room temp setpoint:ARS:c
+SODA4R369__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:369:v,room temp:ART:c
+SODA1C400C_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400C:v,temp setpoint off:ASO:c
+SODC3P09___TMR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,timer variable:TMR:c
+SODA3R317__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:317:v,room temp:ART:c
+SODA1R634__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:634:v,temp setpoint off:ASO:c
+SODA3R317__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:317:v,room temp setpoint:ARS:c
+SODA4R443__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:443:v,temp setpoint off:ASO:c
+SODC3A34___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:34:v,alarm variable:ALM:c
+SODA3R587__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:587:v,temp setpoint off:ASO:c
+SODC3A39___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:39:v,status sensor:STA:c
+SODA3R395__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:395:v,room temp setpoint:ARS:c
+SODA3R395__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:395:v,room temp:ART:c
+SODA1R430A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430A:v,pid loop gain:AGN:c
+SODA3R515_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:515:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R639__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:639:v,pid loop gain:AGN:c
+SODA4R337A_ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337A:v,temp setpoint off:ASO:c
+SODA4R543__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:543:v,pid loop gain:AGN:c
+SODC1C4____S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:4:v,start stop sensor:S_S:c
+SODA1R252__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:252:v,room temp setpoint:ARS:c
+SODA1R252__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:252:v,room temp:ART:c
+SODA1R280__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:280:v,room temp setpoint:ARS:c
+SODA4R733__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:733:v,temp setpoint off:ASO:c
+SODC2__P___VLV
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,valve position:VLV:c
+SODC1C3_4_CMP2
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3_4:v,compressor:CMP:c,compressor-id:2:v
+SOD34BLD_C_SAS
+site:SOD:c,building wide sensor:BLD:c,supply air temp setpoint:SAS:c
+SODA3R523_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:523:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R651__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:651:v,temp setpoint off:ASO:c
+SODA1R364__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:364:v,temp setpoint off:ASO:c
+SODA4R341_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:341:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R336__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:336:v,temp setpoint off:ASO:c
+SODA4R741__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:741:v,room temp:ART:c
+SODA3R525__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:525:v,temp setpoint off:ASO:c
+SODA4R741__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:741:v,room temp setpoint:ARS:c
+SODA3R617__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:617:v,pid loop gain:AGN:c
+SODA1C700DRVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700D:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC2T2__H_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:2:v,status sensor:STA:c
+SODA4R337__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337:v,temp setpoint off:ASO:c
+SODA1R273__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:273:v,pid loop gain:AGN:c
+SODA1R652__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:652:v,pid loop gain:AGN:c
+SODA3R465_5AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_5:v,pid loop gain:AGN:c
+SODA1R682__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:682:v,pid loop gain:AGN:c
+SODA3R721__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:721:v,temp setpoint off:ASO:c
+SODC2______RWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,return water temp:RWT:c
+SODA3R417__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:417:v,pid loop gain:AGN:c
+SODA1R326__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:326:v,pid loop gain:AGN:c
+SODA4______S_S
+site:SOD:c,ahu:A:c,ahu-id:4:v,start stop sensor:S_S:c
+SODC1C2P08_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,pump:P:c,pump-id:08:v,start stop sensor:S_S:c
+SODA1R252__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:252:v,temp setpoint off:ASO:c
+SODA4R779_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:779:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R734__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:734:v,discharge air pressure sensor:VAV:c
+SODC1C2____SWS
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,supply water setpoint:SWS:c
+SODC1C2____SWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,supply water temp:SWT:c
+SODA1R678__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:678:v,room temp:ART:c
+SODA3E17___RAT
+site:SOD:c,ahu:A:c,ahu-id:3:v,exhaust fan:E:c,exhaust fan-id:17:v,return air temp:RAT:c
+SODA1R340__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:340:v,discharge air pressure sensor:VAV:c
+SODC1_CND_FLOW
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,condensor water flow variable:CND_FLOW:c
+SODA1R330B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330B:v,temp setpoint off:ASO:c
+SOD32BLD_RESET
+site:SOD:c,building wide sensor:BLD:c,reset variable:RESET:c
+SODA3S1631_STA
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v
+SODC2______PID
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,pid loop variable:PID:c
+SODA4R779__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:779:v,temp setpoint off:ASO:c
+SODA3R323__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:323:v,temp setpoint off:ASO:c
+SODA1R606__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:606:v,room temp:ART:c
+SODA1R606__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:606:v,room temp setpoint:ARS:c
+SODA4R677__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:677:v,room temp setpoint:ARS:c
+SODA4R673__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:673:v,room temp setpoint:ARS:c
+SODA4R777__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:777:v,temp setpoint off:ASO:c
+SODA4R673__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:673:v,room temp:ART:c
+SODA3S16STPALM
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,static pressure alarm:STPALM:c
+SODA4R779__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:779:v,pid loop gain:AGN:c
+SODA1R376A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:376A:v,pid loop gain:AGN:c
+SODA1R626__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:626:v,pid loop gain:AGN:c
+SODA1R465_6ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465_6:v,room temp:ART:c
+SODA1R465_6ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465_6:v,room temp setpoint:ARS:c
+SODA3S16___MAT
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,mixed air temp:MAT:c
+SODA4R373__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:373:v,room temp setpoint:ARS:c
+SODA1R290__TMR
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:290:v,timer variable:TMR:c
+SODA1R410B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410B:v,temp setpoint off:ASO:c
+SODA4R765__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:765:v,pid loop gain:AGN:c
+SODA4R373__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:373:v,room temp:ART:c
+SODA3ALL_34NSB
+site:SOD:c,ahu:A:c,ahu-id:3:v
+SODA1R465B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465B:v,room temp:ART:c
+SODA1R726__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:726:v,temp setpoint off:ASO:c
+SODA1R465B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465B:v,room temp setpoint:ARS:c
+SODA2S14___S_S
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,start stop sensor:S_S:c
+SODA4R681BRVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:681B:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C180__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:180:v,room temp setpoint:ARS:c
+SODA3R689__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:689:v,temp setpoint off:ASO:c
+SODA1R508__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:508:v,discharge air pressure sensor:VAV:c
+SODA1C180__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:180:v,room temp:ART:c
+SODA4E19___SPR
+site:SOD:c,ahu:A:c,ahu-id:4:v,exhaust fan:E:c,exhaust fan-id:19:v,fan speed reset:SPR:c
+SODA4R443__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:443:v,room temp:ART:c
+SODA4R443__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:443:v,room temp setpoint:ARS:c
+SODA1S11___SMK
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,smoke alarm:SMK:c
+SODA4R379_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:379:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R420A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420A:v,temp setpoint off:ASO:c
+SODA4C300T_ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:300T:v,room temp setpoint:ARS:c
+SODA4C300T_ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:300T:v,room temp:ART:c
+SOD33BLD_1_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA3R681A_ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:681A:v,room temp:ART:c
+SODA4R369__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:369:v,temp setpoint off:ASO:c
+SODA3R529__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:529:v,pid loop gain:AGN:c
+SODA1R420A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420A:v,discharge air pressure sensor:VAV:c
+SODA4R337A_ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337A:v,room temp setpoint:ARS:c
+SODA3R787__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:787:v,pid loop gain:AGN:c
+SODA4R337A_ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337A:v,room temp:ART:c
+SODA3R587__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:587:v,room temp:ART:c
+SODA3R587__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:587:v,room temp setpoint:ARS:c
+SODA3R395__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:395:v,temp setpoint off:ASO:c
+SODA3R317_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:317:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC3A35___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:35:v,status sensor:STA:c
+SODA1R420__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420:v,room temp setpoint:ARS:c
+SODA3ALL_33ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room temp setpoint:ARS:c
+SODA1R524__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:524:v,discharge air pressure sensor:VAV:c
+SODA1R384__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:384:v,discharge air pressure sensor:VAV:c
+SODA3R517__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:517:v,temp setpoint off:ASO:c
+SODA4R345__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:345:v,pid loop gain:AGN:c
+SODA1R776__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:776:v,discharge air pressure sensor:VAV:c
+SODA3R615__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:615:v,pid loop gain:AGN:c
+SODA4R631_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:631:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R337__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337:v,room temp setpoint:ARS:c
+SODA3R787_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:787:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R337__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:337:v,room temp:ART:c
+SODC1SP03__STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,status sensor:STA:c
+SODA1R582_1VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:582_1:v,discharge air pressure sensor:VAV:c
+SODA1R187A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187A:v,pid loop gain:AGN:c
+SODA3R525__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:525:v,room temp:ART:c
+SODA4R741__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:741:v,temp setpoint off:ASO:c
+SODA3R525__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:525:v,room temp setpoint:ARS:c
+SODA3R513__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:513:v,pid loop gain:AGN:c
+SODA1R336__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:336:v,room temp setpoint:ARS:c
+SODA1R465D_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465D:v,temp setpoint off:ASO:c
+SODA1R336__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:336:v,room temp:ART:c
+SODA4R739__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:739:v,pid loop gain:AGN:c
+SODA4R677__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:677:v,pid loop gain:AGN:c
+SODH1P01___FLT
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:01:v,fault sensor:FLT:c
+SODA1R340__ALM
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:340:v,alarm variable:ALM:c
+SODA1R416__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:416:v,discharge air pressure sensor:VAV:c
+SODA1R498__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:498:v,pid loop gain:AGN:c
+SODA4R367__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:367:v,room temp setpoint:ARS:c
+SODA1R544__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:544:v,room temp:ART:c
+SODC1SP04__AMP
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,current reading:AMP:c
+SODA1R544__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:544:v,room temp setpoint:ARS:c
+SODC1C2SYS_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,system start/stop sensor:SYS_S_S:c
+SODA4R537__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:537:v,room temp setpoint:ARS:c
+SODA4R537__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:537:v,room temp:ART:c
+SODA1E13___CFM
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:13:v,air volume:CFM:c
+SODA4R735__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:735:v,pid loop gain:AGN:c
+SODA3R527__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:527:v,temp setpoint off:ASO:c
+SODA1R430__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430:v,pid loop gain:AGN:c
+SODC1C3_4__3TM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3_4:v,timer variable:TM:c
+SODA1C300__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300:v,temp setpoint off:ASO:c
+SODA1R652__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:652:v,room temp:ART:c
+SODA1R652__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:652:v,room temp setpoint:ARS:c
+SODE01A____S_S
+site:SOD:c,exhaust fan:E:c,exhaust fan-id:01A:v,start stop sensor:S_S:c
+SODA1R405B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405B:v,pid loop gain:AGN:c
+SODA3R325_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:325:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R280__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:280:v,room temp:ART:c
+SODA1R562A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:562A:v,discharge air pressure sensor:VAV:c
+SODA4R777__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:777:v,room temp setpoint:ARS:c
+SODA4R777__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:777:v,room temp:ART:c
+SODA4R673__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:673:v,temp setpoint off:ASO:c
+SODA2S14___H_C
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,damper economize flag:H_C:c
+SOD__BLD_1_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA1F5_VAV_MN
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:5:v,min discharge air pressure sensor:VAV_MN:c
+SODA1R606__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:606:v,pid loop gain:AGN:c
+SODA4R341__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:341:v,room temp setpoint:ARS:c
+SODA4R341__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:341:v,room temp:ART:c
+SODA1R273__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:273:v,discharge air pressure sensor:VAV:c
+SODA4R675_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:675:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R534__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:534:v,pid loop gain:AGN:c
+SODA1F5_VAV_MX
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:5:v,max discharge air pressure sensor:VAV_MX:c
+SODA2S14DP_STA
+site:SOD:c,ahu:A:c,ahu-id:2:v,supply fan:S:c,supply fan-id:14:v,differential pressure status sensor:DP_STA:c
+SODA3R681A_ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:681A:v,room temp setpoint:ARS:c
+SODA4R643__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:643:v,temp setpoint off:ASO:c
+SODA4R737_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:737:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R327_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:327:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4_SMK_ALM1
+site:SOD:c,ahu:A:c,ahu-id:4:v,smoke alarm:SMK_ALM:c
+SODA4_SMK_ALM2
+site:SOD:c,ahu:A:c,ahu-id:4:v,smoke alarm:SMK_ALM:c
+SODA4_SMK_ALM3
+site:SOD:c,ahu:A:c,ahu-id:4:v,smoke alarm:SMK_ALM:c
+SODA4____OCCPY
+site:SOD:c,ahu:A:c,ahu-id:4:v,occupancy sensor:OCCPY:c
+SODA4R339__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:339:v,room temp:ART:c
+SODA3R719__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:719:v,room temp setpoint:ARS:c
+SODA3R719__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:719:v,room temp:ART:c
+SODC1SP03_FAIL
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,failure flag:FAIL:c
+SODC3A37___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:37:v,alarm variable:ALM:c
+SODC1S__F_FLOW
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,filtered flow sensor:F_FLOW:c
+SODA4R576__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:576:v,room temp:ART:c
+SODA3C411__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:411:v,room temp setpoint:ARS:c
+SODA3C411__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:411:v,room temp:ART:c
+SODA1R534__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:534:v,discharge air pressure sensor:VAV:c
+SODA1R544__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:544:v,discharge air pressure sensor:VAV:c
+SODA4R576__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:576:v,room temp setpoint:ARS:c
+SODA4S18DP_STA
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,differential pressure status sensor:DP_STA:c
+SODA3S16___FLT
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,fault sensor:FLT:c
+SODC1SP03__S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,start stop sensor:S_S:c
+SODC1C2__CDRWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:2:v,condensor return water temp:CDRWT:c
+SODA4R665__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:665:v,pid loop gain:AGN:c
+SODA1R398__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:398:v,temp setpoint off:ASO:c
+SODA2E15___S_S
+site:SOD:c,ahu:A:c,ahu-id:2:v,exhaust fan:E:c,exhaust fan-id:15:v,start stop sensor:S_S:c
+SODA3R413_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:413:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R184__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:184:v,room temp:ART:c
+SODA1R626__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:626:v,discharge air pressure sensor:VAV:c
+SODA1R184__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:184:v,room temp setpoint:ARS:c
+SODA3R721__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:721:v,room temp setpoint:ARS:c
+SODA3R721__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:721:v,room temp:ART:c
+SODA1R290__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:290:v,pid loop gain:AGN:c
+SODA1R187A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187A:v,discharge air pressure sensor:VAV:c
+SODA5S20DP_STA
+site:SOD:c,ahu:A:c,ahu-id:5:v,supply fan:S:c,supply fan-id:20:v,differential pressure status sensor:DP_STA:c
+SODA3R465_4AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_4:v,pid loop gain:AGN:c
+SODC1P____FLOW
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,pump:P:c
+SODA3R317__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:317:v,temp setpoint off:ASO:c
+SODA3R325__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:325:v,pid loop gain:AGN:c
+SODC2T1____VLV
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:1:v,valve position:VLV:c
+SODA1R784__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:784:v,room temp setpoint:ARS:c
+SODA1R582__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:582:v,room temp setpoint:ARS:c
+SODA1R430A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:430A:v,discharge air pressure sensor:VAV:c
+SODA4R576_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:576:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R345_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:345:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R615__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:615:v,room temp setpoint:ARS:c
+SODA3R465K_ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465K:v,room temp setpoint:ARS:c
+SODA1R275__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:275:v,room temp:ART:c
+SODA1R275__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:275:v,room temp setpoint:ARS:c
+SODA1R510__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:510:v,temp setpoint off:ASO:c
+SODA3R381__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:381:v,temp setpoint off:ASO:c
+SODA3R615__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:615:v,room temp:ART:c
+SODA3R783__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:783:v,temp setpoint off:ASO:c
+SODA3R319__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:319:v,pid loop gain:AGN:c
+SODA1R530__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:530:v,pid loop gain:AGN:c
+SODC2______ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,alarm variable:ALM:c
+SOD____MAX_OAT
+site:SOD:c,max outside air temp:MAX_OAT:c
+SODA3ALL_31ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room temp setpoint:ARS:c
+SODA1R544__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:544:v,temp setpoint off:ASO:c
+SODA1C300__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300:v,room temp setpoint:ARS:c
+SODA1C300__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300:v,room temp:ART:c
+SODA1R184__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:184:v,discharge air pressure sensor:VAV:c
+SODA3R527__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:527:v,room temp:ART:c
+SODA3R527__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:527:v,room temp setpoint:ARS:c
+SODA1C400C_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400C:v,pid loop gain:AGN:c
+SODA3C711__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:711:v,pid loop gain:AGN:c
+SODA4R443__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:443:v,pid loop gain:AGN:c
+SODA3R698__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:698:v,pid loop gain:AGN:c
+SODA4R651__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:651:v,pid loop gain:AGN:c
+SODC3__T_C_STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,status sensor:STA:c
+SODA4R677_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:677:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R573__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:573:v,pid loop gain:AGN:c
+SODA1R420A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420A:v,room temp setpoint:ARS:c
+SODA3R627__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:627:v,pid loop gain:AGN:c
+SODA4R765__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:765:v,room temp setpoint:ARS:c
+SODA1R320__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:320:v,pid loop gain:AGN:c
+SODA4R765__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:765:v,room temp:ART:c
+SODA1R352__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:352:v,temp setpoint off:ASO:c
+SODH1______STA
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,status sensor:STA:c
+SODC1C3_4CDRWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3_4:v,condensor return water temp:CDRWT:c
+SODA4ALL_31ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room temp setpoint:ARS:c
+SOD33BLD_2_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA4ALL_32NSB
+site:SOD:c,ahu:A:c,ahu-id:4:v
+SODA3R681A_ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:681A:v,temp setpoint off:ASO:c
+SODA4ALL_34NSB
+site:SOD:c,ahu:A:c,ahu-id:4:v
+SODA4R551_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:551:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC1SEC__TONS
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v
+SODA4R341__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:341:v,temp setpoint off:ASO:c
+SODA3R525__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:525:v,pid loop gain:AGN:c
+SODA3R513__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:513:v,room temp:ART:c
+SODA1R465D_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465D:v,room temp:ART:c
+SODA1R465D_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465D:v,room temp setpoint:ARS:c
+SODA3R617__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:617:v,temp setpoint off:ASO:c
+SODA3R513__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:513:v,room temp setpoint:ARS:c
+SODA1C400ARVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400A:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C500A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500A:v,pid loop gain:AGN:c
+SODC3A35___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:35:v,alarm variable:ALM:c
+SODA4R643__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:643:v,room temp:ART:c
+SODA4R643__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:643:v,room temp setpoint:ARS:c
+SODC1SP03__TMR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,timer variable:TMR:c
+SODA1C180__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:180:v,discharge air pressure sensor:VAV:c
+SODA3R587__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:587:v,pid loop gain:AGN:c
+SODH1P01__FAIL
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:01:v,failure flag:FAIL:c
+SODA4R631__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:631:v,pid loop gain:AGN:c
+SODA1R552__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:552:v,discharge air pressure sensor:VAV:c
+SODA1R310__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:310:v,temp setpoint off:ASO:c
+SODA4R349__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:349:v,room temp setpoint:ARS:c
+SODA4R349__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:349:v,room temp:ART:c
+SODA1R288__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:288:v,temp setpoint off:ASO:c
+SODA1R634__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:634:v,discharge air pressure sensor:VAV:c
+SODA1R564__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:564:v,pid loop gain:AGN:c
+SODA4R576__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:576:v,pid loop gain:AGN:c
+SODA1R410A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410A:v,room temp:ART:c
+SODA1R410A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410A:v,room temp setpoint:ARS:c
+SODA4R775_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:775:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R600B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:600B:v,discharge air pressure sensor:VAV:c
+SODA1R398__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:398:v,room temp:ART:c
+SODC3______SWS
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,supply water setpoint:SWS:c
+SODC3______SWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,supply water temp:SWT:c
+SODC1C3____S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3:v,start stop sensor:S_S:c
+SODA1C400BRVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400B:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3S16___CVP
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,chilled water valve pressure:CVP:c
+SODA1R273__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:273:v,temp setpoint off:ASO:c
+SODA1R652__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:652:v,temp setpoint off:ASO:c
+SODA4R637__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:637:v,pid loop gain:AGN:c
+SODA4R777_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:777:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R377_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:377:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1E12___S_S
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:12:v,start stop sensor:S_S:c
+SODA3C411__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:411:v,temp setpoint off:ASO:c
+SODA3R381__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:381:v,room temp:ART:c
+SODA3R381__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:381:v,room temp setpoint:ARS:c
+SODA4R771__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:771:v,temp setpoint off:ASO:c
+SODA1R510__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:510:v,room temp setpoint:ARS:c
+SODA4R465A_ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465A:v,room temp setpoint:ARS:c
+SODA4R465A_ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465A:v,room temp:ART:c
+SODA1R510__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:510:v,room temp:ART:c
+SODA1R465B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465B:v,discharge air pressure sensor:VAV:c
+SODC3A38___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:38:v,status sensor:STA:c
+SODA3R523__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:523:v,pid loop gain:AGN:c
+SODA3R465_5ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_5:v,room temp setpoint:ARS:c
+SODA3R465_5ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_5:v,room temp:ART:c
+SODCP1____TEMP
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:P1:v,temp sensor:TEMP:c
+SODA3R783__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:783:v,room temp setpoint:ARS:c
+SODC1SEC__FLOW
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,flow rate sensor:FLOW:c
+SODA4R367_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:367:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R683__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:683:v,temp setpoint off:ASO:c
+SODC3A40___ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,air conditioner:A:c,air conditioner-id:40:v,alarm variable:ALM:c
+SODA1R440__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:440:v,discharge air pressure sensor:VAV:c
+SODA3R785__ANS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,nighttime setpoint:ANS:c
+SODA1C500B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:500B:v,pid loop gain:AGN:c
+SODA3R719__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:719:v,temp setpoint off:ASO:c
+SODA3R617_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:617:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C400B_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400B:v,pid loop gain:AGN:c
+SOD__BLD_EVENT
+site:SOD:c,building wide sensor:BLD:c,event sensor:EVENT:c
+SODA4R645__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:645:v,pid loop gain:AGN:c
+SODA4R733__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:733:v,pid loop gain:AGN:c
+SODA4R531_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:531:v,vav reheat discharge air pressure sensor:RVAV:c
+SODC3P09___AMP
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,current reading:AMP:c
+SODA1R678__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:678:v,pid loop gain:AGN:c
+SODA4R576__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:576:v,temp setpoint off:ASO:c
+SODA3R683__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:683:v,room temp setpoint:ARS:c
+SODA1C300B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300B:v,room temp:ART:c
+SODA1R598__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:598:v,pid loop gain:AGN:c
+SODA1R271__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:271:v,pid loop gain:AGN:c
+SODA1_LOW_RAT3
+site:SOD:c,ahu:A:c,ahu-id:1:v,low return air temp alarm:LOW_RAT:c
+SODA1_LOW_RAT2
+site:SOD:c,ahu:A:c,ahu-id:1:v,low return air temp alarm:LOW_RAT:c
+SODA1_LOW_RAT4
+site:SOD:c,ahu:A:c,ahu-id:1:v,low return air temp alarm:LOW_RAT:c
+SODA3R465_4VP2
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_4:v,discharge air pressure sensor:VP:c
+SODA3S16___DMP
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,mixed air damper:DMP:c
+SODA4R545__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:545:v,pid loop gain:AGN:c
+SODA1R352__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:352:v,room temp:ART:c
+SODA1R326__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:326:v,discharge air pressure sensor:VAV:c
+SODA4R773_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:773:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R465_7ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_7:v,room temp setpoint:ARS:c
+SODA1R626__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:626:v,temp setpoint off:ASO:c
+SODA3R465_7ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_7:v,room temp:ART:c
+SODC3L34___STA
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,status sensor:STA:c
+SODA4S18___FLT
+site:SOD:c,ahu:A:c,ahu-id:4:v,supply fan:S:c,supply fan-id:18:v,fault sensor:FLT:c
+SODA1R310__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:310:v,room temp setpoint:ARS:c
+SODA1R310__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:310:v,room temp:ART:c
+SODA1S11__FSTP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,filtered static pressure sensor:FSTP:c
+SODA4R465_3AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465_3:v,pid loop gain:AGN:c
+SODA3R389_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:389:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3R395__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:395:v,pid loop gain:AGN:c
+SODA1R500B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:500B:v,discharge air pressure sensor:VAV:c
+SODH1P02__FAIL
+site:SOD:c,hot water loop:H:c,hot water loop-id:1:v,pump:P:c,pump-id:02:v,failure flag:FAIL:c
+SODA1R288__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:288:v,room temp:ART:c
+SODA1R288__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:288:v,room temp setpoint:ARS:c
+SODA3R323_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:323:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R343__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:343:v,room temp:ART:c
+SODA4R343__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:343:v,room temp setpoint:ARS:c
+SODA4R349__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:349:v,temp setpoint off:ASO:c
+SODA4R465A_VAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465A:v,discharge air pressure sensor:VAV:c
+SODA1R524__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:524:v,pid loop gain:AGN:c
+SODA3S16___S_S
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,start stop sensor:S_S:c
+SODA3R525_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:525:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R651__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:651:v,room temp:ART:c
+SODA3S16___CFM
+site:SOD:c,ahu:A:c,ahu-id:3:v,supply fan:S:c,supply fan-id:16:v,air volume:CFM:c
+SODA3R615__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:615:v,temp setpoint off:ASO:c
+SODA1R420A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420A:v,room temp:ART:c
+SODA3R729__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:729:v,temp setpoint off:ASO:c
+SODA4R773__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:773:v,pid loop gain:AGN:c
+SODA1R330A_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330A:v,discharge air pressure sensor:VAV:c
+SODA1R420A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:420A:v,pid loop gain:AGN:c
+SODA3R317__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:317:v,pid loop gain:AGN:c
+SODA3R315__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:315:v,room temp setpoint:ARS:c
+SODA3R315__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:315:v,room temp:ART:c
+SODA1ALL_34NSB
+site:SOD:c,ahu:A:c,ahu-id:1:v
+SODA4R671__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:671:v,pid loop gain:AGN:c
+SODA3R515__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:515:v,pid loop gain:AGN:c
+SODA4R643_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:643:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3C611__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:611:v,room temp setpoint:ARS:c
+SODA3C611__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:611:v,room temp:ART:c
+SODA1S11___FLT
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,fault sensor:FLT:c
+SODA3ALL_32NSB
+site:SOD:c,ahu:A:c,ahu-id:3:v
+SODA1R273__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:273:v,room temp setpoint:ARS:c
+SODA1R273__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:273:v,room temp:ART:c
+SODA4R765__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:765:v,temp setpoint off:ASO:c
+SODA4R673_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:673:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1S11_EFSTP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,east filtered static pressure sensor:EFSTP:c
+SODC1_ETC__SWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,supply water temp:SWT:c
+SODA1E12___SPR
+site:SOD:c,ahu:A:c,ahu-id:1:v,exhaust fan:E:c,exhaust fan-id:12:v,fan speed reset:SPR:c
+SODA4R637_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:637:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C700BRVAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700B:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1F3_VAV_MX
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:3:v,max discharge air pressure sensor:VAV_MX:c
+SODA1F1_VAV_MX
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:1:v,max discharge air pressure sensor:VAV_MX:c
+SODA3R698__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:698:v,room temp:ART:c
+SODA3R527__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:527:v,pid loop gain:AGN:c
+SODA3R698__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:698:v,room temp setpoint:ARS:c
+SODA1R542__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:542:v,discharge air pressure sensor:VAV:c
+SODA1F1_VAV_MN
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:1:v,min discharge air pressure sensor:VAV_MN:c
+SODA1F3_VAV_MN
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:3:v,min discharge air pressure sensor:VAV_MN:c
+SODC2T2__H_S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,cooling tower:T:c,cooling tower-id:2:v,start stop sensor:S_S:c
+SODA3R623_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:623:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3ALL_34ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room temp setpoint:ARS:c
+SODA4R633__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:633:v,room temp:ART:c
+SODA1R566__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:566:v,discharge air pressure sensor:VAV:c
+SODA4R441__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:441:v,temp setpoint off:ASO:c
+SODA3R617__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:617:v,room temp setpoint:ARS:c
+SODA3R513__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:513:v,temp setpoint off:ASO:c
+SODA3R617__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:617:v,room temp:ART:c
+SODA1R676__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:676:v,pid loop gain:AGN:c
+SODA1F4_VAV_MX
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:4:v,max discharge air pressure sensor:VAV_MX:c
+SODA1F4_VAV_MN
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:4:v,min discharge air pressure sensor:VAV_MN:c
+SODA3R579__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:579:v,pid loop gain:AGN:c
+SODA4R573__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:573:v,temp setpoint off:ASO:c
+SODA1R287__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:287:v,discharge air pressure sensor:VAV:c
+SODA1R187A_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187A:v,room temp:ART:c
+SODA3C511_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:511:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R465D_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:465D:v,pid loop gain:AGN:c
+SODA4R447__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:447:v,pid loop gain:AGN:c
+SODA1R410A_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:410A:v,temp setpoint off:ASO:c
+SOD__BLD___SFM
+site:SOD:c,building wide sensor:BLD:c
+SODA4_LOW_RAT1
+site:SOD:c,ahu:A:c,ahu-id:4:v,low return air temp alarm:LOW_RAT:c
+SODA1R405B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:405B:v,temp setpoint off:ASO:c
+SODC1C3_4__RWT
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3_4:v
+SODA3R798__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:798:v,temp setpoint off:ASO:c
+SODA4E19___CFM
+site:SOD:c,ahu:A:c,ahu-id:4:v,exhaust fan:E:c,exhaust fan-id:19:v,air volume:CFM:c
+SODA1S11_W_STS
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,static pressure setpoint:STS:c
+SODA1S11_W_STP
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,east static pressure sensor:W_STP:c
+SODA1R678__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:678:v,room temp setpoint:ARS:c
+SODA4R635__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:635:v,room temp:ART:c
+SODA3R393__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:393:v,pid loop gain:AGN:c
+SODA4R635__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:635:v,room temp setpoint:ARS:c
+SODA4R535_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:535:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R375_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:375:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4C300T_ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:C:c,room-id:300T:v,temp setpoint off:ASO:c
+SODA1R626__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:626:v,room temp setpoint:ARS:c
+SODA3R465_7ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_7:v,temp setpoint off:ASO:c
+SODA1R626__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:626:v,room temp:ART:c
+SODC2__I___VLV
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:2:v,valve position:VLV:c
+SODA4R681B_AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:681B:v,pid loop gain:AGN:c
+SODA3R329__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:329:v,temp setpoint off:ASO:c
+SODA_CH1_CHWST
+site:SODA:c,chiller:CH:c,chiller-id:1:v,chilled water supply temp:CHWST:c
+SODA3R465_4ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_4:v,temp setpoint off:ASO:c
+SODA4R367__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:367:v,room temp:ART:c
+SOD32BLD_1_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA1R330B_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:330B:v,discharge air pressure sensor:VAV:c
+SODA1_SMK_ALM2
+site:SOD:c,ahu:A:c,ahu-id:1:v,smoke alarm:SMK_ALM:c
+SODA1R271__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:271:v,discharge air pressure sensor:VAV:c
+SODA4R771__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:771:v,room temp setpoint:ARS:c
+SODA1R284__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:284:v,pid loop gain:AGN:c
+SODA1R598__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:598:v,discharge air pressure sensor:VAV:c
+SODA1R416__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:416:v,room temp:ART:c
+SODA1R416__ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:416:v,room temp setpoint:ARS:c
+SODC1SP04__TMR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:04:v,timer variable:TMR:c
+SOD32BLD_2_VAR
+site:SOD:c,building wide sensor:BLD:c,internal building variable:VAR:c
+SODA3R465_5ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:465_5:v,temp setpoint off:ASO:c
+SODA3R729__ARS
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:729:v,room temp setpoint:ARS:c
+SODA4R573_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:573:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1F2_VAV_AV
+site:SOD:c,ahu:A:c,ahu-id:1:v,floor:F:c,floor-id:2:v,avg discharge air pressure sensor:VAV_AV:c
+SODC3P09___SPD
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,fan speed:SPD:c
+SODA1R582__ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:582:v,room temp:ART:c
+SODA3R729__ART
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:729:v,room temp:ART:c
+SODA1C600B_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600B:v,room temp setpoint:ARS:c
+SODA1C600B_ART
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:600B:v,room temp:ART:c
+SODC3P09___SPR
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:09:v,fan speed reset:SPR:c
+SODC3P10___S_S
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,pump:P:c,pump-id:10:v,start stop sensor:S_S:c
+SODA4R535__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:535:v,temp setpoint off:ASO:c
+SODA3R331__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:331:v,pid loop gain:AGN:c
+SODA4R635_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:635:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1S11___SPD
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,fan speed:SPD:c
+SODA3R315__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:315:v,temp setpoint off:ASO:c
+SODA1R277__ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:277:v,temp setpoint off:ASO:c
+SODA1S11___SPR
+site:SOD:c,ahu:A:c,ahu-id:1:v,supply fan:S:c,supply fan-id:11:v,fan speed reset:SPR:c
+SODA3R789_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:789:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C300__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300:v,discharge air pressure sensor:VAV:c
+SODA4R537_RVAV
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:537:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1C400C_VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400C:v,discharge air pressure sensor:VAV:c
+SODA1C300B_ASO
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:300B:v,temp setpoint off:ASO:c
+SODA1C700D_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:700D:v,room temp setpoint:ARS:c
+SODA1R380__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:380:v,discharge air pressure sensor:VAV:c
+SODA4R347__AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:347:v,pid loop gain:AGN:c
+SODA1R564__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:564:v,discharge air pressure sensor:VAV:c
+SODA4R671__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:671:v,room temp:ART:c
+SODA3R781_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:781:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA3C711__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:C:c,room-id:711:v,temp setpoint off:ASO:c
+SODA4R671__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:671:v,room temp setpoint:ARS:c
+SODA3R687__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:687:v,pid loop gain:AGN:c
+SODA3R698__ASO
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:698:v,temp setpoint off:ASO:c
+SODA4R465H_AGN
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:465H:v,pid loop gain:AGN:c
+SODA1_SMK_ALM3
+site:SOD:c,ahu:A:c,ahu-id:1:v,smoke alarm:SMK_ALM:c
+SODA4R441__ART
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:441:v,room temp:ART:c
+SODA3R723_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:723:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA4R441__ARS
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:441:v,room temp setpoint:ARS:c
+SODA1_SMK_ALM4
+site:SOD:c,ahu:A:c,ahu-id:1:v,smoke alarm:SMK_ALM:c
+SODA1R187A_ARS
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:187A:v,room temp setpoint:ARS:c
+SODC1SP03__SPD
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1S:v,pump:P:c,pump-id:03:v,fan speed:SPD:c
+SODA1R310__VAV
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:310:v,discharge air pressure sensor:VAV:c
+SODC1C3____ALM
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:1:v,chiller:C:c,chiller-id:3:v,alarm variable:ALM:c
+SODA3R683__AGN
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:683:v,pid loop gain:AGN:c
+SOD34NET___STA
+site:SOD:c,status sensor:STA:c
+SODA1ALL_33NSB
+site:SOD:c,ahu:A:c,ahu-id:1:v
+SODA3R587_RVAV
+site:SOD:c,ahu:A:c,ahu-id:3:v,room:R:c,room-id:587:v,vav reheat discharge air pressure sensor:RVAV:c
+SODA1R544__AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:R:c,room-id:544:v,pid loop gain:AGN:c
+SODC3X_____A_M
+site:SOD:c,chilled/condensor water loop:C:c,chilled/condensor water loop-id:3:v,alarm variable:A_M:c
+SODA4R343__ASO
+site:SOD:c,ahu:A:c,ahu-id:4:v,room:R:c,room-id:343:v,temp setpoint off:ASO:c
+SODA1C400A_AGN
+site:SOD:c,ahu:A:c,ahu-id:1:v,room:C:c,room-id:400A:v,pid loop gain:AGN:c
