@@ -1,0 +1,3730 @@
+421_U10_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U10:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U10_DAT
+site:42:v,Floor-id:1:v,Asset-id:U10:v,fcu supply air temperature sensor:DAT:c
+421_U10_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U10:v,fcu fan speed sensor:FAN_SPD:c
+421_U10_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U10:v,fcu fault:FCU_FAULT:c
+421_U10_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U10:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U10_RAT
+site:42:v,Floor-id:1:v,Asset-id:U10:v,fcu return air temperature sensor:RAT:c
+421_U10_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U10:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U11_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U11:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U11_DAT
+site:42:v,Floor-id:1:v,Asset-id:U11:v,fcu supply air temperature sensor:DAT:c
+421_U11_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U11:v,fcu fan speed sensor:FAN_SPD:c
+421_U11_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U11:v,fcu fault:FCU_FAULT:c
+421_U11_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U11:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U11_RAT
+site:42:v,Floor-id:1:v,Asset-id:U11:v,fcu return air temperature sensor:RAT:c
+421_U11_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U11:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U12_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U12:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U12_DAT
+site:42:v,Floor-id:1:v,Asset-id:U12:v,fcu supply air temperature sensor:DAT:c
+421_U12_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U12:v,fcu fan speed sensor:FAN_SPD:c
+421_U12_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U12:v,fcu fault:FCU_FAULT:c
+421_U12_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U12:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U12_RAT
+site:42:v,Floor-id:1:v,Asset-id:U12:v,fcu return air temperature sensor:RAT:c
+421_U12_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U12:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U13_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U13:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U13_DAT
+site:42:v,Floor-id:1:v,Asset-id:U13:v,fcu supply air temperature sensor:DAT:c
+421_U13_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U13:v,fcu fan speed sensor:FAN_SPD:c
+421_U13_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U13:v,fcu fault:FCU_FAULT:c
+421_U13_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U13:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U13_RAT
+site:42:v,Floor-id:1:v,Asset-id:U13:v,fcu return air temperature sensor:RAT:c
+421_U13_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U13:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U14_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U14:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U14_DAT
+site:42:v,Floor-id:1:v,Asset-id:U14:v,fcu supply air temperature sensor:DAT:c
+421_U14_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U14:v,fcu fan speed sensor:FAN_SPD:c
+421_U14_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U14:v,fcu fault:FCU_FAULT:c
+421_U14_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U14:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U14_RAT
+site:42:v,Floor-id:1:v,Asset-id:U14:v,fcu return air temperature sensor:RAT:c
+421_U14_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U14:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U15_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U15:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U15_DAT
+site:42:v,Floor-id:1:v,Asset-id:U15:v,fcu supply air temperature sensor:DAT:c
+421_U15_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U15:v,fcu fan speed sensor:FAN_SPD:c
+421_U15_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U15:v,fcu fault:FCU_FAULT:c
+421_U15_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U15:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U15_RAT
+site:42:v,Floor-id:1:v,Asset-id:U15:v,fcu return air temperature sensor:RAT:c
+421_U15_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U15:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U16_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U16:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U16_DAT
+site:42:v,Floor-id:1:v,Asset-id:U16:v,fcu supply air temperature sensor:DAT:c
+421_U16_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U16:v,fcu fan speed sensor:FAN_SPD:c
+421_U16_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U16:v,fcu fault:FCU_FAULT:c
+421_U16_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U16:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U16_RAT
+site:42:v,Floor-id:1:v,Asset-id:U16:v,fcu return air temperature sensor:RAT:c
+421_U16_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U16:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U17_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U17:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U17_DAT
+site:42:v,Floor-id:1:v,Asset-id:U17:v,fcu supply air temperature sensor:DAT:c
+421_U17_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U17:v,fcu fan speed sensor:FAN_SPD:c
+421_U17_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U17:v,fcu fault:FCU_FAULT:c
+421_U17_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U17:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U17_RAT
+site:42:v,Floor-id:1:v,Asset-id:U17:v,fcu return air temperature sensor:RAT:c
+421_U17_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U17:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U18_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U18:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U18_DAT
+site:42:v,Floor-id:1:v,Asset-id:U18:v,fcu supply air temperature sensor:DAT:c
+421_U18_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U18:v,fcu fan speed sensor:FAN_SPD:c
+421_U18_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U18:v,fcu fault:FCU_FAULT:c
+421_U18_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U18:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U18_RAT
+site:42:v,Floor-id:1:v,Asset-id:U18:v,fcu return air temperature sensor:RAT:c
+421_U18_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U18:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U19_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U19:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U19_DAT
+site:42:v,Floor-id:1:v,Asset-id:U19:v,fcu supply air temperature sensor:DAT:c
+421_U19_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U19:v,fcu fan speed sensor:FAN_SPD:c
+421_U19_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U19:v,fcu fault:FCU_FAULT:c
+421_U19_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U19:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U19_RAT
+site:42:v,Floor-id:1:v,Asset-id:U19:v,fcu return air temperature sensor:RAT:c
+421_U19_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U19:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U1_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U1:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U1_DAT
+site:42:v,Floor-id:1:v,Asset-id:U1:v,fcu supply air temperature sensor:DAT:c
+421_U1_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U1:v,fcu fan speed sensor:FAN_SPD:c
+421_U1_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U1:v,fcu fault:FCU_FAULT:c
+421_U1_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U1:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U1_RAT
+site:42:v,Floor-id:1:v,Asset-id:U1:v,fcu return air temperature sensor:RAT:c
+421_U1_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U1:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U20_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U20:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U20_DAT
+site:42:v,Floor-id:1:v,Asset-id:U20:v,fcu supply air temperature sensor:DAT:c
+421_U20_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U20:v,fcu fan speed sensor:FAN_SPD:c
+421_U20_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U20:v,fcu fault:FCU_FAULT:c
+421_U20_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U20:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U20_RAT
+site:42:v,Floor-id:1:v,Asset-id:U20:v,fcu return air temperature sensor:RAT:c
+421_U20_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U20:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U21_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U21:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U21_DAT
+site:42:v,Floor-id:1:v,Asset-id:U21:v,fcu supply air temperature sensor:DAT:c
+421_U21_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U21:v,fcu fan speed sensor:FAN_SPD:c
+421_U21_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U21:v,fcu fault:FCU_FAULT:c
+421_U21_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U21:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U21_RAT
+site:42:v,Floor-id:1:v,Asset-id:U21:v,fcu return air temperature sensor:RAT:c
+421_U21_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U21:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U22_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U22:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U22_DAT
+site:42:v,Floor-id:1:v,Asset-id:U22:v,fcu supply air temperature sensor:DAT:c
+421_U22_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U22:v,fcu fan speed sensor:FAN_SPD:c
+421_U22_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U22:v,fcu fault:FCU_FAULT:c
+421_U22_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U22:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U22_RAT
+site:42:v,Floor-id:1:v,Asset-id:U22:v,fcu return air temperature sensor:RAT:c
+421_U22_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U22:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U23_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U23:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U23_DAT
+site:42:v,Floor-id:1:v,Asset-id:U23:v,fcu supply air temperature sensor:DAT:c
+421_U23_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U23:v,fcu fan speed sensor:FAN_SPD:c
+421_U23_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U23:v,fcu fault:FCU_FAULT:c
+421_U23_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U23:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U23_RAT
+site:42:v,Floor-id:1:v,Asset-id:U23:v,fcu return air temperature sensor:RAT:c
+421_U23_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U23:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U2_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U2:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U2_DAT
+site:42:v,Floor-id:1:v,Asset-id:U2:v,fcu supply air temperature sensor:DAT:c
+421_U2_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U2:v,fcu fan speed sensor:FAN_SPD:c
+421_U2_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U2:v,fcu fault:FCU_FAULT:c
+421_U2_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U2:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U2_RAT
+site:42:v,Floor-id:1:v,Asset-id:U2:v,fcu return air temperature sensor:RAT:c
+421_U2_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U2:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U3_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U3:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U3_DAT
+site:42:v,Floor-id:1:v,Asset-id:U3:v,fcu supply air temperature sensor:DAT:c
+421_U3_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U3:v,fcu fan speed sensor:FAN_SPD:c
+421_U3_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U3:v,fcu fault:FCU_FAULT:c
+421_U3_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U3:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U3_RAT
+site:42:v,Floor-id:1:v,Asset-id:U3:v,fcu return air temperature sensor:RAT:c
+421_U3_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U3:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U4_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U4:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U4_DAT
+site:42:v,Floor-id:1:v,Asset-id:U4:v,fcu supply air temperature sensor:DAT:c
+421_U4_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U4:v,fcu fan speed sensor:FAN_SPD:c
+421_U4_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U4:v,fcu fault:FCU_FAULT:c
+421_U4_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U4:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U4_RAT
+site:42:v,Floor-id:1:v,Asset-id:U4:v,fcu return air temperature sensor:RAT:c
+421_U4_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U4:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U5_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U5:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U5_DAT
+site:42:v,Floor-id:1:v,Asset-id:U5:v,fcu supply air temperature sensor:DAT:c
+421_U5_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U5:v,fcu fan speed sensor:FAN_SPD:c
+421_U5_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U5:v,fcu fault:FCU_FAULT:c
+421_U5_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U5:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U5_RAT
+site:42:v,Floor-id:1:v,Asset-id:U5:v,fcu return air temperature sensor:RAT:c
+421_U5_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U5:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U6_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U6:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U6_DAT
+site:42:v,Floor-id:1:v,Asset-id:U6:v,fcu supply air temperature sensor:DAT:c
+421_U6_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U6:v,fcu fan speed sensor:FAN_SPD:c
+421_U6_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U6:v,fcu fault:FCU_FAULT:c
+421_U6_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U6:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U6_RAT
+site:42:v,Floor-id:1:v,Asset-id:U6:v,fcu return air temperature sensor:RAT:c
+421_U6_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U6:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U7_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U7:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U7_DAT
+site:42:v,Floor-id:1:v,Asset-id:U7:v,fcu supply air temperature sensor:DAT:c
+421_U7_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U7:v,fcu fan speed sensor:FAN_SPD:c
+421_U7_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U7:v,fcu fault:FCU_FAULT:c
+421_U7_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U7:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U7_RAT
+site:42:v,Floor-id:1:v,Asset-id:U7:v,fcu return air temperature sensor:RAT:c
+421_U7_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U7:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U8_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U8:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U8_DAT
+site:42:v,Floor-id:1:v,Asset-id:U8:v,fcu supply air temperature sensor:DAT:c
+421_U8_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U8:v,fcu fan speed sensor:FAN_SPD:c
+421_U8_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U8:v,fcu fault:FCU_FAULT:c
+421_U8_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U8:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U8_RAT
+site:42:v,Floor-id:1:v,Asset-id:U8:v,fcu return air temperature sensor:RAT:c
+421_U8_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U8:v,fcu air temperature setpoint:TEMP_SPT:c
+421_U9_CLG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U9:v,fcu cooling valve percentage cmd:CLG_VLV:c
+421_U9_DAT
+site:42:v,Floor-id:1:v,Asset-id:U9:v,fcu supply air temperature sensor:DAT:c
+421_U9_FAN_SPD
+site:42:v,Floor-id:1:v,Asset-id:U9:v,fcu fan speed sensor:FAN_SPD:c
+421_U9_FCU_FAULT
+site:42:v,Floor-id:1:v,Asset-id:U9:v,fcu fault:FCU_FAULT:c
+421_U9_HTG_VLV
+site:42:v,Floor-id:1:v,Asset-id:U9:v,fcu heating valve percentage cmd:HTG_VLV:c
+421_U9_RAT
+site:42:v,Floor-id:1:v,Asset-id:U9:v,fcu return air temperature sensor:RAT:c
+421_U9_TEMP_SPT
+site:42:v,Floor-id:1:v,Asset-id:U9:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U10_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U10:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U10_DAT
+site:42:v,Floor-id:G:v,Asset-id:U10:v,fcu supply air temperature sensor:DAT:c
+42G_U10_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U10:v,fcu fan speed sensor:FAN_SPD:c
+42G_U10_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U10:v,fcu fault:FCU_FAULT:c
+42G_U10_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U10:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U10_RAT
+site:42:v,Floor-id:G:v,Asset-id:U10:v,fcu return air temperature sensor:RAT:c
+42G_U10_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U10:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U11_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U11:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U11_DAT
+site:42:v,Floor-id:G:v,Asset-id:U11:v,fcu supply air temperature sensor:DAT:c
+42G_U11_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U11:v,fcu fan speed sensor:FAN_SPD:c
+42G_U11_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U11:v,fcu fault:FCU_FAULT:c
+42G_U11_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U11:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U11_RAT
+site:42:v,Floor-id:G:v,Asset-id:U11:v,fcu return air temperature sensor:RAT:c
+42G_U11_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U11:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U12_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U12:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U12_DAT
+site:42:v,Floor-id:G:v,Asset-id:U12:v,fcu supply air temperature sensor:DAT:c
+42G_U12_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U12:v,fcu fan speed sensor:FAN_SPD:c
+42G_U12_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U12:v,fcu fault:FCU_FAULT:c
+42G_U12_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U12:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U12_RAT
+site:42:v,Floor-id:G:v,Asset-id:U12:v,fcu return air temperature sensor:RAT:c
+42G_U12_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U12:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U13_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U13:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U13_DAT
+site:42:v,Floor-id:G:v,Asset-id:U13:v,fcu supply air temperature sensor:DAT:c
+42G_U13_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U13:v,fcu fan speed sensor:FAN_SPD:c
+42G_U13_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U13:v,fcu fault:FCU_FAULT:c
+42G_U13_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U13:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U13_RAT
+site:42:v,Floor-id:G:v,Asset-id:U13:v,fcu return air temperature sensor:RAT:c
+42G_U13_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U13:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U14_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U14:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U14_DAT
+site:42:v,Floor-id:G:v,Asset-id:U14:v,fcu supply air temperature sensor:DAT:c
+42G_U14_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U14:v,fcu fan speed sensor:FAN_SPD:c
+42G_U14_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U14:v,fcu fault:FCU_FAULT:c
+42G_U14_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U14:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U14_RAT
+site:42:v,Floor-id:G:v,Asset-id:U14:v,fcu return air temperature sensor:RAT:c
+42G_U14_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U14:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U15_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U15:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U15_DAT
+site:42:v,Floor-id:G:v,Asset-id:U15:v,fcu supply air temperature sensor:DAT:c
+42G_U15_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U15:v,fcu fan speed sensor:FAN_SPD:c
+42G_U15_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U15:v,fcu fault:FCU_FAULT:c
+42G_U15_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U15:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U15_RAT
+site:42:v,Floor-id:G:v,Asset-id:U15:v,fcu return air temperature sensor:RAT:c
+42G_U15_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U15:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U16_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U16:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U16_DAT
+site:42:v,Floor-id:G:v,Asset-id:U16:v,fcu supply air temperature sensor:DAT:c
+42G_U16_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U16:v,fcu fan speed sensor:FAN_SPD:c
+42G_U16_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U16:v,fcu fault:FCU_FAULT:c
+42G_U16_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U16:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U16_RAT
+site:42:v,Floor-id:G:v,Asset-id:U16:v,fcu return air temperature sensor:RAT:c
+42G_U16_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U16:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U17_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U17:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U17_DAT
+site:42:v,Floor-id:G:v,Asset-id:U17:v,fcu supply air temperature sensor:DAT:c
+42G_U17_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U17:v,fcu fan speed sensor:FAN_SPD:c
+42G_U17_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U17:v,fcu fault:FCU_FAULT:c
+42G_U17_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U17:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U17_RAT
+site:42:v,Floor-id:G:v,Asset-id:U17:v,fcu return air temperature sensor:RAT:c
+42G_U17_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U17:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U18_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U18:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U18_DAT
+site:42:v,Floor-id:G:v,Asset-id:U18:v,fcu supply air temperature sensor:DAT:c
+42G_U18_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U18:v,fcu fan speed sensor:FAN_SPD:c
+42G_U18_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U18:v,fcu fault:FCU_FAULT:c
+42G_U18_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U18:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U18_RAT
+site:42:v,Floor-id:G:v,Asset-id:U18:v,fcu return air temperature sensor:RAT:c
+42G_U18_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U18:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U19_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U19:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U19_DAT
+site:42:v,Floor-id:G:v,Asset-id:U19:v,fcu supply air temperature sensor:DAT:c
+42G_U19_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U19:v,fcu fan speed sensor:FAN_SPD:c
+42G_U19_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U19:v,fcu fault:FCU_FAULT:c
+42G_U19_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U19:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U19_RAT
+site:42:v,Floor-id:G:v,Asset-id:U19:v,fcu return air temperature sensor:RAT:c
+42G_U19_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U19:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U1_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U1:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U1_DAT
+site:42:v,Floor-id:G:v,Asset-id:U1:v,fcu supply air temperature sensor:DAT:c
+42G_U1_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U1:v,fcu fan speed sensor:FAN_SPD:c
+42G_U1_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U1:v,fcu fault:FCU_FAULT:c
+42G_U1_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U1:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U1_RAT
+site:42:v,Floor-id:G:v,Asset-id:U1:v,fcu return air temperature sensor:RAT:c
+42G_U1_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U1:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U20_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U20:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U20_DAT
+site:42:v,Floor-id:G:v,Asset-id:U20:v,fcu supply air temperature sensor:DAT:c
+42G_U20_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U20:v,fcu fan speed sensor:FAN_SPD:c
+42G_U20_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U20:v,fcu fault:FCU_FAULT:c
+42G_U20_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U20:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U20_RAT
+site:42:v,Floor-id:G:v,Asset-id:U20:v,fcu return air temperature sensor:RAT:c
+42G_U20_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U20:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U21_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U21:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U21_DAT
+site:42:v,Floor-id:G:v,Asset-id:U21:v,fcu supply air temperature sensor:DAT:c
+42G_U21_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U21:v,fcu fan speed sensor:FAN_SPD:c
+42G_U21_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U21:v,fcu fault:FCU_FAULT:c
+42G_U21_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U21:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U21_RAT
+site:42:v,Floor-id:G:v,Asset-id:U21:v,fcu return air temperature sensor:RAT:c
+42G_U21_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U21:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U22_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U22:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U22_DAT
+site:42:v,Floor-id:G:v,Asset-id:U22:v,fcu supply air temperature sensor:DAT:c
+42G_U22_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U22:v,fcu fan speed sensor:FAN_SPD:c
+42G_U22_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U22:v,fcu fault:FCU_FAULT:c
+42G_U22_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U22:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U22_RAT
+site:42:v,Floor-id:G:v,Asset-id:U22:v,fcu return air temperature sensor:RAT:c
+42G_U22_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U22:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U23_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U23:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U23_DAT
+site:42:v,Floor-id:G:v,Asset-id:U23:v,fcu supply air temperature sensor:DAT:c
+42G_U23_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U23:v,fcu fan speed sensor:FAN_SPD:c
+42G_U23_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U23:v,fcu fault:FCU_FAULT:c
+42G_U23_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U23:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U23_RAT
+site:42:v,Floor-id:G:v,Asset-id:U23:v,fcu return air temperature sensor:RAT:c
+42G_U23_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U23:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U24_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U24:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U24_DAT
+site:42:v,Floor-id:G:v,Asset-id:U24:v,fcu supply air temperature sensor:DAT:c
+42G_U24_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U24:v,fcu fan speed sensor:FAN_SPD:c
+42G_U24_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U24:v,fcu fault:FCU_FAULT:c
+42G_U24_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U24:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U24_RAT
+site:42:v,Floor-id:G:v,Asset-id:U24:v,fcu return air temperature sensor:RAT:c
+42G_U24_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U24:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U25_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U25:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U25_DAT
+site:42:v,Floor-id:G:v,Asset-id:U25:v,fcu supply air temperature sensor:DAT:c
+42G_U25_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U25:v,fcu fan speed sensor:FAN_SPD:c
+42G_U25_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U25:v,fcu fault:FCU_FAULT:c
+42G_U25_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U25:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U25_RAT
+site:42:v,Floor-id:G:v,Asset-id:U25:v,fcu return air temperature sensor:RAT:c
+42G_U25_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U25:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U26_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U26:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U26_DAT
+site:42:v,Floor-id:G:v,Asset-id:U26:v,fcu supply air temperature sensor:DAT:c
+42G_U26_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U26:v,fcu fan speed sensor:FAN_SPD:c
+42G_U26_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U26:v,fcu fault:FCU_FAULT:c
+42G_U26_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U26:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U26_RAT
+site:42:v,Floor-id:G:v,Asset-id:U26:v,fcu return air temperature sensor:RAT:c
+42G_U26_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U26:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U27_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U27:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U27_DAT
+site:42:v,Floor-id:G:v,Asset-id:U27:v,fcu supply air temperature sensor:DAT:c
+42G_U27_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U27:v,fcu fan speed sensor:FAN_SPD:c
+42G_U27_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U27:v,fcu fault:FCU_FAULT:c
+42G_U27_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U27:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U27_RAT
+site:42:v,Floor-id:G:v,Asset-id:U27:v,fcu return air temperature sensor:RAT:c
+42G_U27_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U27:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U28_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U28:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U28_DAT
+site:42:v,Floor-id:G:v,Asset-id:U28:v,fcu supply air temperature sensor:DAT:c
+42G_U28_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U28:v,fcu fan speed sensor:FAN_SPD:c
+42G_U28_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U28:v,fcu fault:FCU_FAULT:c
+42G_U28_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U28:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U28_RAT
+site:42:v,Floor-id:G:v,Asset-id:U28:v,fcu return air temperature sensor:RAT:c
+42G_U28_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U28:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U29_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U29:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U29_DAT
+site:42:v,Floor-id:G:v,Asset-id:U29:v,fcu supply air temperature sensor:DAT:c
+42G_U29_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U29:v,fcu fan speed sensor:FAN_SPD:c
+42G_U29_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U29:v,fcu fault:FCU_FAULT:c
+42G_U29_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U29:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U29_RAT
+site:42:v,Floor-id:G:v,Asset-id:U29:v,fcu return air temperature sensor:RAT:c
+42G_U29_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U29:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U2_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U2:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U2_DAT
+site:42:v,Floor-id:G:v,Asset-id:U2:v,fcu supply air temperature sensor:DAT:c
+42G_U2_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U2:v,fcu fan speed sensor:FAN_SPD:c
+42G_U2_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U2:v,fcu fault:FCU_FAULT:c
+42G_U2_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U2:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U2_RAT
+site:42:v,Floor-id:G:v,Asset-id:U2:v,fcu return air temperature sensor:RAT:c
+42G_U2_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U2:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U30_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U30:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U30_DAT
+site:42:v,Floor-id:G:v,Asset-id:U30:v,fcu supply air temperature sensor:DAT:c
+42G_U30_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U30:v,fcu fan speed sensor:FAN_SPD:c
+42G_U30_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U30:v,fcu fault:FCU_FAULT:c
+42G_U30_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U30:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U30_RAT
+site:42:v,Floor-id:G:v,Asset-id:U30:v,fcu return air temperature sensor:RAT:c
+42G_U30_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U30:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U31_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U31:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U31_DAT
+site:42:v,Floor-id:G:v,Asset-id:U31:v,fcu supply air temperature sensor:DAT:c
+42G_U31_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U31:v,fcu fan speed sensor:FAN_SPD:c
+42G_U31_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U31:v,fcu fault:FCU_FAULT:c
+42G_U31_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U31:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U31_RAT
+site:42:v,Floor-id:G:v,Asset-id:U31:v,fcu return air temperature sensor:RAT:c
+42G_U31_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U31:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U32_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U32:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U32_DAT
+site:42:v,Floor-id:G:v,Asset-id:U32:v,fcu supply air temperature sensor:DAT:c
+42G_U32_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U32:v,fcu fan speed sensor:FAN_SPD:c
+42G_U32_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U32:v,fcu fault:FCU_FAULT:c
+42G_U32_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U32:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U32_RAT
+site:42:v,Floor-id:G:v,Asset-id:U32:v,fcu return air temperature sensor:RAT:c
+42G_U32_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U32:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U33_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U33:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U33_DAT
+site:42:v,Floor-id:G:v,Asset-id:U33:v,fcu supply air temperature sensor:DAT:c
+42G_U33_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U33:v,fcu fan speed sensor:FAN_SPD:c
+42G_U33_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U33:v,fcu fault:FCU_FAULT:c
+42G_U33_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U33:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U33_RAT
+site:42:v,Floor-id:G:v,Asset-id:U33:v,fcu return air temperature sensor:RAT:c
+42G_U33_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U33:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U34_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U34:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U34_DAT
+site:42:v,Floor-id:G:v,Asset-id:U34:v,fcu supply air temperature sensor:DAT:c
+42G_U34_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U34:v,fcu fan speed sensor:FAN_SPD:c
+42G_U34_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U34:v,fcu fault:FCU_FAULT:c
+42G_U34_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U34:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U34_RAT
+site:42:v,Floor-id:G:v,Asset-id:U34:v,fcu return air temperature sensor:RAT:c
+42G_U34_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U34:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U35_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U35:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U35_DAT
+site:42:v,Floor-id:G:v,Asset-id:U35:v,fcu supply air temperature sensor:DAT:c
+42G_U35_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U35:v,fcu fan speed sensor:FAN_SPD:c
+42G_U35_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U35:v,fcu fault:FCU_FAULT:c
+42G_U35_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U35:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U35_RAT
+site:42:v,Floor-id:G:v,Asset-id:U35:v,fcu return air temperature sensor:RAT:c
+42G_U35_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U35:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U36_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U36:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U36_DAT
+site:42:v,Floor-id:G:v,Asset-id:U36:v,fcu supply air temperature sensor:DAT:c
+42G_U36_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U36:v,fcu fan speed sensor:FAN_SPD:c
+42G_U36_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U36:v,fcu fault:FCU_FAULT:c
+42G_U36_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U36:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U36_RAT
+site:42:v,Floor-id:G:v,Asset-id:U36:v,fcu return air temperature sensor:RAT:c
+42G_U36_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U36:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U37_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U37:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U37_DAT
+site:42:v,Floor-id:G:v,Asset-id:U37:v,fcu supply air temperature sensor:DAT:c
+42G_U37_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U37:v,fcu fan speed sensor:FAN_SPD:c
+42G_U37_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U37:v,fcu fault:FCU_FAULT:c
+42G_U37_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U37:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U37_RAT
+site:42:v,Floor-id:G:v,Asset-id:U37:v,fcu return air temperature sensor:RAT:c
+42G_U37_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U37:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U38_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U38:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U38_DAT
+site:42:v,Floor-id:G:v,Asset-id:U38:v,fcu supply air temperature sensor:DAT:c
+42G_U38_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U38:v,fcu fan speed sensor:FAN_SPD:c
+42G_U38_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U38:v,fcu fault:FCU_FAULT:c
+42G_U38_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U38:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U38_RAT
+site:42:v,Floor-id:G:v,Asset-id:U38:v,fcu return air temperature sensor:RAT:c
+42G_U38_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U38:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U39_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U39:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U39_DAT
+site:42:v,Floor-id:G:v,Asset-id:U39:v,fcu supply air temperature sensor:DAT:c
+42G_U39_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U39:v,fcu fan speed sensor:FAN_SPD:c
+42G_U39_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U39:v,fcu fault:FCU_FAULT:c
+42G_U39_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U39:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U39_RAT
+site:42:v,Floor-id:G:v,Asset-id:U39:v,fcu return air temperature sensor:RAT:c
+42G_U39_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U39:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U3_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U3:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U3_DAT
+site:42:v,Floor-id:G:v,Asset-id:U3:v,fcu supply air temperature sensor:DAT:c
+42G_U3_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U3:v,fcu fan speed sensor:FAN_SPD:c
+42G_U3_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U3:v,fcu fault:FCU_FAULT:c
+42G_U3_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U3:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U3_RAT
+site:42:v,Floor-id:G:v,Asset-id:U3:v,fcu return air temperature sensor:RAT:c
+42G_U3_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U3:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U4_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U4:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U4_DAT
+site:42:v,Floor-id:G:v,Asset-id:U4:v,fcu supply air temperature sensor:DAT:c
+42G_U4_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U4:v,fcu fan speed sensor:FAN_SPD:c
+42G_U4_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U4:v,fcu fault:FCU_FAULT:c
+42G_U4_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U4:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U4_RAT
+site:42:v,Floor-id:G:v,Asset-id:U4:v,fcu return air temperature sensor:RAT:c
+42G_U4_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U4:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U5_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U5:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U5_DAT
+site:42:v,Floor-id:G:v,Asset-id:U5:v,fcu supply air temperature sensor:DAT:c
+42G_U5_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U5:v,fcu fan speed sensor:FAN_SPD:c
+42G_U5_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U5:v,fcu fault:FCU_FAULT:c
+42G_U5_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U5:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U5_RAT
+site:42:v,Floor-id:G:v,Asset-id:U5:v,fcu return air temperature sensor:RAT:c
+42G_U5_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U5:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U6_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U6:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U6_DAT
+site:42:v,Floor-id:G:v,Asset-id:U6:v,fcu supply air temperature sensor:DAT:c
+42G_U6_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U6:v,fcu fan speed sensor:FAN_SPD:c
+42G_U6_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U6:v,fcu fault:FCU_FAULT:c
+42G_U6_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U6:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U6_RAT
+site:42:v,Floor-id:G:v,Asset-id:U6:v,fcu return air temperature sensor:RAT:c
+42G_U6_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U6:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U7_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U7:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U7_DAT
+site:42:v,Floor-id:G:v,Asset-id:U7:v,fcu supply air temperature sensor:DAT:c
+42G_U7_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U7:v,fcu fan speed sensor:FAN_SPD:c
+42G_U7_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U7:v,fcu fault:FCU_FAULT:c
+42G_U7_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U7:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U7_RAT
+site:42:v,Floor-id:G:v,Asset-id:U7:v,fcu return air temperature sensor:RAT:c
+42G_U7_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U7:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U8_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U8:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U8_DAT
+site:42:v,Floor-id:G:v,Asset-id:U8:v,fcu supply air temperature sensor:DAT:c
+42G_U8_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U8:v,fcu fan speed sensor:FAN_SPD:c
+42G_U8_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U8:v,fcu fault:FCU_FAULT:c
+42G_U8_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U8:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U8_RAT
+site:42:v,Floor-id:G:v,Asset-id:U8:v,fcu return air temperature sensor:RAT:c
+42G_U8_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U8:v,fcu air temperature setpoint:TEMP_SPT:c
+42G_U9_CLG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U9:v,fcu cooling valve percentage cmd:CLG_VLV:c
+42G_U9_DAT
+site:42:v,Floor-id:G:v,Asset-id:U9:v,fcu supply air temperature sensor:DAT:c
+42G_U9_FAN_SPD
+site:42:v,Floor-id:G:v,Asset-id:U9:v,fcu fan speed sensor:FAN_SPD:c
+42G_U9_FCU_FAULT
+site:42:v,Floor-id:G:v,Asset-id:U9:v,fcu fault:FCU_FAULT:c
+42G_U9_HTG_VLV
+site:42:v,Floor-id:G:v,Asset-id:U9:v,fcu heating valve percentage cmd:HTG_VLV:c
+42G_U9_RAT
+site:42:v,Floor-id:G:v,Asset-id:U9:v,fcu return air temperature sensor:RAT:c
+42G_U9_TEMP_SPT
+site:42:v,Floor-id:G:v,Asset-id:U9:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U10_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U10:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U10_DAT
+site:44:v,Floor-id:1:v,Asset-id:U10:v,fcu supply air temperature sensor:DAT:c
+441_U10_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U10:v,fcu fan speed sensor:FAN_SPD:c
+441_U10_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U10:v,fcu fault:FCU_FAULT:c
+441_U10_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U10:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U10_RAT
+site:44:v,Floor-id:1:v,Asset-id:U10:v,fcu return air temperature sensor:RAT:c
+441_U10_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U10:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U11_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U11:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U11_DAT
+site:44:v,Floor-id:1:v,Asset-id:U11:v,fcu supply air temperature sensor:DAT:c
+441_U11_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U11:v,fcu fan speed sensor:FAN_SPD:c
+441_U11_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U11:v,fcu fault:FCU_FAULT:c
+441_U11_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U11:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U11_RAT
+site:44:v,Floor-id:1:v,Asset-id:U11:v,fcu return air temperature sensor:RAT:c
+441_U11_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U11:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U12_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U12:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U12_DAT
+site:44:v,Floor-id:1:v,Asset-id:U12:v,fcu supply air temperature sensor:DAT:c
+441_U12_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U12:v,fcu fan speed sensor:FAN_SPD:c
+441_U12_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U12:v,fcu fault:FCU_FAULT:c
+441_U12_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U12:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U12_RAT
+site:44:v,Floor-id:1:v,Asset-id:U12:v,fcu return air temperature sensor:RAT:c
+441_U12_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U12:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U13_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U13:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U13_DAT
+site:44:v,Floor-id:1:v,Asset-id:U13:v,fcu supply air temperature sensor:DAT:c
+441_U13_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U13:v,fcu fan speed sensor:FAN_SPD:c
+441_U13_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U13:v,fcu fault:FCU_FAULT:c
+441_U13_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U13:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U13_RAT
+site:44:v,Floor-id:1:v,Asset-id:U13:v,fcu return air temperature sensor:RAT:c
+441_U13_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U13:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U14_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U14:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U14_DAT
+site:44:v,Floor-id:1:v,Asset-id:U14:v,fcu supply air temperature sensor:DAT:c
+441_U14_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U14:v,fcu fan speed sensor:FAN_SPD:c
+441_U14_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U14:v,fcu fault:FCU_FAULT:c
+441_U14_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U14:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U14_RAT
+site:44:v,Floor-id:1:v,Asset-id:U14:v,fcu return air temperature sensor:RAT:c
+441_U14_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U14:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U15_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U15:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U15_DAT
+site:44:v,Floor-id:1:v,Asset-id:U15:v,fcu supply air temperature sensor:DAT:c
+441_U15_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U15:v,fcu fan speed sensor:FAN_SPD:c
+441_U15_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U15:v,fcu fault:FCU_FAULT:c
+441_U15_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U15:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U15_RAT
+site:44:v,Floor-id:1:v,Asset-id:U15:v,fcu return air temperature sensor:RAT:c
+441_U15_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U15:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U16_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U16:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U16_DAT
+site:44:v,Floor-id:1:v,Asset-id:U16:v,fcu supply air temperature sensor:DAT:c
+441_U16_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U16:v,fcu fan speed sensor:FAN_SPD:c
+441_U16_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U16:v,fcu fault:FCU_FAULT:c
+441_U16_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U16:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U16_RAT
+site:44:v,Floor-id:1:v,Asset-id:U16:v,fcu return air temperature sensor:RAT:c
+441_U16_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U16:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U17_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U17:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U17_DAT
+site:44:v,Floor-id:1:v,Asset-id:U17:v,fcu supply air temperature sensor:DAT:c
+441_U17_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U17:v,fcu fan speed sensor:FAN_SPD:c
+441_U17_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U17:v,fcu fault:FCU_FAULT:c
+441_U17_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U17:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U17_RAT
+site:44:v,Floor-id:1:v,Asset-id:U17:v,fcu return air temperature sensor:RAT:c
+441_U17_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U17:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U18_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U18:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U18_DAT
+site:44:v,Floor-id:1:v,Asset-id:U18:v,fcu supply air temperature sensor:DAT:c
+441_U18_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U18:v,fcu fan speed sensor:FAN_SPD:c
+441_U18_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U18:v,fcu fault:FCU_FAULT:c
+441_U18_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U18:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U18_RAT
+site:44:v,Floor-id:1:v,Asset-id:U18:v,fcu return air temperature sensor:RAT:c
+441_U18_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U18:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U19_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U19:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U19_DAT
+site:44:v,Floor-id:1:v,Asset-id:U19:v,fcu supply air temperature sensor:DAT:c
+441_U19_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U19:v,fcu fan speed sensor:FAN_SPD:c
+441_U19_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U19:v,fcu fault:FCU_FAULT:c
+441_U19_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U19:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U19_RAT
+site:44:v,Floor-id:1:v,Asset-id:U19:v,fcu return air temperature sensor:RAT:c
+441_U19_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U19:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U1_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U1:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U1_DAT
+site:44:v,Floor-id:1:v,Asset-id:U1:v,fcu supply air temperature sensor:DAT:c
+441_U1_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U1:v,fcu fan speed sensor:FAN_SPD:c
+441_U1_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U1:v,fcu fault:FCU_FAULT:c
+441_U1_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U1:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U1_RAT
+site:44:v,Floor-id:1:v,Asset-id:U1:v,fcu return air temperature sensor:RAT:c
+441_U1_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U1:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U2_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U2:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U2_DAT
+site:44:v,Floor-id:1:v,Asset-id:U2:v,fcu supply air temperature sensor:DAT:c
+441_U2_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U2:v,fcu fan speed sensor:FAN_SPD:c
+441_U2_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U2:v,fcu fault:FCU_FAULT:c
+441_U2_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U2:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U2_RAT
+site:44:v,Floor-id:1:v,Asset-id:U2:v,fcu return air temperature sensor:RAT:c
+441_U2_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U2:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U3_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U3:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U3_DAT
+site:44:v,Floor-id:1:v,Asset-id:U3:v,fcu supply air temperature sensor:DAT:c
+441_U3_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U3:v,fcu fan speed sensor:FAN_SPD:c
+441_U3_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U3:v,fcu fault:FCU_FAULT:c
+441_U3_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U3:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U3_RAT
+site:44:v,Floor-id:1:v,Asset-id:U3:v,fcu return air temperature sensor:RAT:c
+441_U3_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U3:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U4_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U4:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U4_DAT
+site:44:v,Floor-id:1:v,Asset-id:U4:v,fcu supply air temperature sensor:DAT:c
+441_U4_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U4:v,fcu fan speed sensor:FAN_SPD:c
+441_U4_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U4:v,fcu fault:FCU_FAULT:c
+441_U4_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U4:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U4_RAT
+site:44:v,Floor-id:1:v,Asset-id:U4:v,fcu return air temperature sensor:RAT:c
+441_U4_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U4:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U5_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U5:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U5_DAT
+site:44:v,Floor-id:1:v,Asset-id:U5:v,fcu supply air temperature sensor:DAT:c
+441_U5_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U5:v,fcu fan speed sensor:FAN_SPD:c
+441_U5_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U5:v,fcu fault:FCU_FAULT:c
+441_U5_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U5:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U5_RAT
+site:44:v,Floor-id:1:v,Asset-id:U5:v,fcu return air temperature sensor:RAT:c
+441_U5_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U5:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U6_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U6:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U6_DAT
+site:44:v,Floor-id:1:v,Asset-id:U6:v,fcu supply air temperature sensor:DAT:c
+441_U6_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U6:v,fcu fan speed sensor:FAN_SPD:c
+441_U6_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U6:v,fcu fault:FCU_FAULT:c
+441_U6_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U6:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U6_RAT
+site:44:v,Floor-id:1:v,Asset-id:U6:v,fcu return air temperature sensor:RAT:c
+441_U6_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U6:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U7_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U7:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U7_DAT
+site:44:v,Floor-id:1:v,Asset-id:U7:v,fcu supply air temperature sensor:DAT:c
+441_U7_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U7:v,fcu fan speed sensor:FAN_SPD:c
+441_U7_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U7:v,fcu fault:FCU_FAULT:c
+441_U7_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U7:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U7_RAT
+site:44:v,Floor-id:1:v,Asset-id:U7:v,fcu return air temperature sensor:RAT:c
+441_U7_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U7:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U8_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U8:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U8_DAT
+site:44:v,Floor-id:1:v,Asset-id:U8:v,fcu supply air temperature sensor:DAT:c
+441_U8_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U8:v,fcu fan speed sensor:FAN_SPD:c
+441_U8_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U8:v,fcu fault:FCU_FAULT:c
+441_U8_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U8:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U8_RAT
+site:44:v,Floor-id:1:v,Asset-id:U8:v,fcu return air temperature sensor:RAT:c
+441_U8_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U8:v,fcu air temperature setpoint:TEMP_SPT:c
+441_U9_CLG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U9:v,fcu cooling valve percentage cmd:CLG_VLV:c
+441_U9_DAT
+site:44:v,Floor-id:1:v,Asset-id:U9:v,fcu supply air temperature sensor:DAT:c
+441_U9_FAN_SPD
+site:44:v,Floor-id:1:v,Asset-id:U9:v,fcu fan speed sensor:FAN_SPD:c
+441_U9_FCU_FAULT
+site:44:v,Floor-id:1:v,Asset-id:U9:v,fcu fault:FCU_FAULT:c
+441_U9_HTG_VLV
+site:44:v,Floor-id:1:v,Asset-id:U9:v,fcu heating valve percentage cmd:HTG_VLV:c
+441_U9_RAT
+site:44:v,Floor-id:1:v,Asset-id:U9:v,fcu return air temperature sensor:RAT:c
+441_U9_TEMP_SPT
+site:44:v,Floor-id:1:v,Asset-id:U9:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U10_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U10:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U10_DAT
+site:44:v,Floor-id:G:v,Asset-id:U10:v,fcu supply air temperature sensor:DAT:c
+44G_U10_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U10:v,fcu fan speed sensor:FAN_SPD:c
+44G_U10_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U10:v,fcu fault:FCU_FAULT:c
+44G_U10_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U10:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U10_RAT
+site:44:v,Floor-id:G:v,Asset-id:U10:v,fcu return air temperature sensor:RAT:c
+44G_U10_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U10:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U11_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U11:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U11_DAT
+site:44:v,Floor-id:G:v,Asset-id:U11:v,fcu supply air temperature sensor:DAT:c
+44G_U11_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U11:v,fcu fan speed sensor:FAN_SPD:c
+44G_U11_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U11:v,fcu fault:FCU_FAULT:c
+44G_U11_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U11:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U11_RAT
+site:44:v,Floor-id:G:v,Asset-id:U11:v,fcu return air temperature sensor:RAT:c
+44G_U11_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U11:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U12_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U12:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U12_DAT
+site:44:v,Floor-id:G:v,Asset-id:U12:v,fcu supply air temperature sensor:DAT:c
+44G_U12_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U12:v,fcu fan speed sensor:FAN_SPD:c
+44G_U12_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U12:v,fcu fault:FCU_FAULT:c
+44G_U12_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U12:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U12_RAT
+site:44:v,Floor-id:G:v,Asset-id:U12:v,fcu return air temperature sensor:RAT:c
+44G_U12_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U12:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U13_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U13:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U13_DAT
+site:44:v,Floor-id:G:v,Asset-id:U13:v,fcu supply air temperature sensor:DAT:c
+44G_U13_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U13:v,fcu fan speed sensor:FAN_SPD:c
+44G_U13_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U13:v,fcu fault:FCU_FAULT:c
+44G_U13_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U13:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U13_RAT
+site:44:v,Floor-id:G:v,Asset-id:U13:v,fcu return air temperature sensor:RAT:c
+44G_U13_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U13:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U14_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U14:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U14_DAT
+site:44:v,Floor-id:G:v,Asset-id:U14:v,fcu supply air temperature sensor:DAT:c
+44G_U14_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U14:v,fcu fan speed sensor:FAN_SPD:c
+44G_U14_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U14:v,fcu fault:FCU_FAULT:c
+44G_U14_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U14:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U14_RAT
+site:44:v,Floor-id:G:v,Asset-id:U14:v,fcu return air temperature sensor:RAT:c
+44G_U14_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U14:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U15_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U15:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U15_DAT
+site:44:v,Floor-id:G:v,Asset-id:U15:v,fcu supply air temperature sensor:DAT:c
+44G_U15_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U15:v,fcu fan speed sensor:FAN_SPD:c
+44G_U15_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U15:v,fcu fault:FCU_FAULT:c
+44G_U15_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U15:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U15_RAT
+site:44:v,Floor-id:G:v,Asset-id:U15:v,fcu return air temperature sensor:RAT:c
+44G_U15_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U15:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U16_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U16:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U16_DAT
+site:44:v,Floor-id:G:v,Asset-id:U16:v,fcu supply air temperature sensor:DAT:c
+44G_U16_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U16:v,fcu fan speed sensor:FAN_SPD:c
+44G_U16_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U16:v,fcu fault:FCU_FAULT:c
+44G_U16_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U16:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U16_RAT
+site:44:v,Floor-id:G:v,Asset-id:U16:v,fcu return air temperature sensor:RAT:c
+44G_U16_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U16:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U17_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U17:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U17_DAT
+site:44:v,Floor-id:G:v,Asset-id:U17:v,fcu supply air temperature sensor:DAT:c
+44G_U17_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U17:v,fcu fan speed sensor:FAN_SPD:c
+44G_U17_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U17:v,fcu fault:FCU_FAULT:c
+44G_U17_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U17:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U17_RAT
+site:44:v,Floor-id:G:v,Asset-id:U17:v,fcu return air temperature sensor:RAT:c
+44G_U17_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U17:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U18_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U18:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U18_DAT
+site:44:v,Floor-id:G:v,Asset-id:U18:v,fcu supply air temperature sensor:DAT:c
+44G_U18_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U18:v,fcu fan speed sensor:FAN_SPD:c
+44G_U18_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U18:v,fcu fault:FCU_FAULT:c
+44G_U18_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U18:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U18_RAT
+site:44:v,Floor-id:G:v,Asset-id:U18:v,fcu return air temperature sensor:RAT:c
+44G_U18_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U18:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U19_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U19:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U19_DAT
+site:44:v,Floor-id:G:v,Asset-id:U19:v,fcu supply air temperature sensor:DAT:c
+44G_U19_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U19:v,fcu fan speed sensor:FAN_SPD:c
+44G_U19_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U19:v,fcu fault:FCU_FAULT:c
+44G_U19_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U19:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U19_RAT
+site:44:v,Floor-id:G:v,Asset-id:U19:v,fcu return air temperature sensor:RAT:c
+44G_U19_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U19:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U1_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U1:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U1_DAT
+site:44:v,Floor-id:G:v,Asset-id:U1:v,fcu supply air temperature sensor:DAT:c
+44G_U1_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U1:v,fcu fan speed sensor:FAN_SPD:c
+44G_U1_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U1:v,fcu fault:FCU_FAULT:c
+44G_U1_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U1:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U1_RAT
+site:44:v,Floor-id:G:v,Asset-id:U1:v,fcu return air temperature sensor:RAT:c
+44G_U1_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U1:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U20_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U20:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U20_DAT
+site:44:v,Floor-id:G:v,Asset-id:U20:v,fcu supply air temperature sensor:DAT:c
+44G_U20_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U20:v,fcu fan speed sensor:FAN_SPD:c
+44G_U20_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U20:v,fcu fault:FCU_FAULT:c
+44G_U20_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U20:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U20_RAT
+site:44:v,Floor-id:G:v,Asset-id:U20:v,fcu return air temperature sensor:RAT:c
+44G_U20_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U20:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U21_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U21:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U21_DAT
+site:44:v,Floor-id:G:v,Asset-id:U21:v,fcu supply air temperature sensor:DAT:c
+44G_U21_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U21:v,fcu fan speed sensor:FAN_SPD:c
+44G_U21_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U21:v,fcu fault:FCU_FAULT:c
+44G_U21_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U21:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U21_RAT
+site:44:v,Floor-id:G:v,Asset-id:U21:v,fcu return air temperature sensor:RAT:c
+44G_U21_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U21:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U22_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U22:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U22_DAT
+site:44:v,Floor-id:G:v,Asset-id:U22:v,fcu supply air temperature sensor:DAT:c
+44G_U22_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U22:v,fcu fan speed sensor:FAN_SPD:c
+44G_U22_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U22:v,fcu fault:FCU_FAULT:c
+44G_U22_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U22:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U22_RAT
+site:44:v,Floor-id:G:v,Asset-id:U22:v,fcu return air temperature sensor:RAT:c
+44G_U22_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U22:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U23_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U23:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U23_DAT
+site:44:v,Floor-id:G:v,Asset-id:U23:v,fcu supply air temperature sensor:DAT:c
+44G_U23_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U23:v,fcu fan speed sensor:FAN_SPD:c
+44G_U23_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U23:v,fcu fault:FCU_FAULT:c
+44G_U23_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U23:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U23_RAT
+site:44:v,Floor-id:G:v,Asset-id:U23:v,fcu return air temperature sensor:RAT:c
+44G_U23_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U23:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U24_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U24:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U24_DAT
+site:44:v,Floor-id:G:v,Asset-id:U24:v,fcu supply air temperature sensor:DAT:c
+44G_U24_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U24:v,fcu fan speed sensor:FAN_SPD:c
+44G_U24_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U24:v,fcu fault:FCU_FAULT:c
+44G_U24_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U24:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U24_RAT
+site:44:v,Floor-id:G:v,Asset-id:U24:v,fcu return air temperature sensor:RAT:c
+44G_U24_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U24:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U25_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U25:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U25_DAT
+site:44:v,Floor-id:G:v,Asset-id:U25:v,fcu supply air temperature sensor:DAT:c
+44G_U25_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U25:v,fcu fan speed sensor:FAN_SPD:c
+44G_U25_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U25:v,fcu fault:FCU_FAULT:c
+44G_U25_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U25:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U25_RAT
+site:44:v,Floor-id:G:v,Asset-id:U25:v,fcu return air temperature sensor:RAT:c
+44G_U25_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U25:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U26_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U26:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U26_DAT
+site:44:v,Floor-id:G:v,Asset-id:U26:v,fcu supply air temperature sensor:DAT:c
+44G_U26_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U26:v,fcu fan speed sensor:FAN_SPD:c
+44G_U26_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U26:v,fcu fault:FCU_FAULT:c
+44G_U26_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U26:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U26_RAT
+site:44:v,Floor-id:G:v,Asset-id:U26:v,fcu return air temperature sensor:RAT:c
+44G_U26_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U26:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U27_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U27:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U27_DAT
+site:44:v,Floor-id:G:v,Asset-id:U27:v,fcu supply air temperature sensor:DAT:c
+44G_U27_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U27:v,fcu fan speed sensor:FAN_SPD:c
+44G_U27_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U27:v,fcu fault:FCU_FAULT:c
+44G_U27_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U27:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U27_RAT
+site:44:v,Floor-id:G:v,Asset-id:U27:v,fcu return air temperature sensor:RAT:c
+44G_U27_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U27:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U28_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U28:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U28_DAT
+site:44:v,Floor-id:G:v,Asset-id:U28:v,fcu supply air temperature sensor:DAT:c
+44G_U28_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U28:v,fcu fan speed sensor:FAN_SPD:c
+44G_U28_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U28:v,fcu fault:FCU_FAULT:c
+44G_U28_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U28:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U28_RAT
+site:44:v,Floor-id:G:v,Asset-id:U28:v,fcu return air temperature sensor:RAT:c
+44G_U28_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U28:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U29_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U29:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U29_DAT
+site:44:v,Floor-id:G:v,Asset-id:U29:v,fcu supply air temperature sensor:DAT:c
+44G_U29_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U29:v,fcu fan speed sensor:FAN_SPD:c
+44G_U29_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U29:v,fcu fault:FCU_FAULT:c
+44G_U29_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U29:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U29_RAT
+site:44:v,Floor-id:G:v,Asset-id:U29:v,fcu return air temperature sensor:RAT:c
+44G_U29_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U29:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U2_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U2:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U2_DAT
+site:44:v,Floor-id:G:v,Asset-id:U2:v,fcu supply air temperature sensor:DAT:c
+44G_U2_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U2:v,fcu fan speed sensor:FAN_SPD:c
+44G_U2_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U2:v,fcu fault:FCU_FAULT:c
+44G_U2_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U2:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U2_RAT
+site:44:v,Floor-id:G:v,Asset-id:U2:v,fcu return air temperature sensor:RAT:c
+44G_U2_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U2:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U30_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U30:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U30_DAT
+site:44:v,Floor-id:G:v,Asset-id:U30:v,fcu supply air temperature sensor:DAT:c
+44G_U30_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U30:v,fcu fan speed sensor:FAN_SPD:c
+44G_U30_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U30:v,fcu fault:FCU_FAULT:c
+44G_U30_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U30:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U30_RAT
+site:44:v,Floor-id:G:v,Asset-id:U30:v,fcu return air temperature sensor:RAT:c
+44G_U30_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U30:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U31_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U31:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U31_DAT
+site:44:v,Floor-id:G:v,Asset-id:U31:v,fcu supply air temperature sensor:DAT:c
+44G_U31_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U31:v,fcu fan speed sensor:FAN_SPD:c
+44G_U31_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U31:v,fcu fault:FCU_FAULT:c
+44G_U31_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U31:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U31_RAT
+site:44:v,Floor-id:G:v,Asset-id:U31:v,fcu return air temperature sensor:RAT:c
+44G_U31_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U31:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U32_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U32:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U32_DAT
+site:44:v,Floor-id:G:v,Asset-id:U32:v,fcu supply air temperature sensor:DAT:c
+44G_U32_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U32:v,fcu fan speed sensor:FAN_SPD:c
+44G_U32_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U32:v,fcu fault:FCU_FAULT:c
+44G_U32_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U32:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U32_RAT
+site:44:v,Floor-id:G:v,Asset-id:U32:v,fcu return air temperature sensor:RAT:c
+44G_U32_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U32:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U33_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U33:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U33_DAT
+site:44:v,Floor-id:G:v,Asset-id:U33:v,fcu supply air temperature sensor:DAT:c
+44G_U33_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U33:v,fcu fan speed sensor:FAN_SPD:c
+44G_U33_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U33:v,fcu fault:FCU_FAULT:c
+44G_U33_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U33:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U33_RAT
+site:44:v,Floor-id:G:v,Asset-id:U33:v,fcu return air temperature sensor:RAT:c
+44G_U33_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U33:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U34_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U34:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U34_DAT
+site:44:v,Floor-id:G:v,Asset-id:U34:v,fcu supply air temperature sensor:DAT:c
+44G_U34_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U34:v,fcu fan speed sensor:FAN_SPD:c
+44G_U34_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U34:v,fcu fault:FCU_FAULT:c
+44G_U34_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U34:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U34_RAT
+site:44:v,Floor-id:G:v,Asset-id:U34:v,fcu return air temperature sensor:RAT:c
+44G_U34_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U34:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U35_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U35:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U35_DAT
+site:44:v,Floor-id:G:v,Asset-id:U35:v,fcu supply air temperature sensor:DAT:c
+44G_U35_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U35:v,fcu fan speed sensor:FAN_SPD:c
+44G_U35_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U35:v,fcu fault:FCU_FAULT:c
+44G_U35_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U35:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U35_RAT
+site:44:v,Floor-id:G:v,Asset-id:U35:v,fcu return air temperature sensor:RAT:c
+44G_U35_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U35:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U36_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U36:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U36_DAT
+site:44:v,Floor-id:G:v,Asset-id:U36:v,fcu supply air temperature sensor:DAT:c
+44G_U36_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U36:v,fcu fan speed sensor:FAN_SPD:c
+44G_U36_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U36:v,fcu fault:FCU_FAULT:c
+44G_U36_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U36:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U36_RAT
+site:44:v,Floor-id:G:v,Asset-id:U36:v,fcu return air temperature sensor:RAT:c
+44G_U36_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U36:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U37_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U37:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U37_DAT
+site:44:v,Floor-id:G:v,Asset-id:U37:v,fcu supply air temperature sensor:DAT:c
+44G_U37_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U37:v,fcu fan speed sensor:FAN_SPD:c
+44G_U37_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U37:v,fcu fault:FCU_FAULT:c
+44G_U37_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U37:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U37_RAT
+site:44:v,Floor-id:G:v,Asset-id:U37:v,fcu return air temperature sensor:RAT:c
+44G_U37_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U37:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U3_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U3:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U3_DAT
+site:44:v,Floor-id:G:v,Asset-id:U3:v,fcu supply air temperature sensor:DAT:c
+44G_U3_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U3:v,fcu fan speed sensor:FAN_SPD:c
+44G_U3_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U3:v,fcu fault:FCU_FAULT:c
+44G_U3_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U3:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U3_RAT
+site:44:v,Floor-id:G:v,Asset-id:U3:v,fcu return air temperature sensor:RAT:c
+44G_U3_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U3:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U4_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U4:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U4_DAT
+site:44:v,Floor-id:G:v,Asset-id:U4:v,fcu supply air temperature sensor:DAT:c
+44G_U4_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U4:v,fcu fan speed sensor:FAN_SPD:c
+44G_U4_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U4:v,fcu fault:FCU_FAULT:c
+44G_U4_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U4:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U4_RAT
+site:44:v,Floor-id:G:v,Asset-id:U4:v,fcu return air temperature sensor:RAT:c
+44G_U4_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U4:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U5_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U5:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U5_DAT
+site:44:v,Floor-id:G:v,Asset-id:U5:v,fcu supply air temperature sensor:DAT:c
+44G_U5_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U5:v,fcu fan speed sensor:FAN_SPD:c
+44G_U5_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U5:v,fcu fault:FCU_FAULT:c
+44G_U5_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U5:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U5_RAT
+site:44:v,Floor-id:G:v,Asset-id:U5:v,fcu return air temperature sensor:RAT:c
+44G_U5_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U5:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U6_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U6:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U6_DAT
+site:44:v,Floor-id:G:v,Asset-id:U6:v,fcu supply air temperature sensor:DAT:c
+44G_U6_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U6:v,fcu fan speed sensor:FAN_SPD:c
+44G_U6_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U6:v,fcu fault:FCU_FAULT:c
+44G_U6_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U6:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U6_RAT
+site:44:v,Floor-id:G:v,Asset-id:U6:v,fcu return air temperature sensor:RAT:c
+44G_U6_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U6:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U7_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U7:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U7_DAT
+site:44:v,Floor-id:G:v,Asset-id:U7:v,fcu supply air temperature sensor:DAT:c
+44G_U7_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U7:v,fcu fan speed sensor:FAN_SPD:c
+44G_U7_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U7:v,fcu fault:FCU_FAULT:c
+44G_U7_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U7:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U7_RAT
+site:44:v,Floor-id:G:v,Asset-id:U7:v,fcu return air temperature sensor:RAT:c
+44G_U7_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U7:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U8_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U8:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U8_DAT
+site:44:v,Floor-id:G:v,Asset-id:U8:v,fcu supply air temperature sensor:DAT:c
+44G_U8_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U8:v,fcu fan speed sensor:FAN_SPD:c
+44G_U8_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U8:v,fcu fault:FCU_FAULT:c
+44G_U8_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U8:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U8_RAT
+site:44:v,Floor-id:G:v,Asset-id:U8:v,fcu return air temperature sensor:RAT:c
+44G_U8_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U8:v,fcu air temperature setpoint:TEMP_SPT:c
+44G_U9_CLG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U9:v,fcu cooling valve percentage cmd:CLG_VLV:c
+44G_U9_DAT
+site:44:v,Floor-id:G:v,Asset-id:U9:v,fcu supply air temperature sensor:DAT:c
+44G_U9_FAN_SPD
+site:44:v,Floor-id:G:v,Asset-id:U9:v,fcu fan speed sensor:FAN_SPD:c
+44G_U9_FCU_FAULT
+site:44:v,Floor-id:G:v,Asset-id:U9:v,fcu fault:FCU_FAULT:c
+44G_U9_HTG_VLV
+site:44:v,Floor-id:G:v,Asset-id:U9:v,fcu heating valve percentage cmd:HTG_VLV:c
+44G_U9_RAT
+site:44:v,Floor-id:G:v,Asset-id:U9:v,fcu return air temperature sensor:RAT:c
+44G_U9_TEMP_SPT
+site:44:v,Floor-id:G:v,Asset-id:U9:v,fcu air temperature setpoint:TEMP_SPT:c
+46G_U10_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U10:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U10_DAT
+site:46:v,Floor-id:G:v,Asset-id:U10:v,fcu supply air temperature sensor:DAT:c
+46G_U10_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U10:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U10_RAT
+site:46:v,Floor-id:G:v,Asset-id:U10:v,fcu return air temperature sensor:RAT:c
+46G_U10_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U10:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U11_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U11:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U11_DAT
+site:46:v,Floor-id:G:v,Asset-id:U11:v,fcu supply air temperature sensor:DAT:c
+46G_U11_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U11:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U11_RAT
+site:46:v,Floor-id:G:v,Asset-id:U11:v,fcu return air temperature sensor:RAT:c
+46G_U11_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U11:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U12_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U12:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U12_DAT
+site:46:v,Floor-id:G:v,Asset-id:U12:v,fcu supply air temperature sensor:DAT:c
+46G_U12_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U12:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U12_RAT
+site:46:v,Floor-id:G:v,Asset-id:U12:v,fcu return air temperature sensor:RAT:c
+46G_U12_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U12:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U13_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U13:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U13_DAT
+site:46:v,Floor-id:G:v,Asset-id:U13:v,fcu supply air temperature sensor:DAT:c
+46G_U13_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U13:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U13_RAT
+site:46:v,Floor-id:G:v,Asset-id:U13:v,fcu return air temperature sensor:RAT:c
+46G_U13_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U13:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U14_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U14:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U14_DAT
+site:46:v,Floor-id:G:v,Asset-id:U14:v,fcu supply air temperature sensor:DAT:c
+46G_U14_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U14:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U14_RAT
+site:46:v,Floor-id:G:v,Asset-id:U14:v,fcu return air temperature sensor:RAT:c
+46G_U14_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U14:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U15_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U15:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U15_DAT
+site:46:v,Floor-id:G:v,Asset-id:U15:v,fcu supply air temperature sensor:DAT:c
+46G_U15_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U15:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U15_RAT
+site:46:v,Floor-id:G:v,Asset-id:U15:v,fcu return air temperature sensor:RAT:c
+46G_U15_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U15:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U16_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U16:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U16_DAT
+site:46:v,Floor-id:G:v,Asset-id:U16:v,fcu supply air temperature sensor:DAT:c
+46G_U16_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U16:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U16_RAT
+site:46:v,Floor-id:G:v,Asset-id:U16:v,fcu return air temperature sensor:RAT:c
+46G_U16_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U16:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U17_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U17:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U17_DAT
+site:46:v,Floor-id:G:v,Asset-id:U17:v,fcu supply air temperature sensor:DAT:c
+46G_U17_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U17:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U17_RAT
+site:46:v,Floor-id:G:v,Asset-id:U17:v,fcu return air temperature sensor:RAT:c
+46G_U17_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U17:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U18_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U18:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U18_DAT
+site:46:v,Floor-id:G:v,Asset-id:U18:v,fcu supply air temperature sensor:DAT:c
+46G_U18_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U18:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U18_RAT
+site:46:v,Floor-id:G:v,Asset-id:U18:v,fcu return air temperature sensor:RAT:c
+46G_U18_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U18:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U19_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U19:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U19_DAT
+site:46:v,Floor-id:G:v,Asset-id:U19:v,fcu supply air temperature sensor:DAT:c
+46G_U19_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U19:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U19_RAT
+site:46:v,Floor-id:G:v,Asset-id:U19:v,fcu return air temperature sensor:RAT:c
+46G_U19_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U19:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U1_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U1:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U1_DAT
+site:46:v,Floor-id:G:v,Asset-id:U1:v,fcu supply air temperature sensor:DAT:c
+46G_U1_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U1:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U1_RAT
+site:46:v,Floor-id:G:v,Asset-id:U1:v,fcu return air temperature sensor:RAT:c
+46G_U1_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U1:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U20_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U20:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U20_DAT
+site:46:v,Floor-id:G:v,Asset-id:U20:v,fcu supply air temperature sensor:DAT:c
+46G_U20_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U20:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U20_RAT
+site:46:v,Floor-id:G:v,Asset-id:U20:v,fcu return air temperature sensor:RAT:c
+46G_U20_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U20:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U21_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U21:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U21_DAT
+site:46:v,Floor-id:G:v,Asset-id:U21:v,fcu supply air temperature sensor:DAT:c
+46G_U21_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U21:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U21_RAT
+site:46:v,Floor-id:G:v,Asset-id:U21:v,fcu return air temperature sensor:RAT:c
+46G_U21_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U21:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U22_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U22:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U22_DAT
+site:46:v,Floor-id:G:v,Asset-id:U22:v,fcu supply air temperature sensor:DAT:c
+46G_U22_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U22:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U22_RAT
+site:46:v,Floor-id:G:v,Asset-id:U22:v,fcu return air temperature sensor:RAT:c
+46G_U22_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U22:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U23_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U23:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U23_DAT
+site:46:v,Floor-id:G:v,Asset-id:U23:v,fcu supply air temperature sensor:DAT:c
+46G_U23_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U23:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U23_RAT
+site:46:v,Floor-id:G:v,Asset-id:U23:v,fcu return air temperature sensor:RAT:c
+46G_U23_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U23:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U24A_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U24A:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U24A_DAT
+site:46:v,Floor-id:G:v,Asset-id:U24A:v,fcu supply air temperature sensor:DAT:c
+46G_U24A_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U24A:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U24A_RAT
+site:46:v,Floor-id:G:v,Asset-id:U24A:v,fcu return air temperature sensor:RAT:c
+46G_U24A_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U24A:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U24B_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U24B:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U24B_DAT
+site:46:v,Floor-id:G:v,Asset-id:U24B:v,fcu supply air temperature sensor:DAT:c
+46G_U24B_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U24B:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U24B_RAT
+site:46:v,Floor-id:G:v,Asset-id:U24B:v,fcu return air temperature sensor:RAT:c
+46G_U24B_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U24B:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U25_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U25:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U25_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U25:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U25_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U25:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U25_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U25:v,fcu return air temperature sensor:MR_RAT:c
+46G_U25_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U25:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U26A_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U26A:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U26A_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U26A:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U26A_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U26A:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U26A_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U26A:v,fcu return air temperature sensor:MR_RAT:c
+46G_U26A_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U26A:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U26B_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U26B:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U26B_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U26B:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U26B_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U26B:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U26B_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U26B:v,fcu return air temperature sensor:MR_RAT:c
+46G_U26B_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U26B:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U27_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U27:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U27_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U27:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U27_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U27:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U27_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U27:v,fcu return air temperature sensor:MR_RAT:c
+46G_U27_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U27:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U28_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U28:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U28_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U28:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U28_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U28:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U28_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U28:v,fcu return air temperature sensor:MR_RAT:c
+46G_U28_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U28:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U29_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U29:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U29_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U29:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U29_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U29:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U29_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U29:v,fcu return air temperature sensor:MR_RAT:c
+46G_U29_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U29:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U2_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U2:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U2_DAT
+site:46:v,Floor-id:G:v,Asset-id:U2:v,fcu supply air temperature sensor:DAT:c
+46G_U2_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U2:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U2_RAT
+site:46:v,Floor-id:G:v,Asset-id:U2:v,fcu return air temperature sensor:RAT:c
+46G_U2_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U2:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U30_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U30:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U30_DAT
+site:46:v,Floor-id:G:v,Asset-id:U30:v,fcu supply air temperature sensor:DAT:c
+46G_U30_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U30:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U30_RAT
+site:46:v,Floor-id:G:v,Asset-id:U30:v,fcu return air temperature sensor:RAT:c
+46G_U31A_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U31A:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U31A_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U31A:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U31A_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U31A:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U31A_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U31A:v,fcu return air temperature sensor:MR_RAT:c
+46G_U31A_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U31A:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U31B_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U31B:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U31B_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U31B:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U31B_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U31B:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U31B_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U31B:v,fcu return air temperature sensor:MR_RAT:c
+46G_U31B_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U31B:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U31_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U31:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U31_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U31:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U31_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U31:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U31_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U31:v,fcu return air temperature sensor:MR_RAT:c
+46G_U31_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U31:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U32_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U32:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U32_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U32:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U32_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U32:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U32_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U32:v,fcu return air temperature sensor:MR_RAT:c
+46G_U32_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U32:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U33_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U33:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U33_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U33:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U33_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U33:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U33_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U33:v,fcu return air temperature sensor:MR_RAT:c
+46G_U33_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U33:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U34_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U34:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U34_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U34:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U34_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U34:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U34_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U34:v,fcu return air temperature sensor:MR_RAT:c
+46G_U34_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U34:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U35_MR_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U35:v,fcu cooling valve percentage cmd:MR_CLG_VLV:c
+46G_U35_MR_DAT
+site:46:v,Floor-id:G:v,Asset-id:U35:v,fcu supply air temperature sensor:MR_DAT:c
+46G_U35_MR_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U35:v,fcu heating valve percentage cmd:MR_HTG_VLV:c
+46G_U35_MR_RAT
+site:46:v,Floor-id:G:v,Asset-id:U35:v,fcu return air temperature sensor:MR_RAT:c
+46G_U35_MR_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U35:v,fcu air temperature setpoint fcu air temperature cooling setpoint:MR_TEMP_SPT:c
+46G_U3_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U3:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U3_DAT
+site:46:v,Floor-id:G:v,Asset-id:U3:v,fcu supply air temperature sensor:DAT:c
+46G_U3_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U3:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U3_RAT
+site:46:v,Floor-id:G:v,Asset-id:U3:v,fcu return air temperature sensor:RAT:c
+46G_U3_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U3:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U4_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U4:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U4_DAT
+site:46:v,Floor-id:G:v,Asset-id:U4:v,fcu supply air temperature sensor:DAT:c
+46G_U4_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U4:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U4_RAT
+site:46:v,Floor-id:G:v,Asset-id:U4:v,fcu return air temperature sensor:RAT:c
+46G_U4_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U4:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U5_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U5:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U5_DAT
+site:46:v,Floor-id:G:v,Asset-id:U5:v,fcu supply air temperature sensor:DAT:c
+46G_U5_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U5:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U5_RAT
+site:46:v,Floor-id:G:v,Asset-id:U5:v,fcu return air temperature sensor:RAT:c
+46G_U5_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U5:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U6_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U6:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U6_DAT
+site:46:v,Floor-id:G:v,Asset-id:U6:v,fcu supply air temperature sensor:DAT:c
+46G_U6_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U6:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U6_RAT
+site:46:v,Floor-id:G:v,Asset-id:U6:v,fcu return air temperature sensor:RAT:c
+46G_U6_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U6:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U7_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U7:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U7_DAT
+site:46:v,Floor-id:G:v,Asset-id:U7:v,fcu supply air temperature sensor:DAT:c
+46G_U7_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U7:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U7_RAT
+site:46:v,Floor-id:G:v,Asset-id:U7:v,fcu return air temperature sensor:RAT:c
+46G_U7_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U7:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U8_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U8:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U8_DAT
+site:46:v,Floor-id:G:v,Asset-id:U8:v,fcu supply air temperature sensor:DAT:c
+46G_U8_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U8:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U8_RAT
+site:46:v,Floor-id:G:v,Asset-id:U8:v,fcu return air temperature sensor:RAT:c
+46G_U8_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U8:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+46G_U9_CLG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U9:v,fcu cooling valve percentage cmd:CLG_VLV:c
+46G_U9_DAT
+site:46:v,Floor-id:G:v,Asset-id:U9:v,fcu supply air temperature sensor:DAT:c
+46G_U9_HTG_VLV
+site:46:v,Floor-id:G:v,Asset-id:U9:v,fcu heating valve percentage cmd:HTG_VLV:c
+46G_U9_RAT
+site:46:v,Floor-id:G:v,Asset-id:U9:v,fcu return air temperature sensor:RAT:c
+46G_U9_TEMP_SPT
+site:46:v,Floor-id:G:v,Asset-id:U9:v,fcu air temperature setpoint fcu air temperature cooling setpoint:TEMP_SPT:c
+A10R_GF_LGHT_F1F2F7TOF10F15F16
+asset-id:A10R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:F1F2F7TOF10F15F16:v
+A10R_GF_SRVC_3G067
+asset-id:A10R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:3G067:v
+A10S_GF_FRONTAISLE_LHS
+asset-id:A10S:v,floor-id:GF:v,light load electric meter:FRONTAISLE:c,room-id:LHS:v
+A10S_GF_SRVC_PRINTRM_3G078
+asset-id:A10S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:PRINTRM_3G078:v
+A10T_GF_LGHT_MR_3G034
+asset-id:A10T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MR_3G034:v
+A10T_GF_SRVC_MR_3G080
+asset-id:A10T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3G080:v
+A11R_GF_LGHT_MR_3G079_080
+asset-id:A11R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MR_3G079_080:v
+A11S_GF_LGHT_COLLAB_3G086
+asset-id:A11S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:COLLAB_3G086:v
+A11T_GF_LGHT_COLLAB_3G085
+asset-id:A11T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:COLLAB_3G085:v
+A12R_GF_LGHT_BACKAISLE_Z3
+asset-id:A12R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:BACKAISLE_Z3:v
+A12S_GF_LGHT_BOARDRM
+asset-id:A12S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:BOARDRM:v
+A12S_GF_SRVC_MR_3G079_080
+asset-id:A12S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3G079_080:v
+A12T_GF_LGHT_MR_3G082_083
+asset-id:A12T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MR_3G082_083:v
+A12T_GF_SRVC_MR_3G075
+asset-id:A12T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3G075:v
+A13R_GF_LGHT_TRAINING_3G077
+asset-id:A13R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:TRAINING_3G077:v
+A13R_GF_SRVC_MR_3G084
+asset-id:A13R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3G084:v
+A13S_GF_LGHT_MR_075_076
+asset-id:A13S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MR_075_076:v
+A13S_GF_SRVC_MR_3G084
+asset-id:A13S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3G084:v
+A13T_GF_LGHT_MIDAISLE_Z3
+asset-id:A13T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z3:v
+A13T_GF_SRVC_MR_3G083
+asset-id:A13T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3G083:v
+A14R_GF_LGHT_MENWC
+asset-id:A14R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MENWC:v
+A14R_GF_SRVC_MR_3G083
+asset-id:A14R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3G083:v
+A14S_GF_LGHT_CR_SHOWER
+asset-id:A14S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:CR_SHOWER:v
+A14S_GF_SRVC_TRAINING_3G077
+asset-id:A14S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:TRAINING_3G077:v
+A14T_1F_SRVC_UPSRM
+asset-id:A14T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:UPSRM:v
+A14T_GF_LGHT_FEMWC
+asset-id:A14T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:FEMWC:v
+A14T_GF_SRVC_TRAINING_3G077
+asset-id:A14T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:TRAINING_3G077:v
+A15R_GF_LGHT_DISABWC
+asset-id:A15R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:DISABWC:v
+A15R_GF_SRVC_TRAINING_3G077
+asset-id:A15R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:TRAINING_3G077:v
+A15S_GF_LGHT_RECEPTION_WLKWAY1
+asset-id:A15S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:RECEPTION_WLKWAY1:v
+A15S_GF_SRVC_TRAINING2_3G077
+asset-id:A15S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:TRAINING2_3G077:v
+A15T_GF_LGHT_RECEPTION 1_FRONT
+asset-id:A15T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:RECEPTION 1_FRONT:v
+A15T_GF_SRVC_TRAINING3_3G077
+asset-id:A15T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:TRAINING3_3G077:v
+A16R_GF_LGHT_RECEPTION 2_WLKWAY2
+asset-id:A16R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:RECEPTION 2_WLKWAY2:v
+A16R_GF_SRVC_COMPUTERRM2_076
+asset-id:A16R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COMPUTERRM2_076:v
+A16R_GF_SRVC_COMPUTERRM3_076
+asset-id:A16R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COMPUTERRM3_076:v
+A16R_GF_SRVC_COMPUTERRM4_076
+asset-id:A16R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COMPUTERRM4_076:v
+A16R_GF_SRVC_COMPUTERRM_076
+asset-id:A16R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COMPUTERRM_076:v
+A16S_GF_LGHT_RECEPTION_METHAL
+asset-id:A16S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:RECEPTION_METHAL:v
+A16T_GF_LGHT_EXPO_WC
+asset-id:A16T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_WC:v
+A17R_GF_LGHT_EXPO_COLLAR
+asset-id:A17R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_COLLAR:v
+A17S_GF_LGHT_EXPO_SPOTS
+asset-id:A17S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_SPOTS:v
+A17S_GF_SRVC_FRIDGE_COFFEEDK
+asset-id:A17S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:FRIDGE_COFFEEDK:v
+A17T_GF_LGHT_EXPO_PRES
+asset-id:A17T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_PRES:v
+A17T_GF_SRVC_COFFEEDK
+asset-id:A17T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COFFEEDK:v
+A18R_GF_LGHT_EXPO_METHAL1
+asset-id:A18R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_METHAL1:v
+A18R_GF_SRVC_COLLAB1_3G086
+asset-id:A18R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB1_3G086:v
+A18S_GF_LGHT_EXPO_METHAL2
+asset-id:A18S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_METHAL2:v
+A18S_GF_SRVC_COLLAB1_3G086
+asset-id:A18S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB1_3G086:v
+A18T_GF_LGHT_EXPO_METHAL3
+asset-id:A18T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_METHAL3:v
+A18T_GF_SRVC_COLLAB1_3G086
+asset-id:A18T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB1_3G086:v
+A19R_GF_LGHT_EXPO_BANNER1
+asset-id:A19R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_BANNER1:v
+A19R_GF_SRVC_COLLAB1_3G086
+asset-id:A19R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB1_3G086:v
+A19S_GF_LGHT_EXPO_BANNER2
+asset-id:A19S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_BANNER2:v
+A19T_GF_LGHT_EXPO_BANNER3
+asset-id:A19T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_BANNER3:v
+A1R_GF_FCU_04_05_08_09_13_14
+asset-id:A1R:v,floor-id:GF:v,fcu electric meter:FCU:c,room-id:04_05_08_09_13_14:v
+A1R_GF_LGHT_AISLE_Z4
+asset-id:A1R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:AISLE_Z4:v
+A1R_GF_SRVC_I1I2I23I24
+asset-id:A1R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:I1I2I23I24:v
+A1S_GF_FCU06_07
+asset-id:A1S:v,floor-id:GF:v,fcu electric meter:FCU06:c,room-id:07:v
+A1S_GF_LGHT_I1I2I7I8_QR065_066
+asset-id:A1S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:I1I2I7I8_QR065_066:v
+A1T_GF_FCU01_02_03_10_11
+asset-id:A1T:v,floor-id:GF:v,fcu electric meter:FCU01:c,room-id:02_03_10_11:v
+A1T_GF_LGHT_I9I10I15TOI18I23I24
+asset-id:A1T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:I9I10I15TOI18I23I24:v
+A20R_GF_SRVC_COLLAB2_3G085
+asset-id:A20R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB2_3G085:v
+A20S_GF_LGHT_EXPO_BANNER4
+asset-id:A20S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_BANNER4:v
+A20S_GF_SRVC_COLLAB2_3G085
+asset-id:A20S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB2_3G085:v
+A20T_GF_LGHT_RECEPTION_BLKHD
+asset-id:A20T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:RECEPTION_BLKHD:v
+A20T_GF_SRVC_AISLE_TV_Z3
+asset-id:A20T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:AISLE_TV_Z3:v
+A21R_GF_SRVC_RECEPTION_TV
+asset-id:A21R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:RECEPTION_TV:v
+A21S_GF_SRVC_RECEPTION
+asset-id:A21S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:RECEPTION:v
+A21T_GF_SRVC_HDRY_EXPO_MENWC
+asset-id:A21T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HDRY_EXPO_MENWC:v
+A22R_GF_LGHT_EXPO_BANNER5
+asset-id:A22R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_BANNER5:v
+A22R_GF_SRVC_HDRY_EXPO_FEMWC
+asset-id:A22R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HDRY_EXPO_FEMWC:v
+A22S_GF_LGHT_EXPO_AV
+asset-id:A22S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:EXPO_AV:v
+A22T_GF_LGHT_COFFEEDOCK
+asset-id:A22T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:COFFEEDOCK:v
+A23S_GF_SRVC_DALIPNL
+asset-id:A23S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:DALIPNL:v
+A25R_GF_SRVC_COLLAB1_3G085
+asset-id:A25R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB1_3G085:v
+A25S_GF_SRVC_COLLAB2_3G085
+asset-id:A25S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COLLAB2_3G085:v
+A25T_GF_SRVC_EXPO
+asset-id:A25T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO:v
+A26R_GF_SRVC_HDRY1_MENWC
+asset-id:A26R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HDRY1_MENWC:v
+A26S_GF_SRVC_HDRY2_MENWC
+asset-id:A26S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HDRY2_MENWC:v
+A26T_GF_SRVC_HDRY1_FEMWC
+asset-id:A26T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HDRY1_FEMWC:v
+A27R_GF_SRVC_HDRY2_FEMWC
+asset-id:A27R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HDRY2_FEMWC:v
+A27S_GF_SRVC_HDRY_DISABWC
+asset-id:A27S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HDRY_DISABWC:v
+A27T_GF_SRVC_HAIR_MENSWHR
+asset-id:A27T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HAIR_MENSWHR:v
+A28R_GF_SRVC_HAIR_FEMSWHR
+asset-id:A28R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:HAIR_FEMSWHR:v
+A28S_GF_SRVC_WATERHTR_MENWC_3G072
+asset-id:A28S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WATERHTR_MENWC_3G072:v
+A28T_GF_SRVC_WATERHTR_FEMWC_3G069
+asset-id:A28T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WATERHTR_FEMWC_3G069:v
+A29R_GF_SRVC_WATERHTR_WELLNS
+asset-id:A29R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WATERHTR_WELLNS:v
+A29S_GF_SRVC_WATERHTR_DISABWC
+asset-id:A29S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WATERHTR_DISABWC:v
+A29T_GF_SRVC_WATERHTR_EXPOBWC
+asset-id:A29T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WATERHTR_EXPOBWC:v
+A2R_GF_FCU12_15_16_17_18
+asset-id:A2R:v,floor-id:GF:v,fcu electric meter:FCU12:c,room-id:15_16_17_18:v
+A2R_GF_LGHT_AISLEWAYS1_Z4
+asset-id:A2R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:AISLEWAYS1_Z4:v
+A2S_GF_FCU19_20_21_22_23
+asset-id:A2S:v,floor-id:GF:v,fcu electric meter:FCU19:c,room-id:20_21_22_23:v
+A2S_GF_LGHT_I11TOI14
+asset-id:A2S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:I11TOI14:v
+A2S_GF_SRVC_I11TOI14
+asset-id:A2S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:I11TOI14:v
+A2T_GF_FCU32_33_34_35
+asset-id:A2T:v,floor-id:GF:v,fcu electric meter:FCU32:c,room-id:33_34_35:v
+A2T_GF_LGHT_AISLEWAYS2_Z4
+asset-id:A2T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:AISLEWAYS2_Z4:v
+A2T_GF_SRVC_I3TOI6
+asset-id:A2T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:I3TOI6:v
+A30R_GF_SRVC_WATERHTR_COFFEEDCK
+asset-id:A30R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WATERHTR_COFFEEDCK:v
+A30S_SRVC_SINKSNSR_MENWC_3G072
+asset-id:A30S:v,floor-id:SRVC:v,socket load electric meter:SINKSNSR:c,room-id:MENWC_3G072:v
+A30T_SRVC_SINKSNSR_FEMWC_3G069
+asset-id:A30T:v,floor-id:SRVC:v,socket load electric meter:SINKSNSR:c,room-id:FEMWC_3G069:v
+A31R_GF_SRVC_DISABWC_CEILING
+asset-id:A31R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:DISABWC_CEILING:v
+A31R_GF_SRVC_WATERMTR_MCC13
+asset-id:A31R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WATERMTR_MCC13:v
+A31S_GF_SRVC_SINKSNSR_EXPO
+asset-id:A31S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:SINKSNSR_EXPO:v
+A31T_GF_SRVC_MENWC_URNLS_3G072
+asset-id:A31T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MENWC_URNLS_3G072:v
+A32R_GF_SRVC_FOOTFALL_EXPO_RECP
+asset-id:A32R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:FOOTFALL_EXPO_RECP:v
+A32T_GF_SRVC_DISABWC_ALARM
+asset-id:A32T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:DISABWC_ALARM:v
+A33R_GF_SRVC_LEAKDTCT_COMMSRM
+asset-id:A33R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:LEAKDTCT_COMMSRM:v
+A33S_GF_SRVC_BLND_3G064
+asset-id:A33S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:BLND_3G064:v
+A33T_GF_SRVC_BLND_3G063
+asset-id:A33T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:BLND_3G063:v
+A34R_GF_SRVC_BLND_Z6
+asset-id:A34R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:BLND_Z6:v
+A34S_GF_SRVC_BLND_Z5
+asset-id:A34S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:BLND_Z5:v
+A34T_GF_SRVC_BLND_Z2
+asset-id:A34T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:BLND_Z2:v
+A35R_GF_SRVC_BLND_Z2
+asset-id:A35R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:BLND_Z2:v
+A35S_GF_SRVC_BLND_3G054
+asset-id:A35S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:BLND_3G054:v
+A35T_GF_SRVC_EXPO_DOORS GLASS
+asset-id:A35T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_DOORS GLASS:v
+A36R_GF_SRVC_MENWC_SHWR1
+asset-id:A36R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MENWC_SHWR1:v
+A36S_GF_SRVC_FEMWC_SHWR1
+asset-id:A36S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:FEMWC_SHWR1:v
+A36T_GF_SRVC_MENWC_SHWR2
+asset-id:A36T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MENWC_SHWR2:v
+A37R_GF_SRVC_FEMWC_SHWR2
+asset-id:A37R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:FEMWC_SHWR2:v
+A37S_GF_SRVC_WRLESS_3G075
+asset-id:A37S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WRLESS_3G075:v
+A37T_GF_SRVC_WRLESS_3G086
+asset-id:A37T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:WRLESS_3G086:v
+A38S_GF_SRVC_SPACEHTR_COLLAB
+asset-id:A38S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:SPACEHTR_COLLAB:v
+A38T_GF_SRVC_RECEPTION_DOOR
+asset-id:A38T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:RECEPTION_DOOR:v
+A39R_GF_SRVC_RECEPTION_CLEANR
+asset-id:A39R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:RECEPTION_CLEANR:v
+A39T_GF_SRVC_CARCHRGE_POINT1_NEAR
+asset-id:A39T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CARCHRGE_POINT1_NEAR:v
+A3R_GF_FCU24_25_26_27_37
+asset-id:A3R:v,floor-id:GF:v,fcu electric meter:FCU24:c,room-id:25_26_27_37:v
+A3R_GF_LGHT_I3TOI6
+asset-id:A3R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:I3TOI6:v
+A3R_GF_SRVC_H3H4H21H22
+asset-id:A3R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:H3H4H21H22:v
+A3S_GF_FCU28_29_30_31_36_39
+asset-id:A3S:v,floor-id:GF:v,fcu electric meter:FCU28:c,room-id:29_30_31_36_39:v
+A3S_GF_LGHT_AISLE_Z6
+asset-id:A3S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:AISLE_Z6:v
+A3S_GF_SRVC_H13H14H19H20
+asset-id:A3S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:H13H14H19H20:v
+A3T_GF_LGHT_H11TO14H19TOH22
+asset-id:A3T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:H11TO14H19TOH22:v
+A3T_GF_SRVC_H5H6H11H12
+asset-id:A3T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:H5H6H11H12:v
+A40R_GF_SRVC_COFFEEDCK_BURCO
+asset-id:A40R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:COFFEEDCK_BURCO:v
+A40S_GF_SRVC_FOOTFALL_RECPT
+asset-id:A40S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:FOOTFALL_RECPT:v
+A40T_GF_SRVC_CARCHRGE_POINT2_FAR
+asset-id:A40T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CARCHRGE_POINT2_FAR:v
+A41R_GF_SRVC_EXPO_DEMO
+asset-id:A41R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_DEMO:v
+A41R_GF_SRVC_EXPO_FLRBX
+asset-id:A41R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_FLRBX:v
+A41S_GF_SRVC_EXPO_FLRBX
+asset-id:A41S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_FLRBX:v
+A41T_GF_SRVC_EXPO_DEMO
+asset-id:A41T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_DEMO:v
+A42R_GF_SRVC_EXPO_AV_WALL
+asset-id:A42R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_AV_WALL:v
+A42S GF_SRVC_EXPO_AV_WALL
+asset-id:A42S GF:v,floor-id:SRVC:v,socket load electric meter:EXPO:c,room-id:AV_WALL:v
+A43R_GF_SRVC_CLEAN_EXPO
+asset-id:A43R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CLEAN_EXPO:v
+A43S_GF_SRVC_EXPO_DEMO
+asset-id:A43S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_DEMO:v
+A43T_GF_SRVC_EXPO_AV_RACK
+asset-id:A43T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:EXPO_AV_RACK:v
+A4R_GF_LGHT_H3TOH6_QR061_062
+asset-id:A4R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:H3TOH6_QR061_062:v
+A4S_GF_LGHT_H9H10H15TOH18H23H24
+asset-id:A4S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:H9H10H15TOH18H23H24:v
+A4S_GF_SRVC_H15TOH18
+asset-id:A4S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:H15TOH18:v
+A4T_GF_LGHT_H1H2H7H8_QR059_060
+asset-id:A4T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:H1H2H7H8_QR059_060:v
+A4T_GF_SRVC_H7TOH10
+asset-id:A4T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:H7TOH10:v
+A5R_GF_LGHT_FRONTAISLE_Z6
+asset-id:A5R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:FRONTAISLE_Z6:v
+A5R_GF_SRVC_G3G4G21G22
+asset-id:A5R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:G3G4G21G22:v
+A5S_GF_LGHT_MR_3G063_064
+asset-id:A5S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MR_3G063_064:v
+A5S_GF_SRVC_G13G14G19G20
+asset-id:A5S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:G13G14G19G20:v
+A5T_GF_LGHT_MIDAISLE_Z6
+asset-id:A5T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z6:v
+A5T_GF_SRVC_G5G6G11G12
+asset-id:A5T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:G5G6G11G12:v
+A6R_GF_LGHT_TOPAISLE_Z5
+asset-id:A6R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:TOPAISLE_Z5:v
+A6R_GF_SRVC_G1G2G23G24
+asset-id:A6R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:G1G2G23G24:v
+A6S_GF_LGHT_G11TOG14G19TOG22
+asset-id:A6S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:G11TOG14G19TOG22:v
+A6S_GF_SRVC_G17G18
+asset-id:A6S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:G17G18:v
+A6T_GF_LGHT_G3G4G5G6
+asset-id:A6T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:G3G4G5G6:v
+A6T_GF_SRVC_G7TOG10
+asset-id:A6T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:G7TOG10:v
+A7R_GF_LGHT_MIDAISLE_Z5
+asset-id:A7R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z5:v
+A7R_GF_SRVC_F3F4F21F22
+asset-id:A7R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:F3F4F21F22:v
+A7S_GF_LGHT_G9G10G15TOG18G23G24
+asset-id:A7S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:G9G10G15TOG18G23G24:v
+A7S_GF_SRVC_F13F14F19F20
+asset-id:A7S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:F13F14F19F20:v
+A7T_GF_LGHT_G1G2G7G8
+asset-id:A7T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:G1G2G7G8:v
+A7T_GF_SRVC_F5F6
+asset-id:A7T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:F5F6:v
+A89T_GF_SRVC_QR055_056
+asset-id:A89T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:QR055_056:v
+A8R_GF_LGHT_MIDAISLE_Z5
+asset-id:A8R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z5:v
+A8R_GF_SRVC_F1F2F23F24
+asset-id:A8R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:F1F2F23F24:v
+A8S_GF_LGHT_TOPAISLE_Z2
+asset-id:A8S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:TOPAISLE_Z2:v
+A8S_GF_SRVC_F15TOF18
+asset-id:A8S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:F15TOF18:v
+A8T_GF_LGHT_F19TOF22_QR055_056
+asset-id:A8T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:F19TOF22_QR055_056:v
+A8T_GF_SRVC_F7F8
+asset-id:A8T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:F7F8:v
+A9R_GF_LGHT_F3TOF6F11TOF14
+asset-id:A9R:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:F3TOF6F11TOF14:v
+A9R_GF_SRVC_QR065_066
+asset-id:A9R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:QR065_066:v
+A9S_GF_LGHT_MIDAISLE_Z2
+asset-id:A9S:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z2:v
+A9S_GF_SRVC_QR061_062
+asset-id:A9S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:QR061_062:v
+A9T_GF_LGHT_F17F18F23F24_057_058
+asset-id:A9T:v,floor-id:GF:v,light load electric meter:LGHT:c,room-id:F17F18F23F24_057_058:v
+B10R_1F_LGHT_HILEVEL_ATRIUM
+asset-id:B10R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:HILEVEL_ATRIUM:v
+B10R_1F_SRVC_COLLAB_3F034
+asset-id:B10R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:COLLAB_3F034:v
+B10S_1F_SRVC_COLLAB_3F034
+asset-id:B10S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:COLLAB_3F034:v
+B10S_1F_STAIRCASE_ATRIUM
+asset-id:B10S:v,floor-id:1F:v,na electric meter:STAIRCASE:c,room-id:ATRIUM:v
+B10T_1F_SRVC_COLLAB_3F034
+asset-id:B10T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:COLLAB_3F034:v
+B10T_1F_STAIRCASE_ATRIUM
+asset-id:B10T:v,floor-id:1F:v,na electric meter:STAIRCASE:c,room-id:ATRIUM:v
+B11R_1F_SRVC_MR_3F039
+asset-id:B11R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:MR_3F039:v
+B11R_1F_SRVC_MR_3F079
+asset-id:B11R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:MR_3F079:v
+B11R_1F_TWINBLKHD_ATRIUM
+asset-id:B11R:v,floor-id:1F:v,light load electric meter:TWINBLKHD:c,room-id:ATRIUM:v
+B11S_1F_SRVC_MR_3F039
+asset-id:B11S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:MR_3F039:v
+B11S_1F_SUPPLY_TO_DALIPANEL
+asset-id:B11S:v,floor-id:1F:v,supply electric meter:SUPPLY:c,room-id:TO_DALIPANEL:v
+B11S_GF_SRVC_MR_3F064
+asset-id:B11S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3F064:v
+B11T_1F_SRVC_MR_3F043
+asset-id:B11T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:MR_3F043:v
+B12R_1F_SRVC_MR_3F044
+asset-id:B12R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:MR_3F044:v
+B12R_GF_SRVC_MR_3F054
+asset-id:B12R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:MR_3F054:v
+B12S_1F_SRVC_MR_3F022
+asset-id:B12S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:MR_3F022:v
+B13R_1F_SRVC_MR_028
+asset-id:B13R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:MR_028:v
+B13S_1F_SRVC_CLEAN_42108
+asset-id:B13S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:CLEAN_42108:v
+B13T_1F_SRVC_CLEAN_42122
+asset-id:B13T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:CLEAN_42122:v
+B14R_1F_SRVC_CLEAN_42104
+asset-id:B14R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:CLEAN_42104:v
+B14S_1F_SRVC_CLEAN_42138
+asset-id:B14S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:CLEAN_42138:v
+B15R_1F_SRVC_HDRY_MENWC
+asset-id:B15R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:HDRY_MENWC:v
+B15S_1F_SRVC_HDRY_FEMWC
+asset-id:B15S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:HDRY_FEMWC:v
+B15T_1F_SRVC_WATERHTR_MENWC
+asset-id:B15T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:WATERHTR_MENWC:v
+B16R_1F_SRVC_WATERHTR_FEMWC
+asset-id:B16R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:WATERHTR_FEMWC:v
+B16S_1F_SRVC_SKSENS_MENWC
+asset-id:B16S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:SKSENS_MENWC:v
+B16T_1F_SRVC_SKSENS_FEMWC
+asset-id:B16T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:SKSENS_FEMWC:v
+B17R_1F_SRVC_URSENS_MENWC
+asset-id:B17R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:URSENS_MENWC:v
+B17S_1F_SRVC_BACKAISLE_Z7
+asset-id:B17S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:BACKAISLE_Z7:v
+B17T_1F_SRVC_WRLS_42108
+asset-id:B17T:v,floor-id:1F:v,socket load wireless electric meter:SRVC:c,room-id:WRLS_42108:v
+B18R_1F_SRVC_BLND_3F002
+asset-id:B18R:v,floor-id:1F:v,socket load blind electric meter:SRVC:c,room-id:BLND_3F002:v
+B18S_1F_SRVC_BLND_42104
+asset-id:B18S:v,floor-id:1F:v,socket load blind electric meter:SRVC:c,room-id:BLND_42104:v
+B18T_1F_SRVC_BLND_42104
+asset-id:B18T:v,floor-id:1F:v,socket load blind electric meter:SRVC:c,room-id:BLND_42104:v
+B19R_1F_SRVC_BLND_42120
+asset-id:B19R:v,floor-id:1F:v,socket load blind electric meter:SRVC:c,room-id:BLND_42120:v
+B19S_1F_SRVC_BLND_42142
+asset-id:B19S:v,floor-id:1F:v,socket load blind electric meter:SRVC:c,room-id:BLND_42142:v
+B19T_1F_SRVC_BLND_3F043
+asset-id:B19T:v,floor-id:1F:v,socket load blind electric meter:SRVC:c,room-id:BLND_3F043:v
+B1R_1F_FCU01_02_06_07
+asset-id:B1R:v,floor-id:1F:v,fcu electric meter:FCU01:c,room-id:02_06_07:v
+B1R_1F_LGHT_RM_3F041_3F042
+asset-id:B1R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:RM_3F041_3F042:v
+B1R_1F_SRVC_D4D5D12D13
+asset-id:B1R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D4D5D12D13:v
+B1S_1F_FCU03_04_05_08_09
+asset-id:B1S:v,floor-id:1F:v,fcu electric meter:FCU03:c,room-id:04_05_08_09:v
+B1S_1F_LGHT_MR_3F039_040
+asset-id:B1S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MR_3F039_040:v
+B1S_1F_SRVC_D3D6D11D14
+asset-id:B1S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D3D6D11D14:v
+B1S_GF_SRVC_I1I2I7I8_QR066_065
+asset-id:B1S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:I1I2I7I8_QR066_065:v
+B1T_1F_FCU14_19_20_21_22
+asset-id:B1T:v,floor-id:1F:v,fcu electric meter:FCU14:c,room-id:19_20_21_22:v
+B1T_1F_LGHT_BACKAISLE_Z7
+asset-id:B1T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:BACKAISLE_Z7:v
+B1T_1F_SRVC_D20D21D28
+asset-id:B1T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D20D21D28:v
+B1T_GF_SRVC_I9I10I15TOI18I23I24
+asset-id:B1T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:I9I10I15TOI18I23I24:v
+B20S_GF_SRVC_VESDA
+asset-id:B20S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:VESDA:v
+B20T_1F_SRVC_WTRMTR_MENWC
+asset-id:B20T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:WTRMTR_MENWC:v
+B23S_GF_SRVC_CLEAN_Z5_NEXTFRONT
+asset-id:B23S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CLEAN_Z5_NEXTFRONT:v
+B23T_GF_SRVC_CLEAN_Z3_NEXTCOFFDK
+asset-id:B23T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CLEAN_Z3_NEXTCOFFDK:v
+B24R_GF_SRVC_CLEAN_Z4
+asset-id:B24R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CLEAN_Z4:v
+B24S_GF_SRVC_CLEAN_Z2_NEXTDB
+asset-id:B24S:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CLEAN_Z2_NEXTDB:v
+B24T_GF_SRVC_CLEAN_Z6
+asset-id:B24T:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:CLEAN_Z6:v
+B2R_1F_FCU12_15_16_17_18
+asset-id:B2R:v,floor-id:1F:v,fcu electric meter:FCU12:c,room-id:15_16_17_18:v
+B2R_1F_LGHT_F13F14F19TOF22F27F28
+asset-id:B2R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:F13F14F19TOF22F27F28:v
+B2R_1F_SRVC_D19D22D27
+asset-id:B2R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D19D22D27:v
+B2R_GF_SRVC_I11TOI14I19TOI22
+asset-id:B2R:v,floor-id:GF:v,socket load electric meter:SRVC:c,room-id:I11TOI14I19TOI22:v
+B2S_1F_FCU10_11_13_23_COLLAB
+asset-id:B2S:v,floor-id:1F:v,fcu electric meter:FCU10:c,room-id:11_13_23_COLLAB:v
+B2S_1F_LGHT_F3TOF6F11F12_QR37_38
+asset-id:B2S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:F3TOF6F11F12_QR37_38:v
+B2S_1F_SRVC_D2D7D10D15
+asset-id:B2S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D2D7D10D15:v
+B2T_1F_LGHT_MIDAISLE_Z9
+asset-id:B2T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z9:v
+B2T_1F_SRVC_D1D8D9D16
+asset-id:B2T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D1D8D9D16:v
+B3R_1F_LGHT_F15TOF18F23TOF26
+asset-id:B3R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:F15TOF18F23TOF26:v
+B3R_1F_SRVC_D18D23D26
+asset-id:B3R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D18D23D26:v
+B3S_1F_LGHT_F1F2F7TOF10_QR35_36
+asset-id:B3S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:F1F2F7TOF10_QR35_36:v
+B3S_1F_SRVC_D17D24D25
+asset-id:B3S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:D17D24D25:v
+B3T_1F_LGHT_MR_3F043_044
+asset-id:B3T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MR_3F043_044:v
+B3T_1F_SRVC_E2E3E6E7
+asset-id:B3T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:E2E3E6E7:v
+B4R_1F_LGHT_TOPAISLE_Z8
+asset-id:B4R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:TOPAISLE_Z8:v
+B4R_1F_SRVC_E1E4E5E8
+asset-id:B4R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:E1E4E5E8:v
+B4S_1F_LGHT_COLLAB_3F034
+asset-id:B4S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:COLLAB_3F034:v
+B4S_1F_SRVC_F4F5F12F13
+asset-id:B4S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F4F5F12F13:v
+B4T_1F_LGHT_COLLAB_3F033
+asset-id:B4T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:COLLAB_3F033:v
+B4T_1F_SRVC_F3F6F11F14
+asset-id:B4T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F3F6F11F14:v
+B5R_1F_LGHT_MIDAISLE_Z8
+asset-id:B5R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z8:v
+B5R_1F_SRVC_F20F21F28_QR037_038
+asset-id:B5R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F20F21F28_QR037_038:v
+B5S_1F_LGHT_E1TOE8
+asset-id:B5S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:E1TOE8:v
+B5S_1F_SRVC_F19F22F27
+asset-id:B5S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F19F22F27:v
+B5T_1F_LGHT_FRONTAISLE_Z9
+asset-id:B5T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:FRONTAISLE_Z9:v
+B5T_1F_SRVC_F2F7F10F15
+asset-id:B5T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F2F7F10F15:v
+B6R_1F_LGHT_FRONTAISLE_Z7
+asset-id:B6R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:FRONTAISLE_Z7:v
+B6R_1F_SRVC_F1F8F9F16
+asset-id:B6R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F1F8F9F16:v
+B6S_1F_LGHT_D21D22D27D28_QR29_30
+asset-id:B6S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:D21D22D27D28_QR29_30:v
+B6S_1F_SRVC_F18F23F26
+asset-id:B6S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F18F23F26:v
+B6T_1F_LGHT_D3TOD6D11TOD14
+asset-id:B6T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:D3TOD6D11TOD14:v
+B6T_1F_SRVC_F17F24F25
+asset-id:B6T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:F17F24F25:v
+B7R_1F_LGHT_MIDAISLE_Z7
+asset-id:B7R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z7:v
+B7R_1F_SRVC_QR029_030
+asset-id:B7R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:QR029_030:v
+B7S_1F_LGHT_D1D2D7TOD10D15TOD18
+asset-id:B7S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:D1D2D7TOD10D15TOD18:v
+B7S_1F_SRVC_QR031_032
+asset-id:B7S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:QR031_032:v
+B7T_1F_LGHT_D23TOD26_QR31_32
+asset-id:B7T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:D23TOD26_QR31_32:v
+B7T_1F_SRVC_QR035_036
+asset-id:B7T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:QR035_036:v
+B8R_1F_LGHT_BACKAISLE_Z7
+asset-id:B8R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:BACKAISLE_Z7:v
+B8R_1F_SRVC_QR037_038
+asset-id:B8R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:QR037_038:v
+B8S_1F_LGHT_MIDAISLE_Z7
+asset-id:B8S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MIDAISLE_Z7:v
+B8S_1F_SRVC_OPEN PLAN 42-1-19
+asset-id:B8S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:OPEN PLAN 42-1-19:v
+B8T_1F_LGHT_MR_3F022
+asset-id:B8T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MR_3F022:v
+B8T_1F_SRVC_OPEN PLAN 41-1-29
+asset-id:B8T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:OPEN PLAN 41-1-29:v
+B9R_1F_LGHT_FEMWC
+asset-id:B9R:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:FEMWC:v
+B9R_1F_SRVC_COLLAB_3F33
+asset-id:B9R:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:COLLAB_3F33:v
+B9S_1F_LGHT_MENWC
+asset-id:B9S:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MENWC:v
+B9S_1F_SRVC_COLLAB_3F33
+asset-id:B9S:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:COLLAB_3F33:v
+B9T_1F_LGHT_MR_3F028
+asset-id:B9T:v,floor-id:1F:v,light load electric meter:LGHT:c,room-id:MR_3F028:v
+B9T_1F_SRVC_BLND_3F043
+asset-id:B9T:v,floor-id:1F:v,socket load electric meter:SRVC:c,room-id:BLND_3F043:v
+A4R_GF_SRVC_H23H24
+asset-id:A4R:v,floor-id:GF:v,electric meter srvc:SRVC:c,room-id:H23H24:v
+01_Z1_G10_AISLE 1 G1_8R_SM18 TRIGGER
+room-id:AISLE 1 G1_8R:v,presence sensor:TRIGGER:c
+01_Z1_G11_AISLE_1_G1_13T_MM19 TRIGGER
+room-id:AISLE_1_G1_13T:v,presence sensor:TRIGGER:c
+01_Z1_G12_AISLE 1 G1_3S_MM20 TRIGGER
+room-id:AISLE 1 G1_3S:v,presence sensor:TRIGGER:c
+01_Z1_G12_AISLE 1 G1_3S_SM21 TRIGGER
+room-id:AISLE 1 G1_3S:v,presence sensor:TRIGGER:c
+01_Z1_G12_AISLE 1 G1_3S_SM22 TRIGGER
+room-id:AISLE 1 G1_3S:v,presence sensor:TRIGGER:c
+01_Z1_G13_AISLE 1 G1_5T_MM23 TRIGGER
+room-id:AISLE 1 G1_5T:v,presence sensor:TRIGGER:c
+01_Z1_G13_AISLE 1 G1_5T_SM24 TRIGGER
+room-id:AISLE 1 G1_5T:v,presence sensor:TRIGGER:c
+01_Z1_G13_AISLE 1 G1_5T_SM25 TRIGGER
+room-id:AISLE 1 G1_5T:v,presence sensor:TRIGGER:c
+01_Z1_G14_AISLE 1 G1_5R_MM26 TRIGGER
+room-id:AISLE 1 G1_5R:v,presence sensor:TRIGGER:c
+01_Z1_G14_AISLE 1 G1_5R_SM27 TRIGGER
+room-id:AISLE 1 G1_5R:v,presence sensor:TRIGGER:c
+01_Z1_G2_AISLE 1 G1_16R_MM1TRIGGER
+room-id:AISLE 1 G1_16R:v,presence sensor:TRIGGER:c
+01_Z1_G2_AISLE 1 G1_16R_SM2 TRIGGER
+room-id:AISLE 1 G1_16R:v,presence sensor:TRIGGER:c
+01_Z1_G4_AISLE 1 G1_12R_MM3 TRIGGER
+room-id:AISLE 1 G1_12R:v,presence sensor:TRIGGER:c
+01_Z1_G4_AISLE 1 G1_12R_SM4 TRIGGER
+room-id:AISLE 1 G1_12R:v,presence sensor:TRIGGER:c
+01_Z1_G4_AISLE 1 G1_12R_SM5 TRIGGER
+room-id:AISLE 1 G1_12R:v,presence sensor:TRIGGER:c
+01_Z1_G5_AISLE 1 G1_8S_MM6 TRIGGER
+room-id:AISLE 1 G1_8S:v,presence sensor:TRIGGER:c
+01_Z1_G5_AISLE 1 G1_8S_SM7 TRIGGER
+room-id:AISLE 1 G1_8S:v,presence sensor:TRIGGER:c
+01_Z1_G5_AISLE 1 G1_8S_SM8 TRIGGER
+room-id:AISLE 1 G1_8S:v,presence sensor:TRIGGER:c
+01_Z1_G6_AISLE 1 G1_9S_MM9 TRIGGER
+room-id:AISLE 1 G1_9S:v,presence sensor:TRIGGER:c
+01_Z1_G6_AISLE 1 G1_9S_SM10 TRIGGER
+room-id:AISLE 1 G1_9S:v,presence sensor:TRIGGER:c
+01_Z1_G7_AISLE 1 G1_10S_MM12 TRIGGER
+room-id:AISLE 1 G1_10S:v,presence sensor:TRIGGER:c
+01_Z1_G7_AISLE 1 G1_10S_SM11 TRIGGER
+room-id:AISLE 1 G1_10S:v,presence sensor:TRIGGER:c
+01_Z1_G7_AISLE 1 G1_10S_SM13 TRIGGER
+room-id:AISLE 1 G1_10S:v,presence sensor:TRIGGER:c
+01_Z1_G9_AISLE 1 G1_7R_MM15 TRIGGER
+room-id:AISLE 1 G1_7R:v,presence sensor:TRIGGER:c
+01_Z1_G9_AISLE 1 G1_7R_SM16 TRIGGER
+room-id:AISLE 1 G1_7R:v,presence sensor:TRIGGER:c
+01_Z2_G1_AISLE 2 G1_1R_MM28 TRIGGER
+room-id:AISLE 2 G1_1R:v,presence sensor:TRIGGER:c
+01_Z2_G1_AISLE 2 G1_1R_SM29 TRIGGER
+room-id:AISLE 2 G1_1R:v,presence sensor:TRIGGER:c
+01_Z2_G1_AISLE 2 G1_1R_SM30 TRIGGER
+room-id:AISLE 2 G1_1R:v,presence sensor:TRIGGER:c
+01_Z2_G2_AISLE 2 G1_2T_MM31 TRIGGER
+room-id:AISLE 2 G1_2T:v,presence sensor:TRIGGER:c
+01_Z2_G2_AISLE 2 G1_2T_SM32 TRIGGER
+room-id:AISLE 2 G1_2T:v,presence sensor:TRIGGER:c
+01_Z2_G3_AISLE 2 G1_2R_MM33 TRIGGER
+room-id:AISLE 2 G1_2R:v,presence sensor:TRIGGER:c
+01_Z2_G3_AISLE 2 G1_2R_SM34 TRIGGER
+room-id:AISLE 2 G1_2R:v,presence sensor:TRIGGER:c
+01_Z2_G3_AISLE 2 G1_2R_SM35 TRIGGER
+room-id:AISLE 2 G1_2R:v,presence sensor:TRIGGER:c
+01_Z3_G10_8P MEETING _MM96 TRIGGER
+room-id:8P MEETING :v,presence sensor:TRIGGER:c
+01_Z3_G11_BUSINESS_SUP_MM36 TRIGGER
+room-id:BUSINESS_SUP:v,presence sensor:TRIGGER:c
+01_Z3_G12_6P MEETING _MM93 TRIGGER
+room-id:6P MEETING :v,presence sensor:TRIGGER:c
+01_Z3_G13_4P MEETING _MM94 TRIGGER
+room-id:4P MEETING :v,presence sensor:TRIGGER:c
+01_Z3_G14_10P MEETING _MM84 TRIGGER
+room-id:10P MEETING :v,presence sensor:TRIGGER:c
+01_Z3_G1_18P BOARD_MM69 TRIGGER
+room-id:18P BOARD:v,presence sensor:TRIGGER:c
+01_Z3_G1_18P BOARD_SM70 TRIGGER
+room-id:18P BOARD:v,presence sensor:TRIGGER:c
+01_Z3_G2_TELECONFERENCE _MM71 TRIGGER
+room-id:TELECONFERENCE :v,presence sensor:TRIGGER:c
+01_Z3_G3_6P MEETING _MM72 TRIGGER
+room-id:6P MEETING :v,presence sensor:TRIGGER:c
+01_Z3_G4_HOT DESK_MM79 TRIGGER
+room-id:HOT DESK:v,presence sensor:TRIGGER:c
+01_Z3_G5_HOT DESK_ONOFF_MM80 TRIGGER
+room-id:HOT DESK_ONOFF:v,presence sensor:TRIGGER:c
+01_Z3_G6_24P TRAINING _MM73 TRIGGER
+room-id:24P TRAINING :v,presence sensor:TRIGGER:c
+01_Z3_G6_24P TRAINING _SM74 TRIGGER
+room-id:24P TRAINING :v,presence sensor:TRIGGER:c
+01_Z3_G7_LABORATORY_MM75 TRIGGER
+room-id:LABORATORY:v,presence sensor:TRIGGER:c
+01_Z3_G8_6P MEETING _MM76 TRIGGER
+room-id:6P MEETING :v,presence sensor:TRIGGER:c
+01_Z3_G9_10 PEOPLE_MEET_MM95 TRIGGER
+room-id:10 PEOPLE_MEET:v,presence sensor:TRIGGER:c
+01_Z4_G10_QUIET ROOM_MM88 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z4_G11_WORK_STATION_4_MM43 TRIGGER
+room-id:WORK_STATION_4:v,presence sensor:TRIGGER:c
+01_Z4_G12_WORKSTATIONS4S_MM44 TRIGGER
+room-id:WORKSTATIONS4S:v,presence sensor:TRIGGER:c
+01_Z4_G13_WORKSTATIONS4_MM45 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z4_G1_WORKSTATIONS4_MM37 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z4_G2_WORKSTATIONS4_MM38 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z4_G3_WORKSTATIONS4_MM39 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z4_G4_QUIET ROOM_MM85 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z4_G5_QUIET ROOM_MM86 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z4_G6_WORKSTATIONS4_MM40 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z4_G7_WORKSTATIONS4_MM41 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z4_G8_WORKSTATIONS4_MM42 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z4_G9_QUIET ROOM_MM87 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z5_G10_WORKSTATIONS4_MM53 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G11_WORKSTATIONS4_MM54 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G12_QUIET ROOM_MM91 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z5_G13_QUIET ROOM_MM92 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z5_G1_WORKSTATIONS4_MM46 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G2_WORKSTATIONS4_MM47 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G3_WORKSTATIONS4_MM48 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G4_WORKSTATIONS4_MM49 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G5_WORKSTATIONS4_MM50 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G6_WORKSTATIONS4_MM51 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z5_G7_QUIET ROOM_MM89 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z5_G8_QUIET ROOM_MM90 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z5_G9_WORKSTATIONS4_MM52 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z6_G1_WORKSTATIONS4_MM55 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z6_G2_WORKSTATIONS4_MM56 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z6_G3_WORKSTATIONS4_MM57 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z6_G4_QUIET ROOM_MM82 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z6_G5_QUIET ROOM_MM83 TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+01_Z6_G6_WORKSTATIONS4_MM58 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z6_G7_WORKSTATIONS4_MM59 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z6_G8_WORKSTATIONS4_MM60 TRIGGER
+room-id:WORKSTATIONS4:v,presence sensor:TRIGGER:c
+01_Z7_G10_DISABLED WC_MM81 TRIGGER
+room-id:DISABLED WC:v,presence sensor:TRIGGER:c
+01_Z7_G11_WELLNESS ROOM_MM99 TRIGGER
+room-id:WELLNESS ROOM:v,presence sensor:TRIGGER:c
+01_Z7_G1_MALE WC_MM61 TRIGGER
+room-id:MALE WC:v,presence sensor:TRIGGER:c
+01_Z7_G5_CORRIDOR_MM62 TRIGGER
+room-id:CORRIDOR:v,presence sensor:TRIGGER:c
+01_Z7_G9_FEMALE WC_MM63 TRIGGER
+room-id:FEMALE WC:v,presence sensor:TRIGGER:c
+01_Z8_G10_MALE_WC_LOBBY_MM77 TRIGGER
+room-id:MALE_WC_LOBBY:v,presence sensor:TRIGGER:c
+01_Z8_G11_FEMALE WC_LOBBY_MM78 TRIGGER
+room-id:FEMALE WC_LOBBY:v,presence sensor:TRIGGER:c
+01_Z8_G3_RECEPTION_MM64 TRIGGER
+room-id:RECEPTION:v,presence sensor:TRIGGER:c
+01_Z8_G5_RECEPTION WC 1_MM68 TRIGGER
+room-id:RECEPTION WC 1:v,presence sensor:TRIGGER:c
+01_Z8_G6_RECEPTION WC 2_MM67 TRIGGER
+room-id:RECEPTION WC 2:v,presence sensor:TRIGGER:c
+01_Z8_G7_RECEPTION_WC_2_MM66 TRIGGER
+room-id:RECEPTION_WC_2:v,presence sensor:TRIGGER:c
+01_Z8_G8_RECEPTION_WC_2_MM65 TRIGGER
+room-id:RECEPTION_WC_2:v,presence sensor:TRIGGER:c
+02_Z2_G12_6P MEETING ROOM_MM59_TRIGGER
+room-id:6P MEETING ROOM:v,presence sensor:TRIGGER:c
+02_Z2_G13_4P MEETING ROOM_MM60_TRIGGER
+room-id:4P MEETING ROOM:v,presence sensor:TRIGGER:c
+02_Z2_G2_MALE WC LOBBY_MM44_TRIGGER
+room-id:MALE WC LOBBY:v,presence sensor:TRIGGER:c
+02_Z2_G3_MALE WC_MM21_TRIGGER
+room-id:MALE WC:v,presence sensor:TRIGGER:c
+02_Z2_G4_FEMALE WC LOBBY_MM45_TRIGGER
+room-id:FEMALE WC LOBBY:v,presence sensor:TRIGGER:c
+02_Z2_G5_FEMALE WC_MM22_TRIGGER
+room-id:FEMALE WC:v,presence sensor:TRIGGER:c
+02_Z2_G6_BUSINESS SUPPORT_MM46_TRIGGER
+room-id:BUSINESS SUPPORT:v,presence sensor:TRIGGER:c
+02_Z2_G7_10P MEETING ROOM_MM43_TRIGGER
+room-id:10P MEETING ROOM:v,presence sensor:TRIGGER:c
+02_Z2_G8_6P MEETING ROOM_MM53_TRIGGER
+room-id:6P MEETING ROOM:v,presence sensor:TRIGGER:c
+02_Z2_G9_6P MEETING ROOM_MM58_TRIGGER
+room-id:6P MEETING ROOM:v,presence sensor:TRIGGER:c
+02_Z3_G10_WORKSTATION2_MM30_TRIGGER
+room-id:WORKSTATION2:v,presence sensor:TRIGGER:c
+02_Z3_G11_QUIET ROOM_MM49_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z3_G12_QUIET ROOM_MM50_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z3_G13_WORKSTATION4_MM31_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z3_G14_WORKSTATION4_MM32_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z3_G1_WORKSTATION4_MM23_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z3_G2_WORKSTATION4_MM24_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z3_G3_WORKSTATION4_MM25_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z3_G4_WORKSTATION2_MM26_TRIGGER
+room-id:WORKSTATION2:v,presence sensor:TRIGGER:c
+02_Z3_G5_QUIET ROOM_MM47_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z3_G6_QUIET ROOM_MM48_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z3_G7_WORKSTATION4_MM27_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z3_G8_WORKSTATION4_MM28_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z4_G10_WORKSTATION2_MM40_TRIGGER
+room-id:WORKSTATION2:v,presence sensor:TRIGGER:c
+02_Z4_G11_QUIET ROOM_MM56_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z4_G12_QUIET ROOM_MM57_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z4_G1_WORKSTATION4_MM33_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z4_G2_WORKSTATION4_MM34_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z4_G3_WORKSTATION4_MM35_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z4_G4_WORKSTATION2_MM36_TRIGGER
+room-id:WORKSTATION2:v,presence sensor:TRIGGER:c
+02_Z4_G5_QUIET ROOM_MM54_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z4_G6_QUIET ROOM_MM55_TRIGGER
+room-id:QUIET ROOM:v,presence sensor:TRIGGER:c
+02_Z4_G7_WORKSTATION4_MM37_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z4_G8_WORKSTATION4_MM38_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z4_G9_WORKSTATION4_MM39_TRIGGER
+room-id:WORKSTATION4:v,presence sensor:TRIGGER:c
+02_Z5_G1_ATRIUM SPACE_MM41_TRIGGER
+room-id:ATRIUM SPACE:v,presence sensor:TRIGGER:c
+02_Z5_G1_ATRIUM SPACE_SM42_TRIGGER
+room-id:ATRIUM SPACE:v,presence sensor:TRIGGER:c
+02_Z1_G10_AISLE-1.1_5T_MM19_TRIGGER
+room-id:AISLE-1.1_5T:v,presence sensor:TRIGGER:c
+02_Z1_G10_AISLE-1.1_5T_SM20_TRIGGER
+room-id:AISLE-1.1_5T:v,presence sensor:TRIGGER:c
+02_Z1_G2_AISLE-1.1_8S_MM1_TRIGGER
+room-id:AISLE-1.1_8S:v,presence sensor:TRIGGER:c
+02_Z1_G2_AISLE-1.1_8S_SM2_TRIGGER
+room-id:AISLE-1.1_8S:v,presence sensor:TRIGGER:c
+02_Z1_G2_AISLE-1.1_8S_SM3_TRIGGER
+room-id:AISLE-1.1_8S:v,presence sensor:TRIGGER:c
+02_Z1_G3_AISLE-1.1_6R_MM4_TRIGGER
+room-id:AISLE-1.1_6R:v,presence sensor:TRIGGER:c
+02_Z1_G4_AISLE-1.1_7R_MM5_TRIGGER
+room-id:AISLE-1.1_7R:v,presence sensor:TRIGGER:c
+02_Z1_G4_AISLE-1.1_7R_SM6_TRIGGER
+room-id:AISLE-1.1_7R:v,presence sensor:TRIGGER:c
+02_Z1_G5_AISLE-1.1_8R_MM7_TRIGGER
+room-id:AISLE-1.1_8R:v,presence sensor:TRIGGER:c
+02_Z1_G5_AISLE-1.1_8R_SM8_TRIGGER
+room-id:AISLE-1.1_8R:v,presence sensor:TRIGGER:c
+02_Z1_G6_AISLE-1.1_4R_MM9_TRIGGER
+room-id:AISLE-1.1_4R:v,presence sensor:TRIGGER:c
+02_Z1_G6_AISLE-1.1_4R_SM10_TRIGGER
+room-id:AISLE-1.1_4R:v,presence sensor:TRIGGER:c
+02_Z1_G7_AISLE-1.1_5R_MM11_TRIGGER
+room-id:AISLE-1.1_5R:v,presence sensor:TRIGGER:c
+02_Z1_G7_AISLE-1.1_5R_SM12_TRIGGER
+room-id:AISLE-1.1_5R:v,presence sensor:TRIGGER:c
+02_Z1_G7_AISLE-1.1_5R_SM13_TRIGGER
+room-id:AISLE-1.1_5R:v,presence sensor:TRIGGER:c
+02_Z1_G8_AISLE-1.1_1T_MM14_TRIGGER
+room-id:AISLE-1.1_1T:v,presence sensor:TRIGGER:c
+02_Z1_G8_AISLE-1.1_1T_SM15_TRIGGER
+room-id:AISLE-1.1_1T:v,presence sensor:TRIGGER:c
+02_Z1_G9_AISLE-1.1_2T_MM17_TRIGGER
+room-id:AISLE-1.1_2T:v,presence sensor:TRIGGER:c
+02_Z1_G9_AISLE-1.1_2T_SM16_TRIGGER
+room-id:AISLE-1.1_2T:v,presence sensor:TRIGGER:c
+02_Z1_G9_AISLE-1.1_2T_SM18_TRIGGER
+room-id:AISLE-1.1_2T:v,presence sensor:TRIGGER:c
+02_Z4_G13_COLLABORATION_LAB_MM52_TRIGGER
+room-id:COLLABORATION_LAB:v,presence sensor:TRIGGER:c
+02_Z4_G14_COLLABORATION_LAB_MM51_TRIGGER
+room-id:COLLABORATION_LAB:v,presence sensor:TRIGGER:c
+B3_42_1F_Z1_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G10_M19_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G10_M20_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G2_M1_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G2_M2_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G2_M3_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G3_M4_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G4_M5_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G4_M6_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G5_M7_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G5_M8_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G6_M10_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G6_M9_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G7_M11_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G7_M12_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G7_M13_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G8_M14_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G8_M15_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z1_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z1_G9_M16_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G9_M17_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z1_G9_M18_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G12_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G12_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G12_M59_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G13_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G13_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G13_M60_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G2_M44_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G3_M21_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G4_M45_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G5_M22_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G6_M46_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G7_M43_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G8_M53_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z2_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z2_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z2_G9_M58_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G10_M30_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G11_M49_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G12_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G12_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G12_M50_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G13_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G13_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G13_M31_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G14_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G14_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G14_M32_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G1_M23_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G2_M24_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G3_M25_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G4_M26_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G5_M47_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G6_M48_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G7_M27_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G8_M28_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z3_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z3_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z3_G9_M29_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G10_M40_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G11_M56_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G12_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G12_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G12_M57_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G13_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G13_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G13_M52_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G14_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G14_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G14_M51_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G1_M33_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G2_M34_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G3_M35_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G4_M36_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G5_M54_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G6_M55_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G7_M37_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G8_M38_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z4_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z4_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z4_G9_M39_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z5_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z5_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z5_G1_M41_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z5_G1_M42_LUX_LEVEL
+zone illumination sensor:LUX_LEVEL:c
+B3_42_1F_Z5_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_1F_Z5_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_1F_Z5_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z10_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z10_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z11_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G12_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G12_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G13_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G13_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G14_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G14_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z1_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z1_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z2_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z2_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z2_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z2_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z2_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z2_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G12_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G12_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G13_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G13_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G14_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G14_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z3_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z3_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G12_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G12_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G13_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G13_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z4_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z4_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G12_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G12_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G13_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G13_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z5_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z5_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z6_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z6_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G1_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G2_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z7_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z7_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G10_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G11_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G2_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G3_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G3_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G4_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G4_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G5_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G5_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G7_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G7_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z8_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z8_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z9_G10_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z9_G11_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z9_G1_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z9_G6_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z9_G6_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z9_G8_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z9_G8_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+B3_42_GF_Z9_G9_LGHT_FAULT
+lighting fault:LGHT_FAULT:c
+B3_42_GF_Z9_G9_LGHT_LOAD%
+lighting percentage cmd:LGHT_LOAD%:c
+SOR44_1F_FCU_3P_INST_KW
+asset-id:SOR44:v,Floor-id:1F:v,fcu phase instantations powerunit electric meter:FCU_3P_INST_KW:c
+SOR44_1F_FCU_3P_MAX_KW
+asset-id:SOR44:v,Floor-id:1F:v,fcu phase maximum powerunit electric meter:FCU_3P_MAX_KW:c
+SOR44_1F_FCU_FREQUENCY
+asset-id:SOR44:v,Floor-id:1F:v,fcu frequency electric meter:FCU_FREQUENCY:c
+SOR44_1F_FCU_LINE_VOLTAGE
+asset-id:SOR44:v,Floor-id:1F:v,fcu line voltage electric meter:FCU_LINE_VOLTAGE:c
+SOR44_1F_FCU_PH1_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,fcu phase current electric meter:FCU_PH1_CURRENT:c
+SOR44_1F_FCU_PH2_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,fcu phase current electric meter:FCU_PH2_CURRENT:c
+SOR44_1F_FCU_PH3_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,fcu phase current electric meter:FCU_PH3_CURRENT:c
+SOR44_1F_FCU_POWER_FACTOR
+asset-id:SOR44:v,Floor-id:1F:v,fcu power factor electric meter:FCU_POWER_FACTOR:c
+SOR44_1F_LIGHT_3P_AVG15_KW
+asset-id:SOR44:v,Floor-id:1F:v,light load phase average powerunit electric meter:LIGHT_3P_AVG15_KW:c
+SOR44_1F_LIGHT_3P_INST_KW
+asset-id:SOR44:v,Floor-id:1F:v,light load phase instantations powerunit electric meter:LIGHT_3P_INST_KW:c
+SOR44_1F_LIGHT_3P_MAX_KW
+asset-id:SOR44:v,Floor-id:1F:v,light load phase maximum powerunit electric meter:LIGHT_3P_MAX_KW:c
+SOR44_1F_LIGHT_FREQUENCY
+asset-id:SOR44:v,Floor-id:1F:v,light load frequency electric meter:LIGHT_FREQUENCY:c
+SOR44_1F_LIGHT_LINE_VOLTAGE
+asset-id:SOR44:v,Floor-id:1F:v,light load line voltage electric meter:LIGHT_LINE_VOLTAGE:c
+SOR44_1F_LIGHT_PH1_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,light load phase current electric meter:LIGHT_PH1_CURRENT:c
+SOR44_1F_LIGHT_PH2_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,light load phase current electric meter:LIGHT_PH2_CURRENT:c
+SOR44_1F_LIGHT_PH3_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,light load phase current electric meter:LIGHT_PH3_CURRENT:c
+SOR44_1F_LIGHT_POWER_FACTOR
+asset-id:SOR44:v,Floor-id:1F:v,light load power factor electric meter:LIGHT_POWER_FACTOR:c
+SOR44_1F_SRVC_3P_AVG15_KW
+asset-id:SOR44:v,Floor-id:1F:v,socket load phase average powerunit electric meter:SRVC_3P_AVG15_KW:c
+SOR44_1F_SRVC_3P_INST_KW
+asset-id:SOR44:v,Floor-id:1F:v,socket load phase instantations powerunit electric meter:SRVC_3P_INST_KW:c
+SOR44_1F_SRVC_3P_MAX_KW
+asset-id:SOR44:v,Floor-id:1F:v,socket load phase maximum powerunit electric meter:SRVC_3P_MAX_KW:c
+SOR44_1F_SRVC_FREQUENCY
+asset-id:SOR44:v,Floor-id:1F:v,socket load frequency electric meter:SRVC_FREQUENCY:c
+SOR44_1F_SRVC_LINE_VOLTAGE
+asset-id:SOR44:v,Floor-id:1F:v,socket load line voltage electric meter:SRVC_LINE_VOLTAGE:c
+SOR44_1F_SRVC_PH1_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,socket load phase current electric meter:SRVC_PH1_CURRENT:c
+SOR44_1F_SRVC_PH2_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,socket load phase current electric meter:SRVC_PH2_CURRENT:c
+SOR44_1F_SRVC_PH3_CURRENT
+asset-id:SOR44:v,Floor-id:1F:v,socket load phase current electric meter:SRVC_PH3_CURRENT:c
+SOR44_1F_SRVC_POWER_FACTOR
+asset-id:SOR44:v,Floor-id:1F:v,socket load power factor electric meter:SRVC_POWER_FACTOR:c
+SOR44_GF_FCU_3P_AVG15_KW
+asset-id:SOR44:v,Floor-id:GF:v,fcu phase average powerunit electric meter:FCU_3P_AVG15_KW:c
+SOR44_GF_FCU_3P_INST_KW
+asset-id:SOR44:v,Floor-id:GF:v,fcu phase instantations powerunit electric meter:FCU_3P_INST_KW:c
+SOR44_GF_FCU_3P_MAX_KW
+asset-id:SOR44:v,Floor-id:GF:v,fcu phase maximum powerunit electric meter:FCU_3P_MAX_KW:c
+SOR44_GF_FCU_FREQUENCY
+asset-id:SOR44:v,Floor-id:GF:v,fcu frequency electric meter:FCU_FREQUENCY:c
+SOR44_GF_FCU_LINE_VOLTAGE
+asset-id:SOR44:v,Floor-id:GF:v,fcu line voltage electric meter:FCU_LINE_VOLTAGE:c
+SOR44_GF_FCU_PH1_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,fcu phase current electric meter:FCU_PH1_CURRENT:c
+SOR44_GF_FCU_PH2_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,fcu phase current electric meter:FCU_PH2_CURRENT:c
+SOR44_GF_FCU_PH3_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,fcu phase current electric meter:FCU_PH3_CURRENT:c
+SOR44_GF_FCU_POWER_FACTOR
+asset-id:SOR44:v,Floor-id:GF:v,fcu power factor electric meter:FCU_POWER_FACTOR:c
+SOR44_GF_LIGHT_3P_AVG15_KW
+asset-id:SOR44:v,Floor-id:GF:v,light load phase average powerunit electric meter:LIGHT_3P_AVG15_KW:c
+SOR44_GF_LIGHT_3P_INST_KW
+asset-id:SOR44:v,Floor-id:GF:v,light load phase instantations powerunit electric meter:LIGHT_3P_INST_KW:c
+SOR44_GF_LIGHT_3P_MAX_KW
+asset-id:SOR44:v,Floor-id:GF:v,light load phase maximum powerunit electric meter:LIGHT_3P_MAX_KW:c
+SOR44_GF_LIGHT_FREQUENCY
+asset-id:SOR44:v,Floor-id:GF:v,light load frequency electric meter:LIGHT_FREQUENCY:c
+SOR44_GF_LIGHT_LINE_VOLTAGE
+asset-id:SOR44:v,Floor-id:GF:v,light load line voltage electric meter:LIGHT_LINE_VOLTAGE:c
+SOR44_GF_LIGHT_PH1_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,light load phase current electric meter:LIGHT_PH1_CURRENT:c
+SOR44_GF_LIGHT_PH2_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,light load phase current electric meter:LIGHT_PH2_CURRENT:c
+SOR44_GF_LIGHT_PH3_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,light load phase current electric meter:LIGHT_PH3_CURRENT:c
+SOR44_GF_LIGHT_POWER_FACTOR
+asset-id:SOR44:v,Floor-id:GF:v,light load power factor electric meter:LIGHT_POWER_FACTOR:c
+SOR44_GF_SRVC_3P_AVG15_KW
+asset-id:SOR44:v,Floor-id:GF:v,socket load phase average powerunit electric meter:SRVC_3P_AVG15_KW:c
+SOR44_GF_SRVC_3P_INST_KW
+asset-id:SOR44:v,Floor-id:GF:v,socket load phase instantations powerunit electric meter:SRVC_3P_INST_KW:c
+SOR44_GF_SRVC_3P_MAX_KW
+asset-id:SOR44:v,Floor-id:GF:v,socket load phase maximum powerunit electric meter:SRVC_3P_MAX_KW:c
+SOR44_GF_SRVC_FREQUENCY
+asset-id:SOR44:v,Floor-id:GF:v,socket load frequency electric meter:SRVC_FREQUENCY:c
+SOR44_GF_SRVC_LINE_VOLTAGE
+asset-id:SOR44:v,Floor-id:GF:v,socket load line voltage electric meter:SRVC_LINE_VOLTAGE:c
+SOR44_GF_SRVC_PH1_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,socket load phase current electric meter:SRVC_PH1_CURRENT:c
+SOR44_GF_SRVC_PH2_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,socket load phase current electric meter:SRVC_PH2_CURRENT:c
+SOR44_GF_SRVC_PH3_CURRENT
+asset-id:SOR44:v,Floor-id:GF:v,socket load phase current electric meter:SRVC_PH3_CURRENT:c
+SOR44_GF_SRVC_POWER_FACTOR
+asset-id:SOR44:v,Floor-id:GF:v,socket load power factor electric meter:SRVC_POWER_FACTOR:c
+SOR44_1F_FCU_KWH
+asset-id:SOR44:v,Floor-id:1F:v,electric meter fcu:FCU_KWH:c
+SOR44_1F_LIGHT_KWH
+asset-id:SOR44:v,Floor-id:1F:v,electric meter light:LIGHT_KWH:c
+SOR44_1F_SRVC_KWH
+asset-id:SOR44:v,Floor-id:1F:v,electric meter srvc:SRVC_KWH:c
+SOR44_GF_FCU_KWH
+asset-id:SOR44:v,Floor-id:GF:v,electric meter fcu:FCU_KWH:c
+SOR44_GF_LIGHT_KWH
+asset-id:SOR44:v,Floor-id:GF:v,electric meter light:LIGHT_KWH:c
+SOR44_GF_SRVC_KWH
+asset-id:SOR44:v,Floor-id:GF:v,electric meter srvc:SRVC_KWH:c
