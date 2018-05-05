@@ -37,7 +37,7 @@ from sklearn.naive_bayes import MultinomialNB
 from . import plotter
 
 listdefaultdict = lambda : defaultdict(list)
-DEBUG = True 
+DEBUG = True
 
 def tokenizer(s):
     return re.findall('[a-z]+', s.lower())

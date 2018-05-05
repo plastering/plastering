@@ -2,16 +2,16 @@ import pdb
 from copy import deepcopy
 import random
 
-from oracle.workflow import *
-from oracle.db import *
-from oracle.frameworks.zodiac_interface import ZodiacInterface
-from oracle.frameworks.scrabble_interface import ScrabbleInterface
-from oracle.helper import *
+from plastering.workflow import *
+from plastering.metadata_interface import *
+from plastering.inferencers.zodiac_interface import ZodiacInterface
+#from plastering.inferencers.scrabble_interface import ScrabbleInterface
+from plastering.helper import *
 
 # construct a framework dict for referneces.
 f_class_dict = {
     'zodiac': ZodiacInterface,
-    'scrabble': ScrabbleInterface
+    #'scrabble': ScrabbleInterface
 }
 
 # Base configurations
@@ -34,7 +34,7 @@ scrabble_config['config'] = {
 # Framework Graph
 f_graph = {
     'zodiac': (zodiac_config, {
-        'scrabble': (scrabble_config, {}),
+        #'scrabble': (scrabble_config, {}),
         'zodiac': (zodiac_config, {})
     })}
 

@@ -61,14 +61,14 @@ class ZodiacInterface(Inferencer):
             else:
                 seed_num = 10
             seed_srcids = self.zodiac.get_random_learning_srcids(seed_num)
-        #self.update_model(seed_srcids)
+        self.update_model(seed_srcids)
 
     def select_informative_samples(self, sample_num=10):
         return self.zodiac.select_informative_samples_only(sample_num)
 
     def learn_auto(self):
         num_sensors_in_gray = 10000 # random initial finish confidtion
-        while num_sensors_in_gray > 1040:
+        while num_sensors_in_gray > 0:
             new_srcids = self.select_informative_samples(10)
             self.update_model(new_srcids)
             num_sensors_in_gray = self.zodiac.get_num_sensors_in_gray()

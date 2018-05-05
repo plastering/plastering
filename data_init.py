@@ -6,9 +6,10 @@ import pandas as pd
 import numpy as np
 
 #from Oracle.db import OracleDatabase
-from oracle.metadata_interface import *
-from oracle.common import *
-from oracle.helper import load_uva_building
+from plastering.metadata_interface import *
+from plastering.common import *
+from plastering.helper import load_uva_building, load_ucb_building
+from plastering.helper import extract_raw_ucb_labels
 from jasonhelper import argparser
 
 argparser.add_argument('-b', type=str, dest='building', required=True)
@@ -21,6 +22,16 @@ building = args.building
 if building == 'uva_cse':
     load_uva_building(building)
     print('UVA CSE Done')
+    sys.exit()
+elif building in ['soda', 'sdh', 'ibm']:
+    extract_raw_ucb_labels()
+    basedir = './groundtruth/'
+    filenames = {
+        'soda': basedir + 'SDH-GROUND-TRUTH',
+        'sdh': basedir + 'SDH-GROUND-TRUTH',
+        'ibm': basedir + 'IBM-GROUND-TRUTH',
+    }
+    load_ucb_building(building, filenames[building])
     sys.exit()
 
 ####################### UCSD ########################
