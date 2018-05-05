@@ -1,8 +1,8 @@
 import pdb
 import random
 
-from oracle.frameworks.scrabble_interface2 import ScrabbleInterface
-from oracle.db import *
+from plastering.frameworks.scrabble_interface2 import ScrabbleInterface
+from plastering.db import *
 
 
 target_building = 'ap_m'
