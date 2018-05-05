@@ -36,7 +36,7 @@ class Inferencer(object):
                  source_buildings=[],
                  source_sample_num_list=[],
                  framework_name='dummy_framework',
-                 ui=None # TODO: This needs to be implemented
+                 ui=None, # TODO: This needs to be implemented
                  config={},
                  ):
         super(Inferencer, self).__init__()
@@ -44,7 +44,7 @@ class Inferencer(object):
         self.source_buildings = source_buildings
         self.config = config # future usage
         self.training_srcids = set() # already known srcids
-        self.all_point_tagsets = point_tagsets # all the possible point tagsets 
+        self.all_point_tagsets = point_tagsets # all the possible point tagsets
                                                # defined in Brick.
         self.pred = {  # predicted results
             'tagsets': {},
