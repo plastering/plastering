@@ -1,5 +1,5 @@
-from oracle.frameworks.zodiac_interface import ZodiacInterface
-from oracle.db import *
+from plastering.frameworks.zodiac_interface import ZodiacInterface
+from plastering.db import *
 
 target_building = 'ap_m'
 
