@@ -45,7 +45,7 @@ Oracle is a unified framework for normalization of buildings metadata. Different
        ```
 
 ## Framework Interface
-1. Each framework should be instantiated as [the common interface](https://github.com/jbkoh/oracle/blob/master/Oracle/frameworks/framework_interface.py).
+1. Each framework should be instantiated as [the common interface](https://github.com/jbkoh/plastering/blob/master/Oracle/frameworks/framework_interface.py).
 
 ### Common Procedure
 1. Prepare the data in MongoDB. Example: ``data_init.py``

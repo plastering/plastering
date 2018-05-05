@@ -1,8 +1,8 @@
 import pdb
 import random
 
-from plastering.frameworks.scrabble_interface2 import ScrabbleInterface
-from plastering.db import *
+from plastering.inferencers.scrabble_interface2 import ScrabbleInterface
+from plastering.metadata_interface import *
 
 
 target_building = 'ap_m'

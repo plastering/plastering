@@ -1,5 +1,5 @@
-from plastering.frameworks.zodiac_interface import ZodiacInterface
-from plastering.db import *
+from plastering.inferencers.zodiac_interface import ZodiacInterface
+from plastering.metadata_interface import *
 
 target_building = 'ap_m'
 

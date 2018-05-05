@@ -1,8 +1,8 @@
 import pdb
 import random
 
-from ..inferencers import *
-from ..error import *
+from .inferencers import *
+from .error import *
 
 # Note:
 #   - f stands for framework.

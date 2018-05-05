@@ -3,7 +3,7 @@ import pprint
 import pandas as pd
 pp = pprint.PrettyPrinter(indent=2)
 
-connect('oracle')
+connect('plastering')
 
 
 # Data Models
