@@ -8,6 +8,12 @@ Oracle is a unified framework for normalization of buildings metadata. Different
 2. Install Dependencies
     - ``pip install git+git://github.com/jbkoh/jason_python_helper.git arrow``
 
+## Run
+1. Init Brick: ``git submodule update --init --recursive Brick``
+2. Init data: ``python data_init.py -b ap_m``
+3. Run Zodiac test: ``python test_zodiac.py``
+4. Run Workflow test: ``python test_workflow.py``
+
 
 # Speficiation
 
