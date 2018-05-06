@@ -1,5 +1,5 @@
-# Oracle
-Oracle is a unified framework for normalization of buildings metadata. Different frameworks can be unified into a workflow and/or compared with each other in Oracle.
+# Plastering
+Plastering is a unified framework for normalization of buildings metadata. Different frameworks can be unified into a workflow and/or compared with each other in Plastering.
 
 # Getting Started
 
@@ -39,7 +39,7 @@ Oracle is a unified framework for normalization of buildings metadata. Different
 2. Each cell has parsing results. An example for 123456.VendorGivenName:
     1. Tokenization: ``["RM", "-", "101", ".", "ZN", "T"]``
     2. Token Labels: ``["Room", None, "left-identifier", None, "Zone", "Temperature"]``  
-    3. Though Oracle by default supports the above token-label sets, different tokenization rules may apply from a framework. For example, one may want to use ``ZNT -> Zone_Temperature_Sensor``. Such combinations can be extended later.
+    3. Though Plastering by default supports the above token-label sets, different tokenization rules may apply from a framework. For example, one may want to use ``ZNT -> Zone_Temperature_Sensor``. Such combinations can be extended later.
 3. One may use a part of different label types or add a new label type if needed. 
 
 ### Raw Timeseries Data
@@ -58,7 +58,7 @@ Oracle is a unified framework for normalization of buildings metadata. Different
        ```
 
 ## Framework Interface
-1. Each framework should be instantiated as [the common interface](https://github.com/jbkoh/plastering/blob/master/Oracle/frameworks/framework_interface.py).
+1. Each framework should be instantiated as [the common interface](https://github.com/jbkoh/plastering/blob/master/plastering/inferencers/inferencer.py).
 
 ### Common Procedure
 1. Prepare the data in MongoDB. Example: ``data_init.py``
@@ -96,15 +96,15 @@ Oracle is a unified framework for normalization of buildings metadata. Different
         ```
 
 ## Workflow
-1. Each framework aligned to the interface (``./Oracle/frameworks/framework_interface.py``) can be a part, called *Block*, of a workflow to Brickify a building.
-2. Workflow/Block interface is defined under **TODO**.
+1. Each framework aligned to the interface (``./plastering/inferencers/inferencer.py``) can be a part, called *Inferencer*, of a workflow to Brickify a building.
+2. Workflow/Inferencer interface is defined under **TODO**.
 3. Workflow usage scenario:
     1. Each part is initiated with the raw data for target buildings in the format described in [Data Format](#data_format).
     2. In each iteration, each part runs algorithm sequentially.
     3. In each part, it receieves the result from the previous part and samples from an expert if necessary.
 
 ## Benchmark
-1. Oracle also can be used to benchamrk different algorithms. It defines the common dataset and interactions with the expert providing learning samples.
+1. Plastering also can be used to benchamrk different algorithms. It defines the common dataset and interactions with the expert providing learning samples.
 2. Benchmark usage scenario.
 
 
