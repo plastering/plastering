@@ -7,22 +7,6 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 1. Install MongoDB
 2. Install Dependencies
     - ``pip install git+git://github.com/jbkoh/jason_python_helper.git arrow``
-3. Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public.
-
-## Run
-1. Init Brick: ``git submodule update --init --recursive Brick``
-2. Init data: ``python data_init.py -b ap_m``
-3. Run Zodiac test: ``python test_zodiac.py``
-4. Run Workflow test: ``python test_workflow.py``
-5. Run Zodiac experiments: ``python scripts/exp_zodiac.py``
-6. Produce figures: ``python scripts/result_drawer.py``
-
-# Getting Started
-
-## Installation
-1. Install MongoDB
-2. Install Dependencies
-    - ``pip install git+git://github.com/jbkoh/jason_python_helper.git arrow``
 
 ## Run
 1. Init Brick: ``git submodule update --init --recursive Brick``
