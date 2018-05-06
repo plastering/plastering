@@ -17,6 +17,13 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 5. Run Zodiac experiments: ``python scripts/exp_zodiac.py``
 6. Produce figures: ``python scripts/result_drawer.py``
 
+# Getting Started
+
+## Installation
+1. Install MongoDB
+2. Install Dependencies
+    - ``pip install git+git://github.com/jbkoh/jason_python_helper.git arrow``
+
 
 # Speficiation
 
