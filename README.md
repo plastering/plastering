@@ -1,6 +1,13 @@
 # Oracle
 Oracle is a unified framework for normalization of buildings metadata. Different frameworks can be unified into a workflow and/or compared with each other in Oracle.
 
+# Getting Started
+
+## Installation
+1. Install MongoDB
+2. Install Dependencies
+    - ``pip install git+git://github.com/jbkoh/jason_python_helper.git arrow``
+
 
 # Speficiation
 
