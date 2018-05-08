@@ -42,7 +42,7 @@ class ActiveLearningInterface(Inferencer):
         self.fold = fold
         self.rounds = rounds
 
-        #TODO: to be general?
+        #TODO: pt_name is the raw vendorgiven name and pt_type is the corresponding tagset in brick volcabulary
         pt_name = [point['metadata']['VendorGivenName'] for point in RawMetadata.objects(building=self.target_building)]
         pt_type = [point['point_tagset'] for point in LabeledMetadata.objects(building=target_building)]
         self.fn = get_name_features(pt_name)
