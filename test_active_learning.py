@@ -1,7 +1,7 @@
 from plastering.inferencers.active_learning_interface import ActiveLearningInterface
 from plastering.metadata_interface import *
 
-target_building = 'uva_cse'
+target_building = 'ap_m'
 
 labeled_list = LabeledMetadata.objects(building=target_building)
 target_srcids = [labeled['srcid'] for labeled in labeled_list]
