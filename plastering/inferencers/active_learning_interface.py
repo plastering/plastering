@@ -1,5 +1,6 @@
 import numpy as np
 import re
+import pdb
 
 from collections import defaultdict as dd
 
@@ -43,8 +44,12 @@ class ActiveLearningInterface(Inferencer):
         self.rounds = rounds
 
         #TODO: pt_name is the raw vendorgiven name and pt_type is the corresponding tagset in brick volcabulary
-        pt_name = [point['metadata']['VendorGivenName'] for point in RawMetadata.objects(building=self.target_building)]
-        pt_type = [point['point_tagset'] for point in LabeledMetadata.objects(building=target_building)]
+        srcids = [point['srcid'] for point
+                  in LabeledMetadata.objects(building=target_building)]
+        pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset
+                   for srcid in srcids]
+        pt_name = [RawMetadata.objects(srcid=srcid).first()\
+                   .metadata['VendorGivenName'] for srcid in srcids]
         self.fn = get_name_features(pt_name)
         le = LE()
         self.label = le.fit_transform(pt_type)
