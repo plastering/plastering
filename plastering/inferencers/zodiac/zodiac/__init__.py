@@ -9,6 +9,7 @@ import random
 import pdb
 from collections import defaultdict
 from copy import deepcopy
+from functools import reduce
 
 from matplotlib import pyplot as plt
 
@@ -35,6 +36,14 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.naive_bayes import MultinomialNB
 
 from . import plotter
+
+adder = lambda x,y: x+y
+isemptystr = lambda s: False if s else True
+def is_nonempty_item_included(l):
+    if False in list(map(isemptystr, l)):
+        return True
+    else:
+        return False
 
 listdefaultdict = lambda : defaultdict(list)
 DEBUG = True
@@ -81,7 +90,7 @@ class Zodiac(object):
                 if new_sample_cnt >= sample_num:
                     continue
                 new_sample_cnt += 1
-                new_srcid = random.choice([sensor['source_id'] for sensor 
+                new_srcid = random.choice([sensor['source_id'] for sensor
                                            in self.cluster_map[p]['sensors']])
                 new_srcids.append(new_srcid)
                 self.labeled_clusters.append(p)
@@ -224,39 +233,49 @@ class Zodiac(object):
 # In[ ]:
 
 #Create a bag of words from sensor string metadata. Vectorize so that it can be used in ML algorithms.
-        namevect = CountVectorizer(tokenizer=tokenizer)
-        #namevect = CountVectorizer(token_pattern='(?u)\\b\\w+\\b')
-        namebow = scipy.sparse.coo_matrix(namevect.fit_transform(names_list))
+        bows = []
+        feature_set = []
+        if is_nonempty_item_included(names_list):
+            namevect = CountVectorizer(tokenizer=tokenizer)
+            #namevect = CountVectorizer(token_pattern='(?u)\\b\\w+\\b')
+            namebow = scipy.sparse.coo_matrix(namevect.fit_transform(names_list))
+            bows.append(namebow)
+            feature_set += namevect.get_feature_names()
 
-        descvect = CountVectorizer(tokenizer=tokenizer)
-        descbow = scipy.sparse.coo_matrix(descvect.fit_transform(desc_list))
+        if is_nonempty_item_included(desc_list):
+            descvect = CountVectorizer(tokenizer=tokenizer)
+            descbow = scipy.sparse.coo_matrix(descvect.fit_transform(desc_list))
+            bows.append(descbow)
+            feature_set += descvect.get_feature_names()
 
-        unitvect = DictVectorizer()
-        unitbow = scipy.sparse.coo_matrix(unitvect.fit_transform(unit_list))
+        if is_nonempty_item_included(unit_list):
+            unitvect = DictVectorizer()
+            unitbow = scipy.sparse.coo_matrix(unitvect.fit_transform(unit_list))
+            bows.append(unitbow)
+            feature_set += unitvect.get_feature_names()
 
-        type_str_vect = DictVectorizer()
-        type_str_bow = scipy.sparse.coo_matrix(type_str_vect.fit_transform(type_str_list))
+        if is_nonempty_item_included(type_str_list):
+            type_str_vect = DictVectorizer()
+            type_str_bow = scipy.sparse.coo_matrix(type_str_vect.fit_transform(type_str_list))
+            bows.append(type_str_bow)
+            feature_set += type_str_vect.get_feature_names()
 
-        #typevect = DictVectorizer()
-        #typebow = scipy.sparse.coo_matrix(typevect.fit_transform(type_list))
+        if is_nonempty_item_included(jci_names_list):
+            jcivect = CountVectorizer(tokenizer=tokenizer)
+            jcibow = scipy.sparse.coo_matrix(jcivect.fit_transform(jci_names_list))
+            bows.append(jcibow)
+            feature_set += jcivect.get_feature_names()
 
-        jcivect = CountVectorizer(tokenizer=tokenizer)
-        jcibow = scipy.sparse.coo_matrix(jcivect.fit_transform(jci_names_list))
+        final_bow = scipy.sparse.hstack(bows)
 
-        feature_set = jcivect.get_feature_names() +\
-                      descvect.get_feature_names() +\
-                      unitvect.get_feature_names() +\
-                      type_str_vect.get_feature_names() #+\
-                      #typevect.get_feature_names()
-
-        final_bow = scipy.sparse.hstack([
-                                         namebow,
-                                         descbow,
-                                         unitbow,
-                                         type_str_bow,
-                                         #typebow,
-                                         jcibow
-                                        ])
+        #final_bow = scipy.sparse.hstack([
+        #                                 namebow,
+        #                                 descbow,
+        #                                 unitbow,
+        #                                 type_str_bow,
+        #                                 #typebow,
+        #                                 jcibow
+        #                                ])
         self.bow_array = final_bow.toarray() # this is the bow for each sensor.
 
         # Hierarchical agglomerative clustering

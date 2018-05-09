@@ -18,10 +18,11 @@ prefix owl: <{5}>
 """.format(BRICK, RDF, RDFS, BASE, BF, OWL)
 
 
-def init_graph():
+def init_graph(empty=True):
     g = Graph()
-    g.parse('Brick/dist/Brick.ttl', format='turtle')
-    g.parse('Brick/dist/BrickFrame.ttl', format='turtle')
+    if not empty:
+        g.parse('Brick/dist/Brick.ttl', format='turtle')
+        g.parse('Brick/dist/BrickFrame.ttl', format='turtle')
     return g
 
 def get_instance_tuples(g):
