@@ -26,7 +26,8 @@ class ZodiacInterface(Inferencer):
             source_buildings=source_buildings,
             target_srcids=target_srcids,
             ui=None,
-            required_label_types=['point_tagset'],
+            required_label_types=[POINT_TAGSET],
+            target_label_type=POINT_TAGSET,
             config=config,
             framework_name='zodiac')
 
@@ -104,11 +105,12 @@ class ZodiacInterface(Inferencer):
             new_srcids = self.select_informative_samples(10)
             self.update_model(new_srcids)
             num_sensors_in_gray = self.zodiac.get_num_sensors_in_gray()
-            pred_points = self.zodiac.predict(self.target_srcids)
-            for i, srcid in enumerate(self.target_srcids):
-                self.pred['point'][srcid] = set([pred_points[i]])
+            #pred_points = self.zodiac.predict(self.target_srcids)
+            #for i, srcid in enumerate(self.target_srcids):
+            #    self.pred['point'][srcid] = set([pred_points[i]])
+            #pred = self.predict(self.target_srcids)
             print(num_sensors_in_gray)
-            self.evaluate()
+            self.evaluate(self.target_srcids)
 
     def update_model(self, srcids):
         super(ZodiacInterface, self).update_model(srcids)
@@ -130,10 +132,11 @@ class ZodiacInterface(Inferencer):
             target_srcids = self.target_srcids
         super(ZodiacInterface, self).predict(target_srcids)
 
+        pred_g = self._get_empty_graph()
         pred_points = self.zodiac.predict(target_srcids)
         for srcid, pred_point in zip(target_srcids, pred_points):
-            self._add_pred_point_result(srcid, pred_point)
-        return self.pred_g
+            self._add_pred_point_result(pred_g, srcid, pred_point)
+        return pred_g
 
     def predict_proba(self, srcids=None):
         if not srcids:

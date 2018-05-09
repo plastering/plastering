@@ -3,10 +3,16 @@ import random
 
 from .inferencers import *
 from .error import *
+from .evaluator import *
 
 # Note:
 #   - f stands for framework.
 #   - Currently only tree-structure is implemented
+
+
+# Constants
+## Evaluation types
+
 
 class Node():
     """
@@ -176,3 +182,4 @@ class Workflow(object):
             'srcids': srcids
         }
         self._traverse_wrapper(self.f_head, ['update_model'], [params])
+

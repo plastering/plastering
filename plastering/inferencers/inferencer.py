@@ -1,6 +1,7 @@
 import os
 import pdb
 import random
+from copy import deepcopy
 
 import rdflib # May use faster rdf db instead.
 import arrow
@@ -13,6 +14,7 @@ from .. import plotter
 from .. import *
 from ..error import *
 from ..rdflib_wrapper import *
+from ..evaluator import *
 #from ..brick_parser import g as brick_g
 
 PUBLIC_METHODS = ['learn_auto',
@@ -36,10 +38,13 @@ class Inferencer(object):
                  source_buildings=[],
                  source_sample_num_list=[],
                  framework_name='dummy_framework',
-                 ui=None, # TODO: This needs to be implemented
+                 ui=None,
+                 required_label_types=[POINT_TAGSET, FULL_PARSING],
+                 target_label_type=POINT_TAGSET,
                  config={},
                  ):
         super(Inferencer, self).__init__()
+        self.target_label_type = target_label_type
         self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
         self.source_buildings = source_buildings
         self.config = config # future usage
@@ -50,31 +55,33 @@ class Inferencer(object):
             'tagsets': {},
             'point': {}
             }
-        self.pred_g = init_graph()
+        self.template_g = init_graph(empty=True)
         self.prior_g = init_graph()
         self.pred_probs = {}
         self.target_building = target_building
         self.target_srcids = target_srcids
         self.history = [] # logging and visualization purpose
-        self.required_label_types = ['point_tagset', 'fullparsing'] # Future purpose
+        self.required_label_types = required_label_types
         self.ui = ui
-        self.__name__ = framework_name
+        self.__name__ = framework_name + '-' + str(self.exp_id)
+        self.result_filename = './result/{0}_history.json'\
+            .format(self.__name__)
 
-    def evaluate_points(self):
+    def evaluate_points_dep(self, pred):
         curr_log = {
             'training_srcids': self.training_srcids
         }
         score = 0
-        for srcid, pred_tagsets in self.pred['tagsets'].items():
+        for srcid, pred_tagsets in pred['tagsets'].items():
             true_tagsets = LabeledMetadata.objects(srcid=srcid)[0].tagsets
             true_point = sel_point_tagset(true_tagsets)
             pred_point = sel_point_tagset(pred_tagsets)
             if true_point == pred_point:
                 score += 1
-        curr_log['accuracy'] = score / len(self.pred['point'])
+        curr_log['accuracy'] = score / len(pred['point'])
         return curr_log
 
-    def evaluate(self):
+    def evaluate_dep(self, pred):
         points_log = self.evaluate_points()
         log = {
             'points': points_log
@@ -183,8 +190,9 @@ class Inferencer(object):
                 raise Exception('The raw data of {0} not given yet'
                                     .format(srcid))
 
-    def _add_pred_point_result(self, srcid, pred_point):
-        self.pred_g.add(self._make_instance_tuple(srcid, pred_point))
+    def _add_pred_point_result(self, pred_g, srcid, pred_point):
+        pred_g.add(self._make_instance_tuple(srcid, pred_point))
+        return pred_g
 
     def _make_instance_tuple(self, srcid, pred_point):
         return (URIRef(BASE + srcid), RDF.type, URIRef(BRICK + pred_point))
@@ -204,3 +212,61 @@ class Inferencer(object):
         """
         """
         self._validate_target_srcids(target_srcids)
+
+    def _get_true_labels(self, srcids, label_type):
+        """
+        Input:
+          - target_srcids
+          - label_type: one of POINT_TAGSET, FULL_PARSING defined in common.py
+        """
+        truths = {}
+        for srcid in srcids:
+            objs = LabeledMetadata.objects(srcid=srcid)
+            if not objs:
+                raise Exception('No {0} labels found for {1}'
+                                .format(label_type, srcid))
+            truths[srcid] = objs.first()[label_type]
+        return truths
+
+    def evaluate(self, target_srcids):
+        """
+        Input:
+          - target_srcids
+          - label_type: one of POINT_TAGSET, FULL_PARSING defined in common.py
+        """
+        pred_g = self.predict(target_srcids)
+        truth = self._get_true_labels(target_srcids, self.target_label_type)
+        if self.target_label_type == POINT_TAGSET:
+            pred = get_instance_tuples(pred_g)
+            metrics = {
+                'f1': get_micro_f1(truth, pred),
+                'macrof1': get_macro_f1(truth, pred)
+            }
+        target_building_training_srcids = \
+            [srcid for srcid in self.training_srcids
+             if RawMetadata.objects(srcid=srcid,
+                                    building=self.target_building).count()]
+        total_training_srcids = self.training_srcids
+        curr_eval = {
+            'metrics': metrics,
+            'total_training_srcids': total_training_srcids,
+            'target_building_training_srcids': target_building_training_srcids
+        }
+        self.history.append(curr_eval)
+        return curr_eval
+
+    def _get_empty_graph(self):
+        return deepcopy(self.template_g)
+
+
+
+
+
+
+
+
+
+
+
+
+
