@@ -19,13 +19,16 @@ class ZodiacInterface(Inferencer):
                  target_building,
                  target_srcids,
                  source_buildings=[],
+                 ui=None,
                  config={}):
         super(ZodiacInterface, self).__init__(
             target_building=target_building,
+            source_buildings=source_buildings,
             target_srcids=target_srcids,
+            ui=None,
+            required_label_types=['point_tagset'],
             config=config,
             framework_name='zodiac')
-        self.required_label_types = ['point']
 
         # init config file for Zodiac
         if 'n_estimators' not in config:
@@ -44,12 +47,41 @@ class ZodiacInterface(Inferencer):
             srcid = raw_point['srcid']
             if srcid in self.target_srcids:
                 metadata = raw_point['metadata']
-                names[srcid] = metadata['BACnetName']
-                jci_names[srcid] = metadata['VendorGivenName']
-                descs[srcid] = metadata['BACnetDescription']
-                type_strs[srcid] = {str(metadata['BACnetTypeStr']): 1}
-                types[srcid] = {str(metadata['BACnetTypeStr']): 1}
-                units[srcid] = {str(metadata['BACnetUnit']): 1}
+                if not metadata:
+                    raise Exception('Metadata for {0} does not exist'
+                                    .format(srcid))
+                if 'BACnetName' in metadata:
+                    bacnet_name = metadata['BACnetName']
+                else:
+                    bacnet_name = ''
+                names[srcid] = bacnet_name
+                if 'VendorGivenName' in metadata:
+                    vendor_given_name = metadata['VendorGivenName']
+                else:
+                    vendor_given_name = ''
+                jci_names[srcid] = vendor_given_name
+                if 'BACnetDescription' in metadata:
+                    bacnet_desc = metadata['BACnetDescription']
+                else:
+                    bacnet_desc = ''
+                descs[srcid] = bacnet_desc
+
+                if 'BACnetTypeStr' in metadata:
+                    bacnet_typestr = {metadata['BACnetTypeStr']: 1}
+                else:
+                    bacnet_typestr = {}
+                type_strs[srcid] = bacnet_typestr
+
+                if 'BACnetType' in metadata:
+                    bacnet_type = {str(metadata['BACnetType']): 1}
+                else:
+                    bacnet_type = {}
+                types[srcid] = {str(bacnet_type): 1}
+                if 'BACnetUnit' in metadata:
+                    bacnet_unit = {str(metadata['BACnetUnit']): 1}
+                else:
+                    bacnet_unit = {}
+                units[srcid] = bacnet_unit
 
         self.zodiac = Zodiac(names, descs, units,
                              type_strs, types, jci_names, [], conf=config)
