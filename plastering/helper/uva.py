@@ -6,8 +6,8 @@ def load_uva_building(building='uva_cse',
                       filename='./groundtruth/uva_cse_point_map.csv'):
     df = pd.read_csv(filename)
     for i, row in df.iterrows():
-        srcid = row['original label']
-        tagset = row['tagset']
+        srcid = row['original label'].replace(' ', '_')
+        tagset = '_'.join(row['tagset'].split())
 
         # Store raw metadata
         raw_obj = RawMetadata.objects(srcid=srcid)\
