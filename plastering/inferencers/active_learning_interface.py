@@ -79,8 +79,11 @@ class ActiveLearningInterface(Inferencer):
         return idx
 
 
-    def update_model(self):
+    def update_model(self, srcid, cluster_id):
 
+        self.learner.labeled_set.append(srcid)
+        self.learbner.new_ex_id = srcid
+        self.learner.cluster_id = cluster_id
         self.learner.update_model()
 
 
