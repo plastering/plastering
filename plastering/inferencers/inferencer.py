@@ -48,7 +48,7 @@ class Inferencer(object):
         self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
         self.source_buildings = source_buildings
         self.config = config # future usage
-        self.training_srcids = set() # already known srcids
+        self.training_srcids = [] # already known srcids
         self.all_point_tagsets = point_tagsets # all the possible point tagsets
                                                # defined in Brick.
         self.pred = {  # predicted results
@@ -149,7 +149,13 @@ class Inferencer(object):
         Byproduct:
             The model will be updated, which can be used for predictions.
         """
-        self.training_srcids = self.training_srcids.union(set(srcids))
+        #self.training_srcids = self.training_srcids.union(set(srcids))
+        for srcid in srcids:
+            if srcid in self.training_srcids:
+                print('WARNING: {0} already exists in training set, not adding'
+                      .format(srcid))
+            else:
+                self.training_srcids.append(srcid)
         if not self.training_srcids:
             raise EmptyTrainingSamples()
 
@@ -239,8 +245,8 @@ class Inferencer(object):
         if self.target_label_type == POINT_TAGSET:
             pred = get_instance_tuples(pred_g)
             metrics = {
-                'f1': get_micro_f1(truth, pred),
-                'macrof1': get_macro_f1(truth, pred)
+                'f1': get_multiclass_micro_f1(truth, pred),
+                'macrof1': get_multiclass_macro_f1(truth, pred)
             }
         target_building_training_srcids = \
             [srcid for srcid in self.training_srcids

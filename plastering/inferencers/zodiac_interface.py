@@ -44,6 +44,7 @@ class ZodiacInterface(Inferencer):
         types = {}
         jci_names = {}
         units = {}
+        true_sensor_types = {}
         for raw_point in RawMetadata.objects(building=self.target_building):
             srcid = raw_point['srcid']
             if srcid in self.target_srcids:
@@ -83,9 +84,12 @@ class ZodiacInterface(Inferencer):
                 else:
                     bacnet_unit = {}
                 units[srcid] = bacnet_unit
+                label_doc = LabeledMetadata.objects(srcid=srcid).first()
+                true_sensor_types[srcid] = label_doc.point_tagset
 
         self.zodiac = Zodiac(names, descs, units,
-                             type_strs, types, jci_names, [], conf=config)
+                             type_strs, types, jci_names, true_sensor_types, conf=config)
+                             #type_strs, types, jci_names, [], conf=config)
         if 'seed_srcids' in config:
             seed_srcids = config['seed_srcids']
         else:
@@ -98,6 +102,9 @@ class ZodiacInterface(Inferencer):
 
     def select_informative_samples(self, sample_num=10):
         return self.zodiac.select_informative_samples_only(sample_num)
+
+    def learn_auto_old(self):
+        self.zodiac.learn_step_by_step()
 
     def learn_auto(self):
         num_sensors_in_gray = 10000 # random initial finish confidtion

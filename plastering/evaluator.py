@@ -1,7 +1,9 @@
 from copy import deepcopy
 from sklearn.metrics import f1_score
 from sklearn.preprocessing import LabelBinarizer, MultiLabelBinarizer
+from sklearn.preprocessing import LabelEncoder
 import numpy as np
+import pdb
 
 def binarize_labels(true_labels, pred_labels):
     srcids = list(pred_labels.keys())
@@ -11,6 +13,7 @@ def binarize_labels(true_labels, pred_labels):
     pred_mat = mlb.transform(pred_labels.values())
     true_mat = mlb.transform(true_labels.values())
     return true_mat, pred_mat
+
 
 def get_macro_f1(true_labels, pred_labels):
     pred_mat, true_mat = binarize_labels(true_labels, pred_labels)
@@ -26,9 +29,39 @@ def get_macro_f1_mat(true_mat, pred_mat):
         f1s.append(f1)
     return np.mean(f1s)
 
-def get_micro_f1(true_labels, pred_labels):
-    pred_mat, true_mat = binarize_labels(true_labels, pred_labels)
-    return get_micro_f1_mat(true_mat, pred_mat)
+def get_multiclass_micro_f1(true_labels, pred_labels):
+    le = LabelEncoder()
+    #pred_mat, true_mat = binarize_labels(true_labels, pred_labels)
+    #f1_custom = get_micro_f1_mat(true_mat, pred_mat)
+    srcids = list(true_labels.keys())
+    true_label_list = [true_labels[srcid] for srcid in srcids]
+    pred_label_list = [pred_labels[srcid] for srcid in srcids]
+    le = LabelEncoder()
+    le.fit(true_label_list + pred_label_list)
+    true_encoded = le.transform(true_label_list)
+    pred_encoded = le.transform(pred_label_list)
+    f1_micro = f1_score(true_encoded, pred_encoded, average='micro')
+    #f1_weighted = f1_score(true_encoded, pred_encoded, average='weighted')
+    #pdb.set_trace()
+    return f1_micro
+
+def get_multiclass_macro_f1(true_labels, pred_labels):
+    le = LabelEncoder()
+    #pred_mat, true_mat = binarize_labels(true_labels, pred_labels)
+    #f1_custom = get_micro_f1_mat(true_mat, pred_mat)
+    srcids = list(true_labels.keys())
+    true_label_list = [true_labels[srcid] for srcid in srcids]
+    pred_label_list = [pred_labels[srcid] for srcid in srcids]
+    le = LabelEncoder()
+    le.fit(true_label_list + pred_label_list)
+    true_encoded = le.transform(true_label_list)
+    pred_encoded = le.transform(pred_label_list)
+    f1_micro = f1_score(true_encoded, pred_encoded, average='macro')
+    #f1_weighted = f1_score(true_encoded, pred_encoded, average='weighted')
+    #pdb.set_trace()
+    return f1_micro
+
+
 
 def get_micro_f1_mat(true_mat, pred_mat):
     TP = np.sum(np.bitwise_and(true_mat==1, pred_mat==1))
