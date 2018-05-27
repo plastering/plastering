@@ -56,7 +56,6 @@ class Zodiac(object):
     """docstring for Zodiac"""
 
     def select_informative_samples_only(self, sample_num=10):
-
         new_srcids = []
         new_sample_cnt = 0
 
@@ -88,7 +87,6 @@ class Zodiac(object):
                 flag = 2
 
             if flag==1:
-                self.change_thresholds = False
                 if new_sample_cnt >= sample_num:
                     continue
                 new_sample_cnt += 1
@@ -97,7 +95,6 @@ class Zodiac(object):
                 new_srcids.append(new_srcid)
                 self.labeled_clusters.append(p)
 
-        print('found new srcids: {0}'.format(new_sample_cnt))
         return new_srcids
 
     def select_informative_samples(self, sample_num=10):
@@ -196,7 +193,6 @@ class Zodiac(object):
     def __init__(self, names, descs, units,
               type_strs, types, jci_names, true_sensor_types, conf={}):
         super(Zodiac, self).__init__()
-        self.change_thresholds = True
         if conf:
             self.conf = conf
         else:
@@ -210,7 +206,6 @@ class Zodiac(object):
                                             random_state=conf['random_state'],
                                             #n_jobs=conf['n_jobs']
                                             )
-        self.label_dict = {}
         # init data
         self.learned_srcids = []
         self.srcids = list(names.keys())
@@ -356,21 +351,10 @@ class Zodiac(object):
             srcids.append(srcid)
         return srcids
 
-    def find_cluster_label(self, srcids):
-        label = None
-        for srcid in self.label_dict:
-            if srcid in srcids:
-                label = self.label_dict[srcid]
-                break
-        if not label:
-            raise Exception('label not found in this cluster')
-        return label
-
     def update_model(self, new_srcids, new_labels):
         for srcid, new_label in zip(new_srcids, new_labels):
             if not new_label:
                 raise Exception('Point Tagset not found at {0}'.format(srcid))
-            self.label_dict[srcid] = new_label
             self.learned_srcids.append(srcid)
             i = self.srcids.index(srcid)
             self.sensor_bow.append(self.bow_array[i])
@@ -385,12 +369,12 @@ class Zodiac(object):
         self.model.fit(self.sensor_bow, self.sensor_labels)
 
         # Iteratively apply Random Forest to label new sensors
+        self.change_thresholds = True
         n_wrong_confident_sensor_pred = 0
         self.sensor_bow = list(self.sensor_bow)
         self.sensor_labels = list(self.sensor_labels)
         n_high_confidence_sensors = 0
         confidence_dict = {}
-        print('1 labeled size: {0}'.format(len(self.sensor_labels)))
         for p in self.cluster_map.keys(): # for each cluster
             if p in self.labeled_clusters:
                 continue
@@ -425,7 +409,7 @@ class Zodiac(object):
                 # For each sensor in this cluster:
                 for k in range(len(self.cluster_map[p]['sensors'])):
                     sourceid = self.cluster_map[p]['sensors'][k]['source_id']
-                    #true_type = self.true_sensor_types[sourceid] # This needs to be fixed
+                    #true_type = self.true_sensor_types[sourceid]
                     pred_type = prediction_label[k]
 
                     if flag==2:
@@ -437,12 +421,10 @@ class Zodiac(object):
                         self.sensor_bow.append(
                             self.bow_array[self.cluster_map[p]['sensor_ids'][k]])
                         self.sensor_labels.append(pred_type)
-                #break
-        print('2 labeled size: {0}'.format(len(self.sensor_labels)))
+                break
         self.model.fit(self.sensor_bow, self.sensor_labels)
         if self.change_thresholds:
             self.thresh_count += 1
-        self.change_thresholds = True
         self.T_low, self.T_high = self.thresholds[self.thresh_count]
         print(self.T_low, self.T_high)
 
@@ -597,7 +579,7 @@ class Zodiac(object):
     def learn_to_end(self):
         self.sensor_bow = list(self.sensor_bow)
         self.sensor_labels = list(self.sensor_labels)
-        random_cids = random.sample(self.cluster_map.keys(),
+        random_cids = random.sample(self.cluster_map.keys(), 
                                     self.seed_sample_num)
         for c_id in random_cids:
             self.labeled_clusters.append(c_id)
@@ -829,14 +811,11 @@ def main():
         sensors_dict = json.load(fp)
 
     device_list = [
-                    #"557",
-                    #"607",
-                    #"608",
-                    #"609",
-                    #"610",
-        "604",
-        "513",
-        "514"
+                    "557",
+                    "607",
+                    "608",
+                    "609",
+                    "610",
     ]
 
     names = dict()
@@ -876,8 +855,7 @@ def main():
             type_strs[srcid] = {str(h_obj['type_str']):1}
             types[srcid] = {str(h_obj['type']):1}
 
-    true_df = pd.read_csv('metadata/ap_m_sensor_types.csv')
-    #true_df = pd.read_csv('metadata/bonner_sensor_types.csv')
+    true_df = pd.read_csv('metadata/bonner_sensor_types.csv')
     true_sensor_types = {s[1]['source_id']:s[1]['sensor_type'] 
                          for s in true_df.iterrows()}
     zodiac = Zodiac(names, descs, units, type_strs, types, jci_names, 
