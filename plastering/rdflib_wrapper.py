@@ -1,11 +1,18 @@
 import rdflib
-from rdflib import Graph, RDF, RDFS, OWL, URIRef
+from rdflib import Graph, RDF, RDFS, OWL, URIRef, Namespace
+from copy import deepcopy
 
 import pdb
 
 
-BRICK = 'https://brickschema.org/schema/1.0.1/Brick#'
-BF = 'https://brickschema.org/schema/1.0.1/BrickFrame#'
+BRICK_VERSION = '1.0.2'
+
+#BRICK = 'https://brickschema.org/schema/1.0.1/Brick#'
+#BF = 'https://brickschema.org/schema/1.0.1/BrickFrame#'
+# TODO: These should be NS instead of raw strings.
+BRICK = 'https://brickschema.org/schema/{0}/Brick#'.format(BRICK_VERSION)
+BF = Namespace('https://brickschema.org/schema/{0}/BrickFrame#'.format(BRICK_VERSION))
+#BF = 'https://brickschema.org/schema/{0}/BrickFrame#'.format(BRICK_VERSION)
 BASE = 'http://example.com#'
 
 sparql_prefix = """
@@ -15,14 +22,23 @@ prefix rdfs: <{2}>
 prefix base: <{3}>
 prefix bf: <{4}>
 prefix owl: <{5}>
-""".format(BRICK, RDF, RDFS, BASE, BF, OWL)
+""".format(BRICK, RDF, RDFS, BASE, str(BF), OWL)
 
 
-def init_graph(empty=True):
-    g = Graph()
-    if not empty:
-        g.parse('Brick/dist/Brick.ttl', format='turtle')
-        g.parse('Brick/dist/BrickFrame.ttl', format='turtle')
+
+preloaded_g = Graph()
+preloaded_g.parse('Brick/dist/Brick_{0}.ttl'
+            .format(BRICK_VERSION.replace('.', '_')), format='turtle')
+preloaded_g.parse('Brick/dist/BrickFrame_{0}.ttl'
+            .format(BRICK_VERSION.replace('.', '_')), format='turtle')
+empty_g = Graph()
+
+
+def init_graph(empty=False):
+    if empty:
+        return deepcopy(empty_g)
+    else:
+        return deepcopy(preloaded_g)
     return g
 
 def get_instance_tuples(g):
@@ -38,3 +54,14 @@ def get_instance_tuples(g):
 def insert_point(g, name, tagset):
     triple = (URIRef(name), RDF.type, URIRef(BRICK + tasget))
     g.add(triple)
+
+def insert_triple(g, triple):
+    g.add(triple)
+
+def create_uri(name, ns=BASE):
+    return URIRef(ns + name)
+
+def query_sparql(g, qstr):
+    qstr = sparql_prefix + qstr
+    res = g.query(qstr).bindings
+    return res
