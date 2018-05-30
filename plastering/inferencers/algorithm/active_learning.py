@@ -37,7 +37,7 @@ def get_name_features(names):
 
 class active_learning():
 
-    def __init__(self, fold, rounds, fn, label):
+    def __init__(self, fold, rounds, n_cluster, fn, label):
 
         self.fold = fold
         self.rounds = rounds
@@ -55,6 +55,7 @@ class active_learning():
         self.clf = LinearSVC()
         self.ex_id = dd(list)
         self.new_ex_id = 0
+        self.cluster_num = n_cluster
         self.cluster_id = 0
         self.labeled_set = []
 
@@ -225,7 +226,7 @@ class active_learning():
             label_test = self.label[test]
 
             fn_train = self.fn[train]
-            c = KMeans(init='k-means++', n_clusters=28, n_init=10)
+            c = KMeans(init='k-means++', n_clusters=self.cluster_num, n_init=10)
             c.fit(fn_train)
             dist = np.sort(c.transform(fn_train))
 
