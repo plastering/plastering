@@ -39,10 +39,6 @@ class ActiveLearningInterface(Inferencer):
             target_srcids=target_srcids
         )
 
-        #Merged Initializations
-        self.fold = fold
-        self.rounds = rounds
-
         #TODO: pt_name is the raw vendorgiven name and pt_type is the corresponding tagset in brick volcabulary
         srcids = [point['srcid'] for point
                   in LabeledMetadata.objects(building=target_building)]
@@ -50,15 +46,20 @@ class ActiveLearningInterface(Inferencer):
                    for srcid in srcids]
         pt_name = [RawMetadata.objects(srcid=srcid).first()\
                    .metadata['VendorGivenName'] for srcid in srcids]
-        self.fn = get_name_features(pt_name)
+        fn = get_name_features(pt_name)
         le = LE()
-        self.label = le.fit_transform(pt_type)
+        label = le.fit_transform(pt_type)
+        #print ('# of classes is %d'%len(np.unique(label)))
+        print ('running active learning by Hong on building %s'%target_building)
+        print ('%d instances loaded'%len(pt_name))
 
         self.learner = active_learning(
-            self.fold,
-            self.rounds,
-            self.fn,
-            self.label
+            fold,
+            rounds,
+            #2 * len( np.unique(label) ),
+            28,
+            fn,
+            label
         )
 
 
