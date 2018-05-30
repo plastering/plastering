@@ -13,6 +13,8 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 2. Init data: ``python data_init.py -b ap_m``
 3. Run Zodiac test: ``python test_zodiac.py``
 4. Run Workflow test: ``python test_workflow.py``
+5. Run Zodiac experiments: ``python scripts/exp_zodiac.py``
+6. Produce figures: ``python scripts/result_drawer.py``
 
 
 # Speficiation
