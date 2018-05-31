@@ -154,11 +154,7 @@ class Inferencer(object):
             The model will be updated, which can be used for predictions.
         """
         #self.training_srcids = self.training_srcids.union(set(srcids))
-<<<<<<< 222c858718711d8d4647a037d49ff6de913659fe
         for srcid in new_srcids:
-=======
-        for srcid in srcids:
->>>>>>> fix zodiac and evaluation metrics
             if srcid in self.training_srcids:
                 print('WARNING: {0} already exists in training set, not adding'
                       .format(srcid))
