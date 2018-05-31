@@ -1,10 +1,11 @@
+import sys
 import json
 import numpy as np
 
 from plastering.inferencers.active_learning_interface import ActiveLearningInterface
 from plastering.metadata_interface import *
 
-target_building = 'ap_m'
+target_building = sys.argv[1]
 
 labeled_list = LabeledMetadata.objects(building=target_building)
 target_srcids = [labeled['srcid'] for labeled in labeled_list]
