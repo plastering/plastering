@@ -24,7 +24,6 @@ building_anon_map = {
     'uva_cse': 'B-1'
 }
 colors = ['firebrick', 'deepskyblue']
-linestyles = ['--', '-.', '-']
 inferencer_names = ['zodiac']
 EXP_NUM = 1
 
@@ -37,20 +36,21 @@ def average_data(xs, ys, target_x):
     return target_y.tolist()[0]
 
 def plot_pointonly_notransfer():
-    buildings = ['ebu3b', 'ebu3b']
+    buildings = ['ebu3b', 'uva_cse']
 
     fig, axes = plt.subplots(1, len(buildings))
-    xticks = [0, 5] + list(range(10, 201, 10))
-    xticks_labels = [str(n) for n in xticks]
+    xticks = [0, 10] + list(range(50, 251, 50))
+    xticks_labels = [''] + [str(n) for n in xticks[1:]]
     yticks = range(0,101,20)
     yticks_labels = [str(n) for n in yticks]
     xlim = (-5, xticks[-1]+5)
     ylim = (yticks[0]-2, yticks[-1]+5)
-    interp_x = list(range(0, 200, 5))
+    interp_x = list(range(0, 250, 5))
     for ax, building in zip(axes, buildings): # subfigure per building
         xlabel = '# of Samples'
         ylabel = 'Metric'
-        title = 'none'
+        title = building_anon_map[building]
+        linestyles = ['--', '-.', '-']
         for inferencer_name in inferencer_names:
             xs = []
             ys = []
@@ -69,10 +69,8 @@ def plot_pointonly_notransfer():
             mf1 = average_data(xss, mf1s, interp_x)
             x = interp_x
             ys = [f1, mf1]
-            legends = ['F1, {0}, {1}'.format(building_anon_map[building],
-                                             inferencer_name),
-                       'MacroF1, {0}, {1}'.format(building_anon_map[building],
-                                                  inferencer_name)
+            legends = ['F1, {0}'.format(inferencer_name),
+                       'MacroF1, {0}'.format(inferencer_name)
                        ]
 
             _, plots = plotter.plot_multiple_2dline(
