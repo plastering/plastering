@@ -201,7 +201,7 @@ class Inferencer(object):
         return pred_g
 
     def _make_instance_tuple(self, srcid, pred_point):
-        return (URIRef(BASE + srcid), RDF.type, URIRef(BRICK + pred_point))
+        return (URIRef(BASE + srcid), RDF.type, BRICK[pred_point])
 
     # ESSENTIAL
     def predict_proba(self, target_srcids=None):
@@ -252,7 +252,7 @@ class Inferencer(object):
             [srcid for srcid in self.training_srcids
              if RawMetadata.objects(srcid=srcid,
                                     building=self.target_building).count()]
-        total_training_srcids = self.training_srcids
+        total_training_srcids = deepcopy(self.training_srcids)
         curr_eval = {
             'metrics': metrics,
             'total_training_srcids': total_training_srcids,
@@ -263,6 +263,10 @@ class Inferencer(object):
 
     def _get_empty_graph(self):
         return deepcopy(self.template_g)
+
+    def update_prior(self, prior_g, prior_confidences={}):
+        self.prior_g = prior_g
+        self.prior_confidences = prior_confidences
 
 
 
