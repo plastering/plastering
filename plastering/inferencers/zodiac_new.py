@@ -33,9 +33,7 @@ from jasonhelper import bidict
 
 POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 
-from zodiac import Zodiac # This may imply incompatible imports.
-
-DEBUG = True
+DEBUG = False
 
 def tokenizer(s):
     return re.findall('[a-z]+', s.lower())
@@ -75,8 +73,23 @@ class ZodiacInterface(Inferencer):
             self.config['n_estimators'] = 400
         if 'random_state' not in config:
             self.config['random_state'] = 0
+        if 'sample_num_list' in config:
+            sample_num_list = config['sample_num_list']
+        else:
+            sample_num_list = [0] * (len(source_buildings) + 1) # +1 for target
+        if len(self.source_buildings) > len(sample_num_list):
+            sample_num_list.append(0)
 
-        self.total_srcids = deepcopy(target_srcids) # This should include other buildings too.
+        # get srcids from other buildings
+        source_buildings_srcids = []
+        for source_building, sample_num in zip(source_buildings,
+                                               sample_num_list):
+            objects = LabeledMetadata.objects(building=source_building)
+            source_srcids = random.sample(
+                [obj.srcid for obj in objects], sample_num)
+            source_buildings_srcids += source_srcids
+
+        self.total_srcids = deepcopy(target_srcids) + source_buildings_srcids
         self.ground_truths = {} #just for debugging
         self.true_labels = {}
         self.available_srcids = []
@@ -90,47 +103,49 @@ class ZodiacInterface(Inferencer):
         types = {}
         jci_names = {}
         units = {}
-        for raw_point in RawMetadata.objects(building=self.target_building):
-            srcid = raw_point['srcid']
-            if srcid in self.target_srcids:
-                metadata = raw_point['metadata']
-                if not metadata:
-                    raise Exception('Metadata for {0} does not exist'
-                                    .format(srcid))
-                if 'BACnetName' in metadata:
-                    bacnet_name = metadata['BACnetName']
-                else:
-                    bacnet_name = ''
-                names[srcid] = bacnet_name
-                if 'VendorGivenName' in metadata:
-                    vendor_given_name = metadata['VendorGivenName']
-                else:
-                    vendor_given_name = ''
-                jci_names[srcid] = vendor_given_name
-                if 'BACnetDescription' in metadata:
-                    bacnet_desc = metadata['BACnetDescription']
-                else:
-                    bacnet_desc = ''
-                descs[srcid] = bacnet_desc
+        #for raw_point in RawMetadata.objects(building=self.target_building):
+        for srcid in self.total_srcids:
+            #srcid = raw_point['srcid']
+            #if srcid in self.target_srcids:
+            raw_point = RawMetadata.objects(srcid=srcid).first()
+            metadata = raw_point['metadata']
+            if not metadata:
+                raise Exception('Metadata for {0} does not exist'
+                                .format(srcid))
+            if 'BACnetName' in metadata:
+                bacnet_name = metadata['BACnetName']
+            else:
+                bacnet_name = ''
+            names[srcid] = bacnet_name
+            if 'VendorGivenName' in metadata:
+                vendor_given_name = metadata['VendorGivenName']
+            else:
+                vendor_given_name = ''
+            jci_names[srcid] = vendor_given_name
+            if 'BACnetDescription' in metadata:
+                bacnet_desc = metadata['BACnetDescription']
+            else:
+                bacnet_desc = ''
+            descs[srcid] = bacnet_desc
 
-                if 'BACnetTypeStr' in metadata:
-                    bacnet_typestr = {metadata['BACnetTypeStr']: 1}
-                else:
-                    bacnet_typestr = {}
-                type_strs[srcid] = bacnet_typestr
+            if 'BACnetTypeStr' in metadata:
+                bacnet_typestr = {metadata['BACnetTypeStr']: 1}
+            else:
+                bacnet_typestr = {}
+            type_strs[srcid] = bacnet_typestr
 
-                if 'BACnetType' in metadata:
-                    bacnet_type = {str(metadata['BACnetType']): 1}
-                else:
-                    bacnet_type = {}
-                types[srcid] = {str(bacnet_type): 1}
-                if 'BACnetUnit' in metadata:
-                    bacnet_unit = {str(metadata['BACnetUnit']): 1}
-                else:
-                    bacnet_unit = {}
-                units[srcid] = bacnet_unit
-                label_doc = LabeledMetadata.objects(srcid=srcid).first()
-                self.ground_truths[srcid] = label_doc.point_tagset
+            if 'BACnetType' in metadata:
+                bacnet_type = {str(metadata['BACnetType']): 1}
+            else:
+                bacnet_type = {}
+            types[srcid] = {str(bacnet_type): 1}
+            if 'BACnetUnit' in metadata:
+                bacnet_unit = {str(metadata['BACnetUnit']): 1}
+            else:
+                bacnet_unit = {}
+            units[srcid] = bacnet_unit
+            label_doc = LabeledMetadata.objects(srcid=srcid).first()
+            self.ground_truths[srcid] = label_doc.point_tagset
         self.total_bow = self.init_bow(self.total_srcids,
                                        names,
                                        descs,
@@ -138,8 +153,11 @@ class ZodiacInterface(Inferencer):
                                        type_strs,
                                        types,
                                        jci_names)
-        self.cluster_map = self.create_cluster_map(self.total_bow,
-                                                   self.total_srcids)
+        target_bow = self.get_sub_bow(self.target_srcids)
+        self.cluster_map = self.create_cluster_map(target_bow,
+                                                   self.target_srcids)
+        #self.cluster_map = self.create_cluster_map(self.total_bow,
+        #                                           self.total_srcids)
 
         if 'seed_srcids' in config:
             seed_srcids = config['seed_srcids']
@@ -160,6 +178,11 @@ class ZodiacInterface(Inferencer):
 
         self.init_model()
         self.update_model(seed_srcids)
+        self.available_srcids += source_buildings_srcids
+        self.training_labels += [LabeledMetadata.objects(srcid=srcid)
+                                  .first().point_tagset
+                                  for srcid in source_buildings_srcids]
+        self.learn_model()
 
     def init_model(self):
         self.model = RandomForestClassifier(
@@ -208,7 +231,8 @@ class ZodiacInterface(Inferencer):
         cluster_map = {}
         z = linkage(bow, metric='cityblock', method='complete')
         dists = list(set(z[:,2]))
-        thresh = (dists[2] + dists[3]) /2
+        thresh = (dists[1] + dists[2]) /2
+        #thresh = (dists[2] + dists[3]) /2
         print("Threshold: ", thresh)
         b = hier.fcluster(z,thresh, criterion='distance')
         assert bow.shape[0] == len(b)
@@ -374,8 +398,9 @@ class ZodiacInterface(Inferencer):
         return acc
 
     def learn_auto(self):
-        gray_num = 100
+        gray_num = 1000
         cnt = 0
+        start_flag = True
         while gray_num:
             print('--------------------------')
             print('{0}th iteration'.format(cnt))
