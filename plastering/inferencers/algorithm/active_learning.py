@@ -14,12 +14,10 @@ from sklearn.cluster import KMeans
 from sklearn.mixture import DPGMM
 
 from sklearn.feature_extraction.text import CountVectorizer as CV
-from sklearn.feature_extraction.text import TfidfVectorizer as TV
-from sklearn.cross_validation import StratifiedKFold
 from sklearn.cross_validation import KFold
-from sklearn.ensemble import RandomForestClassifier as RFC
 from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
 from sklearn.metrics import confusion_matrix as CM
 from sklearn.preprocessing import normalize
 
@@ -42,6 +40,8 @@ class active_learning():
         self.fold = fold
         self.rounds = rounds
         self.acc_sum = [[] for i in range(self.rounds)] #acc per iter for each fold
+        self.f1_micro_sum = [[] for i in range(self.rounds)] #acc per iter for each fold
+        self.f1_macro_sum = [[] for i in range(self.rounds)] #acc per iter for each fold
 
         self.fn = fn
         self.label = label
@@ -179,8 +179,10 @@ class active_learning():
         fn_preds = self.clf.predict(fn_test)
 
         acc = accuracy_score(label_test, fn_preds)
+        f1_micro = f1_score(label_test, fn_preds, average='micro')
+        f1_macro = f1_score(label_test, fn_preds, average='macro')
 
-        return acc
+        return acc, f1_micro, f1_macro
 
 
     def plot_confusion_matrix(self, label_test, fn_test):
@@ -264,14 +266,16 @@ class active_learning():
                 self.update_pseudo_set()
 
                 try:
-                    acc = self.get_pred_acc(fn_test, label_test, self.p_idx, self.p_label)
+                    acc, f1_micro, f1_macro = self.get_pred_acc(fn_test, label_test, self.p_idx, self.p_label)
                 except Exception as e:
                     exc_type, exc_obj, exc_tb = sys.exc_info()
                     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
                     print (exc_type, e.args, fname, 'on line ' + str(exc_tb.tb_lineno) )
-                    acc = np.nan
+                    acc, f1_micro, f1_macro = np.nan
 
                 self.acc_sum[ctr-1].append(acc)
+                self.f1_micro_sum[ctr-1].append(f1_micro)
+                self.f1_macro_sum[ctr-1].append(f1_macro)
 
 
             cl_id = [] #track cluster id on each iter
@@ -301,8 +305,10 @@ class active_learning():
                 self.update_tao()
                 self.update_pseudo_set()
 
-                acc = self.get_pred_acc(fn_test, label_test, self.p_idx, self.p_label)
+                acc, f1_micro, f1_macro = self.get_pred_acc(fn_test, label_test, self.p_idx, self.p_label)
                 self.acc_sum[rr].append(acc)
+                self.f1_micro_sum[rr].append(f1_micro)
+                self.f1_macro_sum[rr].append(f1_macro)
 
             #print '# of p label', len(self.p_label)
             #print cl_id
@@ -316,7 +322,11 @@ class active_learning():
 
         #print 'class count of clf training ex:', ct(label_train)
         self.acc_sum = [i for i in self.acc_sum if i]
+        self.f1_micro_sum = [i for i in self.f1_micro_sum if i]
+        self.f1_macro_sum = [i for i in self.f1_macro_sum if i]
         print ('average acc:', [np.nanmean(i) for i in self.acc_sum])
+        print ('average micro f1:', [np.nanmean(i) for i in self.f1_micro_sum])
+        print ('average macro f1:', [np.nanmean(i) for i in self.f1_macro_sum])
         #print 'average p label acc:', np.mean(p_acc)
 
         #self.plot_confusion_matrix(label_test, fn_test)
