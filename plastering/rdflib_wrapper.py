@@ -27,9 +27,9 @@ prefix owl: <{5}>
 
 
 preloaded_g = Graph()
-preloaded_g.parse('Brick/dist/Brick_{0}.ttl'
+preloaded_g.parse('brick/Brick_{0}.ttl'
             .format(BRICK_VERSION.replace('.', '_')), format='turtle')
-preloaded_g.parse('Brick/dist/BrickFrame_{0}.ttl'
+preloaded_g.parse('brick/BrickFrame_{0}.ttl'
             .format(BRICK_VERSION.replace('.', '_')), format='turtle')
 empty_g = Graph()
 
