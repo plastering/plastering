@@ -10,7 +10,7 @@ BRICK_VERSION = '1.0.2'
 #BRICK = 'https://brickschema.org/schema/1.0.1/Brick#'
 #BF = 'https://brickschema.org/schema/1.0.1/BrickFrame#'
 # TODO: These should be NS instead of raw strings.
-BRICK = 'https://brickschema.org/schema/{0}/Brick#'.format(BRICK_VERSION)
+BRICK = Namespace('https://brickschema.org/schema/{0}/Brick#'.format(BRICK_VERSION))
 BF = Namespace('https://brickschema.org/schema/{0}/BrickFrame#'.format(BRICK_VERSION))
 #BF = 'https://brickschema.org/schema/{0}/BrickFrame#'.format(BRICK_VERSION)
 BASE = 'http://example.com#'
@@ -22,7 +22,7 @@ prefix rdfs: <{2}>
 prefix base: <{3}>
 prefix bf: <{4}>
 prefix owl: <{5}>
-""".format(BRICK, RDF, RDFS, BASE, str(BF), OWL)
+""".format(str(BRICK), RDF, RDFS, BASE, str(BF), OWL)
 
 
 
@@ -52,7 +52,7 @@ def get_instance_tuples(g):
     return {row[0].split('#')[-1]: row[1].split('#')[-1] for row in res}
 
 def insert_point(g, name, tagset):
-    triple = (URIRef(name), RDF.type, URIRef(BRICK + tasget))
+    triple = (URIRef(name), RDF.type, BRICK[tasget])
     g.add(triple)
 
 def insert_triple(g, triple):

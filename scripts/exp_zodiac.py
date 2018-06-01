@@ -10,9 +10,9 @@ from plastering.inferencers.zodiac_new import ZodiacInterface
 from plastering.metadata_interface import *
 import pdb
 
-EXP_NUM = 1
+EXP_NUM = 4
 
-target_buildings = ['ebu3b']
+target_buildings = ['uva_cse']
 #target_building = 'uva_cse'
 
 inferencers = {
@@ -21,7 +21,7 @@ inferencers = {
 
 
 for inferencer_name, Inferencer in inferencers.items():
-    for exp_id in range(1, EXP_NUM + 1):
+    for exp_id in range(0, EXP_NUM):
         for target_building in target_buildings:
             # Select labeled srcids (Not all the data are labeled yet.)
             labeled_list = LabeledMetadata.objects(building=target_building)
@@ -37,7 +37,7 @@ for inferencer_name, Inferencer in inferencers.items():
                 'metrics': hist['metrics'],
                 'learning_srcids': len(hist['total_training_srcids'])
             } for hist in inferencer.history]
-            with open('result/al_pointonly_{0}_{1}_{2}.json'
+            with open('result/pointonly_notransfer_{0}_{1}_{2}.json'
                       .format(inferencer_name, target_building, exp_id), 'w') \
                     as fp:
                 json.dump(history, fp)

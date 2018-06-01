@@ -1,5 +1,6 @@
 import pdb
 import json
+from copy import deepcopy
 
 import matplotlib
 matplotlib.use('Agg')
@@ -25,8 +26,9 @@ building_anon_map = {
 }
 colors = ['firebrick', 'deepskyblue']
 inferencer_names = ['zodiac']
-EXP_NUM = 1
-
+EXP_NUM = 4
+LINESTYLES = ['--', '-.', '-']
+FIG_DIR = './figs'
 
 def average_data(xs, ys, target_x):
     target_y = np.zeros((1, len(target_x)))
@@ -37,6 +39,7 @@ def average_data(xs, ys, target_x):
 
 def plot_pointonly_notransfer():
     buildings = ['ebu3b', 'uva_cse']
+    outputfile = FIG_DIR + '/pointonly_notransfer.pdf'
 
     fig, axes = plt.subplots(1, len(buildings))
     xticks = [0, 10] + list(range(50, 251, 50))
@@ -45,12 +48,12 @@ def plot_pointonly_notransfer():
     yticks_labels = [str(n) for n in yticks]
     xlim = (-5, xticks[-1]+5)
     ylim = (yticks[0]-2, yticks[-1]+5)
-    interp_x = list(range(0, 250, 5))
+    interp_x = list(range(10, 250, 5))
     for ax, building in zip(axes, buildings): # subfigure per building
         xlabel = '# of Samples'
         ylabel = 'Metric'
         title = building_anon_map[building]
-        linestyles = ['--', '-.', '-']
+        linestyles = deepcopy(LINESTYLES)
         for inferencer_name in inferencer_names:
             xs = []
             ys = []
@@ -77,7 +80,53 @@ def plot_pointonly_notransfer():
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
                 yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
                 linestyles=[linestyles.pop()]*len(ys), cs=colors)
-    save_fig(fig, 'figs/test.pdf')
+    save_fig(fig, outputfile)
+
+def plot_pointonly_transfer():
+    buildings = ['ebu3b', 'uva_cse']
+    outputfile = FIG_DIR + '/pointonly_transfer.pdf'
+
+    fig, axes = plt.subplots(1, len(buildings))
+    xticks = [0, 10] + list(range(50, 251, 50))
+    xticks_labels = [''] + [str(n) for n in xticks[1:]]
+    yticks = range(0,101,20)
+    yticks_labels = [str(n) for n in yticks]
+    xlim = (-5, xticks[-1]+5)
+    ylim = (yticks[0]-2, yticks[-1]+5)
+    interp_x = list(range(10, 250, 5))
+    for ax, building in zip(axes, buildings): # subfigure per building
+        xlabel = '# of Samples'
+        ylabel = 'Metric'
+        title = building_anon_map[building]
+        linestyles = deepcopy(LINESTYLES)
+        for inferencer_name in inferencer_names:
+            xs = []
+            ys = []
+            xss = []
+            f1s = []
+            mf1s = []
+            for i in range(0, EXP_NUM):
+                with open('result/pointonly_transfer_{0}_{1}_{2}.json'
+                          .format(inferencer_name, building, i)) as  fp:
+                    data = json.load(fp)
+                xss.append([datum['learning_srcids'] for datum in data])
+                f1s.append([datum['metrics']['f1'] for datum in data])
+                mf1s.append([datum['metrics']['macrof1'] for datum in data])
+            xs = xss[0] # Assuming all xss are same.
+            f1 = average_data(xss, f1s, interp_x)
+            mf1 = average_data(xss, mf1s, interp_x)
+            x = interp_x
+            ys = [f1, mf1]
+            legends = ['F1, {0}'.format(inferencer_name),
+                       'MacroF1, {0}'.format(inferencer_name)
+                       ]
+
+            _, plots = plotter.plot_multiple_2dline(
+                x, ys, xlabel, ylabel, xticks, xticks_labels,
+                yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
+                linestyles=[linestyles.pop()]*len(ys), cs=colors)
+    save_fig(fig, outputfile)
 
 if __name__ == '__main__':
     plot_pointonly_notransfer()
+    plot_pointonly_transfer()
