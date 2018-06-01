@@ -401,7 +401,7 @@ class ZodiacInterface(Inferencer):
         gray_num = 1000
         cnt = 0
         start_flag = True
-        while gray_num:
+        while gray_num > 0:
             print('--------------------------')
             print('{0}th iteration'.format(cnt))
             self.learn_model()
