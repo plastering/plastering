@@ -93,7 +93,7 @@ class ActiveLearningInterface(Inferencer):
         return self.learner.clf.predict(target_srcids)
 
 
-    def run_auto(self):
+    def learn_auto(self):
 
         self.learner.run_CV()
 
