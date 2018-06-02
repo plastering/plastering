@@ -7,16 +7,27 @@ sys.path.insert(0, dir_path + '/..')
 #sys.path.append(os.path.abspath(os.path.join('..', 'config')))
 
 from plastering.inferencers.zodiac_new import ZodiacInterface
+from plastering.inferencers.active_learning_interface import ActiveLearningInterface
 from plastering.metadata_interface import *
 import pdb
 
-EXP_NUM = 4
+EXP_NUM = 1
 
 target_buildings = ['uva_cse']
 #target_building = 'uva_cse'
 
 inferencers = {
+    'dezhi_al': ActiveLearningInterface,
     'zodiac': ZodiacInterface,
+}
+
+configs = {
+    'dezhi_al': {
+        'fold': 10,
+        'rounds': 100
+    },
+    'zodiac': {
+    }
 }
 
 
@@ -31,7 +42,9 @@ for inferencer_name, Inferencer in inferencers.items():
             #                         target_srcids=target_srcids)
             #zodiac.learn_auto() # This should include evaluate function for each step
             inferencer = Inferencer(target_building =target_building,
-                                    target_srcids=target_srcids)
+                                    target_srcids=target_srcids,
+                                    **(configs[inferencer_name])
+                                    )
             inferencer.learn_auto()
             history = [{
                 'metrics': hist['metrics'],

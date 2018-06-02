@@ -25,8 +25,8 @@ building_anon_map = {
     'uva_cse': 'B-1'
 }
 colors = ['firebrick', 'deepskyblue']
-inferencer_names = ['zodiac']
-EXP_NUM = 4
+inferencer_names = ['zodiac', 'al_hong']
+EXP_NUM = 1
 LINESTYLES = ['--', '-.', '-']
 FIG_DIR = './figs'
 
@@ -65,10 +65,16 @@ def plot_pointonly_notransfer():
                           .format(inferencer_name, building, i)) as  fp:
                     data = json.load(fp)
                 xss.append([datum['learning_srcids'] for datum in data])
-                f1s.append([datum['metrics']['f1'] for datum in data])
-                mf1s.append([datum['metrics']['macrof1'] for datum in data])
+                f1s.append([datum['metrics']['f1'] if 'f1' in datum['metrics']
+                            else datum['metrics']['f1_micro']
+                            for datum in data])
+                mf1s.append([datum['metrics']['macrof1'] if 'macrof1' in datum['metrics']
+                             else datum['metrics']['f1_macro'] for datum in data])
             xs = xss[0] # Assuming all xss are same.
-            f1 = average_data(xss, f1s, interp_x)
+            try:
+                f1 = average_data(xss, f1s, interp_x)
+            except:
+                pdb.set_trace()
             mf1 = average_data(xss, mf1s, interp_x)
             x = interp_x
             ys = [f1, mf1]
@@ -129,4 +135,4 @@ def plot_pointonly_transfer():
 
 if __name__ == '__main__':
     plot_pointonly_notransfer()
-    plot_pointonly_transfer()
+    #plot_pointonly_transfer()
