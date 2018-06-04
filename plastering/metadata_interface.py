@@ -19,7 +19,7 @@ class LabeledMetadata(Document):
     fullparsing = DictField()
     tagsets = ListField(StringField())
     point_tagset = StringField()
-
+    tagsets_parsing = DictField()
 
 # Helper functions
 

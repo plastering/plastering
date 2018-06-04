@@ -204,5 +204,7 @@
   "socket load power factor electric meter": "none",
   "fcu phase average powerunit electric meter": "power_meter",
   "electric meter fcu": "system_power_meter",
-  "electric meter light": "power_meter"
+  "electric meter light": "power_meter",
+  "condensor pump": "condensor_pump",
+  "compressor": "compressor"
 }
