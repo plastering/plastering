@@ -27,7 +27,7 @@ elif building in ['soda', 'sdh', 'ibm']:
     extract_raw_ucb_labels()
     basedir = './groundtruth/'
     filenames = {
-        'soda': basedir + 'SDH-GROUND-TRUTH',
+        'soda': basedir + 'SODA-GROUND-TRUTH',
         'sdh': basedir + 'SDH-GROUND-TRUTH',
         'ibm': basedir + 'IBM-GROUND-TRUTH',
     }

@@ -33,6 +33,9 @@ preloaded_g.parse('brick/BrickFrame_{0}.ttl'
             .format(BRICK_VERSION.replace('.', '_')), format='turtle')
 empty_g = Graph()
 
+def adder(x, y):
+    return x + y
+
 
 def init_graph(empty=False):
     if empty:
@@ -65,3 +68,35 @@ def query_sparql(g, qstr):
     qstr = sparql_prefix + qstr
     res = g.query(qstr).bindings
     return res
+
+def get_vavs(g):
+    qstr = """
+    select ?vav where {
+      ?vav a/rdfs:subClassOf* brick:VAV .
+      }
+    """
+    res = query_sparql(g, qstr)
+    vavs = [row['vav'] for row in res]
+    return vavs
+
+def get_vav_points(g, vav):
+    qstr = """
+    select ?point where {
+    ?point bf:isPointOf {0}.
+    ?point a/rdfs:subClassOf brick:Point.
+    }
+    """.format(vav.n3())
+    res = query_sparql(g, qstr)
+    points = [row['point'] for row in res]
+    return points
+
+def get_point_type(g, point):
+    qstr = """
+    select ?t {
+    {0} a ?t .
+    }
+    """
+    res = query_sparql(g, qstr)
+    t = res[0]['t']
+    return t
+

@@ -6,15 +6,16 @@ from uuid import uuid4 as gen_uuid
 class DummyQuiver(Inferencer):
 
     def __init__(self,
-                 ground_truth_ttl,
                  target_building,
                  target_srcids,
                  source_buildings=[],
                  ui=None,
                  config={}):
+        if 'ground_truth_ttl' not in config:
+            raise Exception('True Turtle file should be given for DummyQuiver')
         self.true_g = init_graph()
-        self.true_g.parse(ground_truth_ttl, format='turtle')
-        super(GroundTruthInterface, self).__init__(
+        self.true_g.parse(config['ground_truth_ttl'], format='turtle')
+        super(DummyQuiver, self).__init__(
             target_building=target_building,
             target_srcids=target_srcids,
             ui=ui,
@@ -31,7 +32,7 @@ class DummyQuiver(Inferencer):
         return [row['occ'] for row in res]
 
 
-    def predict(self):
+    def predict(self, target_srcids=[]):
         pred_g = init_graph()
         occs = self.get_occs()
         for occ in occs:
@@ -118,7 +119,6 @@ class DummyPritoni(Inferencer):
             for vav in pred_vavs:
                 insert_triple(pred_g, (ahu, BF['feeds'], vav))
 
-        pred_g.serialize('test.ttl', format='turtle')
         return pred_g
 
 

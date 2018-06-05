@@ -66,6 +66,7 @@ class Inferencer(object):
         self.__name__ = framework_name + '-' + str(self.exp_id)
         self.result_filename = './result/{0}_history.json'\
             .format(self.__name__)
+        self.pred_g = init_graph(empty=True)
 
     def evaluate_points_dep(self, pred):
         curr_log = {
@@ -133,7 +134,7 @@ class Inferencer(object):
         pass
 
     # ESSENTIAL
-    def update_model(self, srcids):
+    def update_model(self, new_srcids):
         """Update model with given newly added srcids.
 
         This update the model based on the newly added srcids.
@@ -150,7 +151,7 @@ class Inferencer(object):
             The model will be updated, which can be used for predictions.
         """
         #self.training_srcids = self.training_srcids.union(set(srcids))
-        for srcid in srcids:
+        for srcid in new_srcids:
             if srcid in self.training_srcids:
                 print('WARNING: {0} already exists in training set, not adding'
                       .format(srcid))
@@ -160,7 +161,7 @@ class Inferencer(object):
             raise EmptyTrainingSamples()
 
         # Get examples from the user if labels do not exist
-        for srcid in srcids:
+        for srcid in new_srcids:
             labeled = LabeledMetadata.objects(srcid=srcid)
             if not labeled:
                 self.ask_example(srcid)
@@ -209,8 +210,9 @@ class Inferencer(object):
         self._validate_target_srcids(target_srcids)
 
     # ESSENTIAL
-    def update_prior(self, pred_g):
+    def update_prior(self, pred_g, pred_confidences={}):
         self.prior_g = pred_g
+        self.prior_confidences = pred_confidences
 
     # ESSENTIAL
     def predict(self, target_srcids=None):
@@ -264,19 +266,7 @@ class Inferencer(object):
     def _get_empty_graph(self):
         return deepcopy(self.template_g)
 
-    def update_prior(self, prior_g, prior_confidences={}):
-        self.prior_g = prior_g
-        self.prior_confidences = prior_confidences
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def filter_prior(self, min_prob):
+        for triple, prob in self.prior_confidences.items():
+            if prob < min_prob:
+                self.prior_g.remove(triple)

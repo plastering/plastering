@@ -6,6 +6,7 @@ import random
 import re
 from copy import deepcopy
 import numpy as np
+from functools import reduce
 
 import scipy
 from scipy.cluster.vq import *
@@ -301,7 +302,7 @@ class ZodiacInterface(Inferencer):
 
         #self.training_bow = self.get_sub_bow(self.available_srcids)
         #self.model.fit(self.training_bow, self.training_labels)
-        #self.select_examples()
+        #self.select_informative_samples()
         """
         gray_cnt = 0
         th_update_flag = True
@@ -338,13 +339,43 @@ class ZodiacInterface(Inferencer):
         #self.model.fit(self.training_bow, self.training_labels)
         self.learn_model()
 
-    def select_examples(self, num_examples=1):
-        th_update_flag = True
+    def apply_prior(self):
+        if not self.prior_g:
+            return None
+
+        # If points in a vav are identified same,
+        # remove it from identified list.
+        vavs = get_vavs(self.prior_g)
+        for vav in vavs:
+            points = get_vav_points(self.prior_g, vav)
+            point_types = defaultdict(list)
+            for point in points:
+                point_types[get_point_type[point]].append(point)
+            for point_type, points in point_types.items():
+                if len(points) > 2:
+                    pdb.set_trace()
+
+
+
+    def select_informative_samples(self, sample_num=1):
         new_srcids = []
-        while th_update_flag and \
+        tot_srcids = reduce(adder, self.cluster_map.values())
+        base_sample_bow = self.get_sub_bow(tot_srcids)
+        base_confidence = self.model.predict_proba(base_sample_bow)
+        base_pred_labels = self.model.predict(base_sample_bow)
+        #self.apply_prior(self, pred_labels)
+
+        #th_update_flag and \
+        test_flag = 0
+        looping_flag = False
+        while\
                 len(self.available_srcids) != len(self.total_srcids) and \
-                len(new_srcids) < num_examples:
+                len(new_srcids) < sample_num:
             self.learn_model()
+            th_update_flag = True
+            prev_available_srcids = deepcopy(self.available_srcids)
+            print('curr availble srcids: {0}'
+                  .format(len(prev_available_srcids)))
             for cid, cluster_srcids in self.cluster_map.items():
                 if cid in self.trained_cids:
                     continue
@@ -358,8 +389,13 @@ class ZodiacInterface(Inferencer):
                         max_confidence < self.th_max: # Gray zone
                     pass
                 elif max_confidence >= self.th_max:
+                    if looping_flag:
+                        pdb.set_trace()
                     th_update_flag = False
+                    test_flag = cluster_srcids
                     self.trained_cids.append(cid)
+                    if cluster_srcids[0] in prev_available_srcids:
+                        pdb.set_trace()
                     self.available_srcids += cluster_srcids
                     self.training_labels += pred_labels.tolist()
                     # Check true label for debugging
@@ -373,12 +409,30 @@ class ZodiacInterface(Inferencer):
                                 pdb.set_trace()
                     break
                 elif max_confidence < self.th_min:
+                    if looping_flag:
+                        pdb.set_trace()
+                    test_flag = 2
                     new_srcids.append(random.choice(cluster_srcids))
                     th_update_flag = False
-                    if len(new_srcids) ==  num_examples:
+                    if len(new_srcids) ==  sample_num:
                         break
             if th_update_flag:
+                print('th updated')
+                #if not (len(self.available_srcids) > len(temp_available_srcids)\
+                #        or len(new_srcids) > 0):
+                #    pdb.set_trace()
                 self.update_thresholds()
+            else:
+                print('th not updated because ')
+                if len(new_srcids) > 0:
+                    print('new srcids are found: {0}'.format(len(new_srcids)))
+                elif len(self.available_srcids) > len(prev_available_srcids):
+                    print('increased srcids: {0}'.format(
+                        len(self.available_srcids) - len(prev_available_srcids)))
+                else:
+                    print('test flag: {0}'.format(test_flag))
+                    looping_flag = True
+
             print('Current threshold pointer: {0}/{1}'
                   .format(self.th_ptr, len(self.thresholds)))
         return new_srcids
@@ -405,7 +459,7 @@ class ZodiacInterface(Inferencer):
             print('--------------------------')
             print('{0}th iteration'.format(cnt))
             self.learn_model()
-            new_srcids = self.select_examples(1)
+            new_srcids = self.select_informative_samples(1)
             self.update_model(new_srcids)
             gray_num = self.get_num_sensors_in_gray()
             self.evaluate(self.target_srcids)
