@@ -3192,7 +3192,7 @@ SDH.S4-16:CTL STPT:PRIORITY
 site:SDH:c,vav:S:c,vav-id:4-16:v,room temp setpoint:CTL STPT:c,priority point:PRIORITY:c
 SDH.CHW1.CHP3_CT
 site:SDH:c,chilled water system:CHW:c,chilled water system-id:1:v,chilled water pump:CHP:c,chilled water pump-id:3:v,current reading:CT:c
-SDH.S3-01:CTL FLOW MAX
+SDH.S3-01:CTL FLOW MAX:PRIORITY
 site:SDH:c,vav:S:c,vav-id:3-01:v,max air flow sensor:CTL FLOW MAX:c
 SDH.S6-03:CTL STPT
 site:SDH:c,vav:S:c,vav-id:6-03:v,room temp setpoint:CTL STPT:c
