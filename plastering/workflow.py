@@ -97,8 +97,9 @@ class Workflow(object):
             'sample_num': sample_num
         }
         res_g = self._traverse_wrapper(self.f_head,
-                                       'select_informative_samples',
-                                       params)
+                                       ['select_informative_samples'],
+                                       [params])
+        pdb.set_trace()
         #TODO: Post processing the colleted result
 
     def predict_proba(self, target_srcids=None):
@@ -131,6 +132,8 @@ class Workflow(object):
         - params (list(dict)): list of param dicts for the functions above.
 
         """
+        assert isinstance(func_names, list)
+        assert isinstance(params, list)
         res_dict = {}
         for func_name, param, prev_attr in zip(func_names, params, prev_attrs):
             for attr in prev_attr:
@@ -138,12 +141,16 @@ class Workflow(object):
                     param[attr] = getattr(node.prev.f, attr)
                 else:
                     param[attr] = None
-            func = getattr(node.f, func_name)
+            try:
+                func = getattr(node.f, func_name)
+            except:
+                pdb.set_trace()
             try:
                 res_dict[(str(node), func_name)] = func(**param)
             except EmptyTrainingSamples as e:
                 print(e.msg)
-            except:
+            except Exception as e:
+                print(e)
                 pdb.set_trace()
 
         for next_node in node.nexts:
@@ -165,7 +172,7 @@ class Workflow(object):
         """
         params = [
             {
-                'srcids': srcids,
+                'new_srcids': srcids,
             },
             {
             },

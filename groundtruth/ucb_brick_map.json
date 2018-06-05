@@ -206,5 +206,9 @@
   "electric meter fcu": "system_power_meter",
   "electric meter light": "power_meter",
   "condensor pump": "condensor_pump",
-  "compressor": "compressor"
+  "compressor": "compressor",
+  "chilled water system": "chilled_water_system",
+  "chilled water pump": "chilled_water_pump",
+  "capacity": "capacity_sensor",
+  "chilled water temp": "chilled_water_temperature_sensor"
 }
