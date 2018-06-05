@@ -1,6 +1,7 @@
 import pdb
 import json
 from functools import reduce
+import re
 
 from ..metadata_interface import *
 from ..common import *
@@ -57,8 +58,9 @@ def load_ucb_building(building='soda',
     tagsets_parsing = {}
     for i, sentence in enumerate(rawlines[::2]):
         i *= 2
-        srcid = sentence
+        srcid = '_'.join(re.findall('[a-zA-Z0-9]+', sentence))
         words = []
+        sentences = []
         labels = []
         types = []
         tagsets = set()
@@ -78,6 +80,8 @@ def load_ucb_building(building='soda',
                 tagsets.add(tagset.lower())
         tagsets = list(tagsets)
         point_tagset = sel_point_tagset(tagsets)
+        if "chilled_water_temperature" in tagsets:
+            pdb.set_trace()
         tagsets_dict[srcid] = tagsets
         sentence_dict[srcid] = words
         word_tagsets = ['leftidentifier' if label[-3:] == '-id'
@@ -99,4 +103,5 @@ def load_ucb_building(building='soda',
         labeled_obj.tagsets = tagsets
         labeled_obj.save()
     with open('groundtruth/{0}_tagsets.json'.format(building), 'w') as fp:
-        json.dump(tagsets_dict, fp)
+        json.dump(tagsets_dict, fp, indent=2)
+    #with open('rawdata/metadata/{0}_sentence_dict_justseparate'.json
