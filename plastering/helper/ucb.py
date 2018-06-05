@@ -19,6 +19,7 @@ def extract_raw_ucb_labels():
 
         for i, sentence in enumerate(rawlines[::2]):
             i *= 2
+            print('{0}th line'.format(i))
             encoded = rawlines[i+1]
             splitted = encoded.split(',')
             for elem in splitted:
@@ -97,3 +98,5 @@ def load_ucb_building(building='soda',
         labeled_obj.tagsets_parsing
         labeled_obj.tagsets = tagsets
         labeled_obj.save()
+    with open('groundtruth/{0}_tagsets.json'.format(building), 'w') as fp:
+        json.dump(tagsets_dict, fp)

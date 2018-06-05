@@ -15,4 +15,3 @@ zodiac = ZodiacInterface(target_building=target_building,
 zodiac.learn_auto()
 pred = zodiac.predict()
 proba = zodiac.predict_proba()
-pdb.set_trace()
