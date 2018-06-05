@@ -144,7 +144,7 @@
   "cold water supply temp setpoint": "Chilled_Water_Supply_Temperature_Setpoint",
   "exhaust air damper": "Exhaust_Air_Damper",
   "hot water pump": "Hot_Water_Pump",
-  "exiting chilled water temp": "Chilled_Water_Temperature",
+  "exiting chilled water temp": "Chilled_Water_Temperature_Sensor",
   "comp": "none",
   "evaporation": "none",
   "return fan": "Return_Fan",
