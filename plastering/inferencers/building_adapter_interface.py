@@ -18,12 +18,13 @@ def get_name_features(names):
     for i in names:
 
         s = re.findall('(?i)[a-z]{2,}',i)
-        name.append(' '.join(s))
+        name.append(' '.join(s).lower())
 
     cv = CV(analyzer='char_wb', ngram_range=(3,4))
     fn = cv.fit_transform(name).toarray()
 
     return fn
+
 
 def get_data_features(building):
 
@@ -44,13 +45,12 @@ def get_data_features(building):
 def get_namefeatures_labels(building):
 
     srcids = [point['srcid'] for point in LabeledMetadata.objects(building=building)]
-    pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset for srcid in srcids]
+    pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset.lower() for srcid in srcids]
     pt_name = [RawMetadata.objects(srcid=srcid).first().metadata['VendorGivenName'] for srcid in srcids]
     fn = get_name_features(pt_name)
-    le = LE()
-    label = le.fit_transform(pt_type)
+    print ('%d point names loaded for %s'%(len(pt_name), building))
 
-    return fn, label
+    return fn, pt_type
 
 
 class BuildingAdapterInterface(Inferencer):
@@ -90,9 +90,32 @@ class BuildingAdapterInterface(Inferencer):
         train_fd = get_data_features('ucsd')
         test_fd = get_data_features('rice')
 
-        #labels
+        #labels, name features for tgt_bldg
         test_fn, test_label = get_namefeatures_labels('uva_cse')
         _, train_label = get_namefeatures_labels('ap_m')
+
+        #find the class intersection
+        intersect = set(test_label) & set(train_label)
+        print (intersect)
+
+        #preserve only the intersected, id used for indexing data feature matrices
+        if intersect:
+            train_filtered = [[i,j] for i,j in enumerate(train_label) if j in intersect]
+            train_id, train_label = [list(x) for x in zip(*train_filtered)]
+            test_filtered = [[i,j] for i,j in enumerate(test_label) if j in intersect]
+            test_id, test_label = [list(x) for x in zip(*test_filtered)]
+        else:
+            raise ValueError('no common labels!')
+
+        train_fd = train_fd[train_id, :]
+        test_fd = test_fd[test_id, :]
+        test_fn = test_fn[test_id, :]
+
+        le = LE()
+        le.fit(intersect)
+        train_label = le.transform(train_label)
+        test_label = le.transform(test_label)
+
 
         self.learner = transfer_learning(
             train_fd,
