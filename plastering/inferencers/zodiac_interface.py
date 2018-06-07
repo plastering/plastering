@@ -160,7 +160,3 @@ class ZodiacInterface(Inferencer):
                 pdb.set_trace()
             conf_dict[triple] = max(proba)
         return conf_dict
-
-    #def update_prior(self, pred_g):
-    #    super(ZodiacInterface, self).update_prior(pred_g)
-
