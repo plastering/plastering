@@ -21,3 +21,6 @@ def sel_point_tagset(tagsets):
             return tagset
     return None
 
+
+def adder(x, y):
+    return x + y

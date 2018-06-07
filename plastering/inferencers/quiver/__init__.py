@@ -6,15 +6,16 @@ from uuid import uuid4 as gen_uuid
 class DummyQuiver(Inferencer):
 
     def __init__(self,
-                 ground_truth_ttl,
                  target_building,
                  target_srcids,
                  source_buildings=[],
                  ui=None,
                  config={}):
+        if 'ground_truth_ttl' not in config:
+            raise Exception('True Turtle file should be given for DummyQuiver')
         self.true_g = init_graph()
-        self.true_g.parse(ground_truth_ttl, format='turtle')
-        super(GroundTruthInterface, self).__init__(
+        self.true_g.parse(config['ground_truth_ttl'], format='turtle')
+        super(DummyQuiver, self).__init__(
             target_building=target_building,
             target_srcids=target_srcids,
             ui=ui,
@@ -31,10 +32,11 @@ class DummyQuiver(Inferencer):
         return [row['occ'] for row in res]
 
 
-    def predict(self):
+    def predict(self, target_srcids=[]):
         pred_g = init_graph()
         occs = self.get_occs()
         for occ in occs:
+            pdb.set_trace()
             qstr = """
             select ?point where {{
               {0} bf:isPointOf ?something .
@@ -50,6 +52,7 @@ class DummyQuiver(Inferencer):
                 insert_triple(pred_g, (random_obj, RDF['type'], BRICK['VAV']))
 
         pred_g.serialize('test.ttl', format='turtle')
+        self.pred_g = pred_g
         return pred_g
 
 class DummyPritoni(Inferencer):
@@ -94,15 +97,16 @@ class DummyPritoni(Inferencer):
         ?znt a brick:Zone_Temperature_Sensor.
         }
         """
-        res = query_sparql(self.prior_g, qstr)
+        res = query_sparql(self.prior_g + self.schema_g, qstr)
         return [row['vav'] for row in res]
 
     def predict(self):
-        pred_g = init_graph()
+        pred_g = init_graph(True)
         ahu_datsps = self.get_ahu_datsp()
         found_vavs = self.get_all_vavs_with_znt()
 
         for row in ahu_datsps:
+            pdb.set_trace()
             ahu = row['ahu']
             datsp = row['datsp']
             qstr = """
@@ -118,15 +122,5 @@ class DummyPritoni(Inferencer):
             for vav in pred_vavs:
                 insert_triple(pred_g, (ahu, BF['feeds'], vav))
 
-        pred_g.serialize('test.ttl', format='turtle')
         return pred_g
-
-
-
-
-
-
-
-
-
 
