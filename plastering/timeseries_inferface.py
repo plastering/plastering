@@ -71,6 +71,8 @@ def read_from_db(target_building):
     data is in pandas.DataFrame format with two columns ['date', 'data']
     '''
 
+    print ('loading timeseries data from db for %s...'%target_building)
+
     conn = Arctic('localhost')
     if target_building not in conn.list_libraries():
         raise ValueError('%s not found in the DB!'%target_building)
