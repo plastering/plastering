@@ -15,12 +15,12 @@ def get_SS(X, B=2):
     N, D = X.shape
 
     SS = pool.map(getS_wrapper, [(X[i,:],B) for i in range(N)])
-    pool.close() 
+    pool.close()
     pool.join()
-    
+
     return SS
 
-# initial S (a set of buckets) with first 2*B points 
+# initial S (a set of buckets) with first 2*B points
 # with tuple (beg_i, end_i, max_val, min_val, max_val_i, min_val_i)
 # S = [(i,i+1,max(ts[i],ts[i+1]),min(ts[i],ts[i+1])) for i in range(0,2*B,2)]
 def getS_wrapper(args):
@@ -104,7 +104,7 @@ def mode(ndarray,axis=0):
     counts = bins[tuple(index)].reshape(location.shape)
     index[axis] = indices[tuple(index)]
     modals = srt[tuple(index)].reshape(location.shape)
-    
+
     return (modals, counts)
 
 
@@ -123,12 +123,12 @@ def get_statF_on_window(X):
     F[:, 4] = np.var(X, 1)
     F[:, 5] = sp.stats.skew(X, 1)
     F[:, 6] = sp.stats.kurtosis(X, 1)
-    
+
     # calculate slope
     xx = np.linspace(1, D, D)
     tempx = xx - np.mean(xx)
     F[:, 7] =  tempx.dot( (X-np.mean(X)).T ) / ( tempx.dot(tempx.T) )
-    
+
     # quantiles
     F[:, 8:len(p)+8] = np.vstack([np.percentile(X, i, axis=1) for i in p]).T
     F[:, 10] = F[:, 9] - F[:, 8]
@@ -224,7 +224,7 @@ class data_feature_extractor():
 
         PLSF = np.array([get_piecewise_linear_symbol_feature(get_ts_slopes(S),segs) for S in SS])
         PLSF = PLSF.astype(float)
-        
+
         return PLSF
 
 
@@ -246,7 +246,7 @@ class data_feature_extractor():
         F[:, 4] = np.std(X, 1)
         F[:, 5] = sp.stats.skew(X, 1)
         F[:, 6] = sp.stats.kurtosis(X, 1)
-        
+
         # digitize the data for the calculation of entropy if it only contains less than 100 discreate values
         XX = np.zeros(X.shape)
         bins = 100
@@ -254,11 +254,11 @@ class data_feature_extractor():
             if len(np.unique(X[i,:])) < bins:
                 XX[i,:] = X[i,:]
             else:
-                XX[i,:] = np.digitize(X[i,:], np.linspace(min(X[i,:]), max(X[i,:]), num=bins))        
+                XX[i,:] = np.digitize(X[i,:], np.linspace(min(X[i,:]), max(X[i,:]), num=bins))
         F[:, 7] = sp.stats.entropy(XX.T)
-        
+
         F[:, 8:len(p)+8] = np.vstack([np.percentile(X,i,axis=1) for i in p]).T
-        
+
         F[:, 14] = mode(X,1)[0]
 
         names = ['min','median','mean','max','std','skewness','kurtosis',
@@ -292,7 +292,7 @@ class data_feature_extractor():
         N, D = X.shape
         dim = 24
         F = np.zeros([N, dim])
-        
+
         # 1)scale based: mean/max/min/quartiles/range;
         F[:, 0] = np.mean(X, 1)
         F[:, 1] = np.max(X, 1)
@@ -300,15 +300,15 @@ class data_feature_extractor():
         F[:, 3] = np.percentile(X, 25, axis=1)
         F[:, 4] = np.percentile(X, 75, axis=1)
         F[:, 5] = F[:, 1] - F[:, 2]
-        
+
         # 2)pattern based: 3 Haar wavelets and 3 Fourier coefficients;
         F[:, 6:9] = haar_transform(X)[:, :3] # this does not seem to be right
         F[:, 9:12] = abs(np.fft.fft(X,axis=1)[:, 1:4]) / D # 0-th is the average
-        
+
         # 3)shape based: location and magnitude of top 2 components from piece-wise constant model, error variance;
         F[:, 12:18] = haar_transform(X)[:, 4:10]
 
-        # 4)texture based: first and second var of difference between consecutive samples, max var, 
+        # 4)texture based: first and second var of difference between consecutive samples, max var,
         # number of up and down changes, edge entropy measure
         F[:, 18] = np.var(np.diff(X,n=1,axis=1), 1) # first difference
         F[:, 19] = np.var(np.diff(X,n=2,axis=1), 1) # second difference
@@ -328,10 +328,10 @@ class data_feature_extractor():
             if len(np.unique(X[i,:])) < bins:
                 XX[i,:] = X[i,:]
             else:
-                XX[i,:] = np.digitize(X[i,:], np.linspace(min(X[i,:]),max(X[i,:]),num=bins))        
+                XX[i,:] = np.digitize(X[i,:], np.linspace(min(X[i,:]),max(X[i,:]),num=bins))
         F[:, 23] = sp.stats.entropy(XX.T)
-        
-        
+
+
         # check illegal features nan/inf
         F[np.isnan(F)] = 0
         F[np.isinf(F)] = 0
@@ -350,13 +350,13 @@ class data_feature_extractor():
         F[:, 0] = np.mean(X, 1)
         F[:, 1] = np.var(X, 1)
         F[:, 2] = np.mean(X, 1)
-        
+
         temp_fft = abs(np.fft.fft(X,axis=1)) / D
         F[:, 3:5] = np.vstack([temp_fft[i,:].argsort()[-3:-1][::-1] for i in range(N)])
 
         F[:, 5] = sp.stats.skew(X, 1)
         F[:, 6] = sp.stats.kurtosis(X, 1)
-        
+
         # check illegal features nan/inf
         F[np.isnan(F)] = 0
         F[np.isinf(F)] = 0
@@ -365,25 +365,4 @@ class data_feature_extractor():
 
 
 if __name__ == '__main__':
-    #main(sys.argv[1:])
-    #insert_into_db("rice_pt_sdh")
-    #print get_from_db("rice_pt_soda")
-    #insert_timeseries_data("AHU1 Final Filter DP.csv")
-    timeseries_helper = timeseries_helper()
-
-    raw_pt = [i.strip().split('\\')[-1].split(',') for i in open('../../data/Rice/pressure/AHU1 Final Filter DP.csv').readlines()]
-    X= np.array(raw_pt)
-    X.astype(np.float)
-    X=np.asfarray(X,float)
-    print X
-    #print timeseries_helper.getF_2016_Koh(X)
-
-    mdb_helper = mongodb_helper()
-    #print mdb_helper.get_points_data("rice_pt_soda")
-    #mdb_helper.recursive_file_read("pressure")
-    print mdb_helper.get_timeseries_data("2 Mag CHW Return Temp")
-    X= np.array(raw_pt)
-    X.astype(np.float)
-    X=np.asfarray(X,float)
-    print X
-    print timeseries_helper.getF_2016_Koh(X)
+    pass
