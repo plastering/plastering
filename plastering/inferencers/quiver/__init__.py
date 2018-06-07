@@ -36,6 +36,7 @@ class DummyQuiver(Inferencer):
         pred_g = init_graph()
         occs = self.get_occs()
         for occ in occs:
+            pdb.set_trace()
             qstr = """
             select ?point where {{
               {0} bf:isPointOf ?something .
@@ -51,6 +52,7 @@ class DummyQuiver(Inferencer):
                 insert_triple(pred_g, (random_obj, RDF['type'], BRICK['VAV']))
 
         pred_g.serialize('test.ttl', format='turtle')
+        self.pred_g = pred_g
         return pred_g
 
 class DummyPritoni(Inferencer):
@@ -95,15 +97,16 @@ class DummyPritoni(Inferencer):
         ?znt a brick:Zone_Temperature_Sensor.
         }
         """
-        res = query_sparql(self.prior_g, qstr)
+        res = query_sparql(self.prior_g + self.schema_g, qstr)
         return [row['vav'] for row in res]
 
     def predict(self):
-        pred_g = init_graph()
+        pred_g = init_graph(True)
         ahu_datsps = self.get_ahu_datsp()
         found_vavs = self.get_all_vavs_with_znt()
 
         for row in ahu_datsps:
+            pdb.set_trace()
             ahu = row['ahu']
             datsp = row['datsp']
             qstr = """
@@ -120,13 +123,4 @@ class DummyPritoni(Inferencer):
                 insert_triple(pred_g, (ahu, BF['feeds'], vav))
 
         return pred_g
-
-
-
-
-
-
-
-
-
 

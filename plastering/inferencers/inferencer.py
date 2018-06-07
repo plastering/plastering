@@ -56,7 +56,9 @@ class Inferencer(object):
             'point': {}
             }
         self.template_g = init_graph(empty=True)
-        self.prior_g = init_graph()
+        self.prior_g = init_graph(empty=True)
+        self.prior_confidences = {}
+        self.schema_g = init_graph()
         self.pred_probs = {}
         self.target_building = target_building
         self.target_srcids = target_srcids
@@ -67,6 +69,7 @@ class Inferencer(object):
         self.result_filename = './result/{0}_history.json'\
             .format(self.__name__)
         self.pred_g = init_graph(empty=True)
+        self.pred_confidences = {}
 
     def evaluate_points_dep(self, pred):
         curr_log = {
@@ -197,8 +200,10 @@ class Inferencer(object):
                 raise Exception('The raw data of {0} not given yet'
                                     .format(srcid))
 
-    def _add_pred_point_result(self, pred_g, srcid, pred_point):
-        pred_g.add(self._make_instance_tuple(srcid, pred_point))
+    def _add_pred_point_result(self, pred_g, srcid, pred_point, pred_prob):
+        triple = self._make_instance_tuple(srcid, pred_point)
+        pred_g.add(triple)
+        self.pred_confidences[triple] = pred_prob
         return pred_g
 
     def _make_instance_tuple(self, srcid, pred_point):

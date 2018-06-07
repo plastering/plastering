@@ -32,6 +32,7 @@ preloaded_g.parse('brick/Brick_{0}.ttl'
 preloaded_g.parse('brick/BrickFrame_{0}.ttl'
             .format(BRICK_VERSION.replace('.', '_')), format='turtle')
 empty_g = Graph()
+schema_g = deepcopy(preloaded_g)
 
 def adder(x, y):
     return x + y
@@ -66,7 +67,7 @@ def create_uri(name, ns=BASE):
 
 def query_sparql(g, qstr):
     qstr = sparql_prefix + qstr
-    res = g.query(qstr).bindings
+    res = (g + schema_g).query(qstr).bindings
     return res
 
 def get_vavs(g):

@@ -26,7 +26,7 @@ building_anon_map = {
 }
 colors = ['firebrick', 'deepskyblue']
 inferencer_names = ['zodiac']
-EXP_NUM = 4
+EXP_NUM = 2
 LINESTYLES = ['--', '-.', '-']
 FIG_DIR = './figs'
 
@@ -129,4 +129,4 @@ def plot_pointonly_transfer():
 
 if __name__ == '__main__':
     plot_pointonly_notransfer()
-    plot_pointonly_transfer()
+    #plot_pointonly_transfer()
