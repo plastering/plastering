@@ -1,7 +1,10 @@
 import pdb
 import json
+from functools import reduce
+import re
 
 from ..metadata_interface import *
+from ..common import *
 
 with open('./groundtruth/ucb_brick_map.json', 'r') as fp:
     brick_map = json.load(fp)
@@ -17,6 +20,7 @@ def extract_raw_ucb_labels():
 
         for i, sentence in enumerate(rawlines[::2]):
             i *= 2
+            print('{0}th line'.format(i))
             encoded = rawlines[i+1]
             splitted = encoded.split(',')
             for elem in splitted:
@@ -33,20 +37,30 @@ def extract_raw_ucb_labels():
     with open('groundtruth/ucb_label_sentence_map.json', 'w') as fp:
         json.dump(example_dict, fp, indent=2)
 
+def make_bio_word_label(word, label):
+    if not word:
+        print('WARNING: {0} is mapped to an empty string'.format(label))
+        return []
+    pairs = [[word[0], 'B_' + label]]
+    pairs += [[c, 'I_' + label] for c in word[1:]]
+    return pairs
+
 def load_ucb_building(building='soda',
-                      filename='./groundtruth/SDH-GROUND-TRUTH'):
+                      filename='./groundtruth/SODA-GROUND-TRUTH'):
     assert building in ['soda', 'sdh', 'ibm'], \
         'Srong building name: {0}'.format(building)
 
     with open(filename, 'r') as fp:
         rawlines = [line[:-1] for line in fp.readlines()]
-    word_label_dict = {}
+    word_tagsets_dict = {}
     sentence_dict = {}
     tagsets_dict = {}
+    tagsets_parsing = {}
     for i, sentence in enumerate(rawlines[::2]):
         i *= 2
-        srcid = sentence
+        srcid = '_'.join(re.findall('[a-zA-Z0-9]+', sentence))
         words = []
+        sentences = []
         labels = []
         types = []
         tagsets = set()
@@ -64,6 +78,30 @@ def load_ucb_building(building='soda',
                     pdb.set_trace()
                 tagset = brick_map[label]
                 tagsets.add(tagset.lower())
-        tagsets_dict[srcid] = list(tagsets)
+        tagsets = list(tagsets)
+        point_tagset = sel_point_tagset(tagsets)
+        if "chilled_water_temperature" in tagsets:
+            pdb.set_trace()
+        tagsets_dict[srcid] = tagsets
         sentence_dict[srcid] = words
-        word_label_dict[srcid] = labels
+        word_tagsets = ['leftidentifier' if label[-3:] == '-id'
+                                    else brick_map[label]
+                                    for label in labels]
+        word_tagsets_dict[srcid] = word_tagsets
+        tagsets_parsing = reduce(adder, [make_bio_word_label(word, word_tagset)
+                                         for word, word_tagset
+                                         in zip(words, word_tagsets)])
+        raw_obj = RawMetadata.objects(srcid=srcid)\
+            .upsert_one(srcid=srcid, building=building)
+        raw_obj.metadata['VendorGivenName'] = srcid
+        raw_obj.save()
+
+        labeled_obj = LabeledMetadata.objects(srcid=srcid)\
+            .upsert_one(srcid=srcid, building=building)
+        labeled_obj.point_tagset = point_tagset
+        labeled_obj.tagsets_parsing
+        labeled_obj.tagsets = tagsets
+        labeled_obj.save()
+    with open('groundtruth/{0}_tagsets.json'.format(building), 'w') as fp:
+        json.dump(tagsets_dict, fp, indent=2)
+    #with open('rawdata/metadata/{0}_sentence_dict_justseparate'.json
