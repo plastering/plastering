@@ -37,9 +37,6 @@ schema_g = deepcopy(preloaded_g)
 def adder(x, y):
     return x + y
 
-def adder(x, y):
-    return x + y
-
 
 def init_graph(empty=False):
     if empty:
