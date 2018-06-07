@@ -1,19 +1,16 @@
 '''
-buildsys15's method:
+buildsys15 - Building Adapter:
 local weighted transfer learning btw buildings
 '''
 from sklearn.feature_extraction.text import CountVectorizer as CV
-from sklearn.cross_validation import StratifiedKFold
-from sklearn.cross_validation import KFold
 from sklearn.ensemble import RandomForestClassifier as RFC
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression as LR
 from sklearn.cluster import KMeans
-from sklearn.neighbors import NearestNeighbors as NN
 from sklearn.metrics import accuracy_score as ACC
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score as FS
+from sklearn.metrics import f1_score as F1
 from sklearn.metrics import confusion_matrix as CM
 from sklearn.preprocessing import normalize
 from collections import defaultdict as DD
@@ -84,7 +81,7 @@ def output_labels():
 
 class transfer_learning:
 
-    def __init__(self, train_fd, test_fd, train_label, test_label, test_fn, switch=False):
+    def __init__(self, train_fd, test_fd, train_label, test_label, test_fn, threshold=0.5, switch=False):
 
         self.train_fd = train_fd
         self.train_label = train_label
@@ -96,6 +93,7 @@ class transfer_learning:
 
         self.bl = []
 
+        self.agreement_threshold = threshold
         if switch == True:
 
             fd_tmp = self.train_fd
@@ -128,8 +126,8 @@ class transfer_learning:
         rf = RFC(n_estimators=100, criterion='entropy')
         rf.fit(self.train_fd, self.train_label)
         pred = rf.predict(self.test_fd)
-        print 'data feature transfer testing acc:', ACC(pred, self.test_label)
-        plot_confusion_matrix(self.test_label, pred)
+        print ( 'data feature transfer testing acc:', ACC(pred, self.test_label) )
+        #plot_confusion_matrix(self.test_label, pred)
 
 
         '''
@@ -145,7 +143,7 @@ class transfer_learning:
         class_ = np.unique(self.train_label)
 
         for b in self.bl:
-            print b.score(self.test_fd, label)
+            print ( b.score(self.test_fd, label) )
 
         n_class = 32/2
         c = KMeans(init='k-means++', n_clusters=n_class, n_init=10)
@@ -176,8 +174,9 @@ class transfer_learning:
         #use base learners' predicitons
         acc_ = []
         cov_ = []
-        for delta in np.linspace(0.1, 0.5, 5):
-            print 'running TL with agreement threshold =', delta
+        #for delta in np.linspace(0.1, 0.5, 5):
+        for delta in np.linspace(self.agreement_threshold, self.agreement_threshold, 1):
+            print ( 'running TL with agreement threshold =', delta )
 
             l_id = []
             output = DD()
@@ -220,8 +219,8 @@ class transfer_learning:
             acc_.append( ACC(preds[preds!=999], label[preds!=999]) )
             cov_.append( 1.0 * len(preds[preds!=999])/len(label) )
 
-        print 'acc =', acc_, ';'
-        print 'cov =', cov_, ';'
+        print ( 'acc =', acc_, ';' )
+        print ( 'cov =', cov_, ';' )
 
         return preds[preds!=999], l_id
 
@@ -256,7 +255,7 @@ if __name__ == "__main__":
     ptn = [i.strip().split('\\')[-1][:-5] for i in open('../../data/rice_pt_sdh').readlines()]
     test_fn = get_name_features(ptn)
 
-    tl = transfer_learning(train_fd, test_fd, train_label, test_label, test_fn, True)
+    tl = transfer_learning(train_fd, test_fd, train_label, test_label, test_fn, switch=True)
     tl.run_auto()
     #preds, labeled = tl.predict()
 

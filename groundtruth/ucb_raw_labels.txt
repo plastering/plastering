@@ -1,209 +1,209 @@
 {
-  "flow meter": 
-  "static pressure setpoint": 
+  "fcu air temperature setpoint": 
   "leaving steam temp": 
-  "window switch": 
-  "outside air damper": 
-  "light load phase maximum powerunit electric meter": 
-  "supply electric meter": 
-  "condensor return water temp": 
-  "return air damper": 
-  "failure flag": 
-  "socket load frequency electric meter": 
-  "power sensor": 
-  "pid loop I variable": 
-  "air volume": 
-  "nighttime setpoint": 
-  "fan control unit": 
-  "socket load phase average powerunit electric meter": 
-  "chiller capacity": 
-  "power factor": 
-  "pid loop gain": 
-  "cold water supply temp": 
-  "room": 
-  "fcu phase average powerunit electric meter": 
-  "static pressure sensor": 
-  "socket load line voltage electric meter": 
-  "flow rate sensor": 
-  "socket load wireless electric meter": 
-  "return air temp": 
+  "smoke alarm": 
+  "vav": 
+  "hps": 
+  "air volume sensor": 
   "light load electric meter": 
   "min air flow sensor": 
-  "socket load phase current electric meter": 
-  "compressor": 
-  "max discharge air pressure sensor": 
-  "exiting chilled water temp": 
-  "air flow setpoint": 
-  "cac": 
-  "condensed water flow": 
-  "ahu": 
-  "supply water setpoint": 
-  "fcu fault": 
-  "leaving cold water temp": 
-  "light load line voltage electric meter": 
-  "chiller": 
-  "failure sensor": 
-  "override": 
-  "current reading": 
-  "filtered static pressure sensor": 
-  "outside air temp": 
-  "fcu power factor electric meter": 
-  "cold water return temp": 
-  "comp": 
-  "mixed air damper": 
-  "fcu fan speed sensor": 
-  "vav": 
-  "cold water loop": 
+  "status sensor": 
   "avg discharge air pressure sensor": 
-  "return water temp": 
-  "building wide sensor": 
-  "heating valve": 
-  "entering cold water temp": 
-  "reheat coil": 
-  "fcu phase maximum powerunit electric meter": 
-  "return fan air volume": 
-  "fcu frequency electric meter": 
-  "vav reheat discharge air pressure sensor": 
-  "refrigation": 
-  "evaporation": 
-  "energy meter": 
-  "heating coil": 
+  "fcu return air temperature sensor": 
+  "night start time sensor": 
+  "mixed air temp": 
   "pump": 
-  "max outside air temp": 
-  "damper": 
+  "cold water supply temp setpoint": 
+  "pid loop gain": 
   "hot water loop": 
-  "input reference point": 
-  "hot water valve position": 
-  "pid loop variable": 
-  "cooling coil valve": 
-  "chilled water flow sensor": 
-  "day start time sensor": 
-  "max load sensor": 
-  "zone illumination sensor": 
-  "prefilter alarm variable": 
-  "start stop sensor": 
+  "flow meter": 
+  "electric meter fcu": 
+  "return air damper": 
+  "chiller": 
   "chilled water supply temp setpoint": 
+  "west filtered static pressure sensor": 
+  "condensor water supply water temp": 
+  "low flow sensor": 
   "light load frequency electric meter": 
-  "fcu air temperature setpoint": 
-  "reactive power": 
-  "light load phase current electric meter": 
-  "curtailment override variable": 
-  "socket load blind electric meter": 
-  "lighting percentage cmd": 
+  "return water temp": 
+  "low return air temp alarm": 
+  "room temp setpoint": 
   "discharge air pressure sensor": 
-  "light load phase average powerunit electric meter": 
-  "east filtered static pressure sensor": 
-  "system start/stop sensor": 
+  "chilled/condensor water loop": 
+  "timer variable": 
+  "temp sensor": 
+  "zone illumination sensor": 
+  "socket load phase average powerunit electric meter": 
+  "chilled water return temp": 
+  "lead/lag sensor": 
+  "supply fan": 
+  "chilled water flow sensor": 
+  "return air temp": 
+  "temp setpoint off": 
+  "differential pressure reading": 
+  "filtered flow sensor": 
+  "damper position": 
+  "hot water supply temp setpoint": 
+  "window switch": 
+  "floor": 
+  "reset variable": 
+  "max outside air temp": 
+  "air flow setpoint": 
   "room temp": 
+  "cold water supply return temp": 
+  "compressor": 
+  "fcu air temperature setpoint fcu air temperature cooling setpoint": 
+  "condensed water flow": 
+  "alarm variable": 
+  "entering static pressure setpoint": 
+  "return fan air volume": 
+  "socket load line voltage electric meter": 
+  "valve position sensor": 
+  "prefilter alarm variable": 
+  "min discharge air pressure sensor": 
+  "exhaust fan": 
+  "lighting fault": 
+  "leaving status sensor": 
+  "cac": 
+  "fan speed": 
+  "supply fan speed": 
+  "supply air temp": 
+  "fcu electric meter": 
+  "cooling capacity": 
+  "max air flow sensor": 
+  "fcu heating valve percentage cmd": 
+  "fcu frequency electric meter": 
+  "room": 
+  "system start/stop sensor": 
+  "fcu supply air temperature sensor": 
+  "east static pressure sensor": 
+  "fault sensor": 
+  "reheat valve position": 
+  "flow rate sensor": 
+  "static pressure alarm": 
+  "socket load wireless electric meter": 
+  "fan speed reset": 
+  "power factor": 
+  "light load line voltage electric meter": 
+  "leaving cold water temp": 
+  "fcu phase current electric meter": 
+  "reheat coil": 
   "leaving chilled water temp": 
+  "damper": 
+  "site": 
+  "light load phase maximum powerunit electric meter": 
+  "electric meter light": 
+  "supply air setpoint flag": 
+  "socket load phase maximum powerunit electric meter": 
+  "filtered air volume": 
+  "current reading": 
+  "cooling coil valve": 
+  "filtered static pressure sensor": 
+  "electric meter srvc": 
+  "internal building variable": 
+  "outside air damper": 
+  "building wide sensor": 
+  "presence sensor": 
+  "min static duct pressure": 
+  "valve position": 
+  "differential pressure status sensor": 
+  "power sensor": 
+  "light load power factor electric meter": 
+  "outside relative humidity": 
+  "lighting percentage cmd": 
+  "chiller capacity": 
+  "light load phase instantations powerunit electric meter": 
+  "static pressure sensor": 
+  "fcu phase average powerunit electric meter": 
+  "reference temp": 
+  "fcu line voltage electric meter": 
+  "light load phase current electric meter": 
+  "fcu phase instantations powerunit electric meter": 
+  "socket load electric meter": 
+  "occupany sensor": 
+  "start stop sensor": 
+  "exiting chilled water temp": 
+  "air conditioner": 
+  "mixed air damper": 
+  "curtailment override variable": 
+  "override": 
+  "socket load power factor electric meter": 
+  "refrigation": 
+  "hot water supply temp": 
+  "cold water loop": 
+  "vav reheat discharge air pressure sensor": 
+  "east filtered static pressure sensor": 
   "event sensor": 
+  "entering cold water temp": 
+  "supply electric meter": 
+  "failure flag": 
+  "light load phase average powerunit electric meter": 
+  "condensor return water temp": 
+  "pid variable": 
+  "cooling coil": 
+  "fcu phase maximum powerunit electric meter": 
+  "energy meter": 
+  "return air handler": 
+  "fcu power factor electric meter": 
+  "ahu": 
+  "power meter": 
+  "socket load phase current electric meter": 
+  "reactive power": 
+  "hot water return temp": 
+  "duct static pressure": 
+  "outside air temp": 
+  "supply water temp": 
+  "power demand": 
+  "fcu cooling valve percentage cmd": 
+  "fcu fan speed sensor": 
+  "bypass valve": 
+  "priority point": 
+  "socket load frequency electric meter": 
+  "comp": 
+  "steam on/off indicator": 
+  "evaporation": 
+  "cold water supply temp": 
+  "max discharge air pressure sensor": 
+  "hot water pump": 
+  "condensor pump": 
+  "air flow sensor": 
+  "differential pressure setpoint": 
+  "hpsteam sensor": 
+  "cooling tower": 
+  "exhaust air damper": 
+  "supply water setpoint": 
+  "supply air temp setpoint": 
+  "damper economize flag": 
+  "vfd": 
+  "daytime setpoint": 
+  "fan control unit": 
+  "return duct static pressure": 
+  "heating valve": 
+  "cold water return temp": 
+  "supply duct static pressure": 
+  "hot water valve position": 
   "valve command": 
   "condensor": 
-  "fcu cooling valve percentage cmd": 
-  "fcu phase instantations powerunit electric meter": 
-  "lead/lag sensor": 
-  "cooling capacity": 
-  "valve position": 
-  "damper position": 
-  "light load power factor electric meter": 
-  "max air flow sensor": 
-  "condensor pump": 
-  "light load phase instantations powerunit electric meter": 
-  "hpsteam sensor": 
-  "min discharge air pressure sensor": 
-  "low return air temp alarm": 
-  "valve position sensor": 
-  "socket load electric meter": 
-  "fcu phase current electric meter": 
-  "steam on/off indicator": 
-  "entering static pressure setpoint": 
-  "fcu supply air temperature sensor": 
-  "supply air temp setpoint": 
-  "west filtered static pressure sensor": 
-  "exhaust fan": 
-  "window": 
-  "fcu line voltage electric meter": 
-  "fcu air temperature setpoint fcu air temperature cooling setpoint": 
-  "supply fan": 
-  "reference temp": 
-  "electric meter light": 
-  "fault sensor": 
-  "mixed air temp": 
-  "internal building variable": 
-  "cooling tower": 
-  "occupany sensor": 
-  "power meter": 
-  "air flow sensor": 
-  "socket load power factor electric meter": 
-  "site": 
-  "chilled/condensor water loop": 
-  "socket load phase instantations powerunit electric meter": 
-  "heating/cooling indicator": 
-  "differential pressure reading": 
-  "outside relative humidity": 
-  "power demand": 
-  "smoke alarm": 
-  "air volume sensor": 
-  "fcu return air temperature sensor": 
-  "room temp setpoint": 
-  "temp sensor": 
-  "supply air setpoint flag": 
-  "lighting fault": 
-  "fcu electric meter": 
-  "damper economize flag": 
-  "fcu heating valve percentage cmd": 
-  "temp setpoint off": 
-  "electric meter fcu": 
-  "hps": 
-  "chilled water supply temp": 
-  "daytime setpoint": 
-  "filtered flow sensor": 
-  "fan speed": 
-  "cold water supply return temp": 
-  "floor": 
-  "pid variable": 
-  "condensor water supply water temp": 
-  "cooling coil": 
-  "electric meter srvc": 
-  "supply air temp": 
-  "low flow sensor": 
-  "east static pressure sensor": 
-  "hot water pump": 
-  "static pressure alarm": 
-  "reset variable": 
-  "duct static pressure": 
-  "return duct static pressure": 
-  "return air handler": 
-  "hot water supply temp": 
-  "supply water temp": 
-  "pid loop P variable": 
-  "timer variable": 
-  "bypass valve": 
-  "differential pressure setpoint": 
-  "min static duct pressure": 
-  "differential pressure status sensor": 
-  "condensor water flow variable": 
-  "alarm variable": 
+  "heating coil": 
   "occupancy sensor": 
-  "night start time sensor": 
-  "supply duct static pressure": 
-  "fan speed reset": 
-  "air conditioner": 
-  "reheat valve position": 
-  "cold water supply temp setpoint": 
-  "exhaust air damper": 
-  "presence sensor": 
-  "leaving status sensor": 
-  "status sensor": 
-  "chilled water return temp": 
+  "heating/cooling indicator": 
+  "window": 
+  "input reference point": 
+  "nighttime setpoint": 
+  "failure sensor": 
   "na electric meter": 
+  "condensor water flow variable": 
   "chilled water valve pressure": 
-  "hot water return temp": 
-  "filtered air volume": 
-  "socket load phase maximum powerunit electric meter": 
-  "priority point": 
-  "supply fan speed": 
-  "vfd": 
+  "fcu fault": 
+  "pid loop P variable": 
+  "day start time sensor": 
+  "air volume": 
+  "socket load phase instantations powerunit electric meter": 
+  "static pressure setpoint": 
+  "pid loop I variable": 
+  "socket load blind electric meter": 
+  "pid loop variable": 
+  "chilled water supply temp": 
   "return fan": 
-  "hot water supply temp setpoint": 
+  "max load sensor": 
 }
