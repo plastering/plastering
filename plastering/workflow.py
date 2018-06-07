@@ -92,6 +92,10 @@ class Workflow(object):
         curr_node.nexts = nexts
         return curr_node
 
+    def _merge_srcids(self, srcids_list, num):
+        # Dummy but reasonable solution for now.
+        return srcids_list[-1]
+
     def select_informative_samples(self, sample_num):
         params = {
             'sample_num': sample_num
@@ -99,8 +103,8 @@ class Workflow(object):
         res_g = self._traverse_wrapper(self.f_head,
                                        ['select_informative_samples'],
                                        [params])
-        pdb.set_trace()
-        #TODO: Post processing the colleted result
+        merged = self._merge_srcids(list(res_g.values()), sample_num)
+        return merged
 
     def predict_proba(self, target_srcids=None):
         params = {
@@ -109,7 +113,9 @@ class Workflow(object):
         res_g = self._traverse_wrapper(self.f_head, 'predict_proba', params)
         # TODO: Post processing res_g to merge different results
 
-    def predict(self, target_srcids):
+    def predict(self, target_srcids=None):
+        if not target_srcids:
+            target_srcids = self.target_srcids
         params = {
             'target_srcids': target_srcids
         }
@@ -141,17 +147,11 @@ class Workflow(object):
                     param[attr] = getattr(node.prev.f, attr)
                 else:
                     param[attr] = None
-            try:
-                func = getattr(node.f, func_name)
-            except:
-                pdb.set_trace()
+            func = getattr(node.f, func_name)
             try:
                 res_dict[(str(node), func_name)] = func(**param)
             except EmptyTrainingSamples as e:
                 print(e.msg)
-            except Exception as e:
-                print(e)
-                pdb.set_trace()
 
         for next_node in node.nexts:
             res_dict.update(self._traverse_wrapper(next_node, func_names,
@@ -171,17 +171,12 @@ class Workflow(object):
           - srcids (list(str)): list of srcids to add.
         """
         params = [
-            {
-                'new_srcids': srcids,
-            },
-            {
-            },
-            {
-                'target_srcids': self.target_srcids
-            }
+            {},
+            {'new_srcids': srcids},
+            {'target_srcids': self.target_srcids}
         ]
-        func_names = ['update_model', 'update_prior', 'predict']
-        prev_attrs = [[], ['pred_g'], []]
+        func_names = ['update_prior', 'update_model', 'predict']
+        prev_attrs = [['pred_g', 'pred_confidences'], [], []]
         self._traverse_wrapper(self.f_head, func_names, params, prev_attrs)
 
     def update_model_deprectaed(self, srcids):

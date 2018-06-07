@@ -12,6 +12,8 @@ target_srcids = [labeled['srcid'] for labeled in labeled_list]
 
 zodiac = ZodiacInterface(target_building=target_building,
                          target_srcids=target_srcids)
+#zodiac.update_model([])
+pred = zodiac.predict()
 zodiac.learn_auto()
 pred = zodiac.predict()
 proba = zodiac.predict_proba()
