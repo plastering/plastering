@@ -3,6 +3,7 @@ import re
 import time
 
 from sklearn.feature_extraction.text import CountVectorizer as CV
+from sklearn.preprocessing import LabelEncoder as LE
 
 from .algorithm.transfer_learning import transfer_learning
 from . import Inferencer
@@ -40,13 +41,12 @@ def get_data_features(building):
     return np.asarray(fd)
 
 
-def get_pt_label(building):
+def get_namefeatures_labels(building):
 
     srcids = [point['srcid'] for point in LabeledMetadata.objects(building=building)]
     pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset for srcid in srcids]
-    pt_name = [RawMetadata.objects(srcid=srcid).first()\
-           .metadata['VendorGivenName'] for srcid in srcids]
-    fn = get_name_features(src_pt_name)
+    pt_name = [RawMetadata.objects(srcid=srcid).first().metadata['VendorGivenName'] for srcid in srcids]
+    fn = get_name_features(pt_name)
     le = LE()
     label = le.fit_transform(pt_type)
 
@@ -91,7 +91,8 @@ class BuildingAdapterInterface(Inferencer):
         test_fd = get_data_features('rice')
 
         #labels
-
+        test_fn, test_label = get_namefeatures_labels('uva_cse')
+        _, train_label = get_namefeatures_labels('ap_m')
 
         self.learner = transfer_learning(
             train_fd,
@@ -99,7 +100,6 @@ class BuildingAdapterInterface(Inferencer):
             train_label,
             test_label,
             test_fn,
-            switch=True
         )
 
 
