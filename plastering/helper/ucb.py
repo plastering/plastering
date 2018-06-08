@@ -77,11 +77,12 @@ def load_ucb_building(building='soda',
                     print('Sentence: {0}'.format(sentence))
                     pdb.set_trace()
                 tagset = brick_map[label]
-                tagsets.add(tagset.lower())
+                if tagset != 'none':
+                    tagsets.add(tagset.lower())
         tagsets = list(tagsets)
         point_tagset = sel_point_tagset(tagsets)
-        if "chilled_water_temperature" in tagsets:
-            pdb.set_trace()
+        if not point_tagset:
+            point_tagset = 'none'
         tagsets_dict[srcid] = tagsets
         sentence_dict[srcid] = words
         word_tagsets = ['leftidentifier' if label[-3:] == '-id'
@@ -97,10 +98,10 @@ def load_ucb_building(building='soda',
         raw_obj.save()
 
         labeled_obj = LabeledMetadata.objects(srcid=srcid)\
-            .upsert_one(srcid=srcid, building=building)
-        labeled_obj.point_tagset = point_tagset
-        labeled_obj.tagsets_parsing
-        labeled_obj.tagsets = tagsets
+            .upsert_one(srcid=srcid,
+                        building=building,
+                        point_tagset=point_tagset,
+                        tagsets=tagsets)
         labeled_obj.save()
     with open('groundtruth/{0}_tagsets.json'.format(building), 'w') as fp:
         json.dump(tagsets_dict, fp, indent=2)

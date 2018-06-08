@@ -22,11 +22,12 @@ from plotter import save_fig
 
 building_anon_map = {
     'ebu3b': 'A-1',
-    'uva_cse': 'B-1'
+    'uva_cse': 'B-1',
+    'sdh': 'C-1'
 }
 colors = ['firebrick', 'deepskyblue']
-inferencer_names = ['zodiac']
-EXP_NUM = 2
+inferencer_names = ['zodiac', 'al_hong']
+EXP_NUM = 4
 LINESTYLES = ['--', '-.', '-']
 FIG_DIR = './figs'
 
@@ -38,7 +39,7 @@ def average_data(xs, ys, target_x):
     return target_y.tolist()[0]
 
 def plot_pointonly_notransfer():
-    buildings = ['ebu3b', 'uva_cse']
+    buildings = ['ebu3b', 'uva_cse', 'sdh']
     outputfile = FIG_DIR + '/pointonly_notransfer.pdf'
 
     fig, axes = plt.subplots(1, len(buildings))
@@ -65,8 +66,12 @@ def plot_pointonly_notransfer():
                           .format(inferencer_name, building, i)) as  fp:
                     data = json.load(fp)
                 xss.append([datum['learning_srcids'] for datum in data])
-                f1s.append([datum['metrics']['f1'] for datum in data])
-                mf1s.append([datum['metrics']['macrof1'] for datum in data])
+                if inferencer_name == 'al_hong':
+                    f1s.append([datum['metrics']['f1_micro'] for datum in data])
+                    mf1s.append([datum['metrics']['f1_macro'] for datum in data])
+                else:
+                    f1s.append([datum['metrics']['f1'] for datum in data])
+                    mf1s.append([datum['metrics']['macrof1'] for datum in data])
             xs = xss[0] # Assuming all xss are same.
             f1 = average_data(xss, f1s, interp_x)
             mf1 = average_data(xss, mf1s, interp_x)
@@ -80,6 +85,7 @@ def plot_pointonly_notransfer():
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
                 yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
                 linestyles=[linestyles.pop()]*len(ys), cs=colors)
+    fig.set_size_inches((8,3))
     save_fig(fig, outputfile)
 
 def plot_pointonly_transfer():
@@ -110,8 +116,12 @@ def plot_pointonly_transfer():
                           .format(inferencer_name, building, i)) as  fp:
                     data = json.load(fp)
                 xss.append([datum['learning_srcids'] for datum in data])
-                f1s.append([datum['metrics']['f1'] for datum in data])
-                mf1s.append([datum['metrics']['macrof1'] for datum in data])
+                if inferencer_name == 'al_hong':
+                    f1s.append([datum['metrics']['f1_micro'] for datum in data])
+                    mf1s.append([datum['metrics']['f1_macro'] for datum in data])
+                else:
+                    f1s.append([datum['metrics']['f1'] for datum in data])
+                    mf1s.append([datum['metrics']['macrof1'] for datum in data])
             xs = xss[0] # Assuming all xss are same.
             f1 = average_data(xss, f1s, interp_x)
             mf1 = average_data(xss, mf1s, interp_x)
