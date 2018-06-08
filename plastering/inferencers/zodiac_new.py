@@ -333,6 +333,7 @@ class ZodiacInterface(Inferencer):
         # remove it from identified list.
         vavs = get_vavs(self.prior_g)
         for vav in vavs:
+            pdb.set_trace()
             points = get_vav_points(self.prior_g, vav)
             point_types = defaultdict(list)
             for point in points:
@@ -341,14 +342,13 @@ class ZodiacInterface(Inferencer):
                 if len(points) > 2:
                     pdb.set_trace()
 
-
     def select_informative_samples(self, sample_num=1):
         new_srcids = []
         tot_srcids = reduce(adder, self.cluster_map.values())
         base_sample_bow = self.get_sub_bow(tot_srcids)
         base_confidence = self.model.predict_proba(base_sample_bow)
         base_pred_labels = self.model.predict(base_sample_bow)
-        #self.apply_prior_quiver(base_pred_labels)
+        self.apply_prior_quiver(base_pred_labels)
 
         #th_update_flag and \
         test_flag = 0
@@ -480,6 +480,8 @@ class ZodiacInterface(Inferencer):
                                            pred_points,
                                            confidences):
             prob = max(prob)
+            if pred_point == 'occupied_command':
+                print('Occupied Command found!!!!!!!!!!!!!!!!!!')
             self._add_pred_point_result(pred_g, srcid, pred_point, prob)
         self.pred_g = pred_g
         return pred_g

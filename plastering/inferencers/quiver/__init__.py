@@ -25,15 +25,15 @@ class DummyQuiver(Inferencer):
     def get_occs(self):
         qstr = """
         select ?occ where {
-        ?occ a/rdfs:subClassOf* brick:Occupied_Command.
+            ?occ a brick:occupied_command.
         }
         """
-        res = query_sparql(self.prior_g, qstr)
+        res = query_sparql(self.prior_g + self.schema_g, qstr)
         return [row['occ'] for row in res]
 
 
     def predict(self, target_srcids=[]):
-        pred_g = init_graph()
+        pred_g = init_graph(empty=True)
         occs = self.get_occs()
         for occ in occs:
             pdb.set_trace()
@@ -45,6 +45,7 @@ class DummyQuiver(Inferencer):
             }}
             """.format(occ.n3())
             res = query_sparql(self.true_g, qstr)
+            pdb.set_trace()
             points = [row['point'] for row in res]
             random_obj = create_uri(str(gen_uuid())) # This would be a VAV.
             for point in points:
@@ -53,6 +54,7 @@ class DummyQuiver(Inferencer):
 
         pred_g.serialize('test.ttl', format='turtle')
         self.pred_g = pred_g
+        print('Quiver done')
         return pred_g
 
 class DummyPritoni(Inferencer):
