@@ -77,6 +77,8 @@ def load_ucb_building(building='soda',
                     print('Sentence: {0}'.format(sentence))
                     pdb.set_trace()
                 tagset = brick_map[label]
+                if tagset == 'building':
+                    tagset += '-' + building
                 if tagset != 'none':
                     tagsets.add(tagset.lower())
         tagsets = list(tagsets)
