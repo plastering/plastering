@@ -31,26 +31,32 @@ def get_data_features(building):
     res = read_from_db(building)
 
     fd = []
+    srcids = []
     for point, data in res.items():
         #t0 = time.clock()
         #TODO: better handle the dimension, it's really ugly now
-        dfe = data_feature_extractor( data['data'][:2000].as_matrix().reshape(1,-1) )
+
+        #computing features on long sequence is really slow now, so only loading a small port of the readings now
+        dfe = data_feature_extractor( data['data'][:3000].as_matrix().reshape(1,-1) )
         fd.append( dfe.getF_2015_Hong().ravel() )
+        srcids.append(point)
         #print (time.clock() - t0)
 
     print ( 'data features for %s with dim:'%building, np.asarray(fd).shape)
-    return np.asarray(fd)
+    return srcids, np.asarray(fd)
 
 
 def get_namefeatures_labels(building):
 
     srcids = [point['srcid'] for point in LabeledMetadata.objects(building=building)]
+
     pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset.lower() for srcid in srcids]
     pt_name = [RawMetadata.objects(srcid=srcid).first().metadata['VendorGivenName'] for srcid in srcids]
+
     fn = get_name_features(pt_name)
     print ('%d point names loaded for %s'%(len(pt_name), building))
 
-    return fn, pt_type
+    return { srcid:[name_feature, label] for name_feature, label in zip(fn, pt_type) }
 
 
 class BuildingAdapterInterface(Inferencer):
@@ -67,7 +73,7 @@ class BuildingAdapterInterface(Inferencer):
             target_srcids=target_srcids
         )
 
-        #gather the training/testing data and name features
+        #gather the source/target data and name features, labels
         '''
         #old block loading from pre-computed files
         input1 = np.genfromtxt('../data/rice_hour_sdh', delimiter=',')
@@ -85,20 +91,26 @@ class BuildingAdapterInterface(Inferencer):
         pt_name = [i.strip().split('\\')[-1][:-5] for i in open('../data/rice_pt_sdh').readlines()]
         test_fn = get_name_features(pt_name)
         '''
+        #TODO: handle multiple source buildings
+        source_buildings = source_buildings[0]
 
         #data features
-        train_fd = get_data_features('ucsd')
-        test_fd = get_data_features('rice')
+        source_ids, train_fd = get_data_features(source_buildings)
+        target_ids, test_fd = get_data_features(target_building)
 
-        #labels, name features for tgt_bldg
-        test_fn, test_label = get_namefeatures_labels('uva_cse')
-        _, train_label = get_namefeatures_labels('ap_m')
+        #name features, labels
+        source_res = get_namefeatures_labels(source_buildings)
+        train_label = [source_res[srcid][1] for srcid in source_ids]
 
-        #find the class intersection
+        target_res = get_namefeatures_labels(target_building)
+        test_fn = [target_res[tgtid][0] for tgtid in target_ids]
+        test_label = [target_res[tgtid][1] for tgtid in target_ids]
+
+        #find the label intersection
         intersect = set(test_label) & set(train_label)
-        print (intersect)
+        print ('intersected tagsets:', intersect)
 
-        #preserve only the intersected, id used for indexing data feature matrices
+        #preserve the intersection, get ids for indexing data feature matrices
         if intersect:
             train_filtered = [[i,j] for i,j in enumerate(train_label) if j in intersect]
             train_id, train_label = [list(x) for x in zip(*train_filtered)]

@@ -126,7 +126,7 @@ class transfer_learning:
         rf = RFC(n_estimators=100, criterion='entropy')
         rf.fit(self.train_fd, self.train_label)
         pred = rf.predict(self.test_fd)
-        print ( 'data feature transfer testing acc:', ACC(pred, self.test_label) )
+        print ( 'direct data feature-based transfer acc on tgt_bldg:', ACC(pred, self.test_label) )
         #plot_confusion_matrix(self.test_label, pred)
 
 
