@@ -5,6 +5,10 @@ from plastering.timeseries_inferface import *
 '''
 -b specifies the building name, which is the name used for storing data in DB
 -p specifies the path to the directory for time series data files
+
+e.g.,:
+python timeserie.init -b uva_csv -p /path_to_uva_cse_data_files/
+
 '''
 
 parser = argparse.ArgumentParser()
