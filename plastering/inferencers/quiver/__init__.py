@@ -1,5 +1,6 @@
 from .. import Inferencer
 from ...rdflib_wrapper import *
+import pdb
 
 from uuid import uuid4 as gen_uuid
 
@@ -31,8 +32,42 @@ class DummyQuiver(Inferencer):
         res = query_sparql(self.prior_g + self.schema_g, qstr)
         return [row['occ'] for row in res]
 
-
     def predict(self, target_srcids=[]):
+        pred_g = init_graph(empty=True)
+        if self.target_building == 'ebu3b':
+            qstr = """
+            select ?occ ?occ_srcid ?point ?point_srcid where {
+                ?occ a brick:occupied_command.
+                ?occ bf:srcid ?occ_srcid .
+                ?occ bf:isPointOf ?something .
+                ?point bf:isPointOf ?something .
+                ?point bf:srcid ?point_srcid .
+                ?occ bf:isPointOf ?something .
+                ?point a/rdfs:subClassOf* brick:point .
+            }
+            """
+        else:
+            raise Exception('qstr should be rewritten for {0}'
+                            .format(self.target_building))
+        # TODO: Add confidences (==1)
+        res = query_sparql(self.true_g, qstr)
+        vav_dict = {}
+        #for
+        #    random_obj = create_uri(str(gen_uuid())) # This would be a VAV.
+        for row in res:
+            occ_srcid = str(row['occ_srcid'])
+            if occ_srcid not in vav_dict:
+                vav_dict[occ_srcid] = create_uri(str(gen_uuid())) # This would be a VAV.
+            vav = vav_dict[occ_srcid]
+            occ = create_uri(occ_srcid)
+            point = create_uri(str(row['point_srcid']))
+            insert_triple(pred_g, (point, BF['isPointOf'], vav))
+            insert_triple(pred_g, (occ, BF['isPointOf'], vav))
+            insert_triple(pred_g, (vav, RDF['type'], BRICK['VAV']))
+        self.pred_g = pred_g
+        return pred_g
+
+    def predict_dep(self, target_srcids=[]):
         pred_g = init_graph(empty=True)
         occs = self.get_occs()
         for occ in occs:
@@ -58,7 +93,6 @@ class DummyQuiver(Inferencer):
             points = [row['point'] for row in res]
             random_obj = create_uri(str(gen_uuid())) # This would be a VAV.
             for point in points:
-                pdb.set_trace()
                 insert_triple(pred_g, (point, BF['isPointOf'], random_obj))
                 insert_triple(pred_g, (random_obj, RDF['type'], BRICK['VAV']))
 
