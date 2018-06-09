@@ -72,9 +72,9 @@ def query_sparql(g, qstr):
 
 def get_vavs(g):
     qstr = """
-    select ?vav where {
-      ?vav a/rdfs:subClassOf* brick:VAV .
-      }
+    select ?vav where {{
+      ?vav a/rdfs:subClassOf* brick:vav .
+      }}
     """
     res = query_sparql(g, qstr)
     vavs = [row['vav'] for row in res]
@@ -82,10 +82,10 @@ def get_vavs(g):
 
 def get_vav_points(g, vav):
     qstr = """
-    select ?point where {
+    select ?point where {{
     ?point bf:isPointOf {0}.
-    ?point a/rdfs:subClassOf brick:Point.
-    }
+    ?point a/rdfs:subClassOf brick:point.
+    }}
     """.format(vav.n3())
     res = query_sparql(g, qstr)
     points = [row['point'] for row in res]
@@ -93,9 +93,9 @@ def get_vav_points(g, vav):
 
 def get_point_type(g, point):
     qstr = """
-    select ?t {
+    select ?t {{
     {0} a ?t .
-    }
+    }}
     """
     res = query_sparql(g, qstr)
     t = res[0]['t']
