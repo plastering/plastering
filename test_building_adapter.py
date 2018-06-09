@@ -1,6 +1,10 @@
 from plastering.inferencers.building_adapter_interface import BuildingAdapterInterface
 from plastering.metadata_interface import *
 
+'''
+run "timeseries_init" first for each building used, to make sure the timeseries data is stored in DB
+'''
+
 target_building = 'rice'
 source_buliding = ['ucsd']
 
