@@ -18,7 +18,7 @@ class LabeledMetadata(Document):
     building = StringField(required=True)
     fullparsing = DictField()
     tagsets = ListField(StringField())
-    point_tagset = StringField()
+    point_tagset = StringField(required=True)
     tagsets_parsing = DictField()
 
 # Helper functions

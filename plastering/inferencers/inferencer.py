@@ -8,14 +8,12 @@ import arrow
 from rdflib import *
 
 from ..metadata_interface import *
-from ..brick_parser import pointTagsetList as point_tagsets
 from ..common import *
 from .. import plotter
 from .. import *
 from ..error import *
 from ..rdflib_wrapper import *
 from ..evaluator import *
-#from ..brick_parser import g as brick_g
 
 PUBLIC_METHODS = ['learn_auto',
                   'predict_proba',
@@ -49,8 +47,6 @@ class Inferencer(object):
         self.source_buildings = source_buildings
         self.config = config # future usage
         self.training_srcids = [] # already known srcids
-        self.all_point_tagsets = point_tagsets # all the possible point tagsets
-                                               # defined in Brick.
         self.pred = {  # predicted results
             'tagsets': {},
             'point': {}

@@ -77,7 +77,7 @@ if __name__ == '__main__':
             'ibm': basedir + 'IBM-GROUND-TRUTH',
         }
         load_ucb_building(building, filenames[building])
-        parse_tagsets(building)
+        #parse_tagsets(building)
         parse_fullparsing(building)
     else:
         parse_ucsd_rawmetadata(building)

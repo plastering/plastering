@@ -7,6 +7,7 @@ import re
 from copy import deepcopy
 import numpy as np
 from functools import reduce
+from collections import defaultdict
 
 import scipy
 from scipy.cluster.vq import *
@@ -325,22 +326,50 @@ class ZodiacInterface(Inferencer):
             self.learn_model()
             self.select_informative_samples(1)
 
-    def apply_prior_quiver(self, pred):
+    def select_srcid_per_cluster(self, srcids):
+        cids = []
+        for srcid in srcids:
+            srcid_handled = False
+            for cid, cluster in self.cluster_map.items():
+                if srcid in cluster:
+                    if cid not in self.trained_cids:
+                        cids.append(cid)
+                    srcid_handled = True
+                    break
+            assert srcid_handled, "{0}'s cluster is not found".format(srcid)
+        new_srcids = []
+        cids = list(set(cids))
+        cluster_sizes = [len(self.cluster_map[cid]) for cid in cids]
+        for cid in cids:
+            new_srcids.append(random.choice(self.cluster_map[cid]))
+        new_srcids = [row[1] for row in sorted(zip(cluster_sizes, new_srcids),
+                                               reverse=True)]
+        if new_srcids:
+            pdb.set_trace()
+        return new_srcids
+
+    def apply_prior_quiver(self, pred, target_srcids):
         if not self.prior_g:
-            return None
+            return []
 
         # If points in a vav are identified same,
         # remove it from identified list.
         vavs = get_vavs(self.prior_g)
+        cand_srcids = []
         for vav in vavs:
             points = get_vav_points(self.prior_g, vav)
             point_types = defaultdict(list)
             for point in points:
-                point_types[get_point_type[point]].append(point)
+                srcid = point.split('#')[-1]
+                if srcid in target_srcids:
+                    point_idx = target_srcids.index(srcid)
+                    pred_type = pred[point_idx]
+                    point_types[pred_type].append(point)
             for point_type, points in point_types.items():
                 if len(points) > 2:
-                    pdb.set_trace()
-
+                    cand_srcids += [parse_srcid(point) for point in points]
+        new_srcids = self.select_srcid_per_cluster(cand_srcids)
+        return new_srcids
 
     def select_informative_samples(self, sample_num=1):
         new_srcids = []
@@ -348,7 +377,8 @@ class ZodiacInterface(Inferencer):
         base_sample_bow = self.get_sub_bow(tot_srcids)
         base_confidence = self.model.predict_proba(base_sample_bow)
         base_pred_labels = self.model.predict(base_sample_bow)
-        #self.apply_prior_quiver(base_pred_labels)
+        new_srcids = self.apply_prior_quiver(base_pred_labels, tot_srcids)
+        new_srcids = new_srcids[0:sample_num]
 
         #th_update_flag and \
         test_flag = 0
@@ -401,6 +431,7 @@ class ZodiacInterface(Inferencer):
                     th_update_flag = False
                     if len(new_srcids) ==  sample_num:
                         break
+
             if th_update_flag:
                 print('th updated')
                 #if not (len(self.available_srcids) > len(temp_available_srcids)\

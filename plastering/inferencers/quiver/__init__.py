@@ -1,5 +1,6 @@
 from .. import Inferencer
 from ...rdflib_wrapper import *
+import pdb
 
 from uuid import uuid4 as gen_uuid
 
@@ -25,25 +26,69 @@ class DummyQuiver(Inferencer):
     def get_occs(self):
         qstr = """
         select ?occ where {
-        ?occ a/rdfs:subClassOf* brick:Occupied_Command.
+            ?occ a brick:occupied_command.
         }
         """
-        res = query_sparql(self.prior_g, qstr)
+        res = query_sparql(self.prior_g + self.schema_g, qstr)
         return [row['occ'] for row in res]
 
-
     def predict(self, target_srcids=[]):
-        pred_g = init_graph()
+        pred_g = init_graph(empty=True)
+        if self.target_building == 'ebu3b':
+            qstr = """
+            select ?occ ?occ_srcid ?point ?point_srcid where {
+                ?occ a brick:occupied_command.
+                ?occ bf:srcid ?occ_srcid .
+                ?occ bf:isPointOf ?something .
+                ?point bf:isPointOf ?something .
+                ?point bf:srcid ?point_srcid .
+                ?occ bf:isPointOf ?something .
+                ?point a/rdfs:subClassOf* brick:point .
+            }
+            """
+        else:
+            raise Exception('qstr should be rewritten for {0}'
+                            .format(self.target_building))
+        # TODO: Add confidences (==1)
+        res = query_sparql(self.true_g, qstr)
+        vav_dict = {}
+        #for
+        #    random_obj = create_uri(str(gen_uuid())) # This would be a VAV.
+        for row in res:
+            occ_srcid = str(row['occ_srcid'])
+            if occ_srcid not in vav_dict:
+                vav_dict[occ_srcid] = create_uri(str(gen_uuid())) # This would be a VAV.
+            vav = vav_dict[occ_srcid]
+            occ = create_uri(occ_srcid)
+            point = create_uri(str(row['point_srcid']))
+            insert_triple(pred_g, (point, BF['isPointOf'], vav))
+            insert_triple(pred_g, (occ, BF['isPointOf'], vav))
+            insert_triple(pred_g, (vav, RDF['type'], BRICK['vav']))
+        self.pred_g = pred_g
+        return pred_g
+
+    def predict_dep(self, target_srcids=[]):
+        pred_g = init_graph(empty=True)
         occs = self.get_occs()
         for occ in occs:
-            pdb.set_trace()
-            qstr = """
-            select ?point where {{
-              {0} bf:isPointOf ?something .
-              ?point bf:isPointOf ?something .
-              ?point a/rdfs:subClassOf* brick:Point .
-            }}
-            """.format(occ.n3())
+            if self.target_building == 'ebu3b':
+                srcid = occ.split('#')[-1]
+                qstr = """
+                select ?point where {{
+                  ?occ bf:srcid "{0}" .
+                  ?occ bf:isPointOf ?something .
+                  ?point bf:isPointOf ?something .
+                  ?point a/rdfs:subClassOf* brick:point .
+                }}
+                """.format(srcid)
+            else:
+                qstr = """
+                select ?point where {{
+                  {0} bf:isPointOf ?something .
+                  ?point bf:isPointOf ?something .
+                  ?point a/rdfs:subClassOf* brick:point .
+                }}
+                """.format(occ.n3())
             res = query_sparql(self.true_g, qstr)
             points = [row['point'] for row in res]
             random_obj = create_uri(str(gen_uuid())) # This would be a VAV.
@@ -53,6 +98,7 @@ class DummyQuiver(Inferencer):
 
         pred_g.serialize('test.ttl', format='turtle')
         self.pred_g = pred_g
+        print('Quiver done')
         return pred_g
 
 class DummyPritoni(Inferencer):
@@ -106,7 +152,6 @@ class DummyPritoni(Inferencer):
         found_vavs = self.get_all_vavs_with_znt()
 
         for row in ahu_datsps:
-            pdb.set_trace()
             ahu = row['ahu']
             datsp = row['datsp']
             qstr = """
@@ -115,7 +160,6 @@ class DummyPritoni(Inferencer):
               ?vav a/rdfs:subClassOf* brick:VAV.
             }}
             """.format(ahu.n3())
-            pdb.set_trace()
             res = query_sparql(self.true_g, qstr)
             true_vavs = [row['vav'] for row in res]
             pred_vavs = [vav for vav in true_vavs if vav in found_vavs]

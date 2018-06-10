@@ -6,7 +6,7 @@
   "supply fan": "Supply_Fan",
   "smoke alarm": "Smoke_Detected_Alarm",
   "mixed air temp": "Mixed_Air_Temperature_Sensor",
-  "pid loop gain": "none",
+  "pid loop gain": "gain_setpoint",
   "hot water loop": "Hot_Water_System",
   "pump": "Pump",
   "fault sensor": "Fault_Status",
