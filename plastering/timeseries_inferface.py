@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 from glob import glob
 from arctic import CHUNK_STORE, Arctic
@@ -18,7 +19,8 @@ i   schema: schema used in the csv file
     return a wrapped iterator for write_to_db
     '''
 
-    files = glob(path_to_directory + '*.csv')
+    os.chdir(path_to_directory)
+    files = glob('*.csv')
     points = []
     timestamps = []
     data = []
