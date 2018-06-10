@@ -63,7 +63,7 @@ class DummyQuiver(Inferencer):
             point = create_uri(str(row['point_srcid']))
             insert_triple(pred_g, (point, BF['isPointOf'], vav))
             insert_triple(pred_g, (occ, BF['isPointOf'], vav))
-            insert_triple(pred_g, (vav, RDF['type'], BRICK['VAV']))
+            insert_triple(pred_g, (vav, RDF['type'], BRICK['vav']))
         self.pred_g = pred_g
         return pred_g
 

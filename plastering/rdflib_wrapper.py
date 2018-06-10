@@ -84,7 +84,6 @@ def get_vav_points(g, vav):
     qstr = """
     select ?point where {{
     ?point bf:isPointOf {0}.
-    ?point a/rdfs:subClassOf brick:point.
     }}
     """.format(vav.n3())
     res = query_sparql(g, qstr)
@@ -100,4 +99,7 @@ def get_point_type(g, point):
     res = query_sparql(g, qstr)
     t = res[0]['t']
     return t
+
+def parse_srcid(point):
+    return point.split('#')[-1]
 
