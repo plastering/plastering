@@ -58,7 +58,7 @@ def get_namefeatures_labels(building):
     fn = get_name_features(pt_name)
     print ('%d point names loaded for %s'%(len(pt_name), building))
 
-    return { srcid:[name_feature, label] for name_feature, label in zip(fn, pt_type) }
+    return { srcid:[name_feature, label] for srcid,name_feature,label in zip(srcids,fn, pt_type) }
 
 
 class BuildingAdapterInterface(Inferencer):
