@@ -1,6 +1,6 @@
 import argparse
 
-from plastering.timeseries_inferface import *
+from plastering.timeseries_interface import *
 
 '''
 -b specifies the building name, which is the name used for storing data in DB
