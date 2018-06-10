@@ -6,7 +6,13 @@ from plastering.timeseries_inferface import *
 -b specifies the building name, which is the name used for storing data in DB
 -p specifies the path to the directory for time series data files
 
-e.g.,:
+this interface requires the following dependency:
+    https://github.com/manahl/arctic
+
+and the following lib needs to be installed first:
+pip install git+https://github.com/manahl/arctic.git
+
+and then run e.g.,:
 python timeserie.init -b uva_csv -p /path_to_uva_cse_data_files/
 
 '''
