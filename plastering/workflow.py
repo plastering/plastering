@@ -185,3 +185,15 @@ class Workflow(object):
         }
         self._traverse_wrapper(self.f_head, ['update_model'], [params])
 
+    def learn_auto(self):
+        for i in range(0, 200):
+            print('--------------------------')
+            print('{0}th iteration'.format(cnt))
+            new_srcids = self.select_informative_samples(1)
+            self.update_model(new_srcids)
+            self.evaluate(self.target_srcids)
+            print('curr new srcids: {0}'.format(len(new_srcids)))
+            print('training srcids: {0}'.format(len(self.training_srcids)))
+            print('gray: {0}/{1}'.format(gray_num, len(self.target_srcids)))
+            print('f1: {0}'.format(self.history[-1]['metrics']['f1']))
+            print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
