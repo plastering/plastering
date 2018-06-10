@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder as LE
 
 from .algorithm.transfer_learning import transfer_learning
 from . import Inferencer
-from ..timeseries_inferface import *
+from ..timeseries_interface import *
 from ..metadata_interface import *
 from ..data_feature_extractor import *
 
@@ -30,20 +30,22 @@ def get_data_features(building):
 
     res = read_from_db(building)
 
-    fd = []
+    X = []
     srcids = []
     for point, data in res.items():
         #t0 = time.clock()
         #TODO: better handle the dimension, it's really ugly now
 
         #computing features on long sequence is really slow now, so only loading a small port of the readings now
-        dfe = data_feature_extractor( data['data'][:3000].as_matrix().reshape(1,-1) )
-        fd.append( dfe.getF_2015_Hong().ravel() )
+        X.append( data['data'][:3000] )
         srcids.append(point)
         #print (time.clock() - t0)
 
-    print ( 'data features for %s with dim:'%building, np.asarray(fd).shape)
-    return srcids, np.asarray(fd)
+    dfe = data_feature_extractor( np.asarray(X) )
+    fd = dfe.getF_2015_Hong()
+
+    print ( 'data features for %s with dim:'%building, fd.shape)
+    return srcids, fd
 
 
 def get_namefeatures_labels(building):

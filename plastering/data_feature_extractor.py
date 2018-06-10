@@ -186,7 +186,7 @@ def haar_transform(x):
 class data_feature_extractor():
 
     def __init__(self, X):
-        self.X = X
+        self.X = np.asarray(X)
         self.functions = [
         'getF_1994_Li',
         'getF_2012_Calbimonte',
