@@ -12,7 +12,8 @@ import pdb
 
 EXP_NUM = 4
 
-target_buildings = ['ebu3b', 'uva_cse', 'sdh']
+#target_buildings = ['ebu3b', 'uva_cse', 'sdh']
+target_buildings = ['sdh']
 
 inferencers = {
     'zodiac': ZodiacInterface,
@@ -20,7 +21,7 @@ inferencers = {
 
 
 for inferencer_name, Inferencer in inferencers.items():
-    for exp_id in range(1, EXP_NUM):
+    for exp_id in range(0, EXP_NUM):
         for target_building in target_buildings:
             # Select labeled srcids (Not all the data are labeled yet.)
             labeled_list = LabeledMetadata.objects(building=target_building)
