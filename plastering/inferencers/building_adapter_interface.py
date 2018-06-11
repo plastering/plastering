@@ -78,28 +78,11 @@ class BuildingAdapterInterface(Inferencer):
                  ):
         super(BuildingAdapterInterface, self).__init__(
             target_building=target_building,
-            source_buildings=[src for src in source_buildings], #TODO: Jason: What is this?
+            source_buildings=source_buildings
             target_srcids=target_srcids
         )
 
         #gather the source/target data and name features, labels
-        '''
-        #old block loading from pre-computed files
-        input1 = np.genfromtxt('../data/rice_hour_sdh', delimiter=',')
-        input2 = np.genfromtxt('../data/keti_hour_sum', delimiter=',')
-        input3 = np.genfromtxt('../data/sdh_hour_rice', delimiter=',')
-        input2 = np.vstack((input2, input3))
-        fd1 = input1[:, 0:-1]
-        fd2 = input2[:, 0:-1]
-
-        train_fd = fd1
-        test_fd = fd2
-        train_label = input1[:, -1]
-        test_label = input2[:, -1]
-
-        pt_name = [i.strip().split('\\')[-1][:-5] for i in open('../data/rice_pt_sdh').readlines()]
-        test_fn = get_name_features(pt_name)
-        '''
         #TODO: handle multiple source buildings
 
         if 'source_time_ranges' in config:

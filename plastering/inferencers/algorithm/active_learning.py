@@ -35,7 +35,7 @@ def get_name_features(names):
 
 class active_learning():
 
-    def __init__(self, fold, rounds, n_cluster, fn, label):
+    def __init__(self, fold, rounds, n_cluster, fn, label, transfer_fn=None, transfer_label=None):
 
         self.fold = fold
         self.rounds = rounds
@@ -58,6 +58,9 @@ class active_learning():
         self.cluster_num = n_cluster
         self.cluster_id = 0
         self.labeled_set = []
+
+        self.transfer_fn = transfer_fn
+        self.transfer_label = transfer_label
 
 
     def update_model(self):
@@ -166,14 +169,19 @@ class active_learning():
         return idx, c_idx
 
 
-    def get_pred_acc(self, fn_test, label_test, pseudo_set, pseudo_label):
+    def get_pred_acc(self, fn_test, label_test):
 
-        if not pseudo_set:
+        if not self.pseudo_set:
             fn_train = self.fn[self.labeled_set]
             label_train = self.label[self.labeled_set]
         else:
-            fn_train = self.fn[np.hstack((self.labeled_set, pseudo_set))]
-            label_train = np.hstack((self.label[self.labeled_set], pseudo_label))
+            fn_train = self.fn[np.hstack((self.labeled_set, self.pseudo_set))]
+            label_train = np.hstack((self.label[self.labeled_set], self.pseudo_label))
+
+        #TODO: test the case that leverages transfer
+        if self.transfer_label:
+            fn_train = np.vstack((fn_train, self.transfer_fn))
+            label_train = np.vstack((label_train, self.transfer_label))
 
         self.clf.fit(fn_train, label_train)
         fn_preds = self.clf.predict(fn_test)
@@ -266,7 +274,7 @@ class active_learning():
                 self.update_pseudo_set()
 
                 try:
-                    acc, f1_micro, f1_macro = self.get_pred_acc(fn_test, label_test, self.p_idx, self.p_label)
+                    acc, f1_micro, f1_macro = self.get_pred_acc(fn_test, label_test)
                 except Exception as e:
                     exc_type, exc_obj, exc_tb = sys.exc_info()
                     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
@@ -305,7 +313,7 @@ class active_learning():
                 self.update_tao()
                 self.update_pseudo_set()
 
-                acc, f1_micro, f1_macro = self.get_pred_acc(fn_test, label_test, self.p_idx, self.p_label)
+                acc, f1_micro, f1_macro = self.get_pred_acc(fn_test, label_test)
                 self.acc_sum[rr].append(acc)
                 self.f1_micro_sum[rr].append(f1_micro)
                 self.f1_macro_sum[rr].append(f1_macro)
