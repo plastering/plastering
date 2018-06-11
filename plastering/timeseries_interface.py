@@ -71,10 +71,7 @@ def write_to_db(target_building, iterator):
         print ('writing %s is done'%sensor)
 
 
-def read_from_db(target_building,
-                 start_time=DEFAULT_START_TIME,
-                 end_time=DEFAULT_END_TIME,
-                 ):
+def read_from_db(target_building, start_time=None, end_time=None):
     '''
     load the data from for tgt_bldg
     return:
@@ -87,6 +84,8 @@ def read_from_db(target_building,
         start_time = start_time.datetime
     elif isinstance(start_time, (dt, date)):
         pass
+    elif start_time == None:
+        pass
     else:
         raise ValueError('the type of time value is unknown: {0}'
                          .format(type(start_time)))
@@ -94,10 +93,15 @@ def read_from_db(target_building,
         end_time = end_time.datetime
     elif isinstance(end_time, (dt, date)):
         pass
+    elif end_time == None:
+        pass
     else:
         raise ValueError('the type of time value is unknown: {0}'
                          .format(type(end_time)))
-    date_range = DateRange(start=start_time, end=end_time)
+    if start_time and end_time:
+        date_range = DateRange(start=start_time, end=end_time)
+    else:
+        date_range = None
 
     print ('loading timeseries data from db for %s...'%target_building)
 
@@ -107,8 +111,14 @@ def read_from_db(target_building,
     else:
         lib = conn[target_building]
         srcids = lib.list_symbols()
-        res = {point: lib.read(point, chunk_range=date_range)
-               for point in srcids}
+        res = {}
+        for srcid in srcids:
+            data = lib.read(srcid, chunk_range=date_range)
+            if len(data) == 0:
+                print('WARNING: {0} has empty data.'.format(srcid))
+                pdb.set_trace()
+            res[srcid] = data
+        print('correctly done')
         return res
 
 

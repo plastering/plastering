@@ -41,7 +41,10 @@ def get_data_features(building, start_time, end_time):
         #TODO: better handle the dimension, it's really ugly now
 
         #computing features on long sequence is really slow now, so only loading a small port of the readings now
-        X.append( data['data'][:3000] )
+        try:
+            X.append( data['data'][:3000] )
+        except:
+            pdb.set_trace()
         srcids.append(srcid)
         #print (time.clock() - t0)
 
@@ -101,13 +104,14 @@ class BuildingAdapterInterface(Inferencer):
 
         if 'source_time_ranges' in config:
             self.source_time_ranges = config['source_time_ranges']
+            assert len(self.source_time_ranges) == len(source_buildings)
         else:
-            self.source_time_ranges = [(DEFAULT_START_TIME, DEFAULT_END_TIME)]\
+            self.source_time_ranges = [(None, None)]\
                 * len(source_buildings)
         if 'target_time_range' in config:
             self.target_time_range = config['target_time_range']
         else:
-            self.target_time_range = (DEFAULT_START_TIME, DEFAULT_END_TIME)
+            self.target_time_range = (None, None)
 
         source_building = source_buildings[0]
 
@@ -115,7 +119,9 @@ class BuildingAdapterInterface(Inferencer):
         source_ids, train_fd = get_data_features(source_building,
                                                  self.source_time_ranges[0][0],
                                                  self.source_time_ranges[0][1])
-        target_ids, test_fd = get_data_features(target_building)
+        target_ids, test_fd = get_data_features(target_building,
+                                                self.target_time_ranges[0],
+                                                self.target_time_ranges[1])
 
         #name features, labels
         source_res = get_namefeatures_labels(source_building)
