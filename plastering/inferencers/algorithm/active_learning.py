@@ -35,7 +35,7 @@ def get_name_features(names):
 
 class active_learning():
 
-    def __init__(self, fold, rounds, n_cluster, fn, label):
+    def __init__(self, fold, rounds, n_cluster, fn, label, transfer_fn=None, transfer_label=None):
 
         self.fold = fold
         self.rounds = rounds
@@ -58,6 +58,9 @@ class active_learning():
         self.cluster_num = n_cluster
         self.cluster_id = 0
         self.labeled_set = []
+
+        self.transfer_fn = transfer_fn
+        self.transfer_label = transfer_label
 
 
     def update_model(self):
@@ -174,6 +177,11 @@ class active_learning():
         else:
             fn_train = self.fn[np.hstack((self.labeled_set, self.pseudo_set))]
             label_train = np.hstack((self.label[self.labeled_set], self.pseudo_label))
+
+        #TODO: test the case that leverages transfer
+        if self.transfer_label:
+            fn_train = np.vstack((fn_train, self.transfer_fn))
+            label_train = np.vstack((label_train, self.transfer_label))
 
         self.clf.fit(fn_train, label_train)
         fn_preds = self.clf.predict(fn_test)
