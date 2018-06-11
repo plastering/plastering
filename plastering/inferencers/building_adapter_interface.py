@@ -44,7 +44,6 @@ def get_data_features(building, start_time, end_time):
         X.append( data['data'][:3000] )
         srcids.append(srcid)
         #print (time.clock() - t0)
-    pdb.set_trace()
 
     dfe = data_feature_extractor( np.asarray(X) )
     fd = dfe.getF_2015_Hong()
