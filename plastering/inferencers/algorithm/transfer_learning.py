@@ -49,8 +49,8 @@ def plot_confusion_matrix(test_label, pred):
     ax = fig.add_subplot(111)
     cax = ax.matshow(cm, cmap=Color.YlOrBr)
     fig.colorbar(cax)
-    for x in xrange(len(cm)):
-        for y in xrange(len(cm)):
+    for x in range(len(cm)):
+        for y in range(len(cm)):
             ax.annotate(str("%.3f(%d)"%(cm[x][y], cm_[x][y])), xy=(y,x),
                         horizontalalignment='center',
                         verticalalignment='center',
@@ -145,12 +145,12 @@ class transfer_learning:
         for b in self.bl:
             print ( b.score(self.test_fd, label) )
 
-        n_class = 32/2
+        n_class = 32//2
         c = KMeans(init='k-means++', n_clusters=n_class, n_init=10)
         c.fit(self.test_fn)
         dist = np.sort(c.transform(self.test_fn))
         ex_id = DD(list) #example id for each C
-        for i,j,k in zip(c.labels_, xrange(len(self.test_fn)), dist):
+        for i,j,k in zip(c.labels_, range(len(self.test_fn)), dist):
             ex_id[i].append(int(j))
 
         #getting neighors for each ex
@@ -164,7 +164,7 @@ class transfer_learning:
         for b,n in zip(self.bl, nb_f):
             preds = b.predict(self.test_fd)
             ex_ = DD(list)
-            for i,j in zip(preds, xrange(len(self.test_fd))):
+            for i,j in zip(preds, range(len(self.test_fd))):
                 ex_[i].append(int(j))
             for exx in ex_.values():
                 exx = np.asarray(exx)
@@ -180,8 +180,8 @@ class transfer_learning:
 
             l_id = []
             output = DD()
-            preds = np.array([999 for i in xrange(len(self.test_fd))])
-            for i in xrange(len(self.test_fn)):
+            preds = np.array([999 for i in range(len(self.test_fd))])
+            for i in range(len(self.test_fn)):
                 #get the weight for each bl: by computing sim btw cluster and clf
                 w = []
                 v_c = set(nb_c[i])
