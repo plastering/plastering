@@ -48,7 +48,10 @@ class ActiveLearningInterface(Inferencer):
                    .metadata['VendorGivenName'] for srcid in srcids]
         fn = get_name_features(pt_name)
         le = LE()
-        label = le.fit_transform(pt_type)
+        try:
+            label = le.fit_transform(pt_type)
+        except:
+            pdb.set_trace()
         #print ('# of classes is %d'%len(np.unique(label)))
         print ('running active learning by Hong on building %s'%target_building)
         print ('%d instances loaded'%len(pt_name))

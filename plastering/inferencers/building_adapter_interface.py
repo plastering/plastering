@@ -1,6 +1,7 @@
 import numpy as np
 import re
 import time
+import pdb
 
 from sklearn.feature_extraction.text import CountVectorizer as CV
 from sklearn.preprocessing import LabelEncoder as LE
@@ -26,20 +27,24 @@ def get_name_features(names):
     return fn
 
 
-def get_data_features(building):
+def get_data_features(building, start_time, end_time):
 
-    res = read_from_db(building)
+    res = read_from_db(building, start_time, end_time)
 
     X = []
     srcids = []
-    for point, data in res.items():
+    #for point, data in res.items():
+    for labeled in LabeledMetadata.objects(building=building):
+        srcid = labeled.srcid
+        data = res[srcid]
         #t0 = time.clock()
         #TODO: better handle the dimension, it's really ugly now
 
         #computing features on long sequence is really slow now, so only loading a small port of the readings now
         X.append( data['data'][:3000] )
-        srcids.append(point)
+        srcids.append(srcid)
         #print (time.clock() - t0)
+    pdb.set_trace()
 
     dfe = data_feature_extractor( np.asarray(X) )
     fd = dfe.getF_2015_Hong()
@@ -64,14 +69,14 @@ def get_namefeatures_labels(building):
 class BuildingAdapterInterface(Inferencer):
 
     def __init__(self,
-        target_building,
-        target_srcids,
-        source_buildings,
-        ):
-
+                 target_building,
+                 target_srcids,
+                 source_buildings,
+                 config={},
+                 ):
         super(BuildingAdapterInterface, self).__init__(
             target_building=target_building,
-            source_buildings=[src for src in source_buildings],
+            source_buildings=[src for src in source_buildings], #TODO: Jason: What is this?
             target_srcids=target_srcids
         )
 
@@ -94,14 +99,27 @@ class BuildingAdapterInterface(Inferencer):
         test_fn = get_name_features(pt_name)
         '''
         #TODO: handle multiple source buildings
-        source_buildings = source_buildings[0]
+
+        if 'source_time_ranges' in config:
+            self.source_time_ranges = config['source_time_ranges']
+        else:
+            self.source_time_ranges = [(DEFAULT_START_TIME, DEFAULT_END_TIME)]\
+                * len(source_buildings)
+        if 'target_time_range' in config:
+            self.target_time_range = config['target_time_range']
+        else:
+            self.target_time_range = (DEFAULT_START_TIME, DEFAULT_END_TIME)
+
+        source_building = source_buildings[0]
 
         #data features
-        source_ids, train_fd = get_data_features(source_buildings)
+        source_ids, train_fd = get_data_features(source_building,
+                                                 self.source_time_ranges[0][0],
+                                                 self.source_time_ranges[0][1])
         target_ids, test_fd = get_data_features(target_building)
 
         #name features, labels
-        source_res = get_namefeatures_labels(source_buildings)
+        source_res = get_namefeatures_labels(source_building)
         train_label = [source_res[srcid][1] for srcid in source_ids]
 
         target_res = get_namefeatures_labels(target_building)

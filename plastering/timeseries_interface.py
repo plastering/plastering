@@ -1,9 +1,17 @@
 import pandas as pd
 import os
+import pdb
 
 from glob import glob
 from arctic import CHUNK_STORE, Arctic
+from arctic.date import DateRange
 from datetime import datetime as dt
+from datetime import date
+import arrow
+
+
+DEFAULT_START_TIME = arrow.get(2017,1,20)
+DEFAULT_END_TIME = arrow.get(2017,2,6)
 
 def write_wrapper(target_building, path_to_directory, schema=1):
     '''
@@ -63,7 +71,10 @@ def write_to_db(target_building, iterator):
         print ('writing %s is done'%sensor)
 
 
-def read_from_db(target_building):
+def read_from_db(target_building,
+                 start_time=DEFAULT_START_TIME,
+                 end_time=DEFAULT_END_TIME,
+                 ):
     '''
     load the data from for tgt_bldg
     return:
@@ -72,6 +83,21 @@ def read_from_db(target_building):
     }
     data is in pandas.DataFrame format with two columns ['date', 'data']
     '''
+    if isinstance(start_time, arrow.Arrow):
+        start_time = start_time.datetime
+    elif isinstance(start_time, (dt, date)):
+        pass
+    else:
+        raise ValueError('the type of time value is unknown: {0}'
+                         .format(type(start_time)))
+    if isinstance(end_time, arrow.Arrow):
+        end_time = end_time.datetime
+    elif isinstance(end_time, (dt, date)):
+        pass
+    else:
+        raise ValueError('the type of time value is unknown: {0}'
+                         .format(type(end_time)))
+    date_range = DateRange(start=start_time, end=end_time)
 
     print ('loading timeseries data from db for %s...'%target_building)
 
@@ -80,7 +106,9 @@ def read_from_db(target_building):
         raise ValueError('%s not found in the DB!'%target_building)
     else:
         lib = conn[target_building]
-        res = {point: lib.read(point) for point in lib.list_symbols()}
+        srcids = lib.list_symbols()
+        res = {point: lib.read(point, chunk_range=date_range)
+               for point in srcids}
         return res
 
 
