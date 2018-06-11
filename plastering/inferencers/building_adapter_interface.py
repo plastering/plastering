@@ -36,6 +36,7 @@ def get_data_features(building, start_time, end_time):
     #for point, data in res.items():
     for labeled in LabeledMetadata.objects(building=building):
         srcid = labeled.srcid
+        print(srcid)
         data = res[srcid]
         #t0 = time.clock()
         #TODO: better handle the dimension, it's really ugly now
@@ -47,7 +48,8 @@ def get_data_features(building, start_time, end_time):
             pdb.set_trace()
         srcids.append(srcid)
         #print (time.clock() - t0)
-
+    min_len = min([len(x) for x in X])
+    X = [x[:min_len] for x in X]
     dfe = data_feature_extractor( np.asarray(X) )
     fd = dfe.getF_2015_Hong()
 
@@ -78,7 +80,7 @@ class BuildingAdapterInterface(Inferencer):
                  ):
         super(BuildingAdapterInterface, self).__init__(
             target_building=target_building,
-            source_buildings=source_buildings
+            source_buildings=source_buildings,
             target_srcids=target_srcids
         )
 
@@ -103,8 +105,8 @@ class BuildingAdapterInterface(Inferencer):
                                                  self.source_time_ranges[0][0],
                                                  self.source_time_ranges[0][1])
         target_ids, test_fd = get_data_features(target_building,
-                                                self.target_time_ranges[0],
-                                                self.target_time_ranges[1])
+                                                self.target_time_range[0],
+                                                self.target_time_range[1])
 
         #name features, labels
         source_res = get_namefeatures_labels(source_building)
