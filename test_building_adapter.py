@@ -17,7 +17,8 @@ config = {
     'source_time_ranges': [
         (arrow.get(2016, 2, 1), arrow.get(2016, 2,6))
     ],
-    'target_time_range': (arrow.get(2017, 1, 20), arrow.get(2017, 2,6))
+    'target_time_range': (arrow.get(2017, 1, 20), arrow.get(2017, 2,6)),
+    'threshold': 0.6
 }
 
 bl = BuildingAdapterInterface(target_building,

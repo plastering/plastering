@@ -97,6 +97,11 @@ class BuildingAdapterInterface(Inferencer):
         else:
             self.target_time_range = (None, None)
 
+        if 'threshold' in config:
+            self.threshold = config['threshold']
+        else:
+            self.threshold = 0.5 
+
         source_building = source_buildings[0]
 
         #data features
@@ -132,6 +137,8 @@ class BuildingAdapterInterface(Inferencer):
         test_fd = test_fd[test_id, :]
         #test_fn = [test_fn[tid] for tid in test_id]
         test_fn = test_fn[test_id, :]
+        print ('%d training examples left'%len(train_fd))
+        print ('%d testing examples left'%len(test_fd))
 
         le = LE()
         le.fit(intersect)
@@ -145,6 +152,7 @@ class BuildingAdapterInterface(Inferencer):
             train_label,
             test_label,
             test_fn,
+            threshold = self.threshold
         )
 
 
