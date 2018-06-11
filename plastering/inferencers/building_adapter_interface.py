@@ -66,7 +66,7 @@ def get_namefeatures_labels(building):
     fn = get_name_features(pt_name)
     print ('%d point names loaded for %s'%(len(pt_name), building))
 
-    return { srcid:[name_feature, label] for srcid,name_feature,label in zip(srcids,fn, pt_type) }
+    return { srcid:[name_feature, label] for srcid,name_feature,label in zip(srcids,fn,pt_type) }
 
 
 class BuildingAdapterInterface(Inferencer):
@@ -116,7 +116,7 @@ class BuildingAdapterInterface(Inferencer):
         test_label = [target_res[tgtid][1] for tgtid in target_ids]
 
         #find the label intersection
-        intersect = set(test_label) & set(train_label)
+        intersect = list( set(test_label) & set(train_label) )
         print ('intersected tagsets:', intersect)
 
         #preserve the intersection, get ids for indexing data feature matrices
