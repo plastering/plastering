@@ -36,7 +36,6 @@ def get_data_features(building, start_time, end_time):
     #for point, data in res.items():
     for labeled in LabeledMetadata.objects(building=building):
         srcid = labeled.srcid
-        print(srcid)
         data = res[srcid]
         #t0 = time.clock()
         #TODO: better handle the dimension, it's really ugly now
@@ -131,7 +130,7 @@ class BuildingAdapterInterface(Inferencer):
 
         train_fd = train_fd[train_id, :]
         test_fd = test_fd[test_id, :]
-        test_fn = test_fn[test_id, :]
+        test_fn = [test_fn[tid] for tid in test_id]
 
         le = LE()
         le.fit(intersect)
