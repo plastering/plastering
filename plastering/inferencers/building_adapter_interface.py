@@ -112,7 +112,7 @@ class BuildingAdapterInterface(Inferencer):
         train_label = [source_res[srcid][1] for srcid in source_ids]
 
         target_res = get_namefeatures_labels(target_building)
-        test_fn = [target_res[tgtid][0] for tgtid in target_ids]
+        test_fn = np.asarray( [target_res[tgtid][0] for tgtid in target_ids] )
         test_label = [target_res[tgtid][1] for tgtid in target_ids]
 
         #find the label intersection
@@ -130,7 +130,8 @@ class BuildingAdapterInterface(Inferencer):
 
         train_fd = train_fd[train_id, :]
         test_fd = test_fd[test_id, :]
-        test_fn = [test_fn[tid] for tid in test_id]
+        #test_fn = [test_fn[tid] for tid in test_id]
+        test_fn = test_fn[test_id, :]
 
         le = LE()
         le.fit(intersect)
