@@ -255,7 +255,7 @@ if __name__ == "__main__":
     ptn = [i.strip().split('\\')[-1][:-5] for i in open('../../data/rice_pt_sdh').readlines()]
     test_fn = get_name_features(ptn)
 
-    tl = transfer_learning(train_fd, test_fd, train_label, test_label, test_fn, switch=True)
+    tl = transfer_learning(train_fd, test_fd, train_label, test_label, test_fn, threshold=0.1, switch=True)
     tl.run_auto()
     #preds, labeled = tl.predict()
 
