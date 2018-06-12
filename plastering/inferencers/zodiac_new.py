@@ -344,8 +344,6 @@ class ZodiacInterface(Inferencer):
             new_srcids.append(random.choice(self.cluster_map[cid]))
         new_srcids = [row[1] for row in sorted(zip(cluster_sizes, new_srcids),
                                                reverse=True)]
-        if new_srcids:
-            pdb.set_trace()
         return new_srcids
 
     def apply_prior_quiver(self, pred, target_srcids):
@@ -469,7 +467,6 @@ class ZodiacInterface(Inferencer):
     def learn_auto(self):
         gray_num = 1000
         cnt = 0
-        start_flag = True
         while gray_num > 0:
             print('--------------------------')
             print('{0}th iteration'.format(cnt))

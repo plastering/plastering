@@ -34,16 +34,16 @@ def get_data_features(building, start_time, end_time):
     X = []
     srcids = []
     #for point, data in res.items():
-    #ctr = 0
-    #ctr1 = 0
+    ctr = 0
+    ctr1 = 0
     for labeled in LabeledMetadata.objects(building=building):
         srcid = labeled.srcid
-        #ctr1 += 1
+        ctr1 += 1
         try:
             data = res[srcid]
         except:
             print (srcid, 'not found and skipped.')
-            #ctr += 1
+            ctr += 1
             continue
 
         #t0 = time.clock()
@@ -61,10 +61,9 @@ def get_data_features(building, start_time, end_time):
         srcids.append(srcid)
         #print (time.clock() - t0)
 
-    #print (ctr,'out of',ctr1,'points timeseries not loaded')
+    print (ctr,'out of',ctr1,'points timeseries not loaded')
 
     min_len = min([len(x) for x in X])
-    print ('min len', min_len)
     X = [x[:min_len] for x in X]
     dfe = data_feature_extractor( np.asarray(X) )
     fd = dfe.getF_2015_Hong()
