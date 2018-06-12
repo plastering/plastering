@@ -52,7 +52,7 @@ def get_data_features(building, start_time, end_time):
         #computing features on long sequence is really slow now, so only loading a small port of the readings
         try:
             df = data['data'][:3000]
-            if len(df) < 500: #discard really short sequences
+            if len(df) < 600: #discard really short sequences
                 continue
             else:
                 X.append( df )
