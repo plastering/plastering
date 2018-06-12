@@ -94,8 +94,8 @@ class transfer_learning:
         self.bl = []
 
         self.agreement_threshold = threshold
-        if switch == True:
 
+        if switch == True:
             fd_tmp = self.train_fd
             self.train_fd = self.test_fd
             self.test_fd = fd_tmp
@@ -145,7 +145,7 @@ class transfer_learning:
         for b in self.bl:
             print ( b.score(self.test_fd, label) )
 
-        n_class = 32//2
+        n_class = 8
         c = KMeans(init='k-means++', n_clusters=n_class, n_init=10)
         c.fit(self.test_fn)
         dist = np.sort(c.transform(self.test_fn))
@@ -188,12 +188,15 @@ class transfer_learning:
                 for n in nb_f:
                     v_f = set(n[i])
                     cns = len(v_c & v_f) / float(len(v_c | v_f)) #original count based weight
+                    #print (len(v_c & v_f) , len(v_c | v_f))
                     inter = v_c & v_f
                     union = v_c | v_f
                     d_i = 0
                     d_u = 0
                     for it in inter:
                         d_i += np.linalg.norm(self.test_fn[i]-self.test_fn[it])
+                        #print (np.linalg.norm(self.test_fn[i]-self.test_fn[it]))
+                    #input('...')
                     for u in union:
                         d_u += np.linalg.norm(self.test_fn[i]-self.test_fn[u])
                     if len(inter) != 0:
