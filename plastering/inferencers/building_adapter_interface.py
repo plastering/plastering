@@ -34,24 +34,42 @@ def get_data_features(building, start_time, end_time):
     X = []
     srcids = []
     #for point, data in res.items():
+    #ctr = 0
+    #ctr1 = 0
     for labeled in LabeledMetadata.objects(building=building):
         srcid = labeled.srcid
-        data = res[srcid]
+        #ctr1 += 1
+        try:
+            data = res[srcid]
+        except:
+            print (srcid, 'not found and skipped.')
+            #ctr += 1
+            continue
+
         #t0 = time.clock()
         #TODO: better handle the dimension, it's really ugly now
 
-        #computing features on long sequence is really slow now, so only loading a small port of the readings now
+        #computing features on long sequence is really slow now, so only loading a small port of the readings
         try:
-            X.append( data['data'][:3000] )
+            df = data['data'][:3000]
+            if len(df) < 500: #discard really short sequences
+                continue
+            else:
+                X.append( df )
         except:
             pdb.set_trace()
         srcids.append(srcid)
         #print (time.clock() - t0)
+
+    #print (ctr,'out of',ctr1,'points timeseries not loaded')
+
     min_len = min([len(x) for x in X])
+    print ('min len', min_len)
     X = [x[:min_len] for x in X]
     dfe = data_feature_extractor( np.asarray(X) )
     fd = dfe.getF_2015_Hong()
 
+    assert (len(srcids)==fd.shape[0])
     print ( 'data features for %s with dim:'%building, fd.shape)
     return srcids, fd
 
@@ -100,7 +118,7 @@ class BuildingAdapterInterface(Inferencer):
         if 'threshold' in config:
             self.threshold = config['threshold']
         else:
-            self.threshold = 0.5 
+            self.threshold = 0.5
 
         source_building = source_buildings[0]
 
