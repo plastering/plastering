@@ -103,7 +103,7 @@
   "max air flow sensor": "Max_Air_Flow_Sensor",
   "air volume sensor": "Air_Flow_Sensor",
   "reheat coil": "Reheat_Coil",
-  "heating/cooling indicator": "heating cooling status",
+  "heating/cooling indicator": "heating_cooling_status",
   "heating coil": "Heating_Coil",
   "pid variable": "none",
   "return fan air volume": "Return_Fan_Air_Flow_Sensor",
