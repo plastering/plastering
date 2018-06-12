@@ -6,10 +6,13 @@ import pdb
 from . import Inferencer
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/scrabble')
 from ..metadata_interface import *
+from ..rdflib_wrapper import *
+from ..common import *
 
 POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 
 from scrabble import Scrabble # This may imply incompatible imports.
+from scrabble.common import *
 
 
 class ScrabbleInterface(Inferencer):
@@ -31,126 +34,93 @@ class ScrabbleInterface(Inferencer):
             config = {}
 
         # Prepare config for Scrabble object
+        if 'seed_num' in config:
+            seed_num = config['seed_num']
+        else:
+            seed_num = 10
+
         if 'sample_num_list' in config:
             sample_num_list = config['sample_num_list']
         else:
-            sample_num_list = [0] * (len(source_buildings) + 1) # +1 for target
-        """
-            for building in self.source_buildings:
-                sample_cnt = 0
-                labeled_list = LabeledMetadata.objects(building=target_building)
-                for labeled in labeled_list:
-                    if labeled.fullparsing:
-                        sample_cnt += 1
-                sample_num_list.append(sample_cnt)
-        if 'seed_num' not in config:
-            seed_num = 10
-        else:
-            seed_num = config['seed_num']
-        """
+            sample_num_list = [seed_num] * len(set(source_buildings +
+                                            [target_building]))
+            pdb.set_trace()
 
         if self.target_building not in self.source_buildings:
             self.source_buildings = self.source_buildings + [self.target_building]
         if len(self.source_buildings) > len(sample_num_list):
             sample_num_list.append(0)
+
         if 'use_cluster_flag' not in config:
             config['use_cluster_flag'] = True
         if 'use_brick_flag' not in config:
             config['use_brick_flag'] = True
         if 'negative_flag' not in config:
             config['negative_flag'] = True
+        if 'tagset_classifier_type' not in config:
+            config['tagset_classifier_type'] = 'MLP'
+        if 'crfqs' not in config:
+            config['crfqs'] = 'confidence'
+        if 'entqs' not in config:
+            config['entqs'] = 'phrase_util'
+        if 'n_jobs' not in config:
+            config['n_jobs'] = 10
+        if 'use_known_tags' not in config:
+            config['use_known_tags'] = False
 
-        column_names = ['VendorGivenName',
-                         'BACnetName',
-                         'BACnetDescription']
+        # TODO: This should be migrated into Plastering
+        building_sentence_dict, target_srcids, building_label_dict,\
+            building_tagsets_dict, known_tags_dict = load_data(target_building,
+                                                               source_buildings)
+        self.scrabble = Scrabble(target_building,
+                                 target_srcids,
+                                 building_label_dict,
+                                 building_sentence_dict,
+                                 building_tagsets_dict,
+                                 source_buildings,
+                                 sample_num_list,
+                                 known_tags_dict,
+                                 config=config,
+                                 )
+        self.update_model(self.scrabble.learning_srcids)
 
-        self.building_sentence_dict = dict()
-        self.building_label_dict = dict()
-        self.building_tagsets_dict = dict()
-        for building in self.source_buildings:
-            true_tagsets = {}
-            label_dict = {}
-            for labeled in LabeledMetadata.objects(building=building):
-                srcid = labeled.srcid
-                true_tagsets[srcid] = labeled.tagsets
-                fullparsing = None
-                for clm in column_names:
-                    one_fullparsing = [i[1] for i in labeled.fullparsing[clm]]
-                    if not fullparsing:
-                        fullparsing = one_fullparsing
-                    else:
-                        fullparsing += ['O'] + one_fullparsing
-                        #  This format is alinged with the sentence
-                        #  conformation rule.
-                label_dict[srcid] = fullparsing
 
-            self.building_tagsets_dict[building] = true_tagsets
-            self.building_label_dict[building] = label_dict
-            sentence_dict = dict()
-            for raw_point in RawMetadata.objects(building=building):
-                srcid = raw_point.srcid
-                if srcid in true_tagsets:
-                    metadata = raw_point['metadata']
-                    sentence = None
-                    for clm in column_names:
-                        if not sentence:
-                            sentence = [c for c in metadata[clm].lower()]
-                        else:
-                            sentence += ['\n'] + \
-                                        [c for c in metadata[clm].lower()]
-                    sentence_dict[srcid]  = sentence
-            self.building_sentence_dict[building] = sentence_dict
+    def learn_auto(self, iter_num=25, inc_num=10):
+        for i in range(0, iter_num):
+            print('--------------------------')
+            print('{0}th iteration'.format(i))
+            new_srcids = self.select_informative_samples(inc_num)
+            self.update_model(new_srcids)
+            self.evaluate(self.target_srcids)
+            print('curr new srcids: {0}'.format(len(new_srcids)))
+            print('training srcids: {0}'.format(len(self.training_srcids)))
+            print('f1: {0}'.format(self.history[-1]['metrics']['f1']))
+            print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
 
-        # Validation of the dataset
-        for building in self.source_buildings:
-            for srcid, label_pairs in self.building_label_dict[building]\
-                                          .items():
-                assert len(label_pairs) == \
-                           len(self.building_sentence_dict[building][srcid])
+    def update_model(self, new_srcids):
+        super(ScrabbleInterface, self).update_model(new_srcids)
+        self.scrabble.update_model(new_srcids)
 
-        self.scrabble = Scrabble(
-            target_building=self.target_building,
-            target_srcids=self.target_srcids,
-            building_label_dict=self.building_label_dict,
-            building_sentence_dict=self.building_sentence_dict,
-            building_tagsets_dict=self.building_tagsets_dict,
-            source_buildings=self.source_buildings,
-            source_sample_num_list=sample_num_list,
-            conf=config,
-            learning_srcids=[])
-
-    def learn_auto(self, iter_num=1):
-        params = (self.source_buildings,
-                  self.sample_num_list,
-                  self.target_building)
-        self.learned_srcids = []
-        params = {
-            'use_cluster_flag': True,
-            'use_brick_flag': True,
-            'negative_flag': True,
-            'target_building': self.target_building,
-            'building_list': self.source_buildings,
-            'sample_num_list': self.scrabble.sample_num_list
-            }
-        #self.scrabble.char2tagset_iteration(iter_num, self.logger_postfix, *params)
-        step_data = {'iter_num':0,
-                     'next_learning_srcids': self.scrabble.get_random_srcids(
-                                            self.scrabble.building_srcid_dict,
-                                            self.source_buildings,
-                                            self.sample_num_list),
-                     'model_uuid': None}
-        step_datas = [step_data]
-        step_datas.append(self.scrabble.char2tagset_onestep(step_data,
-                                                            **params))
-
-    def update_model(self, srcids):
-        self.scrabble.update_model(srcids)
+    def postprocessing_pred(self, pred):
+        # Currently only ingest point tagsets.
+        pred_g = init_graph(empty=True)
+        for srcid, tagsets in pred.items():
+            point_tagset = sel_point_tagset(tagsets, srcid)
+            point_prob = 1 # temporary
+            self._add_pred_point_result(pred_g, srcid,
+                                        point_tagset, point_prob)
+        return pred_g
 
     def predict(self, target_srcids=None):
-        return self.scrabble.predict(target_srcids)
+        if not target_srcids:
+            target_srcids = self.target_srcids
+        pred = self.scrabble.predict(target_srcids)
+        self.pred_g = self.postprocessing_pred(pred)
+        return self.pred_g
 
     def predict_proba(self, target_srcids=None):
         return self.scrabble.predict_proba(target_srcids)
 
     def select_informative_samples(self, sample_num=10):
-        return self.scrabble.select_informative_samples_only(sample_num)
+        # Use prior (e.g., from Zodiac.)
+        return self.scrabble.select_informative_samples(sample_num)
