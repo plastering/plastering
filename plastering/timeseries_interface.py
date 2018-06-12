@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import re
 import pdb
 
 from glob import glob
@@ -33,8 +34,20 @@ i   schema: schema used in the csv file
     timestamps = []
     data = []
     for f in files:
-        df = pd.read_csv(f)
-        tmp = f.split('/')[-1][:-4] #point name, should generalize
+        try:
+            df = pd.read_csv(f)
+        except pd.io.common.EmptyDataError:
+            print (f, " is empty and has been skipped.")
+            continue
+
+        if target_building == 'sdh':
+            tmp = f[:-4] #point name, special case for sdh
+            tmp = tmp.split('+')[-3:]
+            tmp = [re.sub('[^A-Z0-9]', '_', s) for s in tmp]
+            tmp = '_'.join(tmp)
+            #print (f, 'converted to', tmp)
+        else:
+            tmp = f.split('/')[-1][:-4] #point name, should generalize
         points.append(tmp)
 
         #generate dateindex from timestamp
@@ -68,7 +81,7 @@ def write_to_db(target_building, iterator):
         df = pd.DataFrame({'date': timestamps, 'data': data})
         df.set_index('date')
         lib.write(sensor, df)
-        print ('writing %s is done'%sensor)
+        #print ('writing %s is done'%sensor)
 
 
 def read_from_db(target_building, start_time=None, end_time=None):
@@ -116,9 +129,12 @@ def read_from_db(target_building, start_time=None, end_time=None):
             data = lib.read(srcid, chunk_range=date_range)
             if len(data) == 0:
                 print('WARNING: {0} has empty data.'.format(srcid))
-                pdb.set_trace()
+                #pdb.set_trace()
+                continue
+
             res[srcid] = data
         print('correctly done')
+
         return res
 
 
