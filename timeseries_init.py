@@ -27,7 +27,7 @@ path = args.path
 print ('------storing data for %s from %s------'%(building, path))
 
 #write to DB
-write_wrapper(building, path, 2)
+write_wrapper(building, path, 1)
 
 #test loading from DB
 print ('------testing loading function for %s------'%building)

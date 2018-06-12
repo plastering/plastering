@@ -56,6 +56,18 @@ def parse_tagsets(building):
         point.point_tagset = sel_point_tagset(tagsets)
         point.save()
 
+def remove_invalid_srcids(building):
+    with open('config/invalid_srcids.json', 'r') as fp:
+        invalid_srcids_dict = json.load(fp)
+    if building not in invalid_srcids_dict:
+        return None
+    invalid_srcids = invalid_srcids_dict[building]
+
+    print('{0} invalid points are removed.'.format(len(invalid_srcids)))
+    for srcid in invalid_srcids:
+        RawMetadata.objects(srcid=srcid).delete()
+        LabeledMetadata.objects(srcid=srcid).delete()
+
 
 if __name__ == '__main__':
     argparser.add_argument('-b', type=str, dest='building', required=True)
@@ -83,3 +95,4 @@ if __name__ == '__main__':
         parse_ucsd_rawmetadata(building)
         parse_tagsets(building)
         parse_fullparsing(building)
+    remove_invalid_srcids(building)
