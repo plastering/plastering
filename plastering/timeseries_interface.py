@@ -46,6 +46,9 @@ i   schema: schema used in the csv file
             tmp = [re.sub('[^A-Z0-9]', '_', s) for s in tmp]
             tmp = '_'.join(tmp)
             #print (f, 'converted to', tmp)
+        elif target_building == 'uva_cse':
+            tmp = f[:-4]
+            tmp = re.sub('[^a-zA-Z0-9]', '_', tmp)
         else:
             tmp = f.split('/')[-1][:-4] #point name, should generalize
         points.append(tmp)
