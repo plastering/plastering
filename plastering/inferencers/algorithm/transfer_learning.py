@@ -145,7 +145,7 @@ class transfer_learning:
         for b in self.bl:
             print ( b.score(self.test_fd, label) )
 
-        n_class = 8
+        n_class = 32
         c = KMeans(init='k-means++', n_clusters=n_class, n_init=10)
         c.fit(self.test_fn)
         dist = np.sort(c.transform(self.test_fn))

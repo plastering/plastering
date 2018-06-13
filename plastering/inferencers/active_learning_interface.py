@@ -28,10 +28,11 @@ def get_name_features(names):
 class ActiveLearningInterface(Inferencer):
 
     def __init__(self,
+        fold,
+        rounds,
         target_building,
         target_srcids,
-        fold,
-        rounds
+        source_building=None
         ):
 
         super(ActiveLearningInterface, self).__init__(
@@ -49,13 +50,38 @@ class ActiveLearningInterface(Inferencer):
 
         le = LE()
         try:
-            label = le.fit_transform(pt_type)
+            le.fit(pt_type)
         except:
             pdb.set_trace()
 
         #TODO: add processing for transferred info
-        transfer_fn = None
-        transfer_label = None
+        transfer_fn = []
+        transfer_label = []
+
+        if source_building:
+            srcids = [point['srcid'] for point
+                      in LabeledMetadata.objects(building=source_building)]
+            source_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset
+                       for srcid in srcids]
+            source_name = [RawMetadata.objects(srcid=srcid).first()\
+                       .metadata['VendorGivenName'] for srcid in srcids]
+
+            fn_all = get_name_features( pt_name + source_name )
+            fn = fn_all[:len(pt_name), :]
+            transfer_fn = fn_all[len(pt_name):, :]
+
+            try:
+                le.fit( pt_type + source_type )
+                transfer_label = le.transform(source_type)
+            except:
+                pdb.set_trace()
+
+            print ('%d instances loaded from transferred bldg: %s'%(len(transfer_label), source_building))
+
+        try:
+            label = le.transform(pt_type)
+        except:
+            pdb.set_trace()
 
         #print ('# of classes is %d'%len(np.unique(label)))
         print ('running active learning by Hong on building %s'%target_building)
@@ -69,7 +95,7 @@ class ActiveLearningInterface(Inferencer):
             28,
             fn,
             label,
-            transfer_fn
+            transfer_fn,
             transfer_label
         )
 

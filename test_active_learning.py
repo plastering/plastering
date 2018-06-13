@@ -5,19 +5,25 @@ import numpy as np
 from plastering.inferencers.active_learning_interface import ActiveLearningInterface
 from plastering.metadata_interface import *
 
+
 target_building = sys.argv[1]
+try:
+    source_building = sys.argv[2]
+except:
+    source_building = None
 
 labeled_list = LabeledMetadata.objects(building=target_building)
 target_srcids = [labeled['srcid'] for labeled in labeled_list]
 
 fold = 10
-rounds = 250
+rounds = 100
 
 al = ActiveLearningInterface(
+    fold,
+    rounds,
     target_building,
     target_srcids,
-    fold=fold,
-    rounds=rounds
+    source_building
     )
 
 al.learn_auto()

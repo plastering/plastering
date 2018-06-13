@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 import sys
 import math
 import random
@@ -35,7 +36,7 @@ def get_name_features(names):
 
 class active_learning():
 
-    def __init__(self, fold, rounds, n_cluster, fn, label, transfer_fn=None, transfer_label=None):
+    def __init__(self, fold, rounds, n_cluster, fn, label, transfer_fn=[], transfer_label=[]):
 
         self.fold = fold
         self.rounds = rounds
@@ -171,17 +172,19 @@ class active_learning():
 
     def get_pred_acc(self, fn_test, label_test):
 
-        if not self.pseudo_set:
+        if not self.p_idx:
             fn_train = self.fn[self.labeled_set]
             label_train = self.label[self.labeled_set]
         else:
-            fn_train = self.fn[np.hstack((self.labeled_set, self.pseudo_set))]
-            label_train = np.hstack((self.label[self.labeled_set], self.pseudo_label))
+            fn_train = self.fn[np.hstack((self.labeled_set, self.p_idx))]
+            label_train = np.hstack((self.label[self.labeled_set], self.p_label))
 
         #TODO: test the case that leverages transfer
-        if self.transfer_label:
+        if len(self.transfer_label) != 0:
             fn_train = np.vstack((fn_train, self.transfer_fn))
-            label_train = np.vstack((label_train, self.transfer_label))
+            label_train = np.hstack((label_train, self.transfer_label))
+
+        assert ( fn_train.shape[0] == len(label_train) )
 
         self.clf.fit(fn_train, label_train)
         fn_preds = self.clf.predict(fn_test)
