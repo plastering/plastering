@@ -92,7 +92,7 @@ def get_vav_points(g, vav):
 
 def get_point_type(g, point):
     qstr = """
-    select ?t {{
+    select ?t where {{
     {0} a ?t .
     }}
     """
@@ -103,3 +103,24 @@ def get_point_type(g, point):
 def parse_srcid(point):
     return point.split('#')[-1]
 
+
+def get_top_class(point_tagset):
+    if isinstance(point_tagset, URIRef):
+        base_class = point_tagset.split('#')[-1].split('_')[-1]
+    elif isinstance(point_tagset, str):
+        base_class = point_tagset.split('_')[-1]
+        point_tagset = BRICK[point_tagset]
+    else:
+        raise Exception('Behavior not defined for {0}'.format(point_tagset))
+    base_tagset = BRICK[base_class]
+    if base_class in ['sensor', 'meter']:
+        qstr = """
+        select ?superclass where {{
+        ?superclass rdfs:subClassOf {0}.
+        {1} rdfs:subClassOf* ?superclass.
+        }}
+        """.format(base_tagset.n3(), point_tagset.n3())
+        res = query_sparql(schema_g, qstr)
+        assert res, 'No super class found for {0}'.format(point_tagset)
+        base_class = res[0]['superclass'].split('#')[-1]
+    return base_class
