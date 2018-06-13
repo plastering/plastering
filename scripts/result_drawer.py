@@ -6,12 +6,12 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 plt.rcParams['axes.labelpad'] = 0
-plt.rcParams['font.size'] = 8
+plt.rcParams['font.size'] = 10
 from mpl_toolkits.axes_grid.anchored_artists import AnchoredText
 #plt.rcParams['font.family'] = 'sans-serif'
 #plt.rcParams['font.sans-serif'] = 'Helvetica'
 plt.rcParams['axes.labelpad'] = 0
-plt.rcParams['font.size'] = 8
+plt.rcParams['font.size'] = 10
 from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib.axes import Axes
 
@@ -26,7 +26,7 @@ building_anon_map = {
     'sdh': 'C-1'
 }
 colors = ['firebrick', 'deepskyblue']
-inferencer_names = ['zodiac', 'al_hong']
+inferencer_names = ['zodiac', 'al_hong', 'scrabble']
 EXP_NUM = 4
 LINESTYLES = ['--', '-.', '-']
 FIG_DIR = './figs'
@@ -40,6 +40,7 @@ def average_data(xs, ys, target_x):
 
 def plot_pointonly_notransfer():
     buildings = ['ebu3b', 'uva_cse', 'sdh']
+    #buildings = ['sdh', 'ebu3b']
     outputfile = FIG_DIR + '/pointonly_notransfer.pdf'
 
     fig, axes = plt.subplots(1, len(buildings))
@@ -50,12 +51,14 @@ def plot_pointonly_notransfer():
     xlim = (-5, xticks[-1]+5)
     ylim = (yticks[0]-2, yticks[-1]+5)
     interp_x = list(range(10, 250, 5))
-    for ax, building in zip(axes, buildings): # subfigure per building
+    for ax_num, (ax, building) in enumerate(zip(axes, buildings)): # subfigure per building
         xlabel = '# of Samples'
-        ylabel = 'Metric'
+        ylabel = 'Metric (%)'
         title = building_anon_map[building]
         linestyles = deepcopy(LINESTYLES)
         for inferencer_name in inferencer_names:
+            if building == 'uva_cse' and inferencer_name == 'scrabble':
+                continue
             xs = []
             ys = []
             xss = []
@@ -77,15 +80,30 @@ def plot_pointonly_notransfer():
             mf1 = average_data(xss, mf1s, interp_x)
             x = interp_x
             ys = [f1, mf1]
-            legends = ['F1, {0}'.format(inferencer_name),
-                       'MacroF1, {0}'.format(inferencer_name)
-                       ]
+            if ax_num == 0:
+                #data_labels = ['Baseline Acc w/o $B_s$',
+                #               'Baseline M-$F_1$ w/o $B_s$']
+                legends = ['MicroF1, {0}'.format(inferencer_name),
+                           'MacroF1, {0}'.format(inferencer_name)
+                           ]
+            else:
+                #data_labels = None
+                legends = None
 
             _, plots = plotter.plot_multiple_2dline(
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
                 yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
                 linestyles=[linestyles.pop()]*len(ys), cs=colors)
-    fig.set_size_inches((8,3))
+    for ax in axes:
+        ax.grid(True)
+    for i in range(1,len(buildings)):
+        axes[i].set_yticklabels([])
+        axes[i].set_ylabel('')
+    for i in range(0,len(buildings)):
+        if i != 1:
+            axes[i].set_xlabel('')
+    axes[0].legend(bbox_to_anchor=(3.2, 1.5), ncol=3, frameon=False)
+    fig.set_size_inches((8,2))
     save_fig(fig, outputfile)
 
 def plot_pointonly_transfer():
@@ -100,9 +118,9 @@ def plot_pointonly_transfer():
     xlim = (-5, xticks[-1]+5)
     ylim = (yticks[0]-2, yticks[-1]+5)
     interp_x = list(range(10, 250, 5))
-    for ax, building in zip(axes, buildings): # subfigure per building
+    for i, (ax, building) in enumerate(zip(axes, buildings)): # subfigure per building
         xlabel = '# of Samples'
-        ylabel = 'Metric'
+        ylabel = 'Metric (%)'
         title = building_anon_map[building]
         linestyles = deepcopy(LINESTYLES)
         for inferencer_name in inferencer_names:
@@ -127,9 +145,15 @@ def plot_pointonly_transfer():
             mf1 = average_data(xss, mf1s, interp_x)
             x = interp_x
             ys = [f1, mf1]
-            legends = ['F1, {0}'.format(inferencer_name),
-                       'MacroF1, {0}'.format(inferencer_name)
-                       ]
+            if i == 2:
+                #data_labels = ['Baseline Acc w/o $B_s$',
+                #               'Baseline M-$F_1$ w/o $B_s$']
+                legends = ['MicroF1, {0}'.format(inferencer_name),
+                           'MacroF1, {0}'.format(inferencer_name)
+                           ]
+            else:
+                #data_labels = None
+                legends = None
 
             _, plots = plotter.plot_multiple_2dline(
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
