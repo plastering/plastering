@@ -9,7 +9,7 @@ from shutil import copyfile
 
 from plastering.inferencers.zodiac_new import ZodiacInterface
 from plastering.metadata_interface import *
-from plastering.rdflib_wrapper import *
+from plastering.rdf_wrapper import *
 
 BRICK_VERSION_STR = BRICK_VERSION.replace('.', '_')
 brick_dir = dir_path + '/../brick/'

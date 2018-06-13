@@ -1,4 +1,4 @@
-from plastering.rdflib_wrapper import *
+from plastering.rdf_wrapper import *
 from plastering.metadata_interface import *
 
 

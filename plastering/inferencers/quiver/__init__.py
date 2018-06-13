@@ -2,7 +2,8 @@ import pdb
 from uuid import uuid4 as gen_uuid
 
 from .. import Inferencer
-from ...rdflib_wrapper import *
+from ...rdf_wrapper import *
+from rdflib import URIRef
 from jasonhelper import bidict
 
 class DummyQuiver(Inferencer):
@@ -46,10 +47,11 @@ class DummyQuiver(Inferencer):
         #colocated_points = {}
         occs = self.get_occs()
         for occ in occs:
+            print("Found it")
             if self.prior_g and self.prior_confidences\
-                    [(occ, RDF.type, BRICK.occupied_command)] < 0.5:
+                    [(URIRef(str(occ)), RDF.type, BRICK.occupied_command)] < 0.5:
                 continue
-            vav = self.point_vav_dict[occ]
+            vav = self.point_vav_dict[URIRef(str(occ))]
             insert_triple(pred_g, (vav, RDF['type'], BRICK['vav']))
             points = self.point_vav_dict.inverse[vav]
             for point in points:
