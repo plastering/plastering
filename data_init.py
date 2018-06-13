@@ -10,6 +10,7 @@ from plastering.metadata_interface import *
 from plastering.common import *
 from plastering.helper import load_uva_building, load_ucb_building
 from plastering.helper import extract_raw_ucb_labels
+from plastering.rdflib_wrapper import get_top_class
 from jasonhelper import argparser
 
 UCB_BUILDINGS = ['sdh', 'soda', 'ibm']
@@ -71,6 +72,10 @@ def remove_invalid_srcids(building):
 
 if __name__ == '__main__':
     argparser.add_argument('-b', type=str, dest='building', required=True)
+    argparser.add_argument('-top',
+                           type='bool',
+                           dest='topclass_flag',
+                           default=False)
     # add raw metadata
     args = argparser.parse_args()
     building = args.building
@@ -96,3 +101,10 @@ if __name__ == '__main__':
         parse_tagsets(building)
         parse_fullparsing(building)
     remove_invalid_srcids(building)
+
+    if args.topclass_flag:
+        for obj in LabeledMetadata.objects(building=building):
+            point_tagset = obj.point_tagset
+            topclass_tagset = get_top_class(point_tagset)
+            obj.point_tagset = topclass_tagset
+            obj.save()
