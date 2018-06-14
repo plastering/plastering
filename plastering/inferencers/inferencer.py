@@ -3,16 +3,14 @@ import pdb
 import random
 from copy import deepcopy
 
-import rdflib # May use faster rdf db instead.
 import arrow
-from rdflib import *
 
 from ..metadata_interface import *
 from ..common import *
 from .. import plotter
 from .. import *
 from ..error import *
-from ..rdflib_wrapper import *
+from ..rdf_wrapper import *
 from ..evaluator import *
 
 PUBLIC_METHODS = ['learn_auto',

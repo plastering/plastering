@@ -1,5 +1,8 @@
 import pdb
 import random
+from collections import OrderedDict
+
+import arrow
 
 from .inferencers import *
 from .error import *
@@ -41,12 +44,18 @@ class Node():
             for method_name in PUBLIC_METHODS:
                 assert method_name in attrs
 
-class Workflow(object):
+#class Workflow(object):
+class Workflow(Inferencer):
     """
     A Workflow instance contains the entire graph of frameworks.
     It iterates the graph each step.
     """
-    def __init__(self, target_srcids, f_class_dict, f_graph_configs):
+    def __init__(self,
+                 target_srcids,
+                 target_building,
+                 f_class_dict,
+                 f_graph_configs,
+                 config={}):
         """
         "f" stands for "framework" from now on.
         # Inputs:
@@ -63,7 +72,12 @@ class Workflow(object):
                     'zodiac': ({'target_building':xxx}, {'scrabble': ({}, [])})
                 }
         """
-        super(Workflow, self).__init__()
+
+        if 'debug' in config:
+            self.debug = config['debug']
+        else:
+            self.debug = True
+        super(Workflow, self).__init__(target_building, target_srcids)
         self.target_srcids = target_srcids
         self.f_class_dict = f_class_dict
 
@@ -116,11 +130,15 @@ class Workflow(object):
     def predict(self, target_srcids=None):
         if not target_srcids:
             target_srcids = self.target_srcids
+        super(Workflow, self).predict(target_srcids)
         params = {
             'target_srcids': target_srcids
         }
-        res_g = self._traverse_wrapper(self.f_head, ['predict'], [params])
-        # TODO: Post processing res_g to merge different results
+        res = self._traverse_wrapper(self.f_head, ['predict'], [params])
+        gs = list(res.values())
+        pred_g = gs[-1] + gs[-2]
+        self.pred_g = pred_g
+        return pred_g
 
     def _traverse_wrapper(self, node, func_names, params, prev_attrs=[[]]):
         """
@@ -140,8 +158,10 @@ class Workflow(object):
         """
         assert isinstance(func_names, list)
         assert isinstance(params, list)
-        res_dict = {}
+        res_dict = OrderedDict()
+
         for func_name, param, prev_attr in zip(func_names, params, prev_attrs):
+            t0 = arrow.get()
             for attr in prev_attr:
                 if node.prev:
                     param[attr] = getattr(node.prev.f, attr)
@@ -152,13 +172,21 @@ class Workflow(object):
                 res_dict[(str(node), func_name)] = func(**param)
             except EmptyTrainingSamples as e:
                 print(e.msg)
+            t1 = arrow.get()
+            if self.debug:
+                print('INFO: {0} at {1} took: {2}'.format(
+                    func_name,
+                    node.f,
+                    t1 - t0
+                ))
+
 
         for next_node in node.nexts:
             res_dict.update(self._traverse_wrapper(next_node, func_names,
                                                    params, prev_attrs))
         return res_dict
 
-    def update_model(self, srcids):
+    def update_model(self, new_srcids):
         """
         Update model of each node. It consists of three steps for every node.
         First, update the model with given samples so far.
@@ -170,9 +198,10 @@ class Workflow(object):
         # Input
           - srcids (list(str)): list of srcids to add.
         """
+        super(Workflow, self).update_model(new_srcids)
         params = [
             {},
-            {'new_srcids': srcids},
+            {'new_srcids': new_srcids},
             {'target_srcids': self.target_srcids}
         ]
         func_names = ['update_prior', 'update_model', 'predict']
@@ -186,14 +215,21 @@ class Workflow(object):
         self._traverse_wrapper(self.f_head, ['update_model'], [params])
 
     def learn_auto(self):
-        for i in range(0, 200):
+        for i in range(0, 250):
             print('--------------------------')
-            print('{0}th iteration'.format(cnt))
+            t0 = arrow.get()
+            print('{0}th iteration'.format(i))
             new_srcids = self.select_informative_samples(1)
+            t1 = arrow.get()
+            print('{0}th TOTAL "select_samples" took: {1}'.format(i, t1-t0))
             self.update_model(new_srcids)
+            t2 = arrow.get()
+            print('{0}th TOTAL "update_model" took: {1}'.format(i, t2-t1))
             self.evaluate(self.target_srcids)
             print('curr new srcids: {0}'.format(len(new_srcids)))
             print('training srcids: {0}'.format(len(self.training_srcids)))
-            print('gray: {0}/{1}'.format(gray_num, len(self.target_srcids)))
             print('f1: {0}'.format(self.history[-1]['metrics']['f1']))
             print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
+            t3 = arrow.get()
+            print('{0}th TOTAL "evaluate" took: {1}'.format(i, t3-t2))
+            print('{0}th took: {1}'.format(i, t3-t0))
