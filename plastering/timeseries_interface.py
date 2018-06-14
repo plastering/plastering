@@ -82,7 +82,7 @@ def write_to_db(target_building, iterator):
 
     for sensor, timestamps, data in iterator:
         df = pd.DataFrame({'date': timestamps, 'data': data})
-        df.set_index('date')
+        df.set_index('date', inplace=True)
         lib.write(sensor, df)
         #print ('writing %s is done'%sensor)
 
