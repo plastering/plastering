@@ -8,6 +8,7 @@ from copy import deepcopy
 import numpy as np
 from functools import reduce
 from collections import defaultdict
+import arrow
 
 import scipy
 from scipy.cluster.vq import *
@@ -31,7 +32,7 @@ from . import Inferencer
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/zodiac')
 from ..metadata_interface import *
 from ..common import *
-from ..rdflib_wrapper import *
+from ..rdf_wrapper import *
 from jasonhelper import bidict
 
 POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
@@ -493,13 +494,14 @@ class ZodiacInterface(Inferencer):
         self.model.fit(self.training_bow, self.training_labels)
 
     def predict(self, target_srcids=None):
+        t0 = arrow.get()
         if not target_srcids:
             target_srcids = self.target_srcids
         super(ZodiacInterface, self).predict(target_srcids)
 
         self.learn_model()
 
-        pred_g = init_graph(empty=True)
+        pred_g = init_graph(empty=False)
         sample_bow = self.get_sub_bow(target_srcids)
 
         pred_points = self.model.predict(sample_bow)
@@ -510,4 +512,6 @@ class ZodiacInterface(Inferencer):
             prob = max(prob)
             self._add_pred_point_result(pred_g, srcid, pred_point, prob)
         self.pred_g = pred_g
+        t1 = arrow.get()
+        print('REALLY it takes this: {0}'.format(t1 - t0))
         return pred_g

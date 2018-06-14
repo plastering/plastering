@@ -9,6 +9,35 @@ from ..common import *
 with open('./groundtruth/ucb_brick_map.json', 'r') as fp:
     brick_map = json.load(fp)
 
+def brickify_arka_data():
+    buildings = ['SDH', 'SODA']
+    for building in buildings:
+        filename='./groundtruth/{0}-GROUND-TRUTH'.format(building)
+        with open(filename, 'r') as fp:
+            rawlines = [line[:-1] for line in fp.readlines()]
+        newlines = []
+        for i, sentence in enumerate(rawlines[::2]):
+            newlines.append(sentence + '\n')
+            i *= 2
+            print('{0}th line'.format(i))
+            encoded = rawlines[i+1]
+            splitted = encoded.split(',')
+            new_splitted = []
+            for elem in splitted:
+                [label, word, t] = elem.split(':')
+                if label == 'site':
+                    brick_tagset = 'building-' + building
+                elif label[-3:] == '-id':
+                    orig_tagset = brick_map[label[:-3]].lower()
+                    brick_tagset = orig_tagset + '-id'
+                else:
+                    brick_tagset = brick_map[label].lower()
+                new_splitted.append(':'.join([brick_tagset, word, t]))
+            new_splitted = ','.join(new_splitted)
+            newlines.append(new_splitted + '\n')
+        with open(filename + '-BRICK', 'w') as fp:
+            fp.writelines(newlines)
+
 def extract_raw_ucb_labels():
     buildings = ['SODA', 'SDH', 'IBM']
     labels = set()

@@ -1,8 +1,10 @@
-from .. import Inferencer
-from ...rdflib_wrapper import *
 import pdb
-
 from uuid import uuid4 as gen_uuid
+
+from .. import Inferencer
+from ...rdf_wrapper import *
+from rdflib import URIRef
+from jasonhelper import bidict
 
 class DummyQuiver(Inferencer):
 
@@ -22,17 +24,66 @@ class DummyQuiver(Inferencer):
             ui=ui,
             config=config,
             framework_name='quiver')
+        self.cache_vav_dict(self.true_g)
 
-    def get_occs(self):
+    def cache_vav_dict(self, true_g):
         qstr = """
-        select ?occ where {
-            ?occ a brick:occupied_command.
+        select ?point ?srcid ?vav where {
+        ?vav a brick:vav.
+        ?point bf:isPointOf ?vav .
+        ?point bf:srcid ?srcid.
         }
         """
-        res = query_sparql(self.prior_g + self.schema_g, qstr)
-        return [row['occ'] for row in res]
+        res = query_sparql(true_g, qstr)
+        self.point_vav_dict = bidict()
+        for row in res:
+            vav = row['vav']
+            point_srcid = row['srcid']
+            point = create_uri(point_srcid)
+            self.point_vav_dict[point] = vav
+
+    def predict_cached(self, target_srcids=[]):
+        pred_g = init_graph(empty=True)
+        #colocated_points = {}
+        occs = self.get_occs()
+        for occ in occs:
+            print("Found it")
+            if self.prior_g and self.prior_confidences\
+                    [(URIRef(str(occ)), RDF.type, BRICK.occupied_command)] < 0.5:
+                continue
+            vav = self.point_vav_dict[URIRef(str(occ))]
+            insert_triple(pred_g, (vav, RDF['type'], BRICK['vav']))
+            points = self.point_vav_dict.inverse[vav]
+            for point in points:
+                insert_triple(pred_g, (point, BF['isPointOf'], vav))
+        self.pred_g = pred_g
+        return self.pred_g
 
     def predict(self, target_srcids=[]):
+        return self.predict_cached(target_srcids)
+
+    def get_occs(self):
+        if self.prior_g:
+            qstr = """
+            select ?occ where {
+                ?occ a brick:occupied_command.
+            }
+            """
+            res = query_sparql(self.prior_g, qstr)
+            occs = [row['occ'] for row in res]
+        else:
+            qstr = """
+            select ?srcid where {
+                ?occ a brick:occupied_command.
+                ?occ bf:srcid ?srcid.
+            }
+            """
+            res = query_sparql(self.true_g, qstr)
+            srcids = [row['srcid'] for row in res]
+            occs = [create_uri(srcid) for srcid in srcids]
+        return occs
+
+    def predict_raw(self, target_srcids=[]):
         pred_g = init_graph(empty=True)
         if self.target_building == 'ebu3b':
             qstr = """
@@ -43,7 +94,6 @@ class DummyQuiver(Inferencer):
                 ?point bf:isPointOf ?something .
                 ?point bf:srcid ?point_srcid .
                 ?occ bf:isPointOf ?something .
-                ?point a/rdfs:subClassOf* brick:point .
             }
             """
         else:
