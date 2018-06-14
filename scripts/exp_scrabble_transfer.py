@@ -8,10 +8,12 @@ from plastering.inferencers.scrabble_new import ScrabbleInterface
 from plastering.metadata_interface import *
 import pdb
 
-EXP_NUM = 4
+EXP_NUM = 2
 
-target_buildings = ['ebu3b']
-source_buildings = ['ap_m', 'ebu3b']
+target_buildings = ['sdh']
+source_buildings = ['ebu3b', 'sdh']
+#target_buildings = ['ebu3b']
+#source_buildings = ['ap_m', 'ebu3b']
 #target_buildings = ['sdh']
 #source_buildings = ['sdh']
 sample_num_list = [200, 10]
@@ -26,7 +28,7 @@ configs = {
             'use_known_tags': True,
             'n_jobs': 12,
             'tagset_classifier_type': 'MLP',
-            'use_brick_flag': True,
+            'use_brick_flag': False,
             'crfqs': 'confidence',
             'entqs': 'phrase_util',
             'negative_flag': True,
