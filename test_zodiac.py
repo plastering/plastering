@@ -3,7 +3,7 @@ from plastering.inferencers.zodiac_new import ZodiacInterface
 from plastering.metadata_interface import *
 import pdb
 
-target_building = 'ebu3b'
+target_building = 'ghc'
 #target_building = 'uva_cse'
 
 # Select labeled srcids (Not all the data are labeled yet.)
