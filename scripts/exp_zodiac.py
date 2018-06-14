@@ -13,7 +13,8 @@ import pdb
 EXP_NUM = 4
 
 #target_buildings = ['ebu3b', 'uva_cse', 'sdh']
-target_buildings = ['sdh']
+#target_buildings = ['sdh']
+target_buildings = ['ghc']
 
 inferencers = {
     'zodiac': ZodiacInterface,

@@ -89,8 +89,11 @@ class ZodiacInterface(Inferencer):
         for source_building, sample_num in zip(source_buildings,
                                                sample_num_list):
             objects = LabeledMetadata.objects(building=source_building)
-            source_srcids = random.sample(
-                [obj.srcid for obj in objects], sample_num)
+            try:
+                source_srcids = random.sample(
+                    [obj.srcid for obj in objects], sample_num)
+            except:
+                pdb.set_trace()
             source_buildings_srcids += source_srcids
 
         self.total_srcids = deepcopy(target_srcids) + source_buildings_srcids
@@ -510,7 +513,10 @@ class ZodiacInterface(Inferencer):
                                            pred_points,
                                            confidences):
             prob = max(prob)
-            self._add_pred_point_result(pred_g, srcid, pred_point, prob)
+            try:
+                self._add_pred_point_result(pred_g, srcid, pred_point, prob)
+            except:
+                pdb.set_trace()
         self.pred_g = pred_g
         t1 = arrow.get()
         print('REALLY it takes this: {0}'.format(t1 - t0))
