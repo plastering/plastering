@@ -2,6 +2,7 @@ import os
 import sys
 import importlib.util
 import pdb
+import time
 import random
 import re
 from copy import deepcopy
@@ -504,7 +505,13 @@ class ZodiacInterface(Inferencer):
 
         self.learn_model()
 
-        pred_g = init_graph(empty=False)
+        pred_g = None
+        for i in range(0, 10):
+            pred_g = init_graph(empty=False)
+            if pred_g:
+                break
+            time.sleep(3)
+        assert pred_g, 'pred_g is not initialized somehow'
         sample_bow = self.get_sub_bow(target_srcids)
 
         pred_points = self.model.predict(sample_bow)
