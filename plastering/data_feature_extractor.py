@@ -368,7 +368,7 @@ class data_feature_extractor():
         return F
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     X = np.random.rand(1000, 60000)
     dfe = data_feature_extractor(X)
