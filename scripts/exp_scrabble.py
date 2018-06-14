@@ -10,10 +10,12 @@ import pdb
 
 EXP_NUM = 4
 
+target_buildings = ['ghc']
+source_buildings = ['ghc']
 #target_buildings = ['ebu3b']
 #source_buildings = ['ebu3b']
-target_buildings = ['sdh']
-source_buildings = ['sdh']
+#target_buildings = ['sdh']
+#source_buildings = ['sdh']
 sample_num_list = [10]
 
 inferencers = {
@@ -26,7 +28,7 @@ configs = {
             'use_known_tags': True,
             'n_jobs': 12,
             'tagset_classifier_type': 'MLP',
-            'use_brick_flag': True,
+            'use_brick_flag': False,
             'crfqs': 'confidence',
             'entqs': 'phrase_util',
             'negative_flag': True,

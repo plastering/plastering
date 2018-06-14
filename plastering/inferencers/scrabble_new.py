@@ -6,7 +6,7 @@ import pdb
 from . import Inferencer
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/scrabble')
 from ..metadata_interface import *
-from ..rdflib_wrapper import *
+from ..rdf_wrapper import *
 from ..common import *
 
 POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
@@ -44,7 +44,6 @@ class ScrabbleInterface(Inferencer):
         else:
             sample_num_list = [seed_num] * len(set(source_buildings +
                                             [target_building]))
-            pdb.set_trace()
 
         if self.target_building not in self.source_buildings:
             self.source_buildings = self.source_buildings + [self.target_building]
@@ -121,6 +120,37 @@ class ScrabbleInterface(Inferencer):
     def predict_proba(self, target_srcids=None):
         return self.scrabble.predict_proba(target_srcids)
 
+    def apply_prior_zodiac(self, sample_num):
+        if not self.prior_g:
+            return []
+        instances = get_instance_tuples(self.prior_g)
+        good_preds = {}
+        for srcid, point_tagset in instances.items():
+            triple = (BASE[srcid], RDF.type, BRICK[point_tagset])
+            if self.prior_confidences[triple] > 0.5:
+                good_preds[srcid] = point_tagset
+        pred_g = self.predict()
+        incorrect_srcids = []
+        for srcid, good_point_tagset in good_preds.items():
+            pred_point_tagset = get_point_type(pred_g, BASE[srcid])
+            if good_point_tagset != pred_point_tagset:
+                incorrect_srcids.append(srcid)
+        if not incorrect_srcids:
+            return []
+        new_srcids = select_random_samples(
+            building=self.target_building,
+            srcids=incorrect_srcids,
+            n=sample_num,
+            use_cluster_flag=True,
+            sentence_dict=self.scrabble.char2ir.sentence_dict,
+            unique_clusters_flag=True,
+        )
+        return new_srcids
+
     def select_informative_samples(self, sample_num=10):
         # Use prior (e.g., from Zodiac.)
+        new_srcids = self.apply_prior_zodiac(sample_num)
+        if len(new_srcids) < sample_num:
+            new_srcids += self.scrabble.select_informative_samples(
+                sample_num - len(new_srcids))
         return self.scrabble.select_informative_samples(sample_num)
