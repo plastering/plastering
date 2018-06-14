@@ -14,6 +14,7 @@ from plastering.rdf_wrapper import get_top_class
 from jasonhelper import argparser
 
 UCB_BUILDINGS = ['sdh', 'soda', 'ibm']
+CMU_BUILDINGS = ['ghc']
 
 def parse_ucsd_rawmetadata(building):
     rawdf = pd.read_csv('rawdata/metadata/{0}_rawmetadata.csv'\
@@ -32,11 +33,11 @@ print('Finished adding raw metadata')
 
 # add labeled metadata
 
-def parse_fullparsing(building):
+def parse_fullparsing(building, write_rawmetadata=False):
     with open('groundtruth/{0}_full_parsing.json'.format(building), 'r') as fp:
         fullparsings = json.load(fp)
     for srcid, fullparsing in fullparsings.items():
-        if building in UCB_BUILDINGS:
+        if building in UCB_BUILDINGS + CMU_BUILDINGS:
             fullparsing = {
                 'VendorGivenName': fullparsing
             }
@@ -44,6 +45,15 @@ def parse_fullparsing(building):
                                .upsert_one(srcid=srcid, building=building)
         point.fullparsing = fullparsing
         point.save()
+        if write_rawmetadata:
+            rawpoint = RawMetadata.objects(srcid=srcid, building=building)\
+                .upsert_one(srcid=srcid, building=building)
+            sentence = ''.join([row[0] for row in fullparsing['VendorGivenName']])
+            rawpoint.metadata = {
+                'VendorGivenName': sentence
+            }
+            rawpoint.save()
+
     print('Finished adding full parsing')
 
 # add tagsets
@@ -54,7 +64,10 @@ def parse_tagsets(building):
         point = LabeledMetadata.objects(srcid=srcid, building=building)\
                                .upsert_one(srcid=srcid, building=building)
         point.tagsets = tagsets
-        point.point_tagset = sel_point_tagset(tagsets)
+        point_tagset = sel_point_tagset(tagsets)
+        if not point_tagset:
+            point_tagset = 'none'
+        point.point_tagset = point_tagset
         point.save()
 
 def remove_invalid_srcids(building):
@@ -96,6 +109,9 @@ if __name__ == '__main__':
         load_ucb_building(building, filenames[building])
         #parse_tagsets(building)
         parse_fullparsing(building)
+    elif building in CMU_BUILDINGS:
+        parse_tagsets(building)
+        parse_fullparsing(building, write_rawmetadata=True)
     else:
         parse_ucsd_rawmetadata(building)
         parse_tagsets(building)
