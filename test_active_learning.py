@@ -17,7 +17,8 @@ al = ActiveLearningInterface(
     target_building,
     target_srcids,
     fold=fold,
-    rounds=rounds
+    rounds=rounds,
+    use_all_metadata=True,
     )
 
 al.learn_auto()
