@@ -1,0 +1,7146 @@
+{
+  "3": [
+    "humidity_sensor",
+    "crac",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5": [
+    "chilled_water_valve",
+    "fan",
+    "coil",
+    "chilled_water_valve",
+    "building-gates",
+    "floor"
+  ],
+  "16": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "17": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "19": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "21": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "24": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "27": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone",
+    "zone"
+  ],
+  "44": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "45": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "52": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "55": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "56": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "58": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "60": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "61": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "64": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "80": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "83": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "89": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "103": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "105": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "113": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "124": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "125": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "126": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "130": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "140": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "150": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "169": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "171": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "191": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "231": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "233": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "234": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "235": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "247": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "252": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "253": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "255": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "260": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "262": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "266": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "271": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "274": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "285": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "294": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "300": [
+    "co2_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "301": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "303": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "304": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "316": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "323": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "327": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "334": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "355": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "356": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "360": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "367": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "383": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "385": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "389": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "390": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "393": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "396": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "398": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "414": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "415": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "426": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "435": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "443": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "445": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "446": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "448": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "451": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "457": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "459": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "460": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "469": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "497": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "498": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "501": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "505": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "512": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "514": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "523": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "524": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "528": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "533": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "539": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "555": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "556": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "561": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "578": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "585": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "591": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "604": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "607": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "615": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "619": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "623": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "624": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "640": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "656": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "668": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "671": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "674": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "683": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "684": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "685": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "700": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "710": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "725": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "728": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "742": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "744": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "752": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "758": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "761": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "764": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "776": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "784": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "791": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "792": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "797": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "802": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "827": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone"
+  ],
+  "860": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "861": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "874": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "876": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "877": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "881": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "883": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "895": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "896": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "898": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "908": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "910": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "925": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "930": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "936": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "939": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "949": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "950": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "951": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "958": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "965": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "967": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "970": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "975": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "985": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1002": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1017": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1024": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1040": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1043": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1046": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1049": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1080": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor"
+  ],
+  "1087": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1090": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1091": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1096": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone",
+    "zone"
+  ],
+  "1111": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone",
+    "zone"
+  ],
+  "1119": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1122": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1136": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1137": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1142": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone",
+    "zone"
+  ],
+  "1143": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "1144": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "1168": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "room-lobby"
+  ],
+  "1174": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "room-lobby",
+    "zone"
+  ],
+  "1182": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1187": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1201": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1205": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1212": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1221": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1223": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1231": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1232": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1233": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1236": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1248": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1252": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1254": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1258": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1264": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1286": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1287": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1295": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1305": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1307": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1308": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "1313": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1314": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1323": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1331": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1341": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1342": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1361": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1365": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1373": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1376": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1383": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1384": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1386": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1387": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1399": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1401": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1414": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1423": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1424": [
+    "co2_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1429": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1430": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1441": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1443": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1444": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1450": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1457": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1467": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1468": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1470": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1472": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1515": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1517": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1526": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1534": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "1540": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "1543": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "1546": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "1550": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1561": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1563": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1567": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1578": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1586": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1587": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1589": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1590": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1595": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1617": [
+    "alarm",
+    "building-gates",
+    "floor"
+  ],
+  "1636": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1638": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1646": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1650": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1672": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1680": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1687": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1690": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1699": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "1701": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1706": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1711": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1714": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1728": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1732": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone",
+    "zone"
+  ],
+  "1741": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1743": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1745": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "1751": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1767": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1792": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1794": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1804": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1812": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1814": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1819": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1841": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1846": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1848": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1852": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1853": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1864": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1870": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1879": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1887": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1892": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1907": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "1910": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1918": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1928": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1939": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "1941": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "1942": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1958": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1963": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1978": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1983": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1984": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "1999": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2011": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2022": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2025": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2048": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2049": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2052": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2055": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2057": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2065": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2073": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2078": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2094": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2096": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2106": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2112": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2119": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2129": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2150": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2153": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2158": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2163": [
+    "alarm",
+    "building-gates",
+    "floor"
+  ],
+  "2168": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "zone"
+  ],
+  "2175": [
+    "run_command",
+    "building-gates",
+    "floor"
+  ],
+  "2179": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "zone"
+  ],
+  "2190": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "2196": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "2199": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "2203": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "2212": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "2235": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "2241": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2251": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2260": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2278": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2279": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2287": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2303": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2304": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2305": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2315": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2318": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2327": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2328": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2340": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2344": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2345": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2351": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2357": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2360": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2369": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2372": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2383": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2385": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2404": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "2409": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "2422": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2432": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2440": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2451": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2476": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2480": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2492": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2500": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2501": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2502": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2510": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2511": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2519": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone"
+  ],
+  "2530": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2533": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2543": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "2549": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "2553": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "space",
+    "zone"
+  ],
+  "2590": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2595": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2600": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2601": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2604": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2607": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2609": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2612": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2618": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2647": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2648": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2652": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2662": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2666": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2700": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2703": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2713": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2714": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2717": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2738": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2754": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2759": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2764": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2791": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2792": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2813": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2814": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2816": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2821": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2830": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2838": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2843": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2852": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2860": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2865": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2868": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2875": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2877": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2895": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2897": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2898": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "2908": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2909": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2921": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2944": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone"
+  ],
+  "2945": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone"
+  ],
+  "2946": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2950": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2953": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "2966": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "2976": [
+    "co2_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone"
+  ],
+  "2977": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "2980": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "2990": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "2996": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "space",
+    "zone"
+  ],
+  "2999": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3000": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3005": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3011": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "3013": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "3014": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3019": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3029": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "3046": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3047": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3065": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3078": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3080": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3081": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3098": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3100": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3106": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "3116": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3118": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3122": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "3126": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3127": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3136": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3140": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "3141": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3143": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3159": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3193": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3194": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3195": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3204": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "3207": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "3211": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "3212": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "3222": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "3230": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3257": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "room-corridor"
+  ],
+  "3260": [
+    "heating_request_setpoint",
+    "building-gates",
+    "room-corridor"
+  ],
+  "3264": [
+    "run_request_command",
+    "building-gates",
+    "room-corridor"
+  ],
+  "3271": [
+    "hot_water_valve",
+    "fan",
+    "coil",
+    "valve",
+    "building-gates"
+  ],
+  "3292": [
+    "run_request_command",
+    "building-gates",
+    "room"
+  ],
+  "3302": [
+    "heating_request_setpoint",
+    "building-gates",
+    "room"
+  ],
+  "3328": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "room-corridor"
+  ],
+  "3343": [
+    "cooling_request_percent_setpoint",
+    "ahu",
+    "building-gates"
+  ],
+  "3344": [
+    "current_cooling_setpoint",
+    "ahu",
+    "building-gates"
+  ],
+  "3367": [
+    "reset_setpoint",
+    "ahu",
+    "building-gates"
+  ],
+  "3380": [
+    "return_air_grains_sensor",
+    "ahu",
+    "building-gates"
+  ],
+  "3390": [
+    "vfd_command",
+    "ahu",
+    "supply_fan",
+    "building-gates"
+  ],
+  "3395": [
+    "supply_fan_piezoelectric_sensor",
+    "ahu",
+    "building-gates"
+  ],
+  "3399": [
+    "outside_air_temperature_sensor",
+    "ahu",
+    "supply_fan",
+    "building-gates"
+  ],
+  "3403": [
+    "cooling_request_setpoint",
+    "ahu",
+    "building-gates"
+  ],
+  "3408": [
+    "exhaust_fan_start_stop_command",
+    "ahu",
+    "building-gates"
+  ],
+  "3428": [
+    "return_fan_air_flow_sensor",
+    "ahu",
+    "building-gates"
+  ],
+  "3430": [
+    "return_air_temperature_sensor",
+    "ahu",
+    "building-gates"
+  ],
+  "3433": [
+    "supply__air_static_pressure_sensor",
+    "ahu",
+    "building-gates"
+  ],
+  "3440": [
+    "zone_cooling_temperature_setpoint",
+    "ahu",
+    "building-gates",
+    "zone"
+  ],
+  "3461": [
+    "run_command",
+    "building-gates"
+  ],
+  "3478": [
+    "outside_air_temperature_sensor",
+    "building-gates",
+    "room"
+  ],
+  "3481": [
+    "schedule_setpoint",
+    "building-gates",
+    "room"
+  ],
+  "3494": [
+    "run_request_command",
+    "building-gates",
+    "room"
+  ],
+  "3500": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "room"
+  ],
+  "3504": [
+    "heating_request_setpoint",
+    "building-gates",
+    "room"
+  ],
+  "3506": [
+    "outside_air_temperature_sensor",
+    "building-gates",
+    "room"
+  ],
+  "3516": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "room"
+  ],
+  "3530": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "room"
+  ],
+  "3533": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "room"
+  ],
+  "3538": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "room",
+    "zone"
+  ],
+  "3543": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "room"
+  ],
+  "3552": [
+    "run_request_command",
+    "building-gates",
+    "room"
+  ],
+  "3553": [
+    "schedule_setpoint",
+    "building-gates",
+    "room"
+  ],
+  "3579": [
+    "alarm",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3582": [
+    "frequency_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3594": [
+    "discharge_air_temperature_setpoint",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3596": [
+    "exhaust_fan_piezoelectric_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3598": [
+    "heat_wheel_voltage_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3602": [
+    "bypass_damper",
+    "ahu",
+    "damper",
+    "building-gates",
+    "roof"
+  ],
+  "3609": [
+    "heating_request_setpoint",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3615": [
+    "outside_air_grains_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3617": [
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3622": [
+    "hot_water_valve",
+    "ahu",
+    "valve",
+    "building-gates",
+    "roof"
+  ],
+  "3651": [
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3667": [
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3678": [
+    "heat_request_percent_setpoint",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3683": [
+    "outside_air_grains_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3688": [
+    "relative_humidity_sensor",
+    "ahu",
+    "building-gates",
+    "roof",
+    "outside"
+  ],
+  "3692": [
+    "preheat_valve_vfd",
+    "ahu",
+    "preheat_valve",
+    "building-gates",
+    "roof"
+  ],
+  "3695": [
+    "return_air_dewpoint_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3696": [
+    "return_air_enthalpy_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3705": [
+    "supply__air_static_pressure_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3711": [
+    "discharge_air_temperature_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3722": [
+    "bypass_air_flow_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3723": [
+    "run_direction_status",
+    "ahu",
+    "chilled_water_valve",
+    "building-gates",
+    "roof"
+  ],
+  "3724": [
+    "chilled_water_valve",
+    "ahu",
+    "chilled_water_valve",
+    "building-gates",
+    "roof"
+  ],
+  "3725": [
+    "cooling_request_setpoint",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3741": [
+    "exhaust_air_flow_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3745": [
+    "heating_request_setpoint",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3750": [
+    "outside_air_enthalpy_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3755": [
+    "outside_air_co2_sensor",
+    "ahu",
+    "building-gates",
+    "roof",
+    "outside"
+  ],
+  "3760": [
+    "preheat_valve_vfd",
+    "ahu",
+    "preheat_valve",
+    "building-gates",
+    "roof"
+  ],
+  "3763": [
+    "return_air_dewpoint_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3764": [
+    "return_air_enthalpy_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3780": [
+    "supply_fan_piezoelectric_sensor",
+    "ahu",
+    "building-gates",
+    "roof"
+  ],
+  "3802": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "3805": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "3808": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "3817": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "space"
+  ],
+  "3820": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "space"
+  ],
+  "3827": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "space"
+  ],
+  "3830": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "space",
+    "zone"
+  ],
+  "3842": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "3856": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "3865": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "3873": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3884": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3900": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3904": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3906": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3923": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3927": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "3932": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3938": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3943": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "3944": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "3953": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3956": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3960": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "3962": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3972": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3978": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3982": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3983": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "3984": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4003": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4010": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4013": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4015": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4016": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4028": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4031": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4035": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4043": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4069": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room",
+    "room-lobby"
+  ],
+  "4076": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4079": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4082": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4094": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4101": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4109": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4117": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4127": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4139": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4154": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4160": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4171": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4178": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4180": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4182": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4184": [
+    "co2_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4203": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4204": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4216": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4218": [
+    "co2_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4219": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4232": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4234": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4235": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4236": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4250": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4253": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4260": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4262": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4263": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4264": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4285": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4308": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4313": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4315": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4318": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4323": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4335": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4352": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4360": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4372": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4378": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4379": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4386": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4389": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4405": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4423": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4431": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4436": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4447": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4456": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4475": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4487": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4491": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4492": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4497": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4506": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4515": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4533": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4544": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4547": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4561": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4562": [
+    "co2_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4575": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4583": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4592": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4594": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4607": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4609": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4614": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4624": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4634": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4635": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4638": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4643": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4644": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4650": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4655": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4658": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4660": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4673": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4679": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4692": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4701": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4712": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4714": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4722": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4731": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4741": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4757": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "4770": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "4775": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room-corridor"
+  ],
+  "4784": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room-corridor",
+    "building-hillman"
+  ],
+  "4804": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4812": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4815": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "4824": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "4829": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "4830": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone"
+  ],
+  "4832": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4842": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4855": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4862": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4864": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4878": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4880": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "4881": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4888": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4892": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4903": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4918": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4930": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "4943": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4955": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4956": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4970": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "4981": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "5004": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5024": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5045": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5047": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5051": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5054": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5064": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5075": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5080": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5086": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5088": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5091": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5100": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5102": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5109": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5115": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5121": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "5128": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5130": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5139": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5146": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5156": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5158": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5166": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5171": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5174": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5182": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5186": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5200": [
+    "perimeter_heating_valve_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5205": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "5210": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5224": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5236": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5237": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5279": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5283": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5290": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5312": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5315": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5333": [
+    "reheat_valve_command",
+    "reheat_valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5343": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5357": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room",
+    "zone"
+  ],
+  "5363": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5371": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5377": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5394": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5403": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5406": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5410": [
+    "cooling_request_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "5413": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "5420": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "space"
+  ],
+  "5426": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5431": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5435": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5455": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5459": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5462": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5468": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5481": [
+    "occupancy_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5487": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5493": [
+    "discharge_air_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5501": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "5502": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5506": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5511": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5520": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5522": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5524": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room",
+    "room"
+  ],
+  "5537": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5539": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5543": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5557": [
+    "supply_fan_air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5575": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5579": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5587": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5598": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "5612": [
+    "run_direction_status",
+    "ahu",
+    "chilled_water_valve",
+    "building-gates",
+    "floor"
+  ],
+  "5615": [
+    "cooling_request_percent_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5618": [
+    "discharge_air_temperature_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5623": [
+    "heat_wheel_vfd",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5628": [
+    "exhaust_fan_start_stop_command",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5634": [
+    "outside_air_dewpoint_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5635": [
+    "outside_air_damper_position_command",
+    "ahu",
+    "outside_air_damper",
+    "building-gates",
+    "floor"
+  ],
+  "5636": [
+    "outside_air_enthalpy_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5638": [
+    "reset_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5656": [
+    "return_air_temperature_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5661": [
+    "vfd_command",
+    "ahu",
+    "supply_fan",
+    "building-gates",
+    "floor"
+  ],
+  "5663": [
+    "supply_air_flow_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5665": [
+    "discharge_air_temperature_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5695": [
+    "vfd_voltage_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5712": [
+    "return_air_enthalpy_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5719": [
+    "run_command",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5731": [
+    "alarm",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5732": [
+    "output_frequency_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5754": [
+    "vfd",
+    "ahu",
+    "exhaust_fan",
+    "building-gates",
+    "floor"
+  ],
+  "5762": [
+    "outside_air_dewpoint_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5771": [
+    "outside_air_temperature_sensor",
+    "ahu",
+    "building-gates",
+    "floor",
+    "outside"
+  ],
+  "5775": [
+    "preheat_demand_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5777": [
+    "return_air_dewpoint_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5796": [
+    "heating_request_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5798": [
+    "output_frequency_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5813": [
+    "exhaust_air_damper",
+    "ahu",
+    "exhaust_air_damper",
+    "building-gates",
+    "floor"
+  ],
+  "5820": [
+    "vfd",
+    "ahu",
+    "exhaust_fan",
+    "building-gates",
+    "floor"
+  ],
+  "5824": [
+    "vfd_voltage_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5825": [
+    "heating_request_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5832": [
+    "reset_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5840": [
+    "preheat_valve_vfd",
+    "ahu",
+    "preheat_valve",
+    "building-gates",
+    "floor"
+  ],
+  "5841": [
+    "preheat_demand_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5844": [
+    "return_air_enthalpy_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5852": [
+    "run_request_command",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5862": [
+    "heating_request_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5889": [
+    "return_air_dewpoint_sensor",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5896": [
+    "run_request_command",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5905": [
+    "cooling_request_setpoint",
+    "ahu",
+    "building-gates",
+    "floor"
+  ],
+  "5912": [
+    "water_meter",
+    "building-gates",
+    "floor"
+  ],
+  "5938": [
+    "fan_status",
+    "fan",
+    "building-gates",
+    "floor"
+  ],
+  "5945": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "zone"
+  ],
+  "5948": [
+    "fan_status",
+    "fan",
+    "building-gates",
+    "floor"
+  ],
+  "5949": [
+    "alarm",
+    "building-gates",
+    "floor"
+  ],
+  "5952": [
+    "schedule_setpoint",
+    "building-gates",
+    "floor"
+  ],
+  "5960": [
+    "usage_today_meter",
+    "building-gates",
+    "floor"
+  ],
+  "5969": [
+    "usage_today_meter",
+    "building-gates",
+    "floor"
+  ],
+  "5970": [
+    "yearly_usage_meter",
+    "building-gates",
+    "floor"
+  ],
+  "5973": [
+    "yearly_usage_meter",
+    "building-gates",
+    "floor"
+  ],
+  "5974": [
+    "energy_meter",
+    "building-gates",
+    "floor"
+  ],
+  "5976": [
+    "monthly_usage_meter",
+    "building-gates",
+    "floor"
+  ],
+  "5990": [
+    "co2_high_alarm",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "5997": [
+    "zone_temperature_sensor",
+    "building-gates",
+    "floor",
+    "room",
+    "zone",
+    "zone"
+  ],
+  "5999": [
+    "zone_heating_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6038": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6039": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6043": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6063": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6071": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6087": [
+    "run_request_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6092": [
+    "air_flow_sensor",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6093": [
+    "discharge_air_flow_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6094": [
+    "discharge_air_flow_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6096": [
+    "damper_position_sensor",
+    "damper",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6119": [
+    "run_command",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6125": [
+    "zone_cooling_temperature_setpoint",
+    "building-gates",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6134": [
+    "heating_request_setpoint",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6135": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-gates",
+    "floor",
+    "room"
+  ],
+  "6142": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6152": [
+    "perimeter_heating_valve_command",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6159": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "6164": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6181": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6182": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6183": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6197": [
+    "supply_fan_start_stop_command",
+    "fan",
+    "building-hillman",
+    "floor"
+  ],
+  "6204": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "zone"
+  ],
+  "6222": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor",
+    "zone"
+  ],
+  "6231": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6232": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6235": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6251": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6253": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6262": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6271": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6272": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6273": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6286": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6287": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6299": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6327": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6328": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6333": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6340": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6344": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6350": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6356": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6360": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6370": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room",
+    "space"
+  ],
+  "6373": [
+    "co2_high_alarm",
+    "building-hillman",
+    "floor",
+    "room",
+    "space"
+  ],
+  "6381": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "space",
+    "zone"
+  ],
+  "6382": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6389": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6415": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6428": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6444": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6446": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6450": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6457": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6464": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6471": [
+    "co2_sensor",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6474": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6496": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6505": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6508": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6511": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6514": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6524": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6529": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6544": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6552": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6554": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6560": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6568": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6577": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6581": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6591": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6597": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6601": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6606": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6620": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6621": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6630": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6636": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6638": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6649": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6660": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6662": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6671": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "6673": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6674": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6675": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6680": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6683": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6705": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6710": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6711": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6721": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6745": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6753": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6755": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6758": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6764": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6769": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6771": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6783": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6785": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6793": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6796": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6799": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6802": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6803": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6808": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6835": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6844": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6856": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "6874": [
+    "alarm",
+    "building-hillman",
+    "floor"
+  ],
+  "6895": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6899": [
+    "co2_high_alarm",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6911": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6915": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6925": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6926": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6928": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "6949": [
+    "cooling_request_setpoint",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "6958": [
+    "heat_wheel_voltage_sensor",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "6961": [
+    "bypass_damper",
+    "ahu",
+    "return_air_damper",
+    "building-hillman",
+    "roof"
+  ],
+  "6965": [
+    "exhaust_air_flow_sensor",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "6983": [
+    "preheat_supply_air_temperature_sensor",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "6985": [
+    "preheat_demand_setpoint",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "6992": [
+    "return_fan_air_flow_sensor",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "7000": [
+    "discharge_air_temperature_sensor",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "7007": [
+    "outside_air_temperature_sensor",
+    "ahu",
+    "building-hillman",
+    "roof"
+  ],
+  "7009": [
+    "schedule_setpoint",
+    "building-hillman",
+    "roof"
+  ],
+  "7030": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7031": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7033": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7036": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7037": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7042": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7054": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7055": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7057": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7076": [
+    "alarm",
+    "building-hillman",
+    "floor"
+  ],
+  "7078": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor"
+  ],
+  "7107": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7120": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7128": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7139": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7144": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7145": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7167": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7193": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7196": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7197": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7208": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7210": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7216": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7218": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7225": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7226": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7238": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7270": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7287": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7288": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7291": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7296": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7298": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7310": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7311": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7314": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7335": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7342": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7357": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7369": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7371": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7372": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7373": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7381": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7386": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7391": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7394": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7407": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7408": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7414": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7431": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7434": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7438": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7440": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7444": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7446": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7466": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7467": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7471": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7473": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7476": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7479": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7480": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7483": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7484": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7494": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7520": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7523": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7534": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7536": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7551": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7570": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7571": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7575": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7579": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7582": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7584": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7586": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7596": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7611": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7617": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7623": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7635": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7646": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7647": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7649": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7650": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7651": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7657": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7667": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7681": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7682": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7686": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7692": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7695": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7707": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor"
+  ],
+  "7709": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor"
+  ],
+  "7711": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor"
+  ],
+  "7717": [
+    "run_command",
+    "building-hillman",
+    "floor"
+  ],
+  "7725": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7740": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7749": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room-corridor"
+  ],
+  "7755": [
+    "alarm",
+    "building-hillman",
+    "floor"
+  ],
+  "7757": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor"
+  ],
+  "7765": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7775": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7782": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7786": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7800": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7821": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7827": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7831": [
+    "co2_sensor",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7832": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "7836": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7841": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7851": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7858": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7869": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7883": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7898": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7899": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7902": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7903": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7927": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7929": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7932": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7949": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7960": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7963": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7970": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7978": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7990": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "7996": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8001": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "8005": [
+    "discharge_air_flow_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8006": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8025": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8029": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8043": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8055": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8064": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8077": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "8078": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8091": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "8112": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8114": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8115": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8117": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8118": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8119": [
+    "schedule_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8120": [
+    "zone_cooling_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "8125": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8129": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8131": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8161": [
+    "occupancy_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8174": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8189": [
+    "domestic_hot_water_valve_command",
+    "valve",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8192": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8202": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8203": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8211": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "8213": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8230": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8231": [
+    "damper_position_sensor",
+    "damper",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8237": [
+    "run_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8242": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8243": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8245": [
+    "cooling_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8257": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8265": [
+    "outside_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8268": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8271": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "8277": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8300": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ],
+  "8307": [
+    "heating_request_setpoint",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8318": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8319": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8329": [
+    "run_request_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8333": [
+    "air_flow_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8338": [
+    "discharge_air_temperature_sensor",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8349": [
+    "discharge_air_flow_command",
+    "building-hillman",
+    "floor",
+    "room"
+  ],
+  "8362": [
+    "zone_heating_temperature_setpoint",
+    "building-hillman",
+    "floor",
+    "room",
+    "zone"
+  ]
+}
