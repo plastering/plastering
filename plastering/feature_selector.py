@@ -41,9 +41,9 @@ def get_data_features(building, start_time, end_time):
     ctr1 = 0
     for labeled in LabeledMetadata.objects(building=building):
         srcid = labeled.srcid
-        ctr1 += 1
         try:
             data = res[srcid]
+            ctr1 += 1
         except:
             print (srcid, 'not found and skipped.')
             continue
@@ -68,12 +68,12 @@ def get_data_features(building, start_time, end_time):
 
     #res = list(map(lambda x: eval('dfe.' + x + '()'), dfe.functions))
     funcs = [getattr(dfe, func) for func in dfe.functions]
-    res = [func() for func in funcs]
-    fd = np.concatenate(res, axis=1)
+    fd = [func() for func in funcs]
+    #fd = np.concatenate(fd, axis=1)
     #fd = dfe.getF_2015_Hong()
 
-    assert (len(srcids)==fd.shape[0])
-    print ( 'data features for %s with dim:'%building, fd.shape)
+    #assert (len(srcids)==fd.shape[0])
+    #print ( 'data features for %s with dim:'%building, fd.shape)
 
     return srcids, fd
 
@@ -115,7 +115,7 @@ class feature_selector():
             ids, self.fd = get_data_features(target_building,
                                         self.time_range[0],
                                         self.time_range[1])
-            print ('%d data streams loaded'%len(self.fd))
+            print ('%d data streams loaded'%len(ids))
 
             #labels
             res = get_labels(target_building)
@@ -132,26 +132,36 @@ class feature_selector():
             self.fd, self.label = res[0], res[1]
 
         print ( '# of classes:', len(set(self.label)) )
-        print ( 'data features for %s with dim:'%target_building, self.fd.shape)
+        print ( 'data features for %s with dim:'%target_building, np.concatenate( self.fd, axis=1).shape)
 
         self.method = method
+        self.building = target_building
 
 
     def run_auto(self):
 
+        if self.method == "lsvc":
+            clf = LinearSVC(C=0.01, penalty="l1", dual=False)
+        elif self.method == "tree":
+            clf = RFC(n_estimators=100, criterion='entropy')
+        else:
+            raise ValueError("invalid method!")
 
-        clf = LinearSVC(C=0.1, penalty="l1", dual=False)
-        #rf = RFC(n_estimators=100, criterion='entropy')
-
-        acc = get_CV_acc(self.fd, self.label, clf)
+        fd_copy = [fd for fd in self.fd]
+        fd_copy.append(np.concatenate(self.fd, axis=1))
+        acc = [get_CV_acc(fd, self.label, clf) for fd in fd_copy]
         print ('acc before selection is', acc)
 
         model = SFM(clf, prefit=True)
-        fd_new = model.transform(self.fd)
+        fd_new = model.transform( np.concatenate(self.fd, axis=1) )
         print ('dim after selection is', fd_new.shape)
 
-        acc = get_CV_acc(fd_new, self.label, clf)
-        print ('acc after selection is', acc)
+        new_acc = get_CV_acc(fd_new, self.label, clf)
+        acc.append(new_acc)
+        print ('acc after selection is', new_acc)
+
+        with open('./%s_fs_acc.pkl'%(self.building), 'wb') as wf:
+            pk.dump(acc, wf)
 
         #rf.fit(self.train_fd, self.train_label)
         #pred = rf.predict(self.test_fd)
