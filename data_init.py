@@ -10,7 +10,7 @@ from plastering.metadata_interface import *
 from plastering.common import *
 from plastering.helper import load_uva_building, load_ucb_building
 from plastering.helper import extract_raw_ucb_labels
-from plastering.rdflib_wrapper import get_top_class
+from plastering.rdf_wrapper import get_top_class
 from jasonhelper import argparser
 
 UCB_BUILDINGS = ['sdh', 'soda', 'ibm']

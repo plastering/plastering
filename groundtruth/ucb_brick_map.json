@@ -210,5 +210,6 @@
   "chilled water system": "chilled_water_system",
   "chilled water pump": "chilled_water_pump",
   "capacity": "capacity_sensor",
-  "chilled water temp": "chilled_water_temperature_sensor"
+  "chilled water temp": "chilled_water_temperature_sensor",
+  "exahust fan": "exahust_fan"
 }
