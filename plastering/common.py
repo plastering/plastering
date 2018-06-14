@@ -15,11 +15,12 @@ def is_point_tagset(tagset):
     else:
         return False
 
-def sel_point_tagset(tagsets):
+def sel_point_tagset(tagsets, srcid=''):
     for tagset in tagsets:
         if is_point_tagset(tagset):
             return tagset
-    return None
+    print('no point found at {0} in {1}'.format(srcid, tagsets))
+    return 'none'
 
 
 def adder(x, y):
