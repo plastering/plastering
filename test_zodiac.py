@@ -15,5 +15,3 @@ zodiac = ZodiacInterface(target_building=target_building,
 #zodiac.update_model([])
 pred = zodiac.predict()
 zodiac.learn_auto()
-pred = zodiac.predict()
-proba = zodiac.predict_proba()
