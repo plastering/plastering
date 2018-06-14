@@ -150,38 +150,38 @@ class BuildingAdapterInterface(Inferencer):
             else:
                 raise ValueError('no common labels!')
 
-            train_fd = train_fd[train_id, :]
-            test_fd = test_fd[test_id, :]
+            self.train_fd = train_fd[train_id, :]
+            self.test_fd = test_fd[test_id, :]
             #test_fn = [test_fn[tid] for tid in test_id]
-            test_fn = test_fn[test_id, :]
-            print ('%d training examples left'%len(train_fd))
-            print ('%d testing examples left'%len(test_fd))
+            self.test_fn = test_fn[test_id, :]
+            print ('%d training examples left'%len(self.train_fd))
+            print ('%d testing examples left'%len(self.test_fd))
 
             le = LE()
             le.fit(intersect)
-            train_label = le.transform(train_label)
-            test_label = le.transform(test_label)
+            self.train_label = le.transform(train_label)
+            self.test_label = le.transform(test_label)
 
-            res = [train_fd, test_fd, train_label, test_label, test_fn]
+            res = [self.train_fd, self.test_fd, self.train_label, self.test_label, self.test_fn]
             with open('./%s-%s.pkl'%(source_building,target_building), 'wb') as wf:
                 pk.dump(res, wf)
         else:
             with open('./%s-%s.pkl'%(source_building,target_building), 'rb') as rf:
                 res = pk.load(rf)
-            train_fd, test_fd, train_label, test_label, test_fn = \
+            self.train_fd, self.test_fd, self.train_label, self.test_label, self.test_fn = \
             res[0], res[1], res[2], res[3], res[4]
 
-        print ( '# of classes:', len(set(train_label)) )
-        print ( 'data features for %s with dim:'%source_building, train_fd.shape)
-        print ( 'data features for %s with dim:'%target_building, test_fd.shape)
+        print ( '# of classes:', len(set(self.train_label)) )
+        print ( 'data features for %s with dim:'%source_building, self.train_fd.shape)
+        print ( 'data features for %s with dim:'%target_building, self.test_fd.shape)
 
 
         self.learner = transfer_learning(
-            train_fd,
-            test_fd,
-            train_label,
-            test_label,
-            test_fn,
+            self.train_fd,
+            self.test_fd,
+            self.train_label,
+            self.test_label,
+            self.test_fn,
             threshold = self.threshold
         )
 
