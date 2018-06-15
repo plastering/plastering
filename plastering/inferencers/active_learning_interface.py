@@ -33,14 +33,13 @@ class ActiveLearningInterface(Inferencer):
                  fold,
                  rounds,
                  use_all_metadata=False,
+                 source_building=None
                  ):
-
         super(ActiveLearningInterface, self).__init__(
             target_building=target_building,
             target_srcids=target_srcids
         )
 
-        #TODO: pt_name is the raw vendorgiven name and pt_type is the corresponding tagset in brick volcabulary
         srcids = [point['srcid'] for point
                   in LabeledMetadata.objects(building=target_building)]
         pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset
@@ -62,11 +61,46 @@ class ActiveLearningInterface(Inferencer):
                        .metadata['VendorGivenName'] for srcid in srcids]
 
         fn = get_name_features(pt_name)
+
         le = LE()
-        label = le.fit_transform(pt_type)
+        try:
+            le.fit(pt_type)
+        except:
+            pdb.set_trace()
+
+        #TODO: add processing for transferred info
+        transfer_fn = []
+        transfer_label = []
+
+        if source_building:
+            srcids = [point['srcid'] for point
+                      in LabeledMetadata.objects(building=source_building)]
+            source_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset
+                       for srcid in srcids]
+            source_name = [RawMetadata.objects(srcid=srcid).first()\
+                       .metadata['VendorGivenName'] for srcid in srcids]
+
+            fn_all = get_name_features( pt_name + source_name )
+            fn = fn_all[:len(pt_name), :]
+            transfer_fn = fn_all[len(pt_name):, :]
+
+            try:
+                le.fit( pt_type + source_type )
+                transfer_label = le.transform(source_type)
+            except:
+                pdb.set_trace()
+
+            print ('%d instances loaded from transferred bldg: %s'%(len(transfer_label), source_building))
+
+        try:
+            label = le.transform(pt_type)
+        except:
+            pdb.set_trace()
+
         #print ('# of classes is %d'%len(np.unique(label)))
         print ('running active learning by Hong on building %s'%target_building)
         print ('%d instances loaded'%len(pt_name))
+
 
         self.learner = active_learning(
             fold,
@@ -74,7 +108,9 @@ class ActiveLearningInterface(Inferencer):
             #2 * len( np.unique(label) ),
             28,
             fn,
-            label
+            label,
+            transfer_fn,
+            transfer_label
         )
 
 
