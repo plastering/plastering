@@ -68,7 +68,6 @@ class ActiveLearningInterface(Inferencer):
         except:
             pdb.set_trace()
 
-        #TODO: add processing for transferred info
         transfer_fn = []
         transfer_label = []
 
