@@ -1,8 +1,18 @@
 import pandas as pd
+import os
+import re
+import pdb
 
 from glob import glob
 from arctic import CHUNK_STORE, Arctic
+from arctic.date import DateRange
 from datetime import datetime as dt
+from datetime import date
+import arrow
+
+
+DEFAULT_START_TIME = arrow.get(2017,1,20)
+DEFAULT_END_TIME = arrow.get(2017,2,6)
 
 def write_wrapper(target_building, path_to_directory, schema=1):
     '''
@@ -18,13 +28,29 @@ i   schema: schema used in the csv file
     return a wrapped iterator for write_to_db
     '''
 
-    files = glob(path_to_directory + '*.csv')
+    os.chdir(path_to_directory)
+    files = glob('*.csv')
     points = []
     timestamps = []
     data = []
     for f in files:
-        df = pd.read_csv(f)
-        tmp = f.split('/')[-1][:-4] #point name, should generalize
+        try:
+            df = pd.read_csv(f)
+        except pd.io.common.EmptyDataError:
+            print (f, " is empty and has been skipped.")
+            continue
+
+        if target_building == 'sdh':
+            tmp = f[:-4] #point name, special case for sdh
+            tmp = tmp.split('+')[-3:]
+            tmp = [re.sub('[^A-Z0-9]', '_', s) for s in tmp]
+            tmp = '_'.join(tmp)
+            #print (f, 'converted to', tmp)
+        elif target_building == 'uva_cse':
+            tmp = f[:-4]
+            tmp = re.sub('[^a-zA-Z0-9]', '_', tmp)
+        else:
+            tmp = f.split('/')[-1][:-4] #point name, should generalize
         points.append(tmp)
 
         #generate dateindex from timestamp
@@ -56,12 +82,12 @@ def write_to_db(target_building, iterator):
 
     for sensor, timestamps, data in iterator:
         df = pd.DataFrame({'date': timestamps, 'data': data})
-        df.set_index('date')
+        df.set_index('date', inplace=True)
         lib.write(sensor, df)
-        print ('writing %s is done'%sensor)
+        #print ('writing %s is done'%sensor)
 
 
-def read_from_db(target_building):
+def read_from_db(target_building, start_time=None, end_time=None):
     '''
     load the data from for tgt_bldg
     return:
@@ -70,6 +96,28 @@ def read_from_db(target_building):
     }
     data is in pandas.DataFrame format with two columns ['date', 'data']
     '''
+    if isinstance(start_time, arrow.Arrow):
+        start_time = start_time.datetime
+    elif isinstance(start_time, (dt, date)):
+        pass
+    elif start_time == None:
+        pass
+    else:
+        raise ValueError('the type of time value is unknown: {0}'
+                         .format(type(start_time)))
+    if isinstance(end_time, arrow.Arrow):
+        end_time = end_time.datetime
+    elif isinstance(end_time, (dt, date)):
+        pass
+    elif end_time == None:
+        pass
+    else:
+        raise ValueError('the type of time value is unknown: {0}'
+                         .format(type(end_time)))
+    if start_time and end_time:
+        date_range = DateRange(start=start_time, end=end_time)
+    else:
+        date_range = None
 
     print ('loading timeseries data from db for %s...'%target_building)
 
@@ -78,7 +126,18 @@ def read_from_db(target_building):
         raise ValueError('%s not found in the DB!'%target_building)
     else:
         lib = conn[target_building]
-        res = {point: lib.read(point) for point in lib.list_symbols()}
+        srcids = lib.list_symbols()
+        res = {}
+        for srcid in srcids:
+            data = lib.read(srcid, chunk_range=date_range)
+            if len(data) == 0:
+                print('WARNING: {0} has empty data.'.format(srcid))
+                #pdb.set_trace()
+                continue
+
+            res[srcid] = data
+        print('correctly done')
+
         return res
 
 

@@ -5,21 +5,27 @@ import numpy as np
 from plastering.inferencers.active_learning_interface import ActiveLearningInterface
 from plastering.metadata_interface import *
 
+
 target_building = sys.argv[1]
+try:
+    source_building = sys.argv[2]
+except:
+    source_building = None
 
 labeled_list = LabeledMetadata.objects(building=target_building)
 target_srcids = [labeled['srcid'] for labeled in labeled_list]
 
 fold = 10
-rounds = 250
+rounds = 100
 
 al = ActiveLearningInterface(
-    target_building,
-    target_srcids,
+    target_building=target_building,
+    target_srcids=target_srcids,
     fold=fold,
     rounds=rounds,
     use_all_metadata=True,
-    )
+    source_building=source_building
+)
 
 al.learn_auto()
 acc_sum = [np.nanmean(i) for i in al.learner.acc_sum]
