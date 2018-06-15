@@ -28,13 +28,13 @@ def get_name_features(names):
 class ActiveLearningInterface(Inferencer):
 
     def __init__(self,
-        fold,
-        rounds,
-        target_building,
-        target_srcids,
-        source_building=None
-        ):
-
+                 target_building,
+                 target_srcids,
+                 fold,
+                 rounds,
+                 use_all_metadata=False,
+                 source_building=None
+                 ):
         super(ActiveLearningInterface, self).__init__(
             target_building=target_building,
             target_srcids=target_srcids
@@ -44,8 +44,22 @@ class ActiveLearningInterface(Inferencer):
                   in LabeledMetadata.objects(building=target_building)]
         pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset
                    for srcid in srcids]
-        pt_name = [RawMetadata.objects(srcid=srcid).first()\
-                   .metadata['VendorGivenName'] for srcid in srcids]
+        if use_all_metadata:
+            pt_name = []
+            for srcid in srcids:
+                raw_metadata = RawMetadata.objects(srcid=srcid).first().metadata
+                sentence = []
+                sentence = '\n'.join([raw_metadata.get(metadata_type, '')
+                                      for metadata_type
+                                      in ['VendorGivenName',
+                                          'BACnetName',
+                                          'BACnetDescription']
+                                      ])
+                pt_name.append(sentence)
+        else:
+            pt_name = [RawMetadata.objects(srcid=srcid).first()
+                       .metadata['VendorGivenName'] for srcid in srcids]
+
         fn = get_name_features(pt_name)
 
         le = LE()
