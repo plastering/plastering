@@ -49,8 +49,8 @@ def plot_confusion_matrix(test_label, pred):
     ax = fig.add_subplot(111)
     cax = ax.matshow(cm, cmap=Color.YlOrBr)
     fig.colorbar(cax)
-    for x in xrange(len(cm)):
-        for y in xrange(len(cm)):
+    for x in range(len(cm)):
+        for y in range(len(cm)):
             ax.annotate(str("%.3f(%d)"%(cm[x][y], cm_[x][y])), xy=(y,x),
                         horizontalalignment='center',
                         verticalalignment='center',
@@ -94,8 +94,8 @@ class transfer_learning:
         self.bl = []
 
         self.agreement_threshold = threshold
-        if switch == True:
 
+        if switch == True:
             fd_tmp = self.train_fd
             self.train_fd = self.test_fd
             self.test_fd = fd_tmp
@@ -126,7 +126,7 @@ class transfer_learning:
         rf = RFC(n_estimators=100, criterion='entropy')
         rf.fit(self.train_fd, self.train_label)
         pred = rf.predict(self.test_fd)
-        print ( 'data feature transfer testing acc:', ACC(pred, self.test_label) )
+        print ( 'direct data feature-based transfer acc on tgt_bldg:', ACC(pred, self.test_label) )
         #plot_confusion_matrix(self.test_label, pred)
 
 
@@ -145,12 +145,12 @@ class transfer_learning:
         for b in self.bl:
             print ( b.score(self.test_fd, label) )
 
-        n_class = 32/2
+        n_class = 32
         c = KMeans(init='k-means++', n_clusters=n_class, n_init=10)
         c.fit(self.test_fn)
         dist = np.sort(c.transform(self.test_fn))
         ex_id = DD(list) #example id for each C
-        for i,j,k in zip(c.labels_, xrange(len(self.test_fn)), dist):
+        for i,j,k in zip(c.labels_, range(len(self.test_fn)), dist):
             ex_id[i].append(int(j))
 
         #getting neighors for each ex
@@ -164,7 +164,7 @@ class transfer_learning:
         for b,n in zip(self.bl, nb_f):
             preds = b.predict(self.test_fd)
             ex_ = DD(list)
-            for i,j in zip(preds, xrange(len(self.test_fd))):
+            for i,j in zip(preds, range(len(self.test_fd))):
                 ex_[i].append(int(j))
             for exx in ex_.values():
                 exx = np.asarray(exx)
@@ -180,20 +180,23 @@ class transfer_learning:
 
             l_id = []
             output = DD()
-            preds = np.array([999 for i in xrange(len(self.test_fd))])
-            for i in xrange(len(self.test_fn)):
+            preds = np.array([999 for i in range(len(self.test_fd))])
+            for i in range(len(self.test_fn)):
                 #get the weight for each bl: by computing sim btw cluster and clf
                 w = []
                 v_c = set(nb_c[i])
                 for n in nb_f:
                     v_f = set(n[i])
                     cns = len(v_c & v_f) / float(len(v_c | v_f)) #original count based weight
+                    #print (len(v_c & v_f) , len(v_c | v_f))
                     inter = v_c & v_f
                     union = v_c | v_f
                     d_i = 0
                     d_u = 0
                     for it in inter:
                         d_i += np.linalg.norm(self.test_fn[i]-self.test_fn[it])
+                        #print (np.linalg.norm(self.test_fn[i]-self.test_fn[it]))
+                    #input('...')
                     for u in union:
                         d_u += np.linalg.norm(self.test_fn[i]-self.test_fn[u])
                     if len(inter) != 0:
@@ -255,7 +258,7 @@ if __name__ == "__main__":
     ptn = [i.strip().split('\\')[-1][:-5] for i in open('../../data/rice_pt_sdh').readlines()]
     test_fn = get_name_features(ptn)
 
-    tl = transfer_learning(train_fd, test_fd, train_label, test_label, test_fn, switch=True)
+    tl = transfer_learning(train_fd, test_fd, train_label, test_label, test_fn, threshold=0.1, switch=True)
     tl.run_auto()
     #preds, labeled = tl.predict()
 
