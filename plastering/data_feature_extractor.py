@@ -1,5 +1,7 @@
 import numpy as np
 import scipy as sp
+import time
+import pdb
 
 from scipy import stats
 from collections import Counter,defaultdict
@@ -123,6 +125,8 @@ def get_statF_on_window(X):
     F[:, 4] = np.var(X, 1)
     F[:, 5] = sp.stats.skew(X, 1)
     F[:, 6] = sp.stats.kurtosis(X, 1)
+    #F[:, 5] = 0
+    #F[:, 6] = 0
 
     # calculate slope
     xx = np.linspace(1, D, D)
@@ -183,7 +187,7 @@ def haar_transform(x):
 class data_feature_extractor():
 
     def __init__(self, X):
-        self.X = X
+        self.X = np.asarray(X)
         self.functions = [
         'getF_1994_Li',
         'getF_2012_Calbimonte',
@@ -364,5 +368,12 @@ class data_feature_extractor():
         return F
 
 
-if __name__ == '__main__':
-    pass
+if __name__ == "__main__":
+
+    X = np.random.rand(1000, 60000)
+    dfe = data_feature_extractor(X)
+    t0 = time.clock()
+    f = dfe.getF_2015_Hong()
+    print ('time lapsed computing feature on input of size', X.shape, 'is', time.clock() - t0)
+    print ('feature dim is', f.shape)
+
