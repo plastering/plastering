@@ -10,25 +10,35 @@ import pdb
 
 EXP_NUM = 4
 
-target_buildings = ['ghc']
-source_buildings = ['ghc']
+#target_buildings = ['ghc']
+#source_buildings = ['ghc']
 #target_buildings = ['ebu3b']
 #source_buildings = ['ebu3b']
 #target_buildings = ['sdh']
 #source_buildings = ['sdh']
+target_building = sys.argv[1]
+target_buildings = [target_building]
+source_buildings = [target_building]
 sample_num_list = [10]
 
 inferencers = {
     'scrabble': ScrabbleInterface,
 }
 
+if int(sys.argv[2]) == 1:
+    use_brick_flag = True
+elif int(sys.argv[2]) == 0:
+    use_brick_flag = False
+else:
+    raise Exception('incorrect argument')
+
 configs = {
     'scrabble': {
         'config': {
             'use_known_tags': True,
-            'n_jobs': 12,
+            'n_jobs': 3,
             'tagset_classifier_type': 'MLP',
-            'use_brick_flag': False,
+            'use_brick_flag': use_brick_flag,
             'crfqs': 'confidence',
             'entqs': 'phrase_util',
             'negative_flag': True,
@@ -36,6 +46,15 @@ configs = {
         }
     }
 }
+
+if use_brick_flag:
+    brick_postfix = 'brick'
+else:
+    brick_postfix = 'nobrick'
+
+print('CONFIG:')
+print(configs)
+print('======================')
 
 
 for inferencer_name, Inferencer in inferencers.items():
@@ -54,7 +73,7 @@ for inferencer_name, Inferencer in inferencers.items():
                 'metrics': hist['metrics'],
                 'learning_srcids': len(hist['total_training_srcids'])
             } for hist in inferencer.history]
-            with open('result/pointonly_notransfer_{0}_{1}_{2}.json'
-                      .format(inferencer_name, target_building, exp_id), 'w') \
-                    as fp:
+            with open('result/pointonly_notransfer_{0}_{1}_{2}_{3}.json'
+                      .format(inferencer_name, target_building,
+                          exp_id, brick_postfix), 'w') as fp:
                 json.dump(history, fp)
