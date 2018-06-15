@@ -39,7 +39,7 @@ def get_point_type(g, point):
     select ?t where {{
     {0} a ?t .
     }}
-    """
+    """.format(point.n3())
     res = query_sparql(g, qstr)
     t = res[0]['t']
     return t

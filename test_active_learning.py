@@ -38,5 +38,5 @@ outputs = [{ 'metrics': { 'accuracy': acc, 'f1_micro': f1_micro, 'f1_macro':f1_m
             'learning_srcids': i+1 } \
             for i,(acc,f1_micro,f1_macro) in enumerate(results) \
             ]
-with open('result/pointonly_notransfer_{0}_{1}_0.json'.format('al_hong', target_building), 'w') as fp:
+with open('result/pointonly_notransfer_{0}_{1}_0_concatenated.json'.format('al_hong', target_building), 'w') as fp:
     json.dump(outputs, fp)
