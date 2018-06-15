@@ -19,12 +19,13 @@ fold = 10
 rounds = 100
 
 al = ActiveLearningInterface(
-    fold,
-    rounds,
-    target_building,
-    target_srcids,
-    source_building
-    )
+    target_building=target_building,
+    target_srcids=target_srcids,
+    fold=fold,
+    rounds=rounds,
+    use_all_metadata=True,
+    source_building=source_building
+)
 
 al.learn_auto()
 acc_sum = [np.nanmean(i) for i in al.learner.acc_sum]

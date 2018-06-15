@@ -39,7 +39,7 @@ def average_data(xs, ys, target_x):
     return target_y.tolist()[0]
 
 def plot_pointonly_notransfer():
-    buildings = ['ebu3b', 'uva_cse', 'sdh']
+    buildings = ['ebu3b', 'uva_cse', 'sdh', 'ghc']
     #buildings = ['sdh', 'ebu3b']
     outputfile = FIG_DIR + '/pointonly_notransfer.pdf'
 
