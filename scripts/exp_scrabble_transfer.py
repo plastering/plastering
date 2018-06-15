@@ -54,7 +54,7 @@ for inferencer_name, Inferencer in inferencers.items():
                 'metrics': hist['metrics'],
                 'learning_srcids': len(hist['total_training_srcids'])
             } for hist in inferencer.history]
-            with open('result/pointonly_notransfer_{0}_{1}_{2}.json'
+            with open('result/pointonly_transfer_{0}_{1}_{2}.json'
                       .format(inferencer_name, target_building, exp_id), 'w') \
                     as fp:
                 json.dump(history, fp)
