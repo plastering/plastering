@@ -507,7 +507,10 @@ class ZodiacInterface(Inferencer):
 
         pred_g = None
         for i in range(0, 10):
-            pred_g = init_graph(empty=False)
+            try:
+                pred_g = init_graph(empty=False)
+            except:
+                print('WARNING: init_graph temporarily failed.')
             if pred_g:
                 break
             time.sleep(3)
@@ -522,7 +525,8 @@ class ZodiacInterface(Inferencer):
             prob = max(prob)
             try:
                 self._add_pred_point_result(pred_g, srcid, pred_point, prob)
-            except:
+            except Exception as e:
+                print('ERROR: {0}'.format(e))
                 pdb.set_trace()
         self.pred_g = pred_g
         t1 = arrow.get()

@@ -23,11 +23,12 @@ from plotter import save_fig
 building_anon_map = {
     'ebu3b': 'A-1',
     'uva_cse': 'B-1',
-    'sdh': 'C-1'
+    'sdh': 'C-1',
+    'ghc': 'D-1'
 }
 colors = ['firebrick', 'deepskyblue']
 inferencer_names = ['zodiac', 'al_hong', 'scrabble']
-EXP_NUM = 4
+EXP_NUM = 2
 LINESTYLES = ['--', '-.', '-']
 FIG_DIR = './figs'
 
@@ -48,8 +49,9 @@ def plot_pointonly_notransfer():
     xticks_labels = [''] + [str(n) for n in xticks[1:]]
     yticks = range(0,101,20)
     yticks_labels = [str(n) for n in yticks]
-    xlim = (-5, xticks[-1]+5)
-    ylim = (yticks[0]-2, yticks[-1]+5)
+    xlim = (0, xticks[-1])
+    #xlim = (-5, xticks[-1]+5)
+    ylim = (yticks[0], yticks[-1])
     interp_x = list(range(10, 250, 5))
     for ax_num, (ax, building) in enumerate(zip(axes, buildings)): # subfigure per building
         xlabel = '# of Samples'
@@ -81,28 +83,34 @@ def plot_pointonly_notransfer():
             x = interp_x
             ys = [f1, mf1]
             if ax_num == 0:
-                #data_labels = ['Baseline Acc w/o $B_s$',
-                #               'Baseline M-$F_1$ w/o $B_s$']
                 legends = ['MicroF1, {0}'.format(inferencer_name),
                            'MacroF1, {0}'.format(inferencer_name)
                            ]
             else:
                 #data_labels = None
                 legends = None
+            xtickRotate = 45
 
             _, plots = plotter.plot_multiple_2dline(
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
                 yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
-                linestyles=[linestyles.pop()]*len(ys), cs=colors)
+                linestyles=[linestyles.pop()]*len(ys), cs=colors,
+                xtickRotate=xtickRotate)
     for ax in axes:
         ax.grid(True)
     for i in range(1,len(buildings)):
         axes[i].set_yticklabels([])
         axes[i].set_ylabel('')
     for i in range(0,len(buildings)):
+        ax = axes[i]
+        ax.tick_params(axis='x', pad=-1.5)
         if i != 1:
-            axes[i].set_xlabel('')
-    axes[0].legend(bbox_to_anchor=(3.2, 1.5), ncol=3, frameon=False)
+            ax.set_xlabel('')
+        else:
+            ax.xaxis.set_label_coords(1.1, -0.2)
+
+    axes[0].legend(bbox_to_anchor=(4.3, 1.5), ncol=3, frameon=False)
+    #axes[0].legend(bbox_to_anchor=(3.2, 1.5), ncol=3, frameon=False)
     fig.set_size_inches((8,2))
     save_fig(fig, outputfile)
 
