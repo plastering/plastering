@@ -7,6 +7,7 @@ import random
 import re
 import itertools
 import pylab as pl
+import os
 
 from collections import defaultdict as dd
 from collections import Counter as ct
