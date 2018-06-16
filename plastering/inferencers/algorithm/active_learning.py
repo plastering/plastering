@@ -305,7 +305,15 @@ class active_learning():
 
                 self.clf.fit(fn_train, label_train)
 
-                idx, c_idx = self.select_example()
+                try:
+                    idx, c_idx = self.select_example()
+                except:
+                    acc, f1_micro, f1_macro = np.nan, np.nan, np.nan
+                    self.acc_sum[rr].append(acc)
+                    self.f1_micro_sum[rr].append(f1_micro)
+                    self.f1_macro_sum[rr].append(f1_macro)
+                    continue
+
                 self.labeled_set.append(idx)
                 self.new_ex_id = idx
                 self.cluster_id = c_idx
