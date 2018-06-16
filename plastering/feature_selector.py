@@ -143,7 +143,7 @@ class feature_selector():
         if self.method == "lsvc":
             clf = LinearSVC(C=0.01, penalty="l1", dual=False)
         elif self.method == "tree":
-            clf = RFC(n_estimators=100, criterion='entropy')
+            clf = RFC(n_estimators=200, criterion='entropy')
         else:
             raise ValueError("invalid method!")
 
@@ -152,7 +152,7 @@ class feature_selector():
         acc = [get_CV_acc(fd, self.label, clf) for fd in fd_copy]
         print ('acc before selection is', acc)
 
-        model = SFM(clf, prefit=True)
+        model = SFM(clf, prefit=True, threshold="0.4*mean")
         fd_new = model.transform( np.concatenate(self.fd, axis=1) )
         print ('dim after selection is', fd_new.shape)
 
