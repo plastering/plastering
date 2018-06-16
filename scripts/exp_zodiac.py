@@ -12,33 +12,33 @@ import pdb
 
 EXP_NUM = 4
 
-#target_buildings = ['ebu3b', 'uva_cse', 'sdh']
-#target_buildings = ['sdh']
-target_buildings = ['ghc']
-
-inferencers = {
-    'zodiac': ZodiacInterface,
-}
+target_building = sys.argv[1]
+try:
+    source_buildings = [sys.argv[2]]
+except:
+    source_buildings = []
 
 
-for inferencer_name, Inferencer in inferencers.items():
-    for exp_id in range(0, EXP_NUM):
-        for target_building in target_buildings:
-            # Select labeled srcids (Not all the data are labeled yet.)
-            labeled_list = LabeledMetadata.objects(building=target_building)
-            target_srcids = [labeled['srcid'] for labeled in labeled_list]
+for exp_id in range(0, EXP_NUM):
+    # Select labeled srcids (Not all the data are labeled yet.)
+    labeled_list = LabeledMetadata.objects(building=target_building)
+    target_srcids = [labeled['srcid'] for labeled in labeled_list]
 
-            #zodiac = ZodiacInterface(target_building=target_building,
-            #                         target_srcids=target_srcids)
-            #zodiac.learn_auto() # This should include evaluate function for each step
-            inferencer = Inferencer(target_building =target_building,
-                                    target_srcids=target_srcids)
-            inferencer.learn_auto()
-            history = [{
-                'metrics': hist['metrics'],
-                'learning_srcids': len(hist['total_training_srcids'])
-            } for hist in inferencer.history]
-            with open('result/pointonly_notransfer_{0}_{1}_{2}.json'
-                      .format(inferencer_name, target_building, exp_id), 'w') \
-                    as fp:
-                json.dump(history, fp)
+    zodiac= ZodiacInterface(target_building =target_building,
+                            target_srcids=target_srcids,
+                            source_buildings=source_buildings)
+    zodiac.learn_auto()
+    history = [{
+        'metrics': hist['metrics'],
+        'learning_srcids': len(hist['total_training_srcids'])
+    } for hist in zodiac.history]
+
+    if source_buildings:
+        outputfile = 'result/pointonly_transfer_{0}_{1}_{2}_{3}.json'\
+            .format('al_honh', target_building, source_buildings[0], exp_id)
+    else:
+        outputfile = 'result/pointonly_transfer_{0}_{1}_{2}.json'\
+            .format('al_honh', target_building, exp_id)
+
+    with open(outputfile, 'w') as fp:
+        json.dump(history, fp)
