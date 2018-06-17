@@ -81,7 +81,8 @@ class ScrabbleInterface(Inferencer):
                                  known_tags_dict,
                                  config=config,
                                  )
-        self.update_model(self.scrabble.learning_srcids)
+        #self.update_model(self.scrabble.learning_srcids)
+        self.update_model([])
 
 
     def learn_auto(self, iter_num=25, inc_num=10):
