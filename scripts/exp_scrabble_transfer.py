@@ -10,8 +10,10 @@ import pdb
 
 EXP_NUM = 2
 
-target_buildings = ['sdh']
-source_buildings = ['ebu3b', 'sdh']
+target_building = sys.argv[1]
+source_building = sys.argv[2]
+target_buildings = [target_building]
+source_buildings = [source_building, target_building]
 #target_buildings = ['ebu3b']
 #source_buildings = ['ap_m', 'ebu3b']
 #target_buildings = ['sdh']
@@ -37,6 +39,11 @@ configs = {
     }
 }
 
+print('------------------------------')
+print('CONFIGS:')
+print(configs)
+print('------------------------------')
+
 
 for inferencer_name, Inferencer in inferencers.items():
     for exp_id in range(0, EXP_NUM):
@@ -54,7 +61,7 @@ for inferencer_name, Inferencer in inferencers.items():
                 'metrics': hist['metrics'],
                 'learning_srcids': len(hist['total_training_srcids'])
             } for hist in inferencer.history]
-            with open('result/pointonly_transfer_{0}_{1}_{2}.json'
-                      .format(inferencer_name, target_building, exp_id), 'w') \
-                    as fp:
+            with open('result/pointonly_transfer_{0}_{1}_{2}_{3}.json'
+                      .format(inferencer_name, target_building,
+                              source_buildings[0], exp_id), 'w') as fp:
                 json.dump(history, fp)

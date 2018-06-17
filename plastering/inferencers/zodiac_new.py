@@ -497,6 +497,21 @@ class ZodiacInterface(Inferencer):
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
 
+    def try_multiple_times(self, f, params):
+        success = False
+        for i in range(0, 10):
+            try:
+                res = f(**params)
+                success = True
+            except:
+                print('WARNING: {0} temporarily failed'.format(str(f)))
+            if success:
+                break
+            time.sleep(3)
+        assert success, 'ERROR: {0} finally failed'.format(str(f))
+        return res
+
+
     def predict(self, target_srcids=None):
         t0 = arrow.get()
         if not target_srcids:
@@ -506,14 +521,7 @@ class ZodiacInterface(Inferencer):
         self.learn_model()
 
         pred_g = None
-        for i in range(0, 10):
-            try:
-                pred_g = init_graph(empty=False)
-            except:
-                print('WARNING: init_graph temporarily failed.')
-            if pred_g:
-                break
-            time.sleep(3)
+        pred_g = self.try_multiple_times(init_graph, {'empty': False})
         assert pred_g, 'pred_g is not initialized somehow'
         sample_bow = self.get_sub_bow(target_srcids)
 
@@ -523,11 +531,11 @@ class ZodiacInterface(Inferencer):
                                            pred_points,
                                            confidences):
             prob = max(prob)
-            try:
-                self._add_pred_point_result(pred_g, srcid, pred_point, prob)
-            except Exception as e:
-                print('ERROR: {0}'.format(e))
-                pdb.set_trace()
+            self.try_multiple_times(self._add_pred_point_result, {
+                'pred_g': pred_g,
+                'srcid': srcid,
+                'pred_point': pred_point,
+                'pred_prob': prob})
         self.pred_g = pred_g
         t1 = arrow.get()
         print('REALLY it takes this: {0}'.format(t1 - t0))
