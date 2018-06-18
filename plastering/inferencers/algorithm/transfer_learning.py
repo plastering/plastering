@@ -70,9 +70,9 @@ def plot_confusion_matrix(test_label, pred):
 def output_labels():
     #re-map class label to 0~N
     u, remap = np.unique(np.append(label,pred), return_inverse=True)
-    remap = remap[-len(pred):]#output parameters for testing in Java
+    remap = remap[-len(pred):] #output parameters for testing in Java
     f = open('TL_out','w')
-    f.writelines(",".join(str(i) for i in l_id))
+    f.writelines(",".join(str(i) for i in labeled_id))
     f.write('\n')
     f.writelines(",".join(str(l) for l in remap))
     f.write('\n')
@@ -178,7 +178,8 @@ class transfer_learning:
         for delta in np.linspace(self.agreement_threshold, self.agreement_threshold, 1):
             print ( 'running TL with agreement threshold =', delta )
 
-            l_id = []
+            labeled_id = []
+            confidence = []
             output = DD()
             preds = np.array([999 for i in range(len(self.test_fd))])
             for i in range(len(self.test_fn)):
@@ -211,13 +212,14 @@ class transfer_learning:
                 output[i].append(np.mean(w))
 
                 if np.mean(w) >= delta:
+                    confidence.append( np.mean(w) )
                     w[:] = [float(j)/sum(w) for j in w]
                     pred_pr = np.zeros(len(class_))
                     for wi, b in zip(w,self.bl):
                         pr = b.predict_proba(self.test_fd[i].reshape(1,-1))
                         pred_pr = pred_pr + wi*pr
                     preds[i] = class_[np.argmax(pred_pr)]
-                    l_id.append(i)
+                    labeled_id.append(i)
 
             acc_.append( ACC(preds[preds!=999], label[preds!=999]) )
             cov_.append( 1.0 * len(preds[preds!=999])/len(label) )
@@ -225,15 +227,16 @@ class transfer_learning:
         print ( 'acc =', acc_, ';' )
         print ( 'cov =', cov_, ';' )
 
-        return preds[preds!=999], l_id
+        return preds[preds!=999], labeled_id, confidence
 
 
     def predict(self):
 
-        preds, labeled_set = self.run_auto()
+        preds, labeled_set, confidence = self.run_auto()
         assert len(preds) == len(labeled_set)
+        assert len(preds) == len(confidence)
 
-        return preds, labeled_set
+        return preds, labeled_set, confidence
 
 
 if __name__ == "__main__":

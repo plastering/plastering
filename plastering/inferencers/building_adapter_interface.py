@@ -81,7 +81,7 @@ def get_namefeatures_labels(building):
     fn = get_name_features(pt_name)
     print ('%d point names loaded for %s'%(len(pt_name), building))
 
-    return { srcid:[name_feature, label] for srcid,name_feature,label in zip(srcids,fn,pt_type) }
+    return { srcid:[name_feature,label,name] for srcid,name_feature,label,name in zip(srcids,fn,pt_type,pt_name) }
 
 
 class BuildingAdapterInterface(Inferencer):
@@ -133,9 +133,9 @@ class BuildingAdapterInterface(Inferencer):
             source_res = get_namefeatures_labels(source_building)
             train_label = [source_res[srcid][1] for srcid in source_ids]
 
-            target_res = get_namefeatures_labels(target_building)
-            test_fn = np.asarray( [target_res[tgtid][0] for tgtid in target_ids] )
-            test_label = [target_res[tgtid][1] for tgtid in target_ids]
+            self.target_res = get_namefeatures_labels(target_building)
+            test_fn = np.asarray( [self.target_res[tgtid][0] for tgtid in target_ids] )
+            test_label = [self.target_res[tgtid][1] for tgtid in target_ids]
 
             #find the label intersection
             intersect = list( set(test_label) & set(train_label) )
@@ -145,31 +145,34 @@ class BuildingAdapterInterface(Inferencer):
             if intersect:
                 train_filtered = [[i,j] for i,j in enumerate(train_label) if j in intersect]
                 train_id, train_label = [list(x) for x in zip(*train_filtered)]
-                test_filtered = [[i,j] for i,j in enumerate(test_label) if j in intersect]
-                test_id, test_label = [list(x) for x in zip(*test_filtered)]
+                test_filtered = [[i,j,k] for i,(j,k) in enumerate(zip(test_label,target_ids)) if j in intersect]
+                self.test_id, test_label, self.test_srcids = [list(x) for x in zip(*test_filtered)]
             else:
                 raise ValueError('no common labels!')
 
             self.train_fd = train_fd[train_id, :]
-            self.test_fd = test_fd[test_id, :]
-            #test_fn = [test_fn[tid] for tid in test_id]
-            self.test_fn = test_fn[test_id, :]
+            self.test_fd = test_fd[self.test_id, :]
+            self.test_fn = test_fn[self.test_id, :]
+
             print ('%d training examples left'%len(self.train_fd))
             print ('%d testing examples left'%len(self.test_fd))
 
-            le = LE()
-            le.fit(intersect)
-            self.train_label = le.transform(train_label)
-            self.test_label = le.transform(test_label)
+            self.le = LE()
+            self.le.fit(intersect)
+            self.train_label = self.le.transform(train_label)
+            self.test_label = self.le.transform(test_label)
 
-            res = [self.train_fd, self.test_fd, self.train_label, self.test_label, self.test_fn]
+            res = [self.train_fd, self.test_fd, self.train_label, self.test_label, self.test_fn, self.test_srcids, self.target_res, self.le]
             with open('./%s-%s.pkl'%(source_building,target_building), 'wb') as wf:
                 pk.dump(res, wf)
+
         else:
+            print ('loading from prestored file')
             with open('./%s-%s.pkl'%(source_building,target_building), 'rb') as rf:
                 res = pk.load(rf)
-            self.train_fd, self.test_fd, self.train_label, self.test_label, self.test_fn = \
-            res[0], res[1], res[2], res[3], res[4]
+            self.train_fd, self.test_fd, self.train_label, self.test_label, self.test_fn, self.test_srcids, self.target_res, self.le = \
+            res[0], res[1], res[2], res[3], res[4], res[5], res[6], res[7]
+
 
         print ( '# of classes:', len(set(self.train_label)) )
         print ( 'data features for %s with dim:'%source_building, self.train_fd.shape)
@@ -186,11 +189,21 @@ class BuildingAdapterInterface(Inferencer):
         )
 
 
-    def predict(self):
+    def predict(self, verbose=False):
+        '''
+        return: tagset, srcid, and confidence of each labeled example
+        '''
 
-        preds, labeled_set = self.learner.predict()
+        preds, labeled_set, confidence = self.learner.predict()
+        srcids = [self.test_srcids[i] for i in labeled_set]
+        tagsets = list(self.le.inverse_transform(preds))
+        names = [self.target_res[i][-1] for i in srcids]
 
-        return preds, labeled_set
+        if verbose:
+            for i,j,k,l in zip(srcids, names, tagsets, confidence):
+                print ('srcid %s with name %s got label %s with s %.4f'%(i,j,k,l))
+
+        return srcids, tagsets, confidence
 
 
     def run_auto(self):
