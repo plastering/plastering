@@ -305,5 +305,5 @@ def plot_quiver_zodiac():
 
 if __name__ == '__main__':
     plot_pointonly_notransfer()
-    plot_pointonly_transfer()
+    #plot_pointonly_transfer()
     #plot_quiver_zodiac()

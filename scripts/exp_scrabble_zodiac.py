@@ -11,7 +11,7 @@ from plastering.metadata_interface import *
 from plastering.workflow import *
 from plastering.helper.common import *
 
-EXP_NUM = 1
+EXP_NUM = 2
 
 # construct a framework dict for referneces.
 f_class_dict = {
@@ -61,7 +61,7 @@ for exp_id in range(0, EXP_NUM):
 
     workflow = Workflow(target_srcids, target_building,
                         f_class_dict, f_graph)
-    workflow.learn_auto(inc_num=5)
+    workflow.learn_auto(inc_num=10)
     history = [{
         'metrics': hist['metrics'],
         'learning_srcids': len(hist['total_training_srcids'])

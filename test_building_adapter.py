@@ -26,4 +26,6 @@ bl = BuildingAdapterInterface(target_building,
                               source_bulidings,
                               config,
                               load_from_file=1)
-bl.run_auto()
+#bl.run_auto()
+srcids_labeled, tagset_preds, confidence = bl.predict()
+

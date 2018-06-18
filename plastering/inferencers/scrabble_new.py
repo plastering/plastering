@@ -141,7 +141,6 @@ class ScrabbleInterface(Inferencer):
             if (good_point_tagset != pred_point_tagset) or\
                (good_point_tagset == 'unknown' and pred_point_tagset == 'none') or\
                (good_point_tagset == 'none' and pred_point_tagset == 'unknown'):
-                pdb.set_trace()
                 incorrect_srcids.append(srcid)
         if not incorrect_srcids:
             return []
