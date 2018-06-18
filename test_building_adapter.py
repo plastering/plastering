@@ -18,7 +18,7 @@ config = {
         (arrow.get(2016, 2, 1), arrow.get(2016, 2,6))
     ],
     'source_time_range': (arrow.get(2017, 1, 20), arrow.get(2017, 2,6)),
-    'threshold': 0.1
+    'threshold': 0.3
 }
 
 bl = BuildingAdapterInterface(target_building,
@@ -26,4 +26,6 @@ bl = BuildingAdapterInterface(target_building,
                               source_bulidings,
                               config,
                               load_from_file=1)
-bl.run_auto()
+#bl.run_auto()
+srcids_labeled, tagset_preds, confidence = bl.predict()
+
