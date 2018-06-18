@@ -65,6 +65,6 @@ for exp_id in range(0, EXP_NUM):
         'metrics': hist['metrics'],
         'learning_srcids': len(hist['total_training_srcids'])
     } for hist in workflow.history]
-    with open('result/quiver_zodiac_{0}_{1}.json'
+    with open('result/scrabble_zodiac_{0}_{1}.json'
               .format(target_building, exp_id), 'w') as fp:
         json.dump(history, fp)

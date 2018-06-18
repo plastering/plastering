@@ -242,13 +242,22 @@ class Inferencer(object):
           - label_type: one of POINT_TAGSET, FULL_PARSING defined in common.py
         """
         pred_g = self.predict(target_srcids)
-        truth = self._get_true_labels(target_srcids, self.target_label_type)
-        if self.target_label_type == POINT_TAGSET:
+        metrics = {}
+
+        if self.target_label_type in [POINT_TAGSET, ALL_TAGSETS]:
+            truth = self._get_true_labels(target_srcids, POINT_TAGSET)
             pred = get_instance_tuples(pred_g)
-            metrics = {
-                'f1': get_multiclass_micro_f1(truth, pred),
-                'macrof1': get_multiclass_macro_f1(truth, pred)
-            }
+            metrics['f1'] = get_multiclass_micro_f1(truth, pred)
+            metrics['macrof1'] = get_multiclass_macro_f1(truth, pred)
+
+        if self.target_label_type in [ALL_TAGSETS]:
+            pred_g, pred = self.predict(target_srcids, True)
+            pred = {srcid: list(pred_tagsets)
+                    for srcid, pred_tagsets in pred.items()}
+            truth = self._get_true_labels(target_srcids, ALL_TAGSETS)
+            metrics['f1-all'] = get_micro_f1(truth, pred)
+            metrics['macrof1-all'] = get_macro_f1(truth, pred)
+
         target_building_training_srcids = \
             [srcid for srcid in self.training_srcids
              if RawMetadata.objects(srcid=srcid,

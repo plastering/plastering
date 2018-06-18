@@ -30,6 +30,8 @@ class ScrabbleInterface(Inferencer):
             config=config,
             framework_name='scrabble')
 
+        self.target_label_type = ALL_TAGSETS
+
         if not config:
             config = {}
 
@@ -82,7 +84,6 @@ class ScrabbleInterface(Inferencer):
                                  config=config,
                                  )
         #self.update_model(self.scrabble.learning_srcids)
-        self.update_model([])
 
 
     def learn_auto(self, iter_num=25, inc_num=10):
@@ -111,12 +112,16 @@ class ScrabbleInterface(Inferencer):
                                         point_tagset, point_prob)
         return pred_g
 
-    def predict(self, target_srcids=None):
+    def predict(self, target_srcids=None, all_tagsets=False):
         if not target_srcids:
             target_srcids = self.target_srcids
         pred = self.scrabble.predict(target_srcids)
         self.pred_g = self.postprocessing_pred(pred)
-        return self.pred_g
+        if all_tagsets:
+            return self.pred_g, pred # This should be generalized inside
+                                     # postprocessing_pred
+        else:
+            return self.pred_g
 
     def predict_proba(self, target_srcids=None):
         return self.scrabble.predict_proba(target_srcids)
