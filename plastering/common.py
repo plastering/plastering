@@ -1,6 +1,7 @@
 
 # Constants
 POINT_TAGSET = 'point_tagset'
+ALL_TAGSETS = 'tagsets'
 FULL_PARSING = 'fullparsing'
 
 

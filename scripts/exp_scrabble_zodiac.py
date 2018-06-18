@@ -1,6 +1,7 @@
 import sys, os
 import pdb
 import json
+os.environ['TRIPLE_STORE_TYPE'] = "rdflib"
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, dir_path + '/..')
 from plastering.inferencers.quiver import DummyQuiver
@@ -60,11 +61,11 @@ for exp_id in range(0, EXP_NUM):
 
     workflow = Workflow(target_srcids, target_building,
                         f_class_dict, f_graph)
-    workflow.learn_auto(inc_num=10)
+    workflow.learn_auto(inc_num=5)
     history = [{
         'metrics': hist['metrics'],
         'learning_srcids': len(hist['total_training_srcids'])
     } for hist in workflow.history]
-    with open('result/quiver_zodiac_{0}_{1}.json'
+    with open('result/scrabble_zodiac_{0}_{1}.json'
               .format(target_building, exp_id), 'w') as fp:
         json.dump(history, fp)

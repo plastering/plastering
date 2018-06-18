@@ -14,7 +14,6 @@ POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 from scrabble import Scrabble # This may imply incompatible imports.
 from scrabble.common import *
 
-
 class ScrabbleInterface(Inferencer):
     """docstring for ScrabbleInterface"""
     def __init__(self,
@@ -29,6 +28,8 @@ class ScrabbleInterface(Inferencer):
             source_buildings=source_buildings,
             config=config,
             framework_name='scrabble')
+
+        self.target_label_type = ALL_TAGSETS
 
         if not config:
             config = {}
@@ -81,7 +82,7 @@ class ScrabbleInterface(Inferencer):
                                  known_tags_dict,
                                  config=config,
                                  )
-        self.update_model(self.scrabble.learning_srcids)
+        #self.update_model(self.scrabble.learning_srcids)
 
 
     def learn_auto(self, iter_num=25, inc_num=10):
@@ -110,12 +111,16 @@ class ScrabbleInterface(Inferencer):
                                         point_tagset, point_prob)
         return pred_g
 
-    def predict(self, target_srcids=None):
+    def predict(self, target_srcids=None, all_tagsets=False):
         if not target_srcids:
             target_srcids = self.target_srcids
         pred = self.scrabble.predict(target_srcids)
         self.pred_g = self.postprocessing_pred(pred)
-        return self.pred_g
+        if all_tagsets:
+            return self.pred_g, pred # This should be generalized inside
+                                     # postprocessing_pred
+        else:
+            return self.pred_g
 
     def predict_proba(self, target_srcids=None):
         return self.scrabble.predict_proba(target_srcids)
@@ -133,7 +138,10 @@ class ScrabbleInterface(Inferencer):
         incorrect_srcids = []
         for srcid, good_point_tagset in good_preds.items():
             pred_point_tagset = get_point_type(pred_g, BASE[srcid])
-            if good_point_tagset != pred_point_tagset:
+            if (good_point_tagset != pred_point_tagset) or\
+               (good_point_tagset == 'unknown' and pred_point_tagset == 'none') or\
+               (good_point_tagset == 'none' and pred_point_tagset == 'unknown'):
+                pdb.set_trace()
                 incorrect_srcids.append(srcid)
         if not incorrect_srcids:
             return []

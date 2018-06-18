@@ -42,8 +42,8 @@ def get_point_type(g, point):
     """.format(point.n3())
     res = query_sparql(g, qstr)
     t = res[0]['t']
-    return t
-
+    return t.split('#')[-1]
+    #return t
 
 def get_vav_points(g, vav):
     qstr = """

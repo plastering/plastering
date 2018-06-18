@@ -44,10 +44,10 @@ for exp_id in range(0, EXP_NUM):
                 ]
     if source_building:
         outputfile = 'result/pointonly_transfer_{0}_{1}_{2}_{3}.json'\
-            .format('al_honh', target_building, source_building, exp_id)
+            .format('al_hong', target_building, source_building, exp_id)
     else:
         outputfile = 'result/pointonly_transfer_{0}_{1}_{2}.json'\
-            .format('al_honh', target_building, exp_id)
+            .format('al_hong', target_building, exp_id)
 
     with open(outputfile, 'w') as fp:
         json.dump(outputs, fp)

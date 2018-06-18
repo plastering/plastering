@@ -11,17 +11,24 @@ import pdb
 EXP_NUM = 2
 
 target_building = sys.argv[1]
+source_building = sys.argv[2]
+if source_building == 'none':
+    source_building = None
 target_buildings = [target_building]
-source_buildings = [target_building]
-sample_num_list = [10]
+if source_building:
+    source_buildings = [source_building, target_building]
+    sample_num_list = [200, 10]
+else:
+    source_buildings = [target_building]
+    sample_num_list = [10]
 
 inferencers = {
     'scrabble': ScrabbleInterface,
 }
 
-if int(sys.argv[2]) == 1:
+if int(sys.argv[3]) == 1:
     use_brick_flag = True
-elif int(sys.argv[2]) == 0:
+elif int(sys.argv[3]) == 0:
     use_brick_flag = False
 else:
     raise Exception('incorrect argument')

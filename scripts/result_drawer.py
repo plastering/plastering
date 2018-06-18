@@ -112,15 +112,15 @@ def plot_pointonly_notransfer():
         else:
             ax.xaxis.set_label_coords(1.1, -0.2)
 
-    axes[0].legend(bbox_to_anchor=(4.3, 1.5), ncol=3, frameon=False)
-    #axes[0].legend(bbox_to_anchor=(3.2, 1.5), ncol=3, frameon=False)
+    axes[0].legend(bbox_to_anchor=(6, 0.95), ncol=1, frameon=False)
+    #axes[0].legend(bbox_to_anchor=(4.3, 1.5), ncol=3, frameon=False)
     fig.set_size_inches((8,2))
     save_fig(fig, outputfile)
 
 def plot_pointonly_transfer():
-    target_sources = [('sdh', 'ebu3b'),
+    target_sources = [('ebu3b', 'ap_m'),
                       ('ebu3b', 'sdh'),
-                      ('ebu3b', 'ap_m'),
+                      ('sdh', 'ebu3b'),
                       ]
     EXP_NUM = 2
     outputfile = FIG_DIR + '/pointonly_transfer.pdf'
@@ -132,10 +132,12 @@ def plot_pointonly_transfer():
     xticks_labels = [''] + [str(n) for n in xticks[1:]]
     yticks = range(0,101,20)
     yticks_labels = [str(n) for n in yticks]
-    xlim = (-5, xticks[-1]+5)
-    ylim = (yticks[0]-2, yticks[-1]+5)
-    interp_x = list(range(10, 250, 5))
-    for i, (ax, (target_building, source_building)) \
+    #xlim = (-5, xticks[-1]+5)
+    #ylim = (yticks[0]-2, yticks[-1]+5)
+    xlim = (0, xticks[-1])
+    ylim = (yticks[0], yticks[-1])
+    #interp_x = list(range(10, 250, 5))
+    for ax_num, (ax, (target_building, source_building)) \
             in enumerate(zip(axes, target_sources)): # subfigure per building
         xlabel = '# of Samples'
         ylabel = 'Metric (%)'
@@ -167,13 +169,15 @@ def plot_pointonly_transfer():
                 xs = [x - 200 for x in xs]
                 xss[0] = xs
                 xss[1] = xs
+            interp_x = list(range(10,
+                                  min(250, max([max(xs) for xs in xss]) + 5),
+                                  5))
             f1 = average_data(xss, f1s, interp_x)
             mf1 = average_data(xss, mf1s, interp_x)
             x = interp_x
             ys = [f1, mf1]
-            if i == 2:
-                #data_labels = ['Baseline Acc w/o $B_s$',
-                #               'Baseline M-$F_1$ w/o $B_s$']
+            #if ax_num == 0:
+            if False:
                 legends = ['MicroF1, {0}'.format(inferencer_name),
                            'MacroF1, {0}'.format(inferencer_name)
                            ]
@@ -181,10 +185,13 @@ def plot_pointonly_transfer():
                 #data_labels = None
                 legends = None
 
+            xtickRotate = 45
             _, plots = plotter.plot_multiple_2dline(
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
                 yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
-                linestyles=[linestyles.pop()]*len(ys), cs=colors)
+                linestyles=[linestyles.pop()]*len(ys), cs=colors,
+                xtickRotate=xtickRotate)
+
     for ax in axes:
         ax.grid(True)
     for i in range(1,len(target_sources)):
@@ -196,11 +203,10 @@ def plot_pointonly_transfer():
         if i != 1:
             ax.set_xlabel('')
         else:
-            ax.xaxis.set_label_coords(1.1, -0.2)
+            ax.xaxis.set_label_coords(0.5, -0.2)
 
-    axes[0].legend(bbox_to_anchor=(4.3, 1.5), ncol=3, frameon=False)
-    #axes[0].legend(bbox_to_anchor=(3.2, 1.5), ncol=3, frameon=False)
-    fig.set_size_inches((8,2))
+    #axes[0].legend(bbox_to_anchor=(6, 0.8), ncol=1, frameon=False)
+    fig.set_size_inches((6,2))
     save_fig(fig, outputfile)
 
 def get_grid_params():
@@ -299,5 +305,5 @@ def plot_quiver_zodiac():
 
 if __name__ == '__main__':
     plot_pointonly_notransfer()
-    #plot_pointonly_transfer()
-    plot_quiver_zodiac()
+    plot_pointonly_transfer()
+    #plot_quiver_zodiac()

@@ -151,9 +151,9 @@ def window_feature(X,feature_fun,win_num,overlapping=0):
     N,D = X.shape
     temp = feature_fun(X[:2,:10])
     _,dimf = temp.shape
-    F = np.zeros([N,dimf,D//(win_num-overlapping)])
+    F = np.zeros( [N,dimf,len(range(0,D-win_num+1,win_num-overlapping))] )
     cnt = 0
-    for i in range(0,D-1,win_num-overlapping):
+    for i in range(0,D-win_num+1,win_num-overlapping):
         start = i if i<overlapping else i-overlapping
         temp = feature_fun(X[:,start:start+win_num])
         F[:,:,cnt] = temp

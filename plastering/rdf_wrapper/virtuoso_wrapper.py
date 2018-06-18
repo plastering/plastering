@@ -212,6 +212,16 @@ class BrickEndpoint(object):
     def parse(self, filepath, format=None):
         self.load_ttlfile(filepath)
 
+    def serialize(self):
+        qstr = """
+        select ?s ?p ?o where{
+        ?s ?p ?o .
+        FILTER(STRSTARTS(STR(?s), "%s"))
+        }
+        """ % (BASE)
+        res = self.raw_query(qstr)
+        return res
+
     def __add__(self, other):
         assert isinstance(other, BrickEndpoint)
         qstr = """

@@ -219,7 +219,7 @@ class Workflow(Inferencer):
             print('--------------------------')
             t0 = arrow.get()
             print('{0}th iteration'.format(i))
-            new_srcids = self.select_informative_samples(1)
+            new_srcids = self.select_informative_samples(inc_num)
             t1 = arrow.get()
             print('{0}th TOTAL "select_samples" took: {1}'.format(i, t1-t0))
             self.update_model(new_srcids)
