@@ -16,7 +16,6 @@ def binarize_labels(true_labels, pred_labels):
 
 def get_micro_f1(true_labels, pred_labels):
     pred_mat, true_mat = binarize_labels(true_labels, pred_labels)
-    pdb.set_trace()
     return get_micro_f1_mat(true_mat, pred_mat)
 
 def get_macro_f1(true_labels, pred_labels):

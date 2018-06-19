@@ -6,7 +6,6 @@ sys.path.insert(0, dir_path + '/..')
 
 from plastering.inferencers.scrabble_new import ScrabbleInterface
 from plastering.metadata_interface import *
-import pdb
 
 EXP_NUM = 4
 
@@ -57,6 +56,11 @@ print('CONFIG:')
 print(configs)
 print('======================')
 
+if source_building:
+    transfer_flag = 'transfer'
+else:
+    transfer_flag = 'notransfer'
+
 
 for inferencer_name, Inferencer in inferencers.items():
     for exp_id in range(0, EXP_NUM):
@@ -74,7 +78,23 @@ for inferencer_name, Inferencer in inferencers.items():
                 'metrics': hist['metrics'],
                 'learning_srcids': len(hist['total_training_srcids'])
             } for hist in inferencer.history]
-            with open('result/pointonly_notransfer_{0}_{1}_{2}_{3}.json'
-                      .format(inferencer_name, target_building,
-                          exp_id, brick_postfix), 'w') as fp:
+            if source_building:
+                point_file = 'result/pointonly_{0}_{1}_{2}_{3}_{4}_{5}.json'\
+                    .format(transfer_flag, inferencer_name, target_building,
+                              source_building, exp_id, brick_postfix)
+                entity_file = 'result/allentities_{0}_{1}_{2}_{3}_{4}_{5}.json'\
+                    .format(transfer_flag, inferencer_name, target_building,
+                              source_building, exp_id, brick_postfix)
+            else:
+                point_file = 'result/pointonly_{0}_{1}_{2}_{3}_{4}.json'\
+                    .format(transfer_flag, inferencer_name, target_building,
+                              exp_id, brick_postfix)
+                entity_file = 'result/allentities_{0}_{1}_{2}_{3}_{4}.json'\
+                    .format(transfer_flag, inferencer_name, target_building,
+                              exp_id, brick_postfix)
+
+            with open(point_file, 'w') as fp:
+                json.dump(history, fp)
+
+            with open(entity_file, 'w') as fp:
                 json.dump(history, fp)
