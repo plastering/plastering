@@ -257,6 +257,7 @@ class Inferencer(object):
             truth = self._get_true_labels(target_srcids, ALL_TAGSETS)
             metrics['f1-all'] = get_micro_f1(truth, pred)
             metrics['macrof1-all'] = get_macro_f1(truth, pred)
+            metrics['accuracy'] = get_accuracy(truth, pred)
 
         target_building_training_srcids = \
             [srcid for srcid in self.training_srcids

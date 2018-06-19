@@ -80,8 +80,15 @@ def get_point_accuracy(true_tagsets, pred_tagsets):
     return sum([true_tagsets[srcid].lower() == pred_tagsets[srcid].lower()
                 for srcid in target_srcids]) / len(target_srcids)
 
-def get_accuracy(true_tagsets, pred_tagsets):
-    pass #TODO
+def get_accuracy(true_tagsets_sets, pred_tagsets_sets):
+    acc = 0
+    for srcid, pred_tagsets in pred_tagsets_sets.items():
+        pred = set(pred_tagsets)
+        true = set(true_tagsets_sets[srcid])
+        jaccard = len(pred.intersection(true)) / len(pred.union(true))
+        acc += jaccard
+    return acc
+
 
 def get_set_accuracy(true_label_sets, pred_tagset_sets):
     # Accuracy per sample = #intersection / #union
