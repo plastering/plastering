@@ -287,9 +287,27 @@ class ZodiacInterface(Inferencer):
                     print('There are {0} labels here'
                           .format(len(set(cluster_all_labels))))
 
+    def calc_prior_g_acc(self):
+        #instance_tuples = get_instance_tuples(self.prior_g)
+        cnt = 0
+        acc = 0
+        for triple, confidence in self.prior_confidences.items():
+            cnt += 1
+            srcid = triple[0].split('#')[-1]
+            tagset = triple[2].split('#')[-1]
+            true_tagset = LabeledMetadata.objects(srcid=srcid).first()\
+                .point_tagset
+            if tagset == true_tagset:
+                acc += 1
+        acc = 0 if not cnt else acc / cnt
+        print('Accuracy: {0}'.format(acc))
+        pdb.set_trace()
+
+
     def apply_prior_augment_samples(self):
         prior_preds = {}
         if self.prior_g:
+            self.calc_prior_g_acc()
             for triple, confidence in self.prior_confidences.items():
                 if confidence > self.th_max: # If the prediction is confident
                     srcid = triple[0].split('#')[-1]
@@ -497,20 +515,19 @@ class ZodiacInterface(Inferencer):
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
 
-    def try_multiple_times(self, f, params):
-        success = False
-        for i in range(0, 10):
-            try:
-                res = f(**params)
-                success = True
-            except:
-                print('WARNING: {0} temporarily failed'.format(str(f)))
-            if success:
-                break
-            time.sleep(3)
-        assert success, 'ERROR: {0} finally failed'.format(str(f))
-        return res
-
+#    def try_multiple_times(self, f, params):
+#        success = False
+#        for i in range(0, 10):
+#            try:
+#                res = f(**params)
+#                success = True
+#            except:
+#                print('WARNING: {0} temporarily failed'.format(str(f)))
+#            if success:
+#                break
+#            time.sleep(3)
+#        assert success, 'ERROR: {0} finally failed'.format(str(f))
+#        return res
 
     def predict(self, target_srcids=None):
         t0 = arrow.get()
