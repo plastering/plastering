@@ -1,6 +1,7 @@
 import sys, os
 import pdb
 import json
+os.environ['TRIPLE_STORE_TYPE'] = "rdflib"
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, dir_path + '/..')
 from plastering.inferencers.quiver import DummyQuiver
@@ -10,7 +11,7 @@ from plastering.metadata_interface import *
 from plastering.workflow import *
 from plastering.helper.common import *
 
-EXP_NUM = 1
+EXP_NUM = 2
 
 # construct a framework dict for referneces.
 f_class_dict = {

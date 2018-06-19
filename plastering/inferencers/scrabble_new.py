@@ -14,7 +14,6 @@ POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 from scrabble import Scrabble # This may imply incompatible imports.
 from scrabble.common import *
 
-
 class ScrabbleInterface(Inferencer):
     """docstring for ScrabbleInterface"""
     def __init__(self,
@@ -139,7 +138,9 @@ class ScrabbleInterface(Inferencer):
         incorrect_srcids = []
         for srcid, good_point_tagset in good_preds.items():
             pred_point_tagset = get_point_type(pred_g, BASE[srcid])
-            if good_point_tagset != pred_point_tagset:
+            if (good_point_tagset != pred_point_tagset) or\
+               (good_point_tagset == 'unknown' and pred_point_tagset == 'none') or\
+               (good_point_tagset == 'none' and pred_point_tagset == 'unknown'):
                 incorrect_srcids.append(srcid)
         if not incorrect_srcids:
             return []

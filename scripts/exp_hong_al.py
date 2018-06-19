@@ -8,7 +8,6 @@ sys.path.insert(0, dir_path + '/..')
 from plastering.inferencers.active_learning_interface import ActiveLearningInterface
 from plastering.metadata_interface import *
 
-
 target_building = sys.argv[1]
 try:
     source_building = sys.argv[2]

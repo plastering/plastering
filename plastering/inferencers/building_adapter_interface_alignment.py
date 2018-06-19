@@ -12,6 +12,7 @@ from . import Inferencer
 from ..timeseries_interface import *
 from ..metadata_interface import *
 from ..data_feature_extractor import *
+from ..rdf_wrapper import *
 
 
 def get_name_features(names):
@@ -91,7 +92,7 @@ class BuildingAdapterInterface(Inferencer):
                  target_srcids,
                  source_buildings,
                  config={},
-                 load_from_file=0
+                 load_from_file=1
                  ):
         super(BuildingAdapterInterface, self).__init__(
             target_building=target_building,
@@ -101,6 +102,7 @@ class BuildingAdapterInterface(Inferencer):
 
         #gather the source/target data and name features, labels
         #TODO: handle multiple source buildings
+        self.stop_predict_flag = False
 
         if 'source_time_ranges' in config:
             self.source_time_ranges = config['source_time_ranges']
@@ -188,11 +190,17 @@ class BuildingAdapterInterface(Inferencer):
             threshold = self.threshold
         )
 
+        self.run_auto()
 
-    def predict(self, verbose=False):
+
+    def predict(self, target_srcids, verbose=False):
         '''
         return: tagset, srcid, and confidence of each labeled example
         '''
+        if self.stop_predict_flag:
+            self.pred_g = init_graph(empty=True)
+            self.prior_confidences = {}
+            return self.pred_g
 
         preds, labeled_set, confidence = self.learner.predict()
         srcids = [self.test_srcids[i] for i in labeled_set]
@@ -203,10 +211,22 @@ class BuildingAdapterInterface(Inferencer):
             for i,j,k,l in zip(srcids, names, tagsets, confidence):
                 print ('srcid %s with name %s got label %s with s %.4f'%(i,j,k,l))
 
-        return srcids, tagsets, confidence
+        self.stop_predict_flag = True
+        self.pred_g = init_graph(empty=True)
 
+        acc_with_high_conf = 0
+        cnt_with_high_conf = 0
+        for srcid, tagset, prob in zip(srcids, tagsets, confidence):
+            self._add_pred_point_result(self.pred_g, srcid, tagset, prob)
+
+        #return srcids, tagsets, confidence
+        return self.pred_g
 
     def run_auto(self):
-
         self.learner.run_auto()
+
+    def select_informative_samples(self, sample_num):
+        super(BuildingAdapterInterface, self)\
+            .select_informative_samples(sample_num)
+        return []
 

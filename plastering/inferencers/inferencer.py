@@ -278,3 +278,29 @@ class Inferencer(object):
         for triple, prob in self.prior_confidences.items():
             if prob < min_prob:
                 self.prior_g.remove(triple)
+
+    def _add_pred_point_result_safe(self,
+                                    pred_g,
+                                    srcid,
+                                    pred_point,
+                                    pred_prob):
+        self.try_multiple_times(self._add_pred_point_result, {
+            'pred_g': pred_g,
+            'srcid': srcid,
+            'pred_point': pred_point,
+            'pred_prob': pred_prob
+        })
+
+    def try_multiple_times(self, f, params):
+        success = False
+        for i in range(0, 10):
+            try:
+                res = f(**params)
+                success = True
+            except:
+                print('WARNING: {0} temporarily failed'.format(str(f)))
+            if success:
+                break
+            time.sleep(3)
+        assert success, 'ERROR: {0} finally failed'.format(str(f))
+        return res

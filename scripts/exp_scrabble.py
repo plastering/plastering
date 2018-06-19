@@ -7,7 +7,7 @@ sys.path.insert(0, dir_path + '/..')
 from plastering.inferencers.scrabble_new import ScrabbleInterface
 from plastering.metadata_interface import *
 
-EXP_NUM = 4
+EXP_NUM = 2
 
 target_building = sys.argv[1]
 source_building = sys.argv[2]
@@ -38,7 +38,6 @@ configs = {
             'use_known_tags': True,
             'n_jobs': 3,
             'tagset_classifier_type': 'MLP',
-            'use_brick_flag': use_brick_flag,
             'crfqs': 'confidence',
             'entqs': 'phrase_util',
             'negative_flag': True,
