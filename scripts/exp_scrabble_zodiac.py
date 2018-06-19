@@ -43,6 +43,7 @@ scrabble_config.update({
         'entqs': 'phrase_util',
         'negative_flag': True,
         'sample_num_list': [10],
+        'apply_filter_flag': True,
     }
 })
 
@@ -61,7 +62,7 @@ for exp_id in range(0, EXP_NUM):
 
     workflow = Workflow(target_srcids, target_building,
                         f_class_dict, f_graph)
-    workflow.learn_auto(inc_num=10)
+    workflow.learn_auto(inc_num=10, iter_num=25)
     history = [{
         'metrics': hist['metrics'],
         'learning_srcids': len(hist['total_training_srcids'])

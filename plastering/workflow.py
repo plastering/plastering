@@ -214,8 +214,8 @@ class Workflow(Inferencer):
         }
         self._traverse_wrapper(self.f_head, ['update_model'], [params])
 
-    def learn_auto(self, inc_num=1):
-        for i in range(0, 250):
+    def learn_auto(self, inc_num=1, iter_num=250):
+        for i in range(0, iter_num):
             print('--------------------------')
             t0 = arrow.get()
             print('{0}th iteration'.format(i))

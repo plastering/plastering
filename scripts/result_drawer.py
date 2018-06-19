@@ -118,7 +118,7 @@ def plot_pointonly_notransfer():
     save_fig(fig, outputfile)
 
 def plot_entities():
-    EXP_NUM = 3
+    EXP_NUM = 4
     outputfile = FIG_DIR + '/entities.pdf'
     inferencer_names = ['scrabble', 'arka']
     xticks, xticks_labels, yticks, yticks_labels, xlim, ylim, interp_x, \
@@ -199,7 +199,7 @@ def plot_pointonly_transfer():
                       ('ebu3b', 'sdh'),
                       ('sdh', 'ebu3b'),
                       ]
-    EXP_NUM = 2
+    EXP_NUM = 4
     outputfile = FIG_DIR + '/pointonly_transfer.pdf'
     #inferencer_names = ['zodiac', 'al_hong', 'scrabble']
     inferencer_names = ['zodiac', 'al_hong', 'scrabble']
@@ -302,9 +302,9 @@ def get_grid_params():
         xlabel, ylabel, linestyles, xtickRotate
 
 def plot_quiver_zodiac():
-    EXP_NUM = 4
+    EXP_NUM = 2
     building = 'ebu3b'
-    outputfile = FIG_DIR + '/quiver.pdf'
+    outputfile = FIG_DIR + '/quiver_zodiac.pdf'
     fig, ax = plt.subplots(1, 1)
     xticks, xticks_labels, yticks, yticks_labels, xlim, ylim, interp_x, \
         xlabel, ylabel, linestyles = get_grid_params()

@@ -67,6 +67,14 @@ class ScrabbleInterface(Inferencer):
             config['n_jobs'] = 10
         if 'use_known_tags' not in config:
             config['use_known_tags'] = False
+        if 'apply_filter_flag' not in config:
+            self.apply_filter_flag = False
+        else:
+            self.apply_filter_flag = config['apply_filter_flag']
+        if 'apply_validating_samples' not in config:
+            self.apply_validating_samples = False
+        else:
+            self.apply_validating_samples = config['apply_validating_samples']
 
         # TODO: This should be migrated into Plastering
         building_sentence_dict, target_srcids, building_label_dict,\
@@ -115,7 +123,10 @@ class ScrabbleInterface(Inferencer):
         if not target_srcids:
             target_srcids = self.target_srcids
         pred = self.scrabble.predict(target_srcids)
+        if self.apply_filter_flag:
+            pred = self.apply_filter_by_zodiac(pred)
         self.pred_g = self.postprocessing_pred(pred)
+
         if all_tagsets:
             return self.pred_g, pred # This should be generalized inside
                                      # postprocessing_pred
@@ -132,7 +143,7 @@ class ScrabbleInterface(Inferencer):
         good_preds = {}
         for srcid, point_tagset in instances.items():
             triple = (BASE[srcid], RDF.type, BRICK[point_tagset])
-            if self.prior_confidences[triple] > 0.5:
+            if self.prior_confidences[triple] > 0.9:
                 good_preds[srcid] = point_tagset
         pred_g = self.predict()
         incorrect_srcids = []
@@ -154,10 +165,36 @@ class ScrabbleInterface(Inferencer):
         )
         return new_srcids
 
+    def apply_filter_by_zodiac(self, pred):
+        if not self.prior_g:
+            return pred
+        instances = get_instance_tuples(self.prior_g)
+        good_preds = {}
+        for srcid, point_tagset in instances.items():
+            triple = (BASE[srcid], RDF.type, BRICK[point_tagset])
+            if self.prior_confidences[triple] > 0.8:
+                good_preds[srcid] = point_tagset
+        for srcid, pred_tagsets in pred.items():
+            pred_point_tagset = sel_point_tagset(pred_tagsets, srcid)
+            good_point_tagset = good_preds.get(srcid, None)
+            if not good_point_tagset:
+                continue
+            if pred_point_tagset != good_point_tagset:
+                pred_tagsets = [tagset for tagset in pred_tagsets
+                                if tagset != pred_point_tagset]
+                pred_tagsets.append(good_point_tagset)
+                print('FIXED {0}, {1} -> {2}'.format(srcid,
+                                                     pred_point_tagset,
+                                                     good_point_tagset))
+                pred[srcid] = pred_tagsets
+        return pred
+
     def select_informative_samples(self, sample_num=10):
         # Use prior (e.g., from Zodiac.)
-        new_srcids = self.apply_prior_zodiac(sample_num)
+        new_srcids = []
+        if self.apply_validating_samples:
+            new_srcids += self.apply_prior_zodiac(sample_num)
         if len(new_srcids) < sample_num:
             new_srcids += self.scrabble.select_informative_samples(
                 sample_num - len(new_srcids))
-        return self.scrabble.select_informative_samples(sample_num)
+        return new_srcids
