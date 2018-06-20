@@ -146,7 +146,8 @@ def plot_entities():
     outputfile = FIG_DIR + '/entities.pdf'
     inferencer_names = ['scrabble', 'arka']
     xticks, xticks_labels, yticks, yticks_labels, xlim, ylim, interp_x, \
-        xlabel, ylabel, base_linestyles, xtickRotate = get_grid_params()
+        xlabel, ylabel, base_linestyles, xtickRotate = get_grid_params(50,100,10)
+    ylim = (50,100)
 
     target_sources = [
         ('ebu3b', None),
@@ -195,7 +196,9 @@ def plot_entities():
             title = building_anon_map[target_building]
             _, plots = plotter.plot_multiple_2dline(
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
-                yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
+                yticks, yticks_labels, title, ax, fig,
+                ylim=ylim, xlim=xlim,
+                dataLabels=legends,
                 linestyles = [linestyles[inferencer_name]] * len(ys),
                 #cs = colors,
                 cs = [ACC_COLOR, colors[1]],
@@ -208,6 +211,7 @@ def plot_entities():
     fig.set_size_inches((4,2))
     for ax in axes:
         ax.grid(True)
+        ax.set_ylim(ylim)
     for i in range(1,len(target_sources)):
         axes[i].set_yticklabels([])
         axes[i].set_ylabel('')
@@ -317,10 +321,10 @@ def plot_pointonly_transfer():
     fig.set_size_inches((6,2))
     save_fig(fig, outputfile)
 
-def get_grid_params():
+def get_grid_params(ymin=0, ymax=100, ydelta=20):
     xticks = [0, 10] + list(range(50, 251, 50))
     xticks_labels = [''] + [str(n) for n in xticks[1:]]
-    yticks = range(0,101,20)
+    yticks = range(ymin, ymax+1, ydelta)
     yticks_labels = [str(n) for n in yticks]
     xlim = (0, xticks[-1])
     ylim = (yticks[0], yticks[-1])
@@ -338,7 +342,7 @@ def plot_quiver_zodiac():
     outputfile = FIG_DIR + '/quiver_zodiac.pdf'
     fig, ax = plt.subplots(1, 1)
     xticks, xticks_labels, yticks, yticks_labels, xlim, ylim, interp_x, \
-        xlabel, ylabel, linestyles = get_grid_params()
+        xlabel, ylabel, linestyles, xtickRotate = get_grid_params()
 
     title = building_anon_map[building]
 
@@ -363,7 +367,6 @@ def plot_quiver_zodiac():
     legends = ['MicroF1, {0}'.format('Zodiac'),
                'MacroF1, {0}'.format('Zodiac')
                ]
-    xtickRotate = 45
 
     _, plots = plotter.plot_multiple_2dline(
         x, ys, xlabel, ylabel, xticks, xticks_labels,
@@ -396,7 +399,9 @@ def plot_quiver_zodiac():
 
     _, plots = plotter.plot_multiple_2dline(
         x, ys, xlabel, ylabel, xticks, xticks_labels,
-        yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
+        yticks, yticks_labels, title, ax, fig,
+        ylim=ylim, xlim=xlim,
+        dataLabels=legends,
         linestyles=[linestyles.pop()]*len(ys), cs=colors,
         xtickRotate=xtickRotate)
 
@@ -406,14 +411,14 @@ def plot_quiver_zodiac():
     ax.tick_params(axis='x', pad=-1.5)
     #ax.xaxis.set_label_coords(1.1, -0.2)
 
-    ax.legend(bbox_to_anchor=(1.26, 1.75), ncol=1, frameon=False)
+    ax.legend(bbox_to_anchor=(1.26, 1.75), ncol=1, frameon=False, fontsize='small')
     #fig.set_size_inches((8,2))
-    fig.set_size_inches((1.5,2))
+    fig.set_size_inches((1.5,1.7))
     save_fig(fig, outputfile)
 
 
 if __name__ == '__main__':
-    plot_pointonly_notransfer()
+    #plot_pointonly_notransfer()
     #plot_pointonly_transfer()
-    #plot_quiver_zodiac()
+    plot_quiver_zodiac()
     plot_entities()
