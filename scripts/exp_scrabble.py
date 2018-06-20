@@ -7,7 +7,8 @@ sys.path.insert(0, dir_path + '/..')
 from plastering.inferencers.scrabble_new import ScrabbleInterface
 from plastering.metadata_interface import *
 
-EXP_NUM = 2
+exp_order = [2, 3, 0, 1]
+#EXP_NUM = 4
 
 target_building = sys.argv[1]
 source_building = sys.argv[2]
@@ -62,7 +63,7 @@ else:
 
 
 for inferencer_name, Inferencer in inferencers.items():
-    for exp_id in range(0, EXP_NUM):
+    for exp_id in exp_order:
         for target_building in target_buildings:
             # Select labeled srcids (Not all the data are labeled yet.)
             labeled_list = LabeledMetadata.objects(building=target_building)

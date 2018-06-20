@@ -87,7 +87,25 @@ def get_accuracy(true_tagsets_sets, pred_tagsets_sets):
         true = set(true_tagsets_sets[srcid])
         jaccard = len(pred.intersection(true)) / len(pred.union(true))
         acc += jaccard
-    return acc
+    return acc / len(pred_tagsets_sets)
+
+def exclude_common_tagsets(tagsets):
+    return [tagset for tagset in tagsets
+            if tagset.split('-')[0] != 'networkadapter' and
+            tagset.split('-')[0] != 'building'
+            ]
+
+def get_accuracy_conservative(true_tagsets_sets, pred_tagsets_sets):
+    acc = 0
+    for srcid, pred_tagsets in pred_tagsets_sets.items():
+        pred = set(exclude_common_tagsets(pred_tagsets))
+        true = set(exclude_common_tagsets(true_tagsets_sets[srcid]))
+        if len(true) == 0:
+            jaccard = 1
+        else:
+            jaccard = len(pred.intersection(true)) / len(pred.union(true))
+        acc += jaccard
+    return acc / len(pred_tagsets_sets)
 
 
 def get_set_accuracy(true_label_sets, pred_tagset_sets):

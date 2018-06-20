@@ -249,6 +249,7 @@ class Inferencer(object):
             pred = get_instance_tuples(pred_g)
             metrics['f1'] = get_multiclass_micro_f1(truth, pred)
             metrics['macrof1'] = get_multiclass_macro_f1(truth, pred)
+            curr_pred = pred
 
         if self.target_label_type in [ALL_TAGSETS]:
             pred_g, pred = self.predict(target_srcids, True)
@@ -258,6 +259,7 @@ class Inferencer(object):
             metrics['f1-all'] = get_micro_f1(truth, pred)
             metrics['macrof1-all'] = get_macro_f1(truth, pred)
             metrics['accuracy'] = get_accuracy(truth, pred)
+            curr_pred = pred
 
         target_building_training_srcids = \
             [srcid for srcid in self.training_srcids
@@ -267,7 +269,8 @@ class Inferencer(object):
         curr_eval = {
             'metrics': metrics,
             'total_training_srcids': total_training_srcids,
-            'target_building_training_srcids': target_building_training_srcids
+            'target_building_training_srcids': target_building_training_srcids,
+            'pred': curr_pred
         }
         self.history.append(curr_eval)
         return curr_eval
