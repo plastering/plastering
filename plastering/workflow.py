@@ -136,7 +136,8 @@ class Workflow(Inferencer):
         }
         res = self._traverse_wrapper(self.f_head, ['predict'], [params])
         gs = list(res.values())
-        pred_g = gs[-1] + gs[-2]
+        #pred_g = gs[-1] + gs[-2]
+        pred_g = gs[-1]
         self.pred_g = pred_g
         return pred_g
 

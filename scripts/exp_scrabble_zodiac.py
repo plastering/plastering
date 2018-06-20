@@ -55,13 +55,14 @@ f_graph = {
     })
 }
 
-for exp_id in range(0, EXP_NUM):
+for exp_id in range(0, 0 + EXP_NUM):
     # Select labeled srcids (Not all the data are labeled yet.)
     labeled_list = LabeledMetadata.objects(building=target_building)
     target_srcids = [labeled['srcid'] for labeled in labeled_list]
 
     workflow = Workflow(target_srcids, target_building,
                         f_class_dict, f_graph)
+    workflow.target_label_type = POINT_TAGSET
     workflow.learn_auto(inc_num=10, iter_num=25)
     history = [{
         'metrics': hist['metrics'],

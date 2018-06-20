@@ -30,6 +30,13 @@ building_anon_map = {
 colors = ['firebrick', 'deepskyblue']
 LINESTYLES = [':', '--', '-.', '-']
 FIG_DIR = './figs'
+ACC_COLOR = 'darkgreen'
+
+inferencer_display_names = {
+    'scrabble': 'Scrabble',
+    'al_hong': 'Hong et al.',
+    'zodiac': 'Zodiac',
+}
 
 def average_data(xs, ys, target_x):
     target_y = np.zeros((1, len(target_x)))
@@ -86,9 +93,14 @@ def plot_pointonly_notransfer():
             x = interp_x
             ys = [f1, mf1]
             if ax_num == 0:
-                legends = ['MicroF1, {0}'.format(inferencer_name),
-                           'MacroF1, {0}'.format(inferencer_name)
-                           ]
+                legends = [
+                    'micro-F1, {0}'.format(
+                        inferencer_display_names[inferencer_name]),
+                    'Macro-F1, {0}'.format(
+                        inferencer_display_names[inferencer_name])
+                ]
+                #if inferencer_name == 'scrabble':
+                #    legends.append('Accuracy, {0}'.format(inferencer_name))
             else:
                 #data_labels = None
                 legends = None
@@ -99,6 +111,18 @@ def plot_pointonly_notransfer():
                 yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
                 linestyles=[linestyles.pop()]*len(ys), cs=colors,
                 xtickRotate=xtickRotate)
+            if ax_num == 0 and inferencer_name == 'scrabble':
+                _, plots = plotter.plot_multiple_2dline(
+                    [-10], [[-10]], xlabel, ylabel, xticks, xticks_labels,
+                    yticks, yticks_labels, title, ax, fig, ylim, xlim,
+                    ['Accuracy, {0}'.format(
+                        inferencer_display_names[inferencer_name])],
+                    linestyles=['--'], cs=[ACC_COLOR],
+                    xtickRotate=xtickRotate,
+                    markers=['.'],
+                    markevery=4,
+                    markersize=4,
+                )
     for ax in axes:
         ax.grid(True)
     for i in range(1,len(buildings)):
@@ -112,9 +136,9 @@ def plot_pointonly_notransfer():
         else:
             ax.xaxis.set_label_coords(1.1, -0.2)
 
-    axes[0].legend(bbox_to_anchor=(6, 0.95), ncol=1, frameon=False)
+    axes[0].legend(bbox_to_anchor=(6.2, 1), ncol=1, frameon=False)
     #axes[0].legend(bbox_to_anchor=(4.3, 1.5), ncol=3, frameon=False)
-    fig.set_size_inches((8,2))
+    fig.set_size_inches((8.5,2))
     save_fig(fig, outputfile)
 
 def plot_entities():
@@ -158,8 +182,8 @@ def plot_entities():
                     f1s.append([datum['metrics']['f1_micro'] for datum in data])
                     mf1s.append([datum['metrics']['f1_macro'] for datum in data])
                 else:
-                    f1s.append([datum['metrics']['f1'] for datum in data])
-                    mf1s.append([datum['metrics']['macrof1'] for datum in data])
+                    f1s.append([datum['metrics']['f1-all'] for datum in data])
+                    mf1s.append([datum['metrics']['macrof1-all'] for datum in data])
             interp_x = list(range(10,
                                   min(250, max([max(xs) for xs in xss]) + 5),
                                   5))
@@ -173,8 +197,13 @@ def plot_entities():
                 x, ys, xlabel, ylabel, xticks, xticks_labels,
                 yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
                 linestyles = [linestyles[inferencer_name]] * len(ys),
-                cs = colors,
-                xtickRotate=xtickRotate)
+                #cs = colors,
+                cs = [ACC_COLOR, colors[1]],
+                xtickRotate=xtickRotate,
+                markers=['.', None],
+                markevery=4,
+                markersize=4,
+            )
 
     fig.set_size_inches((4,2))
     for ax in axes:
@@ -222,7 +251,9 @@ def plot_pointonly_transfer():
                                     building_anon_map[target_building])
         linestyles = deepcopy(LINESTYLES)
         for inferencer_name in inferencer_names:
-            if inferencer_name == 'scrabble' and target_building != 'sdh':
+            if inferencer_name == 'scrabble' and \
+                    not(target_building == 'ebu3b' and
+                        source_building == 'sdh'):
                 continue
             xs = []
             ys = []
@@ -382,7 +413,7 @@ def plot_quiver_zodiac():
 
 
 if __name__ == '__main__':
-    #plot_pointonly_notransfer()
+    plot_pointonly_notransfer()
     #plot_pointonly_transfer()
     #plot_quiver_zodiac()
     plot_entities()

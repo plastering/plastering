@@ -91,6 +91,7 @@ class ScrabbleInterface(Inferencer):
                                  config=config,
                                  )
         #self.update_model(self.scrabble.learning_srcids)
+        self.zodiac_good_preds = {}
 
 
     def learn_auto(self, iter_num=25, inc_num=10):
@@ -165,23 +166,34 @@ class ScrabbleInterface(Inferencer):
         )
         return new_srcids
 
+    def is_same_tagset(self, tagset1, tagset2):
+        if tagset1 == tagset2:
+            return True
+        elif tagset1 == 'none' and tagset2 == 'unknown':
+            return True
+        elif tagset1 == 'unknown' and tagset2 == 'none':
+            return True
+        else:
+            return False
+
     def apply_filter_by_zodiac(self, pred):
         if not self.prior_g:
             return pred
         instances = get_instance_tuples(self.prior_g)
-        good_preds = {}
+        self.zodiac_good_preds = {}
         for srcid, point_tagset in instances.items():
             triple = (BASE[srcid], RDF.type, BRICK[point_tagset])
             if self.prior_confidences[triple] > 0.8:
-                good_preds[srcid] = point_tagset
+                self.zodiac_good_preds[srcid] = point_tagset
         for srcid, pred_tagsets in pred.items():
             pred_point_tagset = sel_point_tagset(pred_tagsets, srcid)
-            good_point_tagset = good_preds.get(srcid, None)
+            good_point_tagset = self.zodiac_good_preds.get(srcid, None)
             if not good_point_tagset:
                 continue
-            if pred_point_tagset != good_point_tagset:
+            if not self.is_same_tagset(pred_point_tagset, good_point_tagset):
                 pred_tagsets = [tagset for tagset in pred_tagsets
-                                if tagset != pred_point_tagset]
+                                if self.is_same_tagset(tagset,
+                                                       pred_point_tagset)]
                 pred_tagsets.append(good_point_tagset)
                 print('FIXED {0}, {1} -> {2}'.format(srcid,
                                                      pred_point_tagset,
@@ -196,5 +208,17 @@ class ScrabbleInterface(Inferencer):
             new_srcids += self.apply_prior_zodiac(sample_num)
         if len(new_srcids) < sample_num:
             new_srcids += self.scrabble.select_informative_samples(
-                sample_num - len(new_srcids))
+                sample_num * 3 - len(new_srcids))
+        new_srcids = [srcid for srcid in new_srcids
+                      if srcid not in self.zodiac_good_preds][0:sample_num]
         return new_srcids
+
+
+
+
+
+
+
+
+
+
