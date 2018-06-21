@@ -9,7 +9,6 @@ def binarize_labels(true_labels, pred_labels):
     srcids = list(pred_labels.keys())
     tot_labels = [list(labels) for labels in
                list(pred_labels.values()) + list(true_labels.values())]
-    pdb.set_trace()
     mlb = MultiLabelBinarizer().fit(tot_labels)
     pred_mat = mlb.transform(pred_labels.values())
     true_mat = mlb.transform(true_labels.values())
