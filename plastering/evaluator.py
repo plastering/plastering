@@ -9,17 +9,18 @@ def binarize_labels(true_labels, pred_labels):
     srcids = list(pred_labels.keys())
     tot_labels = [list(labels) for labels in
                list(pred_labels.values()) + list(true_labels.values())]
+    pdb.set_trace()
     mlb = MultiLabelBinarizer().fit(tot_labels)
     pred_mat = mlb.transform(pred_labels.values())
     true_mat = mlb.transform(true_labels.values())
     return true_mat, pred_mat
 
 def get_micro_f1(true_labels, pred_labels):
-    pred_mat, true_mat = binarize_labels(true_labels, pred_labels)
+    true_mat, pred_mat = binarize_labels(true_labels, pred_labels)
     return get_micro_f1_mat(true_mat, pred_mat)
 
 def get_macro_f1(true_labels, pred_labels):
-    pred_mat, true_mat = binarize_labels(true_labels, pred_labels)
+    true_mat, pred_mat = binarize_labels(true_labels, pred_labels)
     return get_macro_f1_mat(true_mat, pred_mat)
 
 def get_macro_f1_mat(true_mat, pred_mat):
