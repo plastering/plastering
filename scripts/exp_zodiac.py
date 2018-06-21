@@ -1,6 +1,7 @@
 import sys, os
 import pdb
 import json
+os.environ['TRIPLE_STORE_TYPE'] = "rdflib"
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, dir_path + '/..')
 #sys.path.append(os.path.abspath(os.path.join(dir_path + '/..', 'config')))
@@ -10,7 +11,7 @@ from plastering.inferencers.zodiac_new import ZodiacInterface
 from plastering.metadata_interface import *
 import pdb
 
-EXP_NUM = 4
+EXP_NUM = 2
 
 target_building = sys.argv[1]
 try:

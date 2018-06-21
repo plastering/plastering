@@ -185,6 +185,7 @@ class ScrabbleInterface(Inferencer):
             triple = (BASE[srcid], RDF.type, BRICK[point_tagset])
             if self.prior_confidences[triple] > 0.8:
                 self.zodiac_good_preds[srcid] = point_tagset
+        fixed_cnt = 0
         for srcid, pred_tagsets in pred.items():
             pred_point_tagset = sel_point_tagset(pred_tagsets, srcid)
             good_point_tagset = self.zodiac_good_preds.get(srcid, None)
@@ -192,25 +193,26 @@ class ScrabbleInterface(Inferencer):
                 continue
             if not self.is_same_tagset(pred_point_tagset, good_point_tagset):
                 pred_tagsets = [tagset for tagset in pred_tagsets
-                                if self.is_same_tagset(tagset,
-                                                       pred_point_tagset)]
+                                if not is_point_tagset(tagset)]
                 pred_tagsets.append(good_point_tagset)
                 print('FIXED {0}, {1} -> {2}'.format(srcid,
                                                      pred_point_tagset,
                                                      good_point_tagset))
+                fixed_cnt += 1
                 pred[srcid] = pred_tagsets
+        print('TOTAL_FIXED_POINTS: {0}'.format(fixed_cnt))
         return pred
 
     def select_informative_samples(self, sample_num=10):
         # Use prior (e.g., from Zodiac.)
         new_srcids = []
-        if self.apply_validating_samples:
-            new_srcids += self.apply_prior_zodiac(sample_num)
+        #if self.apply_validating_samples:
+        #    new_srcids += self.apply_prior_zodiac(sample_num)
         if len(new_srcids) < sample_num:
             new_srcids += self.scrabble.select_informative_samples(
-                sample_num * 3 - len(new_srcids))
-        new_srcids = [srcid for srcid in new_srcids
-                      if srcid not in self.zodiac_good_preds][0:sample_num]
+                sample_num - len(new_srcids))
+        #new_srcids = [srcid for srcid in new_srcids
+        #              if srcid not in self.zodiac_good_preds][0:sample_num]
         return new_srcids
 
 

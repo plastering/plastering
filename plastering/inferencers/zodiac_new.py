@@ -82,6 +82,10 @@ class ZodiacInterface(Inferencer):
             sample_num_list = config['sample_num_list']
         else:
             sample_num_list = [0] * (len(source_buildings) + 1) # +1 for target
+        if 'use_quiver' in config:
+            self.use_quiver = config['use_quiver']
+        else:
+            self.use_quiver = False
         if len(self.source_buildings) > len(sample_num_list):
             sample_num_list.append(0)
 
@@ -301,8 +305,6 @@ class ZodiacInterface(Inferencer):
                 acc += 1
         acc = 0 if not cnt else acc / cnt
         print('Accuracy: {0}'.format(acc))
-        pdb.set_trace()
-
 
     def apply_prior_augment_samples(self):
         prior_preds = {}

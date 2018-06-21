@@ -182,6 +182,8 @@ def plot_entities():
                 if target_building != 'sdh':
                     continue
                 exp_num = 1
+            elif inferencer_name == 'scrabble':
+                exp_num = 2
             else:
                 exp_num = EXP_NUM
             # Notransfer
@@ -407,8 +409,8 @@ def plot_scrabble_zodiac():
     fig, ax = plt.subplots(1, 1)
     xticks, xticks_labels, yticks, yticks_labels, xlim, ylim, interp_x, \
         xlabel, ylabel, linestyles, xtickRotate = get_grid_params(
-            ymin = 0, ymax = 40, ydelta = 5,
-            xmin = 10, xmin2=50, xmax = 150, xdelta=50)
+            ymin = 0, ymax = 35, ydelta = 5,
+            xmin = 10, xmin2=50, xmax = 250, xdelta=50)
     ylabel = 'Count'
     # Baseline (Naive Zodiac)
     with open('result/scrabble_zodiac.json', 'r') as fp:
@@ -431,6 +433,86 @@ def plot_scrabble_zodiac():
     #ax.xaxis.set_label_coords(1.1, -0.2)
 
     ax.legend(bbox_to_anchor=(1.1, 1.35), ncol=1, frameon=False, fontsize='small')
+    #fig.set_size_inches((8,2))
+    fig.set_size_inches((1.5,1.7))
+    save_fig(fig, outputfile)
+
+def plot_ba_zodiac():
+    EXP_NUM = 2
+    building = 'ebu3b'
+    outputfile = FIG_DIR + '/ba_zodiac.pdf'
+    fig, ax = plt.subplots(1, 1)
+    xticks, xticks_labels, yticks, yticks_labels, xlim, ylim, interp_x, \
+        xlabel, ylabel, linestyles, xtickRotate = get_grid_params()
+
+    title = building_anon_map[building]
+
+    # Baseline (Naive Zodiac)
+    xs = []
+    ys = []
+    xss = []
+    f1s = []
+    mf1s = []
+    for i in range(0, EXP_NUM):
+        with open('result/pointonly_notransfer_zodiac_{0}_{1}.json'
+                  .format(building, i)) as  fp:
+            data = json.load(fp)
+        xss.append([datum['learning_srcids'] for datum in data])
+        f1s.append([datum['metrics']['f1'] for datum in data])
+        mf1s.append([datum['metrics']['macrof1'] for datum in data])
+    xs = xss[0] # Assuming all xss are same.
+    f1 = average_data(xss, f1s, interp_x)
+    mf1 = average_data(xss, mf1s, interp_x)
+    x = interp_x
+    ys = [f1, mf1]
+    legends = ['MicroF1, {0}'.format('Zodiac'),
+               'MacroF1, {0}'.format('Zodiac')
+               ]
+
+    _, plots = plotter.plot_multiple_2dline(
+        x, ys, xlabel, ylabel, xticks, xticks_labels,
+        yticks, yticks_labels, title, ax, fig, ylim, xlim, legends,
+        linestyles=[linestyles.pop()]*len(ys), cs=colors,
+        xtickRotate=xtickRotate)
+
+    # Baseline (Naive Zodiac)
+    xs = []
+    ys = []
+    xss = []
+    f1s = []
+    mf1s = []
+    for i in range(0, EXP_NUM):
+        with open('result/ba_zodiac_{0}_{1}.json'
+                  .format(building, i)) as  fp:
+            data = json.load(fp)
+        xss.append([datum['learning_srcids'] for datum in data])
+        f1s.append([datum['metrics']['f1'] for datum in data])
+        mf1s.append([datum['metrics']['macrof1'] for datum in data])
+    xs = xss[0] # Assuming all xss are same.
+    f1 = average_data(xss, f1s, interp_x)
+    mf1 = average_data(xss, mf1s, interp_x)
+    x = interp_x
+    ys = [f1, mf1]
+    legends = ['MicroF1, {0}'.format('BA/Zodiac'),
+               'MacroF1, {0}'.format('BA/Zodiac')
+               ]
+    xtickRotate = 45
+
+    _, plots = plotter.plot_multiple_2dline(
+        x, ys, xlabel, ylabel, xticks, xticks_labels,
+        yticks, yticks_labels, title, ax, fig,
+        ylim=ylim, xlim=xlim,
+        dataLabels=legends,
+        linestyles=[linestyles.pop()]*len(ys), cs=colors,
+        xtickRotate=xtickRotate)
+
+
+
+    ax.grid(True)
+    ax.tick_params(axis='x', pad=-1.5)
+    #ax.xaxis.set_label_coords(1.1, -0.2)
+
+    ax.legend(bbox_to_anchor=(1.26, 1.75), ncol=1, frameon=False, fontsize='small')
     #fig.set_size_inches((8,2))
     fig.set_size_inches((1.5,1.7))
     save_fig(fig, outputfile)
@@ -520,5 +602,6 @@ if __name__ == '__main__':
     #plot_pointonly_notransfer()
     #plot_pointonly_transfer()
     #plot_quiver_zodiac()
-    plot_entities()
-    #plot_scrabble_zodiac()
+    #plot_entities()
+    plot_scrabble_zodiac()
+    #plot_ba_zodiac()
