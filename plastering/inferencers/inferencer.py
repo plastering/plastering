@@ -13,6 +13,7 @@ from .. import *
 from ..error import *
 from ..rdf_wrapper import *
 from ..evaluator import *
+from ..uis import *
 
 PUBLIC_METHODS = ['learn_auto',
                   'predict_proba',
@@ -77,7 +78,10 @@ class Inferencer(object):
         self.target_srcids = target_srcids
         self.history = [] # logging and visualization purpose
         self.required_label_types = required_label_types
-        self.ui = ui
+        if ui:
+            self.ui = ui
+        else:
+            self.ui = ReplUi()
         self.__name__ = framework_name + '-' + str(self.exp_id)
         self.result_filename = './result/{0}_history.json'\
             .format(self.__name__)
@@ -119,10 +123,11 @@ class Inferencer(object):
         insert_groundtruth(srcid, point_tagset=point_tagset)
 
     def ask_example(self, srcid):
-        self.ui.ask_example(srcid, self.required_label_types)
+        self.ui.ask_example(srcid, self.target_building,
+                            self.required_label_types)
 
     # ESSENTIAL
-    def learn_auto(self, iter_num=1):
+    def learn_auto(self, iter_num=1, inc_num=1):
         """Learn from the scratch to the end.
 
         This executes the learning mechanism from the ground truth.
@@ -213,9 +218,6 @@ class Inferencer(object):
                 raise Exception('The raw data of {0} not given yet'
                                     .format(srcid))
 
-    def _make_instance_tuple(self, srcid, pred_point):
-        return (URIRef(BASE + srcid), RDF.type, BRICK[pred_point])
-
     # ESSENTIAL
     def predict_proba(self, target_srcids=None):
         # TODO
@@ -259,7 +261,7 @@ class Inferencer(object):
 
         if self.target_label_type in [POINT_TAGSET, ALL_TAGSETS]:
             truth = self._get_true_labels(target_srcids, POINT_TAGSET)
-            pred = get_instance_tuples(pred_g)
+            pred = pred_g.get_instance_tuples()
             metrics['f1'] = get_multiclass_micro_f1(truth, pred)
             metrics['macrof1'] = get_multiclass_macro_f1(truth, pred)
             curr_pred = pred
@@ -301,4 +303,9 @@ class Inferencer(object):
                           brickframe_file=self.brickframe_file,
                           triplestore_type=self.triplestore_type,
                           )
+    def add_pred(self, pred_g, pred_confidences,
+                 srcid, pred_point, pred_prob):
+        triple = pred_g.add_pred_point_result(srcid, pred_point)
+        pred_confidences[triple] = pred_prob
+
 

@@ -1,6 +1,9 @@
+import pdb
+
 from mongoengine import *
 import pprint
 import pandas as pd
+pd.options.display.max_colwidth = 200
 pp = pprint.PrettyPrinter(indent=2)
 
 connect('plastering')
@@ -23,25 +26,18 @@ class LabeledMetadata(Document):
 
 # Helper functions
 
-def print_rawmetadata(srcid):
-    objs = RawMetadata.objects(srcid=srcid)
-    assert objs
+def print_rawmetadata(srcid, building):
+    objs = RawMetadata.objects(srcid=srcid, building=building)
     metadata = objs[0].metadata
-    df = pd.DataFrame(index=metadata.keys(),
-                      columns=[srcid],
-                      data=list(metadata.values()))
+    df = pd.DataFrame(data=metadata, index=[srcid])
+    df.index.name = 'srcid'
     print(df)
 
-def insert_groundtruth(srcid, fullparsing=None,
-                    tagsets=None, point_tagset=None):
+def insert_groundtruth(srcid, building,
+                       fullparsing=None, tagsets=None, point_tagset=None):
     obj = LabeledMetadata.objects(srcid=srcid)\
         .upsert_one(srcid=srcid, building=building)
     assert fullparsing or tagsets or point_tagset, 'WARNING:empty labels given'
-    p.update(**{
-            "set__name": "Hank",
-            "set__address": "Far away"
-    })
-
     new_labels = {}
     if fullparsing:
         new_labels['set__fullparsing'] = fullparsing

@@ -1,4 +1,6 @@
 import os
+import time
+
 from rdflib import RDF, RDFS, OWL, URIRef, Namespace
 from . import rdflib_wrapper
 from . import virtuoso_wrapper
@@ -50,22 +52,6 @@ def get_point_type(g, point):
     #return t
 
 
-
-
-def get_instance_tuples(g):
-    qstr = sparql_prefix + """
-    select ?s ?o where {
-        ?s a ?o.
-        FILTER(STRSTARTS(STR(?s), "%s"))
-    }
-    """ % (BASE) # Query selecting any instances with name space BASE.
-    res = g.query(qstr)
-    if TRIPLE_STORE_TYPE == 'virtuoso':
-        return {row['s'].split('#')[-1]: row['o'].split('#')[-1] for row in res}
-    elif TRIPLE_STORE_TYPE == 'rdflib':
-        # TODO: Need to validate this
-        return {row[0].split('#')[-1]: row[1].split('#')[-1] for row in res}
-
 class BrickGraph(object):
     def __init__(self,
                  empty=False,
@@ -74,9 +60,10 @@ class BrickGraph(object):
                  brickframe_file='brick/BrickFrame_1_0_2.ttl',
                  triplestore_type=RDFLIB
                  ):
-        if triplestore_type == RDFLIB:
+        self.triplestore_type = triplestore_type
+        if self.triplestore_type == RDFLIB:
             self.base_package = rdflib_wrapper
-        elif triplestore_type == VIRTUOSO:
+        elif self.triplestore_type == VIRTUOSO:
             self.base_package = virtuoso_wrapper
         self.g = self.base_package.init_graph(empty, brick_file,
                                               brickframe_file)
@@ -90,10 +77,10 @@ class BrickGraph(object):
     def query_sparql(self, qstr):
         return self.base_package.query_sparql(self.g, qstr)
 
-    def _try_add_pred_point_result(self, srcid, pred_point, pred_prob):
+    def _try_add_pred_point_result(self, srcid, pred_point):
         triple = self._make_instance_tuple(srcid, pred_point)
         self.g.add(triple)
-        self.pred_confidences[triple] = pred_prob
+        return triple
 
     def try_multiple_times(self, f, params):
         success = False
@@ -102,6 +89,7 @@ class BrickGraph(object):
                 res = f(**params)
                 success = True
             except:
+                pdb.set_trace()
                 print('WARNING: {0} temporarily failed'.format(str(f)))
             if success:
                 break
@@ -112,11 +100,10 @@ class BrickGraph(object):
     def add_pred_point_result(self,
                               srcid,
                               pred_point,
-                              pred_prob):
+                              ):
         self.try_multiple_times(self._try_add_pred_point_result, {
             'srcid': srcid,
             'pred_point': pred_point,
-            'pred_prob': pred_prob
         })
 
     def get_vavs(self):
@@ -138,3 +125,27 @@ class BrickGraph(object):
         res = self.query_sparql(qstr)
         points = [row['point'] for row in res]
         return points
+
+    def _make_instance_tuple(self, srcid, pred_point):
+        return (URIRef(BASE + srcid), RDF.type, BRICK[pred_point])
+
+    def get_instance_tuples(self):
+        qstr = sparql_prefix + """
+        select ?s ?o where {
+            ?s a ?o.
+            FILTER(STRSTARTS(STR(?s), "%s"))
+        }
+        """ % (BASE) # Query selecting any instances with name space BASE.
+        res = self.query_sparql(qstr)
+        return {row['s'].split('#')[-1]: row['o'].split('#')[-1] for row in res}
+        """
+        if self.triplestore_type == 'virtuoso':
+            return {row['s'].split('#')[-1]: row['o'].split('#')[-1] for row in res}
+        elif self.triplestore_type == 'rdflib':
+            # TODO: Need to validate this
+            pdb.set_trace()
+            return {row[0].split('#')[-1]: row[1].split('#')[-1] for row in res}
+        else:
+            raise Exception('triplestoretype incorrectly defined as {0}'
+                            .format(self.triplestore_type))
+        """

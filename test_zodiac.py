@@ -4,7 +4,8 @@ from plastering.metadata_interface import *
 import pdb
 
 #target_building = 'ghc'
-target_building = 'uva_cse'
+#target_building = 'uva_cse'
+target_building = 'ap_m'
 
 config = {
     'brick_version': '1.0.3',

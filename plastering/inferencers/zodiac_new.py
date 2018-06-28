@@ -86,6 +86,11 @@ class ZodiacInterface(Inferencer):
             self.use_quiver = config['use_quiver']
         else:
             self.use_quiver = False
+        if 'warmstart' in config:
+            self.warmstart = config['warmstart']
+        else:
+            self.warmstart = False
+
         if len(self.source_buildings) > len(sample_num_list):
             sample_num_list.append(0)
 
@@ -157,7 +162,8 @@ class ZodiacInterface(Inferencer):
                 bacnet_unit = {}
             units[srcid] = bacnet_unit
             label_doc = LabeledMetadata.objects(srcid=srcid).first()
-            self.ground_truths[srcid] = label_doc.point_tagset
+            if label_doc:
+                self.ground_truths[srcid] = label_doc.point_tagset
         self.total_bow = self.init_bow(self.total_srcids,
                                        names,
                                        descs,
@@ -489,7 +495,7 @@ class ZodiacInterface(Inferencer):
             len(self.target_srcids)
         return acc
 
-    def learn_auto(self):
+    def learn_auto(self, iter_num=-1, inc_num=1):
         gray_num = 1000
         cnt = 0
         while gray_num > 0:
@@ -517,20 +523,6 @@ class ZodiacInterface(Inferencer):
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
 
-#    def try_multiple_times(self, f, params):
-#        success = False
-#        for i in range(0, 10):
-#            try:
-#                res = f(**params)
-#                success = True
-#            except:
-#                print('WARNING: {0} temporarily failed'.format(str(f)))
-#            if success:
-#                break
-#            time.sleep(3)
-#        assert success, 'ERROR: {0} finally failed'.format(str(f))
-#        return res
-
     def predict(self, target_srcids=None):
         t0 = arrow.get()
         if not target_srcids:
@@ -538,9 +530,8 @@ class ZodiacInterface(Inferencer):
         super(ZodiacInterface, self).predict(target_srcids)
 
         self.learn_model()
-
-        pred_g = None
-        pred_g = self.try_multiple_times(self.new_graph, {'empty': False})
+        pred_confidences = {}
+        pred_g = self.new_graph()
         assert pred_g, 'pred_g is not initialized somehow'
         sample_bow = self.get_sub_bow(target_srcids)
 
@@ -550,12 +541,10 @@ class ZodiacInterface(Inferencer):
                                            pred_points,
                                            confidences):
             prob = max(prob)
-            self.try_multiple_times(self._add_pred_point_result, {
-                'pred_g': pred_g,
-                'srcid': srcid,
-                'pred_point': pred_point,
-                'pred_prob': prob})
+            self.add_pred(pred_g, pred_confidences,
+                          srcid, pred_point, prob)
         self.pred_g = pred_g
+        self.pred_confidences = pred_confidences
         t1 = arrow.get()
         print('REALLY it takes this: {0}'.format(t1 - t0))
         return pred_g

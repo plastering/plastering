@@ -1,3 +1,5 @@
+import pdb
+
 from prompt_toolkit import prompt
 from prompt_toolkit.styles import style_from_dict
 from prompt_toolkit.token import Token
@@ -11,12 +13,10 @@ class ReplUi(object):
     def __init__(self):
         pass
 
-    def display_target(self, srcid):
-        try:
-            print_rawmetadata(srcid)
-        except:
-            print('Srcid {0} not found in our DB'.format(srcid)) # or logging
-            return None
+    def display_target(self, srcid, building):
+        if not RawMetadata.objects(srcid=srcid, building=building):
+            raise Exception('Srcid {0} not found in our DB'.format(srcid))
+        print_rawmetadata(srcid, building)
 
     def _get_bottom_toolbar_tokens(cli):
         return [(Token.Toolbar, ' This is a toolbar. ')]
@@ -36,13 +36,14 @@ class ReplUi(object):
             # TODO: implement this!
 
 
-    def ask_example(self, srcid, example_types=[]):
-        self.display_target(srcid)
+    def ask_example(self, srcid, building, example_types=[]):
+        self.display_target(srcid, building)
         answers = {}
         for example_type in example_types:
             answer = self.get_answer(srcid, example_type)
-            answers[example_type] = answer
-        self.store_example(srcid, answers)
+            if answer:
+                answers[example_type] = answer
+        self.store_example(srcid, building, answers)
 
-    def store_example(self, srcid, answers):
-        insert_groundtruth(srcid, **answers)
+    def store_example(self, srcid, building, answers):
+        insert_groundtruth(srcid, building, **answers)
