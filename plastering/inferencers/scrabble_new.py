@@ -112,12 +112,12 @@ class ScrabbleInterface(Inferencer):
 
     def postprocessing_pred(self, pred):
         # Currently only ingest point tagsets.
-        pred_g = init_graph(empty=True)
+        pred_g = self.new_graph(empty=True)
         for srcid, tagsets in pred.items():
             point_tagset = sel_point_tagset(tagsets, srcid)
             point_prob = 1 # temporary
-            self._add_pred_point_result(pred_g, srcid,
-                                        point_tagset, point_prob)
+            pred_g.add_pred_point_result(pred_g, srcid,
+                                         point_tagset, point_prob)
         return pred_g
 
     def predict(self, target_srcids=None, all_tagsets=False):

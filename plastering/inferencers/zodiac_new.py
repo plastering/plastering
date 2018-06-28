@@ -377,10 +377,10 @@ class ZodiacInterface(Inferencer):
 
         # If points in a vav are identified same,
         # remove it from identified list.
-        vavs = get_vavs(self.prior_g)
+        vavs = self.prior_g.get_vavs()
         cand_srcids = []
         for vav in vavs:
-            points = get_vav_points(self.prior_g, vav)
+            points = self.prior_g.get_vav_points(vav)
             point_types = defaultdict(list)
             for point in points:
                 srcid = point.split('#')[-1]
@@ -540,7 +540,7 @@ class ZodiacInterface(Inferencer):
         self.learn_model()
 
         pred_g = None
-        pred_g = self.try_multiple_times(init_graph, {'empty': False})
+        pred_g = self.try_multiple_times(self.new_graph, {'empty': False})
         assert pred_g, 'pred_g is not initialized somehow'
         sample_bow = self.get_sub_bow(target_srcids)
 

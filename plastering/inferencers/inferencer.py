@@ -44,16 +44,34 @@ class Inferencer(object):
         self.target_label_type = target_label_type
         self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
         self.source_buildings = source_buildings
-        self.config = config # future usage
+        if 'brick_version' in config:
+            self.brick_version = config['brick_version']
+        else:
+            self.brick_version = '1.0.2'
+        if 'brick_file' in config:
+            self.brick_file = config['brick_file']
+        else:
+            self.brick_file = 'brick/Brick_1_0_2.ttl'
+        if 'brickframe_file' in config:
+            self.brickframe_file = config['brickframe_file']
+        else:
+            self.brickframe_file = 'brick/BrickFrame_1_0_2.ttl'
+        if 'triplestore_type' in config:
+            self.triplestore_type = config['triplestore_type']
+        else:
+            self.triplestore_type = RDFLIB
+        self.config = config
+
+
         self.training_srcids = [] # already known srcids
         self.pred = {  # predicted results
             'tagsets': {},
             'point': {}
             }
-        self.template_g = init_graph(empty=True)
-        self.prior_g = init_graph(empty=True)
+        self.template_g = self.new_graph(empty=True)
+        self.prior_g = self.new_graph(empty=True)
         self.prior_confidences = {}
-        self.schema_g = init_graph()
+        self.schema_g = self.new_graph(empty=False)
         self.pred_probs = {}
         self.target_building = target_building
         self.target_srcids = target_srcids
@@ -63,7 +81,7 @@ class Inferencer(object):
         self.__name__ = framework_name + '-' + str(self.exp_id)
         self.result_filename = './result/{0}_history.json'\
             .format(self.__name__)
-        self.pred_g = init_graph(empty=True)
+        self.pred_g = self.new_graph(empty=True)
         self.pred_confidences = {}
 
     def evaluate_points_dep(self, pred):
@@ -195,12 +213,6 @@ class Inferencer(object):
                 raise Exception('The raw data of {0} not given yet'
                                     .format(srcid))
 
-    def _add_pred_point_result(self, pred_g, srcid, pred_point, pred_prob):
-        triple = self._make_instance_tuple(srcid, pred_point)
-        pred_g.add(triple)
-        self.pred_confidences[triple] = pred_prob
-        return pred_g
-
     def _make_instance_tuple(self, srcid, pred_point):
         return (URIRef(BASE + srcid), RDF.type, BRICK[pred_point])
 
@@ -276,36 +288,17 @@ class Inferencer(object):
         self.history.append(curr_eval)
         return curr_eval
 
-    def _get_empty_graph(self):
-        return deepcopy(self.template_g)
-
     def filter_prior(self, min_prob):
         for triple, prob in self.prior_confidences.items():
             if prob < min_prob:
                 self.prior_g.remove(triple)
 
-    def _add_pred_point_result_safe(self,
-                                    pred_g,
-                                    srcid,
-                                    pred_point,
-                                    pred_prob):
-        self.try_multiple_times(self._add_pred_point_result, {
-            'pred_g': pred_g,
-            'srcid': srcid,
-            'pred_point': pred_point,
-            'pred_prob': pred_prob
-        })
 
-    def try_multiple_times(self, f, params):
-        success = False
-        for i in range(0, 10):
-            try:
-                res = f(**params)
-                success = True
-            except:
-                print('WARNING: {0} temporarily failed'.format(str(f)))
-            if success:
-                break
-            time.sleep(3)
-        assert success, 'ERROR: {0} finally failed'.format(str(f))
-        return res
+    def new_graph(self, empty=True):
+        return BrickGraph(empty,
+                          version=self.brick_version,
+                          brick_file=self.brick_file,
+                          brickframe_file=self.brickframe_file,
+                          triplestore_type=self.triplestore_type,
+                          )
+

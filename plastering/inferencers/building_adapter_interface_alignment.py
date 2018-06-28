@@ -198,7 +198,7 @@ class BuildingAdapterInterface(Inferencer):
         return: tagset, srcid, and confidence of each labeled example
         '''
         if self.stop_predict_flag:
-            self.pred_g = init_graph(empty=True)
+            self.pred_g = self.new_graph(empty=True)
             self.prior_confidences = {}
             return self.pred_g
 
@@ -212,7 +212,7 @@ class BuildingAdapterInterface(Inferencer):
                 print ('srcid %s with name %s got label %s with s %.4f'%(i,j,k,l))
 
         self.stop_predict_flag = True
-        self.pred_g = init_graph(empty=True)
+        self.pred_g = self.new_graph(empty=True)
 
         acc_with_high_conf = 0
         cnt_with_high_conf = 0

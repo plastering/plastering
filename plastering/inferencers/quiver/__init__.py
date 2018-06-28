@@ -16,7 +16,7 @@ class DummyQuiver(Inferencer):
                  config={}):
         if 'ground_truth_ttl' not in config:
             raise Exception('True Turtle file should be given for DummyQuiver')
-        self.true_g = init_graph()
+        self.true_g = self.new_graph()
         self.true_g.parse(config['ground_truth_ttl'], format='turtle')
         super(DummyQuiver, self).__init__(
             target_building=target_building,
@@ -43,7 +43,7 @@ class DummyQuiver(Inferencer):
             self.point_vav_dict[point] = vav
 
     def predict_cached(self, target_srcids=[]):
-        pred_g = init_graph(empty=True)
+        pred_g = self.new_graph(empty=True)
         #colocated_points = {}
         occs = self.get_occs()
         for occ in occs:
@@ -84,7 +84,7 @@ class DummyQuiver(Inferencer):
         return occs
 
     def predict_raw(self, target_srcids=[]):
-        pred_g = init_graph(empty=True)
+        pred_g = self.new_graph(empty=True)
         if self.target_building == 'ebu3b':
             qstr = """
             select ?occ ?occ_srcid ?point ?point_srcid where {
@@ -118,7 +118,7 @@ class DummyQuiver(Inferencer):
         return pred_g
 
     def predict_dep(self, target_srcids=[]):
-        pred_g = init_graph(empty=True)
+        pred_g = self.new_graph(empty=True)
         occs = self.get_occs()
         for occ in occs:
             if self.target_building == 'ebu3b':
@@ -160,7 +160,7 @@ class DummyPritoni(Inferencer):
                  source_buildings=[],
                  ui=None,
                  config={}):
-        self.true_g = init_graph()
+        self.true_g = self.new_graph()
         self.true_g.parse(ground_truth_ttl, format='turtle')
         super(DummyPritoni, self).__init__(
             target_building=target_building,
@@ -197,7 +197,7 @@ class DummyPritoni(Inferencer):
         return [row['vav'] for row in res]
 
     def predict(self):
-        pred_g = init_graph(True)
+        pred_g = self.new_graph(True)
         ahu_datsps = self.get_ahu_datsp()
         found_vavs = self.get_all_vavs_with_znt()
 
