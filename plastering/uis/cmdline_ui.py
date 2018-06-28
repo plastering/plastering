@@ -4,8 +4,6 @@ from prompt_toolkit import prompt
 from prompt_toolkit.styles import style_from_dict
 from prompt_toolkit.token import Token
 
-
-
 from ..metadata_interface import *
 
 class ReplUi(object):

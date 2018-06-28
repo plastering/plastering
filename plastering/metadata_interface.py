@@ -3,6 +3,7 @@ import pdb
 from mongoengine import *
 import pprint
 import pandas as pd
+from tabulate import tabulate
 pd.options.display.max_colwidth = 200
 pp = pprint.PrettyPrinter(indent=2)
 
@@ -31,7 +32,9 @@ def print_rawmetadata(srcid, building):
     metadata = objs[0].metadata
     df = pd.DataFrame(data=metadata, index=[srcid])
     df.index.name = 'srcid'
-    print(df)
+    print('Building: {0}'.format(building))
+    print(tabulate(df, headers='keys', tablefmt='psql'))
+    #print(df)
 
 def insert_groundtruth(srcid, building,
                        fullparsing=None, tagsets=None, point_tagset=None):

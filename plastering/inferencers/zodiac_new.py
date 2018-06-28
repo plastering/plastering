@@ -86,10 +86,10 @@ class ZodiacInterface(Inferencer):
             self.use_quiver = config['use_quiver']
         else:
             self.use_quiver = False
-        if 'warmstart' in config:
-            self.warmstart = config['warmstart']
+        if 'hotstart' in config:
+            self.hotstart = config['hotstart']
         else:
-            self.warmstart = False
+            self.hotstart = False
 
         if len(self.source_buildings) > len(sample_num_list):
             sample_num_list.append(0)
@@ -180,11 +180,15 @@ class ZodiacInterface(Inferencer):
         if 'seed_srcids' in config:
             seed_srcids = config['seed_srcids']
         else:
-            if 'seed_num' in config:
-                seed_num = config['seed_num']
+            if self.hotstart:
+                seed_srcids = [obj.srcid for obj in LabeledMetadata.objects(
+                    building=target_building)]
             else:
-                seed_num = 10
-            seed_srcids = self.get_random_learning_srcids(seed_num)
+                if 'seed_num' in config:
+                    seed_num = config['seed_num']
+                else:
+                    seed_num = 10
+                seed_srcids = self.get_random_learning_srcids(seed_num)
 
         self.thresholds = [(0.1,0.95), (0.1,0.9) , (0.15,0.9), (0.15,0.85),
                            (0.2,0.85), (0.25,0.85), (0.3,0.85), (0.35,0.85),
@@ -195,11 +199,11 @@ class ZodiacInterface(Inferencer):
         self.th_min, self.th_max = self.thresholds[self.th_ptr]
 
         self.init_model()
-        self.update_model(seed_srcids)
         self.available_srcids += source_buildings_srcids
         self.training_labels += [LabeledMetadata.objects(srcid=srcid)
                                   .first().point_tagset
                                   for srcid in source_buildings_srcids]
+        self.update_model(seed_srcids)
         self.learn_model()
 
     def init_model(self):
@@ -486,36 +490,27 @@ class ZodiacInterface(Inferencer):
         # TODO: This line should consider source building srcids"
         return len(self.target_srcids) - len(self.available_srcids)
 
-    def custom_accuracy(self):
-        sample_bow = self.get_sub_bow(self.target_srcids)
-        pred_labels = self.model.predict(sample_bow)
-        acc = sum([pred_label == self.ground_truths[srcid]
-                   for srcid, pred_label
-                   in zip(self.target_srcids, pred_labels)]) / \
-            len(self.target_srcids)
-        return acc
-
-    def learn_auto(self, iter_num=-1, inc_num=1):
+    def learn_auto(self, iter_num=-1, inc_num=1, evaluate_flag=True):
         gray_num = 1000
         cnt = 0
-        while gray_num > 0:
+        while (iter_num == -1 and gray_num > 0) or cnt < iter_num:
             print('--------------------------')
             print('{0}th iteration'.format(cnt))
             self.learn_model()
             new_srcids = self.select_informative_samples(1)
             self.update_model(new_srcids)
             gray_num = self.get_num_sensors_in_gray()
-            self.evaluate(self.target_srcids)
-            acc = self.custom_accuracy()
+            if evaluate_flag:
+                self.evaluate(self.target_srcids)
+                print('f1: {0}'.format(self.history[-1]['metrics']['f1']))
+                print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
             print('curr new srcids: {0}'.format(len(new_srcids)))
             if new_srcids:
                 print('new cluster\'s size: {0}'
                       .format(len(self.cluster_map[self.find_cluster_id(
                           new_srcids[0])])))
-            print('training srcids: {0}'.format(len(self.training_srcids)))
             print('gray: {0}/{1}'.format(gray_num, len(self.target_srcids)))
-            print('f1: {0}'.format(self.history[-1]['metrics']['f1']))
-            print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
+            print('training srcids: {0}'.format(len(self.training_srcids)))
             cnt += 1
         self.learn_model()
 
