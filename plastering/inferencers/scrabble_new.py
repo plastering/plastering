@@ -5,6 +5,7 @@ import pdb
 
 from . import Inferencer
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/scrabble')
+# The above line is just for the convenience of the dev.
 from ..metadata_interface import *
 from ..rdf_wrapper import *
 from ..common import *
@@ -22,6 +23,9 @@ class ScrabbleInterface(Inferencer):
                  source_buildings,
                  config=None
                  ):
+        config['required_label_types'] = [POINT_TAGSET,
+                                          FULL_PARSING,
+                                          ALL_TAGSETS]
         super(ScrabbleInterface, self).__init__(
             target_building=target_building,
             target_srcids=target_srcids,
@@ -90,7 +94,13 @@ class ScrabbleInterface(Inferencer):
                                  known_tags_dict,
                                  config=config,
                                  )
-        #self.update_model(self.scrabble.learning_srcids)
+        #self.update_model([])
+        new_srcids = deepcopy(self.scrabble.learning_srcids)
+        if self.hotstart:
+            new_srcids = [obj.srcid for obj in LabeledMetadata.objects(
+                building=target_building)]
+        self.scrabble.clear_training_samples()
+        self.update_model(new_srcids)
         self.zodiac_good_preds = {}
 
 

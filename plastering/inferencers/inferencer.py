@@ -37,7 +37,7 @@ class Inferencer(object):
                  source_sample_num_list=[],
                  framework_name='dummy_framework',
                  ui=None,
-                 required_label_types=[POINT_TAGSET, FULL_PARSING],
+                 required_label_types=[POINT_TAGSET, FULL_PARSING, ALL_TAGSETS],
                  target_label_type=POINT_TAGSET,
                  config={},
                  ):
@@ -61,6 +61,10 @@ class Inferencer(object):
             self.triplestore_type = config['triplestore_type']
         else:
             self.triplestore_type = RDFLIB
+        if 'hotstart' in config:
+            self.hotstart = config['hotstart']
+        else:
+            self.hotstart = False
         self.config = config
 
 
@@ -122,9 +126,10 @@ class Inferencer(object):
         point_tagset = input('Its point tagset: ')
         insert_groundtruth(srcid, point_tagset=point_tagset)
 
-    def ask_example(self, srcid):
-        self.ui.ask_example(srcid, self.target_building,
-                            self.required_label_types)
+    def ask_example(self, srcid, required_label_types=[]):
+        if not required_label_types:
+            required_label_types = self.required_label_types
+        self.ui.ask_example(srcid, self.target_building, required_label_types)
 
     # ESSENTIAL
     def learn_auto(self, iter_num=1, inc_num=1):
@@ -179,13 +184,17 @@ class Inferencer(object):
             else:
                 self.training_srcids.append(srcid)
         if not self.training_srcids:
-            raise EmptyTrainingSamples()
+            print('WARNING: New srcids are not given')
 
         # Get examples from the user if labels do not exist
         for srcid in new_srcids:
-            labeled = LabeledMetadata.objects(srcid=srcid)
+            labeled = LabeledMetadata.objects(srcid=srcid).first()
             if not labeled:
                 self.ask_example(srcid)
+            else:
+                for label_type in self.required_label_types:
+                    if not labeled[label_type]:
+                        self.ask_example(srcid, [label_type])
 
     # ESSENTIAL
     def select_informative_samples(self, sample_num):

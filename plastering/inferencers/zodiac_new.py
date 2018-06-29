@@ -86,10 +86,6 @@ class ZodiacInterface(Inferencer):
             self.use_quiver = config['use_quiver']
         else:
             self.use_quiver = False
-        if 'hotstart' in config:
-            self.hotstart = config['hotstart']
-        else:
-            self.hotstart = False
 
         if len(self.source_buildings) > len(sample_num_list):
             sample_num_list.append(0)
@@ -518,7 +514,7 @@ class ZodiacInterface(Inferencer):
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
 
-    def predict(self, target_srcids=None):
+    def predict(self, target_srcids=None, output_format='ttl'):
         t0 = arrow.get()
         if not target_srcids:
             target_srcids = self.target_srcids
@@ -542,4 +538,7 @@ class ZodiacInterface(Inferencer):
         self.pred_confidences = pred_confidences
         t1 = arrow.get()
         print('REALLY it takes this: {0}'.format(t1 - t0))
-        return pred_g
+        if output_foramt == 'ttl':
+            return pred_g
+        elif output_format == 'json':
+            return pred_points
