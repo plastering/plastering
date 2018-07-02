@@ -85,7 +85,8 @@ class Inferencer(object):
         if ui:
             self.ui = ui
         else:
-            self.ui = ReplUi()
+            schema_g = self.new_graph(empty=False)
+            self.ui = ReplUi(schema_g)
         self.__name__ = framework_name + '-' + str(self.exp_id)
         self.result_filename = './result/{0}_history.json'\
             .format(self.__name__)
@@ -176,7 +177,6 @@ class Inferencer(object):
         Byproduct:
             The model will be updated, which can be used for predictions.
         """
-        #self.training_srcids = self.training_srcids.union(set(srcids))
         for srcid in new_srcids:
             if srcid in self.training_srcids:
                 print('WARNING: {0} already exists in training set, not adding'

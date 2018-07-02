@@ -36,6 +36,25 @@ def print_rawmetadata(srcid, building):
     print(tabulate(df, headers='keys', tablefmt='psql'))
     #print(df)
 
+def print_fullparsing(srcid, building):
+    fullparsing = LabeledMetadata.objects(srcid=srcid, building=building)\
+        .first().fullparsing
+    if not fullparsing:
+        raise Exception('Full parsing is not registered yet for {0}'
+                        .format(srcid))
+    for metadata_type, parsed in fullparsing.items():
+        print('In {0}'.format(metadata_type), end='')
+        labels = [row[1] for row in parsed]
+        labels = [label[2:] for label in labels]
+        labels = [label for label in labels
+                  if label and label not in ['O', 'leftidentifier',
+                                             'rightidentifier', 'none']]
+        new_labels = []
+        for label in labels:
+            if label not in new_labels:
+                new_labels.append(label)
+        print(new_labels)
+
 def insert_groundtruth(srcid, building,
                        fullparsing=None, tagsets=None, point_tagset=None):
     obj = LabeledMetadata.objects(srcid=srcid)\
@@ -49,3 +68,4 @@ def insert_groundtruth(srcid, building,
     if tagsets:
         new_labels['set__tagsets'] = tagsets
     obj.update(**new_labels, upsert=True)
+    obj.save()

@@ -61,12 +61,26 @@ class BrickGraph(object):
                  triplestore_type=RDFLIB
                  ):
         self.triplestore_type = triplestore_type
+        self._brick_version = version
         if self.triplestore_type == RDFLIB:
             self.base_package = rdflib_wrapper
         elif self.triplestore_type == VIRTUOSO:
             self.base_package = virtuoso_wrapper
         self.g = self.base_package.init_graph(empty, brick_file,
                                               brickframe_file)
+        self.BRICK = Namespace('https://brickschema.org/schema/{0}/Brick#'
+                               .format(self._brick_version))
+        self.BF = Namespace('https://brickschema.org/schema/{0}/BrickFrame#'
+                            .format(self._brick_version))
+        self.BASE = Namespace('http://example.com#')
+        self.sparql_prefix = """
+        prefix brick: <{0}>
+        prefix rdf: <{1}>
+        prefix rdfs: <{2}>
+        prefix base: <{3}>
+        prefix bf: <{4}>
+        prefix owl: <{5}>
+        """.format(str(self.BRICK), RDF, RDFS, self.BASE, str(self.BF), OWL)
 
     def insert_point(self, name, tagset):
         return self.base_package.insert_point(self.g, name, tagset)
@@ -75,6 +89,7 @@ class BrickGraph(object):
         return self.base_package.insert_triple(self.g, triple)
 
     def query_sparql(self, qstr):
+        qstr = self.sparql_prefix + qstr
         return self.base_package.query_sparql(self.g, qstr)
 
     def _try_add_pred_point_result(self, srcid, pred_point):
@@ -130,7 +145,7 @@ class BrickGraph(object):
         return (URIRef(BASE + srcid), RDF.type, BRICK[pred_point])
 
     def get_instance_tuples(self):
-        qstr = sparql_prefix + """
+        qstr = self.sparql_prefix + """
         select ?s ?o where {
             ?s a ?o.
             FILTER(STRSTARTS(STR(?s), "%s"))
@@ -149,3 +164,13 @@ class BrickGraph(object):
             raise Exception('triplestoretype incorrectly defined as {0}'
                             .format(self.triplestore_type))
         """
+
+    def get_all_tagsets(self):
+        qstr = """
+        select ?tagset where {
+            ?tagset rdfs:subClassOf+ bf:TagSet.
+        }
+        """
+        res = self.query_sparql(qstr)
+        tagsets = [row['tagset'] for row in res]
+        return tagsets
