@@ -103,7 +103,8 @@ class BrickGraph(object):
             try:
                 res = f(**params)
                 success = True
-            except:
+            except Exception as e:
+                print(e)
                 pdb.set_trace()
                 print('WARNING: {0} temporarily failed'.format(str(f)))
             if success:
@@ -142,7 +143,7 @@ class BrickGraph(object):
         return points
 
     def _make_instance_tuple(self, srcid, pred_point):
-        return (URIRef(BASE + srcid), RDF.type, BRICK[pred_point])
+        return (URIRef(self.BASE + srcid), RDF.type, self.BRICK[pred_point])
 
     def get_instance_tuples(self):
         qstr = self.sparql_prefix + """
@@ -150,7 +151,7 @@ class BrickGraph(object):
             ?s a ?o.
             FILTER(STRSTARTS(STR(?s), "%s"))
         }
-        """ % (BASE) # Query selecting any instances with name space BASE.
+        """ % (self.BASE) # Query selecting any instances with name space BASE.
         res = self.query_sparql(qstr)
         return {row['s'].split('#')[-1]: row['o'].split('#')[-1] for row in res}
         """
