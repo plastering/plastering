@@ -7,14 +7,14 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 1. Install MongoDB
 2. Install Dependencies
     - ``pip install git+git://github.com/jbkoh/jason_python_helper.git arrow``
-3. Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public.
+3. Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet.
 
 ## Run
 1. Init Brick: ``git submodule update --init --recursive Brick``
 2. Init data: ``python data_init.py -b ap_m``
 3. Run Zodiac test: ``python test_zodiac.py``
 4. Run Workflow test: ``python test_workflow.py``
-5. Run Zodiac experiments: ``python scripts/exp_zodiac.py``
+5. Run Zodiac experiments: ``python scripts/exp_zodiac.py ap_m``
 6. Produce figures: ``python scripts/result_drawer.py``
 
 
@@ -23,39 +23,44 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 ## <a name="data_format"></a>Data Format
 
 ### Raw Metadata
-1. Every BMS point is associated with a unique source identifier (srcid).
-2. All BMS metadata is in the form of a table in CSV. A BMS point corresponds to a row with metadata possibly in multiple columns. Example:
+0. It is defined as ``RawMetadata`` inside ``plastering/metadata_interface.py``.
+1. Every BMS point is associated with a unique source identifier (**srcid**) and a **building** name.
+2. All BMS **metadata** is in the form of JSON document. A BMS point corresponds to a row with metadata possibly in multiple entries. Example:
+    ```json
+    {
+        "srcid": "123-456",
+        "VendorGivenName": "RM-101.ZNT",
+        "BACnetName": "VMA101 Zone Temp",
+        "BACnetUnit": 64
+    }
+    ```
 
-    | SourceIdentifier | VendorGivenName | BACNetName      | BACNetUnit |
-    |------------------|-----------------|-----------------|------------|
-    | 123-456          | RM-101.ZNT      | VAV101 ZoneTemp | 64         |
-
-### Ground Truth of Metadata
-1. Each row in the table has corresponding Brick triples. 
-    1. E.g.,
-        ```turtle
-        ex:RM_101_ZNT rdf:type brick:Zone_Temperature_Sensor .
-        ex:RM_101 rdf:type brick:Room .
-        ex:RM_101_ZNT bf:hasLocation ex:RM_101 .
-        ```  
-    2. Framework interface has abstraction of interacting these triples.
-2. Each cell has parsing results. An example for 123456.VendorGivenName:
+### Ground Truth of Metadata (LabeledMetadata)
+0. It is defined as ``LabeledMetadata`` inside ``plastering/metadata_interface.py``.
+1. **tagsets**: Any TagSets associated with the point.
+2. **point_tagset**: Point TagSet among the associated TagSets. If it's not defined, one may select Point-related TagSets from **tagsets**.
+2. **fullparsing**: Each entry has parsing results. An example for ``123-456``'s VendorGivenName:
     1. Tokenization: ``["RM", "-", "101", ".", "ZN", "T"]``
-    2. Token Labels: ``["Room", None, "left-identifier", None, "Zone", "Temperature"]``  
-    3. Though Plastering by default supports the above token-label sets, different tokenization rules may apply from a framework. For example, one may want to use ``ZNT -> Zone_Temperature_Sensor``. Such combinations can be extended later.
-3. One may use a part of different label types or add a new label type if needed. 
+    2. Token Labels: ``["Room", None, "leftidentifier", None, "Zone", "Temperature"]``
+    3. (Though Plastering by default supports the above token-label sets, different tokenization rules may apply from a framework. For example, one may want to use ``ZNT -> Zone_Temperature_Sensor`` instead. Such combinations can be extended later.)
+3. One may use a part of different label types or add a new label type if needed.
 
 ### Raw Timeseries Data
 1. Every BMS point may produce a timeseries data associated with the corresponding srcid.
 2. Its data format is **TODO**.
 
 ### Output Metadata in Brick
-1. Result graph in Brick (in Turtle syntax).
-2. A map of confidence of triples.
+1. **Brick graph**: Result graph in Brick (in Turtle syntax).
+    ```turtle
+    ex:RM_101_ZNT rdf:type brick:Zone_Temperature_Sensor .
+    ex:RM_101 rdf:type brick:Room .
+    ex:RM_101_ZNT bf:hasLocation ex:RM_101 .
+    ```
+2. **Confidences**: A map of confidence of triples.
     1. A key is a triple in string and the value is its confidence. If the triple is given by the user, it should be 1.0. E.g.,
         ```python
        {
-         ("ex:znt", "rdf:type", "brick:Zone_Temperature_Sensor"): 0.9,
+         ("ex:RM_101_ZNT", "rdf:type", "brick:Zone_Temperature_Sensor"): 0.9,
          ..
        }
        ```

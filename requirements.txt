@@ -1,3 +1,4 @@
 arrow
 python-crfsuite
 mongoengine
+git+git://github.com/jbkoh/jason_python_helper.git
