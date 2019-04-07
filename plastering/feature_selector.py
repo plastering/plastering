@@ -39,7 +39,7 @@ def get_data_features(building, start_time, end_time):
     srcids = []
     ctr = 0
     ctr1 = 0
-    for labeled in LabeledMetadata.objects(building=building):
+    for labeled in query_labels(pgid=pgid, building=building):
         srcid = labeled.srcid
         try:
             data = res[srcid]
@@ -77,48 +77,35 @@ def get_data_features(building, start_time, end_time):
 
     return srcids, fd
 
-
-def get_labels(building):
-
-    srcids = [point['srcid'] for point in LabeledMetadata.objects(building=building)]
-
-    pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset.lower() for srcid in srcids]
-
-    print ('%d point names loaded for %s'%(len(pt_type), building))
-
-    return { srcid: label for srcid,label in zip(srcids,pt_type) }
-
-
 def get_CV_acc(X, Y, clf):
-
     kf = KFold(n_splits=10)
     acc = []
     for train, test in kf.split(X):
-
         X_train, X_test = X[train], X[test]
         Y_train, Y_test = Y[train], Y[test]
-
         clf.fit(X_train, Y_train)
         acc.append( ACC( clf.predict(X_test), Y_test ) )
-
     return np.mean(acc)
 
 
 class feature_selector():
 
-    def __init__(self, target_building, method, load_from_file=1):
-
+    def __init__(self, target_building, method, load_from_file=1, pgid=None):
         self.time_range = (None, None)
-
+        self.pgid = pgid
         if not load_from_file:
             #data features
             ids, self.fd = get_data_features(target_building,
-                                        self.time_range[0],
-                                        self.time_range[1])
-            print ('%d data streams loaded'%len(ids))
+                                             self.time_range[0],
+                                             self.time_range[1],
+                                             pgid,
+                                             )
+            print('%d data streams loaded'%len(ids))
 
             #labels
-            res = get_labels(target_building)
+            res = = {obj.srcid: obj.point_tagset for obj
+                     in query_labels(pgid=self.pgid, building=building)}
+            print ('%d point names loaded for %s'%(len(res), building))
             label = [res[srcid] for srcid in ids]
             le = LE()
             self.label = le.fit_transform(label)

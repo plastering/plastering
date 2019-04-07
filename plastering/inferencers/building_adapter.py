@@ -29,7 +29,7 @@ def get_name_features(names):
     return fn
 
 
-def get_data_features(building, start_time, end_time):
+def get_data_features(building, start_time, end_time, pgid):
 
     res = read_from_db(building, start_time, end_time)
 
@@ -37,7 +37,7 @@ def get_data_features(building, start_time, end_time):
     srcids = []
     ctr = 0
     ctr1 = 0
-    for labeled in LabeledMetadata.objects(building=building):
+    for labeled in query_labels(pgid=pgid, building=building):
         srcid = labeled.srcid
         ctr1 += 1
         try:
@@ -72,11 +72,11 @@ def get_data_features(building, start_time, end_time):
     return srcids, fd
 
 
-def get_namefeatures_labels(building):
+def get_namefeatures_labels(building, pgid):
 
-    srcids = [point['srcid'] for point in LabeledMetadata.objects(building=building)]
+    srcids = [point['srcid'] for point in query_labels(pgid=pgid, building=building)]
 
-    pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset.lower() for srcid in srcids]
+    pt_type = [query_labels(pgid=pgid, srcid=srcid).first().point_tagset.lower() for srcid in srcids]
     pt_name = [RawMetadata.objects(srcid=srcid).first().metadata['VendorGivenName'] for srcid in srcids]
 
     fn = get_name_features(pt_name)
@@ -91,13 +91,15 @@ class BuildingAdapterInterface(Inferencer):
                  target_building,
                  target_srcids,
                  source_buildings,
+                 pgid=pgid,
                  config={},
                  load_from_file=1
                  ):
         super(BuildingAdapterInterface, self).__init__(
             target_building=target_building,
             source_buildings=source_buildings,
-            target_srcids=target_srcids
+            target_srcids=target_srcids,
+            pgid=pgid,
         )
 
         #gather the source/target data and name features, labels
@@ -126,16 +128,20 @@ class BuildingAdapterInterface(Inferencer):
             #data features
             source_ids, train_fd = get_data_features(source_building,
                                                      self.source_time_ranges[0][0],
-                                                     self.source_time_ranges[0][1])
+                                                     self.source_time_ranges[0][1],
+                                                     pgid=self.pgid,
+                                                     )
             target_ids, test_fd = get_data_features(target_building,
                                                     self.target_time_range[0],
-                                                    self.target_time_range[1])
+                                                    self.target_time_range[1],
+                                                    pgid=self.pgid,
+                                                    )
 
             #name features, labels
-            source_res = get_namefeatures_labels(source_building)
+            source_res = get_namefeatures_labels(source_building, pgid=self.pgid)
             train_label = [source_res[srcid][1] for srcid in source_ids]
 
-            self.target_res = get_namefeatures_labels(target_building)
+            self.target_res = get_namefeatures_labels(target_building, pgid=self.pgid)
             test_fn = np.asarray( [self.target_res[tgtid][0] for tgtid in target_ids] )
             test_label = [self.target_res[tgtid][1] for tgtid in target_ids]
 

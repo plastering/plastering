@@ -39,6 +39,7 @@ class Inferencer(object):
                  ui=None,
                  required_label_types=[POINT_TAGSET, FULL_PARSING, ALL_TAGSETS],
                  target_label_type=POINT_TAGSET,
+                 pgid=None,
                  config={},
                  ):
         super(Inferencer, self).__init__()
@@ -65,9 +66,8 @@ class Inferencer(object):
             self.hotstart = config['hotstart']
         else:
             self.hotstart = False
+        self.pgid = pgid
         self.config = config
-
-
         self.training_srcids = [] # already known srcids
         self.pred = {  # predicted results
             'tagsets': {},
@@ -93,13 +93,16 @@ class Inferencer(object):
         self.pred_g = self.new_graph(empty=True)
         self.pred_confidences = {}
 
+    def query_labels(self, **query):
+        return query_labels(self.pgid, **query)
+
     def evaluate_points_dep(self, pred):
         curr_log = {
             'training_srcids': self.training_srcids
         }
         score = 0
         for srcid, pred_tagsets in pred['tagsets'].items():
-            true_tagsets = LabeledMetadata.objects(srcid=srcid)[0].tagsets
+            true_tagsets = self.query_labels(srcid=srcid)[0].tagsets
             true_point = sel_point_tagset(true_tagsets)
             pred_point = sel_point_tagset(pred_tagsets)
             if true_point == pred_point:
@@ -188,7 +191,7 @@ class Inferencer(object):
 
         # Get examples from the user if labels do not exist
         for srcid in new_srcids:
-            labeled = LabeledMetadata.objects(srcid=srcid).first()
+            labeled = self.query_labels(srcid=srcid).first()
             if not labeled:
                 self.ask_example(srcid)
             else:
@@ -252,7 +255,7 @@ class Inferencer(object):
         """
         truths = {}
         for srcid in srcids:
-            objs = LabeledMetadata.objects(srcid=srcid)
+            objs = self.query_labels(srcid=srcid)
             if not objs:
                 raise Exception('No {0} labels found for {1}'
                                 .format(label_type, srcid))

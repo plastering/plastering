@@ -14,9 +14,10 @@ from ..common import *
 
 class ReplUi(object):
 
-    def __init__(self, schema_g):
+    def __init__(self, schema_g, pgid=None):
         self.schema_g = schema_g
         self._init_brick(self.schema_g)
+        self.pgid = pgid
 
     def _init_brick(self, schema_g):
         # TODO: Read below from an external file
@@ -160,9 +161,14 @@ class ReplUi(object):
         base_idx = 0
         print('Instruction:')
         done = False
-        labeled_metadata = LabeledMetadata.objects(srcid=srcid,
-                                                   building=building)\
-            .upsert_one(srcid=srcid, building=building)
+        labeled_metadata = query_labels(
+            pgid=self.pgid,
+            srcid=srcid,
+            building=building,
+        ).upsert_one(
+            srcid=srcid,
+            building=building,
+        )
         fullparsing = labeled_metadata[FULL_PARSING]
         metadatas = RawMetadata.objects(srcid=srcid, building=building)\
             .first().metadata

@@ -13,16 +13,13 @@ from ..metadata_interface import *
 
 
 def get_name_features(names):
-
-        name = []
-        for i in names:
-            s = re.findall('(?i)[a-z]{2,}',i)
-            name.append(' '.join(s))
-
-        cv = CV(analyzer='char_wb', ngram_range=(3,4))
-        fn = cv.fit_transform(name).toarray()
-
-        return fn
+    name = []
+    for i in names:
+        s = re.findall('(?i)[a-z]{2,}',i)
+        name.append(' '.join(s))
+    cv = CV(analyzer='char_wb', ngram_range=(3,4))
+    fn = cv.fit_transform(name).toarray()
+    return fn
 
 
 class ActiveLearningInterface(Inferencer):
@@ -32,18 +29,18 @@ class ActiveLearningInterface(Inferencer):
                  target_srcids,
                  fold,
                  rounds,
+                 pgid=None,
                  use_all_metadata=False,
                  source_building=None
                  ):
         super(ActiveLearningInterface, self).__init__(
             target_building=target_building,
-            target_srcids=target_srcids
+            target_srcids=target_srcids,
+            pgid=pgid,
         )
 
-        srcids = [point['srcid'] for point
-                  in LabeledMetadata.objects(building=target_building)]
-        pt_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset
-                   for srcid in srcids]
+        srcids = [point['srcid'] for point in query_labels(pgid=pgid, building=target_building)]
+        pt_type = [query_labels(pgid=pgid, srcid=srcid).firat().point_tagset for srcid in srcids]
         if use_all_metadata:
             pt_name = []
             for srcid in srcids:
@@ -73,8 +70,8 @@ class ActiveLearningInterface(Inferencer):
 
         if source_building:
             srcids = [point['srcid'] for point
-                      in LabeledMetadata.objects(building=source_building)]
-            source_type = [LabeledMetadata.objects(srcid=srcid).first().point_tagset
+                      in query_labels(pgid=pgid, building=source_building)]
+            source_type = [query_labels(pgid=pgid, srcid=srcid).first().point_tagset
                        for srcid in srcids]
             source_name = [RawMetadata.objects(srcid=srcid).first()\
                        .metadata['VendorGivenName'] for srcid in srcids]

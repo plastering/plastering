@@ -1,4 +1,9 @@
 # Byte-compiled / optimized / DLL files
+result/
+groundtruth/
+rawdata/
+temp/
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -102,9 +107,5 @@ ENV/
 
 
 *.model
-result/
-groundtruth/
-rawdata/
-temp/
 *.out
 *.pdf

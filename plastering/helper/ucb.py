@@ -75,7 +75,9 @@ def make_bio_word_label(word, label):
     return pairs
 
 def load_ucb_building(building='soda',
-                      filename='./groundtruth/SODA-GROUND-TRUTH'):
+                      filename='./groundtruth/SODA-GROUND-TRUTH',
+                      pgid=None,
+                      ):
     assert building in ['soda', 'sdh', 'ibm'], \
         'Srong building name: {0}'.format(building)
 
@@ -128,11 +130,16 @@ def load_ucb_building(building='soda',
         raw_obj.metadata['VendorGivenName'] = srcid
         raw_obj.save()
 
-        labeled_obj = LabeledMetadata.objects(srcid=srcid)\
-            .upsert_one(srcid=srcid,
-                        building=building,
-                        point_tagset=point_tagset,
-                        tagsets=tagsets)
+        labeled_obj = LabeledMetadata.objects(
+            srcid=srcid,
+            pgid=pgid,
+        ).upsert_one(
+            srcid=srcid,
+            building=building,
+            point_tagset=point_tagset,
+            tagsets=tagsets,
+            pgid=pgid,
+        )
         labeled_obj.save()
     with open('groundtruth/{0}_tagsets.json'.format(building), 'w') as fp:
         json.dump(tagsets_dict, fp, indent=2)

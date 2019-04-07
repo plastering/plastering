@@ -7,7 +7,7 @@ from tabulate import tabulate
 pd.options.display.max_colwidth = 200
 pp = pprint.PrettyPrinter(indent=2)
 
-connect('plastering')
+connect('plastering-withpg')
 
 
 # Data Models
@@ -24,8 +24,16 @@ class LabeledMetadata(Document):
     tagsets = ListField(StringField())
     point_tagset = StringField(required=True)
     tagsets_parsing = DictField()
+    pgid = StringField()
+
 
 # Helper functions
+
+def query_labels(pgid=None, **query):
+    if pgid:
+        return LabeledMetadata.objects(pgid=pgid, **query)
+    else:
+        return LabeledMetadata.objects(**query)
 
 def print_rawmetadata(srcid, building):
     objs = RawMetadata.objects(srcid=srcid, building=building)
@@ -36,9 +44,11 @@ def print_rawmetadata(srcid, building):
     print(tabulate(df, headers='keys', tablefmt='psql'))
     #print(df)
 
-def print_fullparsing(srcid, building):
-    fullparsing = LabeledMetadata.objects(srcid=srcid, building=building)\
-        .first().fullparsing
+def print_fullparsing(srcid, building, pgid=None):
+    fullparsing = query_labels(pgid=pgid,
+                               srcid=srcid,
+                               building=building,
+                               ).first().fullparsing
     if not fullparsing:
         raise Exception('Full parsing is not registered yet for {0}'
                         .format(srcid))
@@ -55,10 +65,10 @@ def print_fullparsing(srcid, building):
                 new_labels.append(label)
         print(new_labels)
 
-def insert_groundtruth(srcid, building,
+def insert_groundtruth(srcid, building, pgid,
                        fullparsing=None, tagsets=None, point_tagset=None):
-    obj = LabeledMetadata.objects(srcid=srcid)\
-        .upsert_one(srcid=srcid, building=building)
+    obj = LabeledMetadata.objects(srcid=srcid, building=building, pgid=pgid)\
+        .upsert_one(srcid=srcid, building=building, pgid=pgid)
     assert fullparsing or tagsets or point_tagset, 'WARNING:empty labels given'
     new_labels = {}
     if fullparsing:

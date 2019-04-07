@@ -7,7 +7,7 @@ sys.path.insert(0, dir_path + '/..')
 #sys.path.append(os.path.abspath(os.path.join(dir_path + '/..', 'config')))
 #sys.path.append(os.path.abspath(os.path.join('..', 'config')))
 
-from plastering.inferencers.zodiac_new import ZodiacInterface
+from plastering.inferencers.zodiac import ZodiacInterface
 from plastering.metadata_interface import *
 import pdb
 
@@ -19,6 +19,7 @@ try:
 except:
     source_buildings = []
 
+pgid = None
 
 for exp_id in range(0, EXP_NUM):
     # Select labeled srcids (Not all the data are labeled yet.)
@@ -27,7 +28,9 @@ for exp_id in range(0, EXP_NUM):
 
     zodiac= ZodiacInterface(target_building =target_building,
                             target_srcids=target_srcids,
-                            source_buildings=source_buildings)
+                            source_buildings=source_buildings,
+                            pgid=pgid,
+                            )
     zodiac.learn_auto()
     history = [{
         'metrics': hist['metrics'],

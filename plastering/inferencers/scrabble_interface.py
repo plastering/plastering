@@ -35,19 +35,6 @@ class ScrabbleInterface(Inferencer):
             sample_num_list = config['sample_num_list']
         else:
             sample_num_list = [0] * (len(source_buildings) + 1) # +1 for target
-        """
-            for building in self.source_buildings:
-                sample_cnt = 0
-                labeled_list = LabeledMetadata.objects(building=target_building)
-                for labeled in labeled_list:
-                    if labeled.fullparsing:
-                        sample_cnt += 1
-                sample_num_list.append(sample_cnt)
-        if 'seed_num' not in config:
-            seed_num = 10
-        else:
-            seed_num = config['seed_num']
-        """
 
         if self.target_building not in self.source_buildings:
             self.source_buildings = self.source_buildings + [self.target_building]
@@ -70,7 +57,7 @@ class ScrabbleInterface(Inferencer):
         for building in self.source_buildings:
             true_tagsets = {}
             label_dict = {}
-            for labeled in LabeledMetadata.objects(building=building):
+            for labeled in self.query_labels(building=building):
                 srcid = labeled.srcid
                 true_tagsets[srcid] = labeled.tagsets
                 fullparsing = None

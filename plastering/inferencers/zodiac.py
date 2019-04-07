@@ -60,7 +60,10 @@ class ZodiacInterface(Inferencer):
                  target_srcids,
                  source_buildings=[],
                  ui=None,
-                 config={}):
+                 pgid=None,
+                 config={},
+                 **kwargs,
+                 ):
         super(ZodiacInterface, self).__init__(
             target_building=target_building,
             source_buildings=source_buildings,
@@ -68,8 +71,11 @@ class ZodiacInterface(Inferencer):
             ui=None,
             required_label_types=[POINT_TAGSET],
             target_label_type=POINT_TAGSET,
+            pgid=pgid,
             config=config,
-            framework_name='zodiac')
+            framework_name='zodiac',
+            **kwargs,
+        )
 
         # init config file for Zodiac
         if 'n_estimators' not in config:
@@ -80,10 +86,6 @@ class ZodiacInterface(Inferencer):
             sample_num_list = config['sample_num_list']
         else:
             sample_num_list = [0] * (len(source_buildings) + 1) # +1 for target
-        if 'use_quiver' in config:
-            self.use_quiver = config['use_quiver']
-        else:
-            self.use_quiver = False
 
         if len(self.source_buildings) > len(sample_num_list):
             sample_num_list.append(0)
@@ -92,7 +94,7 @@ class ZodiacInterface(Inferencer):
         source_buildings_srcids = []
         for source_building, sample_num in zip(source_buildings,
                                                sample_num_list):
-            objects = LabeledMetadata.objects(building=source_building)
+            objects = self.query_labels(building=source_building)
             try:
                 source_srcids = random.sample(
                     [obj.srcid for obj in objects], sample_num)
@@ -155,7 +157,7 @@ class ZodiacInterface(Inferencer):
             else:
                 bacnet_unit = {}
             units[srcid] = bacnet_unit
-            label_doc = LabeledMetadata.objects(srcid=srcid).first()
+            label_doc = self.query_labels(srcid=srcid).first()
             if label_doc:
                 self.ground_truths[srcid] = label_doc.point_tagset
         self.total_bow = self.init_bow(self.total_srcids,
@@ -175,8 +177,7 @@ class ZodiacInterface(Inferencer):
             seed_srcids = config['seed_srcids']
         else:
             if self.hotstart:
-                seed_srcids = [obj.srcid for obj in LabeledMetadata.objects(
-                    building=target_building)]
+                seed_srcids = [obj.srcid for obj in self.query_labels(building=target_building)]
             else:
                 if 'seed_num' in config:
                     seed_num = config['seed_num']
@@ -194,9 +195,8 @@ class ZodiacInterface(Inferencer):
 
         self.init_model()
         self.available_srcids += source_buildings_srcids
-        self.training_labels += [LabeledMetadata.objects(srcid=srcid)
-                                  .first().point_tagset
-                                  for srcid in source_buildings_srcids]
+        self.training_labels += [self.query_labels(srcid=srcid).first().point_tagset
+                                 for srcid in source_buildings_srcids]
         self.update_model(seed_srcids)
         self.learn_model()
 
@@ -303,8 +303,7 @@ class ZodiacInterface(Inferencer):
             cnt += 1
             srcid = triple[0].split('#')[-1]
             tagset = triple[2].split('#')[-1]
-            true_tagset = LabeledMetadata.objects(srcid=srcid).first()\
-                .point_tagset
+            true_tagset = self.query_labels(srcid=srcid).first().point_tagset
             if tagset == true_tagset:
                 acc += 1
         acc = 0 if not cnt else acc / cnt
@@ -328,7 +327,7 @@ class ZodiacInterface(Inferencer):
 
         # Add new srcids into the training set.
         for srcid in new_srcids:
-            labeled = LabeledMetadata.objects(srcid=srcid)
+            labeled = self.query_labels(srcid=srcid)
             if not labeled:
                 raise Exception('Labels do not exist for {0}'.format(srcid))
             labeled = labeled[0]
@@ -536,7 +535,7 @@ class ZodiacInterface(Inferencer):
         self.pred_confidences = pred_confidences
         t1 = arrow.get()
         print('REALLY it takes this: {0}'.format(t1 - t0))
-        if output_foramt == 'ttl':
+        if output_format == 'ttl':
             return pred_g
         elif output_format == 'json':
             return pred_points

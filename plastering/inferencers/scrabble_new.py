@@ -97,8 +97,7 @@ class ScrabbleInterface(Inferencer):
         #self.update_model([])
         new_srcids = deepcopy(self.scrabble.learning_srcids)
         if self.hotstart:
-            new_srcids = [obj.srcid for obj in LabeledMetadata.objects(
-                building=target_building)]
+            new_srcids = [obj.srcid for obj in self.query_labels(building=target_building)]
         self.scrabble.clear_training_samples()
         self.update_model(new_srcids)
         self.zodiac_good_preds = {}
