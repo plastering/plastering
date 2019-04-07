@@ -2,7 +2,7 @@
 from pkg_resources import parse_requirements
 from setuptools import setup, find_packages
 
-__author__ = 'Jason Koh'
+__author__ = 'Jason Koh and Dezhi Hong'
 __version__ = '0.0.1'
 
 install_reqs = parse_requirements(open('requirements.txt'))
