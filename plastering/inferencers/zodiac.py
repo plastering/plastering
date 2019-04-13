@@ -53,7 +53,9 @@ def is_nonempty_item_included(l):
     else:
         return False
 
-class ZodiacInterface(Inferencer):
+#class ZodiacInterface(Inferencer):
+@Inferencer()
+class ZodiacInterface(object):
 
     def __init__(self,
                  target_building,
@@ -64,6 +66,7 @@ class ZodiacInterface(Inferencer):
                  config={},
                  **kwargs,
                  ):
+        """
         super(ZodiacInterface, self).__init__(
             target_building=target_building,
             source_buildings=source_buildings,
@@ -76,6 +79,7 @@ class ZodiacInterface(Inferencer):
             framework_name='zodiac',
             **kwargs,
         )
+        """
 
         # init config file for Zodiac
         if 'n_estimators' not in config:
@@ -193,12 +197,12 @@ class ZodiacInterface(Inferencer):
         self.th_ptr= 0
         self.th_min, self.th_max = self.thresholds[self.th_ptr]
 
-        self.init_model()
         self.available_srcids += source_buildings_srcids
         self.training_labels += [self.query_labels(srcid=srcid).first().point_tagset
                                  for srcid in source_buildings_srcids]
-        self.update_model(seed_srcids)
-        self.learn_model()
+        self.init_model()
+        #self.update_model(seed_srcids)
+        #self.learn_model()
 
     def init_model(self):
         self.model = RandomForestClassifier(
@@ -323,7 +327,7 @@ class ZodiacInterface(Inferencer):
 
 
     def update_model(self, new_srcids):
-        super(ZodiacInterface, self).update_model(new_srcids)
+        #super(ZodiacInterface, self).update_model(new_srcids)
 
         # Add new srcids into the training set.
         for srcid in new_srcids:
@@ -406,7 +410,6 @@ class ZodiacInterface(Inferencer):
         new_srcids = self.apply_prior_quiver(base_pred_labels, tot_srcids)
         new_srcids = new_srcids[0:sample_num]
 
-        #th_update_flag and \
         test_flag = 0
         looping_flag = False
         while\
@@ -486,11 +489,16 @@ class ZodiacInterface(Inferencer):
     def learn_auto(self, iter_num=-1, inc_num=1, evaluate_flag=True):
         gray_num = 1000
         cnt = 0
+        seed_sample_num = 10
         while (iter_num == -1 and gray_num > 0) or cnt < iter_num:
             print('--------------------------')
             print('{0}th iteration'.format(cnt))
             self.learn_model()
-            new_srcids = self.select_informative_samples(1)
+            if self.model_initiated:
+                new_sample_num = 1
+            else:
+                new_sample_num = seed_sample_num
+            new_srcids = self.select_informative_samples(new_sample_num)
             self.update_model(new_srcids)
             gray_num = self.get_num_sensors_in_gray()
             if evaluate_flag:
@@ -508,6 +516,9 @@ class ZodiacInterface(Inferencer):
         self.learn_model()
 
     def learn_model(self):
+        if not self.available_srcids:
+            print('WARNING: not learning anything due to the empty training data')
+            return None
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
 
@@ -515,7 +526,7 @@ class ZodiacInterface(Inferencer):
         t0 = arrow.get()
         if not target_srcids:
             target_srcids = self.target_srcids
-        super(ZodiacInterface, self).predict(target_srcids)
+        #super(ZodiacInterface, self).predict(target_srcids)
 
         self.learn_model()
         pred_confidences = {}
