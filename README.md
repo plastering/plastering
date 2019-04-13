@@ -6,7 +6,7 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 ## Installation
 1. Install MongoDB
 2. Install Dependencies
-    - ``pip install git+git://github.com/jbkoh/jason_python_helper.git arrow``
+    - ``pip install -r requirements.txt``
 3. Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet.
 
 ## Run
