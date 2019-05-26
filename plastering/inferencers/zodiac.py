@@ -164,6 +164,9 @@ class ZodiacInterface(object):
             label_doc = self.query_labels(srcid=srcid).first()
             if label_doc:
                 self.ground_truths[srcid] = label_doc.point_tagset
+
+        self.model_initiated = False
+
         self.total_bow = self.init_bow(self.total_srcids,
                                        names,
                                        descs,
@@ -310,8 +313,9 @@ class ZodiacInterface(object):
             true_tagset = self.query_labels(srcid=srcid).first().point_tagset
             if tagset == true_tagset:
                 acc += 1
-        acc = 0 if not cnt else acc / cnt
-        print('Accuracy: {0}'.format(acc))
+        if cnt:
+            acc = 0 if not cnt else acc / cnt
+            print('Prior graph\'s Accuracy: {0}'.format(acc))
 
     def apply_prior_augment_samples(self):
         prior_preds = {}
