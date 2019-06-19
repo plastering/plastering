@@ -65,7 +65,7 @@ def print_fullparsing(srcid, building, pgid=None):
                 new_labels.append(label)
         print(new_labels)
 
-def insert_groundtruth(srcid, building, pgid,
+def insert_groundtruth(srcid, building, pgid="master",
                        fullparsing=None, tagsets=None, point_tagset=None):
     obj = LabeledMetadata.objects(srcid=srcid, building=building, pgid=pgid)\
         .upsert_one(srcid=srcid, building=building, pgid=pgid)
