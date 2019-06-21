@@ -7,6 +7,8 @@ from tabulate import tabulate
 pd.options.display.max_colwidth = 200
 pp = pprint.PrettyPrinter(indent=2)
 
+from .common import *
+
 connect('plastering-withpg')
 
 
@@ -72,10 +74,9 @@ def insert_groundtruth(srcid, building, pgid,
     assert fullparsing or tagsets or point_tagset, 'WARNING:empty labels given'
     new_labels = {}
     if fullparsing:
-        new_labels['set__fullparsing'] = fullparsing
+        obj[FULL_PARSING] = fullparsing
     if point_tagset:
-        new_labels['set__point_tagset'] = point_tagset
+        obj[POINT_TAGSET] = point_tagset
     if tagsets:
-        new_labels['set__tagsets'] = tagsets
-    obj.update(**new_labels, upsert=True)
+        obj[ALL_TAGSETS] = tagsets
     obj.save()
