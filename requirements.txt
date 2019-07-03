@@ -1,3 +1,4 @@
+prompt_toolkit==1.0.15
 arrow
 python-crfsuite
 mongoengine
@@ -8,4 +9,3 @@ rdflib
 SPARQLWrapper
 matplotlib
 scikit-learn
-prompt_toolkit==1.0.15

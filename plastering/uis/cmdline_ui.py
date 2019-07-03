@@ -260,4 +260,4 @@ class ReplUi(object):
         self.store_example(srcid, building, answers)
 
     def store_example(self, srcid, building, answers):
-        insert_groundtruth(srcid, building, **answers)
+        insert_groundtruth(srcid, building, self.pgid, **answers)
