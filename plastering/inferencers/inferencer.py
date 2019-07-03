@@ -90,13 +90,6 @@ class Inferencer(object):
                 self.history = [] # logging and visualization purpose
                 self.required_label_types = required_label_types
                 self.ui = ui
-                """
-                if ui:
-                    self.ui = ui
-                else:
-                    schema_g = self.new_graph(empty=False)
-                    self.ui = ReplUi(schema_g)
-                """
                 self.__name__ = framework_name + '-' + str(self.exp_id)
                 self.result_filename = './result/{0}_history.json'\
                     .format(self.__name__)
