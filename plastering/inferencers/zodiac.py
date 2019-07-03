@@ -66,21 +66,6 @@ class ZodiacInterface(object):
                  config={},
                  **kwargs,
                  ):
-        """
-        super(ZodiacInterface, self).__init__(
-            target_building=target_building,
-            source_buildings=source_buildings,
-            target_srcids=target_srcids,
-            ui=None,
-            required_label_types=[POINT_TAGSET],
-            target_label_type=POINT_TAGSET,
-            pgid=pgid,
-            config=config,
-            framework_name='zodiac',
-            **kwargs,
-        )
-        """
-
         # init config file for Zodiac
         if 'n_estimators' not in config:
             self.config['n_estimators'] = 400
@@ -107,7 +92,6 @@ class ZodiacInterface(object):
             source_buildings_srcids += source_srcids
 
         self.total_srcids = deepcopy(target_srcids) + source_buildings_srcids
-        self.ground_truths = {} #just for debugging
         self.true_labels = {}
         self.available_srcids = []
         self.training_labels = []
@@ -120,10 +104,7 @@ class ZodiacInterface(object):
         types = {}
         jci_names = {}
         units = {}
-        #for raw_point in RawMetadata.objects(building=self.target_building):
         for srcid in self.total_srcids:
-            #srcid = raw_point['srcid']
-            #if srcid in self.target_srcids:
             raw_point = RawMetadata.objects(srcid=srcid).first()
             metadata = raw_point['metadata']
             if not metadata:
@@ -161,11 +142,6 @@ class ZodiacInterface(object):
             else:
                 bacnet_unit = {}
             units[srcid] = bacnet_unit
-            label_doc = self.query_labels(srcid=srcid).first()
-            if label_doc:
-                self.ground_truths[srcid] = label_doc.point_tagset
-
-        self.model_initiated = False
 
         self.total_bow = self.init_bow(self.total_srcids,
                                        names,
@@ -174,11 +150,10 @@ class ZodiacInterface(object):
                                        type_strs,
                                        types,
                                        jci_names)
+        self.model_initiated = False
         target_bow = self.get_sub_bow(self.target_srcids)
         self.cluster_map = self.create_cluster_map(target_bow,
                                                    self.target_srcids)
-        #self.cluster_map = self.create_cluster_map(self.total_bow,
-        #                                           self.total_srcids)
 
         if 'seed_srcids' in config:
             seed_srcids = config['seed_srcids']
@@ -197,15 +172,13 @@ class ZodiacInterface(object):
                            (0.4,0.85), (0.45,0.85), (0.5,0.85), (0.55,0.85),
                            (0.6,0.85), (0.65,0.85), (0.7,0.85), (0.75,0.85),
                            (0.8,0.85), (0.84999999,0.85) ]
-        self.th_ptr= 0
+        self.th_ptr = 0
         self.th_min, self.th_max = self.thresholds[self.th_ptr]
 
         self.available_srcids += source_buildings_srcids
         self.training_labels += [self.query_labels(srcid=srcid).first().point_tagset
                                  for srcid in source_buildings_srcids]
         self.init_model()
-        #self.update_model(seed_srcids)
-        #self.learn_model()
 
     def init_model(self):
         self.model = RandomForestClassifier(
@@ -293,11 +266,12 @@ class ZodiacInterface(object):
         self.training_labels += [label] * len(cluster_srcids)
         if DEBUG:
             for srcid in cluster_srcids:
-                true_label = self.ground_truths[srcid]
+                labeled_doc = LabeledMetadata.objects(srcid=srcid)
+                true_label = labeled_doc.point_tagset
                 if true_label != label:
                     print('At {0}, pred({1}) != true({2})'
                           .format(srcid, label, true_label))
-                    cluster_all_labels = [self.ground_truths[srcid]
+                    cluster_all_labels = [LabeledMetadata.objects(srcid=srcid)[0].point_tagset
                                           for srcid in cluster_srcids]
                     print('There are {0} labels here'
                           .format(len(set(cluster_all_labels))))
@@ -450,7 +424,8 @@ class ZodiacInterface(object):
                     if DEBUG:
                         for srcid, pred_label in zip(cluster_srcids,
                                                      pred_labels):
-                            true_label = self.ground_truths[srcid]
+                            labeled_doc = LabeledMetadata.objects(srcid=srcid)
+                            true_label = labeled_doc.point_tagset
                             if true_label != pred_label:
                                 print('At {0}, pred({1}) != true({2})'
                                       .format(srcid, pred_label, true_label))

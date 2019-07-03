@@ -48,6 +48,7 @@ class Inferencer(object):
                          target_label_type=POINT_TAGSET,
                          pgid=None,
                          config={},
+                         **kwargs,
                          ):
                 self.target_label_type = target_label_type
                 self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
@@ -108,7 +109,8 @@ class Inferencer(object):
                     source_buildings,
                     ui,
                     pgid,
-                    config
+                    config,
+                    **kwargs,
                 )
 
             def query_labels(self, **query):
