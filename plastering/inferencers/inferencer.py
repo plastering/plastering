@@ -318,6 +318,8 @@ class Inferencer(object):
     def add_pred(self, pred_g, pred_confidences,
                  srcid, pred_point, pred_prob):
         triple = pred_g.add_pred_point_result(srcid, pred_point)
+        if triple is None:
+            triple = srcid
         pred_confidences[triple] = pred_prob
 
 
