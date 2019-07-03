@@ -14,12 +14,11 @@ from ..common import *
 
 class ReplUi(object):
 
-    def __init__(self, schema_g, pgid=None):
-        self.schema_g = schema_g
-        self._init_brick(self.schema_g)
+    def __init__(self, all_tagsets, pgid=None):
+        self._init_brick(all_tagsets)
         self.pgid = pgid
 
-    def _init_brick(self, schema_g):
+    def _init_brick(self, all_tagsets):
         # TODO: Read below from an external file
         non_brick_tagsets = ['none',
                              'rightidentifier',
@@ -37,12 +36,10 @@ class ReplUi(object):
         # left identifier: contraints meaning of left tagset
         # right identifier: contraints meaning of right tagset
         #TODO: Create a dict with dummy values to speed up lookup if needed.
-        self.all_tagsets = [tagset.lower() for tagset in
-                            schema_g.get_all_tagsets() + non_brick_tagsets]
+        self.all_tagsets = all_tagsets + non_brick_tagsets
         splitter = lambda s: s.split('_')
         adder = lambda x, y: x + y
-        self.all_tags = list(set(reduce(adder, map(splitter, self.all_tagsets),
-                                        [])))
+        self.all_tags = list(set(reduce(adder, map(splitter, self.all_tagsets), [])))
 
     def display_target(self, srcid, building):
         if not RawMetadata.objects(srcid=srcid, building=building):

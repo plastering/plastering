@@ -90,8 +90,8 @@ class Inferencer(object):
                 if ui:
                     self.ui = ui
                 else:
-                    schema_g = self.new_graph(empty=False)
-                    self.ui = ReplUi(schema_g, self.pgid)
+                    all_tagsets = [tagset.lower() for tagset in self.schema_g.get_all_tagsets()]
+                    self.ui = ReplUi(all_tagsets, self.pgid)
                 self.__name__ = framework_name + '-' + str(self.exp_id)
                 self.result_filename = './result/{0}_history.json'\
                     .format(self.__name__)
