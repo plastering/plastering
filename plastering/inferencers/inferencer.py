@@ -14,6 +14,7 @@ from ..error import *
 from ..rdf_wrapper import *
 from ..evaluator import *
 from ..uis import *
+from ..exceptions import UnlabeledError
 
 PUBLIC_METHODS = ['learn_auto',
                   'predict_proba',
@@ -206,15 +207,12 @@ class Inferencer(object):
                 # Get examples from the user if labels do not exist
                 for srcid in new_srcids:
                     labeled = self.query_labels(srcid=srcid).first()
-                    if not labeled:
-                        if self.ui:
-                            self.ask_example(srcid)
-                        else:
-                            raise Exception('Labels for {0} are not given'.format(srcid))
-                    else:
-                        for label_type in self.required_label_types:
-                            if not labeled[label_type]:
+                    for label_type in self.required_label_types:
+                        if not labeled or not getattr(labeled, label_type):
+                            if self.ui:
                                 self.ask_example(srcid, [label_type])
+                            else:
+                                raise UnlabeledError(srcid, label_type)
                 super(Wrapped, self).update_model(new_srcids, *args, **kwargs)
                 if not self.model_initiated:
                     self.model_initiated = True
