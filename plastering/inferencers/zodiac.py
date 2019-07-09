@@ -469,6 +469,7 @@ class ZodiacInterface(object):
         gray_num = 1000
         cnt = 0
         seed_sample_num = 10
+        pdb.set_trace()
         while (iter_num == -1 and gray_num > 0) or cnt < iter_num:
             print('--------------------------')
             print('{0}th iteration'.format(cnt))

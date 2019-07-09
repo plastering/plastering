@@ -117,10 +117,11 @@ class BrickGraph(object):
                               srcid,
                               pred_point,
                               ):
-        self.try_multiple_times(self._try_add_pred_point_result, {
+        triple = self.try_multiple_times(self._try_add_pred_point_result, {
             'srcid': srcid,
             'pred_point': pred_point,
         })
+        return truple
 
     def get_vavs(self):
         qstr = """

@@ -72,7 +72,7 @@ class ReplUi(object):
         print(sentence[base:])
 
     def validate_tagset(self, tagset):
-        if tagset in self.all_tagsets:
+        if tagset.split('-')[0] in self.all_tagsets:
             return True
         else:
             return False
@@ -252,9 +252,8 @@ class ReplUi(object):
         answers = {}
         for example_type in example_types:
             answer = self.get_answer(srcid, building, example_type)
-            if answer:
-                answers[example_type] = answer
-        self.store_example(srcid, building, answers)
+            if answer: #TODO: Do I really need this condition?
+                insert_groundtruth(srcid, building, self.pgid, **{example_type: answer})
 
     def store_example(self, srcid, building, answers):
         insert_groundtruth(srcid, building, self.pgid, **answers)
