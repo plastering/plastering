@@ -21,6 +21,15 @@ handlers:
         backupCount: 2
         encoding: utf8
 
+    eval_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: EVAL
+        formatter: simple
+        filename: logs/eval.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
     error_file_handler:
         class: logging.handlers.RotatingFileHandler
         level: ERROR
@@ -33,11 +42,12 @@ handlers:
 loggers:
     ZodiacInterface:
         level: INFO
-        handlers: [console]
+        handlers: [eval_file_handler]
         propagate: yes
+
     ScrabbleInterface:
         level: INFO
-        handlers: [console]
+        handlers: [eval_file_handler]
         propagate: yes
 
 root:
