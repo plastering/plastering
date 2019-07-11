@@ -155,7 +155,6 @@ class ReplUi(object):
         return point_tagset
 
     def get_answer_full_parsing(self, srcid, building):
-        base_idx = 0
         print('Instruction:')
         done = False
         labeled_metadata = query_labels(
@@ -170,6 +169,7 @@ class ReplUi(object):
         metadatas = RawMetadata.objects(srcid=srcid, building=building)\
             .first().metadata
         for metadata_type, sentence in metadatas.items():
+            base_idx = 0
             while base_idx < len(sentence):
                 print('=================================')
                 # 1. Print the entire raw metadata

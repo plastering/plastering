@@ -34,7 +34,11 @@ loggers:
     ZodiacInterface:
         level: INFO
         handlers: [console]
-        propagate: no
+        propagate: yes
+    ScrabbleInterface:
+        level: INFO
+        handlers: [console]
+        propagate: yes
 
 root:
     level: INFO

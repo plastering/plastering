@@ -34,8 +34,6 @@ from ..common import *
 from ..rdf_wrapper import *
 from jasonhelper import bidict
 
-POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
-
 DEBUG = False
 
 def tokenizer(s):
@@ -66,6 +64,10 @@ class ZodiacInterface(object):
                  config={},
                  **kwargs,
                  ):
+        # init zodiac specific features
+        self.required_label_types = [POINT_TAGSET]
+        self.logger.info('Zodiac initiated')
+
         # init config file for Zodiac
         if 'n_estimators' not in config:
             self.config['n_estimators'] = 400
@@ -84,11 +86,8 @@ class ZodiacInterface(object):
         for source_building, sample_num in zip(source_buildings,
                                                sample_num_list):
             objects = self.query_labels(building=source_building)
-            try:
-                source_srcids = random.sample(
-                    [obj.srcid for obj in objects], sample_num)
-            except:
-                pdb.set_trace()
+            source_srcids = random.sample(
+                [obj.srcid for obj in objects], sample_num)
             source_buildings_srcids += source_srcids
 
         self.total_srcids = deepcopy(target_srcids) + source_buildings_srcids
@@ -229,15 +228,15 @@ class ZodiacInterface(object):
         dists = list(set(z[:,2]))
         thresh = (dists[1] + dists[2]) /2
         #thresh = (dists[2] + dists[3]) /2
-        print("Threshold: ", thresh)
+        self.logger.info('Threshold: {0}'.format(thresh))
         b = hier.fcluster(z,thresh, criterion='distance')
         assert bow.shape[0] == len(b)
         assert len(b) == len(srcids)
         for cid, srcid in zip(b, srcids):
             cluster_map[cid] = cluster_map.get(cid, []) + [srcid]
 
-        print('# of clusters: {0}'.format(len(b)))
-        print('sizes of clustsers:', sorted(map(len, cluster_map.values())))
+        self.logger.info('# of clusters: {0}'.format(len(b)))
+        self.logger.info('sizes of clustsers:{0}'.format(sorted(map(len, cluster_map.values()))))
 
         return cluster_map
 
@@ -258,7 +257,7 @@ class ZodiacInterface(object):
 
     def add_cluster_label(self, cid, label):
         if cid in self.trained_cids:
-            print('WARNING: Cluster already learned: {0}'.format(cid))
+            self.logger.warning('Cluster already learned: {0}'.format(cid))
             return None
         self.trained_cids.append(cid)
         cluster_srcids = self.cluster_map[cid]
@@ -269,11 +268,11 @@ class ZodiacInterface(object):
                 labeled_doc = LabeledMetadata.objects(srcid=srcid)
                 true_label = labeled_doc.point_tagset
                 if true_label != label:
-                    print('At {0}, pred({1}) != true({2})'
+                    self.logger.debug('At {0}, pred({1}) != true({2})'
                           .format(srcid, label, true_label))
                     cluster_all_labels = [LabeledMetadata.objects(srcid=srcid)[0].point_tagset
                                           for srcid in cluster_srcids]
-                    print('There are {0} labels here'
+                    self.logger.debug('There are {0} labels here'
                           .format(len(set(cluster_all_labels))))
 
     def calc_prior_g_acc(self):
@@ -289,7 +288,7 @@ class ZodiacInterface(object):
                 acc += 1
         if cnt:
             acc = 0 if not cnt else acc / cnt
-            print('Prior graph\'s Accuracy: {0}'.format(acc))
+            self.logger.info('Prior graph\'s Accuracy: {0}'.format(acc))
 
     def apply_prior_augment_samples(self):
         prior_preds = {}
@@ -396,8 +395,7 @@ class ZodiacInterface(object):
             self.learn_model()
             th_update_flag = True
             prev_available_srcids = deepcopy(self.available_srcids)
-            print('curr availble srcids: {0}'
-                  .format(len(prev_available_srcids)))
+            self.logger.info('curr availble srcids: {0}'.format(len(prev_available_srcids)))
             for cid, cluster_srcids in self.cluster_map.items():
                 if cid in self.trained_cids:
                     continue
@@ -427,8 +425,8 @@ class ZodiacInterface(object):
                             labeled_doc = LabeledMetadata.objects(srcid=srcid)
                             true_label = labeled_doc.point_tagset
                             if true_label != pred_label:
-                                print('At {0}, pred({1}) != true({2})'
-                                      .format(srcid, pred_label, true_label))
+                                self.logger.debug('At {0}, pred({1}) != true({2})'
+                                                  .format(srcid, pred_label, true_label))
                                 pdb.set_trace()
                     break
                 elif max_confidence < self.th_min:
@@ -441,24 +439,24 @@ class ZodiacInterface(object):
                         break
 
             if th_update_flag:
-                print('th updated')
+                self.logger.info('The threshold is updated')
                 #if not (len(self.available_srcids) > len(temp_available_srcids)\
                 #        or len(new_srcids) > 0):
                 #    pdb.set_trace()
                 self.update_thresholds()
             else:
-                print('th not updated because ')
                 if len(new_srcids) > 0:
-                    print('new srcids are found: {0}'.format(len(new_srcids)))
+                    reason = 'new srcids are found: {0}'.format(len(new_srcids))
                 elif len(self.available_srcids) > len(prev_available_srcids):
-                    print('increased srcids: {0}'.format(
-                        len(self.available_srcids) - len(prev_available_srcids)))
+                    reason = 'increased srcids: {0}'.format(len(self.available_srcids) -
+                                                            len(prev_available_srcids))
                 else:
-                    print('test flag: {0}'.format(test_flag))
+                    reason = 'test flag: {0}'.format(test_flag)
                     looping_flag = True
+                self.logger.info('The threshold is not updated because {0}'.format(reason))
 
-            print('Current threshold pointer: {0}/{1}'
-                  .format(self.th_ptr, len(self.thresholds)))
+            self.logger.info('Current threshold pointer: {0}/{1}'.format(self.th_ptr,
+                                                                         len(self.thresholds)))
         return new_srcids
 
     def get_num_sensors_in_gray(self):
@@ -469,10 +467,9 @@ class ZodiacInterface(object):
         gray_num = 1000
         cnt = 0
         seed_sample_num = 10
-        pdb.set_trace()
         while (iter_num == -1 and gray_num > 0) or cnt < iter_num:
-            print('--------------------------')
-            print('{0}th iteration'.format(cnt))
+            self.logger.eval('--------------------------')
+            self.logger.eval('{0}th iteration'.format(cnt))
             self.learn_model()
             if self.model_initiated:
                 new_sample_num = 1
@@ -483,21 +480,21 @@ class ZodiacInterface(object):
             gray_num = self.get_num_sensors_in_gray()
             if evaluate_flag:
                 self.evaluate(self.target_srcids)
-                print('f1: {0}'.format(self.history[-1]['metrics']['f1']))
-                print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
-            print('curr new srcids: {0}'.format(len(new_srcids)))
+                self.logger.eval('f1: {0}'.format(self.history[-1]['metrics']['f1']))
+                self.logger.eval('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
+            self.logger.info('curr new srcids: {0}'.format(len(new_srcids)))
             if new_srcids:
-                print('new cluster\'s size: {0}'
-                      .format(len(self.cluster_map[self.find_cluster_id(
-                          new_srcids[0])])))
-            print('gray: {0}/{1}'.format(gray_num, len(self.target_srcids)))
-            print('training srcids: {0}'.format(len(self.training_srcids)))
+                self.logger.info("new cluster's size: {0}"
+                                 .format(len(self.cluster_map[self.find_cluster_id(
+                                     new_srcids[0])])))
+            self.logger.info('gray: {0}/{1}'.format(gray_num, len(self.target_srcids)))
+            self.logger.info('training srcids: {0}'.format(len(self.training_srcids)))
             cnt += 1
         self.learn_model()
 
     def learn_model(self):
         if not self.available_srcids:
-            print('WARNING: not learning anything due to the empty training data')
+            self.logger.warning('not learning anything due to the empty training data')
             return None
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
@@ -525,7 +522,7 @@ class ZodiacInterface(object):
         self.pred_g = pred_g
         self.pred_confidences = pred_confidences
         t1 = arrow.get()
-        print('REALLY it takes this: {0}'.format(t1 - t0))
+        self.logger.debug('REALLY it takes this: {0}'.format(t1 - t0))
         if output_format == 'ttl':
             return pred_g
         elif output_format == 'json':

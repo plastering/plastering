@@ -3,6 +3,9 @@ import time
 import pdb
 import random
 from copy import deepcopy
+import yaml
+import logging
+import logging.config
 
 import arrow
 
@@ -46,9 +49,27 @@ class Inferencer(object):
                          required_label_types=[POINT_TAGSET, FULL_PARSING, ALL_TAGSETS],
                          target_label_type=POINT_TAGSET,
                          pgid=None,
+                         logging_configfile=None,
                          config={},
                          **kwargs,
                          ):
+
+                # Config logger
+                if logging_configfile:
+                    with open(logging_configfile, 'r') as fp:
+                        config = yaml.safe_load(fp)
+                    logging.config.dictConfig(config)
+                else:
+                    logging.basicConfig(level=logging.INFO)
+                EVAL_LEVEL_NUM = 21
+                logging.addLevelName(EVAL_LEVEL_NUM, 'EVAL')
+                def log_eval(self, message, *args, **kws):
+                    if self.isEnabledFor(EVAL_LEVEL_NUM):
+                        self._log(EVAL_LEVEL_NUM, message, args, **kws)
+                logging.Logger.eval = log_eval
+                self.logger = logging.getLogger(self.__class__.__bases__[0].__name__)
+
+
                 self.target_label_type = target_label_type
                 self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
                 self.source_buildings = source_buildings
@@ -99,6 +120,7 @@ class Inferencer(object):
                 self.pred_g = self.new_graph(empty=True)
                 self.pred_confidences = {}
                 self.model_initiated = False
+
                 super(Wrapped, self).__init__(
                     target_building,
                     target_srcids,

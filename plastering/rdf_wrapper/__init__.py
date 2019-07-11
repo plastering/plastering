@@ -121,7 +121,7 @@ class BrickGraph(object):
             'srcid': srcid,
             'pred_point': pred_point,
         })
-        return truple
+        return triple
 
     def get_vavs(self):
         qstr = """

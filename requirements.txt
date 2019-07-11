@@ -9,3 +9,4 @@ rdflib
 SPARQLWrapper
 matplotlib
 scikit-learn
+pyyaml
