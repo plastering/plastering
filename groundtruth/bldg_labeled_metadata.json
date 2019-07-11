@@ -1,0 +1,4413 @@
+{
+	"_id": {
+		"$oid": "5d239e4e519b0e2d87134f21"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "58",
+	"point_tagset": "economizer_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"E",
+				"B_economizer"
+			],
+			[
+				"C",
+				"I_economizer"
+			],
+			[
+				"O",
+				"I_economizer"
+			],
+			[
+				"N",
+				"I_economizer"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_setpoint"
+			],
+			[
+				"P",
+				"I_setpoint"
+			]
+		]
+	},
+	"tagsets": [
+		"setpoint",
+		"networkadapter-n2",
+		"networkadapter-nae",
+		"networkadapter-dx",
+		"economizer"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d239f60519b0e2d87135001"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "38",
+	"point_tagset": "mixed_air_temperature_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"M",
+				"B_mixed_air"
+			],
+			[
+				"A",
+				"I_mixed_air"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"T",
+				"B_temperature"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-n2",
+		"networkadapter-nae",
+		"networkadapter-dx",
+		"mixed_air_temperature_sensor"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a176519b0e2d871350de"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "93",
+	"point_tagset": "start_stop_command"
+}
+{
+	"_id": {
+		"$oid": "5d23a193519b0e2d87135146"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "75",
+	"point_tagset": "supply_air_flow_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"P",
+				"B_none"
+			],
+			[
+				"r",
+				"I_none"
+			],
+			[
+				"o",
+				"I_none"
+			],
+			[
+				"g",
+				"I_none"
+			],
+			[
+				"r",
+				"I_none"
+			],
+			[
+				"a",
+				"I_none"
+			],
+			[
+				"m",
+				"I_none"
+			],
+			[
+				"m",
+				"I_none"
+			],
+			[
+				"i",
+				"I_none"
+			],
+			[
+				"n",
+				"I_none"
+			],
+			[
+				"g",
+				"I_none"
+			],
+			[
+				" ",
+				"I_none"
+			],
+			[
+				"A",
+				"B_ahu"
+			],
+			[
+				"H",
+				"I_ahu"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_sensor"
+			],
+			[
+				"E",
+				"I_sensor"
+			],
+			[
+				"N",
+				"I_sensor"
+			],
+			[
+				"S",
+				"I_sensor"
+			],
+			[
+				"O",
+				"I_sensor"
+			],
+			[
+				"R",
+				"I_sensor"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_none"
+			],
+			[
+				"A",
+				"I_none"
+			],
+			[
+				"L",
+				"I_none"
+			],
+			[
+				"C",
+				"I_none"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"R",
+				"B_return_fan"
+			],
+			[
+				"F",
+				"I_return_fan"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"2",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply"
+			],
+			[
+				"U",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				"L",
+				"I_supply"
+			],
+			[
+				"Y",
+				"I_supply"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"ahu",
+		"supply_air_flow_sensor",
+		"return_fan",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a1d9519b0e2d87135186"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "98",
+	"point_tagset": "start_stop_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"R",
+				"B_return_fan"
+			],
+			[
+				"F",
+				"I_return_fan"
+			],
+			[
+				"2",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_start_stop"
+			],
+			[
+				"S",
+				"I_start_stop"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-dx",
+		"start_stop_command",
+		"return_fan",
+		"networkadapter-n2",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a210519b0e2d871351ba"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "13",
+	"point_tagset": "damper_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_damper"
+			],
+			[
+				"P",
+				"I_damper"
+			],
+			[
+				"R",
+				"I_damper"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_command"
+			]
+		]
+	},
+	"tagsets": [
+		"damper_command",
+		"networkadapter-n2",
+		"vav",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a258519b0e2d871351f2"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "91",
+	"point_tagset": "return_air_high_limit_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"R",
+				"B_return_air"
+			],
+			[
+				"A",
+				"I_return_air"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"L",
+				"B_low_limit"
+			],
+			[
+				"L",
+				"I_low_limit"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-dx",
+		"networkadapter-n2",
+		"return_air_temperature_low_limit_alarm",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a3b0519b0e2d8713527f"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "78",
+	"point_tagset": "supply_air_flow_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"P",
+				"B_none"
+			],
+			[
+				"r",
+				"I_none"
+			],
+			[
+				"o",
+				"I_none"
+			],
+			[
+				"g",
+				"I_none"
+			],
+			[
+				"r",
+				"I_none"
+			],
+			[
+				"a",
+				"I_none"
+			],
+			[
+				"m",
+				"I_none"
+			],
+			[
+				"m",
+				"I_none"
+			],
+			[
+				"i",
+				"I_none"
+			],
+			[
+				"n",
+				"I_none"
+			],
+			[
+				"g",
+				"I_none"
+			],
+			[
+				" ",
+				"I_none"
+			],
+			[
+				"A",
+				"B_ahu"
+			],
+			[
+				"H",
+				"I_ahu"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_sensor"
+			],
+			[
+				"E",
+				"I_sensor"
+			],
+			[
+				"N",
+				"I_sensor"
+			],
+			[
+				"S",
+				"I_sensor"
+			],
+			[
+				"O",
+				"I_sensor"
+			],
+			[
+				"R",
+				"I_sensor"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_none"
+			],
+			[
+				"A",
+				"I_none"
+			],
+			[
+				"L",
+				"I_none"
+			],
+			[
+				"C",
+				"I_none"
+			],
+			[
+				" ",
+				"I_none"
+			],
+			[
+				"S",
+				"B_supply_fan"
+			],
+			[
+				"F",
+				"I_supply_fan"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply"
+			],
+			[
+				"U",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				"L",
+				"I_supply"
+			],
+			[
+				"Y",
+				"I_supply"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"ahu",
+		"supply_fan",
+		"supply_air_flow_sensor",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a418519b0e2d871352c7"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "14",
+	"point_tagset": "cooling_max_discharge_air_flow_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_cooling"
+			],
+			[
+				"L",
+				"I_cooling"
+			],
+			[
+				"G",
+				"I_cooling"
+			],
+			[
+				"M",
+				"B_max"
+			],
+			[
+				"A",
+				"I_max"
+			],
+			[
+				"X",
+				"I_max"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"vav",
+		"cooling_max_discharge_air_flow_setpoint",
+		"networkadapter-nae",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a441519b0e2d87135339"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "15",
+	"point_tagset": "cooling_command"
+}
+{
+	"_id": {
+		"$oid": "5d23a455519b0e2d87135399"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "17",
+	"point_tagset": "occupancy_command"
+}
+{
+	"_id": {
+		"$oid": "5d23a4fd519b0e2d8713549c"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "30",
+	"point_tagset": "dampler_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_damper"
+			],
+			[
+				"P",
+				"I_damper"
+			],
+			[
+				"R",
+				"I_damper"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_command"
+			]
+		]
+	},
+	"tagsets": [
+		"vav",
+		"networkadapter-nae",
+		"networkadapter-n2",
+		"damper_command"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a7d3519b0e2d87135597"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "39",
+	"point_tagset": "filter_differential_pressure_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_filter"
+			],
+			[
+				"L",
+				"I_filter"
+			],
+			[
+				"T",
+				"I_filter"
+			],
+			[
+				"R",
+				"I_filter"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_differential_pressure"
+			],
+			[
+				"P",
+				"I_differential_pressure"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-n2",
+		"filter_differential_pressure_sensor",
+		"networkadapter-nae",
+		"networkadapter-dx"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a82e519b0e2d87135615"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "102",
+	"point_tagset": "maintenance_mode_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply_fan"
+			],
+			[
+				"F",
+				"I_supply_fan"
+			],
+			[
+				"2",
+				"B_leftidentifier"
+			],
+			[
+				"M",
+				"B_maintenance"
+			],
+			[
+				"A",
+				"I_maintenance"
+			],
+			[
+				"I",
+				"I_maintenance"
+			],
+			[
+				"N",
+				"I_maintenance"
+			],
+			[
+				"T",
+				"I_maintenance"
+			]
+		]
+	},
+	"tagsets": [
+		"maintenance_mode_command",
+		"networkadapter-n2",
+		"supply_fan",
+		"networkadapter-nae",
+		"networkadapter-dx"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a88c519b0e2d871356b8"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "6",
+	"point_tagset": "zone_temperature_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d23a8c7519b0e2d8713572f"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "2",
+	"point_tagset": "supply_air_flow_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply"
+			],
+			[
+				"U",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-nae",
+		"supply_air_flow_sensor",
+		"vav",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a91f519b0e2d8713576d"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "59",
+	"point_tagset": "economizer_damper_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"E",
+				"B_rightidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"E",
+				"B_economizer"
+			],
+			[
+				"C",
+				"I_economizer"
+			],
+			[
+				"O",
+				"I_economizer"
+			],
+			[
+				"N",
+				"I_economizer"
+			]
+		],
+		"BACnetDescription": [
+			[
+				"o",
+				"B_open"
+			],
+			[
+				"p",
+				"I_open"
+			],
+			[
+				"e",
+				"I_open"
+			],
+			[
+				"n",
+				"I_open"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-nae",
+		"networkadapter-dx",
+		"economizer_damper_command",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a984519b0e2d871357b0"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "10",
+	"point_tagset": "occupied_heating_discharge_air_flow_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"H",
+				"B_heating"
+			],
+			[
+				"T",
+				"I_heating"
+			],
+			[
+				"G",
+				"I_heating"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"occupied_heating_discharge_air_flow_setpoint",
+		"networkadapter-nae",
+		"vav",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23a9c4519b0e2d871357e4"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "83",
+	"point_tagset": "supply_fan_status"
+}
+{
+	"_id": {
+		"$oid": "5d23a9d6519b0e2d87135844"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "29",
+	"point_tagset": "heating_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"H",
+				"B_heating"
+			],
+			[
+				"T",
+				"I_heating"
+			],
+			[
+				"G",
+				"I_heating"
+			],
+			[
+				"P",
+				"B_none"
+			],
+			[
+				"I",
+				"I_none"
+			],
+			[
+				"D",
+				"I_none"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"O",
+				"B_command"
+			]
+		]
+	},
+	"tagsets": [
+		"vav",
+		"networkadapter-n2",
+		"heating_command",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23aa01519b0e2d87135875"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "63",
+	"point_tagset": "cooling_valve_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_cooling"
+			],
+			[
+				"L",
+				"I_cooling"
+			],
+			[
+				"G",
+				"I_cooling"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_valve"
+			],
+			[
+				"L",
+				"I_valve"
+			],
+			[
+				"V",
+				"I_valve"
+			],
+			[
+				"2",
+				"B_leftidentifier"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-dx",
+		"networkadapter-n2",
+		"cooling_valve_command",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23aa3c519b0e2d871358ac"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "41",
+	"point_tagset": "discharge_air_temperature_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d23aa59519b0e2d87135912"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "48",
+	"point_tagset": "vfd_speed_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply_fan"
+			],
+			[
+				"F",
+				"I_supply_fan"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_speed"
+			],
+			[
+				"P",
+				"I_speed"
+			],
+			[
+				"D",
+				"I_speed"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-n2",
+		"supply_fan",
+		"networkadapter-nae",
+		"networkadapter-dx",
+		"vfd_speed_command"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ab06519b0e2d87135974"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "56",
+	"point_tagset": "static_pressure_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_static_pressure"
+			],
+			[
+				"P",
+				"I_static_pressure"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_setpoint"
+			],
+			[
+				"P",
+				"I_setpoint"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-n2",
+		"static_pressure_setpoint",
+		"networkadapter-nae",
+		"networkadapter-dx"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ab9e519b0e2d871359ea"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "62",
+	"point_tagset": "cooling_valve_command",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_cooling"
+			],
+			[
+				"L",
+				"I_cooling"
+			],
+			[
+				"G",
+				"I_cooling"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_valve"
+			],
+			[
+				"L",
+				"I_valve"
+			],
+			[
+				"V",
+				"I_valve"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-n2",
+		"networkadapter-dx",
+		"cooling_valve_command",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ac27519b0e2d87135a43"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "5",
+	"point_tagset": "damper_position_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_damper"
+			],
+			[
+				"M",
+				"I_damper"
+			],
+			[
+				"P",
+				"I_damper"
+			],
+			[
+				"R",
+				"I_damper"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"P",
+				"B_position"
+			],
+			[
+				"O",
+				"I_position"
+			],
+			[
+				"S",
+				"I_position"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-n2",
+		"vav",
+		"networkadapter-nae",
+		"damper_position_sensor"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ac61519b0e2d87135a77"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "35",
+	"point_tagset": "supply_air_static_pressure_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply_air"
+			],
+			[
+				"A",
+				"I_supply_air"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_static_pressure"
+			],
+			[
+				"P",
+				"I_static_pressure"
+			]
+		],
+		"BACnetDescription": [
+			[
+				"e",
+				"B_sensor"
+			],
+			[
+				"n",
+				"I_sensor"
+			],
+			[
+				"s",
+				"I_sensor"
+			],
+			[
+				"o",
+				"I_sensor"
+			],
+			[
+				"r",
+				"I_sensor"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"i",
+				"B_none"
+			],
+			[
+				"n",
+				"I_none"
+			],
+			[
+				" ",
+				"I_none"
+			],
+			[
+				"R",
+				"B_room"
+			],
+			[
+				"m",
+				"I_room"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				"3",
+				"I_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-dx",
+		"supply_air_static_pressure_sensor",
+		"networkadapter-nae",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ad4c519b0e2d87135b71"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "33",
+	"point_tagset": "temporary_occupancy_status",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"T",
+				"B_override"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"O",
+				"B_occupancy"
+			],
+			[
+				"C",
+				"I_occupancy"
+			],
+			[
+				"C",
+				"I_occupancy"
+			]
+		]
+	},
+	"tagsets": [
+		"vav",
+		"networkadapter-n2",
+		"override_occupancy_command",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ada8519b0e2d87135bb1"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "31",
+	"point_tagset": "cooling_max_discharge_air_flow_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_cooling"
+			],
+			[
+				"L",
+				"I_cooling"
+			],
+			[
+				"G",
+				"I_cooling"
+			],
+			[
+				"M",
+				"B_max"
+			],
+			[
+				"A",
+				"I_max"
+			],
+			[
+				"X",
+				"I_max"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"vav",
+		"networkadapter-n2",
+		"cooling_max_discharge_air_flow_setpoint",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23adde519b0e2d87135be5"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "34",
+	"point_tagset": "occupancy_command"
+}
+{
+	"_id": {
+		"$oid": "5d23adfd519b0e2d87135c49"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "19",
+	"point_tagset": "supply_air_flow_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply"
+			],
+			[
+				"U",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"supply_air_flow_sensor",
+		"networkadapter-n2",
+		"vav",
+		"networkadapter-nae"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ae3a519b0e2d87135c81"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "88",
+	"point_tagset": "return_fan_status",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"R",
+				"B_return_fan"
+			],
+			[
+				"F",
+				"I_return_fan"
+			],
+			[
+				"2",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_status"
+			],
+			[
+				"T",
+				"I_status"
+			],
+			[
+				"S",
+				"I_status"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-dx",
+		"return_fan_status",
+		"networkadapter-nae",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23ae67519b0e2d87135ced"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "97",
+	"point_tagset": "return_fan_status"
+}
+{
+	"_id": {
+		"$oid": "5d23aea3519b0e2d87135d66"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "28",
+	"point_tagset": "occupied_cooling_min_discharge_air_flow_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_cooling"
+			],
+			[
+				"L",
+				"I_cooling"
+			],
+			[
+				"G",
+				"I_cooling"
+			],
+			[
+				"M",
+				"B_min"
+			],
+			[
+				"i",
+				"I_min"
+			],
+			[
+				"N",
+				"I_min"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"vav",
+		"occupied_cooling_min_discharge_air_flow_setpoint",
+		"networkadapter-nae",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23af50519b0e2d87135dff"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "25",
+	"point_tagset": "supply_air_flow_setpoint",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"V",
+				"B_vav"
+			],
+			[
+				"M",
+				"I_vav"
+			],
+			[
+				"A",
+				"I_vav"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				"1",
+				"I_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply"
+			],
+			[
+				"U",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_setpoint"
+			],
+			[
+				"P",
+				"I_setpoint"
+			]
+		]
+	},
+	"tagsets": [
+		"vav",
+		"networkadapter-nae",
+		"supply_air_flow_setpoint",
+		"networkadapter-n2"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23afbd519b0e2d87135e44"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "74",
+	"point_tagset": "supply_air_flow_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"P",
+				"B_none"
+			],
+			[
+				"r",
+				"I_none"
+			],
+			[
+				"o",
+				"I_none"
+			],
+			[
+				"g",
+				"I_none"
+			],
+			[
+				"r",
+				"I_none"
+			],
+			[
+				"a",
+				"I_none"
+			],
+			[
+				"m",
+				"I_none"
+			],
+			[
+				"m",
+				"I_none"
+			],
+			[
+				"i",
+				"I_none"
+			],
+			[
+				"n",
+				"I_none"
+			],
+			[
+				"g",
+				"I_none"
+			],
+			[
+				" ",
+				"I_none"
+			],
+			[
+				"A",
+				"B_ahu"
+			],
+			[
+				"H",
+				"I_ahu"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_sensor"
+			],
+			[
+				"E",
+				"I_sensor"
+			],
+			[
+				"N",
+				"I_sensor"
+			],
+			[
+				"S",
+				"I_sensor"
+			],
+			[
+				"O",
+				"I_sensor"
+			],
+			[
+				"R",
+				"I_sensor"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"C",
+				"B_none"
+			],
+			[
+				"A",
+				"I_none"
+			],
+			[
+				"L",
+				"I_none"
+			],
+			[
+				"C",
+				"I_none"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"R",
+				"B_return_fan"
+			],
+			[
+				"F",
+				"I_return_fan"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"S",
+				"B_supply"
+			],
+			[
+				"U",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				"P",
+				"I_supply"
+			],
+			[
+				"L",
+				"I_supply"
+			],
+			[
+				"Y",
+				"I_supply"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"F",
+				"B_flow"
+			],
+			[
+				"L",
+				"I_flow"
+			],
+			[
+				"O",
+				"I_flow"
+			],
+			[
+				"W",
+				"I_flow"
+			]
+		]
+	},
+	"tagsets": [
+		"supply_air_flow_sensor",
+		"networkadapter-nae",
+		"return_fan",
+		"ahu"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23b059519b0e2d87135ec5"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "70",
+	"point_tagset": "return_air_flow_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d23b0ab519b0e2d87135f49"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "37",
+	"point_tagset": "outside_air_temperature_sensor",
+	"fullparsing": {
+		"BACnetName": [
+			[
+				"N",
+				"B_networkadapter-nae"
+			],
+			[
+				"A",
+				"I_networkadapter-nae"
+			],
+			[
+				"E",
+				"I_networkadapter-nae"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"0",
+				"B_leftidentifier"
+			],
+			[
+				"2",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"N",
+				"B_networkadapter-n2"
+			],
+			[
+				"2",
+				"I_networkadapter-n2"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"1",
+				"B_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"D",
+				"B_networkadapter-dx"
+			],
+			[
+				"X",
+				"I_networkadapter-dx"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"4",
+				"B_leftidentifier"
+			],
+			[
+				"4",
+				"I_leftidentifier"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"O",
+				"B_outside_air"
+			],
+			[
+				"A",
+				"I_outside_air"
+			],
+			[
+				" ",
+				"B_none"
+			],
+			[
+				"T",
+				"B_temperature"
+			]
+		]
+	},
+	"tagsets": [
+		"networkadapter-dx",
+		"networkadapter-nae",
+		"networkadapter-n2",
+		"outside_air_temperature_sensor"
+	]
+}
+{
+	"_id": {
+		"$oid": "5d23b11e519b0e2d87135f90"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "82",
+	"point_tagset": "supply_fan_status"
+}
+{
+	"_id": {
+		"$oid": "5d23b135519b0e2d87135ff3"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "8",
+	"point_tagset": "supply_air_flow_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d23c635519b0e2d87136791"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"pgid": null,
+	"srcid": "9",
+	"point_tagset": "q"
+}
+{
+	"_id": {
+		"$oid": "5d24e7b9519b0e2d8713b565"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "1",
+	"fullparsing": {
+		"BACnetName": [],
+		"BACnetDescription": [],
+		"VendorGivenName": []
+	},
+	"point_tagset": "zone_temperature_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e98a519b0e2d8713b586"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "3",
+	"fullparsing": {
+		"BACnetName": [],
+		"BACnetDescription": [],
+		"VendorGivenName": []
+	},
+	"point_tagset": "effective_heating_temperature_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e98a519b0e2d8713b58b"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "4",
+	"fullparsing": {
+		"BACnetName": [],
+		"BACnetDescription": [],
+		"VendorGivenName": []
+	},
+	"point_tagset": "effective_cooling_temperature_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e98a519b0e2d8713b596"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "7",
+	"fullparsing": {
+		"BACnetName": [],
+		"BACnetDescription": [],
+		"VendorGivenName": []
+	},
+	"point_tagset": "warm_cool_adjust_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b5e2"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "11",
+	"point_tagset": "occupied_cooling_min_discharge_air_flow_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b5e5"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "12",
+	"point_tagset": "heating_command"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b5f1"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "16",
+	"point_tagset": "override_occupancy_command"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b5f7"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "18",
+	"point_tagset": "zone_temperature_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b5fd"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "20",
+	"point_tagset": "effective_heating_temperature_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b600"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "21",
+	"point_tagset": "effective_cooling_temperature_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b603"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "22",
+	"point_tagset": "damper_position_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b606"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "23",
+	"point_tagset": "zone_temperature_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b609"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "24",
+	"point_tagset": "warm_cool_adjust_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b60f"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "26",
+	"point_tagset": "reheat_valve_command"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b612"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "27",
+	"point_tagset": "occupied_heating_discharge_air_flow_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b621"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "44",
+	"point_tagset": "chilled_water_return_temperature_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b62d"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "36",
+	"point_tagset": "return_air_temperature_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b63b"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "40",
+	"point_tagset": "discharge_air_temperature_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b643"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "42",
+	"point_tagset": "outside_air_co2_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b648"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "43",
+	"point_tagset": "chilled_water_return_temperature_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b64d"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "47",
+	"point_tagset": "vfd_speed_command"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b658"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "57",
+	"point_tagset": "differential_speed_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b663"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "60",
+	"point_tagset": "economizer_damper_command"
+}
+{
+	"_id": {
+		"$oid": "5d24e9cd519b0e2d8713b666"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "61",
+	"point_tagset": "discharge_air_temperature_setpoint"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b66f"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "66",
+	"point_tagset": "supply_air_flow_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b672"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "67",
+	"point_tagset": "supply_air_flow_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b678"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "71",
+	"point_tagset": "return_air_flow_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b684"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "79",
+	"point_tagset": "supply_air_flow_sensor"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b68d"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "86",
+	"point_tagset": "supply_air_temperature_high_limit_alarm"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b690"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "87",
+	"point_tagset": "return_fan_status"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b699"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "92",
+	"point_tagset": "system_enable_command"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b69f"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "94",
+	"point_tagset": "start_stop_command"
+}
+{
+	"_id": {
+		"$oid": "5d24e9ce519b0e2d8713b6a9"
+	},
+	"_cls": "LabeledMetadata",
+	"building": "bldg",
+	"srcid": "101",
+	"point_tagset": "maintenance_mode_command"
+}
