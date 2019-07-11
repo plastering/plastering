@@ -81,3 +81,6 @@ def insert_groundtruth(srcid, building, pgid,
     if tagsets:
         obj[ALL_TAGSETS] = tagsets
     obj.save()
+
+def get_or_create(doc_type, **query):
+    return doc_type.objects(**query).upsert_one(**query)
