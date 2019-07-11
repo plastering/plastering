@@ -57,18 +57,18 @@ class Inferencer(object):
                          ):
 
                 # Config logger
-                if logging_configfile:
-                    with open(logging_configfile, 'r') as fp:
-                        config = yaml.safe_load(fp)
-                    logging.config.dictConfig(config)
-                else:
-                    logging.basicConfig(level=logging.INFO)
                 EVAL_LEVEL_NUM = 21
                 logging.addLevelName(EVAL_LEVEL_NUM, 'EVAL')
                 def log_eval(self, message, *args, **kws):
                     if self.isEnabledFor(EVAL_LEVEL_NUM):
                         self._log(EVAL_LEVEL_NUM, message, args, **kws)
                 logging.Logger.eval = log_eval
+                if logging_configfile:
+                    with open(logging_configfile, 'r') as fp:
+                        config = yaml.safe_load(fp)
+                    logging.config.dictConfig(config)
+                else:
+                    logging.basicConfig(level=logging.INFO)
                 self.logger = logging.getLogger(self.__class__.__bases__[0].__name__)
 
 
@@ -219,12 +219,11 @@ class Inferencer(object):
                 """
                 for srcid in new_srcids:
                     if srcid in self.training_srcids:
-                        print('WARNING: {0} already exists in training set, not adding'
-                              .format(srcid))
+                        logging.warning('{0} already exists in training set, not adding'.format(srcid))
                     else:
                         self.training_srcids.append(srcid)
                 if not self.training_srcids:
-                    print('WARNING: New srcids are not given')
+                    logging.warning('New srcids are not given')
 
                 # Get examples from the user if labels do not exist
                 for srcid in new_srcids:
