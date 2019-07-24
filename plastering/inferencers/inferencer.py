@@ -344,8 +344,7 @@ class Inferencer(object):
 
                 target_building_training_srcids = \
                     [srcid for srcid in self.training_srcids
-                     if RawMetadata.objects(srcid=srcid,
-                                            building=self.target_building).count()]
+                     if RawMetadata.objects(srcid=srcid, building=self.target_building)]
                 total_training_srcids = deepcopy(self.training_srcids)
                 curr_eval = {
                     'metrics': metrics,
