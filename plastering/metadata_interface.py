@@ -18,6 +18,7 @@ class RawMetadata(Document):
     srcid = StringField(required=True)
     building = StringField(required=True)
     metadata = DictField()
+    meta = {'allow_inheritance': True}
 
 class LabeledMetadata(Document):
     srcid = StringField(required=True)
