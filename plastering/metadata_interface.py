@@ -23,10 +23,10 @@ class RawMetadata(Document):
 class LabeledMetadata(Document):
     srcid = StringField(required=True)
     building = StringField(required=True)
-    fullparsing = DictField()
-    tagsets = ListField(StringField())
+    fullparsing = DictField(default={})
+    tagsets = ListField(StringField(), default=[])
     point_tagset = StringField(required=True)
-    tagsets_parsing = DictField()
+    tagsets_parsing = DictField(default={})
     pgid = StringField()
     meta = {'allow_inheritance': True}
 
