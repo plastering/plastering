@@ -1,0 +1,76 @@
+SourceIdentifier,VendorGivenName,BACnetName,BACnetDescription,BACnetUnit,BACnetTypeStr
+1,BLDG.RM-101..ZN-T,NAE 01 N2 1 VMA111 ZN T,Zone Temperature,64,Analog Input
+2,BLDG.RM-101..SUP-FLOW,NAE 01 N2 1 VMA111 SUP FLOW,Actual Supply Flow,84,Analog Input
+3,BLDG.RM-101..ACTHTGSP,NAE 01 N2 1 VMA111 ACTHTGSP,Actual Heating Setpoint,64,Analog Input
+4,BLDG.RM-101..ACTCLGSP,NAE 01 N2 1 VMA111 ACTCLGSP,Actual Cooling Setpoint,64,Analog Input
+5,BLDG.RM-101..DMPR-POS,NAE 01 N2 1 VMA111 DMPR POS,Damper Position,98,Analog Input
+6,BLDG.RM-101..COMMONSP,NAE 01 N2 1 VMA111 COMMONSP,Common Setpoint,64,Analog Output
+7,BLDG.RM-101..W-C-ADJ,NAE 01 N2 1 VMA111 W C ADJ,Warm/Cool Adjust,64,Analog Output
+8,BLDG.RM-101..SUPFLO-SP,NAE 01 N2 1 VMA111 SUPFLO SP,Actual Sup Flow SP,84,Analog Output
+9,BLDG.RM-101..RH-VLV,NAE 01 N2 1 VMA111 RH VLV,Reheat Valve Command,98,Analog Output
+10,BLDG.RM-101..HTGFLOW,NAE 01 N2 1 VMA111 HTGFLOW,Occupied Htg Flow,84,Analog Output
+11,BLDG.RM-101..CLGMiNFLO,NAE 01 N2 1 VMA111 CLGMiNFLO,Occupied Clg Min,84,Analog Output
+12,BLDG.RM-101..HTGPID-O,NAE 01 N2 1 VMA111 HTGPID O,Heating Command,98,Analog Output
+13,BLDG.RM-101..DPR-C,NAE 01 N2 1 VMA111 DPR C,Damper Command,98,Analog Output
+14,BLDG.RM-101..CLGMAXFLO,NAE 01 N2 1 VMA111 CLGMAXFLO,Cooling Max Flow,84,Analog Output
+15,BLDG.RM-101..CLGPID-O,NAE 01 N2 1 VMA111 CLGPID O,Cooling Command,98,Analog Output
+16,BLDG.RM-101..T-OCC,NAE 01 N2 1 VMA111 T OCC,Temp Occ Sts,,Binary Input
+17,BLDG.RM-101..OCC-CMD,NAE 01 N2 1 VMA111 OCC CMD,Occupied Command,,Multi-State Output
+18,BLDG.RM-102..ZN-T,NAE 01 N2 1 VMA112 ZN T,Zone Temperature,64,Analog Input
+19,BLDG.RM-102..SUP-FLOW,NAE 01 N2 1 VMA112 SUP FLOW,Actual Supply Flow,84,Analog Input
+20,BLDG.RM-102..ACTHTGSP,NAE 01 N2 1 VMA112 ACTHTGSP,Actual Heating Setpoint,64,Analog Input
+21,BLDG.RM-102..ACTCLGSP,NAE 01 N2 1 VMA112 ACTCLGSP,Actual Cooling Setpoint,64,Analog Input
+22,BLDG.RM-102..DMPR-POS,NAE 01 N2 1 VMA112 DMPR POS,Damper Position,98,Analog Input
+23,BLDG.RM-102..COMMONSP,NAE 01 N2 1 VMA112 COMMONSP,Common Setpoint,64,Analog Output
+24,BLDG.RM-102..W-C-ADJ,NAE 01 N2 1 VMA112 W C ADJ,Warm/Cool Adjust,64,Analog Output
+25,BLDG.RM-102..SUPFLO-SP,NAE 01 N2 1 VMA112 SUPFLO SP,Actual Sup Flow SP,84,Analog Output
+26,BLDG.RM-102..RH-VLV,NAE 01 N2 1 VMA112 RH VLV,Reheat Valve Command,98,Analog Output
+27,BLDG.RM-102..HTGFLOW,NAE 01 N2 1 VMA112 HTGFLOW,Occupied Htg Flow,84,Analog Output
+28,BLDG.RM-102..CLGMiNFLO,NAE 01 N2 1 VMA112 CLGMiNFLO,Occupied Clg Min,84,Analog Output
+29,BLDG.RM-102..HTGPID-O,NAE 01 N2 1 VMA112 HTGPID O,Heating Command,98,Analog Output
+30,BLDG.RM-102..DPR-C,NAE 01 N2 1 VMA112 DPR C,Damper Command,98,Analog Output
+31,BLDG.RM-102..CLGMAXFLO,NAE 01 N2 1 VMA112 CLGMAXFLO,Cooling Max Flow,84,Analog Output
+44,BLDG.RM-102..CLGPID-O,NAE 01 N2 1 VMA112 CLGPID O,Cooling Command,98,Analog Output
+33,BLDG.RM-102..T-OCC,NAE 01 N2 1 VMA112 T OCC,Temp Occ Sts,,Binary Input
+34,BLDG.RM-102..OCC-CMD,NAE 01 N2 1 VMA112 OCC CMD,Occupied Command,,Multi-State Output
+35,BLDG.AH1-1.SA-SP,NAE 02 N2 1 DX 44 SA SP,Supply Static Press / Sensor in Rm 4234,95,Analog Input
+36,BLDG.AH1-1.RA-T,NAE 02 N2 1 DX 44 RA T,Return Air Temp,64,Analog Input
+37,BLDG.AH1-1.OA-T,NAE 02 N2 1 DX 44 OA T,Outside Air Temp,64,Analog Input
+38,BLDG.AH1-1..MA-T,NAE 02 N2 1 DX 44 MA T,Mixed Air Temperature,64,Analog Input
+39,BLDG.AH1-1.FLTR-DP,NAE 02 N2 1 DX 44 FLTR DP,Filter Diff Pressure,95,Analog Input
+40,BLDG.AH1-1.DA1-T,NAE 02 N2 1 DX 44 DA1 T,Discharge Air Temp 1,64,Analog Input
+41,BLDG.AH1-1.DA2-T,NAE 02 N2 1 DX 44 DA2 T,Discharge Air Temp 2,64,Analog Input
+42,BLDG.AH1-1..OA-CO2,NAE 02 N2 1 DX 12 AH1 OA CO2,CO2 Outside Air,96,Analog Input
+43,BLDG.AH1-1.CHWR1-T,NAE 02 N2 1 DX 44 CHWR1 T,Chw Ret Temp1,64,Analog Input
+44,BLDG.AH1-1.CHWR2-T,NAE 02 N2 1 DX 44 CHWR2 T,Chw Ret Temp 2,64,Analog Input
+47,BLDG.AH1-1.RF-SPD,NAE 02 N2 1 DX 44 RF SPD,Return VFD Command,98,Analog Output
+48,BLDG.AH1-1.SF-SPD,NAE 02 N2 1 DX 44 SF SPD,Supply VFD Command,98,Analog Output
+56,BLDG.AH1-1.SP-SP,NAE 02 N2 1 DX 44 SP SP,Static Pressure Setpt,58,Analog Output
+57,BLDG.AH1-1.DIFF-SP,NAE 02 N2 1 DX 44 RF OFST,Return Fan Diff Speed from Supply (15%),98,Analog Output
+58,BLDG.AH1-1..ECON-SP,NAE 02 N2 1 DX 44 ECON SP,Economizer Setpoint,64,Analog Output
+59,BLDG.AH1-1.E-ECON,NAE 02 N2 1 DX 44 E ECON,E Economizer / 100%=osa open,98,Analog Output
+60,BLDG.AH1-1.W-ECON,NAE 02 N2 1 DX 44 W ECON,W Economizer / 100%=osa open,98,Analog Output
+61,BLDG.AH1-1.DA-SP,NAE 02 N2 1 DX 44 DA SP,Discharge Air Setpt,64,Analog Output
+62,BLDG.AH1-1.CLG-VLV1,NAE 02 N2 1 DX 44 CLG VLV1,Cooling Valve 1 Cmd,98,Analog Output
+63,BLDG.AH1-1.CLG-VLV2,NAE 02 N2 1 DX 44 CLG VLV2,Cooling Valve 2 Cmd,98,Analog Output
+66,BLDG.AH1-1.SF1-F,NAE 02 N2 1 DX 44 SF1 F,SF-1 Supply Flow (cfm x 8.5),84,Analog Value
+67,BLDG.AH1-1.SF2-F,NAE 02 N2 1 DX 44 SF2 F,Supply Fan 2 Flow (cfm x 10),84,Analog Value
+70,BLDG.AH1-1.RF1-F,NAE 02 N2 1 DX 44 RF1 F,Return Fan 1 Flow (cfm x 10),84,Analog Value
+71,BLDG.AH1-1.RF2-F,NAE 02 N2 1 DX 44 RF2 F,Return Fan 2 Flow (cfm x 10),84,Analog Value
+74,BLDG.AH1-1.RF1-F,NAE 02 Programming AH 1 FLOW SENSOR CALC RF 1 SUPPLY FLOW,Return Fan 1 Flow,84,Analog Value
+75,BLDG.AH1-1.RF2-F,NAE 02 Programming AH 1 FLOW SENSOR CALC RF 2 SUPPLY FLOW,Return Fan 2 Flow,84,Analog Value
+78,BLDG.AH1-1.SF1-F,NAE 02 Programming AH 1 FLOW SENSOR CALC SF 1 SUPPLY FLOW,Supply Fan 1 Flow,84,Analog Value
+79,BLDG.AH1-1.SF2-F,NAE 02 Programming AH 1 FLOW SENSOR CALC SF 2 SUPPLY FLOW,Supply Fan 2 Flow,84,Analog Value
+82,BLDG.AH1-1.SF1-STS,NAE 02 N2 1 DX 44 SF1 STS,Supply Fan 1 Status,,Binary Input
+83,BLDG.AH1-1.SF2-STS,NAE 02 N2 1 DX 44 SF2 STS,Supply Fan 2 Status,,Binary Input
+86,BLDG.AH1-1.SA-HL,NAE 02 N2 1 DX 44 SA HL,Supply Air High Limit,,Binary Input
+87,BLDG.AH1-1.RF1-STS,NAE 02 N2 1 DX 44 RF1 STS,Return Fan 1 Status,,Binary Input
+88,BLDG.AH1-1.RF2-STS,NAE 02 N2 1 DX 44 RF2 STS,Return Fan 2 Status,,Binary Input
+91,BLDG.AH1-1.RA-LL,NAE 02 N2 1 DX 44 RA LL,Return Air High Limit,,Binary Input
+92,BLDG.AH1-1.SYS-ENA,NAE 02 N2 1 DX 44 SYS ENA,System Enable,,Binary Output
+93,BLDG.AH1-1.SF1-SS,NAE 02 N2 1 DX 44 SF1 SS,Supply Fan 1 Cmd,,Binary Output
+94,BLDG.AH1-1.SF2-SS,NAE 02 N2 1 DX 44 SF2 SS,Supply Fan 2 Cmd,,Binary Output
+97,BLDG.AH1-1.RF1-SS,NAE 02 N2 1 DX 44 RF2 SS 2,Return Fan 1 Cmd,,Binary Output
+98,BLDG.AH1-1.RF2-SS,NAE 02 N2 1 DX 44 RF2 SS,Return Fan 2 Cmd,,Binary Output
+101,BLDG.AH1-1.SF1MAINT,NAE 02 N2 1 DX 44 SF1MAINT,SF-1 in Maintenance Mode,,Binary Output
+102,BLDG.AH1-1.SF2MAINT,NAE 02 N2 1 DX 44 SF2MAINT,SF-2 in Maintenance Mode,,Binary Output
