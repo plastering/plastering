@@ -25,7 +25,7 @@ class LabeledMetadata(Document):
     building = StringField(required=True)
     fullparsing = DictField(default={})
     tagsets = ListField(StringField(), default=[])
-    point_tagset = StringField(required=True)
+    point_tagset = StringField()
     tagsets_parsing = DictField(default={})
     pgid = StringField()
     meta = {'allow_inheritance': True}
