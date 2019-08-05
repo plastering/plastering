@@ -10,3 +10,4 @@ SPARQLWrapper
 matplotlib
 scikit-learn
 pyyaml
+#git+https://github.com/jbkoh/scrabble.git@master
