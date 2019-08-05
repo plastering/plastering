@@ -12,7 +12,8 @@ POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 from scrabble import Scrabble # This may imply incompatible imports.
 
 
-class ScrabbleInterface(Inferencer):
+@Inferencer()
+class ScrabbleInterface(object):
     """docstring for ScrabbleInterface"""
     def __init__(self,
                  target_building,

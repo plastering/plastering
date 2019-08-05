@@ -17,7 +17,7 @@ from ..error import *
 from ..rdf_wrapper import *
 from ..evaluator import *
 from ..uis import *
-from ..exceptions import UnlabeledError
+from ..exceptions import UnlabeledError, NotEnoughExamplesError
 
 PUBLIC_METHODS = ['learn_auto',
                   'predict_proba',
@@ -71,6 +71,7 @@ class Inferencer(object):
                     logging.basicConfig(level=logging.INFO)
                 self.logger = logging.getLogger(self.__class__.__bases__[0].__name__)
 
+                self.min_training_srcids = 5
 
                 self.target_label_type = target_label_type
                 self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
@@ -226,6 +227,9 @@ class Inferencer(object):
                     logging.warning('New srcids are not given')
 
                 # Get examples from the user if labels do not exist
+                if len(self.training_srcids) < self.min_training_srcids:
+                    raise NotEnoughExamplesError(len(self.training_srcids), self.min_training_srcids)
+
                 for srcid in new_srcids:
                     labeled = self.query_labels(srcid=srcid).first()
                     for label_type in self.required_label_types:
@@ -280,10 +284,10 @@ class Inferencer(object):
                                             .format(srcid))
 
             # ESSENTIAL
-            def predict_proba(self, target_srcids=None):
+            def predict_proba(self, target_srcids=None, output_format='ttl', *args, **kwargs):
                 # TODO
                 self._validate_target_srcids(target_srcids)
-                super(Wrapped, self).predict_proba(target_srcids)
+                return super(Wrapped, self).predict_proba(target_srcids, output_format, *args, **kwargs)
 
             # ESSENTIAL
             def update_prior(self, pred_g, pred_confidences={}):
@@ -292,12 +296,13 @@ class Inferencer(object):
                 super(Wrapped, self).update_prior(pred_g, pred_confidence)
 
             # ESSENTIAL
-            def predict(self, target_srcids=None, **kwargs):
+            def predict(self, target_srcids=None, output_format='ttl', *args, **kwargs):
                 # TODO
                 """
+                output: pred_g:BrickGraph, pred_confidences:dict
                 """
                 self._validate_target_srcids(target_srcids)
-                return super(Wrapped, self).predict(target_srcids, **kwargs)
+                return super(Wrapped, self).predict(target_srcids, output_format, *args, **kwargs)
 
             def _get_true_labels(self, srcids, label_type):
                 """
@@ -366,8 +371,13 @@ class Inferencer(object):
                                   brickframe_file=self.brickframe_file,
                                   triplestore_type=self.triplestore_type,
                                   )
-            def add_pred(self, pred_g, pred_confidences,
-                         srcid, pred_point, pred_prob):
+            def add_pred(self,
+                         pred_g,
+                         pred_confidences,
+                         srcid,
+                         pred_point,
+                         pred_prob,
+                         ):
                 triple = pred_g.add_pred_point_result(srcid, pred_point)
                 pred_confidences[triple] = pred_prob
         return Wrapped

@@ -23,3 +23,14 @@ class UnlabeledPointTagsetError(UnlabeledError):
 class UnlabeledTagsetsError(UnlabeledError):
     def __init__(self, srcid):
         super(UnlabeledTagsetsError, self).__init__(srcid, ALL_TAGSETS)
+
+class NotEnoughExamplesError(PlasterError):
+    def __init__(self, num_examples, min_num_examples, *args, **kwargs):
+        self.num_examples = num_examples
+        self.min_num_examples = min_num_examples
+        super(NotEnoughExamplesError, self).__init__(*args, **kwargs)
+
+    def __str__(self):
+        return repr('The number of training examples ({0}) are less than the minimum requirements ({1})'.format(
+            self.num_examples, self.min_num_examples))
+

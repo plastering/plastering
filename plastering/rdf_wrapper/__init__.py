@@ -105,7 +105,6 @@ class BrickGraph(object):
                 success = True
             except Exception as e:
                 print(e)
-                pdb.set_trace()
                 print('WARNING: {0} temporarily failed'.format(str(f)))
             if success:
                 break
@@ -176,3 +175,15 @@ class BrickGraph(object):
         res = self.query_sparql(qstr)
         tagsets = [row['tagset'] for row in res]
         return tagsets
+
+    def __bool__(self):
+        qstr = """
+        select ?s ?p ?o where {
+          ?s ?p ?o.
+        } limit 1
+        """
+        if self.g:
+            return True
+        else:
+            return False
+    __nonzero__=__bool__

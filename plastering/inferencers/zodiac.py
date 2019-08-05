@@ -508,7 +508,6 @@ class ZodiacInterface(object):
         self.learn_model()
         pred_confidences = {}
         pred_g = self.new_graph()
-        assert pred_g, 'pred_g is not initialized somehow'
         sample_bow = self.get_sub_bow(target_srcids)
 
         pred_points = self.model.predict(sample_bow)
@@ -517,8 +516,7 @@ class ZodiacInterface(object):
                                            pred_points,
                                            confidences):
             prob = max(prob)
-            self.add_pred(pred_g, pred_confidences,
-                          srcid, pred_point, prob)
+            self.add_pred(pred_g, pred_confidences, srcid, pred_point, prob)
         self.pred_g = pred_g
         self.pred_confidences = pred_confidences
         t1 = arrow.get()
@@ -527,3 +525,7 @@ class ZodiacInterface(object):
             return pred_g
         elif output_format == 'json':
             return pred_points
+
+    def predict_proba(self, target_srcids=None, output_format='ttl', *args, **kwargs):
+        res = self.predict(target_srcids, output_format=output_format)
+        return res, self.pred_confidences
