@@ -6,6 +6,7 @@ mongoengine
 pandas
 tabulate
 rdflib
+rdflib-jsonld
 SPARQLWrapper
 matplotlib
 scikit-learn

@@ -503,7 +503,6 @@ class ZodiacInterface(object):
         t0 = arrow.get()
         if not target_srcids:
             target_srcids = self.target_srcids
-        #super(ZodiacInterface, self).predict(target_srcids)
 
         self.learn_model()
         pred_confidences = {}
