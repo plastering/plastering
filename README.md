@@ -7,7 +7,7 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 1. Install MongoDB
 2. Install Dependencies
     - ``pip install -r requirements.txt``
-3. Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet. You may use synthesized data to test the algorithms for now.
+3. ~~Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet. You may use synthesized data to test the algorithms for now.~~ Unfortunately, UCSD does not approve publicly sharing the data. We may have a procedure to sign an agreement, but it's still under development. Until then please refer to a synthesized data as specified in [an example(https://github.com/plastering/plastering/blob/refactor-inferencer/examples/tutorial/load_data.py).
 
 ## Example with synthesized data.
 1. Load data: ``python examples/tutorial/load_data.py``
