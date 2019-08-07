@@ -36,8 +36,10 @@ from jasonhelper import bidict
 
 DEBUG = False
 
+
 def tokenizer(s):
     return re.findall('[a-z]+', s.lower())
+
 
 def isemptystr(s):
     if s:
@@ -45,16 +47,16 @@ def isemptystr(s):
     else:
         return True
 
+
 def is_nonempty_item_included(l):
     if False in list(map(isemptystr, l)):
         return True
     else:
         return False
 
-#class ZodiacInterface(Inferencer):
+# class ZodiacInterface(Inferencer):
 @Inferencer()
 class ZodiacInterface(object):
-
     def __init__(self,
                  target_building,
                  target_srcids,
@@ -69,14 +71,8 @@ class ZodiacInterface(object):
         self.logger.info('Zodiac initiated')
 
         # init config file for Zodiac
-        if 'n_estimators' not in config:
-            self.config['n_estimators'] = 400
-        if 'random_state' not in config:
-            self.config['random_state'] = 0
-        if 'sample_num_list' in config:
-            sample_num_list = config['sample_num_list']
-        else:
-            sample_num_list = [0] * (len(source_buildings) + 1) # +1 for target
+        sample_num_list = config.get('sample_num_list', [0] * (len(source_buildings) + 1))
+        # default values for sample_num_list are 0 samples from each building.
 
         if len(self.source_buildings) > len(sample_num_list):
             sample_num_list.append(0)
@@ -90,101 +86,48 @@ class ZodiacInterface(object):
                 [obj.srcid for obj in objects], sample_num)
             source_buildings_srcids += source_srcids
 
+        # Pick srcids
         self.total_srcids = deepcopy(target_srcids) + source_buildings_srcids
-        self.true_labels = {}
-        self.available_srcids = []
-        self.training_labels = []
-        self.trained_cids = []
+        self.available_srcids = deepcopy(self.training_srcids)
 
-        # Init raw data for Zodiac
-        names = {}
-        descs = {}
-        type_strs = {}
-        types = {}
-        jci_names = {}
-        units = {}
-        for srcid in self.total_srcids:
-            raw_point = RawMetadata.objects(srcid=srcid).first()
-            metadata = raw_point['metadata']
-            if not metadata:
-                raise Exception('Metadata for {0} does not exist'
-                                .format(srcid))
-            if 'BACnetName' in metadata:
-                bacnet_name = metadata['BACnetName']
-            else:
-                bacnet_name = ''
-            names[srcid] = bacnet_name
-            if 'VendorGivenName' in metadata:
-                vendor_given_name = metadata['VendorGivenName']
-            else:
-                vendor_given_name = ''
-            jci_names[srcid] = vendor_given_name
-            if 'BACnetDescription' in metadata:
-                bacnet_desc = metadata['BACnetDescription']
-            else:
-                bacnet_desc = ''
-            descs[srcid] = bacnet_desc
-
-            if 'BACnetTypeStr' in metadata:
-                bacnet_typestr = {metadata['BACnetTypeStr']: 1}
-            else:
-                bacnet_typestr = {}
-            type_strs[srcid] = bacnet_typestr
-
-            if 'BACnetType' in metadata:
-                bacnet_type = {str(metadata['BACnetType']): 1}
-            else:
-                bacnet_type = {}
-            types[srcid] = {str(bacnet_type): 1}
-            if 'BACnetUnit' in metadata:
-                bacnet_unit = {str(metadata['BACnetUnit']): 1}
-            else:
-                bacnet_unit = {}
-            units[srcid] = bacnet_unit
-
-        self.total_bow = self.init_bow(self.total_srcids,
-                                       names,
-                                       descs,
-                                       units,
-                                       type_strs,
-                                       types,
-                                       jci_names)
-        self.model_initiated = False
-        target_bow = self.get_sub_bow(self.target_srcids)
-        self.cluster_map = self.create_cluster_map(target_bow,
-                                                   self.target_srcids)
-
-        if 'seed_srcids' in config:
-            seed_srcids = config['seed_srcids']
-        else:
-            if self.hotstart:
-                seed_srcids = [obj.srcid for obj in self.query_labels(building=target_building)]
-            else:
-                if 'seed_num' in config:
-                    seed_num = config['seed_num']
-                else:
-                    seed_num = 10
-                seed_srcids = self.get_random_learning_srcids(seed_num)
-
-        self.thresholds = [(0.1,0.95), (0.1,0.9) , (0.15,0.9), (0.15,0.85),
-                           (0.2,0.85), (0.25,0.85), (0.3,0.85), (0.35,0.85),
-                           (0.4,0.85), (0.45,0.85), (0.5,0.85), (0.55,0.85),
-                           (0.6,0.85), (0.65,0.85), (0.7,0.85), (0.75,0.85),
-                           (0.8,0.85), (0.84999999,0.85) ]
-        self.th_ptr = 0
-        self.th_min, self.th_max = self.thresholds[self.th_ptr]
-
-        self.available_srcids += source_buildings_srcids
-        self.training_labels += [self.query_labels(srcid=srcid).first().point_tagset
-                                 for srcid in source_buildings_srcids]
         self.init_model()
 
     def init_model(self):
+
+        # Init buffers
+        self.true_labels = {}
+        self.training_labels = []
+        self.trained_cids = []
+
+        # Init thresholds
+        self.thresholds = [(0.1, 0.95), (0.1, 0.9), (0.15, 0.9), (0.15, 0.85),
+                           (0.2, 0.85), (0.25, 0.85), (0.3, 0.85), (0.35, 0.85),
+                           (0.4, 0.85), (0.45, 0.85), (0.5, 0.85), (0.55, 0.85),
+                           (0.6, 0.85), (0.65, 0.85), (0.7, 0.85), (0.75, 0.85),
+                           (0.8, 0.85), (0.84999999, 0.85)]
+        self.th_ptr = 0
+        self.th_min, self.th_max = self.thresholds[self.th_ptr]
+
+        # Init ML model.
         self.model = RandomForestClassifier(
-            n_estimators=self.config['n_estimators'],
-            random_state=self.config['random_state'],
-            #n_jobs=conf['n_jobs']
+            n_estimators=self.config.get('n_estimators', 400),
+            random_state=self.config.get('random_state', 0),
+            n_jobs=self.config.get('n_jobs', None),
         )
+
+        # Init raw data for Zodiac
+        raw_metadata = defaultdict(dict)
+        for srcid in self.total_srcids:
+            raw_point = RawMetadata.objects(srcid=srcid).first()
+            assert raw_point['metadata'], 'Raw metadata for {0} does not exist'.format(srcid)
+            for metadata_type in self.valid_metadata_types:
+                raw_metadata[metadata_type][srcid] = raw_point.metadata.get(metadata_type, None)
+
+        self.total_bow = self.init_bow(self.total_srcids, raw_metadata)
+        target_bow = self.get_sub_bow(self.target_srcids)
+        self.cluster_map = self.create_cluster_map(target_bow, self.target_srcids)
+        self.training_labels += [self.query_labels(srcid=srcid).first().point_tagset
+                                 for srcid in self.available_srcids]
 
     def update_thresholds(self):
         self.th_ptr += 1
@@ -206,30 +149,20 @@ class ZodiacInterface(object):
         else:
             return None
 
-    def init_bow(self, srcids,
-                 names, descs, units, type_strs, types, jci_names):
+    def init_bow(self, srcids, raw_metadata):
         count_vectorizer = CountVectorizer(tokenizer=tokenizer)
-        dict_vectorizer = DictVectorizer()
-
-        vectors = [
-            self.vectorize(names, srcids, deepcopy(count_vectorizer)),
-            self.vectorize(descs, srcids, deepcopy(count_vectorizer)),
-            self.vectorize(jci_names, srcids, deepcopy(count_vectorizer)),
-            self.vectorize(units, srcids, deepcopy(dict_vectorizer)),
-            self.vectorize(type_strs, srcids, deepcopy(dict_vectorizer)),
-        ]
-        bow = np.hstack([vect for vect in vectors
-                         if isinstance(vect, np.ndarray)])
+        vectors = [self.vectorize(raw_metadata[metadata_type], srcids, deepcopy(count_vectorizer))
+                   for metadata_type in self.valid_metadata_types]
+        bow = np.hstack([vect for vect in vectors if isinstance(vect, np.ndarray)])
         return bow
 
     def create_cluster_map(self, bow, srcids):
         cluster_map = {}
         z = linkage(bow, metric='cityblock', method='complete')
-        dists = list(set(z[:,2]))
-        thresh = (dists[1] + dists[2]) /2
-        #thresh = (dists[2] + dists[3]) /2
+        dists = list(set(z[:, 2]))
+        thresh = (dists[1] + dists[2]) / 2
         self.logger.info('Threshold: {0}'.format(thresh))
-        b = hier.fcluster(z,thresh, criterion='distance')
+        b = hier.fcluster(z, thresh, criterion='distance')
         assert bow.shape[0] == len(b)
         assert len(b) == len(srcids)
         for cid, srcid in zip(b, srcids):
@@ -240,7 +173,6 @@ class ZodiacInterface(object):
 
         return cluster_map
 
-
     def find_cluster_id(self, srcid):
         for cid, srcids in self.cluster_map.items():
             if srcid in srcids:
@@ -248,12 +180,10 @@ class ZodiacInterface(object):
         raise Exception('Srcid not found in the cluster map: {0}'
                         .format(srcid))
 
-
     def get_sub_bow(self, srcids):
         return self.total_bow[
             [self.total_srcids.index(srcid) for srcid in srcids]
         ]
-
 
     def add_cluster_label(self, cid, label):
         if cid in self.trained_cids:
@@ -269,14 +199,13 @@ class ZodiacInterface(object):
                 true_label = labeled_doc.point_tagset
                 if true_label != label:
                     self.logger.debug('At {0}, pred({1}) != true({2})'
-                          .format(srcid, label, true_label))
+                                      .format(srcid, label, true_label))
                     cluster_all_labels = [LabeledMetadata.objects(srcid=srcid)[0].point_tagset
                                           for srcid in cluster_srcids]
                     self.logger.debug('There are {0} labels here'
-                          .format(len(set(cluster_all_labels))))
+                                      .format(len(set(cluster_all_labels))))
 
     def calc_prior_g_acc(self):
-        #instance_tuples = get_instance_tuples(self.prior_g)
         cnt = 0
         acc = 0
         for triple, confidence in self.prior_confidences.items():
@@ -295,17 +224,14 @@ class ZodiacInterface(object):
         if self.prior_g:
             self.calc_prior_g_acc()
             for triple, confidence in self.prior_confidences.items():
-                if confidence > self.th_max: # If the prediction is confident
+                if confidence > self.th_max:  # If the prediction is confident
                     srcid = triple[0].split('#')[-1]
                     tagset = triple[2].split('#')[-1]
                     if srcid in self.target_srcids:
                         prior_preds[srcid] = tagset
         return prior_preds
 
-
     def update_model(self, new_srcids):
-        #super(ZodiacInterface, self).update_model(new_srcids)
-
         # Add new srcids into the training set.
         for srcid in new_srcids:
             labeled = self.query_labels(srcid=srcid)
@@ -382,15 +308,13 @@ class ZodiacInterface(object):
         new_srcids = []
         tot_srcids = reduce(adder, self.cluster_map.values())
         base_sample_bow = self.get_sub_bow(tot_srcids)
-        base_confidence = self.model.predict_proba(base_sample_bow)
         base_pred_labels = self.model.predict(base_sample_bow)
         new_srcids = self.apply_prior_quiver(base_pred_labels, tot_srcids)
         new_srcids = new_srcids[0:sample_num]
 
         test_flag = 0
         looping_flag = False
-        while\
-                len(self.available_srcids) != len(self.total_srcids) and \
+        while len(self.available_srcids) != len(self.total_srcids) and  \
                 len(new_srcids) < sample_num:
             self.learn_model()
             th_update_flag = True
@@ -405,8 +329,7 @@ class ZodiacInterface(object):
                 max_confidence = 0
                 max_confidence = max(map(max, confidence))
 
-                if max_confidence >= self.th_min and \
-                        max_confidence < self.th_max: # Gray zone
+                if max_confidence >= self.th_min and max_confidence < self.th_max:  # Gray zone
                     pass
                 elif max_confidence >= self.th_max:
                     if looping_flag:
@@ -435,21 +358,18 @@ class ZodiacInterface(object):
                     test_flag = 2
                     new_srcids.append(random.choice(cluster_srcids))
                     th_update_flag = False
-                    if len(new_srcids) ==  sample_num:
+                    if len(new_srcids) == sample_num:
                         break
 
             if th_update_flag:
                 self.logger.info('The threshold is updated')
-                #if not (len(self.available_srcids) > len(temp_available_srcids)\
-                #        or len(new_srcids) > 0):
-                #    pdb.set_trace()
                 self.update_thresholds()
             else:
                 if len(new_srcids) > 0:
                     reason = 'new srcids are found: {0}'.format(len(new_srcids))
                 elif len(self.available_srcids) > len(prev_available_srcids):
-                    reason = 'increased srcids: {0}'.format(len(self.available_srcids) -
-                                                            len(prev_available_srcids))
+                    reason = 'increased srcids: {0}'.format(
+                        len(self.available_srcids) - len(prev_available_srcids))
                 else:
                     reason = 'test flag: {0}'.format(test_flag)
                     looping_flag = True

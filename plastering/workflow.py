@@ -171,7 +171,7 @@ class Workflow(Inferencer):
             func = getattr(node.f, func_name)
             try:
                 res_dict[(str(node), func_name)] = func(**param)
-            except EmptyTrainingSamples as e:
+            except NotEnoughExamplesError as e:
                 print(e.msg)
             t1 = arrow.get()
             if self.debug:

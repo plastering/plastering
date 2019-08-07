@@ -20,6 +20,7 @@ class RawMetadata(Document):
     metadata = DictField()
     meta = {'allow_inheritance': True}
 
+
 class LabeledMetadata(Document):
     srcid = StringField(required=True)
     building = StringField(required=True)
@@ -39,6 +40,7 @@ def query_labels(pgid=None, **query):
     else:
         return LabeledMetadata.objects(**query)
 
+
 def print_rawmetadata(srcid, building):
     objs = RawMetadata.objects(srcid=srcid, building=building)
     metadata = objs[0].metadata
@@ -46,7 +48,7 @@ def print_rawmetadata(srcid, building):
     df.index.name = 'srcid'
     print('Building: {0}'.format(building))
     print(tabulate(df, headers='keys', tablefmt='psql'))
-    #print(df)
+
 
 def print_fullparsing(srcid, building, pgid=None):
     fullparsing = query_labels(pgid=pgid,
@@ -69,12 +71,12 @@ def print_fullparsing(srcid, building, pgid=None):
                 new_labels.append(label)
         print(new_labels)
 
+
 def insert_groundtruth(srcid, building, pgid,
                        fullparsing=None, tagsets=None, point_tagset=None):
     obj = LabeledMetadata.objects(srcid=srcid, building=building, pgid=pgid)\
         .upsert_one(srcid=srcid, building=building, pgid=pgid)
     assert fullparsing or tagsets or point_tagset, 'WARNING:empty labels given'
-    new_labels = {}
     if fullparsing:
         obj[FULL_PARSING] = fullparsing
     if point_tagset:
@@ -82,6 +84,7 @@ def insert_groundtruth(srcid, building, pgid,
     if tagsets:
         obj[ALL_TAGSETS] = tagsets
     obj.save()
+
 
 def get_or_create(doc_type, **query):
     return doc_type.objects(**query).upsert_one(**query)
