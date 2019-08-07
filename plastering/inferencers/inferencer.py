@@ -52,6 +52,8 @@ class Inferencer(object):
                          target_label_type=POINT_TAGSET,
                          pgid=None,
                          logging_configfile=None,
+                         metadata_types=['VendorGivenName', 'BACnetName', 'BACnetDescription',
+                                         'BACnetType', 'BACnetTypeStr', 'BACnetUnit'],
                          config={},
                          **kwargs,
                          ):
@@ -72,6 +74,7 @@ class Inferencer(object):
                 self.logger = logging.getLogger(self.__class__.__bases__[0].__name__)
 
                 self.min_training_srcids = 5
+                self.valid_metadata_types = metadata_types
 
                 self.target_label_type = target_label_type
                 self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
