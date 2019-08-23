@@ -28,8 +28,8 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.naive_bayes import MultinomialNB
 
 from . import Inferencer
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/zodiac')
 from ..metadata_interface import *
-from ..metadata_interface import LabeledMetadata
 from ..common import *
 from ..rdf_wrapper import *
 from jasonhelper import bidict
@@ -160,8 +160,7 @@ class ZodiacInterface(object):
         cluster_map = {}
         z = linkage(bow, metric='cityblock', method='complete')
         dists = list(set(z[:, 2]))
-        thresh = (dists[2] + dists[3]) / 2
-        #thresh = (dists[1] + dists[2]) / 2
+        thresh = (dists[1] + dists[2]) / 2
         self.logger.info('Threshold: {0}'.format(thresh))
         b = hier.fcluster(z, thresh, criterion='distance')
         assert bow.shape[0] == len(b)
@@ -314,13 +313,13 @@ class ZodiacInterface(object):
         new_srcids = new_srcids[0:sample_num]
 
         test_flag = 0
-        is_looping = False
+        looping_flag = False
         while len(self.available_srcids) != len(self.total_srcids) and  \
                 len(new_srcids) < sample_num:
             self.learn_model()
             th_update_flag = True
             prev_available_srcids = deepcopy(self.available_srcids)
-            self.logger.info('Available srcids: {0}'.format(len(prev_available_srcids)))
+            self.logger.info('curr availble srcids: {0}'.format(len(prev_available_srcids)))
             for cid, cluster_srcids in self.cluster_map.items():
                 if cid in self.trained_cids:
                     continue
@@ -333,12 +332,13 @@ class ZodiacInterface(object):
                 if max_confidence >= self.th_min and max_confidence < self.th_max:  # Gray zone
                     pass
                 elif max_confidence >= self.th_max:
+                    if looping_flag:
+                        pdb.set_trace()
                     th_update_flag = False
                     test_flag = cluster_srcids
                     self.trained_cids.append(cid)
                     if cluster_srcids[0] in prev_available_srcids:
-                        self.logger.warning(
-                            'A redundant sample {0} is found.'.format(cluster_srcids[0]))
+                        pdb.set_trace()
                     self.available_srcids += cluster_srcids
                     self.training_labels += pred_labels.tolist()
                     # Check true label for debugging
@@ -353,6 +353,8 @@ class ZodiacInterface(object):
                                 pdb.set_trace()
                     break
                 elif max_confidence < self.th_min:
+                    if looping_flag:
+                        pdb.set_trace()
                     test_flag = 2
                     new_srcids.append(random.choice(cluster_srcids))
                     th_update_flag = False
@@ -370,18 +372,11 @@ class ZodiacInterface(object):
                         len(self.available_srcids) - len(prev_available_srcids))
                 else:
                     reason = 'test flag: {0}'.format(test_flag)
-                    is_looping = True
+                    looping_flag = True
                 self.logger.info('The threshold is not updated because {0}'.format(reason))
-            self.logger.debug('curr new srcids: {0}'.format(len(new_srcids)))
 
-            self.logger.info('Threshold pointer: {0}/{1}'.format(self.th_ptr,
+            self.logger.info('Current threshold pointer: {0}/{1}'.format(self.th_ptr,
                                                                          len(self.thresholds)))
-            if is_looping:
-                self.logger.warning('Select example is looping, so manually breaking')
-                new_srcids += self.get_random_learning_srcids(sample_num - len(new_srcids))
-                # TODO: The above should consider existing training examples.
-                break
-        self.learn_model()
         return new_srcids
 
     def get_num_sensors_in_gray(self):
@@ -397,13 +392,11 @@ class ZodiacInterface(object):
             self.logger.eval('{0}th iteration'.format(cnt))
             self.learn_model()
             if self.model_initiated:
-                new_sample_num = 5
-                #new_sample_num = 1
+                new_sample_num = 1
             else:
                 new_sample_num = seed_sample_num
             new_srcids = self.select_informative_samples(new_sample_num)
             self.update_model(new_srcids)
-            pdb.set_trace()
             gray_num = self.get_num_sensors_in_gray()
             if evaluate_flag:
                 self.evaluate(self.target_srcids)
@@ -425,7 +418,6 @@ class ZodiacInterface(object):
             return None
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
-        self.model_initiated = True
 
     def predict(self, target_srcids=None, output_format='ttl'):
         t0 = arrow.get()
