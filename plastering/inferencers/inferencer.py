@@ -13,7 +13,6 @@ from ..metadata_interface import *
 from ..common import *
 from .. import plotter
 from .. import *
-from ..error import *
 from ..rdf_wrapper import *
 from ..evaluator import *
 from ..uis import *
