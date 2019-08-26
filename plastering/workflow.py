@@ -5,7 +5,6 @@ from collections import OrderedDict
 import arrow
 
 from .inferencers import *
-from .error import *
 from .evaluator import *
 
 # Note:
