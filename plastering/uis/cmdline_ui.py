@@ -4,7 +4,6 @@ from functools import reduce
 
 import numpy as np
 from prompt_toolkit import prompt
-from prompt_toolkit.styles import style_from_dict
 from prompt_toolkit.token import Token
 from tabulate import tabulate
 
