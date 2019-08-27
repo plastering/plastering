@@ -4,7 +4,6 @@ from functools import reduce
 
 import numpy as np
 from prompt_toolkit import prompt
-from prompt_toolkit.token import Token
 from tabulate import tabulate
 
 
@@ -44,9 +43,6 @@ class ReplUi(object):
         if not RawMetadata.objects(srcid=srcid, building=building):
             raise Exception('Srcid {0} not found in our DB'.format(srcid))
         print_rawmetadata(srcid, building)
-
-    def _get_bottom_toolbar_tokens(cli):
-        return [(Token.Toolbar, ' This is a toolbar. ')]
 
     def normalize_tagset(self, raw_tagset):
         tagset = '_'.join(raw_tagset.split()) # TODO: Capitalize if necessary.
