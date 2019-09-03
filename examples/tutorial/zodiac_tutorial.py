@@ -5,7 +5,7 @@ from plastering.inferencers.zodiac import ZodiacInterface
 from plastering.metadata_interface import LabeledMetadata, RawMetadata
 from plastering.uis.cmdline_ui import ReplUi
 
-target_building = 'ap_m'
+target_building = 'bldg'
 config = {
     'brick_version': '1.0.3',
     'brick_file': '/home/jbkoh/repo/Brick/dist/Brick.ttl',
