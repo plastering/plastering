@@ -55,6 +55,9 @@ class Inferencer(object):
                          **kwargs,
                          ):
 
+                # Manually define the wrapped class name.
+                self.__class__.__name__ = cls.__name__
+
                 # Config logger
                 EVAL_LEVEL_NUM = 21
                 logging.addLevelName(EVAL_LEVEL_NUM, 'EVAL')
@@ -274,6 +277,7 @@ class Inferencer(object):
                 if super_method:
                     return super_cls.get_random_learning_srcids(sample_num, **kwargs)
                 else:
+                    self.logger.info('Default random srcid selection method has been chosen.')
                     return random.sample(self.target_srcids, sample_num)
 
             def _validate_target_srcids(self, srcids):
