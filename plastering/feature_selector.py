@@ -103,7 +103,7 @@ class feature_selector():
             print('%d data streams loaded'%len(ids))
 
             #labels
-            res = = {obj.srcid: obj.point_tagset for obj
+            res = {obj.srcid: obj.point_tagset for obj
                      in query_labels(pgid=self.pgid, building=building)}
             print ('%d point names loaded for %s'%(len(res), building))
             label = [res[srcid] for srcid in ids]

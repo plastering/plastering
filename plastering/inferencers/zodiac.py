@@ -28,17 +28,37 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.naive_bayes import MultinomialNB
 
 from . import Inferencer
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/zodiac')
+#sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/zodiac')
 from ..metadata_interface import *
-from ..common import *
+from ..common import POINT_TAGSET
 from ..rdf_wrapper import *
+from ..exceptions import AlgorithmError
 from jasonhelper import bidict
 
 DEBUG = False
+if DEBUG:
+    np.set_printoptions(threshold=sys.maxsize)
 
 
-def tokenizer(s):
-    return re.findall('[a-z]+', s.lower())
+def alphabet_tokenizer(s):
+    return re.findall('[a-z]+', str(s).lower())
+
+
+def meta_code_tokenizer(metadata_type):
+    def code_tokenizer(s):
+        if s == '':
+            return []
+        else:
+            return re.findall('[a-zA-Z0-9]+', metadata_type + str(int(s)).lower())
+    return code_tokenizer
+
+
+def get_vectorizer(metadata_type):
+    if metadata_type in ['BACnetUnit', 'BACnetType']:
+        vectorizer = CountVectorizer(tokenizer=meta_code_tokenizer(metadata_type), lowercase=False)
+    else:
+        vectorizer = CountVectorizer(tokenizer=alphabet_tokenizer)
+    return vectorizer
 
 
 def isemptystr(s):
@@ -112,7 +132,7 @@ class ZodiacInterface(object):
         self.model = RandomForestClassifier(
             n_estimators=self.config.get('n_estimators', 400),
             random_state=self.config.get('random_state', 0),
-            n_jobs=self.config.get('n_jobs', None),
+            n_jobs=self.config.get('n_jobs', 6),
         )
 
         # Init raw data for Zodiac
@@ -150,8 +170,12 @@ class ZodiacInterface(object):
             return None
 
     def init_bow(self, srcids, raw_metadata):
-        count_vectorizer = CountVectorizer(tokenizer=tokenizer)
-        vectors = [self.vectorize(raw_metadata[metadata_type], srcids, deepcopy(count_vectorizer))
+        #count_vectorizer = CountVectorizer(tokenizer=tokenizer)
+        #vectorizer = CountVectorizer(tokenizer=tokenizer)
+        vectors = [self.vectorize(raw_metadata[metadata_type],
+                                  srcids,
+                                  get_vectorizer(metadata_type),
+                                  )
                    for metadata_type in self.valid_metadata_types]
         bow = np.hstack([vect for vect in vectors if isinstance(vect, np.ndarray)])
         return bow
@@ -191,11 +215,14 @@ class ZodiacInterface(object):
             return None
         self.trained_cids.append(cid)
         cluster_srcids = self.cluster_map[cid]
+        for srcid in cluster_srcids:
+            if srcid in self.available_srcids:
+                self.logger.debug('already there')
         self.available_srcids += cluster_srcids
         self.training_labels += [label] * len(cluster_srcids)
         if DEBUG:
             for srcid in cluster_srcids:
-                labeled_doc = LabeledMetadata.objects(srcid=srcid)
+                labeled_doc = LabeledMetadata.objects(srcid=srcid)[0]
                 true_label = labeled_doc.point_tagset
                 if true_label != label:
                     self.logger.debug('At {0}, pred({1}) != true({2})'
@@ -248,7 +275,8 @@ class ZodiacInterface(object):
             cid = self.find_cluster_id(srcid)
             cluster_label = self.true_labels[srcid]
             self.add_cluster_label(cid, cluster_label)
-        self.learn_model()
+        if self.learn_model():
+            self.model_initiated = True
         self.select_informative_samples(1)
 
         prior_preds = self.apply_prior_augment_samples()
@@ -333,28 +361,25 @@ class ZodiacInterface(object):
                     pass
                 elif max_confidence >= self.th_max:
                     if looping_flag:
-                        pdb.set_trace()
+                        raise AlgorithmError(self, 'infinite loop found.')
                     th_update_flag = False
                     test_flag = cluster_srcids
                     self.trained_cids.append(cid)
-                    if cluster_srcids[0] in prev_available_srcids:
-                        pdb.set_trace()
                     self.available_srcids += cluster_srcids
                     self.training_labels += pred_labels.tolist()
                     # Check true label for debugging
                     if DEBUG:
                         for srcid, pred_label in zip(cluster_srcids,
                                                      pred_labels):
-                            labeled_doc = LabeledMetadata.objects(srcid=srcid)
+                            labeled_doc = LabeledMetadata.objects(srcid=srcid)[0]
                             true_label = labeled_doc.point_tagset
                             if true_label != pred_label:
                                 self.logger.debug('At {0}, pred({1}) != true({2})'
                                                   .format(srcid, pred_label, true_label))
-                                pdb.set_trace()
-                    break
+#                    break #TODO: Check if it works.
                 elif max_confidence < self.th_min:
                     if looping_flag:
-                        pdb.set_trace()
+                        raise AlgorithmError(self, 'infinite loop found.')
                     test_flag = 2
                     new_srcids.append(random.choice(cluster_srcids))
                     th_update_flag = False
@@ -370,6 +395,13 @@ class ZodiacInterface(object):
                 elif len(self.available_srcids) > len(prev_available_srcids):
                     reason = 'increased srcids: {0}'.format(
                         len(self.available_srcids) - len(prev_available_srcids))
+                    if DEBUG:
+                        presumed_srcids = [srcid for srcid in self.available_srcids if srcid not in prev_available_srcids]
+                        presumed_cids = list(set([self.find_cluster_id(srcid) for srcid in presumed_srcids]))
+                        for cid in presumed_cids:
+                            label = LabeledMetadata.objects(srcid=self.cluster_map[cid][0])[0].point_tagset
+                            if label not in self.true_labels.values():
+                                self.logger.debug('Presumed "{0}" is not in trained labels'.format(label))
                 else:
                     reason = 'test flag: {0}'.format(test_flag)
                     looping_flag = True
@@ -386,7 +418,7 @@ class ZodiacInterface(object):
     def learn_auto(self, iter_num=-1, inc_num=1, evaluate_flag=True):
         gray_num = 1000
         cnt = 0
-        seed_sample_num = 10
+        seed_sample_num = 8
         while (iter_num == -1 and gray_num > 0) or cnt < iter_num:
             self.logger.eval('--------------------------')
             self.logger.eval('{0}th iteration'.format(cnt))
@@ -415,9 +447,10 @@ class ZodiacInterface(object):
     def learn_model(self):
         if not self.available_srcids:
             self.logger.warning('not learning anything due to the empty training data')
-            return None
+            return False
         self.training_bow = self.get_sub_bow(self.available_srcids)
         self.model.fit(self.training_bow, self.training_labels)
+        return True
 
     def predict(self, target_srcids=None, output_format='ttl'):
         t0 = arrow.get()
