@@ -28,9 +28,8 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.naive_bayes import MultinomialNB
 
 from . import Inferencer
-#sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/zodiac')
-from ..metadata_interface import *
-from ..common import POINT_TAGSET
+from ..metadata_interface import RawMetadata, LabeledMetadata
+from ..common import POINT_TAGSET, parse_srcid, adder
 from ..rdf_wrapper import *
 from ..exceptions import AlgorithmError
 from jasonhelper import bidict
@@ -170,8 +169,6 @@ class ZodiacInterface(object):
             return None
 
     def init_bow(self, srcids, raw_metadata):
-        #count_vectorizer = CountVectorizer(tokenizer=tokenizer)
-        #vectorizer = CountVectorizer(tokenizer=tokenizer)
         vectors = [self.vectorize(raw_metadata[metadata_type],
                                   srcids,
                                   get_vectorizer(metadata_type),
@@ -396,12 +393,16 @@ class ZodiacInterface(object):
                     reason = 'increased srcids: {0}'.format(
                         len(self.available_srcids) - len(prev_available_srcids))
                     if DEBUG:
-                        presumed_srcids = [srcid for srcid in self.available_srcids if srcid not in prev_available_srcids]
-                        presumed_cids = list(set([self.find_cluster_id(srcid) for srcid in presumed_srcids]))
+                        presumed_srcids = [srcid for srcid in self.available_srcids
+                                           if srcid not in prev_available_srcids]
+                        presumed_cids = list(set([self.find_cluster_id(srcid)
+                                                  for srcid in presumed_srcids]))
                         for cid in presumed_cids:
-                            label = LabeledMetadata.objects(srcid=self.cluster_map[cid][0])[0].point_tagset
+                            label = LabeledMetadata.objects(srcid=self.cluster_map[cid][0]
+                                                            )[0].point_tagset
                             if label not in self.true_labels.values():
-                                self.logger.debug('Presumed "{0}" is not in trained labels'.format(label))
+                                self.logger.debug('Presumed "{0}" is not in trained labels'
+                                                  .format(label))
                 else:
                     reason = 'test flag: {0}'.format(test_flag)
                     looping_flag = True

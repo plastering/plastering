@@ -9,13 +9,12 @@ import logging.config
 
 import arrow
 
-from ..metadata_interface import *
-from ..common import *
+from ..metadata_interface import insert_groundtruth, query_labels, RawMetadata, LabeledMetadata
+from ..common import POINT_TAGSET, ALL_TAGSETS, FULL_PARSING
 from .. import plotter
-from .. import *
-from ..rdf_wrapper import *
-from ..evaluator import *
-from ..uis import *
+from ..rdf_wrapper import RDFLIB, BrickGraph
+from ..evaluator import get_multiclass_micro_f1, get_multiclass_macro_f1
+from ..evaluator import get_micro_f1, get_macro_f1, get_accuracy
 from ..exceptions import UnlabeledError, NotEnoughExamplesError
 
 PUBLIC_METHODS = ['learn_auto',
@@ -63,6 +62,7 @@ class Inferencer(object):
                 # Config logger
                 EVAL_LEVEL_NUM = 21
                 logging.addLevelName(EVAL_LEVEL_NUM, 'EVAL')
+
                 def log_eval(self, message, *args, **kws):
                     if self.isEnabledFor(EVAL_LEVEL_NUM):
                         self._log(EVAL_LEVEL_NUM, message, args, **kws)
@@ -79,7 +79,7 @@ class Inferencer(object):
                 self.valid_metadata_types = metadata_types
 
                 self.target_label_type = target_label_type
-                self.exp_id = random.randrange(0,1000)# an identifier for logging/debugging
+                self.exp_id = random.randrange(0, 1000)  # an identifier for logging/debugging
                 self.source_buildings = source_buildings
                 if 'brick_version' in config:
                     self.brick_version = config['brick_version']
@@ -103,11 +103,11 @@ class Inferencer(object):
                     self.hotstart = False
                 self.pgid = pgid
                 self.config = config
-                self.training_srcids = [] # already known srcids
+                self.training_srcids = []  # already known srcids
                 self.pred = {  # predicted results
                     'tagsets': {},
                     'point': {}
-                    }
+                }
                 self.template_g = self.new_graph(empty=True)
                 self.prior_g = self.new_graph(empty=True)
                 self.prior_confidences = {}
@@ -115,7 +115,7 @@ class Inferencer(object):
                 self.pred_probs = {}
                 self.target_building = target_building
                 self.target_srcids = target_srcids
-                self.history = [] # logging and visualization purpose
+                self.history = []  # logging and visualization purpose
                 self.required_label_types = required_label_types
                 self.ui = ui
                 self.__name__ = framework_name + '-' + str(self.exp_id)
@@ -137,20 +137,6 @@ class Inferencer(object):
 
             def query_labels(self, **query):
                 return query_labels(self.pgid, **query)
-
-            def evaluate_points_dep(self, pred):
-                curr_log = {
-                    'training_srcids': self.training_srcids
-                }
-                score = 0
-                for srcid, pred_tagsets in pred['tagsets'].items():
-                    true_tagsets = self.query_labels(srcid=srcid)[0].tagsets
-                    true_point = sel_point_tagset(true_tagsets)
-                    pred_point = sel_point_tagset(pred_tagsets)
-                    if true_point == pred_point:
-                        score += 1
-                curr_log['accuracy'] = score / len(pred['point'])
-                return curr_log
 
             def evaluate_dep(self, pred):
                 points_log = self.evaluate_points()
@@ -179,7 +165,6 @@ class Inferencer(object):
 
             # ESSENTIAL
             def learn_auto(self, **kwargs):
-            #def learn_auto(self, iter_num=1, inc_num=1):
                 """Learn from the scratch to the end.
 
                 This executes the learning mechanism from the ground truth.
@@ -225,7 +210,8 @@ class Inferencer(object):
                 """
                 for srcid in new_srcids:
                     if srcid in self.training_srcids:
-                        logging.warning('{0} already exists in training set, not adding'.format(srcid))
+                        logging.warning('{0} already exists in training set, not adding'
+                                        .format(srcid))
                     else:
                         self.training_srcids.append(srcid)
                 if not self.training_srcids:
@@ -233,7 +219,8 @@ class Inferencer(object):
 
                 # Get examples from the user if labels do not exist
                 if len(self.training_srcids) < self.min_training_srcids:
-                    raise NotEnoughExamplesError(len(self.training_srcids), self.min_training_srcids)
+                    raise NotEnoughExamplesError(len(self.training_srcids),
+                                                 self.min_training_srcids)
 
                 for srcid in new_srcids:
                     labeled = self.query_labels(srcid=srcid).first()
@@ -265,7 +252,10 @@ class Inferencer(object):
                     None
                 """
                 if self.model_initiated:
-                    return super(Wrapped, self).select_informative_samples(sample_num, *args, **kwargs)
+                    return super(Wrapped, self).select_informative_samples(sample_num,
+                                                                           *args,
+                                                                           **kwargs,
+                                                                           )
                 else:
                     return self.get_random_learning_srcids(sample_num, **kwargs)
 
@@ -286,20 +276,23 @@ class Inferencer(object):
                 # Assuming self.target_srcids are given.
                 for srcid in srcids:
                     if srcid not in self.target_srcids:
-                        raise Exception('The raw data of {0} not given yet'
-                                            .format(srcid))
+                        raise Exception('The raw data of {0} not given yet'.format(srcid))
 
             # ESSENTIAL
             def predict_proba(self, target_srcids=None, output_format='ttl', *args, **kwargs):
                 # TODO
                 self._validate_target_srcids(target_srcids)
-                return super(Wrapped, self).predict_proba(target_srcids, output_format, *args, **kwargs)
+                return super(Wrapped, self).predict_proba(target_srcids,
+                                                          output_format,
+                                                          *args,
+                                                          **kwargs,
+                                                          )
 
             # ESSENTIAL
             def update_prior(self, pred_g, pred_confidences={}):
                 self.prior_g = pred_g
                 self.prior_confidences = pred_confidences
-                super(Wrapped, self).update_prior(pred_g, pred_confidence)
+                super(Wrapped, self).update_prior(pred_g, pred_confidences)
 
             # ESSENTIAL
             def predict(self, target_srcids=None, output_format='ttl', *args, **kwargs):
@@ -369,7 +362,6 @@ class Inferencer(object):
                     if prob < min_prob:
                         self.prior_g.remove(triple)
 
-
             def new_graph(self, empty=True):
                 return BrickGraph(empty,
                                   version=self.brick_version,
@@ -377,6 +369,7 @@ class Inferencer(object):
                                   brickframe_file=self.brickframe_file,
                                   triplestore_type=self.triplestore_type,
                                   )
+
             def add_pred(self,
                          pred_g,
                          pred_confidences,
@@ -386,6 +379,5 @@ class Inferencer(object):
                          ):
                 triple = pred_g.add_pred_point_result(srcid, pred_point)
                 pred_confidences[triple] = pred_prob
+
         return Wrapped
-
-

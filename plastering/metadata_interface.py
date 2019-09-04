@@ -1,13 +1,13 @@
 import pdb
 
-from mongoengine import *
+from mongoengine import connect, Document, StringField, DictField, ListField
 import pprint
 import pandas as pd
 from tabulate import tabulate
 pd.options.display.max_colwidth = 200
 pp = pprint.PrettyPrinter(indent=2)
 
-from .common import *
+from .common import FULL_PARSING, POINT_TAGSET, ALL_TAGSETS
 
 connect('plastering-withpg')
 
