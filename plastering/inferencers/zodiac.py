@@ -29,8 +29,8 @@ from sklearn.naive_bayes import MultinomialNB
 
 from . import Inferencer
 from ..metadata_interface import RawMetadata, LabeledMetadata
-from ..common import POINT_TAGSET, parse_srcid, adder
-from ..rdf_wrapper import *
+from ..common import POINT_TAGSET, adder
+from ..rdf_wrapper.common import parse_srcid
 from ..exceptions import AlgorithmError
 from jasonhelper import bidict
 
@@ -80,8 +80,6 @@ class ZodiacInterface(object):
                  target_building,
                  target_srcids,
                  source_buildings=[],
-                 ui=None,
-                 pgid=None,
                  config={},
                  **kwargs,
                  ):

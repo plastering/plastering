@@ -69,8 +69,8 @@ class Inferencer(object):
                 logging.Logger.eval = log_eval
                 if logging_configfile:
                     with open(logging_configfile, 'r') as fp:
-                        config = yaml.safe_load(fp)
-                    logging.config.dictConfig(config)
+                        logging_config = yaml.safe_load(fp)
+                    logging.config.dictConfig(logging_config)
                 else:
                     logging.basicConfig(level=logging.INFO)
                 self.logger = logging.getLogger(self.__class__.__bases__[0].__name__)
@@ -129,9 +129,7 @@ class Inferencer(object):
                     target_building,
                     target_srcids,
                     source_buildings,
-                    ui,
-                    pgid,
-                    config,
+                    config=config,
                     **kwargs,
                 )
 
@@ -328,6 +326,7 @@ class Inferencer(object):
                 metrics = {}
 
                 if self.target_label_type in [POINT_TAGSET, ALL_TAGSETS]:
+                    pred_g = self.predict(target_srcids, output_format='ttl')
                     truth = self._get_true_labels(target_srcids, POINT_TAGSET)
                     pred = pred_g.get_instance_tuples()
                     metrics['f1'] = get_multiclass_micro_f1(truth, pred)
@@ -335,7 +334,7 @@ class Inferencer(object):
                     curr_pred = pred
 
                 if self.target_label_type in [ALL_TAGSETS]:
-                    pred_g, pred = self.predict(target_srcids, True)
+                    pred = self.predict(target_srcids, output_format='json')
                     pred = {srcid: list(pred_tagsets)
                             for srcid, pred_tagsets in pred.items()}
                     truth = self._get_true_labels(target_srcids, ALL_TAGSETS)
@@ -355,6 +354,7 @@ class Inferencer(object):
                     'pred': curr_pred
                 }
                 self.history.append(curr_eval)
+                pdb.set_trace()
                 return curr_eval
 
             def filter_prior(self, min_prob):
