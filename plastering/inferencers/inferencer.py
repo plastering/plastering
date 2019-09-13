@@ -62,7 +62,6 @@ class Inferencer(object):
                 # Config logger
                 EVAL_LEVEL_NUM = 21
                 logging.addLevelName(EVAL_LEVEL_NUM, 'EVAL')
-
                 def log_eval(self, message, *args, **kws):
                     if self.isEnabledFor(EVAL_LEVEL_NUM):
                         self._log(EVAL_LEVEL_NUM, message, args, **kws)
@@ -219,7 +218,6 @@ class Inferencer(object):
                 if len(self.training_srcids) < self.min_training_srcids:
                     raise NotEnoughExamplesError(len(self.training_srcids),
                                                  self.min_training_srcids)
-
                 for srcid in new_srcids:
                     labeled = self.query_labels(srcid=srcid).first()
                     for label_type in self.required_label_types:
@@ -354,7 +352,6 @@ class Inferencer(object):
                     'pred': curr_pred
                 }
                 self.history.append(curr_eval)
-                pdb.set_trace()
                 return curr_eval
 
             def filter_prior(self, min_prob):
