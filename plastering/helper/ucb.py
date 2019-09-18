@@ -113,7 +113,7 @@ def load_ucb_building(building='soda',
                 if tagset != 'none':
                     tagsets.add(tagset.lower())
         tagsets = list(tagsets)
-        point_tagset = sel_point_tagset(tagsets)
+        point_tagset = select_point_tagset(tagsets)
         if not point_tagset:
             point_tagset = 'none'
         tagsets_dict[srcid] = tagsets

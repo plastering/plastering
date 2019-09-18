@@ -19,7 +19,7 @@ def is_point_tagset(tagset):
         return False
 
 
-def sel_point_tagset(tagsets, srcid=''):
+def select_point_tagset(tagsets, srcid=''):
     for tagset in tagsets:
         if is_point_tagset(tagset):
             return tagset
