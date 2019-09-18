@@ -1,5 +1,6 @@
 from .inferencer import *
 from .zodiac import ZodiacInterface
+from .scrabble_interface import ScrabbleInterface
 
 
 def load_inferencer(summary):
