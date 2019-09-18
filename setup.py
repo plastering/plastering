@@ -13,10 +13,11 @@ setup(
     name = 'plastering',
     author = __author__,
     version = __version__,
-    packages = find_packages(),
+    packages = find_packages() + ['config'],
     description = '[Plastering](https://github.com/plastering/plastering)',
     install_requires = reqs,
-    package_data = {
-        'static': ['config/unit_mapping.csv', 'config/bacnettype_mapping.csv'],
-    }
+    #package_data = {
+    #    'testtt': ['config/unit_mapping.csv', 'config/bacnettype_mapping.csv'],
+    #}
+    include_package_data = True,
 )
