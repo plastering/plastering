@@ -2,41 +2,30 @@ import os
 import sys
 import importlib.util
 import pdb
+from copy import deepcopy
 
 from . import Inferencer
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/scrabble')
-# The above line is just for the convenience of the dev.
-from ..metadata_interface import *
-from ..rdf_wrapper import *
-from ..common import *
+from ..common import POINT_TAGSET, ALL_TAGSETS, FULL_PARSING
+from ..common import select_point_tagset, is_point_tagset
+from .scrabble_helper import load_data
+from .scrabble.scrabble import Scrabble  # This may imply incompatible imports.
+from .scrabble.common import select_random_samples
 
-POINT_POSTFIXES = ['sensor', 'setpoint', 'alarm', 'command', 'meter']
 
-from scrabble import Scrabble # This may imply incompatible imports.
-from scrabble.common import *
-
-class ScrabbleInterface(Inferencer):
+@Inferencer()
+class ScrabbleInterface(object):
     """docstring for ScrabbleInterface"""
     def __init__(self,
                  target_building,
                  target_srcids,
                  source_buildings,
-                 config=None
+                 config={},
+                 **kwargs
                  ):
         config['required_label_types'] = [POINT_TAGSET,
                                           FULL_PARSING,
                                           ALL_TAGSETS]
-        super(ScrabbleInterface, self).__init__(
-            target_building=target_building,
-            target_srcids=target_srcids,
-            source_buildings=source_buildings,
-            config=config,
-            framework_name='scrabble')
-
         self.target_label_type = ALL_TAGSETS
-
-        if not config:
-            config = {}
 
         # Prepare config for Scrabble object
         if 'seed_num' in config:
@@ -47,8 +36,7 @@ class ScrabbleInterface(Inferencer):
         if 'sample_num_list' in config:
             sample_num_list = config['sample_num_list']
         else:
-            sample_num_list = [seed_num] * len(set(source_buildings +
-                                            [target_building]))
+            sample_num_list = [seed_num] * len(set(source_buildings))
 
         if self.target_building not in self.source_buildings:
             self.source_buildings = self.source_buildings + [self.target_building]
@@ -83,7 +71,13 @@ class ScrabbleInterface(Inferencer):
         # TODO: This should be migrated into Plastering
         building_sentence_dict, target_srcids, building_label_dict,\
             building_tagsets_dict, known_tags_dict = load_data(target_building,
-                                                               source_buildings)
+                                                               self.source_buildings,
+                                                               metadata_types=['VendorGivenName',
+                                                                               'BACnetName',
+                                                                               'BACnetDescription',
+                                                                               'BACnetUnit',
+                                                                               ],
+                                                               )
         self.scrabble = Scrabble(target_building,
                                  target_srcids,
                                  building_label_dict,
@@ -94,14 +88,11 @@ class ScrabbleInterface(Inferencer):
                                  known_tags_dict,
                                  config=config,
                                  )
-        #self.update_model([])
-        new_srcids = deepcopy(self.scrabble.learning_srcids)
+        # new_srcids = deepcopy(self.scrabble.learning_srcids)
         if self.hotstart:
             new_srcids = [obj.srcid for obj in self.query_labels(building=target_building)]
-        self.scrabble.clear_training_samples()
-        self.update_model(new_srcids)
+            self.update_model(new_srcids)
         self.zodiac_good_preds = {}
-
 
     def learn_auto(self, iter_num=25, inc_num=10):
         for i in range(0, iter_num):
@@ -116,20 +107,17 @@ class ScrabbleInterface(Inferencer):
             print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
 
     def update_model(self, new_srcids):
-        super(ScrabbleInterface, self).update_model(new_srcids)
         self.scrabble.update_model(new_srcids)
 
     def postprocessing_pred(self, pred):
         # Currently only ingest point tagsets.
         pred_g = self.new_graph(empty=True)
         for srcid, tagsets in pred.items():
-            point_tagset = sel_point_tagset(tagsets, srcid)
-            point_prob = 1 # temporary
-            pred_g.add_pred_point_result(pred_g, srcid,
-                                         point_tagset, point_prob)
+            point_tagset = select_point_tagset(tagsets, srcid)
+            pred_g.add_pred_point_result(srcid, point_tagset)
         return pred_g
 
-    def predict(self, target_srcids=None, all_tagsets=False):
+    def predict(self, target_srcids=None, output_format='ttl'):
         if not target_srcids:
             target_srcids = self.target_srcids
         pred = self.scrabble.predict(target_srcids)
@@ -137,11 +125,10 @@ class ScrabbleInterface(Inferencer):
             pred = self.apply_filter_by_zodiac(pred)
         self.pred_g = self.postprocessing_pred(pred)
 
-        if all_tagsets:
-            return self.pred_g, pred # This should be generalized inside
-                                     # postprocessing_pred
-        else:
+        if output_format == 'ttl':
             return self.pred_g
+        elif output_format == 'json':
+            return pred
 
     def predict_proba(self, target_srcids=None):
         return self.scrabble.predict_proba(target_srcids)
@@ -149,7 +136,7 @@ class ScrabbleInterface(Inferencer):
     def apply_prior_zodiac(self, sample_num):
         if not self.prior_g:
             return []
-        instances = get_instance_tuples(self.prior_g)
+        instances = self.prior_g.get_instance_tuples()
         good_preds = {}
         for srcid, point_tagset in instances.items():
             triple = (BASE[srcid], RDF.type, BRICK[point_tagset])
@@ -188,7 +175,7 @@ class ScrabbleInterface(Inferencer):
     def apply_filter_by_zodiac(self, pred):
         if not self.prior_g:
             return pred
-        instances = get_instance_tuples(self.prior_g)
+        instances = self.prior_g.get_instance_tuples()
         self.zodiac_good_preds = {}
         for srcid, point_tagset in instances.items():
             triple = (BASE[srcid], RDF.type, BRICK[point_tagset])
@@ -196,13 +183,12 @@ class ScrabbleInterface(Inferencer):
                 self.zodiac_good_preds[srcid] = point_tagset
         fixed_cnt = 0
         for srcid, pred_tagsets in pred.items():
-            pred_point_tagset = sel_point_tagset(pred_tagsets, srcid)
+            pred_point_tagset = select_point_tagset(pred_tagsets, srcid)
             good_point_tagset = self.zodiac_good_preds.get(srcid, None)
             if not good_point_tagset:
                 continue
             if not self.is_same_tagset(pred_point_tagset, good_point_tagset):
-                pred_tagsets = [tagset for tagset in pred_tagsets
-                                if not is_point_tagset(tagset)]
+                pred_tagsets = [tagset for tagset in pred_tagsets if not is_point_tagset(tagset)]
                 pred_tagsets.append(good_point_tagset)
                 print('FIXED {0}, {1} -> {2}'.format(srcid,
                                                      pred_point_tagset,
@@ -213,23 +199,8 @@ class ScrabbleInterface(Inferencer):
         return pred
 
     def select_informative_samples(self, sample_num=10):
-        # Use prior (e.g., from Zodiac.)
         new_srcids = []
-        #if self.apply_validating_samples:
-        #    new_srcids += self.apply_prior_zodiac(sample_num)
         if len(new_srcids) < sample_num:
             new_srcids += self.scrabble.select_informative_samples(
                 sample_num - len(new_srcids))
-        #new_srcids = [srcid for srcid in new_srcids
-        #              if srcid not in self.zodiac_good_preds][0:sample_num]
         return new_srcids
-
-
-
-
-
-
-
-
-
-
