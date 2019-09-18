@@ -1,0 +1,10 @@
+bacnet_type_str,candidates
+Analog Output,command_setpoint
+Analog Input,sensor_meter
+Analog Value
+Binary Input,status_alarm
+Binary Output,command
+Multi-State Input,sensor
+Multi-State Output,command
+Binary Value,
+Multi-State Value,
