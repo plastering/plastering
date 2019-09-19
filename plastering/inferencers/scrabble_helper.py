@@ -22,8 +22,8 @@ def csv2json(df, key_idx, value_idx):
 
 def load_data(target_building,
               source_buildings,
-              unit_mapping_file=resource_string(__name__, 'unit_mapping.csv'),
-              bacnettype_mapping_file=resource_string(__name__, 'bacnettype_mapping.csv'),
+              unit_mapping_file=resource_string('config', 'unit_mapping.csv'),
+              bacnettype_mapping_file=resource_string('config', 'bacnettype_mapping.csv'),
               #unit_mapping_file='config/unit_mapping.csv',
               #bacnettype_mapping_file='config/bacnettype_mapping.csv',
               bacnettype_flag=False,
