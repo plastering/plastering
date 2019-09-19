@@ -16,8 +16,8 @@ setup(
     packages = find_packages() + ['config'],
     description = '[Plastering](https://github.com/plastering/plastering)',
     install_requires = reqs,
-    #package_data = {
-    #    'testtt': ['config/unit_mapping.csv', 'config/bacnettype_mapping.csv'],
-    #}
-    include_package_data = True,
+    package_data = {
+        '': ['config/unit_mapping.csv', 'config/bacnettype_mapping.csv'],
+    }
+    #include_package_data = False,
 )
