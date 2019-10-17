@@ -72,11 +72,12 @@ class ScrabbleInterface(object):
         building_sentence_dict, target_srcids, building_label_dict,\
             building_tagsets_dict, known_tags_dict = load_data(target_building,
                                                                self.source_buildings,
-                                                               metadata_types=['VendorGivenName',
-                                                                               'BACnetName',
-                                                                               'BACnetDescription',
-                                                                               'BACnetUnit',
-                                                                               ],
+                                                               metadata_types=self.valid_metadata_types,
+                                                               #metadata_types=['VendorGivenName',
+                                                               #                'BACnetName',
+                                                               #                'BACnetDescription',
+                                                               #                'BACnetUnit',
+                                                               #                ],
                                                                )
         self.scrabble = Scrabble(target_building,
                                  target_srcids,

@@ -1,6 +1,7 @@
 from collections import defaultdict
 import pdb
 from pkg_resources import resource_string
+from io import StringIO
 
 import pandas as pd
 
@@ -34,10 +35,16 @@ def load_data(target_building,
     building_tagsets_dict = dict()
     known_tags_dict = defaultdict(list)
 
-    units = csv2json(pd.read_csv(unit_mapping_file), 'unit', 'word')
+    units = csv2json(pd.read_csv(StringIO(unit_mapping_file.decode('utf-8'))),
+                     'unit',
+                     'word',
+                     )
     units[None] = []
     units[''] = []
-    bacnettypes = csv2json(pd.read_csv(bacnettype_mapping_file), 'bacnet_type_str', 'candidates')
+    bacnettypes = csv2json(pd.read_csv(StringIO(bacnettype_mapping_file.decode('utf-8'))),
+                           'bacnet_type_str',
+                           'candidates',
+                           )
     bacnettypes[None] = []
     bacnettypes[''] = []
     for building in source_buildings:
