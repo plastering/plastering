@@ -1,0 +1,56 @@
+---
+version: 1
+disable_existing_loggers: False
+formatters:
+    simple:
+        format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+handlers:
+    console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: simple
+        stream: ext://sys.stdout
+
+    info_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: INFO
+        formatter: simple
+        filename: logs/info.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
+    eval_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: EVAL
+        formatter: simple
+        filename: logs/eval.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
+    error_file_handler:
+        class: logging.handlers.RotatingFileHandler
+        level: ERROR
+        formatter: simple
+        filename: logs/errors.log
+        maxBytes: 10485760 # 10MB
+        backupCount: 2
+        encoding: utf8
+
+loggers:
+    ZodiacInterface:
+        level: INFO
+        handlers: [eval_file_handler]
+        propagate: yes
+
+    ScrabbleInterface:
+        level: INFO
+        handlers: [eval_file_handler]
+        propagate: yes
+
+root:
+    level: INFO
+    handlers: [console, info_file_handler, error_file_handler]
+...

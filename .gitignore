@@ -3,6 +3,8 @@ result/
 groundtruth/
 rawdata/
 temp/
+logs/
+config/
 
 __pycache__/
 *.py[cod]

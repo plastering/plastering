@@ -22,8 +22,8 @@ def parse_ucsd_rawmetadata(building):
     rawdf = pd.read_csv('rawdata/metadata/{0}_rawmetadata.csv'\
                             .format(building), index_col='SourceIdentifier')
     for srcid, row in rawdf.iterrows():
-        point = RawMetadata.objects(srcid=srcid, building=building, pgid=pgid)\
-                           .upsert_one(srcid=srcid, building=building, pgid=pgid)
+        point = RawMetadata.objects(srcid=srcid, building=building)\
+                           .upsert_one(srcid=srcid, building=building)
         for k, v in row.items():
             if not isinstance(v, str):
                 if np.isnan(v):

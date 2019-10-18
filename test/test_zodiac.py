@@ -1,4 +1,4 @@
-from plastering.inferencers.zodiac_new import ZodiacInterface
+from plastering.inferencers.zodiac import ZodiacInterface
 #from plastering.inferencers.zodiac_interface import ZodiacInterface
 from plastering.metadata_interface import *
 import pdb

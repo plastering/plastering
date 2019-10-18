@@ -4,8 +4,6 @@ from functools import reduce
 
 import numpy as np
 from prompt_toolkit import prompt
-from prompt_toolkit.styles import style_from_dict
-from prompt_toolkit.token import Token
 from tabulate import tabulate
 
 
@@ -14,12 +12,11 @@ from ..common import *
 
 class ReplUi(object):
 
-    def __init__(self, schema_g, pgid=None):
-        self.schema_g = schema_g
-        self._init_brick(self.schema_g)
+    def __init__(self, all_tagsets, pgid=None):
+        self._init_brick(all_tagsets)
         self.pgid = pgid
 
-    def _init_brick(self, schema_g):
+    def _init_brick(self, all_tagsets):
         # TODO: Read below from an external file
         non_brick_tagsets = ['none',
                              'rightidentifier',
@@ -37,20 +34,15 @@ class ReplUi(object):
         # left identifier: contraints meaning of left tagset
         # right identifier: contraints meaning of right tagset
         #TODO: Create a dict with dummy values to speed up lookup if needed.
-        self.all_tagsets = [tagset.lower() for tagset in
-                            schema_g.get_all_tagsets() + non_brick_tagsets]
+        self.all_tagsets = all_tagsets + non_brick_tagsets
         splitter = lambda s: s.split('_')
         adder = lambda x, y: x + y
-        self.all_tags = list(set(reduce(adder, map(splitter, self.all_tagsets),
-                                        [])))
+        self.all_tags = list(set(reduce(adder, map(splitter, self.all_tagsets), [])))
 
     def display_target(self, srcid, building):
         if not RawMetadata.objects(srcid=srcid, building=building):
             raise Exception('Srcid {0} not found in our DB'.format(srcid))
         print_rawmetadata(srcid, building)
-
-    def _get_bottom_toolbar_tokens(cli):
-        return [(Token.Toolbar, ' This is a toolbar. ')]
 
     def normalize_tagset(self, raw_tagset):
         tagset = '_'.join(raw_tagset.split()) # TODO: Capitalize if necessary.
@@ -75,7 +67,7 @@ class ReplUi(object):
         print(sentence[base:])
 
     def validate_tagset(self, tagset):
-        if tagset in self.all_tagsets:
+        if tagset.split('-')[0] in self.all_tagsets:
             return True
         else:
             return False
@@ -158,7 +150,6 @@ class ReplUi(object):
         return point_tagset
 
     def get_answer_full_parsing(self, srcid, building):
-        base_idx = 0
         print('Instruction:')
         done = False
         labeled_metadata = query_labels(
@@ -173,6 +164,7 @@ class ReplUi(object):
         metadatas = RawMetadata.objects(srcid=srcid, building=building)\
             .first().metadata
         for metadata_type, sentence in metadatas.items():
+            base_idx = 0
             while base_idx < len(sentence):
                 print('=================================')
                 # 1. Print the entire raw metadata
@@ -255,9 +247,8 @@ class ReplUi(object):
         answers = {}
         for example_type in example_types:
             answer = self.get_answer(srcid, building, example_type)
-            if answer:
-                answers[example_type] = answer
-        self.store_example(srcid, building, answers)
+            if answer: #TODO: Do I really need this condition?
+                insert_groundtruth(srcid, building, self.pgid, **{example_type: answer})
 
     def store_example(self, srcid, building, answers):
         insert_groundtruth(srcid, building, self.pgid, **answers)

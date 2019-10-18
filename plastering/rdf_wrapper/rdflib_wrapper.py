@@ -40,6 +40,7 @@ def insert_triple(g, triple):
     g.add(triple)
 
 def query_sparql(g, qstr):
+    global schema_g
     res = (g + schema_g).query(qstr).bindings
     return res
 
