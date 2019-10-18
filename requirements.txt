@@ -12,3 +12,7 @@ scikit-learn
 pyyaml
 pandas
 requests
+scikit_multilearn==0.2.0
+dtw
+tensorflow==1.14.0
+git+https://github.com/jbkoh/keras
