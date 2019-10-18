@@ -2,7 +2,6 @@ prompt_toolkit==1.0.15
 arrow
 python-crfsuite
 mongoengine
-#git+git://github.com/jbkoh/jason_python_helper.git
 pandas
 tabulate
 rdflib

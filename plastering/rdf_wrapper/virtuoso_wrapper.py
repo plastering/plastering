@@ -10,7 +10,7 @@ from SPARQLWrapper import JSON, SELECT, INSERT, DIGEST, GET, POST
 from rdflib import URIRef, Literal
 
 from .common import *
-from jasonhelper import chunks
+from ..helpers import chunks
 
 
 def init_graph(empty=False):

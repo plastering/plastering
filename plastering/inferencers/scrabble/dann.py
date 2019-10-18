@@ -18,7 +18,6 @@ from keras.callbacks import TensorBoard
 
 import tensorflow as tf
 
-from jasonhelper import *
 
 def get_semi_random_subset(l, length):
     selected = []

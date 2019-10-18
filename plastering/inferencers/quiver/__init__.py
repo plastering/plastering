@@ -4,7 +4,7 @@ from uuid import uuid4 as gen_uuid
 from .. import Inferencer
 from ...rdf_wrapper import *
 from rdflib import URIRef
-from jasonhelper import bidict
+from ...helpers import bidict
 
 class DummyQuiver(Inferencer):
 
