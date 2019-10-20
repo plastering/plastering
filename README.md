@@ -4,10 +4,16 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 # Getting Started
 
 ## Installation
-1. Install MongoDB
-2. Install Dependencies
-    - ``pip install -r requirements.txt``
-3. ~~Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet. You may use synthesized data to test the algorithms for now.~~ Unfortunately, UCSD does not approve publicly sharing the data. We may have a procedure to sign an agreement, but it's still under development. Until then please refer to a synthesized data as specified in [an example](https://github.com/plastering/plastering/blob/refactor-inferencer/examples/tutorial/load_data.py).
+1. Install MongoDB: [instruction](https://docs.mongodb.com/manual/installation/#mongodb-community-edition-installation-tutorials)
+2. Install Dependencies: `pip install -r requirements.txt`
+3. Install Plastering package: `python setup.py install`
+4. ~~Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet. You may use synthesized data to test the algorithms for now.~~ Unfortunately, UCSD does not approve publicly sharing the data. We may have a procedure to sign an agreement, but it's still under development. Until then please refer to a synthesized data as specified in [an example](https://github.com/plastering/plastering/blob/refactor-inferencer/examples/tutorial/load_data.py).
+5. Load an example data:
+    - SDH: `python examples/tutorial/load_data_sdh.py`
+    - Synthetic building: `python examples/tutorial/load_data.py`
+6. Run example algorithms:
+    - Scrabble for SDH building: `python examples/tutorial/scrabble_tutorial.py`
+    - Zodiac for the synthetic building: `python examples/tutorial/zodiac_tutorial.py`
 
 ## Example with synthesized data.
 1. Load data: ``python examples/tutorial/load_data.py``
