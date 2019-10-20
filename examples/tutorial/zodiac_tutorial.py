@@ -8,8 +8,8 @@ from plastering.uis.cmdline_ui import ReplUi
 target_building = 'bldg'
 config = {
     'brick_version': '1.0.3',
-    'brick_file': '/home/jbkoh/repo/Brick/dist/Brick.ttl',
-    'brickframe_file': '/home/jbkoh/repo/Brick/dist/BrickFrame.ttl',
+    'brick_file': 'https://brickschema.org/schema/1.0.3/Brick.ttl'
+    'brickframe_file': 'https://brickschema.org/schema/1.0.3/BrickFrame.ttl',
 }
 
 # Select labeled srcids (Not all the data are labeled yet.)
