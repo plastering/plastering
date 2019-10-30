@@ -2,7 +2,7 @@ import json
 import logging
 
 from plastering.inferencers.zodiac import ZodiacInterface
-from plastering.metadata_interface import LabeledMetadata, RawMetadata
+from plastering.metadata_interface import LabeledMetadata, RawMetadata, Building, building
 from plastering.uis.cmdline_ui import ReplUi
 
 target_building = 'bldg'
