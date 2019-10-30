@@ -2,14 +2,14 @@ import json
 import logging
 
 from plastering.inferencers.zodiac import ZodiacInterface
-from plastering.metadata_interface import LabeledMetadata, RawMetadata, Building, building
+from plastering.metadata_interface import LabeledMetadata, RawMetadata, Building, get_or_create
 from plastering.uis.cmdline_ui import ReplUi
 
-target_building = 'bldg'
+target_building = get_or_create(Building, name='bldg')
 config = {
     'brick_version': '1.0.3',
-    'brick_file': '/home/jbkoh/repo/Brick/dist/Brick.ttl',
-    'brickframe_file': '/home/jbkoh/repo/Brick/dist/BrickFrame.ttl',
+    'brick_file': 'https://brickschema.org/schema/1.0.3/Brick.ttl',
+    'brickframe_file': 'https://brickschema.org/schema/1.0.3/BrickFrame.ttl',
 }
 
 # Select labeled srcids (Not all the data are labeled yet.)

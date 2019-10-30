@@ -161,8 +161,7 @@ class ReplUi(object):
             building=building,
         )
         fullparsing = labeled_metadata[FULL_PARSING]
-        metadatas = RawMetadata.objects(srcid=srcid, building=building)\
-            .first().metadata
+        metadatas = RawMetadata.objects(srcid=srcid, building=building).first().metadata
         for metadata_type, sentence in metadatas.items():
             base_idx = 0
             while base_idx < len(sentence):
@@ -241,13 +240,11 @@ class ReplUi(object):
                             .format(example_type))
         print('done for {0}'.format(srcid))
 
-
     def ask_example(self, srcid, building, example_types=[]):
         self.display_target(srcid, building)
-        answers = {}
         for example_type in example_types:
             answer = self.get_answer(srcid, building, example_type)
-            if answer: #TODO: Do I really need this condition?
+            if answer:  # TODO: Do I really need this condition?
                 insert_groundtruth(srcid, building, self.pgid, **{example_type: answer})
 
     def store_example(self, srcid, building, answers):

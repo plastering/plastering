@@ -1,29 +1,49 @@
 import pdb
 
-from mongoengine import connect, Document, StringField, DictField, ListField
+from mongoengine import connect, Document, StringField, DictField, ListField, ReferenceField
 import pprint
 import pandas as pd
 from tabulate import tabulate
-pd.options.display.max_colwidth = 200
-pp = pprint.PrettyPrinter(indent=2)
 
 from .common import FULL_PARSING, POINT_TAGSET, ALL_TAGSETS
 
+pd.options.display.max_colwidth = 200
+pp = pprint.PrettyPrinter(indent=2)
 connect('plastering-withpg')
-
 
 # Data Models
 
+
+class User(Document):
+    userid = StringField(required=True, unique=True)
+    email = StringField(required=True)
+    organization = StringField()
+    name = StringField(required=True)
+
+
+class Site(Document):
+    name = StringField(required=True, unique_with='user')
+    user = ReferenceField(User, required=True, unique_with='name')
+
+
+class Building(Document):
+    name = StringField(required=True, unique_with='user')
+    site = ReferenceField(Site)
+    user = ReferenceField(User, unique_with='name')
+
+
 class RawMetadata(Document):
-    srcid = StringField(required=True)
-    building = StringField(required=True)
+    srcid = StringField(required=True, unique_with='building')
+    building = ReferenceField(Building, required=True, unique_with='srcid')
+    #building = StringField(required=True)
     metadata = DictField()
     meta = {'allow_inheritance': True}
 
 
 class LabeledMetadata(Document):
     srcid = StringField(required=True)
-    building = StringField(required=True)
+    #building = StringField(required=True)
+    building = ReferenceField(Building, required=True)
     fullparsing = DictField(default={})
     tagsets = ListField(StringField(), default=[])
     point_tagset = StringField()

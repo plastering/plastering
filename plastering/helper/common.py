@@ -28,8 +28,8 @@ def data_loader(target_building, source_buildings):
                     #  configormation rule.
             label_dict[srcid] = fullparsing
 
-        building_tagsets_dict[building] = true_tagsets
-        building_label_dict[building] = label_dict
+        building_tagsets_dict[building.name] = true_tagsets
+        building_label_dict[building.name] = label_dict
         sentence_dict = dict()
         for raw_point in RawMetadata.objects(building=building):
             srcid = raw_point.srcid
@@ -43,5 +43,5 @@ def data_loader(target_building, source_buildings):
                         sentence += ['\n'] + \
                                     [c for c in metadata[clm].lower()]
                 sentence_dict[srcid]  = sentence
-        building_sentence_dict[building] = sentence_dict
+        building_sentence_dict[building.name] = sentence_dict
     return building_sentence_dict, building_label_dict, building_tagsets_dict

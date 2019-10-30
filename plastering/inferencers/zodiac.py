@@ -96,11 +96,9 @@ class ZodiacInterface(object):
 
         # get srcids from other buildings
         source_buildings_srcids = []
-        for source_building, sample_num in zip(source_buildings,
-                                               sample_num_list):
+        for source_building, sample_num in zip(source_buildings, sample_num_list):
             objects = self.query_labels(building=source_building)
-            source_srcids = random.sample(
-                [obj.srcid for obj in objects], sample_num)
+            source_srcids = random.sample([obj.srcid for obj in objects], sample_num)
             source_buildings_srcids += source_srcids
 
         # Pick srcids
