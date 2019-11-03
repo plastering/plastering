@@ -72,7 +72,7 @@ class BaseScrabble(object):
             shuffle_flag=True,
             ):
         if not cluster_dict:
-            cluster_filename = 'model/%s_word_clustering_%s.json' % (building, token_type)
+            cluster_filename = 'model/%s_word_clustering_%s.json' % (building.id, token_type)
             with open(cluster_filename, 'r') as fp:
                 cluster_dict = json.load(fp)
 
@@ -243,15 +243,13 @@ class BaseScrabble(object):
 
 
     def get_cluster_dict(building):
-        cluster_filename = 'model/%s_word_clustering_justseparate.json' % \
-                               (building)
+        cluster_filename = 'model/%s_word_clustering_justseparate.json' % (building.id)
         with open(cluster_filename, 'r') as fp:
             cluster_dict = json.load(fp)
         return cluster_dict
 
     def get_label_dict(building):
-        filename = 'metadata/%s_label_dict_justseparate.json' % \
-                               (building)
+        filename = 'metadata/%s_label_dict_justseparate.json' % (building.id)
         with open(filename, 'r') as fp:
             data = json.load(fp)
         return data
@@ -274,7 +272,7 @@ class BaseScrabble(object):
         for srcid in self.learning_srcids:
             for building, sentences in self.building_sentence_dict.items():
                 if srcid in sentences:
-                    num_samples[building] += 1
+                    num_samples[building.id] += 1
                     break
         assert sum(num_samples.values()) == len(set(self.learning_srcids))
         return num_samples

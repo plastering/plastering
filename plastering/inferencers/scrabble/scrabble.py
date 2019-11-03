@@ -81,8 +81,7 @@ class Scrabble(BaseScrabble):
                                                  deepcopy(self.learning_srcids),
                                                  config=config
                                                  )
-        self.target_cluster_dict = \
-            self.char2ir.building_cluster_dict[target_building]
+        self.target_cluster_dict = self.char2ir.building_cluster_dict[target_building.id]
         #self.update_model([])
 
     def init_data(self, learning_srcids=[]):
@@ -92,10 +91,9 @@ class Scrabble(BaseScrabble):
         self.phrase_dict = {}
         #self.point_dict = {}
 
-        for building, source_sample_num in zip(self.source_buildings,
-                                               self.source_sample_num_list):
-            self.sentence_dict.update(self.building_sentence_dict[building])
-            one_label_dict = self.building_label_dict[building]
+        for building, source_sample_num in zip(self.source_buildings, self.source_sample_num_list):
+            self.sentence_dict.update(self.building_sentence_dict[building.id])
+            one_label_dict = self.building_label_dict[building.id]
             self.label_dict.update(one_label_dict)
 
             if learning_srcids:
@@ -106,11 +104,11 @@ class Scrabble(BaseScrabble):
                     srcids = one_label_dict.keys(),
                     n = source_sample_num,
                     use_cluster_flag = self.use_cluster_flag,
-                    sentence_dict = self.building_sentence_dict[building],
+                    sentence_dict = self.building_sentence_dict[building.id],
                     shuffle_flag = False
                 )
                 self.learning_srcids += sample_srcid_list
-            one_tagsets_dict = self.building_tagsets_dict[building]
+            one_tagsets_dict = self.building_tagsets_dict[building.id]
             self.tagsets_dict.update(one_tagsets_dict)
             """
             for srcid, tagsets in one_tagsets_dict.items():

@@ -97,10 +97,9 @@ class Char2Ir(BaseScrabble):
         self.label_dict = {}
         self.building_cluster_dict = {}
         self.degrade_mask = [] # only used by char2ir_gpu.py
-        for building, source_sample_num in zip(self.source_buildings,
-                                               self.source_sample_num_list):
-            self.sentence_dict.update(self.building_sentence_dict[building])
-            one_label_dict = self.building_label_dict[building]
+        for building, source_sample_num in zip(self.source_buildings, self.source_sample_num_list):
+            self.sentence_dict.update(self.building_sentence_dict[building.id])
+            one_label_dict = self.building_label_dict[building.id]
             self.label_dict.update(one_label_dict)
 
             if learning_srcids:
@@ -108,12 +107,12 @@ class Char2Ir(BaseScrabble):
                 curr_sample_len = len(learning_srcids)
             else:
                 sample_srcid_list = select_random_samples(
-                    building = building,
-                    srcids = one_label_dict.keys(),
-                    n = source_sample_num,
-                    use_cluster_flag = self.use_cluster_flag,
-                    sentence_dict = self.building_sentence_dict[building],
-                    shuffle_flag = False,
+                    building=building,
+                    srcids=one_label_dict.keys(),
+                    n=source_sample_num,
+                    use_cluster_flag=self.use_cluster_flag,
+                    sentence_dict=self.building_sentence_dict[building.id],
+                    shuffle_flag=False,
                 )
                 self.learning_srcids += sample_srcid_list
                 curr_sample_len = len(sample_srcid_list)
@@ -122,8 +121,8 @@ class Char2Ir(BaseScrabble):
             else:
                 self.degrade_mask += [1] * curr_sample_len
             if building not in self.building_cluster_dict:
-                self.building_cluster_dict[building] = get_word_clusters(
-                    self.building_sentence_dict[building])
+                self.building_cluster_dict[building.id] = get_word_clusters(
+                    self.building_sentence_dict[building.id])
 
         # Construct Brick examples
         brick_sentence_dict = dict()
@@ -238,7 +237,7 @@ class Char2Ir(BaseScrabble):
         #predicted_dict, score_dict = self._predict_func(model,
         #                                                target_sentence_dict,
         #                                                self.crftype)
-        cluster_dict = self.building_cluster_dict[self.target_building]
+        cluster_dict = self.building_cluster_dict[self.target_building.id]
 
         new_srcids = []
         if self.query_strategy == 'confidence':

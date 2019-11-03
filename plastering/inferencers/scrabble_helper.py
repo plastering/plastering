@@ -59,8 +59,8 @@ def load_data(target_building,
                 labels[metadata_type] = [pair[1] for pair in pairs]
             label_dict[srcid] = labels
 
-        building_tagsets_dict[building] = true_tagsets
-        building_label_dict[building] = label_dict
+        building_tagsets_dict[building.id] = true_tagsets
+        building_label_dict[building.id] = label_dict
         sentence_dict = dict()
         for raw_point in RawMetadata.objects(building=building):
             srcid = raw_point.srcid
@@ -75,7 +75,7 @@ def load_data(target_building,
                 known_tags_dict[srcid] += units[bacnet_unit]
             if bacnettype_flag:
                 known_tags_dict[srcid] += bacnettypes[metadata.get('BACnetTypeStr')]
-        building_sentence_dict[building] = sentence_dict
-    target_srcids = list(building_label_dict[target_building].keys())
+        building_sentence_dict[building.id] = sentence_dict
+    target_srcids = list(building_label_dict[target_building.id].keys())
     return building_sentence_dict, target_srcids, building_label_dict,\
         building_tagsets_dict, known_tags_dict

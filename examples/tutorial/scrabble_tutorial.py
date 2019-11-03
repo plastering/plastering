@@ -1,17 +1,19 @@
 from plastering.inferencers.scrabble_interface import ScrabbleInterface
-from plastering.metadata_interface import *
+from plastering.metadata_interface import get_or_create, Building, LabeledMetadata
 from plastering.uis.cmdline_ui import ReplUi
 import pdb
 
 import logging
 
-target_building = 'sdh'
+building_name = 'sdh'
+target_building = get_or_create(Building, name=building_name)
 config = {
     'brick_version': '1.0.3',
     'brick_file': '/home/jbkoh/repo/Brick_jbkoh/dist/Brick.ttl',
     'brickframe_file': '/home/jbkoh/repo/Brick_jbkoh/dist/BrickFrame.ttl',
     'crfimpl': 'crfsuite',
-    'ir2tagsets.epochs': 1000,
+    'ir2tagsets.epochs': 50,
+    #'ir2tagsets.epochs': 1000,
 }
 
 # Select labeled srcids (Not all the data are labeled yet.)

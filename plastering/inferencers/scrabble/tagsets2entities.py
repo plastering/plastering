@@ -40,8 +40,10 @@ def check_tag_in_tagset(tag, tagset):
     else:
         return True
 
+
 def gen_uuid():
     return str(uuid4())
+
 
 class Tagsets2Entities(BaseScrabble):
     def __init__(self,
@@ -96,21 +98,21 @@ class Tagsets2Entities(BaseScrabble):
         self.sentence_dict = {}
         self.label_dict = {}
         self.tagsets_dict = {}
-        for building, source_sample_num in zip(self.source_buildings,
-                                               self.source_sample_num_list):
-            self.sentence_dict.update(self.building_sentence_dict[building])
-            one_label_dict = self.building_label_dict[building]
+        for building, source_sample_num in zip(self.source_buildings, self.source_sample_num_list):
+            self.sentence_dict.update(self.building_sentence_dict[building.id])
+            one_label_dict = self.building_label_dict[building.id]
             self.label_dict.update(one_label_dict)
-            one_tagsets_dict = self.building_tagsets_dict[building]
+            one_tagsets_dict = self.building_tagsets_dict[building.id]
             self.tagsets_dict.update(one_tagsets_dict)
 
             if not self.learning_srcids:
-                sample_srcid_list = select_random_samples(building,
-                                                          one_label_dict.keys(),
-                                                          source_sample_num,
-                                                          self.use_cluster_flag,
-                                                          sentence_dict=self.building_sentence_dict[building]
-                                                          )
+                sample_srcid_list = select_random_samples(
+                    building,
+                    one_label_dict.keys(),
+                    source_sample_num,
+                    self.use_cluster_flag,
+                    sentence_dict=self.building_sentence_dict[building.id]
+                )
                 self.learning_srcids += sample_srcid_list
 
         # Construct Brick examples

@@ -33,7 +33,7 @@ if args.prog == 'crf_entity':
     for datum in data:
         source_nums.append(dict())
         for building, learning_srcids in datum['source_list'].items():
-            source_nums[-1][building] = len(learning_srcids)
+            source_nums[-1][building.id] = len(learning_srcids)
         char_f1s.append(datum['result']['crf']['char_weighted_f1']) # TODO:validate
         char_macrof1s.append(datum['result']['crf']['char_macro_f1'])
         entity_accuracies.append(datum['result']['entity']['accuracy'])
@@ -62,7 +62,7 @@ elif args.prog == 'iter_crf':
     for datum in data:
         source_nums.append(dict())
         for building, learning_srcids in datum['source_list'].items():
-            source_nums[-1][building] = len(learning_srcids)
+            source_nums[-1][building.id] = len(learning_srcids)
         char_f1s.append(datum['result']['crf']['char_weighted_f1']) # TODO:validate
         char_macrof1s.append(datum['result']['crf']['char_macro_f1'])
 

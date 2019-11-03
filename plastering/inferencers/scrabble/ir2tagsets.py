@@ -213,9 +213,9 @@ class Ir2Tagsets(BaseScrabble):
             domain = 'brick'
         else:
             domain = None
-            for building, sentence_dict in self.building_sentence_dict.items():
+            for building_id, sentence_dict in self.building_sentence_dict.items():
                 if orig_srcid in sentence_dict:
-                    domain = building
+                    domain = str(building_id)
         assert domain
         return domain
 
@@ -239,23 +239,23 @@ class Ir2Tagsets(BaseScrabble):
 
         for building, source_sample_num in zip(self.source_buildings,
                                                self.source_sample_num_list):
-            self.sentence_dict.update(self.building_sentence_dict[building])
-            one_label_dict = self.building_label_dict[building]
+            self.sentence_dict.update(self.building_sentence_dict[building.id])
+            one_label_dict = self.building_label_dict[building.id]
             self.label_dict.update(one_label_dict)
 
             if learning_srcids:
                 self.learning_srcids = learning_srcids
             else:
                 sample_srcid_list = select_random_samples(
-                    building = building,
+                    building = building.id,
                     srcids = one_label_dict.keys(),
                     n = source_sample_num,
                     use_cluster_flag = self.use_cluster_flag,
-                    sentence_dict = self.building_sentence_dict[building],
+                    sentence_dict = self.building_sentence_dict[building.id],
                     shuffle_flag = False
                 )
                 self.learning_srcids += sample_srcid_list
-            one_tagsets_dict = self.building_tagsets_dict[building]
+            one_tagsets_dict = self.building_tagsets_dict[building.id]
             self.tagsets_dict.update(one_tagsets_dict)
             for srcid, tagsets in one_tagsets_dict.items():
                 point_tagset = 'none'
@@ -265,8 +265,8 @@ class Ir2Tagsets(BaseScrabble):
                         break
                 self.point_dict[srcid] = point_tagset
             if building not in self.building_cluster_dict:
-                self.building_cluster_dict[building] = get_word_clusters(
-                    self.building_sentence_dict[building])
+                self.building_cluster_dict[building.id] = get_word_clusters(
+                    self.building_sentence_dict[building.id])
 
         self.phrase_dict = make_phrase_dict(self.sentence_dict, 
                                             self.label_dict)
@@ -336,7 +336,7 @@ class Ir2Tagsets(BaseScrabble):
             for srcid, usage_rate
             in phrase_usage_dict.items()
             if usage_rate < threshold and srcid in test_srcids)
-        cluster_dict = self.building_cluster_dict[building]
+        cluster_dict = self.building_cluster_dict[building.id]
         todo_srcids = select_random_samples(
             building = building,
             srcids = list(todo_sentence_dict.keys()),
@@ -353,7 +353,7 @@ class Ir2Tagsets(BaseScrabble):
                 for srcid, usage_rate
                 in phrase_usage_dict.items()
                 if srcid in test_srcids)
-            cluster_dict = self.building_cluster_dict[building]
+            cluster_dict = self.building_cluster_dict[building.id]
             todo_srcids += select_random_samples(
                 building = building,
                 srcids = list(todo_sentence_dict.keys()),
@@ -377,7 +377,7 @@ class Ir2Tagsets(BaseScrabble):
         sorted_entropies = sorted([(srcid, ent) for srcid, ent
                                    in zip(target_srcids, entropies)],
                                   key=itemgetter(1))
-        cluster_dict = self.building_cluster_dict[target_building]
+        cluster_dict = self.building_cluster_dict[target_building.id]
         added_cids = []
         todo_srcids = []
         new_srcid_cnt = 0
@@ -700,9 +700,9 @@ class Ir2Tagsets(BaseScrabble):
             learning_srcids += negative_srcids
             new_learning_vect_doc = deepcopy(learning_vect_doc)
             for building in source_target_buildings:
-                building_mask = np.array([1 if find_key(srcid.split(';')[0],\
-                                                       total_srcid_dict,\
-                                                       check_in) == building
+                building_mask = np.array([1 if find_key(srcid.split(';')[0],
+                                                        total_srcid_dict,
+                                                        check_in) == building.id
                                           else 0 for srcid in learning_srcids])
                 new_learning_vect_doc = np.hstack([new_learning_vect_doc] \
                                      + [np.asmatrix(building_mask \
@@ -717,7 +717,7 @@ class Ir2Tagsets(BaseScrabble):
                                   * (len(source_target_buildings)+1)))
                 brick_vect_doc = tagset_vectorizer.transform(brick_doc).todense()
                 for building in source_target_buildings:
-                    prefixer = lambda srcid: building + '-' + srcid
+                    prefixer = lambda srcid: building.id + '-' + srcid
                     one_brick_srcids = list(map(prefixer, brick_srcids))
                     for new_brick_srcid, brick_srcid\
                             in zip(one_brick_srcids, brick_srcids):
@@ -812,17 +812,16 @@ class Ir2Tagsets(BaseScrabble):
             learning_doc = [' '.join(self.phrase_dict[srcid]) for srcid in learning_srcids]
             target_doc = [' '.join(self.phrase_dict[srcid]) for srcid in target_srcids]
 
-        ## Augment with negative examples.
+        # Augment with negative examples.
         if self.negative_flag:
-            learning_doc, learning_srcids  = self._augment_negative_examples(learning_doc,
+            learning_doc, learning_srcids = self._augment_negative_examples(learning_doc,
                                                                              learning_srcids)
 
 
-        ## Init Brick samples.
+        # Init Brick samples.
         if self.use_brick_flag:
-            learning_doc, learning_srcids  = \
-                self._augment_brick_samples(learning_doc,
-                                            learning_srcids)
+            learning_doc, learning_srcids = self._augment_brick_samples(learning_doc,
+                                                                         learning_srcids)
 
         # Init domain vector of source
         learning_domain_doc = [self.get_srcid_domain(srcid) for srcid in learning_srcids]
@@ -1096,7 +1095,7 @@ class Ir2Tagsets(BaseScrabble):
                                        verbose=True)
         elif self.tagset_classifier_type == 'DANN':
             truth_mat = truth_mat.todense()
-            target_domain_index = self.domain_vectorizer.vocabulary_[self.target_building]
+            target_domain_index = self.domain_vectorizer.vocabulary_[self.target_building.id]
             self.tagset_classifier.fit(learning_vect_doc, truth_mat, learning_domain_vect_doc,
                                        target_vect_doc, target_domain_vect_doc, target_domain_index,
                                        nb_epochs=1500,

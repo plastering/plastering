@@ -19,6 +19,7 @@ from .eval_func import *
 
 POINT_POSTFIXES = ['sensor', 'setpoint', 'command', 'alarm', 'status', 'meter']
 
+
 def elem2list(elem):
     if isinstance(elem, str):
         return elem.split('_')
@@ -31,8 +32,10 @@ def csv2json(df, key_idx, value_idx):
     values = df[value_idx].tolist()
     return {k: elem2list(v) for k, v in zip(keys, values)}
 
+
 def sub_dict_by_key_set(d, ks):
-    return dict((k,v) for k, v in d.items() if k in ks)
+    return dict((k, v) for k, v in d.items() if k in ks)
+
 
 def leave_one_word(s, w):
     if w in s:
@@ -40,18 +43,22 @@ def leave_one_word(s, w):
         s = w + '-' + s
     return s
 
-def find_keys(tv, d, crit=lambda x,y:x==y):
+
+def find_keys(tv, d, crit=lambda x, y: x == y):
     keys = list()
     for k, v in d.items():
         if crit(tv, v):
             keys.append(k)
     return keys
 
-def check_in(x,y):
+
+def check_in(x, y):
     return x in y
+
 
 def joiner(s):
     return ''.join(s)
+
 
 def get_word_clusters(sentence_dict):
     srcids = list(sentence_dict.keys())
@@ -64,22 +71,19 @@ def get_word_clusters(sentence_dict):
         sentence = ' '.join(re.findall('[a-z]+', sentence))
         sentences.append(sentence)
     vect = TfidfVectorizer()
-    #vect = CountVectorizer()
     bow = vect.fit_transform(sentences).toarray()
-    try:
-        z = linkage(bow, metric='cityblock', method='complete')
-    except:
-        pdb.set_trace()
-    dists = list(set(z[:,2]))
-    thresh = (dists[2] + dists[3]) /2
+    z = linkage(bow, metric='cityblock', method='complete')
+    dists = list(set(z[:, 2]))
+    thresh = (dists[2] + dists[3]) / 2
     #thresh = (dists[1] + dists[2]) /2
     print("Threshold: ", thresh)
-    b = hier.fcluster(z,thresh, criterion='distance')
+    b = hier.fcluster(z, thresh, criterion='distance')
     cluster_dict = defaultdict(list)
 
     for srcid, cluster_id in zip(srcids, b):
         cluster_dict[cluster_id].append(srcid)
     return dict(cluster_dict)
+
 
 def select_random_samples(building,
                           srcids,
@@ -91,11 +95,7 @@ def select_random_samples(building,
                           cluster_dict=None,
                           shuffle_flag=True,
                           unique_clusters_flag=False,
-                         ):
-    #if not cluster_dict:
-    #    cluster_filename = 'model/%s_word_clustering_%s.json' % (building, token_type)
-    #    with open(cluster_filename, 'r') as fp:
-    #        cluster_dict = json.load(fp)
+                          ):
     assert sentence_dict or cluster_dict
     if not cluster_dict:
         cluster_dict = get_word_clusters(sentence_dict)
@@ -113,11 +113,10 @@ def select_random_samples(building,
                 random.shuffle(cluster_dict_items)
             for cluster_num, srcid_list in cluster_dict_items:
                 valid_srcid_list = set(srcid_list)\
-                        .intersection(set(srcids))\
-                        .difference(set(sample_srcids))
+                    .intersection(set(srcids))\
+                    .difference(set(sample_srcids))
                 if len(valid_srcid_list) > 0:
-                    sample_srcids.add(\
-                            random.choice(list(valid_srcid_list)))
+                    sample_srcids.add(random.choice(list(valid_srcid_list)))
                 if len(sample_srcids) >= n:
                     break
             if unique_clusters_flag:
@@ -296,8 +295,7 @@ def adder(x, y):
 
 
 def get_cluster_dict(building):
-    cluster_filename = 'model/%s_word_clustering_justseparate.json' % \
-                           (building)
+    cluster_filename = 'model/%s_word_clustering_justseparate.json' % (building.id)
     with open(cluster_filename, 'r') as fp:
         cluster_dict = json.load(fp)
     return cluster_dict
@@ -305,8 +303,7 @@ def get_cluster_dict(building):
 
 def get_label_dict(building):
     raise Exception('This should be replaced')
-    filename = 'metadata/%s_label_dict_justseparate.json' % \
-                           (building)
+    filename = 'metadata/%s_label_dict_justseparate.json' % (building.id)
     with open(filename, 'r') as fp:
         data = json.load(fp)
     return data

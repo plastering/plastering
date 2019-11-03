@@ -5,7 +5,7 @@ import json
 import pandas as pd
 import numpy as np
 
-from plastering.metadata_interface import LabeledMetadata, RawMetadata, get_or_create
+from plastering.metadata_interface import LabeledMetadata, RawMetadata, get_or_create, Building
 pointPostfixes = ['alarm', 'sensor', 'setpoint', 'command', 'status', 'meter']
 
 
@@ -17,9 +17,10 @@ def pick_point_tagset(tagsets):
     return 'point'
 
 
-building = 'sdh'
-TAGSET_FILE = 'groundtruth/{0}_tagsets.json'.format(building)
-FULLPARSING_FILE = 'groundtruth/{0}_full_parsing.json'.format(building)
+building_name = 'sdh'
+building = get_or_create(Building, name=building_name)
+TAGSET_FILE = 'groundtruth/{0}_tagsets.json'.format(building_name)
+FULLPARSING_FILE = 'groundtruth/{0}_full_parsing.json'.format(building_name)
 
 fullparsing_dict = json.load(open(FULLPARSING_FILE, 'r'))
 tagsets_dict = json.load(open(TAGSET_FILE, 'r'))
