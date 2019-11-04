@@ -34,7 +34,7 @@ class Building(Document):
 
 class RawMetadata(Document):
     srcid = StringField(required=True, unique_with='building')
-    building = ReferenceField(Building, required=True, unique_with='srcid')
+    building = ReferenceField(Building, required=True)#, unique_with='srcid')
     #building = StringField(required=True)
     metadata = DictField()
     meta = {'allow_inheritance': True}
