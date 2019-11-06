@@ -26,7 +26,7 @@ import tensorflow as tf
 from .mongo_models import store_model, get_model, get_tags_mapping, \
     get_crf_results, store_result, get_entity_results
 from .base_scrabble import BaseScrabble
-from jasonhelper import bidict
+from ...helpers import bidict
 from .common import *
 from . import eval_func
 from .char2ir import Char2Ir as Char2IrBase

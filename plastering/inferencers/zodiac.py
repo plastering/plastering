@@ -32,7 +32,7 @@ from ..metadata_interface import RawMetadata, LabeledMetadata
 from ..common import POINT_TAGSET, adder
 from ..rdf_wrapper.common import parse_srcid
 from ..exceptions import AlgorithmError
-from jasonhelper import bidict
+from ..helpers import bidict
 
 DEBUG = False
 if DEBUG:

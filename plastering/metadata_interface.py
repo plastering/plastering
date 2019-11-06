@@ -34,15 +34,13 @@ class Building(Document):
 
 class RawMetadata(Document):
     srcid = StringField(required=True, unique_with='building')
-    building = ReferenceField(Building, required=True)#, unique_with='srcid')
-    #building = StringField(required=True)
+    building = ReferenceField(Building, required=True)
     metadata = DictField()
     meta = {'allow_inheritance': True}
 
 
 class LabeledMetadata(Document):
     srcid = StringField(required=True)
-    #building = StringField(required=True)
     building = ReferenceField(Building, required=True)
     fullparsing = DictField(default={})
     tagsets = ListField(StringField(), default=[])

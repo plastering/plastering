@@ -9,8 +9,8 @@ building_name = 'sdh'
 target_building = get_or_create(Building, name=building_name)
 config = {
     'brick_version': '1.0.3',
-    'brick_file': '/home/jbkoh/repo/Brick_jbkoh/dist/Brick.ttl',
-    'brickframe_file': '/home/jbkoh/repo/Brick_jbkoh/dist/BrickFrame.ttl',
+    'brick_file': 'https://brickschema.org/schema/1.0.3/Brick.ttl',
+    'brickframe_file': 'https://brickschema.org/schema/1.0.3/BrickFrame.ttl',
     'crfimpl': 'crfsuite',
     'ir2tagsets.epochs': 50,
     #'ir2tagsets.epochs': 1000,
@@ -33,4 +33,4 @@ for i in range(0, 20):
     selected_samples = scrabble.select_informative_samples(10)
     scrabble.update_model(selected_samples)
 res = scrabble.predict(target_srcids)
-res.g.serialize('test.ttl', format='turtle')
+res.g.serialize('scrabble_output.ttl', format='turtle')

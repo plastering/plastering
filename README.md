@@ -4,23 +4,27 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
 # Getting Started
 
 ## Installation
-1. Install MongoDB
-2. Install Dependencies
-    - ``pip install -r requirements.txt``
-3. ~~Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet. You may use synthesized data to test the algorithms for now.~~ Unfortunately, UCSD does not approve publicly sharing the data. We may have a procedure to sign an agreement, but it's still under development. Until then please refer to a synthesized data as specified in [an example](https://github.com/plastering/plastering/blob/refactor-inferencer/examples/tutorial/load_data.py).
+1. Install MongoDB: [instruction](https://docs.mongodb.com/manual/installation/#mongodb-community-edition-installation-tutorials)
+2. Install Dependencies: `pip install -r requirements.txt`
+3. Install Plastering package: `python setup.py install`
+4. ~~Download dataset [here](https://drive.google.com/drive/u/0/folders/1I-hV6j7AQSm4Q_pd3tc9_tBEJUIKveQg). This link is not public yet. You may use synthesized data to test the algorithms for now.~~ Unfortunately, UCSD does not approve publicly sharing the data. We may have a procedure to sign an agreement, but it's still under development. Until then please refer to a synthesized data as specified in [an example](https://github.com/plastering/plastering/blob/refactor-inferencer/examples/tutorial/load_data.py).
 
 ## Example with synthesized data.
 1. Load data: ``python examples/tutorial/load_data.py``
 2. Run Zodiac: ``python examples/tutorial/zodiac_tutorial.py``
     - This will print out accuracy (F1 scores) step by step.
 
-## Run
-1. Init Brick: ``git submodule update --init --recursive Brick``
-2. Init data: ``python data_init.py -b ap_m``
-3. Run Zodiac test: ``python test_zodiac.py``
-4. Run Workflow test: ``python test_workflow.py``
-5. Run Zodiac experiments: ``python scripts/exp_zodiac.py ap_m``
-6. Produce figures: ``python scripts/result_drawer.py``
+## Example with SDH data
+1. Load ata: `python examples/tutorial/load_data_sdh.py`
+2. Run Scrabble: `python examples/tutorial/scrabble_tutorial.py`
+    - This produces `scrabble_output.ttl`.
+    - There will be an update about how to produce other types of results (metrics, other files, etc.)
+
+## Other examples
+1. Run Zodiac test: ``python test_zodiac.py``
+2. Run Workflow test: ``python test_workflow.py``
+3. Run Zodiac experiments: ``python scripts/exp_zodiac.py ap_m``
+4. Produce figures: ``python scripts/result_drawer.py``
 
 
 # Speficiation

@@ -2,7 +2,6 @@ prompt_toolkit==1.0.15
 arrow
 python-crfsuite
 mongoengine
-#git+git://github.com/jbkoh/jason_python_helper.git
 pandas
 tabulate
 rdflib
@@ -11,4 +10,9 @@ SPARQLWrapper
 matplotlib
 scikit-learn
 pyyaml
-#git+https://github.com/jbkoh/scrabble.git@master
+pandas
+requests
+scikit_multilearn==0.2.0
+dtw
+tensorflow==1.14.0
+git+https://github.com/jbkoh/keras
