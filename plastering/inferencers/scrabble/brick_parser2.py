@@ -27,8 +27,8 @@ def get_prefixes(version):
 
 def get_schema_graph(version):
     if not schema_g:
-        schema_g.parse('https://brickschema.org/schema/{0}/Brick.ttl'.format(version), format='turtle')
-        schema_g.parse('https://brickschema.org/schema/{0}/BrickFrame.ttl'.format(version), format='turtle')
+        schema_g.parse('https://github.com/BrickSchema/Brick/releases/download/v{0}/Brick.ttl'.format(version), format='turtle')
+        schema_g.parse('https://github.com/BrickSchema/Brick/releases/download/v{0}/BrickFrame.ttl'.format(version), format='turtle')
         # TODO: Parameterize this or use an online link.
     return schema_g
 
