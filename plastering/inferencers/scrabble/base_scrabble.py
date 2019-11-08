@@ -8,6 +8,8 @@ import json
 import random
 from functools import reduce
 
+from ...metadata_interface import get_one_doc, LabeledMetadata
+
 def adder(x, y):
     return x + y
 
@@ -45,6 +47,10 @@ class BaseScrabble(object):
         self.learning_srcids = learning_srcids
         self.config = config
         self.history = []
+
+    def get_fullparsing_labels(self, srcid, label_type):
+        return [pair[1] for pair in
+                get_one_doc(LabeledMetadata, pgid=self.pgid, srcid=srcid).fullparsing[label_type]]
 
     def leave_one_word(self, s, w):
         if w in s:

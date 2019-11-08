@@ -5,6 +5,8 @@ import pprint
 import pandas as pd
 from tabulate import tabulate
 
+from werkzeug import exceptions
+
 from .common import FULL_PARSING, POINT_TAGSET, ALL_TAGSETS
 
 pd.options.display.max_colwidth = 200
@@ -106,3 +108,10 @@ def insert_groundtruth(srcid, building, pgid,
 
 def get_or_create(doc_type, **query):
     return doc_type.objects(**query).upsert_one(**query)
+
+def get_one_doc(doc_type, **query):
+    docs = doc_type.objects(**query)
+    if not docs:
+        raise exceptions.NotFound('{0} not found for {1}'.format(doc_type, query))
+        #raise exceptions.NotFound('{0} not found for {1}'.format(doc_type, query))
+    return docs[0]

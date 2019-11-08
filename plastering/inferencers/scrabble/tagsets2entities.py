@@ -55,6 +55,7 @@ class Tagsets2Entities(BaseScrabble):
                  source_buildings=[],
                  source_sample_num_list=[],
                  learning_srcids=[],
+                 pgid=None,
                  config={}
                  ):
         super(Tagsets2Entities, self).__init__(

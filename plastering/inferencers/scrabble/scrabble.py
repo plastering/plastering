@@ -60,6 +60,7 @@ class Scrabble(BaseScrabble):
                                source_buildings,
                                source_sample_num_list,
                                deepcopy(self.learning_srcids),
+                               self.pgid,
                                config
                                )
         self.ir2tagsets = Ir2Tagsets(target_building,
@@ -71,6 +72,7 @@ class Scrabble(BaseScrabble):
                                      source_sample_num_list,
                                      deepcopy(self.learning_srcids),
                                      known_tags_dict=known_tags_dict,
+                                     pgid=self.pgid,
                                      config=config
                                      )
         self.tagsets2entities = Tagsets2Entities(target_building,
@@ -81,6 +83,7 @@ class Scrabble(BaseScrabble):
                                                  source_buildings,
                                                  source_sample_num_list,
                                                  deepcopy(self.learning_srcids),
+                                                 pgid=pgid,
                                                  config=config
                                                  )
         self.target_cluster_dict = self.char2ir.building_cluster_dict[target_building.id]
