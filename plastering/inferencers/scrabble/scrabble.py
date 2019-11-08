@@ -19,17 +19,19 @@ class Scrabble(BaseScrabble):
                  config={},
                  learning_srcids=[],
                  task='scrabble',
+                 pgid=None,
                  ):
         super(Scrabble, self).__init__(
-                 target_building,
-                 target_srcids,
-                 building_label_dict,
-                 building_sentence_dict,
-                 building_tagsets_dict,
-                 source_buildings,
-                 source_sample_num_list,
-                 deepcopy(learning_srcids),
-                 config)
+            target_building,
+            target_srcids,
+            building_label_dict,
+            building_sentence_dict,
+            building_tagsets_dict,
+            source_buildings,
+            source_sample_num_list,
+            deepcopy(learning_srcids),
+            pgid,
+            config)
         from .ir2tagsets import Ir2Tagsets
         crfimpl = config['crfimpl']
         if crfimpl == 'keras':

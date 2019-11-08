@@ -112,17 +112,19 @@ class Ir2Tagsets(BaseScrabble):
                  source_sample_num_list=[],
                  learning_srcids=[],
                  known_tags_dict={},
+                 pgid=None,
                  config={}):
         super(Ir2Tagsets, self).__init__(
-                 target_building,
-                 target_srcids,
-                 building_label_dict,
-                 building_sentence_dict,
-                 building_tagsets_dict,
-                 source_buildings,
-                 source_sample_num_list,
-                 learning_srcids,
-                 config)
+            target_building,
+            target_srcids,
+            building_label_dict,
+            building_sentence_dict,
+            building_tagsets_dict,
+            source_buildings,
+            source_sample_num_list,
+            learning_srcids,
+            pgid=pgid,
+            config)
         self.ts2ir = None
         self.ts_feature_filename = 'temp/features.pkl'
 

@@ -88,6 +88,7 @@ class ScrabbleInterface(object):
                                  sample_num_list,
                                  known_tags_dict,
                                  config=config,
+                                 pgid=self.pgid,
                                  )
         # new_srcids = deepcopy(self.scrabble.learning_srcids)
         if self.hotstart:

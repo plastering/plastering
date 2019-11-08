@@ -33,18 +33,20 @@ class Char2Ir(BaseScrabble):
                  source_buildings=[],
                  source_sample_num_list=[],
                  learning_srcids=[],
+                 pgid=None,
                  config={}
                  ):
         super(Char2Ir, self).__init__(
-                 target_building,
-                 target_srcids,
-                 building_label_dict,
-                 building_sentence_dict,
-                 {},
-                 source_buildings,
-                 source_sample_num_list,
-                 learning_srcids,
-                 config)
+            target_building,
+            target_srcids,
+            building_label_dict,
+            building_sentence_dict,
+            {},
+            source_buildings,
+            source_sample_num_list,
+            learning_srcids,
+            pgid,
+            config)
         self.model_uuid = None
 
         if 'crftype' in config:

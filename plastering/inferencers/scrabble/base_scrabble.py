@@ -28,7 +28,9 @@ class BaseScrabble(object):
                  source_buildings=[],
                  source_sample_num_list=[],
                  learning_srcids=[],
+                 pgid=None,
                  config={}):
+        self.pgid = pgid
         self.source_buildings = source_buildings
         self.target_building = target_building
         if self.target_building not in self.source_buildings:
