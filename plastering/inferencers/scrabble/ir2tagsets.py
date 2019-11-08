@@ -123,7 +123,7 @@ class Ir2Tagsets(BaseScrabble):
             source_buildings,
             source_sample_num_list,
             learning_srcids,
-            pgid=pgid,
+            pgid,
             config)
         self.ts2ir = None
         self.ts_feature_filename = 'temp/features.pkl'
