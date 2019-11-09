@@ -48,10 +48,6 @@ class BaseScrabble(object):
         self.config = config
         self.history = []
 
-    def get_fullparsing_labels(self, srcid, label_type):
-        return [pair[1] for pair in
-                get_one_doc(LabeledMetadata, pgid=self.pgid, srcid=srcid).fullparsing[label_type]]
-
     def leave_one_word(self, s, w):
         if w in s:
             s = s.replace(w, '')

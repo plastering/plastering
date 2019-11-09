@@ -164,8 +164,7 @@ class Char2Ir(BaseScrabble):
                 self._calc_features(sentence, None)), labels)
         else:
             for metadata_type, sentence in self.sentence_dict[srcid].items():
-                #labels = self.label_dict[srcid][metadata_type]
-                labels = self.get_fullparsing_labels(srcid, metadata_type)
+                labels = self.label_dict[srcid][metadata_type]
                 if len(labels) != len(sentence):
                     pdb.set_trace()
                 trainer.append(pycrfsuite.ItemSequence(
