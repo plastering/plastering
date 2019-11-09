@@ -7,9 +7,10 @@ from copy import deepcopy
 from . import Inferencer
 from ..common import POINT_TAGSET, ALL_TAGSETS, FULL_PARSING
 from ..common import select_point_tagset, is_point_tagset
+from ..metadata_interface import get_one_doc, LabeledMetadata, RawMetadata
 from .scrabble_helper import load_data
 from .scrabble.scrabble import Scrabble  # This may imply incompatible imports.
-from .scrabble.common import select_random_samples
+from .scrabble.common import select_random_samples, make_phrase
 
 
 @Inferencer()
@@ -69,7 +70,7 @@ class ScrabbleInterface(object):
             self.apply_validating_samples = config['apply_validating_samples']
 
         # TODO: This should be migrated into Plastering
-        building_sentence_dict, target_srcids, building_label_dict,\
+        building_sentence_dict, _, building_label_dict,\
             building_tagsets_dict, known_tags_dict = load_data(target_building,
                                                                self.source_buildings,
                                                                metadata_types=self.valid_metadata_types,
@@ -108,7 +109,23 @@ class ScrabbleInterface(object):
             print('f1: {0}'.format(self.history[-1]['metrics']['f1']))
             print('macrof1: {0}'.format(self.history[-1]['metrics']['macrof1']))
 
+    def register_labels(self, srcids):
+        for srcid in srcids:
+            labeled = get_one_doc(LabeledMetadata, srcid=srcid, pgid=self.pgid)
+            sentences = get_one_doc(RawMetadata,
+                                    srcid=srcid,
+                                    building__in=self.source_buildings,
+                                    ).metadata
+            self.scrabble.ir2tagsets.tagsets_dict[srcid] = labeled.tagsets
+            token_labels = {}
+            for metadata_type, char_label_pairs in labeled.fullparsing.items():
+                token_labels[metadata_type] = [pair[1] for pair in char_label_pairs]
+            self.scrabble.char2ir.label_dict[srcid] = token_labels
+            self.scrabble.ir2tagsets.phrase_dict[srcid] = make_phrase(sentences, token_labels)
+            self.scrabble.ir2tagsets.tagsets_dict[srcid] = labeled.tagsets
+
     def update_model(self, new_srcids):
+        self.register_labels(new_srcids)
         self.scrabble.update_model(new_srcids)
 
     def postprocessing_pred(self, pred):

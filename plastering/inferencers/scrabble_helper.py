@@ -29,6 +29,7 @@ def load_data(target_building,
               #bacnettype_mapping_file='config/bacnettype_mapping.csv',
               bacnettype_flag=False,
               metadata_types=['VendorGivenName'],
+              learning_srcids=[]
               ):
     building_sentence_dict = dict()
     building_label_dict = dict()
@@ -52,6 +53,8 @@ def load_data(target_building,
         label_dict = {}
         for labeled in LabeledMetadata.objects(building=building):
             srcid = labeled.srcid
+            if srcid not in learning_srcids:
+                continue
             true_tagsets[srcid] = labeled.tagsets
             fullparsing = labeled.fullparsing
             labels = {}

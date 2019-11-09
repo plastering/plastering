@@ -1,4 +1,5 @@
 from uuid import uuid4
+from functools import reduce
 import pdb
 import os
 from operator import itemgetter
@@ -146,10 +147,6 @@ class Ir2Tagsets(BaseScrabble):
         else:
             #self.n_jobs = 1
             self.n_jobs = 6
-        if 'ts_flag' in config:
-            self.ts_flag = config['ts_flag']
-        else:
-            self.ts_flag = False
         if 'negative_flag' in config:
             self.negative_flag = config['negative_flag']
         else:
@@ -272,9 +269,6 @@ class Ir2Tagsets(BaseScrabble):
 
         self.phrase_dict = make_phrase_dict(self.sentence_dict, 
                                             self.label_dict)
-        # validation
-        for srcid in self.target_srcids:
-            assert srcid in self.tagsets_dict
         if self.expand_tagsets_by_hierarchy_flag:
             self.expand_tagsets_by_hierarchy()
 
@@ -287,10 +281,10 @@ class Ir2Tagsets(BaseScrabble):
         self.learning_srcids += list(srcids) * 2
         self.target_srcids = [srcid for srcid in self.target_srcids
                               if srcid not in self.learning_srcids]
-        invalid_num = sum([srcid not in self.tagsets_dict for srcid in
-                           self.learning_srcids + self.target_srcids]) #debug
-        self._extend_tagset_list(reduce(adder, [self.tagsets_dict[srcid]
-            for srcid in self.learning_srcids + self.target_srcids]))
+        # invalid_num = sum([srcid not in self.tagsets_dict for srcid in
+        #                    self.learning_srcids + self.target_srcids])  # for debug
+        self._extend_tagset_list(reduce(adder, [self.tagsets_dict[srcid] for srcid
+                                                in self.learning_srcids]))
         #augment_tagset_tree(self.tagset_list, self.subclass_dict, self.tagset_tree)
         self._build_tagset_classifier(self.learning_srcids,
                                       self.target_srcids,
@@ -320,13 +314,14 @@ class Ir2Tagsets(BaseScrabble):
                                                test_srcids,
                                                building,
                                                pred_tagsets_dict,
-                                               inc_num):
+                                               inc_num,
+                                               phrase_dict
+                                               ):
         phrase_usage_dict = {}
         for srcid in test_srcids:
             pred_tagsets = pred_tagsets_dict[srcid]
-            phrase_usage_dict[srcid] = self._determine_used_phrases(
-                                           self.phrase_dict[srcid],
-                                           pred_tagsets)
+            phrase_usage_dict[srcid] = self._determine_used_phrases(phrase_dict[srcid],
+                                                                    pred_tagsets)
 
         phrase_usages = list(phrase_usage_dict.values())
         mean_usage_rate = np.mean(phrase_usages)
@@ -400,14 +395,18 @@ class Ir2Tagsets(BaseScrabble):
                 break
         return todo_srcids
 
-    def select_informative_samples(self, sample_num):
+    def select_informative_samples(self, sample_num, phrase_dict=None):
+        if not phrase_dict:
+            phrase_dict = deepcopy(self.phrase_dict)
         if self.query_strategy == 'phrase_util':
-            pred = self.predict(self.target_srcids)
+            pred = self.predict(self.target_srcids, phrase_dict=phrase_dict)
             new_srcids = self.ir2tagset_al_query_samples_phrase_util(
-                                self.target_srcids,
-                                self.target_building,
-                                pred,
-                                sample_num)
+                self.target_srcids,
+                self.target_building,
+                pred,
+                sample_num,
+                phrase_dict
+            )
         elif self.query_strategy == 'entropy':
             _, _, prob_mat = self._predict_and_proba(self.target_srcids, True)
             #proba = self.predict_proba(self.target_srcids)
@@ -439,14 +438,13 @@ class Ir2Tagsets(BaseScrabble):
             phrase_dict[srcid] += list(pred_tags)
         return phrase_dict
 
-    def _predict_and_proba(self, target_srcids, full_prob=False):
+    def _predict_and_proba(self, target_srcids, full_prob=False, phrase_dict=None):
         if not target_srcids:
             return {}, {}
+        if not phrase_dict:
+            phrase_dict = deepcopy(self.phrase_dict)
 
-        phrase_dict = {srcid: self.phrase_dict[srcid]
-                       for srcid in target_srcids}
-        if self.ts_flag:
-            phrase_dict = self._augment_phrases_with_ts(phrase_dict, target_srcids, self.ts2ir)
+        #phrase_dict = {srcid: self.phrase_dict[srcid] for srcid in target_srcids}
         if self.use_known_tags:
             doc = [' '.join(phrase_dict[srcid] + self.known_tags_dict[srcid])
                    for srcid in target_srcids]
@@ -472,9 +470,7 @@ class Ir2Tagsets(BaseScrabble):
         pred_tagsets_dict = dict()
         pred_certainty_dict = dict()
         pred_point_dict = dict()
-        for i, (srcid, pred, prob) in enumerate(zip(target_srcids,
-                                              pred_mat,
-                                              prob_mat)):
+        for i, (srcid, pred, prob) in enumerate(zip(target_srcids, pred_mat, prob_mat)):
             pred_tagsets = self.tagset_binarizer.inverse_transform(np.asarray([pred]))[0]
             #pred_tagsets_dict[srcid] = self.tagset_binarizer.inverse_transform(\
             #                                np.asarray([pred]))[0]
@@ -500,10 +496,10 @@ class Ir2Tagsets(BaseScrabble):
         else:
             return pred_tagsets_dict, pred_certainty_dict
 
-    def predict(self, target_srcids=None):
+    def predict(self, target_srcids=None, phrase_dict=None):
         if not target_srcids:
             target_srcids =self.target_srcids
-        pred, _ = self._predict_and_proba(target_srcids)
+        pred, _ = self._predict_and_proba(target_srcids, phrase_dict=phrase_dict)
         return pred
 
     def predict_proba(self, target_srcids=None):
@@ -791,12 +787,6 @@ class Ir2Tagsets(BaseScrabble):
             raise Exception('Wrong vectorizer type: {0}'
                                 .format(self.vectorizer_type))
 
-        if self.ts_flag:
-            pdb.set_trace()
-            pass
-            #TODO: Run self._augment_with_ts()
-            self._augment_with_ts()
-
         ## Transform learning samples
         if self.use_known_tags: #TODO: Remove this is not necessary
             learning_doc = [' '.join(self.phrase_dict[srcid] +
@@ -812,7 +802,7 @@ class Ir2Tagsets(BaseScrabble):
             learning_srcids *= 2
         else:
             learning_doc = [' '.join(self.phrase_dict[srcid]) for srcid in learning_srcids]
-            target_doc = [' '.join(self.phrase_dict[srcid]) for srcid in target_srcids]
+            #target_doc = [' '.join(self.phrase_dict[srcid]) for srcid in target_srcids]
 
         # Augment with negative examples.
         if self.negative_flag:
@@ -846,7 +836,7 @@ class Ir2Tagsets(BaseScrabble):
         learning_domain_vect_doc = self.domain_vectorizer.transform(learning_domain_doc).todense()
         target_domain_vect_doc = self.domain_vectorizer.transform(target_domain_doc).todense()
 
-        self.tagset_vectorizer.fit(learning_doc + target_doc)# + brick_doc)
+        self.tagset_vectorizer.fit(learning_doc)#+ target_doc)# + brick_doc)
 
         # Apply Easy-Domain-Adaptation mechanism. Not useful.
         if self.eda_flag:
@@ -856,7 +846,7 @@ class Ir2Tagsets(BaseScrabble):
             # Make TagSet vectors.
 
             learning_vect_doc = self.tagset_vectorizer.transform(learning_doc).todense()
-            target_vect_doc = self.tagset_vectorizer.transform(target_doc).todense()
+            #target_vect_doc = self.tagset_vectorizer.transform(target_doc).todense()
 
         truth_mat = csr_matrix([self.tagset_binarizer.transform(
                                     [self.tagsets_dict[srcid]])[0]

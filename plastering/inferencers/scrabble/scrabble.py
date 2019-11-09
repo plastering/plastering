@@ -4,6 +4,7 @@ from copy import deepcopy
 from .base_scrabble import BaseScrabble
 from .tagsets2entities import Tagsets2Entities
 from .common import *
+from .common import make_phrase_dict, select_random_samples
 
 
 class Scrabble(BaseScrabble):
@@ -87,7 +88,6 @@ class Scrabble(BaseScrabble):
                                                  config=config
                                                  )
         self.target_cluster_dict = self.char2ir.building_cluster_dict[target_building.id]
-        #self.update_model([])
 
     def init_data(self, learning_srcids=[]):
         self.sentence_dict = {}
@@ -105,12 +105,12 @@ class Scrabble(BaseScrabble):
                 self.learning_srcids = learning_srcids
             else:
                 sample_srcid_list = select_random_samples(
-                    building = building,
-                    srcids = one_label_dict.keys(),
-                    n = source_sample_num,
-                    use_cluster_flag = self.use_cluster_flag,
-                    sentence_dict = self.building_sentence_dict[building.id],
-                    shuffle_flag = False
+                    building=building,
+                    srcids=one_label_dict.keys(),
+                    n=source_sample_num,
+                    use_cluster_flag=self.use_cluster_flag,
+                    sentence_dict=self.building_sentence_dict[building.id],
+                    shuffle_flag=False
                 )
                 self.learning_srcids += sample_srcid_list
             one_tagsets_dict = self.building_tagsets_dict[building.id]
@@ -127,10 +127,6 @@ class Scrabble(BaseScrabble):
 
         self.phrase_dict = make_phrase_dict(self.sentence_dict,
                                             self.label_dict)
-        # validation
-        for srcid in self.target_srcids:
-            assert srcid in self.tagsets_dict
-
 
     def update_model(self, srcids):
         self.learning_srcids += srcids
@@ -138,7 +134,6 @@ class Scrabble(BaseScrabble):
             self.char2ir.update_model(srcids)
         if self.task in ['scrabble', 'ir2tagsets']:
             self.ir2tagsets.update_model(srcids)
-
 
     def predict_tags(self, target_srcids=None):
         if not target_srcids:
@@ -151,10 +146,8 @@ class Scrabble(BaseScrabble):
             target_srcids = self.target_srcids
         pred_bios = self.char2ir.predict(target_srcids)
         pred_phrases = make_phrase_dict(self.sentence_dict, pred_bios)
-        phrases = {srcid: self.phrase_dict[srcid]
-                          if srcid in self.learning_srcids
-                          else pred_phrases[srcid]
-                   for srcid in target_srcids}
+        phrases = {srcid: self.phrase_dict[srcid] if srcid in self.learning_srcids
+                   else pred_phrases[srcid] for srcid in target_srcids}
         self.ir2tagsets.update_phrases(phrases)
         pred = self.ir2tagsets.predict(target_srcids)
         if self.graphize:
@@ -180,10 +173,12 @@ class Scrabble(BaseScrabble):
 
     def select_informative_samples(self, sample_num):
         char2ir_srcids = self.char2ir.select_informative_samples(sample_num)
-        ir2tagsets_srcids = self.ir2tagsets.select_informative_samples(
-                                sample_num)
-        cand_srcids = [item for pair in zip(char2ir_srcids, ir2tagsets_srcids)
-                      for item in pair]
+        pred_label_dict = self.char2ir.predict()
+        phrase_dict = make_phrase_dict(self.sentence_dict, pred_label_dict)
+        ir2tagsets_srcids = self.ir2tagsets.select_informative_samples(sample_num,
+                                                                       phrase_dict=phrase_dict,
+                                                                       )
+        cand_srcids = [item for pair in zip(char2ir_srcids, ir2tagsets_srcids) for item in pair]
         #redundant_srcids = [srcid for srcid in new_srcids
         #                    if srcid in self.learning_srcids]
         new_srcids = []

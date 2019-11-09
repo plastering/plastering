@@ -194,6 +194,24 @@ def bilou_tagset_phraser(sentence, token_labels, keep_alltokens=False):
     phrase_labels = list(reduce(adder, map(splitter, phrase_labels), []))
     return phrase_labels
 
+def make_phrase(sentences, token_labels, keep_alltokens=False):
+    phrases = []
+    for metadata_type, token_labels in token_labels.items():
+        sentence = sentences[metadata_type]
+        phrases += bilou_tagset_phraser(
+            sentence, token_labels, keep_alltokens)
+    remove_indices = list()
+    for i, phrase in enumerate(phrases):
+        #TODO: Below is heuristic. Is it allowable?
+        #if phrase.split('-')[0] in ['building', 'networkadapter',\
+        #                            'leftidentifier', 'rightidentifier']:
+        if phrase.split('-')[0] in ['leftidentifier', 'rightidentifier'] and not keep_alltokens:
+            pdb.set_trace()
+            remove_indices.append(i)
+            pass
+    phrases = [phrase for i, phrase in enumerate(phrases) if i not in remove_indices]
+    return phrases
+
 def make_phrase_dict(sentence_dict, token_label_dict, keep_alltokens=False):
     #phrase_dict = OrderedDict()
     phrase_dict = dict()
