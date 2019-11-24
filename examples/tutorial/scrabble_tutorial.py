@@ -13,7 +13,7 @@ config = {
     'brickframe_file': 'https://brickschema.org/schema/1.0.3/BrickFrame.ttl',
     'crfimpl': 'crfsuite',
     #'ir2tagsets.epochs': 30,
-    'ir2tagsets.epochs': 1000,
+    'ir2tagsets.epochs': 500,
 }
 
 # Select labeled srcids (Not all the data are labeled yet.)

@@ -1,4 +1,4 @@
-prompt_toolkit==1.0.15
+prompt_toolkit
 arrow
 python-crfsuite
 mongoengine
