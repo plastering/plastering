@@ -1,4 +1,6 @@
 import os
+import io
+import requests
 import time
 import pdb
 import random
@@ -360,10 +362,18 @@ class Inferencer(object):
                         self.prior_g.remove(triple)
 
             def new_graph(self, empty=True):
+                brick_schema_url = 'https://brickschema.org/schema/{version}/Brick.ttl'.format(
+                    versoin=self.brick_version)
+                bf_schema_url = 'https://brickschema.org/schema/{version}/BrickFrame.ttl'.format(
+                    versoin=self.brick_version)
                 return BrickGraph(empty,
                                   version=self.brick_version,
-                                  brick_file=self.brick_file,
-                                  brickframe_file=self.brickframe_file,
+                                  brick_file=io.StringIO(
+                                      requests.get(brick_schema_url).content.decode('utf-8'),
+                                  ),
+                                  brickframe_file=io.StringIO(
+                                      requests.get(bf_schema_url).content.decode('utf-8'),
+                                  ),
                                   triplestore_type=self.triplestore_type,
                                   )
 
