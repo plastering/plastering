@@ -11,7 +11,7 @@ import logging.config
 
 import arrow
 
-from ..metadata_interface import insert_groundtruth, query_labels, RawMetadata, LabeledMetadata
+from ..metadata_interface import insert_groundtruth, query_labels, RawMetadata, LabeledMetadata, Building
 from ..common import POINT_TAGSET, ALL_TAGSETS, FULL_PARSING
 from .. import plotter
 from ..rdf_wrapper import RDFLIB, BrickGraph
@@ -114,6 +114,7 @@ class Inferencer(object):
                 self.prior_confidences = {}
                 self.schema_g = self.new_graph(empty=False)
                 self.pred_probs = {}
+                assert isinstance(target_building, Building)
                 self.target_building = target_building
                 self.target_srcids = target_srcids
                 self.history = []  # logging and visualization purpose

@@ -5,7 +5,7 @@ from plastering.inferencers.zodiac import ZodiacInterface
 from plastering.metadata_interface import LabeledMetadata, RawMetadata, Building, get_or_create
 from plastering.uis.cmdline_ui import ReplUi
 
-target_building = get_or_create(Building, name='bldg')
+target_building = get_or_create(Building, name='aquicore')
 config = {
     'brick_version': '1.0.3',
     'brick_file': 'https://brickschema.org/schema/1.0.3/Brick.ttl',
@@ -13,16 +13,17 @@ config = {
 }
 
 # Select labeled srcids (Not all the data are labeled yet.)
-target_srcids = [doc.srcid for doc in LabeledMetadata.objects(building=target_building)]
+target_srcids = [doc.srcid for doc in RawMetadata.objects(building=target_building)]
+#target_srcids = [doc.srcid for doc in LabeledMetadata.objects(building=target_building)]
 print('target #: {0}'.format(len(target_srcids)))
 zodiac = ZodiacInterface(target_building=target_building,
                          target_srcids=target_srcids,
                          config=config,
                          logging_configfile='config/logging.yaml',
                          metadata_types=['VendorGivenName',
-                                         'BACnetName',
-                                         'BACnetDescription',
-                                         'BACnetUnit',
+                                         #'BACnetName',
+                                         #'BACnetDescription',
+                                         #'BACnetUnit',
                                          ],
                          )
 all_tagsets = [tagset.lower().split('#')[-1] for tagset in zodiac.schema_g.get_all_tagsets()]
