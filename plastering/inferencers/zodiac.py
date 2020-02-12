@@ -105,8 +105,8 @@ class ZodiacInterface(object):
         self.total_srcids = deepcopy(target_srcids) + source_buildings_srcids
         self.available_srcids = deepcopy(self.training_srcids)
 
-        if self.available_srcids:
-            self.init_model()
+        #if self.available_srcids:
+        self.init_model()
 
     def init_model(self):
 
