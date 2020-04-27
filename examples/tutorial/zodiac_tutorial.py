@@ -5,7 +5,7 @@ from plastering.inferencers.zodiac import ZodiacInterface
 from plastering.metadata_interface import LabeledMetadata, RawMetadata, Building, get_or_create
 from plastering.uis.cmdline_ui import ReplUi
 
-target_building = get_or_create(Building, name='aquicore')
+target_building = get_or_create(Building, name='bldg')
 config = {
     'brick_version': '1.0.3',
     'brick_file': 'https://brickschema.org/schema/1.0.3/Brick.ttl',
