@@ -151,7 +151,8 @@ class DummyQuiver(Inferencer):
         print('Quiver done')
         return pred_g
 
-class DummyPritoni(Inferencer):
+@Inferencer()
+class DummyPritoni(object):
 
     def __init__(self,
                  ground_truth_ttl,

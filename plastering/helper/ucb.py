@@ -6,7 +6,7 @@ import re
 from ..metadata_interface import *
 from ..common import *
 
-with open('./groundtruth/ucb_brick_map.json', 'r') as fp:
+with open('../../groundtruth/ucb_brick_map.json', 'r') as fp:
     brick_map = json.load(fp)
 
 def brickify_arka_data():
