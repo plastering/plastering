@@ -40,32 +40,30 @@ def logging_result(file):
     return write_log
 
 
-# # TODO: Change this
-# def cal_sensor_acc(best_solution, test_y):
-#     total, cnt = 0, 0
-#     for i in range(len(best_solution)):
-#         for j in range(len(best_solution[i]) - 1):
-#             for k in range(j + 1, len(best_solution[i])):
-#                 # print(best_solution[i][j], best_solution[i][k])
-#                 if best_solution[i][j] in test_y or best_solution[i][k] in test_y:
-#                     total += 1
-#                     print(best_solution[i][j], best_solution[i][k])
-#                 else:
-#                     continue
-#                 if int(best_solution[i][j] / 4) == int(best_solution[i][k] / 4):
-#                     cnt += 1
-#     # print(total, cnt)
-#     acc = cnt / total
-#     return acc
+def cal_sensor_acc(best_solution, test_y, sensor_count):
+    total, cnt = 0, 0
+    for i in range(len(best_solution)):
+        for j in range(len(best_solution[i]) - 1):
+            for k in range(j + 1, len(best_solution[i])):
+                # print(best_solution[i][j], best_solution[i][k])
+                if best_solution[i][j] in test_y or best_solution[i][k] in test_y:
+                    total += 1
+                    print(best_solution[i][j], best_solution[i][k])
+                else:
+                    continue
+                if int(best_solution[i][j] / sensor_count) == int(best_solution[i][k] / sensor_count):
+                    cnt += 1
+    # print(total, cnt)
+    acc = cnt / total
+    return acc
 
 
-# TODO: Change this
-def cal_room_acc(best_solution):
+def cal_room_acc(best_solution, sensor_count):
     pp, pn, np, nn = 0, 0, 0, 0  # (ground_truth, prediction)
     for i in range(len(best_solution)):
         for j in range(len(best_solution[i]) - 1):
             for k in range(j + 1, len(best_solution[i])):
-                if int(best_solution[i][j] / 4) == int(best_solution[i][k] / 4):
+                if int(best_solution[i][j] / sensor_count) == int(best_solution[i][k] / sensor_count):
                     pp += 1
                 else:
                     pn += 1
@@ -75,12 +73,12 @@ def cal_room_acc(best_solution):
     recall = pp / (pp + pn)
     acc_room = 0
     for i in range(len(best_solution)):
-        r_id = int(best_solution[i][0] / 4)
-        for j in range(1, 5):
+        r_id = int(best_solution[i][0] / sensor_count)
+        for j in range(1, sensor_count + 1):
             if j == 4:
                 acc_room += 1
                 break
-            if int(best_solution[i][j] / 4) != r_id:
+            if int(best_solution[i][j] / sensor_count) != r_id:
                 break
     room_wise_acc = acc_room / len(best_solution)
     confusion = [[pp, np], [pn, nn]]
@@ -107,7 +105,7 @@ def set_up_logging(config, args):
     return log, log_result, log_path
 
 
-# TODO: Handle different buildings
+# TODO: include config
 def read_ground_truth(building):
     roomList = []
     if building == "Soda":
@@ -168,13 +166,12 @@ def read_ground_truth(building):
 
 # TODO: include config
 # def read_colocation_data(config):
-def read_colocation_data(building):
-
+def read_colocation_data(building, sensor_count):
     x = []  # Store the value
     y = []  # Store the room number
     true_pos = []  # Store the filename
     cnt = 0  # Index for list y
-    room_list = [] # Check if there is a sensor in the same room
+    room_list = []  # Check if there is a sensor in the same room
     groundTruth = read_ground_truth(building)
     final_x, final_y, final_true_pos = [], [], []  # output
 
@@ -247,21 +244,21 @@ def read_colocation_data(building):
             countDict.update({index: a + 1})
 
     # Picking rooms with four sensors
-    fourSensorRoom = []
+    wantedRoom = []
     indexMap = {}
     roomNum = 0
     for key, value in countDict.items():
-        if value == 4:
+        if value == sensor_count:
             # Intuitively we should add the key into the list
             # But the format requires the rooms to be indexes between 0 and length
             # So we create a mapping between real key and the number we want
-            fourSensorRoom.append(key)
+            wantedRoom.append(key)
             indexMap.update({key: roomNum})
             roomNum += 1
 
     # Adding desired rooms into output list
     for i in range(len(y)):
-        if y[i] in fourSensorRoom:
+        if y[i] in wantedRoom:
             # print(i, y[i], true_pos[i])
             final_x.append(x[i])
             final_y.append(indexMap.get(y[i]))
@@ -279,7 +276,8 @@ def read_colocation_data(building):
 
 def read_in_data(building, config):
     # read data & STFT
-    x, y, true_pos = read_colocation_data(building)
+    # TODO: include sensor count in config
+    x, y, true_pos = read_colocation_data(building, 4)
     x = STFT(x, config)
     return x, y, true_pos
 
