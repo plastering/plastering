@@ -25,34 +25,11 @@ class RelationalInference(object):
         self.model = {}
         self.optimizer = {}
         self.loss = {}
+        self.target_x = {}
+        self.target_y = {}
+        self.target_true_pos = {}
 
         self.log(str(time.asctime(time.localtime(time.time()))))
-
-        if self.args.loss == 'triplet':
-            # self.criterion = tripletLoss(margin=1).cuda()
-            self.criterion = tripletLoss(margin=1)
-        elif self.args.loss == 'comb':
-            # self.criterion = combLoss(margin=1).cuda()
-            self.criterion = combLoss(margin=1)
-
-        if self.args.model == 'stn':
-            # self.model = STN(config.dropout, 2 * config.k_coefficient).cuda()
-            self.model = STN(self.config.dropout, 2 * self.config.k_coefficient)
-
-        if self.config.optim == 'SGD':
-            self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.config.learning_rate, momentum=0.9,
-                                             weight_decay=self.config.weight_decay)
-        elif self.config.optim == 'Adam':
-            self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.config.learning_rate,
-                                              weight_decay=self.config.weight_decay)
-
-        if self.config.grad_norm > 0:
-            nn.utils.clip_grad_value_(self.model.parameters(), self.config.grad_norm)
-            for p in self.model.parameters():
-                p.register_hook(lambda grad: torch.clamp(grad, -self.config.grad_norm, self.config.grad_norm))
-
-        print("Model : ", self.model)
-        print("Criterion : ", self.criterion)
 
         for source_building in source_buildings:
             self.x, self.y, self.true_pos = read_in_data(source_building, self.config)
@@ -93,6 +70,31 @@ class RelationalInference(object):
             total_triplets = len(train_x)
             self.log("Total training triplets: %d\n" % total_triplets)
 
+            if self.args.loss == 'triplet':
+                self.criterion = tripletLoss(margin=1).cuda()
+                # self.criterion = tripletLoss(margin=1)
+            elif self.args.loss == 'comb':
+                self.criterion = combLoss(margin=1).cuda()
+                # self.criterion = combLoss(margin=1)
+
+            if self.args.model == 'stn':
+                self.model = STN(self.config.dropout, 2 * self.config.k_coefficient).cuda()
+                # self.model = STN(self.config.dropout, 2 * self.config.k_coefficient)
+
+            if self.config.optim == 'SGD':
+                self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.config.learning_rate, momentum=0.9,
+                                                 weight_decay=self.config.weight_decay)
+            elif self.config.optim == 'Adam':
+                self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.config.learning_rate,
+                                                  weight_decay=self.config.weight_decay)
+
+            if self.config.grad_norm > 0:
+                nn.utils.clip_grad_value_(self.model.parameters(), self.config.grad_norm)
+                for p in self.model.parameters():
+                    p.register_hook(lambda grad: torch.clamp(grad, -self.config.grad_norm, self.config.grad_norm))
+
+            print("Model : ", self.model)
+            print("Criterion : ", self.criterion)
             train_loader = torch.utils.data.DataLoader(train_x, batch_size=self.config.batch_size, shuffle=True)
 
             for epoch in range(self.config.epoch):
@@ -102,13 +104,13 @@ class RelationalInference(object):
                 for step, batch_x in enumerate(train_loader):
                     # get into smaller groups
                     if self.args.model == 'stn':
-                        # anchor = batch_x[0].cuda()
-                        # pos = batch_x[1].cuda()
-                        # neg = batch_x[2].cuda()
+                        anchor = batch_x[0].cuda()
+                        pos = batch_x[1].cuda()
+                        neg = batch_x[2].cuda()
 
-                        anchor = batch_x[0]
-                        pos = batch_x[1]
-                        neg = batch_x[2]
+                        # anchor = batch_x[0]
+                        # pos = batch_x[1]
+                        # neg = batch_x[2]
 
                     output_anchor = self.model(anchor)
                     output_pos = self.model(pos)
@@ -127,7 +129,6 @@ class RelationalInference(object):
 
                 self.log("Triplet accuracy: %f" % (total_triplet_correct / total_triplets))
 
-                # TODO: How to calculate accuracy? How to output prediction?
                 solution, recall, room_wise_acc = self.test_colocation(test_x, test_y, fold)
                 solution = solution.tolist()
 
@@ -153,7 +154,8 @@ class RelationalInference(object):
         pass
 
     def predict(self):
-        pass
+        self.target_x, self.target_y, self.target_true_pos = read_in_data(self.target_building, self.config)
+        return self.test_colocation(self, self.target_x, self.target_y, self.config.fold)
 
     def select_informative_samples(self):
         # currently not supported
@@ -166,8 +168,8 @@ class RelationalInference(object):
 
         with torch.no_grad():
             if self.args.model == 'stn':
-                # out = self.model(torch.from_numpy(np.array(test_x)).cuda())
-                out = self.model(torch.from_numpy(np.array(test_x)))
+                out = self.model(torch.from_numpy(np.array(test_x)).cuda())
+                # out = self.model(torch.from_numpy(np.array(test_x)))
                 # model(tensor(3D array))
                 # Array of 2D arrays
                 # 2D array is the STFT
@@ -179,13 +181,13 @@ class RelationalInference(object):
             cnt = 0
             for step, batch_x in enumerate(test_loader):
                 if self.args.model == 'stn':
-                    # anchor = batch_x[0].cuda()
-                    # pos = batch_x[1].cuda()
-                    # neg = batch_x[2].cuda()
+                    anchor = batch_x[0].cuda()
+                    pos = batch_x[1].cuda()
+                    neg = batch_x[2].cuda()
 
-                    anchor = batch_x[0]
-                    pos = batch_x[1]
-                    neg = batch_x[2]
+                    # anchor = batch_x[0]
+                    # pos = batch_x[1]
+                    # neg = batch_x[2]
 
                 output_anchor = self.model(anchor)
                 output_pos = self.model(pos)
@@ -205,7 +207,7 @@ class RelationalInference(object):
         best_solution, acc, ground_truth_fitness, best_fitness = run.ga(path_m='./result/RelationalInferenceOutput'
                                                                                '/corr_' + str(fold) + '.mat',
                                                                         path_c='10_rooms.json')
-        recall, room_wise_acc = cal_room_acc(best_solution)
+        recall, room_wise_acc = cal_room_acc(best_solution, 4)
         # best_solution [[sensor1, sensor2, sensor3, sensor4],[ ... ], ...]
         # why is best_solution from 0 to 40? 10 rooms. 4 sensors each room
         # Group sensors together
