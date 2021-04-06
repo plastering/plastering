@@ -9,26 +9,29 @@ from ..utils import cache_dict
 from ..utils import printing
 from ..core import corr_score
 
+
 def ground_truth(individual):
     g_t = []
     for i in range(len(individual)):
         g_t.append([])
         for j in range(len(individual[i])):
-            g_t[i].append(i*len(individual[i])+j)
+            g_t[i].append(i * len(individual[i]) + j)
     return g_t
 
-def cal_acc(individual):
+
+def cal_acc(individual, sensor_count):
     pp = 0
     pn = 0
     for i in range(len(individual)):
         for j in range(len(individual[i]) - 1):
             for k in range(j + 1, len(individual[i])):
-                if(int(individual[i][j] / 4) == int(individual[i][k] / 4)):
+                if (int(individual[i][j] / sensor_count) == int(individual[i][k] / sensor_count)):
                     pp += 1
                 else:
                     pn += 1
     recall = pp / (pp + pn)
     return recall
+
 
 def run(config: config_loader.ColocationConfig):
     """run a strict Genetic optimizer
@@ -54,7 +57,7 @@ def run(config: config_loader.ColocationConfig):
                                                  config.type_count)
         assert corr_matrix.shape == (config.type_count * config.room_count,
                                      config.type_count * config.room_count), str(
-                                         config.type_count) + ' ' + str(config.room_count)
+            config.type_count) + ' ' + str(config.room_count)
 
     # Compile functions
     corr_func = corr_score.compile_solution_func(corr_matrix, config.type_count)
@@ -94,7 +97,7 @@ def run(config: config_loader.ColocationConfig):
         if config.plot_fitness_accuracy:
             cache['best_fitness'].append(fitnesses[best])
             cache['accuracies'].append(calcs.calculate_accuracy(population[best]))
-        
+
         population = ga.next_gen(
             population,
             winners,
@@ -104,7 +107,7 @@ def run(config: config_loader.ColocationConfig):
             weight_func=weight_func)
 
     g_t = ground_truth(population[0])
-    fit: np.ndarray = ga.fitness(np.array([g_t], dtype = np.int32), corr_func)
+    fit: np.ndarray = ga.fitness(np.array([g_t], dtype=np.int32), corr_func)
 
     recalls = []
     for i in range(len(population)):
@@ -114,7 +117,6 @@ def run(config: config_loader.ColocationConfig):
     ids = np.argsort(fitnesses)
     for id in ids:
         print("Fitness %f; Recall %f" % (fitnesses[id], recalls[id]))
-    
 
     print("Ground Truth fitness:", fit[0])
     if config.print_final_solution:

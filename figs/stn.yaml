@@ -1,4 +1,4 @@
-data: ../KETI_oneweek
+data: ./groundtruth/SODA-GROUND-TRUTH
 log: ./logs/
 # FFT config
 window_size: 200
