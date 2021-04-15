@@ -1,4 +1,6 @@
 import time
+
+import torch
 from plastering.inferencers import Inferencer
 from .relational_inference_helper import *
 from plastering.inferencers.algorithm.GeneticAlgorithm.colocation import run
@@ -16,7 +18,6 @@ class RelationalInference(object):
                  args={},
                  **kwargs
                  ):
-        # print(source_buildings[0])
 
         self.args = args
         self.config = config
@@ -206,7 +207,7 @@ class RelationalInference(object):
         scio.savemat('./result/RelationalInferenceOutput/corr_' + str(fold) + '.mat', {'corr': test_corr})
         best_solution, acc, ground_truth_fitness, best_fitness = run.ga(path_m='./result/RelationalInferenceOutput'
                                                                                '/corr_' + str(fold) + '.mat',
-                                                                        path_c='10_rooms.json')
+                                                                        path_c='./figs/10_rooms.json')
         recall, room_wise_acc = cal_room_acc(best_solution, self.sensor_count)
         # best_solution [[sensor1, sensor2, sensor3, sensor4],[ ... ], ...]
         # why is best_solution from 0 to 40? 10 rooms. 4 sensors each room

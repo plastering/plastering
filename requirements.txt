@@ -1,4 +1,6 @@
-rapidjson
+torch
+numpy
+python-rapidjson
 terminaltables
 scipy
 prompt_toolkit==1.0.15
@@ -12,7 +14,7 @@ rdflib-jsonld
 SPARQLWrapper
 matplotlib
 scikit-learn
-pyyaml
+PyYAML
 pandas
 requests
 scikit_multilearn==0.2.0

@@ -3,14 +3,8 @@ import os
 import numpy as np
 import yaml
 import random
-import torch
 import torch.nn as nn
-from torch.autograd import Variable
 import torch.nn.functional as F
-
-
-# TODO: Add to requirement
-
 
 # util
 class AttrDict(dict):
@@ -45,7 +39,6 @@ def cal_sensor_acc(best_solution, test_y, sensor_count):
     for i in range(len(best_solution)):
         for j in range(len(best_solution[i]) - 1):
             for k in range(j + 1, len(best_solution[i])):
-                # print(best_solution[i][j], best_solution[i][k])
                 if best_solution[i][j] in test_y or best_solution[i][k] in test_y:
                     total += 1
                     print(best_solution[i][j], best_solution[i][k])
@@ -53,7 +46,6 @@ def cal_sensor_acc(best_solution, test_y, sensor_count):
                     continue
                 if int(best_solution[i][j] / sensor_count) == int(best_solution[i][k] / sensor_count):
                     cnt += 1
-    # print(total, cnt)
     acc = cnt / total
     return acc
 
@@ -106,6 +98,9 @@ def set_up_logging(config, args):
 
 
 def read_ground_truth(building):
+    """
+    This implementation uses Soda as an example.
+    """
     roomList = []
     if building == "Soda":
         f = open("./groundtruth/SODA-GROUND-TRUTH", "r+")
@@ -116,7 +111,7 @@ def read_ground_truth(building):
             roomCorr = [sensorName]
             i += 1
             currLine = lines[i].strip()
-            # manually consider all cases
+            # manually consider all cases.
             if currLine.find("room-id") != -1:
                 currLine = currLine.split(",")
                 roomCorr.append(str(currLine[3]) + ", " + str(currLine[4]))
@@ -157,7 +152,6 @@ def read_ground_truth(building):
                 pass
 
             i += 1
-        # print(roomList)
 
         f.close()
     return roomList
@@ -185,11 +179,10 @@ def read_colocation_data(building, sensor_count):
             if filename.endswith("csv"):
                 _, value = read_csv(os.path.join(path, filename))
                 # print(value)
-                # TODO: clean_temperature in Soda. What is sensor fore temperature?
+                # TODO: clean the temperature sensors
                 if filename == 'temperature.csv':
                     value = clean_temperature(value)
 
-            # TODO: format of input for different buildings
             '''
             Using name as the criteria for same room
             Adding every room and name tuple into a list
@@ -470,7 +463,7 @@ class combLoss(nn.Module):
         return (d_pos < d_neg).sum()
 
 
-# main
+# configuration setup
 
 def parse_args():
     parser = argparse.ArgumentParser(description='main.py')
@@ -492,89 +485,3 @@ def parse_args():
     # the file to be opened depends on where this method is called
     config = read_config('figs/' + args.config + '.yaml')
     return args, config
-
-# Learning Helper
-# def learn_buidling(x, y, log, config, args):
-#     fold_recall = []
-#     fold_room_acc = []
-#
-#     test_indexes = cross_validation_sample(50, 10)
-#
-#     log("test indexes:" + str(test_indexes) + "\n")
-#
-#     # train
-#     # five folds, five sets of test_indexes
-#     for fold, test_index in enumerate(test_indexes):
-#
-#         log("Now training fold: %d" % (fold))
-#
-#         # split training & testing
-#         print("Test indexes: ", test_index)
-#         train_x, train_y, test_x, test_y = split_colocation_train(x, y, test_index, args.split)
-#         # important
-#         # if y in test_index => get into test group
-#         # else get into train group
-#         # say test index = [14, 46, 48, 12, ...]
-#         # then the 14th, 46th, 48th, ... room is test group
-#         # corresponds to folder 456, 746, 752, etc
-#
-#         train_x = gen_colocation_triplet(train_x, train_y)
-#         # This automatically uses y to get correct answer
-#         # so we are able to identify right from wrong
-#
-#         total_triplets = len(train_x)
-#         self.log("Total training triplets: %d\n" % (total_triplets))
-#
-#         train_loader = torch.utils.data.DataLoader(train_x, batch_size=self.config.batch_size, shuffle=True)
-#         for epoch in range(self.config.epoch):
-#
-#             self.log("Now training %d epoch ......\n" % (epoch + 1))
-#             total_triplet_correct = 0
-#             for step, batch_x in enumerate(train_loader):
-#                 # get into smaller groups
-#                 if self.args.model == 'stn':
-#                     # anchor = batch_x[0].cuda()
-#                     # pos = batch_x[1].cuda()
-#                     # neg = batch_x[2].cuda()
-#
-#                     anchor = batch_x[0]
-#                     pos = batch_x[1]
-#                     neg = batch_x[2]
-#
-#                 output_anchor = self.model(anchor)
-#                 output_pos = self.model(pos)
-#                 output_neg = self.model(neg)
-#
-#                 loss, triplet_correct = self.criterion(output_anchor, output_pos, output_neg)
-#                 total_triplet_correct += triplet_correct.item()
-#
-#                 self.optimizer.zero_grad()
-#                 loss.backward()
-#                 self.optimizer.step()
-#
-#                 if step % 200 == 0 and step != 0:
-#                     self.log("loss " + str(loss) + "\n")
-#                     self.log("triplet_acc " + str(triplet_correct.item() / self.config.batch_size) + "\n")
-#
-#             self.log("Triplet accuracy: %f" % (total_triplet_correct / total_triplets))
-
-#         # TODO: How to calculate accuracy? How to predict?
-#         solution, recall, room_wise_acc = self.predict(test_x, test_y, fold)
-#         solution = solution.tolist()
-#
-#         self.log_result("fold: %d, epoch: %d\n" % (fold, epoch))
-#         self.log_result("Acc: %f\n" % (recall))
-#         self.log("fold: %d, epoch: %d\n" % (fold, epoch))
-#         self.log("Acc: %f\n" % (recall))
-#
-#         for k in range(len(solution)):
-#             for j in range(len(solution[k])):
-#                 self.log_result(str(solution[k][j]) + ' ')
-#             self.log_result('\n')
-#         self.log_result('\n')
-#
-#     fold_recall.append(recall)
-#     fold_room_acc.append(room_wise_acc)
-#
-# self.log("Final recall : %f \n" % (np.array(fold_recall).mean()))
-# self.log("Final room accuracy : %f \n" % (np.array(fold_room_acc).mean()))
