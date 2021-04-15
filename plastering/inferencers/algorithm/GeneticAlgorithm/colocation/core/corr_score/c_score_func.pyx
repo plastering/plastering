@@ -54,10 +54,10 @@ cdef double c_solution_mean_4(double[:, :] corr_matrix, int[:, :] solution) nogi
                             + corr_matrix[solution[i][1], solution[i][3]]
                             + corr_matrix[solution[i][2], solution[i][3]]
                             ) / 6.0
-    
+
     for i in range(room_count):
         sum += results[i]
-    
+
     free(results)
     return sum / room_count
 

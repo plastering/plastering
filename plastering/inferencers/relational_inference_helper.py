@@ -105,7 +105,6 @@ def set_up_logging(config, args):
     return log, log_result, log_path
 
 
-# TODO: include config
 def read_ground_truth(building):
     roomList = []
     if building == "Soda":
@@ -164,8 +163,6 @@ def read_ground_truth(building):
     return roomList
 
 
-# TODO: include config
-# def read_colocation_data(config):
 def read_colocation_data(building, sensor_count):
     x = []  # Store the value
     y = []  # Store the room number
@@ -276,8 +273,8 @@ def read_colocation_data(building, sensor_count):
 
 def read_in_data(building, config):
     # read data & STFT
-    # TODO: include sensor count in config
     x, y, true_pos = read_colocation_data(building, 4)
+    # x, y, true_pos = x, y, true_pos
     x = STFT(x, config)
     return x, y, true_pos
 

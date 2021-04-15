@@ -8,7 +8,7 @@ def compile_room_func(corr_matrix, type_count):
     """Compile a room corr score function
     """
     mean_func = {
-        4: c_score_func.room_mean_4,
+        type_count: c_score_func.room_mean_generic,
     }.get(type_count, c_score_func.room_mean_generic)
 
     def wrapper(room):
@@ -23,7 +23,7 @@ def compile_solution_func(corr_matrix, type_count):
     """Compile a room corr score function
     """
     mean_func = {
-        4: c_score_func.solution_mean_4,
+        type_count: c_score_func.solution_mean_generic,
     }.get(type_count, c_score_func.solution_mean_generic)
 
     def wrapper(solution):

@@ -25,7 +25,7 @@ def cal_acc(individual, sensor_count):
     for i in range(len(individual)):
         for j in range(len(individual[i]) - 1):
             for k in range(j + 1, len(individual[i])):
-                if (int(individual[i][j] / sensor_count) == int(individual[i][k] / sensor_count)):
+                if int(individual[i][j] / sensor_count) == int(individual[i][k] / sensor_count):
                     pp += 1
                 else:
                     pn += 1
@@ -111,7 +111,7 @@ def run(config: config_loader.ColocationConfig):
 
     recalls = []
     for i in range(len(population)):
-        recalls.append(cal_acc(population[i]))
+        recalls.append(cal_acc(population[i], config.type_count))
     recalls = np.array(recalls)
 
     ids = np.argsort(fitnesses)

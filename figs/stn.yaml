@@ -1,5 +1,6 @@
-data: ./groundtruth/SODA-GROUND-TRUTH
+data: ./rawdata/metadata/Soda
 log: ./logs/
+sensor_count : 4
 # FFT config
 window_size: 200
 k_coefficient: 32
