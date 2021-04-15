@@ -29,6 +29,7 @@ class RelationalInference(object):
         self.target_y = {}
         self.target_true_pos = {}
         self.sensor_count = config.sensor_count
+        self.target_building = target_building
 
         self.log(str(time.asctime(time.localtime(time.time()))))
 
@@ -72,15 +73,15 @@ class RelationalInference(object):
             self.log("Total training triplets: %d\n" % total_triplets)
 
             if self.args.loss == 'triplet':
-                # self.criterion = tripletLoss(margin=1).cuda()
-                self.criterion = tripletLoss(margin=1)
+                self.criterion = tripletLoss(margin=1).cuda()
+                # self.criterion = tripletLoss(margin=1)
             elif self.args.loss == 'comb':
-                # self.criterion = combLoss(margin=1).cuda()
-                self.criterion = combLoss(margin=1)
+                self.criterion = combLoss(margin=1).cuda()
+                # self.criterion = combLoss(margin=1)
 
             if self.args.model == 'stn':
-                # self.model = STN(self.config.dropout, 2 * self.config.k_coefficient).cuda()
-                self.model = STN(self.config.dropout, 2 * self.config.k_coefficient)
+                self.model = STN(self.config.dropout, 2 * self.config.k_coefficient).cuda()
+                # self.model = STN(self.config.dropout, 2 * self.config.k_coefficient)
 
             if self.config.optim == 'SGD':
                 self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.config.learning_rate, momentum=0.9,
@@ -105,13 +106,13 @@ class RelationalInference(object):
                 for step, batch_x in enumerate(train_loader):
                     # get into smaller groups
                     if self.args.model == 'stn':
-                        # anchor = batch_x[0].cuda()
-                        # pos = batch_x[1].cuda()
-                        # neg = batch_x[2].cuda()
+                        anchor = batch_x[0].cuda()
+                        pos = batch_x[1].cuda()
+                        neg = batch_x[2].cuda()
 
-                        anchor = batch_x[0]
-                        pos = batch_x[1]
-                        neg = batch_x[2]
+                        # anchor = batch_x[0]
+                        # pos = batch_x[1]
+                        # neg = batch_x[2]
 
                     output_anchor = self.model(anchor)
                     output_pos = self.model(pos)
@@ -167,8 +168,8 @@ class RelationalInference(object):
 
         with torch.no_grad():
             if self.args.model == 'stn':
-                # out = self.model(torch.from_numpy(np.array(test_x)).cuda())
-                out = self.model(torch.from_numpy(np.array(test_x)))
+                out = self.model(torch.from_numpy(np.array(test_x)).cuda())
+                # out = self.model(torch.from_numpy(np.array(test_x)))
                 # model(tensor(3D array))
                 # Array of 2D arrays
                 # 2D array is the STFT
@@ -180,13 +181,13 @@ class RelationalInference(object):
             cnt = 0
             for step, batch_x in enumerate(test_loader):
                 if self.args.model == 'stn':
-                    # anchor = batch_x[0].cuda()
-                    # pos = batch_x[1].cuda()
-                    # neg = batch_x[2].cuda()
+                    anchor = batch_x[0].cuda()
+                    pos = batch_x[1].cuda()
+                    neg = batch_x[2].cuda()
 
-                    anchor = batch_x[0]
-                    pos = batch_x[1]
-                    neg = batch_x[2]
+                    # anchor = batch_x[0]
+                    # pos = batch_x[1]
+                    # neg = batch_x[2]
 
                 output_anchor = self.model(anchor)
                 output_pos = self.model(pos)
