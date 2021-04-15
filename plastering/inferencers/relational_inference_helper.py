@@ -67,7 +67,7 @@ def cal_room_acc(best_solution, sensor_count):
     for i in range(len(best_solution)):
         r_id = int(best_solution[i][0] / sensor_count)
         for j in range(1, sensor_count + 1):
-            if j == 4:
+            if j == sensor_count:
                 acc_room += 1
                 break
             if int(best_solution[i][j] / sensor_count) != r_id:
