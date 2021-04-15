@@ -262,7 +262,7 @@ def read_colocation_data(building, sensor_count, config):
 
 def read_in_data(building, config):
     # read data & STFT
-    x, y, true_pos = read_colocation_data(building, 4, config)
+    x, y, true_pos = read_colocation_data(building, config.sensor_count, config)
     x = STFT(x, config)
     return x, y, true_pos
 
