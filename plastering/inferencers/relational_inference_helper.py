@@ -157,7 +157,7 @@ def read_ground_truth(building):
     return roomList
 
 
-def read_colocation_data(building, sensor_count):
+def read_colocation_data(building, sensor_count, config):
     x = []  # Store the value
     y = []  # Store the room number
     true_pos = []  # Store the filename
@@ -172,14 +172,13 @@ def read_colocation_data(building, sensor_count):
     folders = os.walk(path)
 
     for path, dir_list, files in folders:
-        # print(path, dir_list, files)
         files.remove(".DS_Store")  # We don't want to read in .DS_Store file
         for filename in files:  # Iterating through each time series file
-            # print(next_file)
             if filename.endswith("csv"):
-                _, value = read_csv(os.path.join(path, filename))
-                # print(value)
-                # TODO: clean the temperature sensors
+                _, value = read_csv(os.path.join(path, filename), config)
+                # Have to clean the data in temperature sensors
+                # But I do not know how to retrieve that information in SODA
+                # Please change this to fit your code when editing
                 if filename == 'temperature.csv':
                     value = clean_temperature(value)
 
@@ -201,11 +200,9 @@ def read_colocation_data(building, sensor_count):
                     if currSensor == filename:
                         currID = currRoomID
                         find = True
-                        # print(sensorID)
 
                 # checking whether this sensor is in an existing room
                 for sensor, tarSensorID, roomNumber in room_list:
-                    # print(room, roomNumber)
                     if currID == tarSensorID:
                         contains = True
                         y.append(roomNumber)
@@ -249,7 +246,6 @@ def read_colocation_data(building, sensor_count):
     # Adding desired rooms into output list
     for i in range(len(y)):
         if y[i] in wantedRoom:
-            # print(i, y[i], true_pos[i])
             final_x.append(x[i])
             final_y.append(indexMap.get(y[i]))
             final_true_pos.append(true_pos[i])
@@ -266,8 +262,7 @@ def read_colocation_data(building, sensor_count):
 
 def read_in_data(building, config):
     # read data & STFT
-    x, y, true_pos = read_colocation_data(building, 4)
-    # x, y, true_pos = x, y, true_pos
+    x, y, true_pos = read_colocation_data(building, 4, config)
     x = STFT(x, config)
     return x, y, true_pos
 
@@ -297,21 +292,16 @@ def clean_temperature(value):
     return value
 
 
-def read_csv(path, config={}):
+def read_csv(path, config):
     f = open(path)
     timestamps, vals = [], []
-    # print("-----")
-    # print(path)
     for line in f.readlines():
-        # if path == "../../rawdata/metadata/Soda/SODA1R376A_VAV.csv":
-        #     print(line)
         if line == "":
             pass
         t, v = line.split(",")
         timestamps.append(int(t))
         vals.append(float(v))
-    # return align_length(timestamps, vals, config.max_length)
-    return align_length(timestamps, vals, 10000)
+    return align_length(timestamps, vals, config.max_length)
 
 
 def align_length(ts, val, maxl, sample_f=5):

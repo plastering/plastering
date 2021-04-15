@@ -3,6 +3,7 @@ import time
 import torch
 from plastering.inferencers import Inferencer
 from .relational_inference_helper import *
+# from .relational_inference_data_helper import *
 from plastering.inferencers.algorithm.GeneticAlgorithm.colocation import run
 import scipy.io as scio
 
@@ -53,7 +54,7 @@ class RelationalInference(object):
         # sets of test_indexes
         for fold, test_index in enumerate(test_indexes):
 
-            self.log("Now training fold: %d" % (fold))
+            self.log("Now training fold: %d" % fold)
 
             # split training & testing
             print("Test indexes: ", test_index)
