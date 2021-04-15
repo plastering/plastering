@@ -219,7 +219,7 @@ def read_colocation_data(building, sensor_count, config):
                         room_list.append([filename, currID, cnt])
                     x.append(value)
 
-    # Only want four-sensor rooms
+    # Only want rooms with specific number of sensors
 
     # Counting number of sensors in each room
     countDict = {}
@@ -230,7 +230,7 @@ def read_colocation_data(building, sensor_count, config):
         else:
             countDict.update({index: a + 1})
 
-    # Picking rooms with four sensors
+    # Picking rooms with sensor_count sensors
     wantedRoom = []
     indexMap = {}
     roomNum = 0
