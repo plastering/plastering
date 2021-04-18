@@ -341,25 +341,30 @@ def fft(v, config):
     return np.transpose(np.array(fft_data))
 
 
-def split_colocation_train(x, y, test_index, split_method):
+def split_colocation_train(x, y, true_pos, test_index, split_method):
     train_x, train_y, test_x, test_y = [], [], [], []
+    train_true_pos, test_true_pos = [], []
     if split_method == 'room':
         for i in range(len(y)):
             if y[i] in test_index:
                 test_x.append(x[i])
                 test_y.append(y[i])
+                test_true_pos.append(true_pos[i])
             else:
                 train_x.append(x[i])
                 train_y.append(y[i])
+                train_true_pos.append(true_pos[i])
     else:
         for i in range(len(y)):
             if i not in test_index:
                 train_x.append(x[i])
                 train_y.append(y[i])
+                train_true_pos.append(true_pos[i])
             else:
                 test_y.append(i)
+                test_true_pos.append(true_pos[i])
         test_x = x
-    return train_x, train_y, test_x, test_y
+    return train_x, train_y, train_true_pos, test_x, test_y, test_true_pos
 
 
 def gen_colocation_triplet(train_x, train_y, prevent_same_type=False):

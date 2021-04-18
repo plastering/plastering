@@ -42,6 +42,7 @@ def run(config: config_loader.ColocationConfig):
     Returns:
         best fitness (float), accuracy of best solution, cache
     """
+
     # Prepare cache
     cache = cache_dict.get_cache(config)
 
@@ -50,7 +51,6 @@ def run(config: config_loader.ColocationConfig):
 
     # Load matrix
     corr_matrix = matrix_loader.load_matrix(config.corr_matrix_path)
-
     # If necessary, choose rooms
     if config.selected_rooms:
         corr_matrix = matrix_loader.select_rooms(corr_matrix, config.selected_rooms,
