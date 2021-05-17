@@ -20,6 +20,9 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
     - This produces `scrabble_output.ttl`.
     - There will be an update about how to produce other types of results (metrics, other files, etc.)
 
+## Example with synthesized data and Active Partial Labelling
+1. Load data: ``python examples/tutorial/load_data.py``
+2. Run Active Partial Labelling: ``python examples/tutorial/Active_Partial_Tutorial.py``
 ## Other examples
 1. Run Zodiac test: ``python test_zodiac.py``
 2. Run Workflow test: ``python test_workflow.py``
