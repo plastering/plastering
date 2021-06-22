@@ -5,6 +5,8 @@ import yaml
 import random
 import torch.nn as nn
 import torch.nn.functional as F
+from plastering.inferencers.relational_inference.util import read_config
+
 
 # # util
 # class AttrDict(dict):
@@ -384,79 +386,79 @@ import torch.nn.functional as F
 #     return triplet
 #
 
-# model-stn
-
-class STN(nn.Module):
-    def __init__(self, dropout_rate, input_channels):
-        super(STN, self).__init__()
-        self.d = dropout_rate
-
-        self.conv1 = nn.Sequential(
-            nn.Conv1d(in_channels=input_channels, out_channels=256, kernel_size=8, stride=1, padding=0),
-            nn.ReLU(),
-            nn.MaxPool1d(kernel_size=3, stride=2)
-        )
-        self.conv2 = nn.Sequential(
-            nn.Conv1d(in_channels=256, out_channels=384, kernel_size=7, stride=1, padding=0),
-            nn.ReLU(),
-            nn.MaxPool1d(kernel_size=3, stride=2)
-        )
-        self.conv3 = nn.Sequential(
-            nn.Conv1d(in_channels=384, out_channels=128, kernel_size=6, stride=1, padding=0),
-            nn.ReLU(),
-            nn.MaxPool1d(kernel_size=3, stride=2)
-        )
-        self.conv4 = nn.Sequential(
-            nn.Conv1d(in_channels=128, out_channels=1, kernel_size=1, stride=1),
-        )
-        self.dropout1 = nn.Dropout(self.d)
-
-    def forward(self, x):
-        x = self.conv1(x)
-        x = self.conv2(x)
-        x = self.conv3(x)
-        x = self.conv4(x)
-        x = x.view(x.size(0), -1)
-        x = self.dropout1(x)
-        norm = x.norm(dim=1, p=2, keepdim=True)
-        x = x.div(norm.expand_as(x))
-
-        return x
-
+# # model-stn
+#
+# class STN(nn.Module):
+#     def __init__(self, dropout_rate, input_channels):
+#         super(STN, self).__init__()
+#         self.d = dropout_rate
+#
+#         self.conv1 = nn.Sequential(
+#             nn.Conv1d(in_channels=input_channels, out_channels=256, kernel_size=8, stride=1, padding=0),
+#             nn.ReLU(),
+#             nn.MaxPool1d(kernel_size=3, stride=2)
+#         )
+#         self.conv2 = nn.Sequential(
+#             nn.Conv1d(in_channels=256, out_channels=384, kernel_size=7, stride=1, padding=0),
+#             nn.ReLU(),
+#             nn.MaxPool1d(kernel_size=3, stride=2)
+#         )
+#         self.conv3 = nn.Sequential(
+#             nn.Conv1d(in_channels=384, out_channels=128, kernel_size=6, stride=1, padding=0),
+#             nn.ReLU(),
+#             nn.MaxPool1d(kernel_size=3, stride=2)
+#         )
+#         self.conv4 = nn.Sequential(
+#             nn.Conv1d(in_channels=128, out_channels=1, kernel_size=1, stride=1),
+#         )
+#         self.dropout1 = nn.Dropout(self.d)
+#
+#     def forward(self, x):
+#         x = self.conv1(x)
+#         x = self.conv2(x)
+#         x = self.conv3(x)
+#         x = self.conv4(x)
+#         x = x.view(x.size(0), -1)
+#         x = self.dropout1(x)
+#         norm = x.norm(dim=1, p=2, keepdim=True)
+#         x = x.div(norm.expand_as(x))
+#
+#         return x
 
 # losses
 
-class tripletLoss(nn.Module):
-    def __init__(self, margin):
-        super(tripletLoss, self).__init__()
-        self.margin = margin
+# class tripletLoss(nn.Module):
+#     def __init__(self, margin):
+#         super(tripletLoss, self).__init__()
+#         self.margin = margin
+#
+#     def forward(self, anchor, pos, neg):
+#         distance_pos = (anchor - pos).pow(2).sum(1)
+#         distance_neg = (anchor - neg).pow(2).sum(1)
+#         loss = F.relu(distance_pos - distance_neg + self.margin)
+#         return loss.mean(), self.triplet_correct(distance_pos, distance_neg)
+#
+#     def triplet_correct(self, d_pos, d_neg):
+#         return (d_pos < d_neg).sum()
+#
+#
+# class combLoss(nn.Module):
+#     def __init__(self, margin, l=1):
+#         super(combLoss, self).__init__()
+#         self.margin = margin
+#         self.l = l
+#
+#     def forward(self, anchor, pos, neg):
+#         distance_pos = (anchor - pos).pow(2).sum(1)
+#         distance_neg = (anchor - neg).pow(2).sum(1)
+#         distance_cen = (neg - anchor * 0.5 - pos * 0.5).pow(2).sum(1)
+#         loss = F.relu(distance_pos - self.l * distance_cen + self.margin)
+#         return loss.mean(), self.triplet_correct(distance_pos, distance_neg)
+#
+#     def triplet_correct(self, d_pos, d_neg):
+#         return (d_pos < d_neg).sum()
 
-    def forward(self, anchor, pos, neg):
-        distance_pos = (anchor - pos).pow(2).sum(1)
-        distance_neg = (anchor - neg).pow(2).sum(1)
-        loss = F.relu(distance_pos - distance_neg + self.margin)
-        return loss.mean(), self.triplet_correct(distance_pos, distance_neg)
-
-    def triplet_correct(self, d_pos, d_neg):
-        return (d_pos < d_neg).sum()
-
-
-class combLoss(nn.Module):
-    def __init__(self, margin, l=1):
-        super(combLoss, self).__init__()
-        self.margin = margin
-        self.l = l
-
-    def forward(self, anchor, pos, neg):
-        distance_pos = (anchor - pos).pow(2).sum(1)
-        distance_neg = (anchor - neg).pow(2).sum(1)
-        distance_cen = (neg - anchor * 0.5 - pos * 0.5).pow(2).sum(1)
-        loss = F.relu(distance_pos - self.l * distance_cen + self.margin)
-        return loss.mean(), self.triplet_correct(distance_pos, distance_neg)
-
-    def triplet_correct(self, d_pos, d_neg):
-        return (d_pos < d_neg).sum()
-
+# TODO: test if this works
 
 # configuration setup
 
