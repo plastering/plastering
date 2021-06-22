@@ -2,8 +2,11 @@ import time
 
 import torch
 from plastering.inferencers import Inferencer
-from .relational_inference_helper import *
 from plastering.inferencers.algorithm.GeneticAlgorithm.colocation import run
+
+from plastering.inferencers.relational_inference.relational_inference_helper import *
+from plastering.inferencers.relational_inference.util import cal_room_acc
+
 import scipy.io as scio
 
 

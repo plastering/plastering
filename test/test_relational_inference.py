@@ -1,7 +1,4 @@
-import random
-
-from plastering.inferencers.relational_inference import *
-from plastering.inferencers.relational_inference_helper import *
+from plastering.inferencers.relational_inference.relational_inference_helper import *
 
 target_building = 'Soda'
 source_buildings = ['Soda']

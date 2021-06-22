@@ -1,5 +1,5 @@
 from plastering.inferencers.relational_inference import RelationalInference
-from plastering.inferencers.relational_inference_helper import parse_args
+from plastering.inferencers.relational_inference.relational_inference_helper import parse_args
 
 target_building = 'Soda'
 source_buildings = ['Soda']

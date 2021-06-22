@@ -1,81 +1,8 @@
-import argparse
+import pandas as pd
+import random
 import os
 import numpy as np
-import yaml
-import random
-import torch.nn as nn
-import torch.nn.functional as F
-
-# util
-class AttrDict(dict):
-    def __init__(self, *args, **kwargs):
-        super(AttrDict, self).__init__(*args, **kwargs)
-        self.__dict__ = self
-
-
-def read_config(path):
-    return AttrDict(yaml.load(open(path, 'r'), Loader=yaml.FullLoader))
-
-
-def logging(file):
-    def write_log(s):
-        print(s)
-        with open(file, 'a') as f:
-            f.write(s)
-
-    return write_log
-
-
-def logging_result(file):
-    def write_log(s):
-        with open(file, 'a') as f:
-            f.write(s)
-
-    return write_log
-
-
-def cal_sensor_acc(best_solution, test_y, sensor_count):
-    total, cnt = 0, 0
-    for i in range(len(best_solution)):
-        for j in range(len(best_solution[i]) - 1):
-            for k in range(j + 1, len(best_solution[i])):
-                if best_solution[i][j] in test_y or best_solution[i][k] in test_y:
-                    total += 1
-                    print(best_solution[i][j], best_solution[i][k])
-                else:
-                    continue
-                if int(best_solution[i][j] / sensor_count) == int(best_solution[i][k] / sensor_count):
-                    cnt += 1
-    acc = cnt / total
-    return acc
-
-
-def cal_room_acc(best_solution, sensor_count):
-    pp, pn, np, nn = 0, 0, 0, 0  # (ground_truth, prediction)
-    for i in range(len(best_solution)):
-        for j in range(len(best_solution[i]) - 1):
-            for k in range(j + 1, len(best_solution[i])):
-                if int(best_solution[i][j] / sensor_count) == int(best_solution[i][k] / sensor_count):
-                    pp += 1
-                else:
-                    pn += 1
-                    np += 1
-    nn = (len(best_solution) * len(best_solution[0])) * (
-            len(best_solution) * len(best_solution[0]) - 1) / 2 - pp - pn - np
-    recall = pp / (pp + pn)
-    acc_room = 0
-    for i in range(len(best_solution)):
-        r_id = int(best_solution[i][0] / sensor_count)
-        for j in range(1, sensor_count + 1):
-            if j == sensor_count:
-                acc_room += 1
-                break
-            if int(best_solution[i][j] / sensor_count) != r_id:
-                break
-    room_wise_acc = acc_room / len(best_solution)
-    confusion = [[pp, np], [pn, nn]]
-    return recall, room_wise_acc
-
+from plastering.inferencers.relational_inference.util import logging, logging_result
 
 # Data
 
@@ -112,6 +39,7 @@ def read_ground_truth(building):
             i += 1
             currLine = lines[i].strip()
             # manually consider all cases.
+            # If given more information, can rewrite in a more elegant way
             if currLine.find("room-id") != -1:
                 currLine = currLine.split(",")
                 roomCorr.append(str(currLine[3]) + ", " + str(currLine[4]))
@@ -384,99 +312,249 @@ def gen_colocation_triplet(train_x, train_y, prevent_same_type=False):
     return triplet
 
 
-# model-stn
-
-class STN(nn.Module):
-    def __init__(self, dropout_rate, input_channels):
-        super(STN, self).__init__()
-        self.d = dropout_rate
-
-        self.conv1 = nn.Sequential(
-            nn.Conv1d(in_channels=input_channels, out_channels=256, kernel_size=8, stride=1, padding=0),
-            nn.ReLU(),
-            nn.MaxPool1d(kernel_size=3, stride=2)
-        )
-        self.conv2 = nn.Sequential(
-            nn.Conv1d(in_channels=256, out_channels=384, kernel_size=7, stride=1, padding=0),
-            nn.ReLU(),
-            nn.MaxPool1d(kernel_size=3, stride=2)
-        )
-        self.conv3 = nn.Sequential(
-            nn.Conv1d(in_channels=384, out_channels=128, kernel_size=6, stride=1, padding=0),
-            nn.ReLU(),
-            nn.MaxPool1d(kernel_size=3, stride=2)
-        )
-        self.conv4 = nn.Sequential(
-            nn.Conv1d(in_channels=128, out_channels=1, kernel_size=1, stride=1),
-        )
-        self.dropout1 = nn.Dropout(self.d)
-
-    def forward(self, x):
-        x = self.conv1(x)
-        x = self.conv2(x)
-        x = self.conv3(x)
-        x = self.conv4(x)
-        x = x.view(x.size(0), -1)
-        x = self.dropout1(x)
-        norm = x.norm(dim=1, p=2, keepdim=True)
-        x = x.div(norm.expand_as(x))
-
-        return x
+# coequipment
 
 
-# losses
-
-class tripletLoss(nn.Module):
-    def __init__(self, margin):
-        super(tripletLoss, self).__init__()
-        self.margin = margin
-
-    def forward(self, anchor, pos, neg):
-        distance_pos = (anchor - pos).pow(2).sum(1)
-        distance_neg = (anchor - neg).pow(2).sum(1)
-        loss = F.relu(distance_pos - distance_neg + self.margin)
-        return loss.mean(), self.triplet_correct(distance_pos, distance_neg)
-
-    def triplet_correct(self, d_pos, d_neg):
-        return (d_pos < d_neg).sum()
-
-
-class combLoss(nn.Module):
-    def __init__(self, margin, l=1):
-        super(combLoss, self).__init__()
-        self.margin = margin
-        self.l = l
-
-    def forward(self, anchor, pos, neg):
-        distance_pos = (anchor - pos).pow(2).sum(1)
-        distance_neg = (anchor - neg).pow(2).sum(1)
-        distance_cen = (neg - anchor * 0.5 - pos * 0.5).pow(2).sum(1)
-        loss = F.relu(distance_pos - self.l * distance_cen + self.margin)
-        return loss.mean(), self.triplet_correct(distance_pos, distance_neg)
-
-    def triplet_correct(self, d_pos, d_neg):
-        return (d_pos < d_neg).sum()
+def clean_coequipment(ts, val):
+    # timeArray = time.strptime(ts[0], "%m/%d/%Y %H:%M:%S")
+    # new_ts = [int(time.mktime(timeArray))]
+    new_val = []
+    cnt = 0
+    difs = []
+    flag = False
+    for i in range(len(val)):
+        # timeArray = time.strptime(ts[i], "%m/%d/%Y %H:%M:%S")
+        # new_ts.append(int(time.mktime(timeArray)))
+        if np.isnan(val[i]):
+            new_val.append(0)
+        else:
+            new_val.append(float(val[i]))
+        if len(difs) > 5:
+            flag = True
+        elif new_val[-1] not in difs:
+            difs.append(new_val[-1])
+    return new_val, flag
 
 
-# configuration setup
+def read_ahu_csv(path, column=['PropertyTimestamp', 'SupplyFanSpeedOutput']):
+    df = pd.read_csv(path)
+    ts = df[column[0]]
+    val = df[column[1]]
+    return clean_coequipment(ts, val)
 
-def parse_args():
-    parser = argparse.ArgumentParser(description='main.py')
-    parser.add_argument('-config', default='stn', type=str)
-    parser.add_argument('-model', default='stn', type=str,
-                        choices=['stn'])
-    parser.add_argument('-loss', default='comb', type=str,
-                        choices=['triplet', 'comb'])
-    parser.add_argument('-seed', default=2, type=int,
-                        help="Random seed")
-    parser.add_argument('-log', default='stn', type=str,
-                        help="Log directory")
-    parser.add_argument('-facility', default=10606, type=int,
-                        help="Log directory")
-    parser.add_argument('-split', default='room', type=str,
-                        help="split 1/5 sensors or rooms for test",
-                        choices=['room', 'sensor'])
-    args = parser.parse_args()
-    # the file to be opened depends on where this method is called
-    config = read_config('figs/' + args.config + '.yaml')
-    return args, config
+
+def read_vav_csv(path, column=['PropertyTimestamp', 'AirFlowNormalized']):
+    df = pd.read_csv(path)
+    ts = df[column[0]]
+    val = df[column[1]]
+    return clean_coequipment(ts, val)
+
+
+def read_facility_ahu(facility_id, ahu_list, max_length):
+    ahu_data, label = [], []
+    # print(max_length)
+    # column = ['PropertyTimestamp', ahu_s]
+    path = "/localtmp/split/ahu_property_file_" + str(facility_id) + "/"
+    pops = []
+    # print(column)
+    for i, name in enumerate(ahu_list[facility_id]):
+        if os.path.exists(path + name + '.csv') == False:
+            continue
+        ahu_d, flag = read_ahu_csv('/localtmp/split/ahu_property_file_' + str(facility_id) + '/' + name + '.csv')
+        if flag and len(ahu_d) >= max_length:
+            ahu_data.append(ahu_d[0:max_length])
+            label.append((facility_id, name))
+            print(facility_id, name)
+        else:
+            pops.append(name)
+
+    for name in pops:
+        ahu_list[facility_id].pop(ahu_list[facility_id].index(name))
+    return ahu_data, label
+
+
+def read_facility_vav(facility_id, mapping, max_length, ahu_list):
+    vav_data, label = [], []
+    # column = ['PropertyTimestamp', vav_s]
+    path = "/localtmp/split/vav_box_property_file_" + str(facility_id) + "/"
+    # print(column)
+    for name in mapping[facility_id].keys():
+        if os.path.exists(path + name + '.csv') == False:
+            continue
+        if mapping[facility_id][name] not in ahu_list[facility_id]:
+            continue
+
+        vav_d, flag = read_vav_csv('/localtmp/split/vav_box_property_file_' + str(facility_id) + '/' + name + '.csv')
+        if flag and len(vav_d) >= max_length:
+            vav_data.append(vav_d[0:max_length])
+            label.append((facility_id, name))
+            print(facility_id, name)
+    return vav_data, label
+
+
+def read_coequipment_ground_truth(path='./mapping_data.xlsx'):
+    data = pd.read_excel(path, sheet_name='Hierarchy Data', usecols=[1, 6, 7, 9], engine='openpyxl')
+    raw_list = data.values.tolist()
+    mapping = dict()
+    ahu_vas = dict()
+    ahu_list = dict()
+    for line in raw_list:
+        # print(line)
+        if line[3] != 'AHU':
+            continue
+        f_id = int(line[0])  # Facility_SID
+        parent_name = line[1]  # PARENT_OBJECT_NAME
+        child_name = line[2]  # CHILD_OBJECT_NAME
+        if 'AHU-13  Area 112  MP581-4-4-2' == child_name:
+            print("removed ")
+            continue
+        if f_id not in ahu_vas.keys():
+            ahu_vas[f_id] = dict()
+            ahu_list[f_id] = []
+        ahu_list[f_id].append(child_name)
+        ahu_vas[f_id][parent_name] = child_name
+
+    for line in raw_list:
+        if line[3] != 'VAV-BOX':
+            continue
+        f_id = int(line[0])
+        parent_name = line[1]
+        child_name = line[2]
+        if f_id not in mapping.keys():
+            mapping[f_id] = dict()
+        if parent_name in ahu_vas[f_id].keys():
+            # print(parent_name, ahu_vas[f_id])
+            # print(ahu_vas[f_id][parent_name])
+            # print(parent_name)
+            # print(ahu_vas[f_id])
+            mapping[f_id][child_name] = ahu_vas[f_id][parent_name]
+
+            # print("------- ahu vas")
+            # print(parent_name, ahu_vas[f_id])
+            # print("------- mapping")
+            # print(mapping[f_id])
+            # print("-------")
+            # print(child_name, mapping[f_id][child_name])
+    return mapping, ahu_list
+
+
+def sub_sample(ts, val, config):
+    sample_f = config.interval
+    MAXL = config.max_length
+
+    min_ts = ts[0]
+    max_ts = ts[-1]
+    new_ts, new_val = [], []
+    idx = 0
+    for t in range(min_ts, max_ts - sample_f, sample_f):
+        new_ts.append(t)
+        tmp, cnt = 0, 0
+        while ts[idx] < t + sample_f:
+            tmp += val[idx]
+            idx += 1
+            cnt += 1
+        if tmp != 0:
+            new_val.append(tmp / cnt)
+        else:
+            new_val.append(tmp)
+    return align_length(new_ts, new_val, MAXL, sample_f)
+
+
+def split_coequipment_train(vav_x, vav_y, test_index, train, test):
+    train_vav, test_vav = [], []
+    train_y, test_y = [], []
+    shuffled_idx = np.arange(len(vav_x))
+    np.random.shuffle(shuffled_idx)
+    for i in shuffled_idx:
+        if i in test_index:
+            if vav_y[i][0] != test:
+                continue
+            test_vav.append(vav_x[i])
+            test_y.append(vav_y[i])
+        else:
+            if vav_y[i][0] != train:
+                continue
+            train_vav.append(vav_x[i])
+            train_y.append(vav_y[i])
+    return train_vav, train_y, test_vav, test_y
+
+def gen_coequipment_triplet(ahu_x, ahu_y, vav_x, vav_y, mapping):
+    # 1: a, p, n = (vav, ahu, ahu)
+    # 2: a, p, n = (vav, ahu, vav)
+    # 3: a, p, n = (vav, vav, ahu)
+    # 4: a, p, n = (vav, vav, vav)
+    # 5: a, p, n = (ahu, vav, vav)
+    triplet = []
+    # 1 (vav, ahu, ahu)
+    # print(mapping[vav_y[0][0]])
+    for i in range(len(vav_y)):  # anchor
+        # print(mapping[vav_y[i][0]][vav_y[i][1]])
+        k = ahu_y.index((vav_y[i][0], mapping[vav_y[i][0]][vav_y[i][1]]))  # positive
+        for j in range(len(ahu_y)):  # negative
+            if vav_y[i][0] != ahu_y[k][0] or vav_y[i][0] != ahu_y[j][0]:
+                continue
+            if j == k:
+                continue
+            # print(vav_y[i], ahu_y[k], ahu_y[j])
+            sample = []
+            sample.append(vav_x[i])
+            sample.append(ahu_x[k])
+            sample.append(ahu_x[j])
+            triplet.append(sample)
+
+    # 2 (vav, ahu, vav)
+    '''
+    for i in range(len(vav_y)): # anchor
+        k = ahu_y.index((vav_y[i][0], mapping[vav_y[i][0]][vav_y[i][1]])) # positive
+        for j in range(len(vav_y)): # negative
+            if vav_y[i][0] != ahu_y[k][0] or vav_y[i][0] != vav_y[j][0]:
+                continue
+            if mapping[vav_y[i][0]][vav_y[i][1]] == mapping[vav_y[j][0]][vav_y[j][1]]:
+                continue
+            #print(vav_y[i], ahu_y[k], vav_y[j])
+            sample = []
+            sample.append(vav_x[i])
+            sample.append(ahu_x[k])
+            sample.append(vav_x[j])
+            triplet.append(sample)
+    
+
+    # 3 (vav, vav, ahu)
+    
+    for i in range(len(vav_y)): # anchor
+        for k in range(len(vav_y)): # positive
+            for j in range(len(ahu_y)): # negative
+                if vav_y[i][0] != vav_y[k][0] or vav_y[i][0] != ahu_y[j][0]:
+                    continue
+                if i == k or mapping[vav_y[i][0]][vav_y[i][1]] != mapping[vav_y[k][0]][vav_y[k][1]]:
+                    continue
+                if mapping[vav_y[i][0]][vav_y[i][1]] == ahu_y[j][1]:
+                    continue
+                #print(vav_y[i], vav_y[k], ahu_y[j])
+                sample = []
+                sample.append(vav_x[i])
+                sample.append(vav_x[k])
+                sample.append(ahu_x[j])
+                triplet.append(sample)
+    
+    # 4 (vav, vav, vav)
+
+    # 5 (ahu, vav, vav)
+    
+    for i in range(len(ahu_y)): # anchor
+        for k in range(len(vav_y)): # positive
+            for j in range(len(vav_y)): # negative
+                if ahu_y[i][0] != vav_y[k][0] or ahu_y[i][0] != vav_y[j][0]:
+                    continue
+                if mapping[vav_y[k][0]][vav_y[k][1]] != ahu_y[i][1]:
+                    continue
+                if mapping[vav_y[j][0]][vav_y[j][1]] == ahu_y[i][1]:
+                    continue
+                #print(ahu_y[i], vav_y[k], vav_y[j])
+                sample = []
+                sample.append(ahu_x[i])
+                sample.append(vav_x[k])
+                sample.append(vav_x[j])
+                triplet.append(sample)
+    '''
+    return triplet
