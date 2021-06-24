@@ -4,6 +4,7 @@ import os
 import numpy as np
 from plastering.inferencers.relational_inference.util import logging, logging_result
 
+
 # Data
 
 def set_up_logging(config, args):
@@ -38,8 +39,10 @@ def read_ground_truth(building):
             roomCorr = [sensorName]
             i += 1
             currLine = lines[i].strip()
-            # manually consider all cases.
-            # If given more information, can rewrite in a more elegant way
+            '''
+            Manually consider all cases.
+            If given more information, can rewrite in a more elegant way
+            '''
             if currLine.find("room-id") != -1:
                 currLine = currLine.split(",")
                 roomCorr.append(str(currLine[3]) + ", " + str(currLine[4]))
@@ -392,7 +395,7 @@ def read_facility_vav(facility_id, mapping, max_length, ahu_list):
     return vav_data, label
 
 
-def read_coequipment_ground_truth(path='./mapping_data.xlsx'):
+def read_coequipment_ground_truth(path='./groundtruth/mapping_data.xlsx'):
     data = pd.read_excel(path, sheet_name='Hierarchy Data', usecols=[1, 6, 7, 9], engine='openpyxl')
     raw_list = data.values.tolist()
     mapping = dict()
@@ -478,6 +481,7 @@ def split_coequipment_train(vav_x, vav_y, test_index, train, test):
             train_y.append(vav_y[i])
     return train_vav, train_y, test_vav, test_y
 
+
 def gen_coequipment_triplet(ahu_x, ahu_y, vav_x, vav_y, mapping):
     # 1: a, p, n = (vav, ahu, ahu)
     # 2: a, p, n = (vav, ahu, vav)
@@ -558,3 +562,38 @@ def gen_coequipment_triplet(ahu_x, ahu_y, vav_x, vav_y, mapping):
                 triplet.append(sample)
     '''
     return triplet
+
+
+def read_coequipment_data(config, args, test, train):
+    # TODO: cannot assume test and train are int, cast them from string into integer
+    mapping, ahu_list = read_coequipment_ground_truth('./groundtruth/mapping_data.xlsx')
+    if config.all_facilities:
+        facilities = [test, train]
+        ahu_x, ahu_y, vav_x, vav_y = [], [], [], []
+        for f_id in facilities:
+            f_ahu_x, f_ahu_y = read_facility_ahu(f_id, ahu_list, config.max_length)
+            f_vav_x, f_vav_y = read_facility_vav(f_id, mapping, config.max_length, ahu_list)
+            ahu_x += f_ahu_x
+            ahu_y += f_ahu_y
+            vav_x += f_vav_x
+            vav_y += f_vav_y
+
+        ahu_x = STFT(ahu_x, config)
+        vav_x = STFT(vav_x, config)
+    else:
+        ahu_x, ahu_y = read_facility_ahu(args.facility, ahu_list, config.max_length)
+        vav_x, vav_y = read_facility_vav(args.facility, mapping, config.max_length, ahu_list)
+        ahu_x = STFT(ahu_x, config)
+        vav_x = STFT(vav_x, config)
+
+    logging("AHU %d total sensors, %d frequency coefficients, %d windows\n" % (
+        len(ahu_x), ahu_x[0].shape[0], ahu_x[0].shape[1]))
+    logging("VAV %d total sensors, %d frequency coefficients, %d windows\n" % (
+        len(vav_x), vav_x[0].shape[0], vav_x[0].shape[1]))
+
+    # split training & testing
+    test_indices = cross_validation_sample(len(vav_y), int(len(vav_y) / 5))
+
+    print("test indices:\n", test_indices)
+
+    return ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping

@@ -93,12 +93,36 @@ class RelationalInference(object):
         if args.config == "coequipment":
             self.learn_auto()
 
-
     def learn_auto(self):
         if self.args.config == "colocation":
             self.train_colocation()
         elif self.args.config == "coequipment":
             self.train_coequipment(self.target_building, self.source_buildings)
+
+    def update_model(self):
+        # currently not supported
+        pass
+
+    def predict(self):
+        # This method tests the target building using the model after training the source buildings.
+
+        # co-location
+        if self.args.config == "colocation":
+            self.target_x, self.target_y, self.target_true_pos = read_in_data(self.target_building, self.config)
+            return self.test_colocation(self, self.target_x, self.target_y, self.config.fold)
+
+        # co-equipment
+        if self.args.config == "coequipment":
+            # TODO: Test if this works
+            ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping = \
+                read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings)
+            return self.test_coequipment(ahu_x, ahu_y, vav_x, vav_y, mapping, self.target_building)
+
+    def select_informative_samples(self):
+        # currently not supported
+        pass
+
+    # helper methods
 
     def train_colocation(self):
         fold_recall = []
@@ -182,36 +206,65 @@ class RelationalInference(object):
         self.log("Final recall : %f \n" % (np.array(fold_recall).mean()))
         self.log("Final room accuracy : %f \n" % (np.array(fold_room_acc).mean()))
 
+    def test_colocation(self, test_x, test_y, fold):
+        self.model.eval()
+
+        with torch.no_grad():
+            if self.args.model == 'stn':
+                out = self.model(torch.from_numpy(np.array(test_x)).cuda())
+                # model(tensor(3D array))
+                # Array of 2D arrays
+                # each 2D array is the STFT output
+            test_triplet = gen_colocation_triplet(test_x, test_y, prevent_same_type=True)
+            # [anchor, pos, neg]
+            test_loader = torch.utils.data.DataLoader(test_triplet, batch_size=1, shuffle=False)
+            cnt = 0
+            for step, batch_x in enumerate(test_loader):
+                if self.args.model == 'stn':
+                    anchor = batch_x[0].cuda()
+                    pos = batch_x[1].cuda()
+                    neg = batch_x[2].cuda()
+
+                output_anchor = self.model(anchor)
+                output_pos = self.model(pos)
+                output_neg = self.model(neg)
+                # anchor, pos, neg after training
+
+                # cnt counts the correct triplets
+                distance_pos = (output_anchor - output_pos).pow(2).sum(1).pow(1 / 2)
+                distance_neg = (output_anchor - output_neg).pow(2).sum(1).pow(1 / 2)
+                if distance_neg > distance_pos:
+                    cnt += 1
+
+            self.log("Testing triplet acc: %f" % (cnt / len(test_triplet)))
+
+        test_out = out.cpu().tolist()
+        test_corr = np.corrcoef(np.array(test_out))
+
+        # save the correlation matrix
+        scio.savemat('./result/RelationalInferenceOutput/corr_' + str(fold) + '.mat', {'corr': test_corr})
+
+        # calling the genetic algorithm to get the final result
+        best_solution, acc, ground_truth_fitness, best_fitness = run.ga(path_m='./result/RelationalInferenceOutput'
+                                                                               '/corr_' + str(fold) + '.mat',
+                                                                        path_c='./figs/10_rooms.json')
+
+        # calculate the accuracy
+        recall, room_wise_acc = cal_room_acc(best_solution, self.sensor_count)
+        # best_solution [[sensor1, sensor2, sensor3, sensor4],[ ... ], ...]
+        # why is best_solution from 0 to 40? 10 rooms. 4 sensors each room
+        # Group sensors together
+        self.log("recall = %f, room_wise_acc = %f:\n" % (recall, room_wise_acc))
+
+        self.log("Ground Truth Fitness %f Best Fitness: %f \n" % (ground_truth_fitness, best_fitness))
+        self.log("Edge-wise accuracy: %f \n" % acc)
+
+        self.model.train()
+        return best_solution, recall, room_wise_acc
+
     def train_coequipment(self, test, train):
-        # TODO: change the directory of mapping_data.xlsx
-        mapping, ahu_list = read_coequipment_ground_truth('./mapping_data.xlsx')
-        if self.config.all_facilities:
-            facilities = [test, train]
-            ahu_x, ahu_y, vav_x, vav_y = [], [], [], []
-            for f_id in facilities:
-                f_ahu_x, f_ahu_y = read_facility_ahu(f_id, ahu_list, self.config.max_length)
-                f_vav_x, f_vav_y = read_facility_vav(f_id, mapping, self.config.max_length, ahu_list)
-                ahu_x += f_ahu_x
-                ahu_y += f_ahu_y
-                vav_x += f_vav_x
-                vav_y += f_vav_y
+        ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping = read_coequipment_data(self.config, self.args, test, train)
 
-            ahu_x = STFT(ahu_x, self.config)
-            vav_x = STFT(vav_x, self.config)
-        else:
-            ahu_x, ahu_y = read_facility_ahu(self.args.facility, ahu_list, self.config.max_length)
-            vav_x, vav_y = read_facility_vav(self.args.facility, mapping, self.config.max_length, ahu_list)
-            ahu_x = STFT(ahu_x, self.config)
-            vav_x = STFT(vav_x, self.config)
-
-        logging("AHU %d total sensors, %d frequency coefficients, %d windows\n" % (
-            len(ahu_x), ahu_x[0].shape[0], ahu_x[0].shape[1]))
-        logging("VAV %d total sensors, %d frequency coefficients, %d windows\n" % (
-            len(vav_x), vav_x[0].shape[0], vav_x[0].shape[1]))
-        # split training & testing
-        test_indices = cross_validation_sample(len(vav_y), int(len(vav_y) / 5))
-
-        print("test indices:\n", test_indices)
         epochs_acc = []
         total_wrongs = dict()
         for fold, test_index in enumerate(test_indices):
@@ -280,29 +333,6 @@ class RelationalInference(object):
             max(overall_epoch_acc), overall_epoch_acc.index(max(overall_epoch_acc))))
         return max(overall_epoch_acc)
 
-    def update_model(self):
-        # currently not supported
-        pass
-
-    def predict(self):
-        # This method tests the target building using the model after training the source buildings.
-
-        # co-location
-        if self.args.config == "colocation":
-            self.target_x, self.target_y, self.target_true_pos = read_in_data(self.target_building, self.config)
-            return self.test_colocation(self, self.target_x, self.target_y, self.config.fold)
-
-        # co-equipment
-        if self.args.config == "coequipment":
-            # TODO: extract the data processing part into an individual function,
-            #  which returns "ahu_x, ahu_y, vav_x, vav_y, mapping, test"
-            #  so that the test_coequipment method can ust it
-            return self.test_coequipment()
-
-    def select_informative_samples(self):
-        # currently not supported
-        pass
-
     def test_coequipment(self, ahu_x, ahu_y, vav_x, vav_y, mapping, test):
         self.model.eval()
         wrongs = dict()
@@ -366,59 +396,3 @@ class RelationalInference(object):
         # print(wrongs)
         self.model.train()
         return acc[0], wrongs
-
-    def test_colocation(self, test_x, test_y, fold):
-        self.model.eval()
-
-        with torch.no_grad():
-            if self.args.model == 'stn':
-                out = self.model(torch.from_numpy(np.array(test_x)).cuda())
-                # model(tensor(3D array))
-                # Array of 2D arrays
-                # each 2D array is the STFT output
-            test_triplet = gen_colocation_triplet(test_x, test_y, prevent_same_type=True)
-            # [anchor, pos, neg]
-            test_loader = torch.utils.data.DataLoader(test_triplet, batch_size=1, shuffle=False)
-            cnt = 0
-            for step, batch_x in enumerate(test_loader):
-                if self.args.model == 'stn':
-                    anchor = batch_x[0].cuda()
-                    pos = batch_x[1].cuda()
-                    neg = batch_x[2].cuda()
-
-                output_anchor = self.model(anchor)
-                output_pos = self.model(pos)
-                output_neg = self.model(neg)
-                # anchor, pos, neg after training
-
-                # cnt counts the correct triplets
-                distance_pos = (output_anchor - output_pos).pow(2).sum(1).pow(1 / 2)
-                distance_neg = (output_anchor - output_neg).pow(2).sum(1).pow(1 / 2)
-                if distance_neg > distance_pos:
-                    cnt += 1
-
-            self.log("Testing triplet acc: %f" % (cnt / len(test_triplet)))
-
-        test_out = out.cpu().tolist()
-        test_corr = np.corrcoef(np.array(test_out))
-
-        # save the correlation matrix
-        scio.savemat('./result/RelationalInferenceOutput/corr_' + str(fold) + '.mat', {'corr': test_corr})
-
-        # calling the genetic algorithm to get the final result
-        best_solution, acc, ground_truth_fitness, best_fitness = run.ga(path_m='./result/RelationalInferenceOutput'
-                                                                               '/corr_' + str(fold) + '.mat',
-                                                                        path_c='./figs/10_rooms.json')
-
-        # calculate the accuracy
-        recall, room_wise_acc = cal_room_acc(best_solution, self.sensor_count)
-        # best_solution [[sensor1, sensor2, sensor3, sensor4],[ ... ], ...]
-        # why is best_solution from 0 to 40? 10 rooms. 4 sensors each room
-        # Group sensors together
-        self.log("recall = %f, room_wise_acc = %f:\n" % (recall, room_wise_acc))
-
-        self.log("Ground Truth Fitness %f Best Fitness: %f \n" % (ground_truth_fitness, best_fitness))
-        self.log("Edge-wise accuracy: %f \n" % (acc))
-
-        self.model.train()
-        return best_solution, recall, room_wise_acc
