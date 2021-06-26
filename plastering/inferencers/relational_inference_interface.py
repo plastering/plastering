@@ -115,7 +115,7 @@ class RelationalInference(object):
         # co-equipment
         if self.args.config == "coequipment":
             # TODO: Test if this works
-            # print(read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings))
+            print(read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings))
             ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping = \
                 read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings)
             return self.test_coequipment(ahu_x, ahu_y, vav_x, vav_y, mapping, self.target_building)
@@ -267,13 +267,22 @@ class RelationalInference(object):
     def train_coequipment(self, test, train):
         ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping = read_coequipment_data(self.config, self.args, test, train)
 
+        # print(test_indices)
         epochs_acc = []
         total_wrongs = dict()
         for fold, test_index in enumerate(test_indices):
             epochs_acc.append([])
             logging("Now training fold: %d" % (fold))
+            # print("------------")
+            # print(vav_x, vav_y)
+            # print(train, test)
             train_vav_x, train_vav_y, test_vav_x, test_vav_y = split_coequipment_train(vav_x, vav_y, test_index, train,
                                                                                        test)
+            # print("------------")
+            # print(ahu_x, ahu_y, train_vav_x, train_vav_y, mapping)
+            # print(len(test_vav_y))
+            # print(train_vav_y)
+            # print("------------")
             train_x = gen_coequipment_triplet(ahu_x, ahu_y, train_vav_x, train_vav_y, mapping)
             test_y = test_vav_y
             total_triplets = len(train_x)
@@ -288,6 +297,7 @@ class RelationalInference(object):
             # model = torch.load(log_path + 'model.pkl')
             print("testahus :\n", testahu)
             for epoch in range(self.config.epoch):
+                # print(train_x)
                 train_loader = torch.utils.data.DataLoader(train_x, batch_size=self.config.batch_size, shuffle=True)
                 logging("Now training %d epoch ......\n" % (epoch + 1))
                 total_triplet_correct = 0
@@ -397,7 +407,7 @@ class RelationalInference(object):
                         wrongs[mapping_fid[test_vav_y[i]]] += 1
                     else:
                         wrongs[mapping_fid[test_vav_y[i]]] = 1
-            logging("Fid: %d Acc: %f\n" % (f_id, cnt / total))
+            logging("Fid: %s Acc: %f\n" % (f_id, cnt / total))
             acc.append(cnt / total)
         # print(wrongs)
         self.model.train()
