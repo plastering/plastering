@@ -4,11 +4,11 @@ import torch
 from . import Inferencer
 from .algorithm.GeneticAlgorithm.colocation import run
 
-from relational_inference.relational_inference_helper import *
-from relational_inference.Data import *
-from relational_inference.loss import tripletLoss, combLoss
-from relational_inference.stn import STN
-from relational_inference.util import cal_room_acc
+from .relational_inference.relational_inference_helper import *
+from .relational_inference.Data import *
+from .relational_inference.loss import tripletLoss, combLoss
+from .relational_inference.stn import STN
+from .relational_inference.util import cal_room_acc
 
 import scipy.io as scio
 
@@ -24,6 +24,7 @@ class RelationalInference(object):
 
     def __init__(self,
                  target_building,
+                 target_srcids,
                  source_buildings,
                  config={},
                  args={},
@@ -114,6 +115,7 @@ class RelationalInference(object):
         # co-equipment
         if self.args.config == "coequipment":
             # TODO: Test if this works
+            # print(read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings))
             ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping = \
                 read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings)
             return self.test_coequipment(ahu_x, ahu_y, vav_x, vav_y, mapping, self.target_building)
@@ -334,6 +336,10 @@ class RelationalInference(object):
         return max(overall_epoch_acc)
 
     def test_coequipment(self, ahu_x, ahu_y, vav_x, vav_y, mapping, test):
+        # TODO: how to judge if correct/wrong?
+        #  in SODA, simply compare the 4 and 5 th character
+        #  i.e. substring(3,5)
+        #  but how to incorporate that into this method?
         self.model.eval()
         wrongs = dict()
         facilities = []

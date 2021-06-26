@@ -340,30 +340,38 @@ def clean_coequipment(ts, val):
 
 
 def read_ahu_csv(path, column=['PropertyTimestamp', 'SupplyFanSpeedOutput']):
-    df = pd.read_csv(path)
+    # df = pd.read_csv(path)
+    df = pd.read_csv(path, names=['PropertyTimestamp', 'SupplyFanSpeedOutput'])
     ts = df[column[0]]
     val = df[column[1]]
     return clean_coequipment(ts, val)
 
 
 def read_vav_csv(path, column=['PropertyTimestamp', 'AirFlowNormalized']):
-    df = pd.read_csv(path)
+    # df = pd.read_csv(path)
+    df = pd.read_csv(path, names=['PropertyTimestamp', 'SupplyFanSpeedOutput'])
     ts = df[column[0]]
     val = df[column[1]]
     return clean_coequipment(ts, val)
 
 
+# TODO: CHECK
+# read the ahu for a specific facility
 def read_facility_ahu(facility_id, ahu_list, max_length):
     ahu_data, label = [], []
     # print(max_length)
     # column = ['PropertyTimestamp', ahu_s]
-    path = "/localtmp/split/ahu_property_file_" + str(facility_id) + "/"
+
+    # path = "/localtmp/split/ahu_property_file_" + str(facility_id) + "/"
+    path = "./rawdata/metadata/" + str(facility_id) + "/"
     pops = []
     # print(column)
     for i, name in enumerate(ahu_list[facility_id]):
-        if os.path.exists(path + name + '.csv') == False:
+        if not os.path.exists(path + name + '.csv'):
             continue
-        ahu_d, flag = read_ahu_csv('/localtmp/split/ahu_property_file_' + str(facility_id) + '/' + name + '.csv')
+
+        # ahu_d, flag = read_ahu_csv('/localtmp/split/ahu_property_file_' + str(facility_id) + '/' + name + '.csv')
+        ahu_d, flag = read_ahu_csv(path + name + '.csv')
         if flag and len(ahu_d) >= max_length:
             ahu_data.append(ahu_d[0:max_length])
             label.append((facility_id, name))
@@ -376,18 +384,25 @@ def read_facility_ahu(facility_id, ahu_list, max_length):
     return ahu_data, label
 
 
+# TODO: CHECK
+# read the vav for a specific facility
 def read_facility_vav(facility_id, mapping, max_length, ahu_list):
     vav_data, label = [], []
     # column = ['PropertyTimestamp', vav_s]
-    path = "/localtmp/split/vav_box_property_file_" + str(facility_id) + "/"
+
+    # path = "/localtmp/split/vav_box_property_file_" + str(facility_id) + "/"
+    path = "./rawdata/metadata/" + str(facility_id) + "/"
+
     # print(column)
     for name in mapping[facility_id].keys():
-        if os.path.exists(path + name + '.csv') == False:
+        if not os.path.exists(path + name + '.csv'):
             continue
         if mapping[facility_id][name] not in ahu_list[facility_id]:
             continue
 
-        vav_d, flag = read_vav_csv('/localtmp/split/vav_box_property_file_' + str(facility_id) + '/' + name + '.csv')
+        # vav_d, flag = read_vav_csv('/localtmp/split/vav_box_property_file_' + str(facility_id) + '/' + name + '.csv')
+
+        vav_d, flag = read_ahu_csv(path + name + '.csv')
         if flag and len(vav_d) >= max_length:
             vav_data.append(vav_d[0:max_length])
             label.append((facility_id, name))
@@ -395,50 +410,104 @@ def read_facility_vav(facility_id, mapping, max_length, ahu_list):
     return vav_data, label
 
 
-def read_coequipment_ground_truth(path='./groundtruth/mapping_data.xlsx'):
-    data = pd.read_excel(path, sheet_name='Hierarchy Data', usecols=[1, 6, 7, 9], engine='openpyxl')
-    raw_list = data.values.tolist()
+# TODO: rewrite
+# def read_coequipment_ground_truth(path='./groundtruth/mapping_data.xlsx'):
+#     data = pd.read_excel(path, sheet_name='Hierarchy Data', usecols=[1, 6, 7, 9], engine='openpyxl')
+#     raw_list = data.values.tolist()
+#     mapping = dict()
+#     ahu_vas = dict()
+#     ahu_list = dict()
+#     for line in raw_list:
+#         # print(line)
+#         if line[3] != 'AHU':
+#             continue
+#         f_id = int(line[0])  # Facility_SID
+#         parent_name = line[1]  # PARENT_OBJECT_NAME
+#         child_name = line[2]  # CHILD_OBJECT_NAME
+#         if 'AHU-13  Area 112  MP581-4-4-2' == child_name:
+#             print("removed ")
+#             continue
+#         if f_id not in ahu_vas.keys():
+#             ahu_vas[f_id] = dict()
+#             ahu_list[f_id] = []
+#         ahu_list[f_id].append(child_name)
+#         ahu_vas[f_id][parent_name] = child_name
+#
+#     for line in raw_list:
+#         if line[3] != 'VAV-BOX':
+#             continue
+#         f_id = int(line[0])
+#         parent_name = line[1]
+#         child_name = line[2]
+#         if f_id not in mapping.keys():
+#             mapping[f_id] = dict()
+#         if parent_name in ahu_vas[f_id].keys():
+#             # print(parent_name, ahu_vas[f_id])
+#             # print(ahu_vas[f_id][parent_name])
+#             # print(parent_name)
+#             # print(ahu_vas[f_id])
+#             mapping[f_id][child_name] = ahu_vas[f_id][parent_name]
+#
+#             # print("------- ahu vas")
+#             # print(parent_name, ahu_vas[f_id])
+#             # print("------- mapping")
+#             # print(mapping[f_id])
+#             # print("-------")
+#             # print(child_name, mapping[f_id][child_name])
+#     return mapping, ahu_list
+
+
+def read_coequipment_ground_truth():
     mapping = dict()
-    ahu_vas = dict()
     ahu_list = dict()
-    for line in raw_list:
-        # print(line)
-        if line[3] != 'AHU':
-            continue
-        f_id = int(line[0])  # Facility_SID
-        parent_name = line[1]  # PARENT_OBJECT_NAME
-        child_name = line[2]  # CHILD_OBJECT_NAME
-        if 'AHU-13  Area 112  MP581-4-4-2' == child_name:
-            print("removed ")
-            continue
-        if f_id not in ahu_vas.keys():
-            ahu_vas[f_id] = dict()
-            ahu_list[f_id] = []
-        ahu_list[f_id].append(child_name)
-        ahu_vas[f_id][parent_name] = child_name
+    # Hard code this part
+    mapping['Soda'] = dict()
+    ahu_list['Soda'] = []
+    # mapping['Soda2'] = dict()
+    # ahu_list['Soda2'] = []
 
-    for line in raw_list:
-        if line[3] != 'VAV-BOX':
-            continue
-        f_id = int(line[0])
-        parent_name = line[1]
-        child_name = line[2]
-        if f_id not in mapping.keys():
-            mapping[f_id] = dict()
-        if parent_name in ahu_vas[f_id].keys():
-            # print(parent_name, ahu_vas[f_id])
-            # print(ahu_vas[f_id][parent_name])
-            # print(parent_name)
-            # print(ahu_vas[f_id])
-            mapping[f_id][child_name] = ahu_vas[f_id][parent_name]
+    sodaPath='./rawdata/metadata/soda_groud_truth'
+    f = open(sodaPath, 'r+')
+    lines = f.readlines()
+    i = 0
+    while i < len(lines) - 1:
+        currLine = lines[i].strip("\n").split("\t\t")
+        if currLine[1] == '12':
+            ahu_list['Soda'].append(currLine[0])
+            # ahu_list['Soda2'].append(currLine[0])
+        if currLine[1] == '4':
+            for key in ahu_list['Soda']:
+                # print(key)
+                if currLine[0][0: 5] == key[0: 5]:
+                    # if random.randint(0,2) == 1:
+                    #     mapping['Soda'][currLine[0]] = key
+                    # else:
+                    #     mapping['Soda2'][currLine[0]] = key
+                    mapping['Soda2'][currLine[0]] = key
+            # print(currLine[0])
+        i += 1
 
-            # print("------- ahu vas")
-            # print(parent_name, ahu_vas[f_id])
-            # print("------- mapping")
-            # print(mapping[f_id])
-            # print("-------")
-            # print(child_name, mapping[f_id][child_name])
+    # sdhPath='./rawdata/metadata/rice_groud_truth'
+    # f1 = open(sdhPath, 'r+')
+    # lines = f1.readlines()
+    # j = 0
+    # while j < len(lines) - 1:
+    #     currLine = lines[j].strip("\t\n").split("\t")
+    #     # print(currLine)
+    #     if currLine[1] == '12':
+    #         ahu_list['SDH'].append('Siemens+' + currLine[0])
+    #         # mapping['Soda'][currLine[0]] = []
+    #     if currLine[1] == '4':
+    #         for key in ahu_list['SDH']:
+    #             # print(key)
+    #             if currLine[0][0: 5] == key[0: 5]:
+    #                 mapping['Soda'][currLine[0]] = key
+    #                 # print(currLine[0], key)
+    #         # print(currLine[0])
+    #     j += 1
+
     return mapping, ahu_list
+    # print(ahu_list, mapping)
 
 
 def sub_sample(ts, val, config):
@@ -475,10 +544,19 @@ def split_coequipment_train(vav_x, vav_y, test_index, train, test):
             test_vav.append(vav_x[i])
             test_y.append(vav_y[i])
         else:
-            if vav_y[i][0] != train:
-                continue
-            train_vav.append(vav_x[i])
-            train_y.append(vav_y[i])
+            # # Original version:
+            # if vav_y[i][0] != train:
+            #     continue
+            # train_vav.append(vav_x[i])
+            # train_y.append(vav_y[i])
+
+            # in our case train is a list,
+            # so we cannot compare it with a string
+            # Rather, iterate through this list
+            for item in train:
+                if vav_y[i][0] == item:
+                    train_vav.append(vav_x[i])
+                    train_y.append(vav_y[i])
     return train_vav, train_y, test_vav, test_y
 
 
@@ -566,9 +644,12 @@ def gen_coequipment_triplet(ahu_x, ahu_y, vav_x, vav_y, mapping):
 
 def read_coequipment_data(config, args, test, train):
     # TODO: cannot assume test and train are int, cast them from string into integer
-    mapping, ahu_list = read_coequipment_ground_truth('./groundtruth/mapping_data.xlsx')
+    # mapping, ahu_list = read_coequipment_ground_truth('./groundtruth/mapping_data.xlsx')
+    mapping, ahu_list = read_coequipment_ground_truth()
     if config.all_facilities:
-        facilities = [test, train]
+        facilities = [test]
+        for f in train:
+            facilities.append(f)
         ahu_x, ahu_y, vav_x, vav_y = [], [], [], []
         for f_id in facilities:
             f_ahu_x, f_ahu_y = read_facility_ahu(f_id, ahu_list, config.max_length)
@@ -592,7 +673,7 @@ def read_coequipment_data(config, args, test, train):
         len(vav_x), vav_x[0].shape[0], vav_x[0].shape[1]))
 
     # split training & testing
-    test_indices = cross_validation_sample(len(vav_y), int(len(vav_y) / 5))
+    test_indices = cross_validation_sample(len(vav_y), int(len(vav_y) / 4))
 
     print("test indices:\n", test_indices)
 
