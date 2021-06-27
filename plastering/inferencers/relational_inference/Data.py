@@ -48,39 +48,41 @@ def read_ground_truth(building):
                 roomCorr.append(str(currLine[3]) + ", " + str(currLine[4]))
                 # we need both room name and room id here
                 roomList.append(roomCorr)
-            # elif currLine.find("chilled/condensor water loop-id") != -1:
-            #     currLine = currLine.split(",")
-            #     roomCorr.append(currLine[2])
-            #     roomList.append(roomCorr)
-            # elif currLine.find("supply fan-id") != -1:
-            #     currLine = currLine.split(",")
-            #     roomCorr.append(currLine[4])
-            #     roomList.append(roomCorr)
-            # elif currLine.find("ahu-id") != -1:
-            #     currLine = currLine.split(",")
-            #     roomCorr.append(currLine[2])
-            #     roomList.append(roomCorr)
-            # elif currLine.find("hot water loop-id") != -1:
-            #     currLine = currLine.split(",")
-            #     roomCorr.append(currLine[2])
-            #     roomList.append(roomCorr)
-            # elif currLine.find("chiller-id") != -1:
-            #     currLine = currLine.split(",")
-            #     roomCorr.append(currLine[2])
-            #     roomList.append(roomCorr)
-            # elif currLine.find("exhaust fan-id") != -1:
-            #     currLine = currLine.split(",")
-            #     try:
-            #         roomCorr.append(currLine[4])
-            #     except IndexError:
-            #         roomCorr.append(currLine[2])
-            #     roomList.append(roomCorr)
-            # elif currLine.find("condensor pump-id") != -1:
-            #     currLine = currLine.split(",")
-            #     roomCorr.append(currLine[2])
-            #     roomList.append(roomCorr)
+            '''
+            elif currLine.find("chilled/condensor water loop-id") != -1:
+                currLine = currLine.split(",")
+                roomCorr.append(currLine[2])
+                roomList.append(roomCorr)
+            elif currLine.find("supply fan-id") != -1:
+                currLine = currLine.split(",")
+                roomCorr.append(currLine[4])
+                roomList.append(roomCorr)
+            elif currLine.find("ahu-id") != -1:
+                currLine = currLine.split(",")
+                roomCorr.append(currLine[2])
+                roomList.append(roomCorr)
+            elif currLine.find("hot water loop-id") != -1:
+                currLine = currLine.split(",")
+                roomCorr.append(currLine[2])
+                roomList.append(roomCorr)
+            elif currLine.find("chiller-id") != -1:
+                currLine = currLine.split(",")
+                roomCorr.append(currLine[2])
+                roomList.append(roomCorr)
+            elif currLine.find("exhaust fan-id") != -1:
+                currLine = currLine.split(",")
+                try:
+                    roomCorr.append(currLine[4])
+                except IndexError:
+                    roomCorr.append(currLine[2])
+                roomList.append(roomCorr)
+            elif currLine.find("condensor pump-id") != -1:
+                currLine = currLine.split(",")
+                roomCorr.append(currLine[2])
+                roomList.append(roomCorr)
             else:
                 pass
+            '''
 
             i += 1
 
@@ -407,51 +409,54 @@ def read_facility_vav(facility_id, mapping, max_length, ahu_list):
             print(facility_id, name)
     return vav_data, label
 
+
 # Original version
-# def read_coequipment_ground_truth(path='./groundtruth/mapping_data.xlsx'):
-#     data = pd.read_excel(path, sheet_name='Hierarchy Data', usecols=[1, 6, 7, 9], engine='openpyxl')
-#     raw_list = data.values.tolist()
-#     mapping = dict()
-#     ahu_vas = dict()
-#     ahu_list = dict()
-#     for line in raw_list:
-#         # print(line)
-#         if line[3] != 'AHU':
-#             continue
-#         f_id = int(line[0])  # Facility_SID
-#         parent_name = line[1]  # PARENT_OBJECT_NAME
-#         child_name = line[2]  # CHILD_OBJECT_NAME
-#         if 'AHU-13  Area 112  MP581-4-4-2' == child_name:
-#             print("removed ")
-#             continue
-#         if f_id not in ahu_vas.keys():
-#             ahu_vas[f_id] = dict()
-#             ahu_list[f_id] = []
-#         ahu_list[f_id].append(child_name)
-#         ahu_vas[f_id][parent_name] = child_name
-#
-#     for line in raw_list:
-#         if line[3] != 'VAV-BOX':
-#             continue
-#         f_id = int(line[0])
-#         parent_name = line[1]
-#         child_name = line[2]
-#         if f_id not in mapping.keys():
-#             mapping[f_id] = dict()
-#         if parent_name in ahu_vas[f_id].keys():
-#             # print(parent_name, ahu_vas[f_id])
-#             # print(ahu_vas[f_id][parent_name])
-#             # print(parent_name)
-#             # print(ahu_vas[f_id])
-#             mapping[f_id][child_name] = ahu_vas[f_id][parent_name]
-#
-#             # print("------- ahu vas")
-#             # print(parent_name, ahu_vas[f_id])
-#             # print("------- mapping")
-#             # print(mapping[f_id])
-#             # print("-------")
-#             # print(child_name, mapping[f_id][child_name])
-#     return mapping, ahu_list
+'''
+def read_coequipment_ground_truth(path='./groundtruth/mapping_data.xlsx'):
+    data = pd.read_excel(path, sheet_name='Hierarchy Data', usecols=[1, 6, 7, 9], engine='openpyxl')
+    raw_list = data.values.tolist()
+    mapping = dict()
+    ahu_vas = dict()
+    ahu_list = dict()
+    for line in raw_list:
+        # print(line)
+        if line[3] != 'AHU':
+            continue
+        f_id = int(line[0])  # Facility_SID
+        parent_name = line[1]  # PARENT_OBJECT_NAME
+        child_name = line[2]  # CHILD_OBJECT_NAME
+        if 'AHU-13  Area 112  MP581-4-4-2' == child_name:
+            print("removed ")
+            continue
+        if f_id not in ahu_vas.keys():
+            ahu_vas[f_id] = dict()
+            ahu_list[f_id] = []
+        ahu_list[f_id].append(child_name)
+        ahu_vas[f_id][parent_name] = child_name
+
+    for line in raw_list:
+        if line[3] != 'VAV-BOX':
+            continue
+        f_id = int(line[0])
+        parent_name = line[1]
+        child_name = line[2]
+        if f_id not in mapping.keys():
+            mapping[f_id] = dict()
+        if parent_name in ahu_vas[f_id].keys():
+            # print(parent_name, ahu_vas[f_id])
+            # print(ahu_vas[f_id][parent_name])
+            # print(parent_name)
+            # print(ahu_vas[f_id])
+            mapping[f_id][child_name] = ahu_vas[f_id][parent_name]
+
+            # print("------- ahu vas")
+            # print(parent_name, ahu_vas[f_id])
+            # print("------- mapping")
+            # print(mapping[f_id])
+            # print("-------")
+            # print(child_name, mapping[f_id][child_name])
+    return mapping, ahu_list
+'''
 
 
 # Adopted to fit building SODA
@@ -468,6 +473,7 @@ def read_coequipment_ground_truth():
     f = open(sodaPath, 'r+')
     lines = f.readlines()
     i = 0
+    j = 0
     while i < len(lines) - 1:
         currLine = lines[i].strip("\n").split("\t\t")
         if currLine[1] == '12':
@@ -477,7 +483,8 @@ def read_coequipment_ground_truth():
             for key in ahu_list['Soda']:
                 # print(key)
                 if currLine[0][0: 5] == key[0: 5]:
-                    if random.randint(0,2) == 1:
+                    j += 1
+                    if j % 2 == 0:
                         mapping['Soda'][currLine[0]] = key
                     else:
                         mapping['Soda2'][currLine[0]] = key
@@ -518,25 +525,15 @@ def split_coequipment_train(vav_x, vav_y, test_index, train, test):
     # print(test, train)
     for i in shuffled_idx:
         if i in test_index:
-            # print("test:")
-            # print(i)
             if vav_y[i][0] != test:
                 continue
             test_vav.append(vav_x[i])
             test_y.append(vav_y[i])
         else:
-            # print("train:")
-            # print(i)
             for item in train:
                 if vav_y[i][0] == item:
                     train_vav.append(vav_x[i])
                     train_y.append(vav_y[i])
-                    # print("12345")
-            # train_vav.append(vav_x[i])
-            # train_y.append(vav_y[i])
-            # print("train:")
-            # print(train_y)
-    # print(train_y, test_y)
     return train_vav, train_y, test_vav, test_y
 
 
@@ -623,7 +620,6 @@ def gen_coequipment_triplet(ahu_x, ahu_y, vav_x, vav_y, mapping):
 
 
 def read_coequipment_data(config, args, test, train):
-    # TODO: cannot assume test and train are int, cast them from string into integer
     # mapping, ahu_list = read_coequipment_ground_truth('./groundtruth/mapping_data.xlsx')
     mapping, ahu_list = read_coequipment_ground_truth()
     if config.all_facilities:

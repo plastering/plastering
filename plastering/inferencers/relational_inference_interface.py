@@ -59,7 +59,7 @@ class RelationalInference(object):
             self.model = STN(self.config.dropout, 2 * self.config.k_coefficient).cuda()
             # self.model = STN(self.config.dropout, 2 * self.config.k_coefficient)
         elif self.args.model == 'han':
-            self.model = STN(self.config.dropout).cuda()
+            self.model = STN(self.config.dropout, 2 * self.config.k_coefficient).cuda()
 
         if self.config.optim == 'SGD':
             self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.config.learning_rate, momentum=0.9,
@@ -90,7 +90,6 @@ class RelationalInference(object):
                 self.learn_auto()
 
         # co-equipment
-        # TODO: review this part after extracting the reading data part
         if args.config == "coequipment":
             self.learn_auto()
 
@@ -114,7 +113,6 @@ class RelationalInference(object):
 
         # co-equipment
         if self.args.config == "coequipment":
-            # TODO: Test if this works
             # print(read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings))
             ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping = \
                 read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings)
@@ -273,16 +271,8 @@ class RelationalInference(object):
         for fold, test_index in enumerate(test_indices):
             epochs_acc.append([])
             self.log("Now training fold: %d" % (fold))
-            # print("------------")
-            # print(vav_x, vav_y)
-            # print(train, test)
             train_vav_x, train_vav_y, test_vav_x, test_vav_y = split_coequipment_train(vav_x, vav_y, test_index, train,
                                                                                        test)
-            # print("------------")
-            # print(ahu_x, ahu_y, train_vav_x, train_vav_y, mapping)
-            # print(len(test_vav_y))
-            # print(train_vav_y)
-            # print("------------")
             train_x = gen_coequipment_triplet(ahu_x, ahu_y, train_vav_x, train_vav_y, mapping)
             test_y = test_vav_y
             total_triplets = len(train_x)
