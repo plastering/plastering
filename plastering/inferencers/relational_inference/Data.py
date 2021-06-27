@@ -355,7 +355,6 @@ def read_vav_csv(path, column=['PropertyTimestamp', 'AirFlowNormalized']):
     return clean_coequipment(ts, val)
 
 
-# TODO: CHECK
 # read the ahu for a specific facility
 def read_facility_ahu(facility_id, ahu_list, max_length):
     ahu_data, label = [], []
@@ -384,7 +383,6 @@ def read_facility_ahu(facility_id, ahu_list, max_length):
     return ahu_data, label
 
 
-# TODO: CHECK
 # read the vav for a specific facility
 def read_facility_vav(facility_id, mapping, max_length, ahu_list):
     vav_data, label = [], []
@@ -409,8 +407,7 @@ def read_facility_vav(facility_id, mapping, max_length, ahu_list):
             print(facility_id, name)
     return vav_data, label
 
-
-# TODO: rewrite
+# Original version
 # def read_coequipment_ground_truth(path='./groundtruth/mapping_data.xlsx'):
 #     data = pd.read_excel(path, sheet_name='Hierarchy Data', usecols=[1, 6, 7, 9], engine='openpyxl')
 #     raw_list = data.values.tolist()
@@ -457,14 +454,15 @@ def read_facility_vav(facility_id, mapping, max_length, ahu_list):
 #     return mapping, ahu_list
 
 
+# Adopted to fit building SODA
 def read_coequipment_ground_truth():
     mapping = dict()
     ahu_list = dict()
     # Hard code this part
     mapping['Soda'] = dict()
     ahu_list['Soda'] = []
-    # mapping['Soda2'] = dict()
-    # ahu_list['Soda2'] = []
+    mapping['Soda2'] = dict()
+    ahu_list['Soda2'] = []
 
     sodaPath='./rawdata/metadata/soda_groud_truth'
     f = open(sodaPath, 'r+')
@@ -474,40 +472,19 @@ def read_coequipment_ground_truth():
         currLine = lines[i].strip("\n").split("\t\t")
         if currLine[1] == '12':
             ahu_list['Soda'].append(currLine[0])
-            # ahu_list['Soda2'].append(currLine[0])
+            ahu_list['Soda2'].append(currLine[0])
         if currLine[1] == '4':
             for key in ahu_list['Soda']:
                 # print(key)
                 if currLine[0][0: 5] == key[0: 5]:
-                    # if random.randint(0,2) == 1:
-                    #     mapping['Soda'][currLine[0]] = key
-                    # else:
-                    #     mapping['Soda2'][currLine[0]] = key
-                    mapping['Soda2'][currLine[0]] = key
+                    if random.randint(0,2) == 1:
+                        mapping['Soda'][currLine[0]] = key
+                    else:
+                        mapping['Soda2'][currLine[0]] = key
+                    # mapping['Soda'][currLine[0]] = key
             # print(currLine[0])
         i += 1
-
-    # sdhPath='./rawdata/metadata/rice_groud_truth'
-    # f1 = open(sdhPath, 'r+')
-    # lines = f1.readlines()
-    # j = 0
-    # while j < len(lines) - 1:
-    #     currLine = lines[j].strip("\t\n").split("\t")
-    #     # print(currLine)
-    #     if currLine[1] == '12':
-    #         ahu_list['SDH'].append('Siemens+' + currLine[0])
-    #         # mapping['Soda'][currLine[0]] = []
-    #     if currLine[1] == '4':
-    #         for key in ahu_list['SDH']:
-    #             # print(key)
-    #             if currLine[0][0: 5] == key[0: 5]:
-    #                 mapping['Soda'][currLine[0]] = key
-    #                 # print(currLine[0], key)
-    #         # print(currLine[0])
-    #     j += 1
-
     return mapping, ahu_list
-    # print(ahu_list, mapping)
 
 
 def sub_sample(ts, val, config):
@@ -537,26 +514,29 @@ def split_coequipment_train(vav_x, vav_y, test_index, train, test):
     train_y, test_y = [], []
     shuffled_idx = np.arange(len(vav_x))
     np.random.shuffle(shuffled_idx)
+    # print("test and train: ")
+    # print(test, train)
     for i in shuffled_idx:
         if i in test_index:
+            # print("test:")
+            # print(i)
             if vav_y[i][0] != test:
                 continue
             test_vav.append(vav_x[i])
             test_y.append(vav_y[i])
         else:
-            # # Original version:
-            # if vav_y[i][0] != train:
-            #     continue
-            # train_vav.append(vav_x[i])
-            # train_y.append(vav_y[i])
-
-            # in our case train is a list,
-            # so we cannot compare it with a string
-            # Rather, iterate through this list
+            # print("train:")
+            # print(i)
             for item in train:
                 if vav_y[i][0] == item:
                     train_vav.append(vav_x[i])
                     train_y.append(vav_y[i])
+                    # print("12345")
+            # train_vav.append(vav_x[i])
+            # train_y.append(vav_y[i])
+            # print("train:")
+            # print(train_y)
+    # print(train_y, test_y)
     return train_vav, train_y, test_vav, test_y
 
 

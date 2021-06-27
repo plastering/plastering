@@ -115,7 +115,7 @@ class RelationalInference(object):
         # co-equipment
         if self.args.config == "coequipment":
             # TODO: Test if this works
-            print(read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings))
+            # print(read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings))
             ahu_x, ahu_y, vav_x, vav_y, test_indices, mapping = \
                 read_coequipment_data(self.config, self.args, self.target_building, self.source_buildings)
             return self.test_coequipment(ahu_x, ahu_y, vav_x, vav_y, mapping, self.target_building)
@@ -272,7 +272,7 @@ class RelationalInference(object):
         total_wrongs = dict()
         for fold, test_index in enumerate(test_indices):
             epochs_acc.append([])
-            logging("Now training fold: %d" % (fold))
+            self.log("Now training fold: %d" % (fold))
             # print("------------")
             # print(vav_x, vav_y)
             # print(train, test)
@@ -286,7 +286,7 @@ class RelationalInference(object):
             train_x = gen_coequipment_triplet(ahu_x, ahu_y, train_vav_x, train_vav_y, mapping)
             test_y = test_vav_y
             total_triplets = len(train_x)
-            logging("Total training triplets: %d\n" % (total_triplets))
+            self.log("Total training triplets: %d\n" % (total_triplets))
             testahu = dict()
             for v in test_y:
                 if mapping[v[0]][v[1]] not in testahu:
@@ -299,7 +299,7 @@ class RelationalInference(object):
             for epoch in range(self.config.epoch):
                 # print(train_x)
                 train_loader = torch.utils.data.DataLoader(train_x, batch_size=self.config.batch_size, shuffle=True)
-                logging("Now training %d epoch ......\n" % (epoch + 1))
+                self.log("Now training %d epoch ......\n" % (epoch + 1))
                 total_triplet_correct = 0
                 for step, batch_x in enumerate(train_loader):
 
@@ -318,10 +318,10 @@ class RelationalInference(object):
                     loss.backward()
                     self.optimizer.step()
                     if step % 200 == 0 and step != 0:
-                        logging("loss " + str(loss) + "\n")
-                        logging("triplet_acc " + str(triplet_correct.item() / self.config.batch_size) + "\n")
+                        self.log("loss " + str(loss) + "\n")
+                        self.log("triplet_acc " + str(triplet_correct.item() / self.config.batch_size) + "\n")
 
-                logging("Triplet accuracy: %f" % (total_triplet_correct / total_triplets))
+                self.log("Triplet accuracy: %f" % (total_triplet_correct / total_triplets))
 
                 # torch.save(model, log_path + args.task + '_' + args.model + '_model.pkl')
                 acc, wrongs = self.test_coequipment(ahu_x, ahu_y, test_vav_x, test_vav_y, mapping, test)
@@ -341,7 +341,7 @@ class RelationalInference(object):
                 overall_epoch_acc[j] += epochs_acc[i][j] / len(epochs_acc)
 
         # print(overall_epoch_acc)
-        logging("Best accuracy : %f, best epoch: %d\n" % (
+        self.log("Best accuracy : %f, best epoch: %d\n" % (
             max(overall_epoch_acc), overall_epoch_acc.index(max(overall_epoch_acc))))
         return max(overall_epoch_acc)
 
@@ -407,7 +407,7 @@ class RelationalInference(object):
                         wrongs[mapping_fid[test_vav_y[i]]] += 1
                     else:
                         wrongs[mapping_fid[test_vav_y[i]]] = 1
-            logging("Fid: %s Acc: %f\n" % (f_id, cnt / total))
+            self.log("Fid: %s Acc: %f\n" % (f_id, cnt / total))
             acc.append(cnt / total)
         # print(wrongs)
         self.model.train()
