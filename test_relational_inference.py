@@ -12,13 +12,9 @@ args, config = parse_args_colocation()
 """
 
 target_building = 'Soda2'
-source_buildings = ['Soda']
+source_buildings = ['Soda', 'Soda2']
 args, config = parse_args_coequipment()
-# target_building = 10312
-# source_buildings = [10312, 10320, 10381, 10596, 10606, 10642]
-# args, config = parse_args_coequipment() # use parse_args_coequipment or parse_args_colocation depending on the task
-
-# TODO: merge the two methods later
+# use parse_args_coequipment or parse_args_colocation depending on the task
 
 random.seed(args.seed)
 np.random.seed(args.seed)
