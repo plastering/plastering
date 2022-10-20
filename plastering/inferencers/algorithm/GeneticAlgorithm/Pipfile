@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cython = "*"
+numpy = "*"
+scipy = "*"
+terminaltables = "*"
+python-rapidjson = "*"
+dataclasses = "*"
+rope = "*"
+matplotlib = "*"
+"progressbar2" = "*"
+
+[dev-packages]
+pytest = "*"
+pylint = "*"
+autopep8 = "*"
+yapf = "*"

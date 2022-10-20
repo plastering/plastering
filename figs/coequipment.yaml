@@ -1,0 +1,17 @@
+log: ./log/
+# FFT config
+window_size: 30
+k_coefficient: 14
+stride: 2
+sub_sample: False     
+interval: 5
+max_length: 28800
+all_facilities: True
+# CNN config
+epoch: 20
+batch_size: 32
+optim: 'SGD'
+learning_rate: 0.001
+dropout: 0.2
+grad_norm: 0
+weight_decay: 0.0001

@@ -141,3 +141,23 @@ Plastering is a unified framework for normalization of buildings metadata. Diffe
     ```
 
 
+## Example - Relational Inference
+
+1. Install Genetic Algorithm
+   ```bash
+   cd plastering/inferencers/algorithm/GeneticAlgorithm/
+   python3 setup.py build_ext --inplace
+   python3 setup.py install
+   ```
+
+2. Install Requirements and Setup Plastering
+   ```bash
+   cd -
+   pip3 install -r requirements.txt
+   python3 setup.py install
+   ```
+
+3. Test with Relational Inference
+   ```bash
+   python test_relational_inference.py
+   ```
